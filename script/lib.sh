@@ -18,7 +18,7 @@ function is_mac_os() {
 function absolute_path() {
 	if is_mac_os
 	then
-		readlink -n "$1"
+		greadlink -mn "$1"
 	else
 		readlink -mn "$1"
 	fi

@@ -11,7 +11,7 @@ fi
 shopt -s nullglob
 
 function absolute_path() {
-	readlink -m "$1" 
+	readlink "$1" 
 }
 
 function pretty_path() {

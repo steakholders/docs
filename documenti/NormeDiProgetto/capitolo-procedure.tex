@@ -1,0 +1,76 @@
+\section{Procedure di progetto}
+\label{procedurediprogetto}
+
+\subsection{Creazione compito}
+
+Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare i ticket di codifica con i seguenti parametri:
+\begin{itemize}
+ \item \textbf{Sezione}: ``Compito da pianificare''
+ \item \textbf{Milestone}: la revisione entro la quale il compito dovrà essere terminato.
+ \item \textbf{Titolo}: breve descrizione del compito, con il codice dell'unità di lavoro corrispondente.
+ \item \textbf{Dipendenze}: le dipendenze decise nella progettazione.
+ \item \textbf{Pianificazione}: nessuna.
+ \item \textbf{Assegnato a}: il Responsabile.
+\end{itemize}
+
+\subsection{Pianificazione compito e verifica}
+
+\label{pianificazione}
+Il Responsabile deve pianificare i ticket delle sezioni ``Compito da pianificare'' e ``Modifica da pianificare''. Deve inoltre creare e pianificare il corrispondente ticket di verifica. I ticket del compito e della modifica devono essere assegnati a persone diverse.
+
+Modifica i parametri del compito:
+\begin{itemize}
+ \item \textbf{Sezione}: ``Compito''.
+ \item \textbf{Pianificazione}: a scelta del Responsabile.
+ \item \textbf{Assegnato a}: un programmatore, a scelta del Responsabile.
+\end{itemize}
+
+Parametri della verifica:
+\begin{itemize}
+ \item \textbf{Sezione}: ``Verifica''
+ \item \textbf{Milestone}: la revisione entro la quale la verifica dovrà essere terminata.
+ \item \textbf{Titolo}: breve descrizione della verifica, con un riferimento al compito da verificare.
+ \item \textbf{Dipendenze}: il compito di cui bisogna fare la verifica.
+ \item \textbf{Pianificazione}: a scelta del Responsabile.
+ \item \textbf{Assegnato a}: un verificatore, a scelta del Responsabile.
+\end{itemize}
+
+\subsection{Esecuzione compito}
+
+Non appena il programmatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina il compito deve impostare il ticket su ``completo'' usando l'apposita casella si spunta.
+
+\subsection{Esecuzione verifica}
+
+Non appena il verificatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina la verifica deve impostare il ticket su ``completo'' usando l'apposita casella si spunta.
+
+Nel caso in cui il verificatore trovi bug o non conformità significative deve creare un ticket di tipo ``Modifica da valutare'':
+\begin{itemize}
+ \item \textbf{Sezione}: ``Modifica da valutare''
+ \item \textbf{Milestone}: la revisione entro la quale il bug dovrà essere corretto, è opzionale.
+ \item \textbf{Titolo}: breve descrizione del bug, con un riferimento al compito nel quale lo si è trovato.
+ \item \textbf{Dipendenze}: nessuna.
+ \item \textbf{Pianificazione}: nessuna.
+ \item \textbf{Assegnato a}: il Responsabile.
+\end{itemize}
+
+\subsection{Gestione delle modifiche}
+
+Il Responsabile deve valutare ogni bug/modifica del tipo ``Modifica da valutare''. Se dopo averla analizzata assieme ai ruoli competenti ritiene che debba essere eseguita, allora modifica i seguenti parametro:
+\begin{itemize}
+ \item \textbf{Sezione}: ``Modifica non pianificata''
+ \item \textbf{Milestone}: la revisione entro la quale la modifica dovrà essere fatta.
+\end{itemize}
+e passa a pianificare il ticket, seguendo la procedura \ref{pianificazione}.
+
+\subsection{Segnalazione bug}
+
+Se un membro del gruppo volesse segnalare un bug o richiedere una modifica deve creare un task con i seguenti parametri:
+\begin{itemize}
+ \item \textbf{Sezione}: ``Modifica da valutare''
+ \item \textbf{Milestone}: la revisione entro la quale la modifica dovrà essere fatta, è opzionale.
+ \item \textbf{Titolo}: breve descrizione della modifica.
+ % TODO descrizione
+ \item \textbf{Dipendenze}: le dipendenze decise nella progettazione.
+ \item \textbf{Pianificazione}: nessuna.
+ \item \textbf{Assegnato a}: il Responsabile.
+\end{itemize}

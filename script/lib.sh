@@ -10,8 +10,17 @@ fi
 # [http://wiki.bash-hackers.org/syntax/expansion/globs]
 shopt -s nullglob
 
+function is_mac_os() {
+	return [ "$(uname)" == "Darwin" ];
+}
+
 function absolute_path() {
-	readlink "$1" 
+	if is_mac_os
+	then
+		readlink -n "$1"
+	else
+		readlink -m "$1"
+	fi
 }
 
 function pretty_path() {

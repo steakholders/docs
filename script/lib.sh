@@ -43,12 +43,16 @@ function log(){
 	level="$1"
 	message="${@:2}"
 
-	# Colori
-	GREEN="\e[32m"
-	RED="\e[31m"
-	ORANGE="\e[33m"
-	CLEAR="\e[0m"
-
+	# Se i colori sono supportati
+	if tput colors > /dev/null
+	then
+		# Colori
+		GREEN="\e[32m"
+		RED="\e[31m"
+		ORANGE="\e[33m"
+		CLEAR="\e[0m"
+	fi
+	
 	case $level in
 		error)
 			echo -ne "${RED}" 1>&2

@@ -20,7 +20,7 @@ function absolute_path() {
 	then
 		readlink -n "$1"
 	else
-		readlink -m "$1"
+		readlink -mn "$1"
 	fi
 }
 

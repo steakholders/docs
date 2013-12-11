@@ -11,7 +11,8 @@ fi
 shopt -s nullglob
 
 function is_mac_os() {
-	return [ "$(uname)" == "Darwin" ];
+	[ "$(uname)" == "Darwin" ]
+	return $?;
 }
 
 function absolute_path() {

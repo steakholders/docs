@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%
+%  COSTANTI  %
+%%%%%%%%%%%%%%
+
+% In questa prima parte vanno definite le 'costanti' utilizzate da due o più documenti.
+
+\newcommand{\GroupName}{\emph{SteakHolders}}
+\newcommand{\ProjectName}{\emph{MaaP}}
+
+\newcommand{\Proponente}{Coffee Strap}
+\newcommand{\Committente}{Prof. Tullio Vardanega}
+
+% TODO I seguenti 4 sono deprecati, sono da togliere.
+% Usare i 4 definiti sopra, con la maiuscola all'inizio!
+\newcommand{\groupName}{\GroupName{}- FIXME: DEPRECATO}
+\newcommand{\projectName}{\ProjectName{}- FIXME: DEPRECATO}
+\newcommand{\proponente}{\Proponente{}- FIXME: DEPRECATO}
+\newcommand{\committente}{\Committente{}- FIXME: DEPRECATO}
+
+% La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
+\newcommand{\VersioneG}{??.??.??}
+\newcommand{\VersionePQ}{??.??.??}
+\newcommand{\VersioneNP}{1.1.5}
+
+% Quando serve riferirsi a ``Nome del Documento + ultima versione x.y.z'' usiamo queste costanti:
+\newcommand{\Glossario}{\emph{Glossario v\VersioneG{}}}
+\newcommand{\PianoDiQualifica}{\emph{Piano di Qualifica v\VersionePQ{}}}
+\newcommand{\NormeDiProgetto}{\emph{Norme di Progetto v\VersioneNP}}
+
+
+%%%%%%%%%%%%%%
+%  FUNZIONI  %
+%%%%%%%%%%%%%%
+
+% In questa seconda parte vanno definite le 'funzioni' utilizzate da due o più documenti.
+
+% Serve a dare la giusta formattazione alle parole presenti nel glossario
+% il nome del comando \glossary è già usato da LaTeX
+\newcommand{\glossario}[1]{\mbox{#1\ped{\ped{G}}}}
+
+% Serve a dare la giusta formattazione al codice inline
+\newcommand{\code}[1]{\texttt{#1}}
+
+% Serve a dare la giusta formattazione a tutte le path presenti nei documenti
+\newcommand{\file}[1]{\texttt{#1}}
+
+% Permette di andare a capo all'interno di una cella in una tabella
+\newcommand{\multiLineCell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+% Genera automaticamente la pagina di copertina
+\newcommand{\makeFrontPage}{
+  \begin{titlepage}
+  \begin{center}
+
+  \begin{center}
+  \includegraphics[width=10cm]{../../modello/steakman.png}
+  \end{center}
+  
+  \vspace{33pt}
+
+  \begin{Huge}
+  \textbf{\DocTitle{}}
+  \end{Huge}
+  
+  \textbf{\emph{Gruppo} \GroupName{} \, \texttwelveudash \, \emph{Progetto} \ProjectName{}}
+  
+  \vspace{11pt}
+
+  \bgroup
+  \def\arraystretch{2}
+  \begin{tabular}{ r|l }
+    \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
+    \hline
+    \textbf{Versione} & \DocVersion{} \\
+    \textbf{Redazione} & \multiLineCell[t]{\DocRedazione{}} \\
+    \textbf{Verifica} & \multiLineCell[t]{\DocVerifica{}} \\
+    \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\
+    \textbf{Uso} & \DocUso{} \\
+    \textbf{Distribuzione} & \multiLineCell[t]{\DocDistribuzione{}} \\
+  \end{tabular}
+  \egroup
+
+  \vspace{22pt}
+
+  \textbf{Descrizione} \\
+  \DocDescription{}
+
+  \end{center}
+  \end{titlepage}
+}

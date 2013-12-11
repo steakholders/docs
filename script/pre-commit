@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# A hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments. The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+
+# === Per abilitare questo hook ===
+# Per abilitare questo hook, in modo che venga eseguito in automatico prima di
+# ogni commit, linkare questo script in .git/hooks/pre-commit con il comando
+# ln -s /{percorso assoluto completo del repository}/script/pre-commit .git/hooks/pre-commit
+# (eseguendolo dalla cartella principale del repository)
+
+# Trova automaticamente la cartella principale del repository
+REPO_DIR=$(pwd)
+while [ "$REPO_DIR" != "/" ] && [ "$REPO_DIR" != "." ]; do
+	if [ -f "$REPO_DIR/script/lib.sh" ]; then
+		# Includi lo script
+		source "$REPO_DIR/script/lib.sh"
+		break
+	else
+		# Sali di un livello
+		REPO_DIR=$(dirname "$REPO_DIR")
+	fi
+done
+
+if [ "$REPO_DIR" == "/" ] || [ "$REPO_DIR" == "." ]; then
+	# Non ha trovato la cartella giusta
+	echo "/!\ Non ho trovato la cartella principale del repository" 1>&2
+	exit 1
+fi
+
+# Ottieni il nome della branch
+function current_branch() {
+	git branch | grep \* | cut -f2 -d' '
+}
+
+# Controlla con "make" che i documenti
+# 1) rispettino le verifiche automatiche (codifica e ortografia)
+# 2) compilino
+function make_test() {
+	log "info" "Inizio il controllo pre-commit"
+	
+	cd "$REPO_DIR"
+	make
+	return_code="$?"
+	
+	# Se c'è stato un errore
+	if [ "$return_code" != "0" ]; then
+		exit "$return_code"
+	fi
+	
+	log "success" "Controllo pre-commit OK"
+}
+
+#if [ "$(current_branch)" == "master" ]; then
+#	make_test
+#fi
+
+make_test
+

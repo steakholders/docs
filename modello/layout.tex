@@ -1,0 +1,102 @@
+%\documentclass[a4paper, oneside, openany]{book}
+\documentclass[a4paper]{article}
+
+%**************************************************************
+% Importazione package
+%************************************************************** 
+
+% modifica i margini
+%\usepackage[top=3.1cm, bottom=3.1cm, left=2.2cm, right=2.2cm]{geometry}
+
+% specifica con quale codifica bisogna leggere i file
+\usepackage[utf8]{inputenc}
+
+% per scrivere in italiano e in inglese;
+% l'ultima lingua (l'italiano) risulta predefinita
+\usepackage[english, italian]{babel}
+
+% imposta lo stile italiano per i paragrafi
+\usepackage{parskip}
+
+% permetti di definire dei colori
+\usepackage[usenames,dvipsnames]{color}
+
+% permette l'inserimento di url e di altri tipi di collegamento
+\usepackage[colorlinks=true]{hyperref}
+
+\hypersetup{
+    colorlinks=true, % false: boxed links; true: colored links
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, % color of internal links
+    urlcolor=Maroon  % color of external links
+}
+
+% permette al comando \url{...} di andare a capo a metà di un link
+\usepackage{breakurl}
+
+% immagini
+\usepackage{graphicx}
+
+% permette di riferirsi all'ultima pagina con \pageref{LastPage}
+\usepackage{lastpage}
+
+% tabelle su più pagine
+\usepackage{longtable}
+
+% tabelle con il campo X per riempire lo spazio rimanente sulla riga
+\usepackage{tabularx}
+
+% personalizza l'intestazione e piè di pagina
+\usepackage{fancyhdr}
+
+% permette di inserire caratteri speciali
+\usepackage{textcomp}
+
+\fancypagestyle{plain}{
+	% cancella tutti i campi di intestazione e piè di pagina
+	\fancyhf{}
+
+	\lhead{\GroupName{} \texttwelveudash \ProjectName{}}
+	\chead{}
+	\rhead{\slshape \leftmark}
+
+	\lfoot{\DocTitle \\ v\DocVersion}
+	\rfoot{\thepage\ di \pageref{LastPage}}
+
+	% Visualizza una linea orizzontale in cima e in fondo alla pagina
+	\renewcommand{\headrulewidth}{0.3pt}
+	\renewcommand{\footrulewidth}{0.3pt}
+}
+\pagestyle{plain}
+
+% Per inserire del codice sorgente formattato
+\usepackage{listings}
+
+\lstset{
+  extendedchars=true,          % lets you use non-ASCII characters
+  inputencoding=utf8,   % converte i caratteri utf8 in latin1, richiede \usepackage{listingsutf8} anzichè listings
+  basicstyle=\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,     % sets if automatic breaks should only happen at whitespace
+  breaklines=true,             % sets automatic line breaking
+  captionpos=t,                % sets the caption-position to top
+  commentstyle=\color{mygreen},   % comment style
+  frame=none,               % adds a frame around the code
+  keepspaces=true,            % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries,     % keyword style
+  numbers=none,               % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,              % how far the line-numbers are from the code
+  numberstyle=\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},    % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,           % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,     % underline spaces within strings only
+  showtabs=false,             % show tabs within strings adding particular underscores
+  stepnumber=5,               % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},    % string literal style
+  tabsize=4,                  % sets default tabsize
+  firstnumber=1      % visualizza i numeri dalla prima linea
+}
+
+% Permetti di utilizzare il grassetto per i caratteri Typewriter (per es. il font di \code{...} e \file{...})
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}

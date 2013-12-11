@@ -1,0 +1,43 @@
+*~
+*.tex.backup
+*.bak
+*.pdf
+
+# Questa estensione viene usara dal makefile quando vuole creare un file che
+# serve soltanto a memorizzare quando è stato eseguito per l'ultima volta un
+# comando che non produce un file per conto suo (es. check)
+*.cache
+
+# Le estensioni seguenti vengono proposte di default da GitHub ai repository contenenti documenti LaTeX
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.tdo

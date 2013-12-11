@@ -1,6 +1,6 @@
 SteakHolders
 ============
 
-Repository NON (ancora) ufficiale del gruppo SteakHolders
+Repository ufficiale dei documenti del gruppo **SteakHolders** per il progetto **MaaP**.
 
-Riferirsi alle Norme di Progetto per conoscere le regole, gli strumenti e le procedure da adottare (documenti/RR/Interni/Norme di Progetto/NormeDiProgetto.pdf).
+Riferirsi alle **Norme di Progetto** per conoscere le regole, gli strumenti e le procedure da adottare.

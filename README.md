@@ -1,5 +1,5 @@
-SteakHolders
-============
+Documentazione
+==============
 
 Repository ufficiale dei documenti del gruppo **SteakHolders** per il progetto **MaaP**.
 

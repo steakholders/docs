@@ -27,7 +27,12 @@ fi
 for tex_file in *.tex; do
 	pretty_file=$( pretty_path "$tex_file")
 	
-	encoding=$(file -bi "$tex_file")
+	if is_mac_os; then
+		encoding=$(file -bl "$tex_file")
+	else
+		encoding=$(file -bi "$tex_file")
+	fi
+	
 	if [[ $encoding != *"us-ascii"* ]] &&
 	   [[ $encoding != *"utf-8"* ]] &&
 	   [[ $encoding != *"binary"* ]]

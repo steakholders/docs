@@ -7,12 +7,12 @@ include $(REPO_DIR)/script/global.mk
 all: test documents
 
 documents:
-	@cd "NormeDiProgetto" && make documents
+	@cd "PianoDiQualifica" && make documents
 
 test:
-	@cd "NormeDiProgetto" && make test
+	@cd "PianoDiQualifica" && make test
 
 clean:
 	@rm -f *~
-	@cd "NormeDiProgetto" && make clean
+	@cd "PianoDiQualifica" && make clean
 

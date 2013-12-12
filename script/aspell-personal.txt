@@ -1,4 +1,4 @@
-personal_ws-1.1 it 35 
+personal_ws-1.1 it 36 
 Walkthrough
 nomemetrica
 Product
@@ -8,6 +8,7 @@ Node
 repository
 js
 pdf
+Variance
 an
 as
 windows

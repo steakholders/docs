@@ -134,6 +134,54 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item Range-ottimale: [3 - 8].
 			\end{itemize}
 			
+			\paragraph{Halstead}
+			La metrica di Halstead non è solamente un indice di complessità ma identifica le proprietà misurabili del software e le relative relazioni.
+			Si basa sull'osservazione che una metrica dovrebbe riflettere l'implementazione di un algoritmo in linguaggi differenti ma essere indipendente dall esecuzione su una specifica piattaforma.
+			In un problema vengono identificati:
+			\begin{itemize}
+				\item $n_1$ = il numero di operatori distinti
+				\item $n_2$ = il numero di operandi distinti
+				\item $N_1$ = il numero totale di operatori
+				\item $N_2$ = il numero totale di operandi
+			\end{itemize}
+			Da cui vengono calcolati:
+				\begin{itemize}
+				\item $n = n_1 + n_2$: vocabolario della funzione
+				\item $N = N_1 + N_2$: lunghezza della funzione
+			\end{itemize}
+			
+			\subparagraph{Halstead difficulty per-function}
+			Il livello di difficoltà di una funzione misura la propensione all'errore ed è proporzionale al numero di operatori presenti. 
+			\[
+			 D = \Bigl( \dfrac{n1}{2} \Bigr)  * \Bigl(  \dfrac{N2}{n2} \Bigr)
+			 \]
+			 \textbf{Parametri utilizzati:}
+			\begin{itemize}
+				\item Range-accettazione: [n.d. - n.d.].
+				\item Range-ottimale: [n.d. - n.d.].
+			\end{itemize}
+			
+			\subparagraph{Halstead volume per-function}
+			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una function senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
+			\[
+			 V = N * \log_{2}n
+			\]
+			\textbf{Parametri utilizzati:}
+			\begin{itemize}
+				\item Range-accettazione: [20 - 1250].
+				\item Range-ottimale: [20 - 1000].
+			\end{itemize}
+			
+			\subparagraph{Halstead effort per-function}
+			Lo sforzo per implementare o comprendere il significato di una funzione è proporzionale al volume a al suo livello di difficoltà.
+			 \[
+			 E = V * D
+			\]
+			 \begin{itemize}
+				\item Range-accettazione: [n.d. - n.d.].
+				\item Range-ottimale: [n.d. - n.d.].
+			\end{itemize}
+			
 			
 			
 			

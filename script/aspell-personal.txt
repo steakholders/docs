@@ -1,10 +1,12 @@
-personal_ws-1.1 it 20 
+personal_ws-1.1 it 25 
+Pianciamore
 DSL
 CoffeeStrap
 MaaP
 Chrome
 admin
 Node
+Lavazza
 Postcondizione
 js
 cases
@@ -13,8 +15,11 @@ Firefox
 an
 as
 Franceschi
+UML
 Tresoldi
+Sommerville
 framework
+Ian
 stack
 UC
 Platform

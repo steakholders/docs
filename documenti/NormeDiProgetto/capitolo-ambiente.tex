@@ -11,10 +11,11 @@
 		
 		Per assicurarsi la corretta visualizzazione dei caratteri accentati tutti i file testuali presenti nel \glossario{repository} devono essere memorizzati con la codifica \glossario{UTF-8}.
 		
-		\subsubsection{Repository}
+		\subsubsection{Versionamento}
 		
-		Per 
-
+		Per il versionamento dei documenti e del codice viene usato \textbf{Git} (\url{http://git-scm.com/}).
+		Si utilizzerà il servizio \textbf{GitHub} per creare e gestire i repository privati utilizzati dal gruppo.
+		
 	\subsection{Coordinamento}
 		
 		Per coordinare le attività, gli eventi, per le comunicazioni e per il conteggio delle ore viene utilizzata la piattaforma \textbf{Teamwork Project Manager} (\url{http://teamworkpm.net})
@@ -81,12 +82,21 @@
 		\subsubsection{Controllo ortografico}
 		
 		Per aiutare il controllo ortografico verrà utilizzato il software \emph{Aspell} (\url{http://aspell.net}, versione $\geq 0.60.7$) con il dizionario italiano.
-		Per controllare un file \LaTeX{} con \emph{Aspell} l'utilizzo da terminale è il seguente: \\
+		
+		Per controllare un file \LaTeX{} con \emph{Aspell} l'utilizzo da terminale è il seguente:
 \begin{lstlisting}
 aspell --lang it --mode tex --encoding utf-8 --personal root/script/aspell_personal.txt --repl root/script/aspell_replacements.txt check {nome del file da controllare}
 \end{lstlisting}
 		
 		Per comodità è stato predisposto il comando \code{make check}, come descritto nella sezione \ref{makefile}.
+		
+		Quando Aspell segnala un errore su una parola:
+		\begin{itemize}
+		 \item Se la parola ha un errore ortografico, correggerla scegliendo una delle parole proposte da Aspell oppure usando il comando \textbf{``rimpiazza''};
+		 \item Se la parola è scorretta e deve essere modificata tutta la frase, selezionare il comando \textbf{``abbandona''} e fare la modifica utilizzando una \glossario{IDE};
+		 \item Se l'errore segnalato da Aspell è un falso positivo, selezionare il comando \textbf{``aggiungi''}.
+		\end{itemize}
+
 		
 		\subsubsection{UML}
 		

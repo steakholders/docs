@@ -1,4 +1,4 @@
-personal_ws-1.1 it 105 
+personal_ws-1.1 it 109 
 repository
 pdflatex
 personal
@@ -8,7 +8,6 @@ AR
 TeamworkPM
 dd
 branch
-Branch
 JSHint
 global
 Name
@@ -34,10 +33,12 @@ Javascript
 monospace
 ND
 ln
+rimpiazza'
 repl
 NomeDelDocumento
 template
 AAAA
+abbandona'
 Ubuntu
 MU
 NP
@@ -76,6 +77,7 @@ Description
 Professional
 PDF
 pdf
+aggiungi'
 TexMaker
 path
 git
@@ -87,6 +89,7 @@ utf
 jQuery
 encoding
 Hangouts
+IDE
 JSLint
 tasks
 txt
@@ -96,6 +99,7 @@ yyyy
 Skype
 Compito'
 lang
+GitHub
 text
 All
 sottoscrivibile

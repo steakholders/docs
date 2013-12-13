@@ -1,4 +1,4 @@
-personal_ws-1.1 it 109 
+personal_ws-1.1 it 114 
 repository
 pdflatex
 personal
@@ -29,6 +29,7 @@ FAQ
 History
 it
 markup
+js
 Javascript
 monospace
 ND
@@ -83,6 +84,7 @@ path
 git
 URL
 Compiler
+TODO
 Astah
 root
 utf
@@ -90,11 +92,14 @@ jQuery
 encoding
 Hangouts
 IDE
+npm
 JSLint
 tasks
 txt
+Node
 replacements
 Google
+packet
 yyyy
 Skype
 Compito'

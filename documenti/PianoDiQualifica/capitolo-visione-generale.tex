@@ -15,8 +15,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Il \emph{Diario delle modifiche} viene incluso in ogni documento e mantiene lo storico dell'evoluzione del documento.
 	
 	\subsection{Pianificazione strategica e temporale}
-	Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi pre-fissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche, è questo il caso di \glossario{bug } o \emph{errori}. La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}, questo lavoro verrà svolto da automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. Questo assicura la qualità dei ogni processo. \\
-	L'efficienza dei processi si basa sugli automatismi, sarà così possibile destinare le risorse umane a lavori più mirati. L'utilizzo di software apposito permette di eseguire controlli \emph{Walkthrough} con precisione assoluta e l'esclusivo consumo di risorse tecnologiche, nonché un notevole risparmio di tempo.
+	Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi pre-fissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche, è questo il caso di \glossario{bug } o \emph{errori}. La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}, questo lavoro verrà svolto da automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. Questo assicura la qualità di ogni processo. \\
+	L'efficienza dei processi si basa sugli automatismi, sarà così possibile destinare le risorse umane a lavori più mirati. L'utilizzo di software apposito permette di eseguire controlli \glossario{\emph{Walkthrough}} con precisione assoluta e l'esclusivo consumo di risorse tecnologiche, nonché un notevole risparmio di tempo.
 	
 	\subsection{Responsabilità}
 	La responsabilità della verifica viene attribuita al \emph{Responsabile di Progetto} e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \emph{Piano di Progetto}.
@@ -41,7 +41,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 %		\subsubsection{Risorse necessarie}		% AWS, server per continous integration..
 		
 	\subsection{Strumenti}
-		I \emph{tools} non disponibile ma necessari sono stati inseriti nelle \emph{Norme di Progetto}. % basta questo?
+		I \emph{tools} non disponibili ma necessari sono stati inseriti nelle \emph{Norme di Progetto}. % basta questo?
 	
 %\iffalse     %% è una sorta di commento
 	\subsection{Tecniche}
@@ -68,7 +68,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			...da completare	
 			
 		\subsubsection{Metriche per i documenti}
-		La \emph{leggibilità} dei documenti è indispensabile per garantirne la qualità. Si è scelto di adottare indici per la misurazione 
+		La \emph{leggibilità} dei documenti è indispensabile per garantirne la qualità. Si è scelto di adottare un indice per misurare la leggibilità dei testi in lingua italiana:
 			\paragraph{Gulpease}
 			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. Permette di misurare la complessità dello stile di un documento.
 			L'indice di Gulpease considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere.
@@ -92,10 +92,10 @@ La speranza è che dei buoni processi portino ad un buon software.
 		Di seguito vengono elencate le metriche per il software prodotto.		
 		
 			\paragraph{Complessità ciclomatica}
-			La complessità ciclomatica è una metrica software che indica la complessità di un programma misurando il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Nel grafo di controllo di flusso i \emph{nodi} corrispondono a gruppi indivisibili di istruzioni, mentre gli \emph{archi} connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
-			Questo indice può essere applicato indistintamente singole funzioni, moduli, metodi o classi di un programma.
+			La complessità ciclomatica è una metrica software che indica la complessità di un programma misurando il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Nel grafo sopracitato i \emph{nodi} corrispondono a gruppi indivisibili di istruzioni, mentre gli \emph{archi} connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
+			Questo indice può essere applicato indistintamente a singole funzioni, moduli, metodi o classi di un programma.
 			Si vuole utilizzare tale metrica per limitare la complessità durante la fase di sviluppo.
-			Durante il testing è utile per determinare il numero di casi di test necessari, l'indice di complessità è un limite superiore al numero di test necessari per raggiungere il coverage completo del modulo testato. Inoltre uno studio ha mostrato forti corrispondenze tra le metriche di complessità e il livello di Coesione nelle classi prese in esame\footnote{Stein, C., G. Cox and L. Etzkorn, 2005. Exploring the Relationship between Cohesion and Complexity. J. Comput. Sci., 1: 137-144.}.\\
+			Durante il testing è utile per determinare il numero di casi di test necessari, l'indice di complessità è un limite superiore al numero di test necessari per raggiungere il coverage completo del modulo testato. Inoltre uno studio ha mostrato forti corrispondenze tra le metriche di complessità e il livello di coesione nelle classi prese in esame\footnote{Stein, C., G. Cox and L. Etzkorn, 2005. Exploring the Relationship between Cohesion and Complexity. J. Comput. Sci., 1: 137-144.}.\\
 		\textbf{Parametri utilizzati:}
 			\begin{itemize}
 				\item Range-accettazione: [0 - 15].
@@ -103,7 +103,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 			\paragraph{Numero metodi - NOM}
-			Il \emph{Number of methods} è una metrica usata per calcolare la media dei metodi per classe. Una classe non dovrebbe contenere un numero eccessivo di metodi. Un valore inferiore al minimo range di accettazione indica una costruzione simile ad una struttura dati e non di una classe intesa nell'accezione \emph{OOP}, mentre valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione della classe.
+			Il \emph{Number of methods} è una metrica usata per calcolare la media delle occorrenze dei metodi per classe. Una classe non dovrebbe contenere un numero eccessivo di metodi. Un valore inferiore al minimo range di accettazione indica una costruzione simile ad un dato e non di una classe intesa nell'accezione \glossario{\emph{OOP}}. Valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione della classe.\\
 			\textbf{Parametri utilizzati:}
 			\begin{itemize}
 				\item Range-accettazione: [3 - 10].
@@ -111,7 +111,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 			\paragraph{Variabili non usate e non definite}
-			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\emph{Abstract syntax tree - AST} eseguendo una cross-reference tra le variabili dichiarate e quelle assegnate. Per sua natura \emph{Javascript} non blocca l'insorgenza di tali occorrenze, infatti di default non vengono segnalate tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà utilizzata.
+			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\emph{Abstract syntax tree - AST} eseguendo una cross-reference tra le variabili dichiarate e quelle inizializzate. Per sua natura \glossario{\emph{Javascript}} non blocca l'insorgenza di tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà mai utilizzata.\\
 			\textbf{Parametri utilizzati:}
 			\begin{itemize}
 				\item Range-accettazione: [0 - 0].
@@ -127,7 +127,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 			\paragraph{Numero attributi per classe}
-			Un numero elevato di attributi un una classe evidenzia la necessità di decomporre la classe in sottoclassi seguendo il principi dell'\emph{OOP}. Un alto valore di questo indice segnala un possibile errore di progettazione.
+			Un numero elevato di attributi in una classe evidenzia la necessità di decomporre la classe in sottoclassi seguendo il principi dell'\glossario{\emph{OOP}}. Un alto valore di questo indice segnala un possibile errore di progettazione.\\
 			\textbf{Parametri utilizzati:}
 			\begin{itemize}
 				\item Range-accettazione: [0 - 16].

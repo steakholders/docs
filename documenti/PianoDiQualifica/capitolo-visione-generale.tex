@@ -15,9 +15,73 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Il \emph{Diario delle modifiche} viene incluso in ogni documento e mantiene lo storico dell'evoluzione del documento.
 	
 	\subsection{Pianificazione strategica e temporale}
-	Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi pre-fissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche, è questo il caso di \glossario{bug } o \emph{errori}. La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}, questo lavoro verrà svolto da automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. Questo assicura la qualità di ogni processo. \\
-	L'efficienza dei processi si basa sugli automatismi, sarà così possibile destinare le risorse umane a lavori più mirati. L'utilizzo di software apposito permette di eseguire controlli mirati con precisione assoluta e l'esclusivo consumo di risorse tecnologiche, nonché un notevole risparmio di tempo.
+		\subsubsection{Strategia}
+		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi pre-fissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche, è questo il caso di \glossario{bug } o \emph{errori}. La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}, questo lavoro verrà svolto da automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. Questo assicura la qualità di ogni processo. \\
+	L'efficienza dei processi si basa sugli automatismi, sarà così possibile destinare le risorse umane a lavori più mirati. L'utilizzo di software apposito permette di eseguire controlli mirati con precisione assoluta e l'esclusivo consumo di risorse tecnologiche, nonché un notevole risparmio di tempo.\\
 	
+		\subsubsection{Tempistiche}
+		La pianificazione strategica si basa sul modello \glossario{SEMAT}, la qualità di \glossario{Maap} coinvolge le sezioni \emph{Software System} del binario \emph{Solution} e la sezione \emph{Way of Working} di  \emph{Endeavor}. \\
+		
+   { \centering \includegraphics[width=1\textwidth]{Semat.png} \\}
+   
+   Di seguito viene descritto lo stato che ogni fase descritta dal \emph{Piano di Progetto} deve soddisfare, in relazione alle sezioni sopracitate del \glossario{SEMAT}. Le seguenti specifiche non coprono in toto gli stati indicati da \glossario{SEMAT}, ma considerano solo l'aspetto relativo alla qualità descritto in questo documento.
+   
+   	\paragraph{Analisi}
+    	\begin{itemize}
+    		\item Software System:
+    			\begin{enumerate}
+    				\item \emph{Architecture Selected:} le piattaforme, le tecnologie e i linguaggi da usare sono stati selezionati; vengono individuate le metriche il software, i documenti e i processi;
+    			\end{enumerate}
+    		\item Way of Working:
+    			\begin{enumerate}
+    				\item \emph{Principles Established:} i vincoli sono stati definiti nelle \NormeDiProgetto, i \glossario{tools} sono stati individuati, il team comincia ad operare secondo quanto stabilito;
+    				\item \emph{Foundation Established:} i \glossario{tools} per la qualità sono configurati, le buone pratiche da seguire sono definite;
+    				\item \emph{In Use:} alcuni membri del team utilizzano le pratiche indicate e i tools vengono usati e migliorati, vengono raccolti feedback sull'utilizzo degli strumenti per la qualità;
+    			\end{enumerate}
+    	\end{itemize}
+    	
+	\paragraph{Progettazione Architetturale}	
+		\begin{itemize}
+    		\item Software System:
+    			\begin{enumerate}
+    			\setcounter{enumi}{1}
+    				\item \emph{Demonstrable:} le caratteristiche chiave dell'architettura software sono state individuate e gli \glossario{stakeholders} sono in accordo, vengono individuate le unità da testare per soddisfare la richiesta del \glossario{proponente} di verificare il funzionamento di almeno il 70\% del software prodotto;
+    			\end{enumerate}
+    		\item Way of Working:
+    			\begin{enumerate}
+    			\setcounter{enumi}{3}
+    				\item \emph{In Place:} tutti i membri utilizzano e comprendono l'intero ambiente di lavoro che è configurato secondo le \NormeDiProgetto ; il \glossario{repository} è configurato per accettare solo materiale in linea con le norme stabilite;
+    				\item \emph{Working Well:} tutto il team lavora in modo coordinato secondo le norme applicando le pratiche individuate nelle 	norme, i \glossario{tools} supportano a pieno regime l'attività di lavoro;
+    			\end{enumerate}
+    			
+    	\end{itemize}
+    	
+	\paragraph{Progettazione di Dettaglio e Codifica}	
+		\begin{itemize}
+    		\item Software System:
+    			\begin{enumerate}
+    			\setcounter{enumi}{2}
+    				\item \emph{Usable:} il sistema è parzialmente usabile, vengono praticati gli opportuni test che saranno convalidati, il livello di anomalie sarà accettabile;
+    				\item\emph{Ready: }la documentazione utente è disponibile ed è conforme alle norme, vengono forniti i risultati dell'analisi statica e dei test eseguiti, si correggono le anomalie, gli \glossario{stakeholder} accettano il sistema;
+    			\end{enumerate}
+    	\end{itemize}
+    	
+	\paragraph{Verifica e Validazione}	
+		\begin{itemize}
+    		\item Software System:
+    			\begin{enumerate}
+    			\setcounter{enumi}{4}
+    				\item \emph{Operational:} il sistema è in un uso in un ambiente pienamente funzionante, vengono ultimati gli ultimi test;
+    				\item \emph{Retired:} il ritiro del software non viene considerato all'interno di questo progetto didattico;
+    			\end{enumerate}
+    		\item Way of Working:
+    			\begin{enumerate}
+    			\setcounter{enumi}{5}
+    				\item \emph{Retired:}  il ritiro del software non viene considerato all'interno di questo progetto didattico;
+    			\end{enumerate}
+    	\end{itemize}
+	
+		
 	\subsection{Responsabilità}
 	La responsabilità della verifica viene attribuita al \emph{Responsabile di Progetto} e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \emph{Piano di Progetto}.
 	
@@ -63,7 +127,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 		Le tecniche analitiche comprendono tutte quelle azioni volte a valutare criticamente un 	componente che viene scomposto in sotto parti secondo logiche precise. Viene poi sviluppata una visione generale che tiene conto di tutte le relazioni tra le sotto componenti. Comprende tecniche come l'analisi della complessità, degli algoritmi e del controllo di flusso. L'analisi di complessità è utile per valutare quanto un componente è articolato da progettare, implementare, testare o manutenere. Il controllo di flusso è volto al riconoscimento delle anomalie e può essere usato a supporto di altre attività. Infine l'analisi degli algoritmi è fondamentale in quei software in cui vi è una componente algoritmica importante e vi è la necessità di assicurare output consistenti e corretti. 
 				
 		\subsubsection{Dinamiche}
-		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test basati sull'effettiva esecuzione del codice, tali controlli devono essere ripetibili, è quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, per verificare velocemente che gli output siano quelli attesi. Un file di \glossario{\emph{log}} sarà sempre presente e permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di visione, da una a grana fine con i \emph{test di unità} per giungere ad una controllo di insieme con il \emph{test di sistema}.
+		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test basati sull'effettiva esecuzione del codice, tali controlli devono essere ripetibili, è quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, per verificare velocemente che gli output siano quelli attesi. Un file di \glossario{\emph{log}} sarà sempre presente e permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di visione, da una a grana fine con i \emph{test di unità} per giungere ad una controllo di insieme con il \emph{test di sistema}.\\
+		Il \glossario{proponente}, nel corso del primo incontro, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
 		
 			\paragraph{Test di unità}
 			Si tratta di testare le unità nel loro funzionamento e negli output prodotti tramite l'utilizzo di \glossario{\emph{stub}}, \glossario{\emph{test driver}}, e \glossario{\emph{logger}}. Un \glossario{\emph{unità}} consiste nella più piccola quantità di software che è utile verificare singolarmente.
@@ -82,20 +147,30 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\paragraph{Test di accettazione}
 			Si tratta del collaudo del prodotto in presenza del proponente. Al superamento di tale collaudo segue il rilascio ufficiale del prodotto sviluppato.
 			
-			
-
+		
 	
 	\subsection{Misure e Metriche}
 	\label{MisureMetriche}
-	Vengono adottate delle metriche per rendere misurabili e valutabili i processi, i documenti ed il software prodotto. La visione è strettamente quantitativa e serve al gruppo per monitorare l'andamento dei processi e la qualità del prodotto. Si è scelto di includere due tipologie di range:
-	\begin{itemize}
-		\item Accettazione: valori richiesti affinché il prodotto venga accettato.
-		\item Ottimale: valori entro cui dovrebbe collocarsi la misurazione. Tale range non è vincolante ma fortemente consigliato. Qualora si verificassero valori collocati tra l'ottimale e l'accettabile si valuterà di volta in volta se intervenire.
-	\end{itemize}
+	Vengono adottate delle metriche per rendere misurabili e valutabili i processi, i documenti ed il software prodotto. La visione non vuole essere comparativa ma serve al gruppo per monitorare l'andamento dei processi e la qualità del prodotto. Le \NormeDiProgetto specificano per ogni metrica quali sono i range di accettazione e ottimali.
 		
 		\subsubsection{Metriche per i processi}
+		Le seguenti metriche rappresentano un indicatore volto a monitorare e prevedere l'andamento delle principali variabili critiche del progetto (i tempi e i costi). Sono state scelte metriche di tipo \glossario{consuntivo} perché danno un riscontro immediato sullo stato attuale del progetto; ad ogni iterazione verranno valutati tali indici e, se necessario, verranno stabiliti opportuni provvedimenti da parte del \emph{Responsabile di Progetto}.
+		
 			\paragraph{Schedule Variance}		
-			...da completare	
+			Indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
+			\[
+			SV = BCWP - BCWS
+			\]
+			Dove $BCWP\  =\  valore \ delle \ attività \ realizzate \ alla\  data \ corrente$ e $BCWS \ = \ costo \ pianificato \ per\  realizzare\  le \ attività \ di \ progetto\  alla\  data \ corrente.$ 
+			È un indicatore di efficacia soprattutto nei confronti del Cliente. Se SV > 0 significa che il progetto sta producendo con maggior velocità a quanto pianificato, viceversa se negativo.
+			
+			\paragraph{Budget Variance}
+			Indica se alla data corrente si è speso di più o di meno rispetto a quanto previsto a budget alla data corrente.
+			\[
+			BV = BCWS - ACWP
+			\]
+			Dove $BCWS \ =\  costo\ pianificato\ per\ realizzare\ le\ attività \ di\  progetto \ alla\  data \ corrente.$ e $ACWP \ = \ costo \ effettivamente\  sostenuto \ alla \ data\  corrente.$
+			È un indicatore che ha un valore unicamente contabile e finanziario. Se BV > 0 significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo. 
 			
 		\subsubsection{Metriche per i documenti}
 		La \emph{leggibilità} dei documenti è indispensabile per garantirne la qualità. Si è scelto di adottare un indice per misurare la leggibilità dei testi in lingua italiana:
@@ -112,33 +187,20 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item Inferiore a 60 sono difficili da leggere per chi ha la licenza media.
 				\item Inferiore a 40 sono difficili da leggere per chi ha un diploma superiore.
 			\end{itemize}
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [40 - 100].
-				\item Range-ottimale: [50 - 100].
-			\end{itemize}
 			
 		\subsubsection{Metriche per il software}
-		Di seguito vengono elencate le metriche per il software prodotto.		
+		La prima release di  \glossario{NodeJs} risale a Maggio 2009, è stata riscontrata una forte differenza di librerie disponibili per l'analisi statica rispetto ai linguaggi meno recenti. Inoltre nessun membro del gruppo ha conoscenza di tale linguaggio e delle sue particolarità come l'aspetto \glossario{funzionale}. Tali differenze con i linguaggi studiati nel percorso universitario si sono tradotte nella difficoltà ad individuare metriche non incentrate sulla visione \emph{ad oggetti} del codice. Si è inoltre osservata l'assenza di strumenti per la misurazione di metriche tradizionali come la coesione e l'instabilità dei package.
+		Di seguito vengono elencate le metriche per il software prodotto. 
 		
 			\paragraph{Complessità ciclomatica}
 			La complessità ciclomatica è una metrica software che indica la complessità di un programma misurando il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Nel grafo sopracitato i \emph{nodi} corrispondono a gruppi indivisibili di istruzioni, mentre gli \emph{archi} connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
-			Questo indice può essere applicato indistintamente a singole funzioni, moduli, metodi o classi di un programma.
+			Questo indice può essere applicato indistintamente a singole funzioni, moduli, metodi o package di un programma.
 			Si vuole utilizzare tale metrica per limitare la complessità durante la fase di sviluppo.
-			Durante il testing è utile per determinare il numero di casi di test necessari, l'indice di complessità è un limite superiore al numero di test necessari per raggiungere il coverage completo del modulo testato. Inoltre uno studio ha mostrato forti corrispondenze tra le metriche di complessità e il livello di coesione nelle classi prese in esame\footnote{Stein, C., G. Cox and L. Etzkorn, 2005. Exploring the Relationship between Cohesion and Complexity. J. Comput. Sci., 1: 137-144.}.\\
-		\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [0 - 15].
-				\item Range-ottimale: [0 - 10]\footnote{McCabe (dicembre 1976). A Complexity Measure. IEEE Transactions on Software Engineering: 308–320.}.
-			\end{itemize}
+			Durante il testing è utile per determinare il numero di casi di test necessari, l'indice di complessità è un limite superiore al numero di test necessari per raggiungere il coverage completo del modulo testato. Inoltre uno studio ha mostrato forti corrispondenze tra le metriche di complessità e il livello di coesione nei package presi in esame\footnote{Stein, C., G. Cox and L. Etzkorn, 2005. Exploring the Relationship between Cohesion and Complexity. J. Comput. Sci., 1: 137-144.}.\\
 			
 			\paragraph{Numero metodi - NOM}
-			Il \emph{Number of methods} è una metrica usata per calcolare la media delle occorrenze dei metodi per classe. Una classe non dovrebbe contenere un numero eccessivo di metodi. Un valore inferiore al minimo range di accettazione indica una costruzione simile ad un dato e non di una classe intesa nell'accezione \glossario{\emph{OOP}}. Valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione della classe.\\
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [3 - 10].
-				\item Range-ottimale: [3 - 7].
-			\end{itemize}
+			Il \emph{Number of methods} è una metrica usata per calcolare la media delle occorrenze dei metodi per package. Un package non dovrebbe contenere un numero eccessivo di metodi. Un valore inferiore al minimo range di accettazione indica una costruzione simile ad un dato. Valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione del package.\\
+
 			
 			\paragraph{Bugs per lines of code}
 			% http://mayerdan.com/ruby/2012/11/11/bugs-per-line-of-code-ratio/
@@ -147,31 +209,19 @@ La speranza è che dei buoni processi portino ad un buon software.
 			
 			\paragraph{Variabili non usate e non definite}
 			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\emph{Abstract syntax tree - AST} eseguendo una cross-reference tra le variabili dichiarate e quelle inizializzate. Per sua natura \glossario{\emph{Javascript}} non blocca l'insorgenza di tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà mai utilizzata.\\
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [0 - 0].
-				\item Range-ottimale: [0 - 0].
-			\end{itemize}
+
 			
 			\paragraph{Numero parametri per metodo}
 			Un numero elevato di parametri per un metodo potrebbe evidenziare un metodo troppo complesso.
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [0 - 8].
-				\item Range-ottimale: [0 - 4].
-			\end{itemize}
+
 			
-			\paragraph{Numero attributi per classe}
-			Un numero elevato di attributi in una classe evidenzia la necessità di decomporre la classe in sottoclassi seguendo il principi dell'\glossario{\emph{OOP}}. Un alto valore di questo indice segnala un possibile errore di progettazione.\\
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [0 - 16].
-				\item Range-ottimale: [3 - 8].
-			\end{itemize}
+			\paragraph{Numero attributi per package}
+			Un numero elevato di attributi in un package evidenzia un possibile errore di progettazione.\\
+
 			
 			\paragraph{Halstead}
 			La metrica di Halstead non è solamente un indice di complessità ma identifica le proprietà misurabili del software e le relative relazioni.
-			Si basa sull'osservazione che una metrica dovrebbe riflettere l'implementazione di un algoritmo in linguaggi differenti ma essere indipendente dall esecuzione su una specifica piattaforma.
+			Si basa sull'osservazione che una metrica dovrebbe riflettere l'implementazione di un algoritmo in linguaggi differenti ma essere indipendente dal esecuzione su una specifica piattaforma.
 			In un problema vengono identificati:
 			\begin{itemize}
 				\item $n_1$ = il numero di operatori distinti
@@ -190,32 +240,21 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\[
 			 D = \Bigl( \dfrac{n1}{2} \Bigr)  * \Bigl(  \dfrac{N2}{n2} \Bigr)
 			 \]
-			 \textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [n.d. - n.d.].
-				\item Range-ottimale: [n.d. - n.d.].
-			\end{itemize}
+
 			
 			\subparagraph{Halstead volume per-function}
 			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una function senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
 			\[
 			 V = N * \log_{2}n
 			\]
-			\textbf{Parametri utilizzati:}
-			\begin{itemize}
-				\item Range-accettazione: [20 - 1250].
-				\item Range-ottimale: [20 - 1000].
-			\end{itemize}
+
 			
 			\subparagraph{Halstead effort per-function}
 			Lo sforzo per implementare o comprendere il significato di una funzione è proporzionale al volume a al suo livello di difficoltà.
 			 \[
 			 E = V * D
 			\]
-			 \begin{itemize}
-				\item Range-accettazione: [n.d. - n.d.].
-				\item Range-ottimale: [n.d. - n.d.].
-			\end{itemize}
+
 			
 			
 			

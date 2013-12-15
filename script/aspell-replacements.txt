@@ -1,3 +1,4 @@
 personal_repl-1.1 it 0 
 ec ecc
 rischesto richiesto
+sarnno saranno

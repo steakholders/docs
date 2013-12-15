@@ -1,6 +1,8 @@
-personal_ws-1.1 it 116 
+personal_ws-1.1 it 129 
 repository
+Mistake'
 pdflatex
+Tag
 personal
 CamelCase
 completo'
@@ -9,20 +11,25 @@ TeamworkPM
 dd
 branch
 JSHint
+Error'
 global
+titolo'
 Name
 DP
 Version
 Closure
 Programmer
 GG
+Application
 nomeDellaFunzione
 Kile
 Fedora
 Gantt
 hh
 gedit
+Maap
 tex
+Maas
 Location
 Teamwork
 FAQ
@@ -57,6 +64,7 @@ OT
 PP
 PQ
 Apple
+RSYZ
 SF
 pianificata'
 storage
@@ -67,8 +75,8 @@ UML
 Calendar
 RQ
 Markdown
-RR
 dimostrabilmente
+RR
 Project
 project'
 framework
@@ -90,6 +98,7 @@ TODO
 Astah
 root
 utf
+Fault'
 jQuery
 encoding
 Hangouts
@@ -99,11 +108,14 @@ JSLint
 tasks
 txt
 Node
+Modifica'
 replacements
 Google
 packet
 yyyy
 Skype
+num
+Maap's
 Compito'
 lang
 GitHub
@@ -113,5 +125,6 @@ sottoscrivibile
 documents
 Makefile
 Verifica'
+Failure'
 aspell
 pre

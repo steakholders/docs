@@ -1,8 +1,9 @@
-personal_ws-1.1 it 50 
+personal_ws-1.1 it 51 
 Rails
 Dashboard
 Pianciamore
 DSL
+Postcondizione
 CoffeeStrap
 Maap
 MaaP
@@ -12,14 +13,15 @@ admin
 Node
 Lavazza
 gray
-Postcondizione
+Postcondizioni
+RAU
 js
 cases
 pdf
 Firefox
 an
 ActiveAdmin
-Postcondizioni
+sottoattributi
 as
 Franceschi
 Log
@@ -27,12 +29,10 @@ logout
 driven
 UML
 Tresoldi
-sottoattributi
 line
 Page
 event
 collection
-Collection
 Ruby
 Sommerville
 application
@@ -45,6 +45,7 @@ UCU
 form
 Ian
 stack
+ROOT
 UC
 NoSQL
 Platform

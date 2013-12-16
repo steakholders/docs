@@ -24,25 +24,6 @@ Tutti i file e le cartelle non devono contenere spazi nel loro nome.
 
 Il nome utilizzato per le \glossario{branch} del repository dovrà essere nella forma \textbf{nome-branch}, ossia con tutte le lettere minuscole e le parole separate da un trattino.
 
-\subsubsection{Utilizzo del Makefile}
-\label{makefile}
-
-Per agevolare alcune operazioni sul repository è presente uno script \glossario{Makefile}. Al momento sono previsti due utilizzi:
-\begin{itemize}
- \item \textbf{\code{make test}} \\
-	Per ogni file \file{*.tex} contenuto nella cartella e nelle sue sotto-cartelle:
-	\begin{itemize}
-		\item Verifica che i file siano memorizzati con la codifica \glossario{UTF-8};
-		\item Verifica con \emph{Aspell} che le parole utilizzate nei documenti siano comprese nel dizionario italiano di \emph{Aspell} o nel dizionario personalizzato \file{root/script/aspell\_personal.txt}.
-	\end{itemize}
- \item \textbf{\code{make documents}} \\
-	Compila tutti i documenti presenti nelle sotto-cartelle.
-
-% TODO modificare gli script in modo che ci sia anche make build, che prepara tutti i file root/build/{RR}/NomeDelDocumento.pdf
-\end{itemize}
-
-È possibile eseguire questo script dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository.
-
 \subsubsection{Script di pre-commit}
 
 Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository è disponibile uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi descritti nella sezione \ref{makefile}. Se uno dei due comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.

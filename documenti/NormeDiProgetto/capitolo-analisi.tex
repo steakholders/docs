@@ -8,44 +8,37 @@ Tutti i requisiti devono essere riconducibile al capitolato o ad un incontro con
 
 Ogni requisito è identificato da un nome, che segue il seguente formalismo:
 \begin{center}
-	\code{R\{Ambito\}\{Gerarchia\}}
+	\code{R\{X\}\{Y\}\{Z\} \{num\}}
 \end{center}
 
-Dove
+Dove:
 \begin{itemize}
- \item \textbf{Ambito} può essere:
+ \item \textbf{X} corrisponde al sistema di riferimento e può assumere i seguenti valori:
 	\begin{itemize}
-	 \item \textbf{U} se è un \emph{requisito utente};
-	 \item \textbf{S} se è un \emph{requisito di sistema}.
+	 \item[] \textbf{A} = Applicazione \glossario{Maap};
+	 \item[] \textbf{F} = \glossario{Framework} di \glossario{Maap};
+	 \item[] \textbf{S} = \glossario{Maas}.
 	\end{itemize}
 
- \item \textbf{Gerarchia} identifica in modo univoco la posizione che il requisito ha nella gerarchia in cui sono posti tutti i requisiti di uno stesso ambito.
+ \item \textbf{Y} corrisponde alla tipologia del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{1} = Funzionale;
+	 \item[] \textbf{2} = Di prestazione;
+	 \item[] \textbf{3} = Di qualità;
+	 \item[] \textbf{4} = Vincolo.
+	\end{itemize}
+
+ \item \textbf{Z} corrisponde alla priorità del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{O} = Obbligatorio
+	 \item[] \textbf{D} = Desiderabile
+	 \item[] \textbf{F} = Facoltativo o opzionale
+	\end{itemize}
+
+ \item \textbf{num} identifica in modo univoco la posizione che il requisito ha nella gerarchia. La numerazione va fatta in modo incrementale per i fratelli. % TODO la gerarchia è unica o ce n'è una per ogni sistema/tipologia/priorità?
 \end{itemize}
 
-RSYZ num
-
-dove:
-
-S corrisponde al sistema di riferimento e può assumere i seguenti valori:
-
-A = Maap's Application
-F = Maap Framework
-S = Maas
-
-Y corrisponde alla tipologia del requisito e può assumere i seguenti valori:
-
-1 = Funzionale
-2 = Prestazionale
-3 = Di qualità
-4 = Vincolo
-
-Z corrisponde alla priorità del requisito e può assumere i seguenti valori:
-
-O = Obbligatorio
-D = Desiderabile
-F = Facoltativo o opzionale
-
-La numerazione inoltre va fatta in modo incrementale per i fratelli.
+\subsection{Use case}
 
 \subsection{UML}
 

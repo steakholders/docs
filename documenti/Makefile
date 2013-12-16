@@ -8,11 +8,14 @@ all: test documents
 
 documents:
 	@cd "NormeDiProgetto" && make documents
+	@cd "PianoDiProgetto" && make documents
 
 test:
 	@cd "NormeDiProgetto" && make test
+	@cd "PianoDiProgetto" && make test
 
 clean:
 	@rm -f *~
 	@cd "NormeDiProgetto" && make clean
+	@cd "PianoDiProgetto" && make clean
 

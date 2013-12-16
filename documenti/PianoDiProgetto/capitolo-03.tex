@@ -1,0 +1,366 @@
+\section{Pianificazione}
+	\subsection{Analisi}
+
+Questa fase ha inizio il 2013-12-01 e termina il 2014-01-08, ma dato che la scadenza di consegna dei documenti è prevista il 2013-12-20 la reale durata di questa fase è di 20 giorni. \\
+I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Analista}, \textit{Progettista}, \textit{Responsabile}, \textit{Verificatore}. \\ \\
+La suddivisione dei task è incentrata sull'\textit{Analisi dei requisiti}. Per tale motivo viene redatta e verificata subito la parte del \textit{Piano di progetto} relativo all'anilisi.
+Aderendo al \textbf{modello incrementale} l'\textit{Analisi dei requisiti} è suddivisa in due, la prima riguardante stesura e verifica dei requisiti fondamentali e desiderabili, la seconda riguardante quelli opzionali.
+\subsubsection{Gantt attività}
+\ganttset{
+	vgrid,
+	time slot format=isodate,
+	newline shortcut=true,
+	x unit=0.4cm,
+	y unit chart=0.45cm,
+%	
+	title/.append style={inner sep=0pt},
+	title label font=\footnotesize,
+	title height=.4,
+%
+	group label font=\scriptsize,
+	group peaks tip position=0,
+	group left shift=0,
+	group right shift=0,
+%
+	bar/.style={draw=black, fill=black!25},
+	bar label font=\tiny,
+	bar label node/.append style={align=right}
+}
+
+\begin{figure}[H]
+\centering
+
+\begin{ganttchart}{2013-12-01}{2013-12-21}
+	
+	\gantttitle{	Dicembre}{21}\\
+	\gantttitlelist{1,...,21}{1}\\
+	
+	\ganttgroup{\textbf{AN1 - Norme di progetto}}{2013-12-01}{2013-12-04} \\
+	\ganttbar[name=an1.1]{AN1.1 - Stesura}{2013-12-01}{2013-12-03} \\
+	\ganttbar[name=an1.2]{AN1.2 - Verifica}{2013-12-04}{2013-12-04} \\
+	\ganttlink{an1.1}{an1.2}
+	
+	\ganttgroup{\textbf{AN2 - Studio di fattibilità}}{2013-12-05}{2013-12-07} \\
+	\ganttbar[name=an2.1]{AN2.1 - Stesura}{2013-12-05}{2013-12-06} \\
+	\ganttbar[name=an2.2]{AN2.2 - Verifica}{2013-12-07}{2013-12-07} \\
+	\ganttlink{an2.1}{an2.2}
+	
+	\ganttgroup{\textbf{AN3 - Analisi dei requisiti}}{2013-12-10}{2013-12-19} \\
+	\ganttbar[name=an3.1]{AN3.1 - Stesura fondamentali \\ e desiderali}{2013-12-10}{2013-12-13} \\
+	\ganttbar[name=an3.2]{AN3.2 - Verifica fondamentali \\ e desiderali}{2013-12-14}{2013-12-15} \\
+	\ganttbar[name=an3.3]{AN3.3 - Stesura opzionali}{2013-12-16}{2013-12-18} \\
+	\ganttbar[name=an3.4]{AN3.4 - Verifica opzionali}{2013-12-18}{2013-12-19} \\
+	\ganttlink{an3.1}{an3.2}
+	\ganttlink{an3.3}{an3.4}
+	
+	\ganttgroup{\textbf{AN4 - Piano di progetto}}{2013-12-07}{2013-12-17} \\
+	\ganttbar[name=an4.1]{AN4.1 - Stesura AN}{2013-12-07}{2013-12-08} \\
+	\ganttbar[name=an4.2]{AN4.2 - Verifica AN}{2013-12-09}{2013-12-09} \\
+	\ganttbar[name=an4.3]{AN4.3 - Stesura PA, PDC, VV}{2013-12-09}{2013-12-15} \\
+	\ganttbar[name=an4.4]{AN4.4 - Verifica PA, PDC, VV}{2013-12-16}{2013-12-17} \\
+	\ganttlink{an4.1}{an4.2}
+	\ganttlink{an4.3}{an4.4}
+	
+	\ganttgroup{\textbf{AN5 - Piano di qualifica}}{2013-12-10}{2013-12-17} \\
+	\ganttbar[name=an5.1]{AN5.1 - Stesura}{2013-12-10}{2013-12-15} \\
+	\ganttbar[name=an5.2]{AN5.2 - Verifica}{2013-12-16}{2013-12-17} \\
+	\ganttlink{an5.1}{an5.2}	
+	
+\end{ganttchart}
+
+\caption{Diagramma di Gantt, fase di Analisi}
+\end{figure}
+
+\subsubsection{Ripartizione ore}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ l l l c  }
+	\hline
+	\multicolumn{1}{c}{\textbf{Id}} & 
+	\multicolumn{1}{c}{\textbf{Nome}} & 
+	\multicolumn{1}{c}{\textbf{Ruolo}}& 
+	\multicolumn{1}{c}{\textbf{Ore}} \\
+	\hline
+	
+	\textbf{AN1} & \textbf{Norme di progetto} \\
+	\cline{3-4}
+	AN1.1 & Stesura & Amministratore1 & 6\\ 
+    & & Amministratore2 & 4\\
+    & & Amministratore3 & 5 \\
+    & & Responsabile & 4 \\
+    \cline{3-4}
+	AN1.2 & Verifica & Verificatore &  5\\
+	
+	\hline
+	\textbf{AN2} & \textbf{Studio di fattibilità} \\
+	\cline{3-4}
+	AN2.1 & Stesura & Analista1 & 2\\ 
+    & & Analista2 & 3\\
+    & & Analista3 & 3 \\
+    \cline{3-4}
+	AN2.2 & Verifica & Verificatore &  2\\
+	
+	\hline
+	\textbf{AN3} & \textbf{Piano di progetto} \\
+	\cline{3-4}
+	AN3.1 & Stesura AN & Amministratore & 5\\ 
+    & & Responsabile & 5\\
+    \cline{3-4}
+	AN3.2 & Verifica AN & Verificatore &  2\\
+	\cline{3-4}
+	AN3.3 & Stesura PA, PDC, AR AN & Amministratore & 5\\ 
+    & & Responsabile & 4\\
+	\cline{3-4}
+	AN3.4 & Verifica PA, PDC, AR AN & Verificatore &  2\\
+	
+	\hline
+	\textbf{AN4} & \textbf{Analisi dei requisiti} \\
+	\cline{3-4}
+	AN4.1 & Stesura fondamentali e desiderabili & Analista1 & 11\\ 
+    & & Analista2 & 10\\
+    & & Analista3 & 11\\
+    \cline{3-4}
+	AN4.2 & Verifica fondamentali e desiderabili & Verificatore &  6\\
+	\cline{3-4}
+	AN4.3 & Stesura opzionali & Analista1 & 9\\ 
+    & & Analista2 & 9\\
+	\cline{3-4}
+	AN4.4 & Verifica opzionali & Verificatore &  5\\
+	
+	\hline
+	\textbf{AN5} & \textbf{Piano di qualifica} \\
+	\cline{3-4}
+	AN5.1 & Stesura & Progettista& 9\\ 
+    & & Verificatore & 3 \\
+    \cline{3-4}
+	AN5.2 & Verifica & Verificatore &  4\\
+	
+	\hline
+	\end{tabular}
+	\caption{Allocazione risorse, fase di Analisi}
+	\end{table}
+
+	\subsection{Progettazione Architetturale}
+	
+Questa fase ha inizio il 2014-01-03 e termina il 2014-02-07, per un totale di 34  giorni. \\
+I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Analista}, \textit{Progettista}, \textit{Responsabile}, \textit{Verificatore}. \\ \\
+Si suddivide la progettazione architetturale in progettazione dei requisiti fondamentali e desiderabili e progettazione dei requisiti opzionali, per dare modo a tutti i membri di prendere parte attiva come progettista in questa fase.
+	
+\subsubsection{Gantt attività}
+% GANTT PR ARCHITETTURALE	
+	
+\subsubsection{Ripartizione ore}
+	
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l l l c  }
+	\hline
+	\multicolumn{1}{c}{\textbf{Id}} & 
+	\multicolumn{1}{c}{\textbf{Nome}} & 
+	\multicolumn{1}{c}{\textbf{Ruolo}}& 
+	\multicolumn{1}{c}{\textbf{Ore}} \\
+	\hline
+	
+	\textbf{PA1} & \textbf{Analisi dei requisiti} \\
+	\cline{3-4}
+	PA1.1 & Stesura finale & Analista1 & 11\\ 
+    & & Analista2 & 6\\
+    & & Analista3 & 6\\
+     & & Analista4 & 6\\
+    \cline{3-4}
+	PA1.2 & Verifica & Verificatore &  4\\
+	
+	\hline
+	\textbf{PA2} & \textbf{Piano di progetto} \\
+	\cline{3-4}
+	PA2.1 & Aggiornamento AN & Amministratore & 5\\ 
+    & & Responsabile & 3\\
+    \cline{3-4}
+	PA2.2 & Verifica & Verificatore & 4\\
+	
+	\hline
+	\textbf{PA3} & \textbf{Piano di qualifica} \\
+	\cline{3-4}
+	PA3.1 & Aggiornamento AN & Progettista & 8\\ 
+    \cline{3-4}
+	PA3.2 & Verifica & Verificatore &  4\\
+	
+	\hline
+	\textbf{PA4} & \textbf{Specifica tecnica} \\
+	\cline{3-4}
+	PA4.1.1 & Progettazione requisiti fondamentali e desiderabili & Progettista1 & 10\\ 
+	& & Progettista2 & 10\\
+	& & Progettista3 & 10\\
+	& & Progettista4 & 10\\
+    \cline{3-4}
+	PA4.1.2 & Verifica requisiti fondamentali e desiderabili & Verificatore1 &  4\\
+	& & Verificatore2 & 5\\
+	\cline{3-4}
+	PA4.1.3 & Stesura requisiti fondamentali e desiderabili & Amministratore &  5\\
+	& & Progettista & 5\\
+	
+	\cline{3-4}
+	PA4.2.1 & Progettazione requisiti opzionali & Progettista1 & 10\\ 
+	& & Progettista2 & 10\\
+	& & Progettista3 & 10\\
+	& & Progettista4 & 11\\
+    \cline{3-4}
+	PA4.2.2 & Verifica requisiti opzionali & Verificatore1 &  5\\
+	& & Verificatore2 & 6\\
+	\cline{3-4}
+	PA4.2.3 & Stesura requisiti opzionali & Amministratore &  4\\
+	& & Progettista & 6\\
+	\cline{3-4}
+	PA4.3 & Tracciamento & Progettista1 &  4\\
+	& & Progettista2 & 5\\
+	& & Progettista3 & 4\\
+	\cline{3-4}
+	PA4.4 & Verifica specifica tecnica & Verificatore1 &  6\\
+	& & Verificatore2 & 3\\
+	
+	\hline
+	\end{tabular}
+	\caption{Allocazione risorse, fase di Progettazione architetturale}
+	\end{table}
+	
+	\subsection{Progettazione di Dettaglio e Codifica}
+	 
+Questa fase ha inizio il 2014-02-08 e termina il 2014-03-07, per un totale di 29  giorni. \\
+I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Progettista}, \textit{Programmatore}, \textit{Responsabile}, \textit{Verificatore}. \\ \\
+L'obiettivo di questa fase è definire la progettazione di dettaglio e sviluppare il prodotto attraverso la codifica, dando priorità alla progettazione dei requisiti fondamentali e desiderabili, seguendo i principi del modello incrementale.
+In tal modo, in caso di ritardi si potrà procedere ugualmente alla fase successiva, consegnando un prodotto completo.
+\subsubsection{Gantt attività}
+% GANTT PROG. DETTAGLIO E COD
+
+\subsubsection{Ripartizione ore}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ l l l c  }
+	\hline
+	\multicolumn{1}{c}{\textbf{Id}} & 
+	\multicolumn{1}{c}{\textbf{Nome}} & 
+	\multicolumn{1}{c}{\textbf{Ruolo}}& 
+	\multicolumn{1}{c}{\textbf{Ore}} \\
+	\hline
+	
+	\textbf{PDC1} & \textbf{Analisi dei requisiti} & Amministratore & 7\\
+
+	\hline
+	\textbf{PDC2} & \textbf{Progettazione di dettaglio} \\
+	\cline{3-4}
+	PDC2.1.1 & Progettazione fondamentali e desiderabili AN & Progettista & 10\\ 
+    & & Progettista & 10\\
+    & & Progettista & 12\\
+    \cline{3-4}
+	PDC2.1.2 & Verifica fondamentali e desiderabili & Verificatore & 5\\
+	& & Verificatore & 5\\
+	\cline{3-4}
+	PDC2.2.1 & Progettazione opzionali & Progettista & 12\\ 
+    & & Progettista & 12\\
+    & & Progettista & 12\\
+	\cline{3-4}
+	PDC2.2.2 & Verifica opzionali & Verificatore & 5\\	
+	& & Verificatore & 5\\
+	\hline
+	\textbf{PDC3} & \textbf{Definizione di prodotto} \\
+	\cline{3-4}
+	PDC3.1 & Stesura DdP & Progettista & 20\\ 
+	 & & Progettista & 20\\
+    \cline{3-4}
+	PDC3.2 & Verifica DdP & Verificatore &  13\\
+	\hline
+	\textbf{PDC4} & \textbf{Codifica} \\
+	\cline{3-4}
+	PDC4.1.1 & Codifica fondamentali e desiderabili AN & Programmatore & 30\\ 
+    & & Programmatore & 30\\
+    & & Programmatore & 30\\
+    \cline{3-4}
+	PDC4.1.2 & Verifica fondamentali e desiderabili & Verificatore & 5\\
+	& & Verificatore & 15\\
+	\cline{3-4}
+	PDC4.2.1 & Codifica opzionali & Progettista & 35\\ 
+    & & Progettista & 35\\
+	\cline{3-4}
+	PDC4.2.2 & Verifica opzionali & Verificatore & 9\\	
+	& & Verificatore & 9\\
+	\hline
+	\textbf{PDC5} & \textbf{Manuale utente} \\
+	\cline{3-4}
+	PDC5.1 & Stesura  & Amministratore & 16\\ 
+	 & & Progettista & 18\\
+	 & & Responsabile & 6\\
+    \cline{3-4}
+	PDC5.2 & Verifica & Verificatore &  12\\
+	& & Verificatore & 8\\
+	\hline
+	\textbf{PDC6} & \textbf{Aggiornamento Piano di progetto} \\
+	\cline{3-4}
+	PDC6.1 & Aggiornamento  & Amministratore & 3\\ 
+	 & & Responsabile & 4\\
+    \cline{3-4}
+	PDC6.2 & Verifica & Verificatore &  3\\
+	\hline
+	\textbf{PDC7} & \textbf{Aggiornamento Piano di qualifica} \\
+	\cline{3-4}
+	PDC7.1 & Aggiornamento  & Verificatore & 10\\ 
+    \cline{3-4}
+	PDC7.2 & Verifica & Verificatore &  6\\
+	\hline
+	\end{tabular}
+	\caption{Allocazione risorse, fase di Progettazione di dettaglio e codifica}
+	\end{table}	
+	
+	
+	\subsection{Validazione}
+	
+Questa fase ha inizio il 2014-01-03 e termina il 2014-02-07, per un totale di   giorni. \\
+I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Progettista}, \textit{Responsabile}, \textit{Verificatore}. \\ \\
+
+\subsubsection{Gantt attività}
+%GANTT VALIDAZIONE
+
+\subsubsection{Ripartizione ore}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ l l l c  }
+	\hline
+	\multicolumn{1}{c}{\textbf{Id}} & 
+	\multicolumn{1}{c}{\textbf{Nome}} & 
+	\multicolumn{1}{c}{\textbf{Ruolo}}& 
+	\multicolumn{1}{c}{\textbf{Ore}} \\
+	\hline
+	\textbf{VV1} & \textbf{Aggiornamento Piano di Qualifica} \\
+	\cline{3-4}
+	VV1.1 & Aggiornamento  & Amministratore & 6\\ 
+	 & & Verificatore & 6\\
+    \cline{3-4}
+	VV1.2 & Verifica & Verificatore &  6\\
+	\hline
+	\textbf{VV2} & \textbf{Aggiornamento Definizione di prodotto} \\
+	\cline{3-4}
+	VV2.1 & Aggiornamento  & Progettista & 7\\ 
+	 & & Progettista & 7\\
+    \cline{3-4}
+	VV2.2 & Verifica & Verificatore &  5\\
+	\hline
+	\textbf{VV3} & \textbf{Aggiornamento Manuale utente} \\
+	\cline{3-4}
+	VV3.1 & Aggiornamento  & Progettista & 5\\ 
+	 & & Responsabile & 5\\
+    \cline{3-4}
+	VV3.2 & Verifica & Amministratore &  5\\
+	\hline
+	\textbf{VV4} & \textbf{Collaudo} & Verificatore & 8\\
+	 & & Verificatore & 8\\
+	 & & Programmatore & 8\\
+	 & & Programmatore & 8\\
+	 & & Responsabile & 4\\
+	\hline
+	\end{tabular}
+	\caption{Allocazione risorse, fase di Validazione}
+	\end{table}	
+	
+	

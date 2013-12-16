@@ -1,4 +1,4 @@
-personal_ws-1.1 it 132 
+personal_ws-1.1 it 133 
 Mistake'
 repository
 pdflatex
@@ -77,8 +77,8 @@ RQ
 Markdown
 Lucidchart
 dimostrabilmente
-RR
 UC
+RR
 Project
 project'
 framework
@@ -131,3 +131,4 @@ Verifica'
 Failure'
 aspell
 pre
+Postcondizione

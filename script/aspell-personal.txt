@@ -1,4 +1,4 @@
-personal_ws-1.1 it 131 
+personal_ws-1.1 it 132 
 Mistake'
 repository
 pdflatex
@@ -76,8 +76,9 @@ Calendar
 RQ
 Markdown
 dimostrabilmente
-RR
 UC
+RR
+Lucidchart
 Project
 project'
 framework

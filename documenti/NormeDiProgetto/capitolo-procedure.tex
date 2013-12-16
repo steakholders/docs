@@ -7,9 +7,15 @@ Il parametro ``Tag nel titolo'' corrisponde al testo racchiuso tra parentesi qua
 
 \subsection{Creazione compito}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Creazione_compito.png}
+    \caption{Creazione compito}
+\end{figure}
+
 Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare i ticket di codifica con i seguenti parametri:
 \begin{itemize}
- \item \textbf{Sezione}: ``Da pianificare''
+ \item \textbf{Sezione}: `	`Da pianificare''
  \item \textbf{Milestone}: la revisione entro la quale il compito dovrà essere terminato.
  \item \textbf{Tag nel titolo}: nessuno.
  \item \textbf{Titolo}: breve descrizione del compito, con il riferimento all'unità di lavoro corrispondente.
@@ -19,8 +25,14 @@ Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare 
 \end{itemize}
 
 \subsection{Pianificazione compito e verifica}
-
 \label{pianificazione}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Pianificazione_compito_e_verifica.png}
+    \caption{Pianificazione compito e verifica}
+\end{figure}
+
 Il Responsabile deve pianificare i ticket delle sezioni ``Da pianificare''. Deve inoltre creare e pianificare il corrispondente ticket di verifica se necessario. I ticket del compito e della modifica devono essere assegnati a persone diverse.
 
 Modifica i parametri del compito:
@@ -42,12 +54,24 @@ Parametri della verifica:
 
 \subsection{Esecuzione compito}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Esecuzione_compito.png}
+    \caption{Esecuzione compito}
+\end{figure}
+
 Non appena il programmatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina il compito deve chiudere il ticket:
 \begin{itemize}
  \item \textbf{Stato}: ``Chiuso''.
 \end{itemize}
  
 \subsection{Esecuzione verifica}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Esecuzione_verifica.png}
+    \caption{Esecuzione verifica}
+\end{figure}
 
 Non appena il verificatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina la verifica deve chiudere il ticket:
 \begin{itemize}
@@ -66,6 +90,12 @@ Nel caso in cui il verificatore trovi bug o non conformità significative deve c
 \end{itemize}
 
 \subsection{Valutazione delle modifiche}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Valutazione_delle_modifiche.png}
+    \caption{Valutazione delle modifiche}
+\end{figure}
 
 Il Responsabile deve valutare ogni modifica del tipo ``Da valutare''. Se la formulazione della modifica è corretta allora la assegna ad un ruolo competente:
 \begin{itemize}
@@ -92,7 +122,13 @@ Se il Responsabile non approva o non è ritene valida la modifica deve impostare
  \item \textbf{Stato}: ``Chiuso''.
 \end{itemize}
 
-\subsection{Richiesta di modifica e bug}
+\subsection{Richiesta di modifica e segnalazione bug}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/Richiesta_di_modifica_e_segnalazione_bug.png}
+    \caption{Richiesta di modifica e segnalazione bug}
+\end{figure}
 
 Se un membro del gruppo volesse segnalare un bug o richiedere una modifica deve creare un ticket con i seguenti parametri:
 \begin{itemize}

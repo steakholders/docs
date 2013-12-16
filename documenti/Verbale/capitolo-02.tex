@@ -1,0 +1,75 @@
+\section{Domande e Risposte riassunte}
+	\begin{itemize} 
+		\item 
+		{\bfseries Quanto e come devono essere personalizzabili per lo sviluppatore tramite l'uso di dsl le pagine Collection-index
+		e Collection-show?} \\
+		Il proponente utilizzando come esempio active admin mostra come devono essere composte le pagine.
+		Le funzioni principali illustrate, sono il poter selezionare un sottoinsieme di documenti, tramite query di mongoDB scritte
+		dallo sviluppatore e la scelta dei campi visualizzabili.	
+		
+		\item 
+		{\bfseries Ci deve essere una dashboard?} \\
+		Si è utile, ma non essenziale. 
+		
+		\item
+		{\bfseries Dobbiamo implementare i filtri?} \\
+		I filtri sono delle query particolari ed è difficile implementarli in quanto bisogna avere conoscenza di come fare le query.
+		Possiamo implementarne di default o lasciare la possibilità di creazione dei filtri allo sviluppatore.
+		
+		\item
+		{\bfseries E' necessario creare un profilo admin di default?} \\
+		Si, l'admin va aggiunto al database con inserimento di username e password di default.
+		
+		\item
+		{\bfseries E' possibile che lo sviluppatore possa decidere di permettere la registrazione da parte degli utenti?} \\
+		 Si lo sviluppatore lo può specificare, ma è meglio lasciarlo come opzione di default e di non togliere questa possibilità
+		 all'utente.
+		
+		\item
+		{\bfseries Come avviene il recupero password?} \\
+		Il recupero password deve avvenire tramite email, quindi maap deve avere un servizio email configurabile dallo sviluppatore.
+		Il proponente mostra il pacchetto "Nodemailer".
+		
+		\item
+		{\bfseries Nel capitolato si parla di creazione di indici, cosa si intende per indici?} \\
+		Gli indici sono specifici di mongoDB, il quale fa le ricerche scansionando i documenti che possono essere talvolta di grandi
+		dimensioni. Per migliorare le performance di interrogazione, mongoDB crea strutture dati che raccolgono informazioni sui
+		valori dei "campi indice" specificati nei documenti di una collection e queste strutture dati, sono gli indici citati nel
+		capitolato.
+		In questo modo quando farà la ricerca, scansionerà quest'ultimo documento creato che è più piccolo della collection originale
+		rendendo il tutto più veloce.	 
+		Dopo diversi mesi di utilizzo, il database può avere una mole di informazioni tale da poter identificare quali sono le query
+		maggiormente richieste dagli utenti e quindi di proporre la creazione di un indice.
+		La creazione di un indice può essere fatta automaticamente dal database o delegata allo sviluppatore via shell.
+		
+		\item
+		{\bfseries Cosa rende complessa la creazione di nuovi documenti o la modifica di un insieme di documenti?} \\
+		Tutto ciò che cambia la struttuta del documento risulta complesso se non si conoscere la bussness logic dell'applicazione.
+		Per creare o modificare documenti si ha bisogno di utilizzare mongoose che mantiene i vincoli del modello ed in questo modo
+		non corrompere il funzionamento dell'applicazione che si interfaccia ai documenti.
+		
+		\item
+		{\bfseries Riguardo al database dei dati utente, come deve essere implementato?} \\
+		Può essere implementato in qualsiasi tecnologia anche diversa da mongoDB ma importante che sia supportato da heroku.
+		Le password devono essere criptate.
+		Non bisogna occuparsi dell'efficienza.
+		
+		\item
+		{\bfseries Siamo vincolati all'utilizzo delle issue di Github per segnalare bug?} \\
+		No, non è necessario l'utilizzo delle issue. 
+		Il concetto sta nell'utilizzare durante lo sviluppo una repository anche diversa, ma deve avvenire la pubblicazione del
+		progetto su github.
+		
+		\item
+		{\bfseries Come implementare il DSL? Si possono creare delle API ad alto livello apposite?} \\
+		Si, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso la differenza a cui fare
+		attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il parser li garantisce mentre nelle
+		librerie sono dinamici.
+		
+		\item
+		{\bfseries \Proponente{} è disponibile per tutto il periodo di sviluppo?} \\
+		Il proponente dichiara che non potrà essere disponibile nei giorni 18-28 gennaio e che a marzo prevede il trasferimento in
+		altra sede estera.
+				
+		
+	\end{itemize}

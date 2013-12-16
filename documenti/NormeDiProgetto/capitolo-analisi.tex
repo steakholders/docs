@@ -2,13 +2,13 @@
 
 Dal capitolato e dagli incontri con il proponente gli Analisti dovranno estrarre i requisiti del progetto, producendo l'Analisi dei Requisiti.
 
-Tutti i requisiti devono essere riconducibile al capitolato o ad un incontro con il proponente. I requisiti obbligatori identificati, se rispettati, dovranno essere necessari e sufficienti per l'approvazione del prodotto.
+Tutti i requisiti che si possono evincere dal capitolato o ad un incontro con il proponente vanno specificati nell'Analisi dei Requisiti, pertanto ogni requisito dovrà essere riconducibile ad una particolare fonte.
 
 \subsection{Requisiti}
 
 Ogni requisito è identificato da un nome, che segue il seguente formalismo:
 \begin{center}
-	\code{R\{X\}\{Y\}\{Z\} \{num\}}
+	\code{R\{X\}\{Y\}\{Z\} \{Gerarchia\}}
 \end{center}
 
 Dove:
@@ -35,27 +35,27 @@ Dove:
 	 \item[] \textbf{F} = Facoltativo o opzionale
 	\end{itemize}
 
- \item \textbf{num} identifica in modo univoco la posizione che il requisito ha nella gerarchia. La numerazione va fatta in modo incrementale per i fratelli. % TODO la gerarchia è unica o ce n'è una per ogni sistema/tipologia/priorità?
+ \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i requisiti di uno stesso tipo. C'è quindi una struttura gerarchica per ogni tipologia di requisito.
 \end{itemize}
 
 \subsection{Casi d'uso}
 
 Ogni caso d'uso è identificato da un nome, che segue il seguente formalismo:
 \begin{center}
-	\code{UC\{X\} \{num\}}
+	\code{UC\{X\} \{Gerarchia\}}
 \end{center}
 
 Dove: % TODO fare la descrizione del campo X e num
 \begin{itemize}
- \item \textbf{X} corrisponde al sistema di riferimento e può assumere i seguenti valori:
+ \item \textbf{X} corrisponde all'ambito di riferimento e può assumere i seguenti valori:
 	\begin{itemize}
-	 \item[] \textbf{A} = Applicazione \glossario{Maap};
-	 \item[] \textbf{F} = \glossario{Framework} di \glossario{Maap};
-	 \item[] \textbf{S} = \glossario{Maas}.
+	 \item[] \textbf{U} = Ambito \glossario{utente};
+	 \item[] \textbf{S} = Ambito \glossario{sviluppatore}.
 	\end{itemize}
 
- \item \textbf{num} identifica in modo univoco la posizione che il requisito ha nella gerarchia. La numerazione va fatta in modo incrementale per i fratelli. % TODO la gerarchia è unica o ce n'è una per ogni sistema/tipologia/priorità?
+	 \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i casi d'uso di uno stesso ambito. C'è quindi una struttura gerarchica per ogni ambito dei casi d'uso.
 \end{itemize}
+
 
 \subsection{UML}
 

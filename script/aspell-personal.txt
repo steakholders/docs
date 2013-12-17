@@ -1,4 +1,4 @@
-personal_ws-1.1 it 356 
+personal_ws-1.1 it 381 
 DdP
 application
 Prog
@@ -12,14 +12,18 @@ node
 dall
 Javascript
 Etzkorn
+community
 group
+autoformazione
 the
 AWS
+Java
 tex
 proattiva
 rounded
 template
 Abstract
+SGAD
 Variance
 local
 newline
@@ -34,12 +38,15 @@ FAQ
 methods
 Cox
 active
+Analysis
 work
+Tool
 cyan
 Calendar
 Compiler
 line
 Kernel
+CSS
 sull'
 aspell
 right
@@ -52,6 +59,7 @@ Ver
 raccomanda'
 DSL
 checklists
+Ember
 JSHint
 fill
 Principles
@@ -64,6 +72,7 @@ Awesome
 branch
 package
 title
+Interaction
 windows
 change
 testing
@@ -83,15 +92,17 @@ fault
 nomeDellaFunzione
 logger
 URL
-Maap's
 MaaP's
+Maap's
 git
 Complexity
 dimostrabilmente
 McCabe
+Social
 utf
 Tresoldi
 Teamwork
+research
 Ian
 Module
 dell'
@@ -114,6 +125,7 @@ theory
 append
 shell
 ACWP
+quest'ultime
 true
 abbandona'
 documents
@@ -121,6 +133,7 @@ Established
 Description
 Rotundo
 sottoattributi
+GUI
 Well
 event
 position
@@ -142,11 +155,13 @@ between
 pdflatex
 Ready
 Microsoft
+Angular
 slash
 global
 Firefox
 MondoDB
 style
+smartphone
 setup
 JSLint
 chart
@@ -156,21 +171,24 @@ SWEBOK
 CamelCase
 ciclomatica
 Gantt
+friendly
 yyyy
 NoSQL
 an
 people
 AR
 glossary
-dd
 as
+dd
 shift
 Image
 Requisteak
 Architecture
 dashboard
+HTML
 Techinques
 Method
+Imaging
 Broken
 predeterminabili
 l'overhead
@@ -195,6 +213,7 @@ maxhe
 NomeDelDocumento
 syntax
 Franceschi
+bioinformatica
 Lucidchart
 lang
 vgrid
@@ -205,6 +224,7 @@ bugs
 log
 Mistake
 Measure
+FunGoStudios
 it
 maxhv
 edition
@@ -281,8 +301,8 @@ SV
 npm
 IEEE
 markup
-MaaP
 Maap
+MaaP
 Usable
 Maas
 left
@@ -291,6 +311,7 @@ issue
 Everybody
 nomemetrica
 vv
+startup
 completo'
 Ubuntu
 stack
@@ -312,7 +333,9 @@ tools
 repository
 RAU
 packet
+BioComputing
 storage
+Medical
 Platform
 RSYZ
 Compito'
@@ -326,6 +349,7 @@ and
 align
 potr
 Amm
+Generator
 GanttProject
 pre
 lines
@@ -349,9 +373,10 @@ encoding
 pollution
 sep
 TODO
+Seq
 path
 gray
 logout
 Part
-project'
 Project
+project'

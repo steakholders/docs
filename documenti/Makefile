@@ -1,4 +1,4 @@
-# Percorso relativo alla cartella principale del repository, senza slash finale.
+ # Percorso relativo alla cartella principale del repository, senza slash finale.
 REPO_DIR = ..
 
 # Includi i comandi comuni a tutti i makefile.
@@ -14,6 +14,7 @@ documents:
 	@cd "LetteraDiPresentazione" && make documents
 	@cd "Verbale" && make documents
 	@cd "AnalisiDeiRequisiti" && make documents
+	@cd "StudioDiFattibilita" && make documents
 
 test:
 	@cd "NormeDiProgetto" && make test
@@ -23,6 +24,7 @@ test:
 	@cd "LetteraDiPresentazione" && make test
 	@cd "Verbale" && make test
 	@cd "AnalisiDeiRequisiti" && make test
+	@cd "StudioDiFattibilita" && make test
 
 clean:
 	@rm -f *~
@@ -33,4 +35,5 @@ clean:
 	@cd "LetteraDiPresentazione" && make clean
 	@cd "Verbale" && make clean
 	@cd "AnalisiDeiRequisiti" && make clean
+	@cd "StudioDiFattibilita" && make clean
 

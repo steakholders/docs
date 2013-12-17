@@ -1,0 +1,52 @@
+\section{Codifica}
+
+\subsection{Intestazione}
+
+\begin{lstlisting}
+/*
+* Name: {Nome del file}
+* Module: {modulo di appartenenza}
+* Location: {/path/della/cartella/}
+*
+* History:
+* Version     Date            Programmer    
+* ================================================
+* 1.1.1       AAAA-MM-GG      {Nome Cognome      }
+* ------------------------------------------------
+* ...
+* {Description}
+* ...
+* ================================================
+* 1.1.2       AAAA-MM-GG      {Nome Cognome      }
+* ------------------------------------------------
+* ...
+*
+*/
+\end{lstlisting}
+
+\begin{itemize}
+ \item \textbf{Name} è il nome del file, estensione compresa.
+ \item \textbf{Module} è il nome del modulo di cui il file fa parte.
+ \item \textbf{Location} è il percorso del file, a partire dalla cartella principale del progetto ``/'' fino alla cartella che contiene il file. Deve iniziare e terminare con uno slash ``/".
+ \item \textbf{History} è il diario delle modifiche del file. Ogni modifica è composta dai seguenti campi:
+ 
+	\begin{itemize}
+	 \item \textbf{Version} è la versione del file.
+	 \item \textbf{Date} è la data della modifica.
+	 \item \textbf{Programmer} è il nome e cognome dell'autore della modifica. Al massimo può essere lungo 20 caratteri.
+	 \item \textbf{Description} è la spiegazione delle modifiche fatte e del motivo per cui sono state fatte.	 
+	\end{itemize}
+\end{itemize}
+
+\subsection{Formattazione}
+
+La formattazione del codice sorgente deve essere definita in modo rigoroso e consistente, così che tutto il codice del progetto sembri che sia stato scritto da un'unica persona.
+
+Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizzate dal progetto \emph{jQuery}, sia per l'effettiva facilità di lettura sia per la possibilità di automatizzare la formattazione del codice tramite il programma \emph{JSHint}. La pagina di riferimento è \url{http://contribute.jquery.org/style-guide/js/}.
+
+%\subsubsection{Indentazione}
+%\subsection{Norme di validazione}
+%\subsection{Rendiconto ore}
+%\subsubsection{Nomi}
+%\subsubsection{Disciplina}
+%\subsection{Protocolli vari}

@@ -1,0 +1,90 @@
+\section{Analisi dei requisiti}
+
+Dal capitolato e dagli incontri con il proponente gli Analisti dovranno estrarre i requisiti del progetto, producendo l'Analisi dei Requisiti.
+
+Tutti i requisiti che si possono evincere dal capitolato o ad un incontro con il proponente vanno specificati nell'Analisi dei Requisiti.
+
+Per agevolare l'analisi dei requisiti viene utilizzata la tecnica dei casi d'uso.
+
+	\subsection{Tracciamento requisiti}
+	 I requisiti vengono tracciati mediante il software \emph{Requisteak} appositamente creato dal gruppo \GroupName . Tale strumento è raggiungibile all'indirizzo \url{http://steakholders.herokuapp.com}.
+	 
+\subsection{Casi d'Uso}
+
+Ogni caso d'uso dovrà presentare i seguenti campi:
+\begin{itemize}
+ \item Codice identificativo
+ \item Titolo
+ \item Attori coinvolti
+ \item Diagramma UML
+ \item Scopo e descrizione
+ \item Precondizione
+ \item Postcondizione
+ \item Flusso principale degli eventi
+ \item Scenario alternativo
+\end{itemize}
+
+\subsection{Codice identificativo}
+
+Ogni caso d'uso è identificato da un codice, che segue il seguente formalismo:
+\begin{center}
+	\code{UC\{X\} \{Gerarchia\}}
+\end{center}
+
+Dove:
+\begin{itemize}
+ \item \textbf{X} corrisponde all'ambito di riferimento e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{U} = Ambito \glossario{Utente};
+	 \item[] \textbf{S} = Ambito \glossario{Sviluppatore}.
+	\end{itemize}
+
+	 \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i casi d'uso di uno stesso ambito. C'è quindi una struttura gerarchica per ogni ambito dei casi d'uso.
+\end{itemize}
+
+\subsection{Requisiti}
+
+Ogni requisito dovrà presentare i seguenti campi:
+\begin{itemize}
+ \item Codice identificativo
+ \item Descrizione
+ \item Fonti
+\end{itemize}
+
+\subsection{Codice identificativo}
+
+Ogni requisito è identificato da un codice, che segue il seguente formalismo:
+\begin{center}
+	\code{R\{X\}\{Y\}\{Z\} \{Gerarchia\}}
+\end{center}
+
+Dove:
+\begin{itemize}
+ \item \textbf{X} corrisponde al sistema di riferimento e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{A} = Applicazione \glossario{Maap};
+	 \item[] \textbf{F} = \glossario{Framework} di \glossario{Maap};
+	 \item[] \textbf{S} = \glossario{Maas}.
+	\end{itemize}
+
+ \item \textbf{Y} corrisponde alla tipologia del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{1} = Funzionale;
+	 \item[] \textbf{2} = Di prestazione;
+	 \item[] \textbf{3} = Di qualità;
+	 \item[] \textbf{4} = Vincolo.
+	\end{itemize}
+
+ \item \textbf{Z} corrisponde alla priorità del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{O} = Obbligatorio
+	 \item[] \textbf{D} = Desiderabile
+	 \item[] \textbf{F} = Facoltativo o opzionale
+	\end{itemize}
+
+ \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i requisiti di uno stesso tipo. C'è quindi una struttura gerarchica per ogni tipologia di requisito.
+\end{itemize}
+
+\subsection{UML}
+
+Per i diagrammi deve essere utilizzata il linguaggio \emph{UML versione 2.0}.

@@ -1,0 +1,49 @@
+\section{Repository e condivisione file}
+
+\subsection{Repository dei documenti}
+
+\subsubsection{Struttura del repository}
+
+La struttura del repository, la cui cartella principale chiameremo \file{root}, è così composta:
+\begin{itemize}
+ \item \textbf{\file{root/ufficiali/}} \\
+	Contiene i documenti ufficiali approvati dal Responsabile di progetto.
+
+ \item \textbf{\file{root/modello/}} \\
+	Contiene i file comuni a due o più documenti.
+
+ \item \textbf{\file{root/documenti/\{NomeDelDocumento\}/}} \\
+	Ciascuna cartella descritta da questo percorso contiene i file che vengono utilizzati dal documento \file{\{NomeDelDocumento\}}. In particolare conterrà il file \file{\{NomeDelDocumento\}.pdf} e il file \file{diario\_ modifiche.tex}, contenente il diario delle modifiche del documento.
+	
+	Il nome della cartella \file{\{NomeDelDocumento\}} e il file \file{\{NomeDelDocumento\}.pdf} devono rispettare la convenzione \glossario{CamelCase}.
+
+ \item \textbf{\file{root/script/}} \\
+	Contiene gli script di supporto alle operazioni di verifica e compilazione dei documenti.
+\end{itemize}
+
+Tutti i file e le cartelle non devono contenere spazi nel loro nome.
+
+\subsubsection{Branch}
+
+Il nome utilizzato per le \glossario{branch} del repository dovrà essere nella forma \textbf{nome-branch}, ossia con tutte le lettere minuscole e le parole separate da un trattino.
+
+\subsubsection{Script di pre-commit}
+
+Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi descritti nella sezione \ref{makefile}. Se uno dei due comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
+
+Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
+\begin{lstlisting}
+ln -s {percorso assoluto del repository}/script/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
+\end{lstlisting}
+
+\subsection{Repository del codice}
+
+Non è stato ancora definito.
+
+\subsection{Condivisione file}
+
+Per condividere internamente al gruppo dei file che non necessitano di versionamento verranno utilizzate le piattaforme:
+\begin{itemize}
+ \item \textbf{Google Drive} (\url{http://drive.google.com}), con l'account descritto nella sezione \ref{email};
+ \item \textbf{TeamworkPM}, descritta nella sezione \ref{teamworkpm}.
+\end{itemize}

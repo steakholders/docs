@@ -1,0 +1,69 @@
+\clearpage
+\section{Visione generale della strategia di verifica}
+Il gruppo intende applicare le strategia di verifica ai processi descritte in questo documento. L'obiettivo è avere un riscontro affidabile e numericamente trattabile che permetta di assicurare il grado di qualità predeterminato. La strategia generale adottata è quella di automatizzare il più possibile il lavoro di verifica; questo richiede scelta e uso di \emph{tools} adeguatamente configurati. Il lavoro manuale verrà così ridotto al minimo e confinato all'opera di validazione.
+La speranza è che dei buoni processi portino ad un buon software.
+	
+	\subsection{Organizzazione}
+	Viene verificata la qualità di ogni processo e di ogni output da esso prodotto. Ogni fase  descritta nel \emph{Piano di Progetto} produce output di diverso tipo, per questo è necessario programmare l'attività di verifica in modo mirato:
+
+	\begin{itemize}
+		\item \textbf{Analisi:} in questa fase si controllano che i processi e la documentazione prodotta rispettino le \emph{Norme di Progetto}.
+		\item \textbf{Progettazione Architetturale:} in questa fase vanno verificati i processi incrementali relativi all'analisi e ai nuovi documenti di progettazione.
+		\item \textbf{Progettazione dettaglio e codifica:} in questa fase vanno verificati i processi incrementali alla progettazione.
+	\end{itemize}
+	
+	Il \emph{Diario delle modifiche} viene incluso in ogni documento e mantiene lo storico dell'evoluzione del documento.
+	
+	\subsection{Pianificazione strategica e temporale}
+	Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi pre-fissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche, è questo il caso di \glossario{bug } o \emph{errori}. La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}, questo lavoro verrà svolto da automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. Questo assicura la qualità dei ogni processo. \\
+	L'efficienza dei processi si basa sugli automatismi, sarà così possibile destinare le risorse umane a lavori più mirati. L'utilizzo di software apposito permette di eseguire controlli \emph{Walkthrough} con precisione assoluta e l'esclusivo consumo di risorse tecnologiche, nonché un notevole risparmio di tempo.
+	
+	\subsection{Responsabilità}
+	La responsabilità della verifica viene attribuita al \emph{Responsabile di Progetto} e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \emph{Piano di Progetto}.
+	
+	\subsection{Risorse}
+	La qualifica dei processi essendo un processo consuma delle risorse che si dividono in due categorie:
+		\begin{itemize}
+  			\item \textbf{Umane:} le figure coinvolte sono il \emph{Responsabile di Progetto} e il \emph{Verificatore}. I processi da loro effettuati consumano \emph{ore di produttività}  contabilizzate e schedulate secondo il \emph{Piano di Progetto}. Le \emph{ore di produttività} sono fissate da \url{http://www.math.unipd.it/~tullio/IS-1/2013/Progetto/PD01b.html} in un minimo di 85 e un massimo di 105 ore individuali. Il \emph{Piano di Progetto} determina la distribuzione di tali quote orarie con la relativa retribuzione. Ai fini della qualifica si potrà parlare di \emph{ore di produttività} tralasciandone l'aspetto economico, in quanto rientra nello \emph{scope} del documento succitato. 
+  			
+  			\item \textbf{Tecnologiche:} riguardano i \emph{mezzi} utilizzati per gli automatismi per la qualità e la loro gestione. Trattandosi esclusivamente di \emph{mezzi} informatici vengono consumate unità di calcolo che vengono considerate a costo nullo. Questo perché tutti i tipi di elaborazioni informatiche vengono svolte su mezzi per i quali non è richiesto ne un contributo economico ne un quantitativo temporale abbastanza consistente da poter essere considerato degno di nota.
+		\end{itemize}
+		
+	Le modalità del loro impiego sono descritte dettagliatamente nelle \emph{Norme di Progetto}.
+	
+%		\subsubsection{Risorse disponibili}
+%		Le risorse disponibili sono tutte le \emph{risorse umane} e parte delle tecnologiche, in particolare:
+%		\begin{itemize}
+%			\item spazi web vari
+%			\item pc portatili individuali
+%		\end{itemize}
+		
+%		\subsubsection{Risorse necessarie}		% AWS, server per continous integration..
+		
+	\subsection{Strumenti}
+		I \emph{tools} non disponibile ma necessari sono stati inseriti nelle \emph{Norme di Progetto}. % basta questo?
+	
+\iffalse %%è una sorta di commento
+	\subsection{Tecniche}
+		\subsubsection{Analisi statica}
+			\paragraph{Walkthrough}
+			\paragraph{Inspection}
+		\subsubsection{Analisi dinamica}
+			\paragraph{Test di unità}
+			\paragraph{Test di integrazione}
+			\paragraph{Test di sistema}
+			\paragraph{Test di regressione}
+			\paragraph{Test di accettazione}
+\fi
+	
+\iffalse %%è una sorta di commento
+
+	\subsection{Misure e Metriche}
+		\subsubsection{Metriche per i processi}
+			\paragraph{nomemetrica}			
+		\subsubsection{Metriche per i documenti}
+			\paragraph{nomemetrica}
+		\subsubsection{Metriche per il software}
+			\paragraph{nomemetrica}
+	\subsection{Metodi}
+\fi

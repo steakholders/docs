@@ -1,5 +1,7 @@
 personal_repl-1.1 it 0 
 liberia libreria
+ec ecc
+rischesto richiesto
 ia La
 all'anilisi all'analisi
 potreanno potranno

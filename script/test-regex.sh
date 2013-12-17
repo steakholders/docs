@@ -60,6 +60,7 @@ grep_test "\\\Committente[^{}]" "Sostituire con \Committente{}." $(find . -name 
 
 # Errori ortografici
 grep_test "E'" "Sostituire con È." $(find . -name '*.tex')
+grep_test "[[:alpha:]]\`[aeiou]" "Riscrivere usando l'accento giusto: uno tra àèìòù" $(find . -name '*.tex')
 
 # Codici speciali
 grep_test "TODO" "C'è un TODO non risolto." $(find . -name '*.tex')

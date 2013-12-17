@@ -1,4 +1,4 @@
-personal_ws-1.1 it 202 
+personal_ws-1.1 it 215 
 DdP
 Application
 Prog
@@ -14,6 +14,8 @@ template
 local
 newline
 Markdown
+Walkthrough
+Product
 Amazon
 FAQ
 Calendar
@@ -29,6 +31,7 @@ UML
 branch
 package
 title
+windows
 Postcondizione
 Fornari
 Hangouts
@@ -58,6 +61,7 @@ callback
 commit
 pianificata'
 milestone
+theory
 append
 true
 abbandona'
@@ -66,28 +70,32 @@ Description
 Rotundo
 position
 replacements
-SOMMERVILLE
+Sommerville
 MongoDB
 rimpiazza'
 pdflatex
 Microsoft
 slash
 global
+MondoDB
 style
 setup
 JSLint
 chart
 root
+SWEBOK
 CamelCase
 Gantt
 yyyy
 an
+People
 AR
 glossary
 as
 dd
 shift
 Requisteak
+Broken
 label
 TexMaker
 DP
@@ -123,6 +131,7 @@ Pearson
 walktrough
 Apple
 monospace
+mod
 PA
 Closure
 NP
@@ -147,6 +156,7 @@ UC
 th
 RR
 Professional
+Slide
 shortcut
 Astah
 facilitatore
@@ -160,6 +170,7 @@ MaaP
 Maas
 left
 Everybody
+nomemetrica
 VV
 Ubuntu
 completo'
@@ -190,8 +201,10 @@ pre
 format
 Failure'
 black
+Process
 versionamento
 Error'
+correction
 jQuery
 Tag
 encoding

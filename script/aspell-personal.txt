@@ -46,8 +46,8 @@ McCabe
 windows
 the
 proattiva
-Maap
 MaaP
+Maap
 people
 proattivi
 Architecture
@@ -79,8 +79,8 @@ Cohesion
 logger
 ciclomatica
 Process
-Number
 commit
+Number
 practise
 mod
 Platform
@@ -110,8 +110,8 @@ dall
 NOM
 fault
 baseline
-NodeJS
 NodeJs
+NodeJS
 Node
 Transactions
 Product
@@ -124,6 +124,7 @@ difficulty
 Relationship
 OOP
 num
+Kernel
 dsgfdgfg
 function
 bugs
@@ -134,7 +135,6 @@ Demonstrable
 SWEBOK
 BCWP
 work
-Work
 Method
 Walkthrough
 Failure

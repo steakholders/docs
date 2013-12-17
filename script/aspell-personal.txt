@@ -1,4 +1,4 @@
-personal_ws-1.1 it 381 
+personal_ws-1.1 it 383 
 DdP
 application
 Prog
@@ -48,6 +48,7 @@ line
 Kernel
 CSS
 sull'
+Mahesh
 aspell
 right
 tree
@@ -71,8 +72,8 @@ Foundation
 Awesome
 branch
 package
-title
 Interaction
+title
 windows
 change
 testing
@@ -92,13 +93,13 @@ fault
 nomeDellaFunzione
 logger
 URL
-MaaP's
 Maap's
+MaaP's
 git
 Complexity
 dimostrabilmente
-McCabe
 Social
+McCabe
 utf
 Tresoldi
 Teamwork
@@ -178,8 +179,8 @@ an
 people
 AR
 glossary
-as
 dd
+as
 shift
 Image
 Requisteak
@@ -301,8 +302,8 @@ SV
 npm
 IEEE
 markup
-Maap
 MaaP
+Maap
 Usable
 Maas
 left
@@ -336,6 +337,7 @@ packet
 BioComputing
 storage
 Medical
+Casiraghi
 Platform
 RSYZ
 Compito'
@@ -378,5 +380,5 @@ path
 gray
 logout
 Part
-Project
 project'
+Project

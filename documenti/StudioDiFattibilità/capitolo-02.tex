@@ -1,36 +1,45 @@
 \section{Capitolato C1 - MaaP}
 
 \subsection{Descrizione}
-Il capitolato scelto prevede la realizzazione di un \emph{framework} per generare interfacce web di amministrazione dei dati di \emph{business}. In particolare, l'amministrazione dei dati deve essere disponibile a livello di \textbf{database}, nel quale vengono effettuate operazioni direttamente sugli oggetti che lo rappresentano (tabelle, indici, viste) in modo tale da permettere un accesso veloce e consistente ai dati. Questa tipologia di amministrazione non si preoccupa di interpretare le informazioni in dati di \emph{business}, ma si limita a interagire in modo agnostico con le entità del database. Inoltre, deve essere possibile l'amministrazione a livello di \textbf{dati di business}, in cui vengono effettuate operazioni su una o più di tali entità, le quali vengono interpretate nel modello di \emph{business} richiesto. La realizzazione delle pagine web di visualizzazione deve essere svolta in maniera semplice e veloce da parte dello sviluppatore, e le modalità di fruizione delle pagine generate devono essere adeguate ad un esperto di business.
+Il capitolato scelto prevede la realizzazione di un \glossario{framework} per generare interfacce web di amministrazione dei dati di \emph{business}. In particolare, l'amministrazione dei dati deve essere disponibile a livello di \textbf{database}, nel quale vengono effettuate operazioni direttamente sugli oggetti che lo rappresentano (tabelle, indici, viste) in modo tale da permettere un accesso veloce e consistente ai dati. Questa tipologia di amministrazione non si preoccupa di interpretare le informazioni in dati di \emph{business}, ma si limita a interagire in modo agnostico con le entità del database.
+
+Inoltre, deve essere possibile l'amministrazione a livello di \textbf{dati di business}, in cui vengono effettuate operazioni su una o più di tali entità, le quali vengono interpretate nel modello di \emph{business} richiesto. La realizzazione delle pagine web di visualizzazione deve essere svolta in maniera semplice e veloce da parte dello sviluppatore, e le modalità di fruizione delle pagine generate devono essere adeguate ad un esperto di business.
 
 \subsection{Studio del dominio}
 
-	\subsubsection{Dominio tecnologico}
-	\begin{itemize}
-		\item \textbf{Node.js} per la realizzazione della componente server
-		\item \textbf{Express} per la realizzazione dell’infrastruttura della web application generata
-		\item \textbf{Mongoose.js} per l’interfacciamento con il database
-		\item \textbf{MongoDB} per il recupero dei dati
-		\item conoscenza di framework per la componente front-end (i.e. Angular.js, Ember.js)
-		\item conoscenze nella definizione di linguaggi astratti DSL per la generazione delle pagine da parte dello sviluppatore.
-	\end{itemize}
+        \subsubsection{Dominio applicativo}
+        Il contesto operativo in cui si inserisce il progetto è strettamente legato alla persistenza dei dati tramite l'utilizzo di basi di dati distribuite di tipo non-relazionale(NoSQL), nel particolare MongoDB.\\
+        MongoDB è un database NoSQL adottato in maniera crescente soprattutto in contesti, come quello Ruby On Rails e NodeJS, dove l’attenzione maggiore è rivolta ad una modellazione “agile”, alla ricerca della possibilità di rimodulare continuamente la definizione degli schema di database, e alla produttività.\\
+        Maap si inserisce in questo contesto venendo in contro all'esigenza sia da parte degli esperti di business sia dagli sviluppatori che operano su questa tecnologia, di avere uno strumento che permetta la generazione in modo rapido di pagine gestionali, al fine di amministrare e interagire con le entità e i dati presenti in MongoDB.
+        
+        
+In particolare, gli utenti interessati nel dominio applicativo saranno lo \textbf{sviluppatore}, che utilizzerà MaaP per generare le pagine, e l'\textbf{esperto di business}, che non dev'essere necessariamente un esperto di informatica, il quale usufruisce delle pagine generate per poter amministrare facilmente le entità di business interagendo con la base di dati.
 
-	\subsubsection{Dominio applicativo}
+Si dovrà quindi implementare un \glossario{framework} che permetta allo sviluppatore di creare e personalizzare, per mezzo di un linguaggio DSL definito, le suddette interfacce web.
+        
+        \subsubsection{Dominio tecnologico}
+        \begin{itemize}
+                \item \textbf{Node.js} per la realizzazione della componente server;
+                \item \textbf{Express} per la realizzazione dell’infrastruttura della web application generata;
+                \item \textbf{Mongoose.js} per l’interfacciamento con il database;
+                \item \textbf{MongoDB} per il recupero dei dati;
+                \item conoscenza di framework per la componente front-end (i.e. Angular.js, Ember.js);
+                \item conoscenze nella definizione di linguaggi astratti DSL per la generazione delle pagine da parte dello sviluppatore.
+        \end{itemize}
+
 
 \subsection{Valutazione}
-\label{StudioDiFattibilità}
-	Il capitolato presenta aspetti positivi che hanno determinato la sua scelta:
-	\begin{itemize}
-	\item Apprendimento di tecnologie innovative che portano un bagaglio di conoscenze ritenuto importante dato il grande uso di 	          		quest'ultime nella panoramica delle tecnologie presenti attualmente nel mercato.
-	\item Interesse del gruppo a vedere la propria applicazione dare vita ad una community dato che non esiste attualmente, con lo 	       stack tecnologico proposto, un applicativo simile.
-	\item Requisiti richiesti dal proponente sono ben delineati.
-	\end{itemize}
-Similmente, il gruppo ha trovato aspetti negativi:
-	\begin{itemize}
-	\item Le tecnologie utilizzate nello sviluppo del progetto non sono conosciute da nessun membro del gruppo \GroupName e
-	quindi richiederanno un tempo di formazione per il loro apprendimento considerevole.
-	\item La mole di lavoro per lo sviluppo del progetto al gruppo sembra notevole.
-	\end{itemize}
-	\subsubsection{Potenziali criticità}
-	
-	
+        Vengono di seguito elencati gli aspetti positivi che hanno determinato la scelta del capitolato:
+        \begin{itemize}
+        \item Apprendimento di tecnologie innovative che portano un bagaglio di conoscenze ritenuto importante dato il grande uso 			di quest'ultime nella panoramica delle tecnologie presenti attualmente nel mercato;
+        \item Interesse del gruppo a vedere la propria applicazione dare vita ad una community dato che non esiste attualmente,con 		lo stack tecnologico proposto, un applicativo simile;
+        \item Requisiti richiesti dal proponente sono ben delineati.
+        \end{itemize}
+		Similmente, il gruppo ha trovato aspetti negativi:
+        \begin{itemize}
+        \item Le tecnologie utilizzate nello sviluppo del progetto non sono conosciute da nessun membro del gruppo \GroupName e
+        quindi richiederanno un tempo di formazione per il loro apprendimento considerevole;
+        \item La mole di lavoro per lo sviluppo del progetto al gruppo sembra notevole.
+        \end{itemize}
+        %\subsubsection{Potenziali criticità}
+        

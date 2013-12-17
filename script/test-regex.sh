@@ -65,4 +65,7 @@ grep_test "[[:alpha:]]\`[aeiou]" "Riscrivere usando l'accento giusto: uno tra à
 # Codici speciali
 grep_test "TODO" "C'è un TODO non risolto." $(find . -name '*.tex')
 grep_test "FIXME" "C'è un FIXME non risolto." $(find . -name '*.tex')
+grep_test "^>>>>>" "C'è un merge non risolto." $(find . -name '*.tex')
+grep_test "^=====" "C'è un merge non risolto." $(find . -name '*.tex')
+grep_test "^<<<<<" "C'è un merge non risolto." $(find . -name '*.tex')
 

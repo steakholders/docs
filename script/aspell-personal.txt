@@ -3,7 +3,6 @@ Mistake'
 repository
 pdflatex
 tag
-Tag
 personal
 CamelCase
 completo'
@@ -34,8 +33,8 @@ tex
 Maas
 Location
 Teamwork
-FAQ
 tools
+FAQ
 History
 it
 markup
@@ -81,8 +80,8 @@ RQ
 Markdown
 Lucidchart
 dimostrabilmente
-RR
 UC
+RR
 Project
 project'
 framework
@@ -93,9 +92,9 @@ Description
 package
 raccomanda'
 Professional
+inspection
 PDF
 pdf
-inspection
 aggiungi'
 TexMaker
 path
@@ -105,7 +104,6 @@ Compiler
 TODO
 Astah
 gulpease
-Gulpease
 root
 utf
 Fault'
@@ -128,6 +126,7 @@ Skype
 num
 Maap's
 Compito'
+Mocha
 lang
 GitHub
 text

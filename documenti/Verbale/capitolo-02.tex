@@ -1,8 +1,8 @@
 \section{Domande e Risposte riassunte}
 	\begin{itemize} 
 		\item 
-		{\bfseries Quanto e come devono essere personalizzabili per lo sviluppatore tramite l'uso di dsl le pagine Collection-index
-		e Collection-show?} \\
+		{\bfseries Quanto e come devono essere personalizzabili per lo sviluppatore le pagine Collection-index
+		e Collection-show tramite l'uso di DSL?} \\
 		Il proponente utilizzando come esempio active admin mostra come devono essere composte le pagine.
 		Le funzioni principali illustrate, sono il poter selezionare un sottoinsieme di documenti, tramite query di mongoDB scritte
 		dallo sviluppatore e la scelta dei campi visualizzabili.	
@@ -12,8 +12,8 @@
 		Si è utile, ma non essenziale. 
 		
 		\item
-		{\bfseries Dobbiamo implementare i filtri?} \\
-		I filtri sono delle query particolari ed è difficile implementarli in quanto bisogna avere conoscenza di come fare le query.
+		{\bfseries Dobbiamo implementare filtri sui campi restituiti dalle query?} \\
+		I filtri sono delle query particolari ed è difficile implementarli in quanto bisogna avere conoscenza di come fare le query su di un database non relazionale.
 		Possiamo implementarne di default o lasciare la possibilità di creazione dei filtri allo sviluppatore.
 		
 		\item
@@ -27,49 +27,44 @@
 		
 		\item
 		{\bfseries Come avviene il recupero password?} \\
-		Il recupero password deve avvenire tramite email, quindi maap deve avere un servizio email configurabile dallo sviluppatore.
+		Il recupero password deve avvenire tramite email, quindi \ProjectName  deve avere un servizio email configurabile dallo sviluppatore.
 		Il proponente mostra il pacchetto "Nodemailer".
 		
 		\item
 		{\bfseries Nel capitolato si parla di creazione di indici, cosa si intende per indici?} \\
-		Gli indici sono specifici di mongoDB, il quale fa le ricerche scansionando i documenti che possono essere talvolta di grandi
-		dimensioni. Per migliorare le performance di interrogazione, mongoDB crea strutture dati che raccolgono informazioni sui
-		valori dei "campi indice" specificati nei documenti di una collection e queste strutture dati, sono gli indici citati nel
-		capitolato.
-		In questo modo quando farà la ricerca, scansionerà quest'ultimo documento creato che è più piccolo della collection originale
-		rendendo il tutto più veloce.	 
-		Dopo diversi mesi di utilizzo, il database può avere una mole di informazioni tale da poter identificare quali sono le query
-		maggiormente richieste dagli utenti e quindi di proporre la creazione di un indice.
-		La creazione di un indice può essere fatta automaticamente dal database o delegata allo sviluppatore via shell.
+		Gli indici sono specifici di \glossario{MongoDB}, il quale fa le ricerche scansionando i documenti che talvolta possono essere di grandi dimensioni. Per migliorare le performance di interrogazione, \glossario{MongoDB} crea strutture dati che raccolgono informazioni sui valori dei "campi indice" specificati nei documenti di una collection e queste strutture dati, sono gli indici citati nel capitolato.
+		
+In questo modo quando effettuerà la ricerca, verrà scansionato quest'ultimo documento creato che è più piccolo della collection originale rendendo la ricerca più veloce.	 
+Dopo diversi mesi di utilizzo, il database può avere una mole di informazioni tale da poter identificare quali sono le query
+maggiormente richieste dagli utenti e quindi proporre la creazione di uno o più indici.
+La creazione di un indice può essere fatta automaticamente dal database o delegata allo sviluppatore via shell.
 		
 		\item
 		{\bfseries Cosa rende complessa la creazione di nuovi documenti o la modifica di un insieme di documenti?} \\
-		Tutto ciò che cambia la struttuta del documento risulta complesso se non si conoscere la bussness logic dell'applicazione.
-		Per creare o modificare documenti si ha bisogno di utilizzare mongoose che mantiene i vincoli del modello ed in questo modo
-		non corrompere il funzionamento dell'applicazione che si interfaccia ai documenti.
+		Tutto ciò che cambia la struttura del documento risulta complesso se non si conoscere la bussness logic dell'applicazione.
+		Per creare o modificare documenti si ha bisogno di utilizzare \glossario{Mongoose} che mantiene i vincoli del modello e quindi non corrompe il funzionamento dell'applicazione che si interfaccia ai documenti.
 		
 		\item
-		{\bfseries Riguardo al database dei dati utente, come deve essere implementato?} \\
-		Può essere implementato in qualsiasi tecnologia anche diversa da mongoDB ma importante che sia supportato da heroku.
+		{\bfseries Come deve essere implementato il database dei dati utente, ?} \\
+		Può essere implementato con qualsiasi tecnologia, anche diversa da \glossario{MongoDB} ma è importante che sia supportata da \glossario{Heroku}.
+		
 		Le password devono essere criptate.
 		Non bisogna occuparsi dell'efficienza.
 		
 		\item
 		{\bfseries Siamo vincolati all'utilizzo delle issue di Github per segnalare bug?} \\
 		No, non è necessario l'utilizzo delle issue. 
-		Il concetto sta nell'utilizzare durante lo sviluppo una repository anche diversa, ma deve avvenire la pubblicazione del
-		progetto su github.
+		Il concetto sta nell'utilizzare durante lo sviluppo una repository, anche diversa, ma deve avvenire la pubblicazione del
+		progetto su Github.
 		
 		\item
-		{\bfseries Come implementare il DSL? Si possono creare delle API ad alto livello apposite?} \\
-		Si, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso la differenza a cui fare
-		attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il parser li garantisce mentre nelle
-		librerie sono dinamici.
+		{\bfseries Come implementare il DSL? Si possono creare delle apposite API ad alto livello?} \\
+		Si, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso del DSL, la differenza a cui 	fare attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il \glossario{parser} li garantisce mentre nelle librerie API sono dinamici.
 		
 		\item
-		{\bfseries \Proponente{} è disponibile per tutto il periodo di sviluppo?} \\
+		{\bfseries \Proponente{} è disponibile per incontri durante l'intero periodo di sviluppo?} \\
 		Il proponente dichiara che non potrà essere disponibile nei giorni 18-28 gennaio e che a marzo prevede il trasferimento in
-		altra sede estera.
+		altra sede estera, ma resta disponibile ad incontri virtuali su Skype.
 				
 		
 	\end{itemize}

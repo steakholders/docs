@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-personal_ws-1.1 it 383 
-=======
 personal_ws-1.1 it 388 
->>>>>>> 1f4a614e2f76fe5301e6034f860700b181f28f85
 DdP
 application
 Prog
@@ -97,8 +93,8 @@ fault
 nomeDellaFunzione
 logger
 URL
-Maap's
 MaaP's
+Maap's
 git
 Complexity
 dimostrabilmente
@@ -184,8 +180,8 @@ an
 people
 AR
 glossary
-dd
 as
+dd
 shift
 Image
 Requisteak
@@ -295,7 +291,7 @@ Rails
 Operational
 Slide
 shortcut
-responsivit√†
+responsivit‡
 Maccagnan
 Astah
 facilitatore
@@ -309,11 +305,7 @@ SV
 npm
 IEEE
 markup
-<<<<<<< HEAD
-=======
 NOT'
-Maap
->>>>>>> 1f4a614e2f76fe5301e6034f860700b181f28f85
 MaaP
 Maap
 Usable
@@ -348,13 +340,9 @@ RAU
 packet
 BioComputing
 Medical
-<<<<<<< HEAD
-Casiraghi
-=======
 storage
 Casiraghi
 RFC
->>>>>>> 1f4a614e2f76fe5301e6034f860700b181f28f85
 Platform
 RSYZ
 Quality
@@ -397,5 +385,5 @@ path
 gray
 logout
 Part
-project'
 Project
+project'

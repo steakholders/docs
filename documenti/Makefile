@@ -9,9 +9,11 @@ all: test documents
 documents:
 	@cd "NormeDiProgetto" && make documents
 	@cd "PianoDiProgetto" && make documents
+	@cd "PianoDiQualifica" && make documents
 	@cd "Glossario" && make documents
 	@cd "LetteraDiPresentazione" && make documents
 	@cd "Verbale" && make documents
+	@cd "AnalisiDeiRequisiti" && make documents
 
 test:
 	@cd "NormeDiProgetto" && make test
@@ -20,6 +22,7 @@ test:
 	@cd "Glossario" && make test
 	@cd "LetteraDiPresentazione" && make test
 	@cd "Verbale" && make test
+	@cd "AnalisiDeiRequisiti" && make test
 
 clean:
 	@rm -f *~
@@ -29,4 +32,5 @@ clean:
 	@cd "Glossario" && make clean
 	@cd "LetteraDiPresentazione" && make clean
 	@cd "Verbale" && make clean
+	@cd "AnalisiDeiRequisiti" && make clean
 

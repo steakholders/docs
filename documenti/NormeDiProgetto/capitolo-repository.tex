@@ -29,7 +29,7 @@ Il nome utilizzato per le \glossario{branch} del repository dovrà essere nella 
 
 \subsubsection{Script di pre-commit}
 
-Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository è disponibile uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi descritti nella sezione \ref{makefile}. Se uno dei due comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
+Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi descritti nella sezione \ref{makefile}. Se uno dei due comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
 
 Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
 \begin{lstlisting}

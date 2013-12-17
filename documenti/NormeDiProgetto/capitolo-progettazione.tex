@@ -1,74 +1,43 @@
 \section{Progettazione}
-\subsection{Specifica Tecnica}
-La fase di progettazione utilizzerà il documento di Analisi dei Requisiti e produrrà un progetto. Il progetto deve dimostrabilmente rispettare tutti i requisiti che il gruppo ha concordato con il committente.
+%\subsection{Specifica Tecnica}
+La progettazione deve dimostrabilmente rispettare tutti i requisiti che il gruppo ha concordato con il committente. In particolare i componenti progettati devono essere tracciabili rispetto al requisito che soddisfano.
 Di seguito vengono elencate le norme a carico dei \emph{Progettisti}.
 
-	\subsubsection{Diagrammi UML}
+	\subsection{Diagrammi UML}
 	Si dovrà usare il linguaggio \glossario{UML} \emph{versione 2.0} per i seguenti diagrammi:
 \begin{itemize}
- \item \textbf{Diagrammi delle classi} %TODO
- \item \textbf{Diagrammi di flusso} %TODO
- \item \textbf{Diagrammi di package} %TODO
+ \item \textbf{Diagrammi dei package:} dovranno essere presenti sia per l'architettura generale che di dettaglio, sarà fondamentale per definire i moduli all'interno del \glossario{framework} \glossario{Node.js} richiesto dal capitolato;
+ \item \textbf{Diagrammi delle classi:} qualora il progetto utilizzasse delle classi, i diagrammi delle classi dovranno essere presenti sia per l'architettura generale che di dettaglio. Nell'ambiente \glossario{Node.js} a prima vista sembra che siano poco utilizzate, a favore dei \glossario{package};
+ \item \textbf{Diagrammi di flusso:} qualora la codifica di un'unità del progetto sia particolarmente complessa, dovrà essere presente il relativo diagramma di flusso che il programmatore dovrà seguire;
 \end{itemize}
 
-	\subsubsection{Design pattern}
-	I \glossario{design pattern} utilizzati nella progettazione vanno giustificati e descritti sia testualmente sia mediante degli schemi che esemplifichino il funzionamento e la struttura.
-
-	\subsubsection{Tracciamento componenti}
-	I componenti progettati devono essere tracciabili rispetto al requisito che soddisfano. I requisiti vengono tracciati mediante il software \emph{Requisteak} appositamente creato dal gruppo \GroupName . Tale strumento è raggiungibile all'indirizzo \url{http://steakholders.herokuapp.com}. In questo modo sarà possibile misurare l'andamento della percentuale tra requisiti individuati e progettati.
-	 
-	\subsubsection{Test di integrazione}
-	I test di integrazione avvengono mediante la definizione e l'utilizzo di opportuni strumenti di test per verificare che i componenti del sistema funzionino nella maniera prevista.
-
-\subsection{Definizione di Prodotto}
-La \emph{Definizione di Prodotto} è la descrizione dettagliata della progettazione descritta nella \emph{Specifica Tecnica}. Questo documento rappresenta lo stadio avanzato della progettazione e indicherà ogni singolo componente del sistema permettendo ai \emph{Programmatori} di procedere con lo sviluppo. Parallelamente alla progettazione di dettaglio dovranno essere progettati i relativi test di unità che verranno descritti nel \PianoDiQualifica .
-
-	\subsubsection{Diagrammi UML}
-	I seguenti diagrammi vanno aggiornati e completati al dettaglio:
+	\subsection{Stile di progettazione}
 	\begin{itemize}
- 		\item \textbf{Diagrammi delle classi} %TODO
- 		\item \textbf{Diagrammi di flusso} %TODO
-		 \item \textbf{Diagrammi di package} %TODO
+		\item La progettazione dovrà usare quanto più possibile \glossario{design pattern} globalmente affermati, la loro scelta dovrà essere giustificata;
+		\item Suddividere il progetto in \glossario{moduli}, in accordo con lo stile di progettazione dell'ambiente \glossario{Node.js};
+		\item Non utilizzare codice sincrono per operazioni di \glossario{I/O};
+		\item Limitare quanto più possibile le \glossario{callback} annidate;
 	\end{itemize}
-	
-	\subsubsection{Definizione di classe}
-	Le classi progettate devono comparire nella \emph{Definizione di Prodotto} che dovrà descriverne l'elenco dei metodi e degli attributi, lo scopo e la funzionalità che rappresenta.
-	%TODO completare
-	
-	% \subsection{Formalismo di specifica dei metodi}
-	% \subsection{Tracciamento classi}
-	
-	\subsubsection{Test di unità}
-	I \emph{Progettisti} modellano i test da effettuare sulle unità per le opportune verifiche.
 
-\subsection{Verifica}
-L'attività di verifica viene effettuata dai \emph{Verificatori} scelti tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione. La verifica è un attività continua nei processi, nei documenti e nel software. Di seguito ne vengono spiegate le modalità operative.
 
-	\subsubsection{Metriche per le anomalie riscontrate e gestione dei cambiamenti}
-	Si definiscono come vanno trattate le metriche indicate nel \PianoDiQualifica  da parte dei \emph{Verificatori}.
-	%TODO
-	
-	
-	\subsubsection{Verifica dei documenti}
-	La verifica dei documenti avviene quando il \emph{Verificatore} prende in carico il documento e compila opportunamente il diario delle modifiche. La verifica di un documento è composta dai seguenti passi:
-	\begin{enumerate}
-		\item \textbf{Controllo sintattico e del periodo:} utilizzando Aspell vengono evidenziati e corretti gli errori grammaticali. Un successivo controllo walktrough permetterà di analizzare i periodi ed eventualmente correggerne la forma;
-		\item \textbf{Rispetto delle norme di progetto:} i documenti devo seguire le norme tipografiche specificate. Tale verifica non può essere automatizzata poiché il setup dei tools necessari richiederebbe molto tempo e delle competenze specifiche. 
-		\item \textbf{Verifica delle proprietà di glossario:} va utilizzato l'apposito script che permette di confrontare le i termini racchiusi dal tag "\glossario{}", presenti nei file con estensione \emph{.tex}, con quelli presenti nel documento \emph{Glossario}.
-		\item \textbf{Calcolo dell'indice Gulpease:} per ogni documento redatto, il \emph{Verificatore} deve calcolare l'indice di leggibilità gulpease. Qualora tale indice risultasse troppo basso andranno eseguite le opportune operazioni per semplificare frasi troppo lunghe o complesse;
-		\item \textbf{Miglioramento del processo di verifica:} per migliorare ciclicamente il processo di verifica, verranno riportati gli errori frequenti. In questo modo sarà più facile eseguire, negli incrementi successivi, controlli di tipo inspection.
-		\item \textbf{Segnalazione delle anomalie riscontrate:} il \emph{Verificatore} deve generare un ticket secondo le modalità descritte in questo documento.
-	\end{enumerate}
-	
-\subsection{Verifica del tracciamento dei requisiti}
-Al verificatore è richiesto di controllare che tutti i requisiti individuati siano scritti secondo le norme e facciano riferimento ad un diagramma di caso d'uso.
+	%\subsubsection{Test di integrazione}
+	%I test di integrazione avvengono mediante la definizione e l'utilizzo di opportuni strumenti di test per verificare che i componenti del sistema funzionino nella maniera prevista.
 
-\subsection{Verifica dei diagrammi UML}
-I diagrammi \glossario{UML} prodotti vengono controllati dal \emph{Verificatore}:
-	\begin{itemize}
-		\item \textbf{Diagrammi di caso d'uso:} il controllo dei diagrammi di caso d'uso deve avvenire manualmente, controllando il rispetto delle specifiche \glossario{UML} e il corretto uso delle relazioni di inclusione ed estensione. Il diagramma di caso d'uso deve rappresentare quanto descritto dal caso d'uso.
-		\item \textbf{Diagrammi delle classi:} il \glossario{Verificatore} controlla la corrispondenza tra progettazione e diagrammi delle classi.
-	\end{itemize}
+
+%\subsection{Definizione di Prodotto}
+%La \emph{Definizione di Prodotto} è la descrizione dettagliata della progettazione descritta nella \emph{Specifica Tecnica}. Questo documento rappresenta lo stadio avanzato della progettazione e indicherà ogni singolo componente del sistema permettendo ai \emph{Programmatori} di procedere con lo sviluppo. Parallelamente alla progettazione di dettaglio dovranno essere progettati i relativi test di unità che verranno descritti nel \PianoDiQualifica .
+
+%	\subsubsection{Definizione di classe}
+%	Le classi progettate devono comparire nella \emph{Definizione di Prodotto} che dovrà descriverne l'elenco dei metodi e degli attributi, lo scopo e la funzionalità che rappresenta.
+%	TODO completare
+%	
+%	% \subsection{Formalismo di specifica dei metodi}
+%	 \subsection{Tracciamento classi}
+%	
+%	\subsubsection{Test di unità}
+%	I \emph{Progettisti} modellano i test da effettuare sulle unità per le opportune verifiche.
+
+
 
 %\subsection{Verifica della progettazione architetturale}
 %\subsection{Verifica della progettazione di dettaglio}

@@ -303,9 +303,20 @@ Ciascun documento deve rispettare le norme tipografiche definite nella seguente 
 	
 \subsection{Verifica e validazione}
 
-La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un verificatore. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle Norme di Progetto.
+La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un verificatore, scelto dal Responsabile tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione.. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle Norme di Progetto.
 
 La \textbf{\glossario{validazione}} del documento consiste nel controllare che il documento abbia \textit{il giusto contenuto}, è un compito che va oltre la semplice verifica delle norme. Richiede una conoscenza a priori del contenuto e degli scopi del documento.
+	
+	
+	\subsubsection{Passi della verifica}
+	La verifica di un documento è composta come minimo dai seguenti passi:
+	\begin{enumerate}
+		\item \textbf{Controllo ortografico e del periodo:} con un controllo walktrough bisognerà analizzare i periodi ed eventualmente correggerne la forma, oltre a controllare la presenza di errori ortografici con l'aiuto dello script \code{make test} (vedi sezione \ref{makefile});
+		\item \textbf{Verifica delle proprietà di glossario:} con l'aiuto dell'apposito script \code{make test-glossary} (vedi sezione \ref{makefile}) ci si deve assicurare che ogni termite marcato come glossario sia effettivamente definito nel glossario; 
+		% \item \textbf{Calcolo dell'indice Gulpease:} per ogni documento redatto, il \emph{Verificatore} deve calcolare l'indice di leggibilità gulpease. Qualora tale indice risultasse troppo basso andranno eseguite le opportune operazioni per semplificare frasi troppo lunghe o complesse;
+		\item \textbf{Riportare gli errori frequenti:} per migliorare ciclicamente il processo di verifica, verranno riportati gli errori frequenti. In questo modo sarà più facile eseguire, negli incrementi successivi, controlli di tipo inspection.
+		\item \textbf{Segnalazione delle anomalie riscontrate:} il \emph{Verificatore} deve generare un ticket secondo le modalità descritte nella sezione \ref{segnalazionebug}.
+	\end{enumerate}
 
 \subsection{Approvazione}
 

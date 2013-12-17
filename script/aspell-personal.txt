@@ -1,7 +1,8 @@
-personal_ws-1.1 it 140 
+personal_ws-1.1 it 142 
 Mistake'
 repository
 pdflatex
+callback
 tag
 personal
 CamelCase
@@ -67,6 +68,7 @@ OT
 PP
 PQ
 Apple
+glossary
 RSYZ
 SF
 pianificata'

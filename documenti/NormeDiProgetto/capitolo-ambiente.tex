@@ -64,7 +64,7 @@
 	  		%In futuro potremo decidere di stilare l' \emph{ordine del giorno} nel template del verbale delle riunioni.
 	  		\item Le \textbf{Revisioni} previste dal committente;
 	  		\item \textbf{Non disponibilità}: un membro del gruppo dichiara di non essere disponibile a svolgere attività legate al progetto. Per creare un evento di \emph{Non disponibilità} bisogna, oltre a compilare i soliti campi (titolo, descrizione, data e ora), impostare la visibilità a \emph{tutti i membri della propria azienda}, selezionare la categoria \emph{Non disponibilità} e segnare la persona interessata. In questo modo tutti i membri del gruppo \GroupName{} potranno visualizzare tale evento. 
-	  		Il titolo sarà nel formato \textbf{[ND] \{nome membro\}\/} ossia le iniziali di \emph{Non disponibilità} racchiuse tra parentesi quadre, seguite da il nome del membro del gruppo. Questo formato permetterà di individuare con immediatezza i giorni nei quali non è possibile fissare delle riunioni.
+	  		Il titolo sarà nel formato \textbf{[ND] \{nome membro\}} ossia le iniziali di \emph{Non disponibilità} racchiuse tra parentesi quadre, seguite da il nome del membro del gruppo. Questo formato permetterà di individuare con immediatezza i giorni nei quali non è possibile fissare delle riunioni.
 		\end{itemize}
 	
 	\subsection{Ambiente di produzione dei documenti}
@@ -119,9 +119,13 @@ Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makef
 		\item Verifica che i file siano memorizzati con la codifica \glossario{UTF-8};
 		\item Verifica con \emph{Aspell} che le parole utilizzate nei documenti siano comprese nel dizionario italiano di \emph{Aspell} o nel dizionario personalizzato \file{root/script/aspell\_personal.txt}.
 	\end{itemize}
+	
  \item \textbf{\code{make documents}} \\
 	Compila tutti i documenti presenti nelle sotto-cartelle.
 
+ \item \textbf{\code{make test-glossary}} \\
+	Controlla che tutti i termini marcati con il comando \code{\\glossario\{\dots\}} siano definiti da un corrispondente comando \code{\\definizione\{\dots\}}.
+	
 \end{itemize}
 
 È possibile eseguire questo script dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository.

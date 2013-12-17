@@ -137,11 +137,11 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 		Consiste nello studiare la documentazione ed il software senza istanze di esecuzione del sorgente. Queste tecniche possono includere attività \emph{people-intensive} o di \emph{analisi} condotte da singoli individui con o senza l'assistenza di tools automatizzati.
 
-			\paragraph{Walkthrough}
+			\paragraph{Walkthrough} \mbox{} \\
 			
 			Si svolge effettuando una lettura a largo spettro. È un'attività onerosa e collaborativa che richiede la cooperazione di più persone, si tratta di una tecnica non efficiente pertanto se ne sconsiglia l'attuazione. Ne è previsto l'utilizzo principalmente durante la prima parte del progetto quando non tutti i membri del gruppo hanno piena padronanza e conoscenza delle \emph{Norme di Progetto} e del \emph{Piano di Qualità}.
 
-			\paragraph{Inspection}
+			\paragraph{Inspection} \mbox{} \\
 
 			Si tratta di una lettura mirata e strutturata, volta a localizzare l'errore con il minor costo possibile. Richiede una buona padronanza di tutti gli strumenti utilizzati e conoscenza di tutti i documenti di progetto. Solitamente viene effettuata da un singolo individuo. La ricerca mirata si basa sugli errori ricorrenti catalogati nel sistema di tracciamento delle anomalie, richiede una buona pianificazione e la definizione di una \emph{lista di controllo} che definisce cosa ispezionare.
 			
@@ -155,25 +155,28 @@ La speranza è che dei buoni processi portino ad un buon software.
 				
 		\subsubsection{Dinamiche}
 
-		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test basati sull'effettiva esecuzione del codice, tali controlli devono essere ripetibili. È quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, per poi verificare velocemente che gli output siano quelli attesi. Un file di \glossario{log} permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di granularità.\\
+		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test ripetibili basati sull'effettiva esecuzione del codice. È quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, al fine di verificare velocemente che gli output siano quelli attesi. Un file di \glossario{log} permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di granularità.\\
 		Il \glossario{proponente}, nel corso del primo incontro, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
 		
-			\paragraph{Test di unità}
+			\paragraph{Test di unità} \mbox{} \\
 
-			Si tratta di testare il funzionamento delle unità tramite l'utilizzo di \glossario{\emph{stub}}, \glossario{\emph{test driver}}, e \glossario{\emph{logger}}. Un \glossario{\emph{unità}} consiste nella più piccola quantità di software che è utile verificare singolarmente.
-			 Questi test dovrebbero procedere quanto più in parallelo, assegnando priorità a quelle \glossario{\emph{unità}} che mostrano dei risultati utilizzabili per definire dei \glossario{\emph{prototipi}}.
-			 Il corretto funzionamento di tutte le unità assicura l'assenza di errori di programmazione e permette di integrare queste componenti secondo le specifiche di progetto con la garanzia che esse funzionino.
+			Si tratta di testare il funzionamento delle \glossario{unità} tramite l'utilizzo di \glossario{stub}, \glossario{test driver}, e \glossario{logger}. Un'\glossario{unità} consiste nella più piccola quantità di software che è utile verificare singolarmente.
+			Questi test dovrebbero procedere quanto più in parallelo, assegnando priorità alle \glossario{unità} che mostrano dei risultati utilizzabili per definire dei \glossario{prototipi}. Il corretto funzionamento di tutte le unità assicura l'assenza di errori di programmazione e permette di integrare queste componenti secondo le specifiche di progetto con la garanzia che esse funzionino.
 			 
-			\paragraph{Test di integrazione}
+			\paragraph{Test di integrazione} \mbox{} \\
+
 			Consiste nel test di una parte di due o più \glossario{\emph{unità}} e ne valuta globalmente i risultati. Costituisce parte della costruzione e verifica incrementale del sistema, le  componenti non ancora sviluppate vanno simulate con dei sostituti fittizi.
 			
-			\paragraph{Test di sistema}
+			\paragraph{Test di sistema} \mbox{} \\
+
 			Consiste nella validazione del sistema per accertare la copertura dei requisiti software, il collaudo viene supervisionato dal committente per mostrare la conformità del prodotto.			
 			
-			\paragraph{Test di regressione}
+			\paragraph{Test di regressione} \mbox{} \\
+
 			Consiste nell'eseguire nuovamente i test riguardanti le componenti software che hanno subito modifiche.	Tale operazione è aiutata dal tracciamento, che permette di individuare e ripetere facilmente i test di unità, integrazione e sistema che sono stati potenzialmente influenzati dalla modifica.		
 			
-			\paragraph{Test di accettazione}
+			\paragraph{Test di accettazione} \mbox{} \\
+
 			Si tratta del collaudo del prodotto in presenza del proponente. Al superamento di tale collaudo segue il rilascio ufficiale del prodotto sviluppato.
 			
 		
@@ -185,7 +188,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 		\subsubsection{Metriche per i processi}
 		Le seguenti metriche rappresentano un indicatore volto a monitorare e prevedere l'andamento delle principali variabili critiche del progetto (i tempi e i costi). Sono state scelte metriche di tipo \glossario{consuntivo} perché danno un riscontro immediato sullo stato attuale del progetto; ad ogni iterazione verranno valutati tali indici e, se necessario, verranno stabiliti opportuni provvedimenti da parte del \emph{Responsabile di Progetto}.
 		
-			\paragraph{Schedule Variance}		
+			\paragraph{Schedule Variance} \mbox{} \\
+
 			Indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
 			\[
 			SV = BCWP - BCWS
@@ -193,7 +197,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 			Dove $BCWP\  =\  valore \ delle \ attività \ realizzate \ alla\  data \ corrente$ e $BCWS \ = \ costo \ pianificato \ per\  realizzare\  le \ attività \ di \ progetto\  alla\  data \ corrente.$ 
 			È un indicatore di efficacia soprattutto nei confronti del Cliente. Se SV > 0 significa che il progetto sta producendo con maggior velocità a quanto pianificato, viceversa se negativo.
 			
-			\paragraph{Budget Variance}
+			\paragraph{Budget Variance}\mbox{} \\
+			
 			Indica se alla data corrente si è speso di più o di meno rispetto a quanto previsto a budget alla data corrente.
 			\[
 			BV = BCWS - ACWP
@@ -202,8 +207,11 @@ La speranza è che dei buoni processi portino ad un buon software.
 			È un indicatore che ha un valore unicamente contabile e finanziario. Se BV > 0 significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo. 
 			
 		\subsubsection{Metriche per i documenti}
+		
 		La \emph{leggibilità} dei documenti è indispensabile per garantirne la qualità. Si è scelto di adottare un indice per misurare la leggibilità dei testi in lingua italiana:
-			\paragraph{Gulpease}
+			
+			\paragraph{Gulpease}\mbox{} \\
+			
 			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. Permette di misurare la complessità dello stile di un documento.
 			L'indice di Gulpease considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere.
 			La formula per il suo calcolo è: \\
@@ -218,37 +226,45 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 		\subsubsection{Metriche per il software}
+
 		La prima release di  \glossario{NodeJS} risale a Maggio 2009, è stata riscontrata una forte differenza tra le metriche disponibili per l'analisi statica rispetto a quelle per i linguaggi meno recenti. Inoltre nessun membro del gruppo ha conoscenza di tale linguaggio e delle sue particolarità come l'aspetto \glossario{funzionale}. Tali differenze con i linguaggi studiati nel percorso universitario si sono tradotte nella difficoltà ad individuare metriche non incentrate sulla visione \emph{ad oggetti} del codice. Si è inoltre osservata l'assenza di strumenti per la misurazione di metriche tradizionali come la coesione e l'instabilità dei package.
 		Di seguito vengono elencate le metriche per il software prodotto. 
 		
-			\paragraph{Complessità ciclomatica}
+			\paragraph{Complessità ciclomatica}\mbox{} \\
+				
 			La complessità ciclomatica è una metrica software che indica la complessità di un programma misurando il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Nel grafo sopracitato i \emph{nodi} corrispondono a gruppi indivisibili di istruzioni, mentre gli \emph{archi} connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
 			Questo indice può essere applicato indistintamente a singole funzioni, moduli, metodi o package di un programma.
 			Si vuole utilizzare tale metrica per limitare la complessità durante la fase di sviluppo.
 			Durante il testing è utile per determinare il numero di casi di test necessari, l'indice di complessità è un limite superiore al numero di test necessari per raggiungere il coverage completo del modulo testato. Inoltre uno studio ha mostrato forti corrispondenze tra le metriche di complessità e il livello di coesione nei package presi in esame\footnote{Stein, C., G. Cox and L. Etzkorn, 2005. Exploring the Relationship between Cohesion and Complexity. J. Comput. Sci., 1: 137-144.}.\\
 			
-			\paragraph{Numero metodi - NOM}
+			\paragraph{Numero metodi - NOM}\mbox{} \\
+				
 			Il \emph{Number of methods} è una metrica usata per calcolare la media delle occorrenze dei metodi per package. Un package non dovrebbe contenere un numero eccessivo di metodi. Valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione del package.\\
 
 			
-			\paragraph{Bugs per lines of code}
+			\paragraph{Bugs per lines of code}\mbox{} \\
+				
 			% http://mayerdan.com/ruby/2012/11/11/bugs-per-line-of-code-ratio/
 			Questa metrica misura il numero di bugs trovati su un certo quantitativo di linee di codice. L'aumentare del sorgente implica un incremento delle probabilità di nascondere errori, per questo è bene mantenere il codice più chiaro e semplice possibile. Con la crescita del prodotto è bene monitorare il rapporto tra i difetti trovati e il codice incrementale, tale indice dovrebbe restare costante o meglio diminuire nel tempo. 
 			
 			
-			\paragraph{Variabili non usate e non definite}
+			\paragraph{Variabili non usate e non definite}\mbox{} \\
+				
 			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\glossario{\emph{Abstract syntax tree - AST}} eseguendo una cross-reference tra le variabili dichiarate e quelle inizializzate. Per sua natura \glossario{\emph{Javascript}} non blocca l'insorgenza di tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà mai utilizzata.
 
 			
-			\paragraph{Numero parametri per metodo}
+			\paragraph{Numero parametri per metodo}\mbox{} \\
+				
 			Un numero elevato di parametri per un metodo potrebbe evidenziare un metodo troppo complesso.
 
 			
-			\paragraph{Numero attributi per package}
+			\paragraph{Numero attributi per package}\mbox{} \\
+				
 			Un numero elevato di attributi in un package evidenzia un possibile errore di progettazione.
 
 			
-			\paragraph{Halstead}
+			\paragraph{Halstead}\mbox{} \\
+				
 			La metrica di Halstead non è solamente un indice di complessità ma identifica le proprietà misurabili del software e le relative relazioni.
 			Si basa sull'osservazione che una metrica dovrebbe valutare l'implementazione di un algoritmo in linguaggi differenti ma essere indipendente dal esecuzione su una specifica piattaforma.
 			In un problema vengono identificati:

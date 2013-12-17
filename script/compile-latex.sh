@@ -35,6 +35,9 @@ pretty_file=$( pretty_path "$main_tex")
 # Il parametro -n non fa andare a capo
 log "info" "Compilo $pretty_file ..."
 
+# Cartella in cui LaTeX deve cercare gli *.sty
+export TEXINPUTS="$REPO_DIR/modello:"
+
 # Compila il pdf 3 volte (serve per poter fare l'indice)
 for iter in $(seq 3); do
 	pdflatex -interaction=nonstopmode -halt-on-error "$main_tex" > /dev/null

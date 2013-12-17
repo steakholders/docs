@@ -1,6 +1,6 @@
-personal_ws-1.1 it 339 
+personal_ws-1.1 it 356 
 DdP
-Application
+application
 Prog
 tests
 AST
@@ -29,14 +29,16 @@ index
 proattivi
 Product
 Amazon
+UCU
 FAQ
 methods
 Cox
 active
 work
-Calendar
 cyan
+Calendar
 Compiler
+line
 Kernel
 sull'
 aspell
@@ -74,6 +76,7 @@ function
 System
 reference
 name
+Postcondizioni
 projects
 slack
 fault
@@ -81,6 +84,7 @@ nomeDellaFunzione
 logger
 URL
 Maap's
+MaaP's
 git
 Complexity
 dimostrabilmente
@@ -88,7 +92,7 @@ McCabe
 utf
 Tresoldi
 Teamwork
-IAN
+Ian
 Module
 dell'
 personal
@@ -116,9 +120,12 @@ documents
 Established
 Description
 Rotundo
+sottoattributi
 Well
+event
 position
 replacements
+driven
 SOMMERVILLE
 Sommerville
 logic
@@ -137,6 +144,7 @@ Ready
 Microsoft
 slash
 global
+Firefox
 MondoDB
 style
 setup
@@ -149,6 +157,7 @@ CamelCase
 ciclomatica
 Gantt
 yyyy
+NoSQL
 an
 people
 AR
@@ -195,12 +204,12 @@ Skype
 bugs
 log
 Mistake
-Mistake'
 Measure
 it
 maxhv
 edition
 aggiungi'
+form
 js
 titolo'
 Selected
@@ -213,6 +222,7 @@ ND
 Pearson
 BCWP
 walktrough
+Pianciamore
 Comput
 BCWS
 Apple
@@ -220,25 +230,26 @@ Relationship
 monospace
 practise
 pa
-PA
 mod
 of
 Closure
 MU
 NP
 Modifica'
+Lavazza
 rege
 LUF
 inner
 Managment
 NomeDellaCostante
 Google
+Ruby
 OT
 PP
 PQ
+Express
 Demonstrable
 pdc
-PDC
 pt
 SF
 Mocha
@@ -254,6 +265,7 @@ th
 UC
 Professional
 Operational
+Rails
 Slide
 responsività
 shortcut
@@ -274,15 +286,16 @@ Maap
 Usable
 Maas
 left
+Page
 issue
 Everybody
 nomemetrica
 vv
-VV
 completo'
 Ubuntu
 stack
 sottoscrivibile
+Chrome
 History
 repl
 request
@@ -297,6 +310,7 @@ GitHub
 stakeholder
 tools
 repository
+RAU
 packet
 storage
 Platform
@@ -327,6 +341,7 @@ Solution
 correction
 Error
 SCR
+ActiveAdmin
 jQuery
 Tag
 fgfg
@@ -335,6 +350,8 @@ pollution
 sep
 TODO
 path
+gray
+logout
 Part
 project'
 Project

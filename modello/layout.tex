@@ -27,6 +27,16 @@
 % permetti di definire dei colori
 \usepackage[usenames,dvipsnames]{color}
 
+% permette di usare il comando "paragraph" come subsubsubsection!
+\usepackage{titlesec}
+%  set the secnumdepth counter to four to obtain numbering for the paragraphs:
+\setcounter{secnumdepth}{4}
+
+% permette di inserire le immagini/tabelle esattamente dove viene usato il
+% comando \begin{figure}[H] ... \end{figure}
+% evitando che venga spostato in automatico
+\usepackage{float}
+
 % permette l'inserimento di url e di altri tipi di collegamento
 \usepackage[colorlinks=true]{hyperref}
 
@@ -50,14 +60,30 @@
 % tabelle su più pagine
 \usepackage{longtable}
 
+% per avere dei comandi in più da poter usare sulle tabelle
+\usepackage{booktabs}
+
 % tabelle con il campo X per riempire lo spazio rimanente sulla riga
 \usepackage{tabularx}
+
+% multirow per tabelle
+\usepackage{multirow}
+
+% colore di sfondo per le celle
+\usepackage[table]{xcolor}
 
 % personalizza l'intestazione e piè di pagina
 \usepackage{fancyhdr}
 
 % permette di inserire caratteri speciali
 \usepackage{textcomp}
+
+% permette di includere i diagrammi Gantt
+% su Ubuntu non si può installare il pacchetto, deve essere in modello/
+\usepackage{../../modello/pgfgantt}
+
+% permette i path delle immagini con gli spazi
+\usepackage{grffile}
 
 \fancypagestyle{plain}{
 	% cancella tutti i campi di intestazione e piè di pagina

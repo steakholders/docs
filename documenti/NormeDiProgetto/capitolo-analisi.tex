@@ -2,50 +2,88 @@
 
 Dal capitolato e dagli incontri con il proponente gli Analisti dovranno estrarre i requisiti del progetto, producendo l'Analisi dei Requisiti.
 
-Tutti i requisiti devono essere riconducibile al capitolato o ad un incontro con il proponente. I requisiti obbligatori identificati, se rispettati, dovranno essere necessari e sufficienti per l'approvazione del prodotto.
+Tutti i requisiti che si possono evincere dal capitolato o ad un incontro con il proponente vanno specificati nell'Analisi dei Requisiti.
+
+Per agevolare l'analisi dei requisiti viene utilizzata la tecnica dei casi d'uso.
+
+	\subsection{Tracciamento requisiti}
+	 I requisiti vengono tracciati mediante il software \emph{Requisteak} appositamente creato dal gruppo \GroupName{}. Tale strumento è raggiungibile all'indirizzo \url{http://steakholders.herokuapp.com}.
+	 
+\subsection{Casi d'Uso}
+
+Ogni caso d'uso dovrà presentare i seguenti campi:
+\begin{itemize}
+ \item Codice identificativo
+ \item Titolo
+ \item Attori coinvolti
+ \item Diagramma UML
+ \item Scopo e descrizione
+ \item Precondizione
+ \item Postcondizione
+ \item Flusso principale degli eventi
+ \item Scenario alternativo
+\end{itemize}
+
+\subsection{Codice identificativo}
+
+Ogni caso d'uso è identificato da un codice, che segue il seguente formalismo:
+\begin{center}
+	\code{UC\{X\} \{Gerarchia\}}
+\end{center}
+
+Dove:
+\begin{itemize}
+ \item \textbf{X} corrisponde all'ambito di riferimento e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{U} = Ambito \glossario{Utente};
+	 \item[] \textbf{S} = Ambito \glossario{Sviluppatore}.
+	\end{itemize}
+
+	 \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i casi d'uso di uno stesso ambito. C'è quindi una struttura gerarchica per ogni ambito dei casi d'uso.
+\end{itemize}
 
 \subsection{Requisiti}
 
-Ogni requisito è identificato da un nome, che segue il seguente formalismo:
-\begin{center}
-	\code{R\{Ambito\}\{Gerarchia\}}
-\end{center}
-
-Dove
+Ogni requisito dovrà presentare i seguenti campi:
 \begin{itemize}
- \item \textbf{Ambito} può essere:
-	\begin{itemize}
-	 \item \textbf{U} se è un \emph{requisito utente};
-	 \item \textbf{S} se è un \emph{requisito di sistema}.
-	\end{itemize}
-
- \item \textbf{Gerarchia} identifica in modo univoco la posizione che il requisito ha nella gerarchia in cui sono posti tutti i requisiti di uno stesso ambito.
+ \item Codice identificativo
+ \item Descrizione
+ \item Fonti
 \end{itemize}
 
-RSYZ num
+\subsection{Codice identificativo}
 
-dove:
+Ogni requisito è identificato da un codice, che segue il seguente formalismo:
+\begin{center}
+	\code{R\{X\}\{Y\}\{Z\} \{Gerarchia\}}
+\end{center}
 
-S corrisponde al sistema di riferimento e può assumere i seguenti valori:
+Dove:
+\begin{itemize}
+ \item \textbf{X} corrisponde al sistema di riferimento e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{A} = Applicazione \glossario{Maap};
+	 \item[] \textbf{F} = \glossario{Framework} di \glossario{Maap};
+	 \item[] \textbf{S} = \glossario{Maas}.
+	\end{itemize}
 
-A = Maap's Application
-F = Maap Framework
-S = Maas
+ \item \textbf{Y} corrisponde alla tipologia del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{1} = Funzionale;
+	 \item[] \textbf{2} = Di prestazione;
+	 \item[] \textbf{3} = Di qualità;
+	 \item[] \textbf{4} = Vincolo.
+	\end{itemize}
 
-Y corrisponde alla tipologia del requisito e può assumere i seguenti valori:
+ \item \textbf{Z} corrisponde alla priorità del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+	 \item[] \textbf{O} = Obbligatorio
+	 \item[] \textbf{D} = Desiderabile
+	 \item[] \textbf{F} = Facoltativo o opzionale
+	\end{itemize}
 
-1 = Funzionale
-2 = Prestazionale
-3 = Di qualità
-4 = Vincolo
-
-Z corrisponde alla priorità del requisito e può assumere i seguenti valori:
-
-O = Obbligatorio
-D = Desiderabile
-F = Facoltativo o opzionale
-
-La numerazione inoltre va fatta in modo incrementale per i fratelli.
+ \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i requisiti di uno stesso tipo. C'è quindi una struttura gerarchica per ogni tipologia di requisito.
+\end{itemize}
 
 \subsection{UML}
 

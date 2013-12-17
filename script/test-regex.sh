@@ -29,7 +29,8 @@ function grep_test() {
 	error_message="$2"
 	files="${@:3}"
 	
-	result=$(grep -l "$regexp" $files)
+	#result=$(grep -l "$regexp" $files)
+	result=$(grep --color=always "$regexp" $files)
 	status="$?"
 	
 	if [ "$status" -gt 1 ]; then
@@ -40,8 +41,7 @@ function grep_test() {
 	if [ "$status" == "0" ]; then
 		log "warning" "Attenzione, sono state trovate occorrenze dell'espressione regolare '$regexp'."
 		log "warning" "$error_message"
-		log "warning" "File affetti:
-$result"
+		echo "$result"
 	fi
 }
 
@@ -52,11 +52,11 @@ grep_test "\\\proponente" "Sostituire con \Proponente{}." $(find . -name '*.tex'
 grep_test "\\\committente" "Sostituire con \Committente{}." $(find . -name '*.tex')
 
 # Tipico utilizzo errato che 'mangia' lo spazio successivo al comando
-grep_test "\\\LaTeX[^{]" "Sostituire con \LaTeX{}." $(find . -name '*.tex')
-grep_test "\\\GroupName[^{]" "Sostituire con \GroupName{}." $(find . -name '*.tex')
-grep_test "\\\ProjectName[^{]" "Sostituire con \ProjectName{}." $(find . -name '*.tex')
-grep_test "\\\Proponente[^{]" "Sostituire con \Proponente{}." $(find . -name '*.tex')
-grep_test "\\\Committente[^{]" "Sostituire con \Committente{}." $(find . -name '*.tex')
+grep_test "\\\LaTeX[^{}]" "Sostituire con \LaTeX{}." $(find . -name '*.tex')
+grep_test "\\\GroupName[^{}]" "Sostituire con \GroupName{}." $(find . -name '*.tex')
+grep_test "\\\ProjectName[^{}]" "Sostituire con \ProjectName{}." $(find . -name '*.tex')
+grep_test "\\\Proponente[^{}]" "Sostituire con \Proponente{}." $(find . -name '*.tex')
+grep_test "\\\Committente[^{}]" "Sostituire con \Committente{}." $(find . -name '*.tex')
 
 # Errori ortografici
 grep_test "E'" "Sostituire con È." $(find . -name '*.tex')

@@ -18,14 +18,24 @@
 % imposta lo stile italiano per i paragrafi
 \usepackage{parskip}
 
+% numera anche i paragrafi
+\setcounter{secnumdepth}{4}
+
+% elenca anche i paragrafi nell'indice
+\setcounter{tocdepth}{4}
+
 % permetti di definire dei colori
 \usepackage[usenames,dvipsnames]{color}
-
 
 % permette di usare il comando "paragraph" come subsubsubsection!
 \usepackage{titlesec}
 %  set the secnumdepth counter to four to obtain numbering for the paragraphs:
 \setcounter{secnumdepth}{4}
+
+% permette di inserire le immagini esattamente dove viene usato il
+% comando \beign{figure}[H] ... \end{figure}
+% evitando che venga spostato in automatico
+\usepackage{float}
 
 % permette l'inserimento di url e di altri tipi di collegamento
 \usepackage[colorlinks=true]{hyperref}
@@ -52,6 +62,12 @@
 
 % tabelle con il campo X per riempire lo spazio rimanente sulla riga
 \usepackage{tabularx}
+
+% multirow per tabelle
+\usepackage{multirow}
+
+% colore di sfondo per le celle
+\usepackage[table]{xcolor}
 
 % personalizza l'intestazione e piè di pagina
 \usepackage{fancyhdr}

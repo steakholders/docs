@@ -30,50 +30,44 @@ Inserimento Immagine Base
 			
 		%Tabella 
 			\begin{table}[h]
-			\begin{tabular}{ l c r}
-			%tabella di 2 colonne: {\textbf{colonna1} & colonna2} \\ \\
-			
+			\begin{longtabu}{  c | X  }
+						
 			\hline
-			\multicolumn{2}{ c }{ \cellcolor[gray]{0.9} \textbf{UCU - MaaP's Application}} \\ 
+			\multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - MaaP's Application} } \\ 
 			\hline
 			
-			\textbf{Attori Primari} & Utente non autenticato, Utente autenticato, admin \\ \\
+			 & \\
+			
+			\textbf{Attori Primari} & Utente non autenticato, Utente autenticato, admin \\
     			
-    			\textbf{Attori Secondari} &  \\ \\
+    			\textbf{Attori Secondari} &  \\
     			
     			\textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form e
     			recuperare le stesse qualora le abbia perse. L'Utente autenticato in qualsiasi punto dell'applicazione può accedere alle
     			seguenti funzionalità: - può accedere alla Dashboard -può effettuare il Log Out - può scegliere una qualsiasi collection
     			presente L'Utente Admin eredita le funzionalità dell'Utente Autenticato ed in più accedere alla sezione "Admin" nella
-    			quale può creare o modificare un nuovo utente. \\ \\
+    			quale può creare o modificare un nuovo utente. \\ 
     			
-    			\textbf{\glossario{Precondizioni}}  & 
+    			\textbf{Precondizioni}  & 
     			L'Applicazione generata dal framework Maap, è disponibile all'Utente e pronta all'uso ed è stato creato un account
-    			dell'utente sul database. \\ \\
+    			dell'utente sul database. \\ 
     			
-    			\textbf{\glossario{Postcondizioni}} &
-    			Il Sistema risponde alle richieste dell'utente in maniera corretta. \\ \\
+    			\textbf{Postcondizioni} &
+    			Il Sistema risponde alle richieste dell'utente in maniera corretta. \\
     			
-    			\multirow{6}{*}{\textbf{Flusso Principale}} & 
-    			%multirow{n} permette alla colonna2 di avere n righe.
-    			%in multirow l'attributo n deve equivalere al numero di passi che ha il flusso.
+    			\textbf{Flusso Principale} & 
     	
-    				1. L’Utente non autenticato può effettuare il login (UCU1); \\ &
-    				2. L’Utente non autenticato può recuperare la password dimenticata (UCU2); \\ &
-    				3. L’Utente Autenticato può effettuare il logout (UCU3); \\ &
-    				4. L’Utente Autenticato può accedere alla Dashboard (UCU4); \\ &
-    				5. L’Utente Autenticato può scegliere una qualsiasi collection presente (UCU5); \\ &
+    				1. L’Utente non autenticato può effettuare il login (UCU1); \newline
+    				2. L’Utente non autenticato può recuperare la password dimenticata (UCU2); \newline
+    				3. L’Utente Autenticato può effettuare il logout (UCU3); \newline
+    				4. L’Utente Autenticato può accedere alla Dashboard (UCU4); \newline
+    				5. L’Utente Autenticato può scegliere una qualsiasi collection presente (UCU5); \newline
     				6. L'Utente Admin può accedere alla Admin Page (UCU6).
-    			
-    				%In requisteak il flusso è già enumerato se lo copi uguale, 
-    				% altrimenti devi usare il comando \begin{itemize} 
-    				%									\item "..."
-    				%								   \end{itemize}
-    				\\ 
+    			 \\
     				
-    			\multirow{1}{*}{\textbf{Scenari Alternativi}} & . \\ \\
+    			\textbf{Scenari Alternativi} & . \\
     			
     				% qui non puoi fare un itemize perchè la numerazione è prefissata in requisteak.
   
-  			\end{tabular}
-			\end{table}  			
+  			\end{longtabu}
+			\end{table}  			 			

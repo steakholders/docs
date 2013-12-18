@@ -1,4 +1,4 @@
-personal_ws-1.1 it 395 
+personal_ws-1.1 it 405 
 Google
 Amm
 Closure
@@ -16,6 +16,7 @@ application
 shortcut
 titolo'
 query
+source
 Hangouts
 parser
 DdP
@@ -23,6 +24,7 @@ Module
 AST
 JSLint
 milestone
+report
 slash
 NoSQL
 Rotundo
@@ -41,7 +43,9 @@ maxhv
 Pearson
 style
 FAQ
+interface
 Cox
+plugin
 CamelCase
 syntax
 best
@@ -68,7 +72,9 @@ Transactions
 sottoscrivibile
 Postcondizioni
 Quality
+Metrics
 nomemetrica
+AngularJS
 git
 Exploring
 Ian
@@ -180,6 +186,7 @@ Project
 Maccagnan
 Well
 Modifica'
+JavaScript
 Javascript
 OOP
 num
@@ -194,8 +201,8 @@ Managment
 SWEBOK
 autoformazione
 Place
-sottoattributi
 Res
+sottoattributi
 pre
 Verifica'
 Apple
@@ -332,6 +339,7 @@ Generator
 Social
 halstead
 Abstract
+IQ
 work
 it
 fill
@@ -371,8 +379,10 @@ ACWP
 Established
 versionamento
 vv
+programming
 System
 Angular
+fgdfgdfgd
 title
 Casiraghi
 height

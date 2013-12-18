@@ -181,6 +181,7 @@ true
 Pgr
 admin
 Pgt
+Project
 project'
 Project
 Maccagnan

@@ -100,9 +100,17 @@
 	% cancella tutti i campi di intestazione e piè di pagina
 	\fancyhf{}
 
-	\lhead{\emph{\GroupName{} \texttwelveudash{} \ProjectName{}}}
+	\lhead{
+		\includegraphics[height=1.5cm, width=1.5cm, keepaspectratio=true]{../../modello/steakman.png}
+		\parbox[b]{10cm}{
+			\emph{\GroupName{}} \vspace{0pt} \\
+			\emph{Progetto \ProjectName{}} \vspace{7pt}
+		}
+	}
 	\chead{}
-	\rhead{\slshape \leftmark}
+	\rhead{
+		\slshape \leftmark
+	}
 
 	\lfoot{\DocTitle{} \\ v\DocVersion{}}
 	\rfoot{Pagina \thepage{} di \pageref{LastPage}}
@@ -111,6 +119,7 @@
 	\renewcommand{\headrulewidth}{0.3pt}
 	\renewcommand{\footrulewidth}{0.3pt}
 }
+\setlength{\headheight}{30pt}
 \pagestyle{plain}
 
 % allarga l'header a tutta la pagina

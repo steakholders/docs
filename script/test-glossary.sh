@@ -54,7 +54,7 @@ rm "$file_richieste" "$file_definite"
 
 # Segnala le differenze
 if [ ! -z "$non_ancora_definite" ]; then
-	log "error" "Ci sono dei termini non ancora definiti nel dizionario"
+	log "error" "Ci sono dei termini non ancora definiti nel glossario:"
 	log "error" "$non_ancora_definite"
 	exit 1
 fi

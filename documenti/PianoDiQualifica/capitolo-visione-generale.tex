@@ -312,6 +312,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item $n = n_1 + n_2$: vocabolario della funzione
 				\item $N = N_1 + N_2$: lunghezza della funzione
 			\end{itemize}
+			Data la bassa disponibilità nella rete di valori di riferimento, i range specificati sono frutto di un confronto tra il \glossario{report} sulla complessità di una libreria \glossario{open source} presa come esempio (\url{https://github.com/philbooth/complexity-report/blob/master/EXAMPLE.md}) e i valori dichiarati in \url{http://www.mccabe.com/pdf/McCabe\%20IQ\%20Metrics.pdf}. Tali valori vengono dichiarati momentanei (RR) e saranno da rivalutare sia considerando altre fonti, sia considerando i valori rilevati in parti del codice che il gruppo considera come riferimento. %TODO nelle Revisioni successive vanno controllati o aggiornati!
+
 			
 			\subparagraph{Halstead difficulty per-function}
 			Il livello di difficoltà di una funzione misura la propensione all'errore ed è proporzionale al numero di operatori presenti. 
@@ -320,10 +322,9 @@ La speranza è che dei buoni processi portino ad un buon software.
 			 \]
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [n.d. - n.d.];
-				\item Range-ottimale: [n.d. - n.d.].
+				\item Range-accettazione: [0 -30];
+				\item Range-ottimale: [0. - 15].
 			\end{itemize}
-
 			
 			\subparagraph{Halstead volume per-function}
 			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una function senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
@@ -332,7 +333,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\]
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [20 - 1250];
+				\item Range-accettazione: [20 - 1500];
 				\item Range-ottimale: [20 - 1000].
 			\end{itemize}
 
@@ -344,13 +345,9 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\]
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [n.d. - n.d.];
-				\item Range-ottimale: [n.d. - n.d.].
+				\item Range-accettazione: [0 - 400];
+				\item Range-ottimale: [0 - 300].
 			\end{itemize}
 
 			
-			
-			
-			
-%	\subsection{Metodi}
 

@@ -108,8 +108,8 @@ Java
 index
 isodate
 Working
-regexp
 RegExp
+regexp
 Education
 community
 Fedora
@@ -142,8 +142,8 @@ Measure
 Amazon
 dell'
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 mod
 rounded
 pollution
@@ -177,6 +177,7 @@ admin
 Pgt
 Project
 project'
+Project
 Maccagnan
 Well
 Modifica'
@@ -301,8 +302,8 @@ somministrabile
 an
 Franceschi
 AR
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -340,13 +341,13 @@ js
 Complexity
 theory
 MondoDB
-ND
 ln
+ND
 Mahesh
-of
 pa
-NP
+of
 MU
+NP
 Vardanega
 Endeavor
 OT
@@ -358,9 +359,9 @@ pt
 SF
 RP
 RQ
-UC
-th
 RR
+th
+UC
 Luzzati
 right
 ST

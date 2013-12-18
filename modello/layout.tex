@@ -29,8 +29,6 @@
 
 % permette di usare il comando "paragraph" come subsubsubsection!
 \usepackage{titlesec}
-%  set the secnumdepth counter to four to obtain numbering for the paragraphs:
-\setcounter{secnumdepth}{4}
 
 % permette di inserire le immagini/tabelle esattamente dove viene usato il
 % comando \begin{figure}[H] ... \end{figure}
@@ -42,9 +40,9 @@
 
 \hypersetup{
     colorlinks=true, % false: boxed links; true: colored links
-    citecolor=Maroon,
-    filecolor=Maroon,
-    linkcolor=Maroon, % color of internal links
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, % color of internal links
     urlcolor=Maroon  % color of external links
 }
 
@@ -76,7 +74,7 @@
 % su Ubuntu non si può installare il pacchetto, deve essere in modello/
 \usepackage{../../modello/tabu}
 
-% imposta lo spazio tra le righe di una tabella
+% imposta lo spazio tra le righe di una tabella di tipo 'tabu'
 \setlength{\tabulinesep}{6pt}
 
 % personalizza l'intestazione e piè di pagina
@@ -95,13 +93,24 @@
 % ruota le immagini
 \usepackage{rotating}
 
+% permetti di calcolare le larghezze facendo calcoli
+\usepackage{calc}
+
 \fancypagestyle{plain}{
 	% cancella tutti i campi di intestazione e piè di pagina
 	\fancyhf{}
 
-	\lhead{\GroupName{} \texttwelveudash \ProjectName{}}
+	\lhead{
+		\includegraphics[height=1.5cm, width=1.5cm, keepaspectratio=true]{../../modello/steakman.png}
+		\parbox[b]{10cm}{
+			\emph{\GroupName{}} \vspace{0pt} \\
+			\emph{Progetto \ProjectName{}} \vspace{7pt}
+		}
+	}
 	\chead{}
-	\rhead{\slshape \leftmark}
+	\rhead{
+		\slshape \leftmark
+	}
 
 	\lfoot{\DocTitle{} \\ v\DocVersion{}}
 	\rfoot{Pagina \thepage{} di \pageref{LastPage}}
@@ -110,7 +119,12 @@
 	\renewcommand{\headrulewidth}{0.3pt}
 	\renewcommand{\footrulewidth}{0.3pt}
 }
+\setlength{\headheight}{30pt}
 \pagestyle{plain}
+
+% allarga l'header a tutta la pagina
+%\fancyhfoffset[L]{\oddsidemargin + \hoffset + 1in}
+%\fancyhfoffset[R]{\evensidemargin + \marginparwidth - \marginparsep}
 
 % Per inserire del codice sorgente formattato
 \usepackage{listings}

@@ -191,19 +191,27 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\paragraph{Schedule Variance} \mbox{} \\
 
 			Indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
-			\[
+			$$
 			SV = BCWP - BCWS
-			\]
-			Dove $BCWP\  =\  valore \ delle \ attività \ realizzate \ alla\  data \ corrente$ e $BCWS \ = \ costo \ pianificato \ per\  realizzare\  le \ attività \ di \ progetto\  alla\  data \ corrente.$ 
+			$$
+			Dove
+			\begin{itemize}
+			 \item BCWP = valore delle attività realizzate alla data corrente;
+			 \item BCWS = costo pianificato per realizzare le attività di progetto alla data corrente.
+			\end{itemize}
 			È un indicatore di efficacia soprattutto nei confronti del Cliente. Se SV > 0 significa che il progetto sta producendo con maggior velocità a quanto pianificato, viceversa se negativo.
 			
 			\paragraph{Budget Variance}\mbox{} \\
 			
 			Indica se alla data corrente si è speso di più o di meno rispetto a quanto previsto a budget alla data corrente.
-			\[
+			$$
 			BV = BCWS - ACWP
-			\]
-			Dove $BCWS \ =\  costo\ pianificato\ per\ realizzare\ le\ attività \ di\  progetto \ alla\  data \ corrente.$ e $ACWP \ = \ costo \ effettivamente\  sostenuto \ alla \ data\  corrente.$
+			$$
+			Dove
+			\begin{itemize}
+			 \item BCWS = costo pianificato per realizzare le attività di progetto alla data corrente;
+			 \item ACWP = costo effettivamente sostenuto alla data corrente.
+			\end{itemize}
 			È un indicatore che ha un valore unicamente contabile e finanziario. Se BV > 0 significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo. 
 			
 		\subsubsection{Metriche per i documenti}
@@ -215,9 +223,9 @@ La speranza è che dei buoni processi portino ad un buon software.
 			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. Permette di misurare la complessità dello stile di un documento.
 			L'indice di Gulpease considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere.
 			La formula per il suo calcolo è: \\
-			\[
-			89 + \frac{300 * (numero\ delle\ frasi) - 10 * (numero\ delle\ lettere)}{numero\ delle\ parole}
-			\]
+			$$
+			89 + \frac{300 * (numero\ delle\ frasi) - 10 \cdot (numero\ delle\ lettere)}{numero\ delle\ parole}
+			$$
 			I risultati sono compresi tra 0 e 100, dove il valore 100 indica la leggibilità più alta e 0 la leggibilità più bassa. In generale risulta che testi con un indice:
 			\begin{itemize}
 				\item Inferiore a 80 sono difficili da leggere per chi ha la licenza elementare.
@@ -250,7 +258,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			
 			\paragraph{Variabili non usate e non definite}\mbox{} \\
 				
-			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\glossario{\emph{Abstract syntax tree - AST}} eseguendo una cross-reference tra le variabili dichiarate e quelle inizializzate. Per sua natura \glossario{\emph{Javascript}} non blocca l'insorgenza di tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà mai utilizzata.
+			La presenza di variabili non utilizzate viene considerata \emph{pollution} pertanto non viene tollerata. Tale occorrenze vengono rilevate analizzando l'\glossario{Abstract syntax tree - AST} eseguendo una cross-reference tra le variabili dichiarate e quelle inizializzate. Per sua natura \glossario{Javascript} non blocca l'insorgenza di tali occorrenze, pertanto si rischia  di dichiarare una variabile e poi utilizzarne una con nome leggermente diverso, oppure semplicemente dichiarare una variabile che in seguito non verrà mai utilizzata.
 
 			
 			\paragraph{Numero parametri per metodo}\mbox{} \\
@@ -282,23 +290,23 @@ La speranza è che dei buoni processi portino ad un buon software.
 			
 			\subparagraph{Halstead difficulty per-function}
 			Il livello di difficoltà di una funzione misura la propensione all'errore ed è proporzionale al numero di operatori presenti. 
-			\[
-			 D = \Bigl( \dfrac{n1}{2} \Bigr)  * \Bigl(  \dfrac{N2}{n2} \Bigr)
-			 \]
+			$$
+			 D = \left( \frac{n1}{2} \right) \cdot \left( \frac{N2}{n2} \right)
+			$$
 
 			
 			\subparagraph{Halstead volume per-function}
 			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una function senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
-			\[
-			 V = N * \log_{2}n
-			\]
+			$$
+			 V = N \cdot \log_{2}n
+			$$
 
 			
 			\subparagraph{Halstead effort per-function}
 			Lo sforzo per implementare o comprendere il significato di una funzione è proporzionale al volume a al suo livello di difficoltà.
-			 \[
-			 E = V * D
-			\]
+			$$
+			 E = V \cdot D
+			$$
 
 			
 			

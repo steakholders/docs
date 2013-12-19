@@ -1,4 +1,4 @@
-personal_ws-1.1 it 405 
+personal_ws-1.1 it 410 
 Google
 Amm
 Closure
@@ -114,8 +114,8 @@ Java
 index
 isodate
 Working
-RegExp
 regexp
+RegExp
 Education
 community
 Fedora
@@ -139,6 +139,7 @@ packet
 Platform
 stub
 vers
+Procedure'
 logout
 between
 function
@@ -148,8 +149,9 @@ Measure
 Amazon
 dell'
 dimostrabilmente
-Maap's
 MaaP's
+Maap's
+lavoro'
 mod
 rounded
 pollution
@@ -181,14 +183,13 @@ true
 Pgr
 admin
 Pgt
-Project
 project'
 Project
 Maccagnan
 Well
 Modifica'
-JavaScript
 Javascript
+JavaScript
 OOP
 num
 Calendar
@@ -218,6 +219,7 @@ Tag
 sep
 Seq
 append
+Codifica'
 yyyy
 Markdown
 replacements
@@ -309,8 +311,9 @@ somministrabile
 an
 Franceschi
 AR
-dd
+Documenti'
 as
+dd
 tools
 framework
 Requisteak
@@ -349,13 +352,13 @@ js
 Complexity
 theory
 MondoDB
-ln
 ND
+ln
 Mahesh
-pa
 of
-MU
+pa
 NP
+MU
 Vardanega
 Endeavor
 OT
@@ -367,9 +370,9 @@ pt
 SF
 RP
 RQ
-RR
-th
 UC
+th
+RR
 Luzzati
 right
 ST
@@ -390,6 +393,7 @@ height
 slack
 Gantt
 Foundation
+Comunicazioni'
 encoding
 testing
 change

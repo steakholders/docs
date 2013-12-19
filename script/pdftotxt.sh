@@ -27,6 +27,6 @@ for file in $REPO_DIR/documenti/*/*.pdf
 do
 	filename=$(basename "$file" .pdf)
 	score=$(pdftotext -f 7 "$file" - | $REPO_DIR/script/gulpease.py)
-	log "success" "Gulpease di $filename: $score"
+	log "info" "Gulpease di $filename: $score"
 done
 

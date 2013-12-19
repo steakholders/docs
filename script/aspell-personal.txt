@@ -39,7 +39,6 @@ responsività
 BCWS
 form
 startup
-StartUp
 AWS
 maxhv
 Pearson
@@ -126,7 +125,6 @@ Domain
 isodate
 working
 client
-regexp
 RegExp
 Education
 community
@@ -144,8 +142,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
@@ -165,8 +163,8 @@ Measure
 Amazon
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -189,7 +187,6 @@ Stein
 Nodemailer
 ways
 Process
-lccccccc
 NomeDelDocumento
 Interaction
 MVC
@@ -349,8 +346,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -459,7 +456,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

@@ -18,6 +18,9 @@ test-glossary:
 test-regexp:
 	@$(REPO_DIR)/script/test-regex.sh
 
+gulpease:
+	@$(REPO_DIR)/script/pdftotxt.sh
+
 clean:
 	@rm -f *~
 	@cd "documenti" && make clean

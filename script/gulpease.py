@@ -11,9 +11,12 @@ from readability_score.calculators.it.gulpease import *
 # If args is empty then fileinput.input() will read from stdin; otherwise it reads from each file in turn
 import fileinput
 
-input_text = "".join(fileinput.input(sys.argv))
+input_text = "".join(fileinput.input())
 
-gu = Gulpease(input_text, locale='it_IT')
+if len(input_text) > 0:
+	gu = Gulpease(input_text, locale='it_IT')
+	print gu.readingindex
+else:
+	print 0
 
-print gu.readingindex
 

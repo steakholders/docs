@@ -11,7 +11,7 @@
 # comando che non produce un file per conto suo (es. check)
 *.cache
 
-tmp/*c
+tmp/*
 
 # Le estensioni seguenti vengono proposte di default da GitHub ai repository contenenti documenti LaTeX
 *.acn

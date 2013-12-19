@@ -11,6 +11,9 @@
 % specifica con quale codifica bisogna leggere i file
 \usepackage[utf8]{inputenc}
 
+% necessario per risolvere il problema del carattere invisibile per l'a capo
+\DeclareUnicodeCharacter{00A0}{ }
+
 % per scrivere in italiano e in inglese;
 % l'ultima lingua (l'italiano) risulta predefinita
 \usepackage[english, italian]{babel}
@@ -73,7 +76,8 @@
 \usepackage[table]{xcolor}
 
 % permette di fare longtable larghe tutta la pagina (parametro x)
-\usepackage{tabu}
+% su Ubuntu non si può installare il pacchetto, deve essere in modello/
+\usepackage{../../modello/tabu}
 
 % imposta lo spazio tra le righe di una tabella
 \setlength{\tabulinesep}{6pt}

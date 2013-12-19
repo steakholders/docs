@@ -23,10 +23,18 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
 		%Tabella 
 		\begin{table}[H]
 		\begin{longtabu}{  c | X  }
-
+						
+<<<<<<< HEAD
 		\hline
 		\multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU: Operazioni ad alto livello} } \\ 
 		\hline
+=======
+			\hline
+			\multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - MaaP's Application}} \\ 
+			\hline
+			
+			 & \\
+>>>>>>> d9d950cf06760c9af95d5a9adc765e3b05a0e389
 			
 			\textbf{Attori Primari} & 
 			Utente non autenticato, Utente autenticato, Admin \\

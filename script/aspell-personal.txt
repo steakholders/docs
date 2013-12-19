@@ -40,7 +40,6 @@ responsività
 BCWS
 form
 startup
-StartUp
 AWS
 maxhv
 Pearson
@@ -131,7 +130,6 @@ isodate
 working
 client
 RegExp
-regexp
 Education
 community
 Fedora
@@ -196,7 +194,6 @@ Stein
 Nodemailer
 ways
 Process
-lccccccc
 NomeDelDocumento
 Interaction
 MVC

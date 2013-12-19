@@ -1,5 +1,5 @@
 \section{Casi d'uso}
-I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di glossario{ActiveAdmin}, un progetto analogo a \ProjectName{} basato su glossario{Ruby on Rails}.\
+I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente \Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di \glossario{ActiveAdmin}, un progetto analogo a \ProjectName{} basato su \glossario{Ruby on Rails}.\\
 Ogni caso d'uso è identificato univocamente e in modo gerarchico tramite una codifica nella forma:
 \begin{center}
 	\textit{UC[codice dell'ambito][codice univoco del padre],[codice progressivo del figlio]}
@@ -23,10 +23,18 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
 		%Tabella 
 		\begin{table}[H]
 		\begin{longtabu}{  c | X  }
-
+						
+<<<<<<< HEAD
 		\hline
 		\multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU: Operazioni ad alto livello} } \\ 
 		\hline
+=======
+			\hline
+			\multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - MaaP's Application}} \\ 
+			\hline
+			
+			 & \\
+>>>>>>> d9d950cf06760c9af95d5a9adc765e3b05a0e389
 			
 			\textbf{Attori Primari} & 
 			Utente non autenticato, Utente autenticato, Admin \\
@@ -50,3 +58,4 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
   		\end{longtabu}
 		\end{table}
 \clearpage
+

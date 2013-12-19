@@ -1,4 +1,4 @@
-personal_ws-1.1 it 433 
+personal_ws-1.1 it 463 
 Google
 deployment
 Amm
@@ -39,12 +39,14 @@ responsività
 BCWS
 form
 startup
+StartUp
 AWS
 maxhv
 Pearson
 style
 FAQ
 interface
+Service
 Cox
 plugin
 CamelCase
@@ -89,6 +91,7 @@ IDE
 FunGoStudios
 collection
 SEMAT
+Integrated
 RSYZ
 gedit
 Slide
@@ -110,15 +113,19 @@ Mongoose
 dall
 grep
 stack
+Controller
 TODO
 all'admin
 Relationship
 Makefile
 node
+Message
 Java
 index
+Domain
 isodate
 working
+client
 regexp
 RegExp
 Education
@@ -134,6 +141,7 @@ difficulty
 Description
 nomeDellaFunzione
 tests
+metadati
 global
 sull'
 L'Admin
@@ -144,16 +152,18 @@ tree
 packet
 Platform
 stub
+JVM
 vers
 Procedure'
 logout
+Mozilla
 between
 function
 stakeholder
 log
 Measure
 Amazon
-dell'
+dell
 dimostrabilmente
 MaaP's
 Maap's
@@ -163,9 +173,11 @@ rounded
 pollution
 LUF
 JSHint
+View
 chart
 effort
 event
+Henry
 ciclomatica
 pdc
 MUST
@@ -180,6 +192,7 @@ Process
 lccccccc
 NomeDelDocumento
 Interaction
+MVC
 NOM
 peaks
 research
@@ -191,8 +204,7 @@ Pgr
 issues
 admin
 Pgt
-project'
-Project
+project
 Maccagnan
 Well
 Modifica'
@@ -200,6 +212,7 @@ Javascript
 JavaScript
 OOP
 num
+purpose
 Calendar
 RAU
 Medical
@@ -224,6 +237,7 @@ walktrough
 dell'array
 template
 SHOULD
+BSON
 Tag
 sep
 Seq
@@ -231,6 +245,7 @@ Codifica'
 append
 yyyy
 Markdown
+general
 replacements
 bugs
 Everybody
@@ -244,6 +259,7 @@ friendly
 position
 the
 tex
+wiki
 Retired
 Variance
 UCS
@@ -255,16 +271,22 @@ NodeJS
 NodeJs
 smartphone
 Ubuntu
+Graphical
 raccomanda'
 Etzkorn
 inspection
+SQL
 rege
+development
 align
 commit
+bytecode
 tasks
 aggiungi'
 Kile
+Language
 Ver
+Sun
 Maap
 MaaP
 MaaS
@@ -297,6 +319,7 @@ markup
 make
 Heroku
 txt
+Microsystems
 checklists
 Usable
 monospace
@@ -356,9 +379,12 @@ line
 Generator
 Social
 halstead
+Laurence
+scripting
 Abstract
 IQ
 combo
+games
 work
 it
 fill
@@ -378,6 +404,8 @@ MU
 array
 Vardanega
 Endeavor
+menu
+Short
 OT
 RF
 PP
@@ -401,11 +429,12 @@ SV
 Professional
 ACWP
 Established
+WebKit
 versionamento
 vv
 programming
 Document
-System
+system
 Angular
 fgdfgdfgd
 title
@@ -416,6 +445,7 @@ slack
 Gantt
 Foundation
 Comunicazioni'
+Specific
 encoding
 testing
 change

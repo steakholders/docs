@@ -14,7 +14,7 @@ Per agevolare l'analisi dei requisiti viene utilizzata la tecnica dei casi d'uso
 	 Le credenziali di accesso sono le seguenti:
 	 \begin{itemize}
 	 	\item \textbf{Username}: \texttt{committente@steakholders.com};
-	 	\item \textbf{Password}: \texttt{SWEunipd2013}.
+	 	\item \textbf{Password}: \texttt{unipd2013}.
 	 \end{itemize}
 	 
 \subsection{Casi d'Uso}

@@ -8,3 +8,5 @@ include $(REPO_DIR)/script/global.mk
 # Se servisse, sostituire questa inclusione con il codice specializzato.
 include $(REPO_DIR)/script/default-doc.mk
 
+download: 
+	@./download_requisiti.py

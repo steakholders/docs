@@ -58,6 +58,9 @@ grep_test "\\\ProjectName[^{}]" "Sostituire con \ProjectName{}." $(find . -name 
 grep_test "\\\Proponente[^{}]" "Sostituire con \Proponente{}." $(find . -name '*.tex')
 grep_test "\\\Committente[^{}]" "Sostituire con \Committente{}." $(find . -name '*.tex')
 
+# Errori tipici con LaTeX
+grep_test " [[:alpha:]]*_" "Utilizzare il comando LaTeX \_ (l'underscore ha un'altra funzione)" $(find . -name '*.tex')
+
 # Errori ortografici
 grep_test "E'" "Sostituire con È." $(find . -name '*.tex')
 grep_test "[[:alpha:]]\`[aeiou]" "Riscrivere usando l'accento giusto: uno tra àèìòù" $(find . -name '*.tex')

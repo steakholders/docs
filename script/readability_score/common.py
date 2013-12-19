@@ -53,7 +53,7 @@ def getTextScores(text, locale='en_GB', simplewordlist=[]):
     scores['sent_count'] = len(sentences)
 
     for s in sentences:
-        words = re.findall(r'\w+', s.decode('utf8'), flags = re.UNICODE)
+        words = re.findall(r'\w+', s.decode('utf8','ignore'), flags = re.UNICODE)
         scores['word_count'] = scores['word_count'] + len(words)
 
         for w in words:

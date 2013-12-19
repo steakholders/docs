@@ -1,4 +1,4 @@
-personal_ws-1.1 it 473 
+personal_ws-1.1 it 480 
 Google
 deployment
 Amm
@@ -52,6 +52,7 @@ Cox
 Unicode
 plugin
 CamelCase
+Portable
 syntax
 best
 rimpiazza'
@@ -188,8 +189,8 @@ event
 Henry
 ciclomatica
 pdc
-MUST
 practice
+MUST
 McCabe
 pdf
 Compiler
@@ -212,6 +213,7 @@ Pgr
 issues
 admin
 Pgt
+Adobe
 project
 Maccagnan
 Well
@@ -248,6 +250,7 @@ template
 SHOULD
 BSON
 Tag
+pdftotext
 sep
 Seq
 Codifica'
@@ -383,6 +386,7 @@ Kernel
 local
 active
 hh
+Systems
 Chrome
 Principles
 versionato

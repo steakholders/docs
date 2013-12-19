@@ -6,6 +6,10 @@
 #file del Finder di Mac OS X
 *.DS_Store
 
+# File di python
+*.pyc
+*.pyo
+
 # Questa estensione viene usara dal makefile quando vuole creare un file che
 # serve soltanto a memorizzare quando è stato eseguito per l'ultima volta un
 # comando che non produce un file per conto suo (es. check)

@@ -1,4 +1,4 @@
-personal_ws-1.1 it 472 
+personal_ws-1.1 it 473 
 Google
 deployment
 Amm
@@ -31,7 +31,6 @@ slash
 NoSQL
 Rotundo
 walkthrough
-Walkthrough
 maxhd
 maxhe
 Astah
@@ -40,8 +39,8 @@ text
 responsività
 BCWS
 form
-StartUp
 startup
+StartUp
 AWS
 maxhv
 Pearson
@@ -148,8 +147,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
@@ -170,8 +169,8 @@ Measure
 Amazon
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -198,8 +197,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-NOM
 MVC
+NOM
 peaks
 research
 npm
@@ -313,6 +312,7 @@ recovery
 Solution
 lccccccccc
 proattivi
+section
 package
 correction
 AAAA
@@ -357,8 +357,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -468,7 +468,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

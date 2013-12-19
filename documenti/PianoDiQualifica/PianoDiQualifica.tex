@@ -1,7 +1,8 @@
 \input{../../modello/layout}
 \input{../../modello/global}
 \input{local}
-
+%\usepackage{chngcntr}
+%\usepackage[toc]{appendix}
 \begin{document}
 
 \makeFrontPage
@@ -11,7 +12,7 @@
 \clearpage
 
 \tableofcontents
-%\listoftables % non ci sono tabelle
+\listoftables
 \listoffigures
 
 \clearpage
@@ -22,7 +23,12 @@
 \include{capitolo-gestione-amministrativa-revisione}
 %\include{capitolo-collaudi} % da fare in revisioni successive!
 
-\appendix
+\renewcommand*{\thesection}{\Alph{section}}
+\setcounter{section}{0}
+%\appendix
+%\begin{appendices}
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
 \include{appendice-resoconto-verifiche}
-
+%\end{appendices}
 \end{document}

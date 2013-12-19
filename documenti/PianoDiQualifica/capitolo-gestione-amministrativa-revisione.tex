@@ -1,36 +1,44 @@
-\clearpage
 \section{Gestione amministrativa della revisione}
+\sectionmark{Gestione amministrativa \dots}
 % APPROFONDIRE da Sommerville capitolo 24, paragrafo 24.4.2 Software compoent analisys
+
 	\subsection{Comunicazione delle anomalie}
 	\label{DefinizioneAnomalie}
-	Il processo di \emph{Software Quality Managment} è finalizzato alla ricerca dei difetti. L'identificazione delle anomalie ne permette la correzione e informa il \emph{Responsabile di Progetto} sullo stato del prodotto. Distinguere e catalogare le anomalie è utile per discutere, durante revisioni e riunioni, su che correzioni attuare e con quale priorità. Di seguito vengono elencate le definizioni di anomalie (IEEE610.12-90) adottate dal gruppo:
+
+	Il processo di \glossario{Software Quality Managment} è finalizzato alla ricerca dei difetti. L'identificazione delle anomalie ne permette la correzione e informa il \emph{Responsabile} di progetto sullo stato del prodotto. Distinguere e catalogare le anomalie è utile per discutere, durante revisioni e riunioni, su che correzioni attuare e con quale priorità. Di seguito vengono elencate le definizioni di anomalie (IEEE 610.12-90) adottate dal gruppo:
 	\begin{itemize}
-		\item \textbf{Error:} differenza riscontrata tra risultato di una computazione e valore teorico atteso, e.g. uscita dal range di accettazione degli indici di misurazione.
-		\item \textbf{Fault:} un passo, processo o dato definito in modo erroneo; e.g. violazioni di norme tipografiche da parte di un documento. Corrisponde a quanto viene definito come \glossario{\emph{\textbf{Bug}}}.
-		\item \textbf{Failure:} il risultato erroneo di un \emph{fault}; e.g. incongruenza del prodotto con funzionalità indicate nell'analisi dei requisiti, incongruenza del codice con il design del prodotto.
-		\item \textbf{Mistake:} azione umana che produce un risultato errato; e.g. anomalie nel repository.
+		\item \textbf{Error}: differenza riscontrata tra risultato di una computazione e valore teorico atteso (e.g. uscita dal range di accettazione degli indici di misurazione);
+		\item \textbf{Fault}: un passo, un processo o un dato definito in modo erroneo (e.g. violazioni di norme tipografiche da parte di un documento). Corrisponde a quanto viene definito come \glossario{bug};
+		\item \textbf{Failure}: il risultato di un \emph{fault} (e.g. incongruenza del prodotto con funzionalità indicate nell'analisi dei requisiti, incongruenza del codice con il design del prodotto);
+		\item \textbf{Mistake}: azione umana che produce un risultato errato (e.g. anomalie nel repository).
 	\end{itemize}
-	La catalogazione delle anomalie permette l'impostazione di metriche in grado di valutarne l'andamento e in alcuni casi di predirlo, in particolare è stata scelta la metrica che conteggia il \emph{numero di bugs per lines of code}. Il \glossario{\emph{SCR - software change request}} utilizzato dal gruppo è il sistema di task presente in  \glossario{\emph{TeamworkPM}} secondo le modalità descritte in \emph{Norme di Progetto}.
+	La catalogazione delle anomalie permette l'impostazione di metriche in grado di valutarne l'andamento e in alcuni casi di predirlo, in particolare è stata scelta la metrica che conteggia il numero di \emph{bugs per lines of code}. Il \glossario{SCR} (software change request) utilizzato dal gruppo è il sistema di task presente in  \glossario{TeamworkPM} secondo le modalità descritte in \NormeDiProgetto.
 
 
-	\subsection{Procedure di controllo qualità di processo} % potrebbe evolvere in un Appendice escluisvamente dedicata alla qualità 
-	La qualità dei processi tratta quei controlli e miglioramenti volti a migliorare la qualità del prodotto e/o di diminuire i costi e tempi di sviluppo. Esistono due approcci principali:
+	\subsection{Procedure di controllo per la qualità di processo}
+	% potrebbe evolvere in un Appendice escluisvamente dedicata alla qualità
+
+	Le procedure di controllo per la qualità di processo sono finalizzati a migliorare la qualità del prodotto e/o diminuire i costi e tempi di sviluppo. Esistono due approcci principali:
 	\begin{itemize}
-		\item A maturità di processo: il livello di maturità riflette le buone pratiche di management e tecniche. L'obiettivo primario è la qualità del prodotto e la prevedibilità dei processi.
+		\item A maturità di processo: riflette le buone pratiche di management e tecniche di sviluppo. L'obiettivo primario è la qualità del prodotto e la prevedibilità dei processi;
 		\item Agile: sviluppo iterativo senza l'overhead della documentazione e di tutti gli aspetti predeterminabili. Ha come caratteristica la responsività ai cambiamenti dei requisti cliente e uno sviluppo rapido.
 	\end{itemize}
-	Verrà utilizzato il primo approccio in quanto più adatto ad un team inesperto. Con una visione proattiva si cerca di avere maggior controllo e previsione sulle attività da svolgere. Questa viene anche indicata come \glossario{\emph{best practise}} per gruppi poco esperti.\\
+
+	Verrà utilizzato il primo approccio in quanto più adatto ad un team inesperto. Con una visione proattiva si cerca di avere maggior controllo e previsione sulle attività da svolgere. Questa viene anche indicata come \glossario{best practise} per gruppi poco esperti.\\
 	Il processo con maggiore influenza sulla qualità del sistema non è quello di sviluppo ma è la progettazione, è qui che le capacità e le esperienze dei singoli danno un contributo decisivo.\\
 	Il miglioramento dei processi è un processo ciclico composto da tre sotto processi:
 	
-	{ \centering \includegraphics[width=0.8\textwidth]{ProcessImprovementCycle.png} \\}
+	\begin{figure}[h]
+	\centering \includegraphics[width=0.8\textwidth]{ProcessImprovementCycle.png}
+	\caption{Il ciclo di miglioramento dei processi}
+	\end{figure}
+
 	\begin{itemize}
 		\item Misurazione del processo: misura gli attributi del progetto, punta ad allineare gli obiettivi con le misurazioni effettuate. Questo forma una \glossario{baseline} che aiuta a capire se i miglioramenti hanno avuto effetto.
 		\item Analisi del processo: vengono identificate le problematiche ed i colli di bottiglia dei processi.
 		\item Modifiche del processo: i cambiamenti vengono proposti in risposta alle problematiche riscontrate.
 	\end{itemize}
 	
-	Il gruppo procederà nel seguente modo: nella sezione \emph{Dettaglio delle verifiche tramite analisi} (\ref{DettaglioVerificheAnalisi}) del capitolo \emph{Resoconto delle attività di verifica} di questo documento verranno inserite le misurazioni rilevate secondo le metriche descritte in \emph{Misure e Metriche} (\ref{MisureMetriche}). L'analisi viene effettuata i giorni precedenti alle consegne previste dal committente; il \emph{Riassunto delle attività di verifica} (\ref{RiassuntoAttivitaVerifica}) contiene l'analisi del processo, le relative considerazioni  comprendenti le problematiche riscontrate.
-	Le modifiche al processo vengono attuate all'inizio del processo incrementale successivo. \\
-	Queste attività sono programmate nel \emph{Piano di Progetto}.
+	Il gruppo procederà nel seguente modo: nella sezione \emph{Dettaglio delle verifiche tramite analisi} (\ref{DettaglioVerificheAnalisi}) verranno inserite le misurazioni rilevate secondo le metriche descritte in \emph{Misure e Metriche} (\ref{MisureMetriche}). L'analisi viene effettuata i giorni precedenti alle consegne previste dal committente; il \emph{Riassunto delle attività di verifica} (\ref{RiassuntoAttivitaVerifica}) contiene l'analisi del processo, le relative considerazioni  comprendenti le problematiche riscontrate.
+	Le modifiche al processo vengono attuate all'inizio del processo incrementale successivo. Queste attività sono programmate nel \PianoDiProgetto.
 	

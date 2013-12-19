@@ -1,34 +1,132 @@
-\input{../../modello/layout}
 \input{../../modello/global}
-\input{local}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{letter}
+
+% Use A4 paper margins
+\usepackage[a4paper]{geometry}
+
+% specifica con quale codifica bisogna leggere il file
+\usepackage[utf8]{inputenc}
+
+% per scrivere in italiano e in inglese;
+% l'ultima lingua (l'italiano) risulta predefinita
+\usepackage[english, italian]{babel}
+
+% imposta lo stile italiano per i paragrafi
+\usepackage{parskip}
+
+% permetti di calcolare la larghezza facendo sottrazioni
+\usepackage{calc}
+
+% importa il simbolo dell'euro
+\usepackage{eurosym}
+% permetti di includere le immagini
+\usepackage{graphicx}
+
+% configura l'header e il footer
+\usepackage{fancyhdr}
+
+\fancypagestyle{firstpage}{
+	% cancella tutti i campi di intestazione e piè di pagina
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.0pt}
+	\renewcommand{\footrulewidth}{0.3pt}
+	
+	\fancyhead[L]{
+		\includegraphics[height=4cm, keepaspectratio=true]{../../modello/steakman.png}
+	}
+    \fancyhead[R]{
+		\Huge{\textbf{Gruppo \GroupName{}}}
+		\vspace{7pt}
+	}
+    
+	\cfoot{ \small{
+		Gruppo \GroupName{} \textendash{} Email: \GroupEmail{}
+	}}
+}
+
+% allarga l'header a tutta la pagina
+%\fancyhfoffset[L]{\oddsidemargin + \hoffset + 1in}
+%\fancyhfoffset[R]{\evensidemargin + \marginparwidth - \marginparsep}
+\setlength{\headheight}{40pt}
+
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-Egregio professor Vardanega Tullio,
+%----------------------------------------------------------------------------------------
+%	DATE AND FROM ADDRESS
+%----------------------------------------------------------------------------------------
 
-Con la presente lettera di presentazione il gruppo \GroupName{} comunica ufficialmente la decisione di impegnarsi alla realizzazione del progetto \ProjectName{} proposto dall'azienda \Proponente{}.
+% data
+\date{Padova, 16 dicembre 2013}
 
-L'offerta è corredata dai seguenti documenti:
+% Secondo parametro: indirizzo del destinatario
+\begin{letter}{
+	Prof. Tullio Vardanega \\
+	Università degli Studi di Padova \\
+	Dipartimento di Matematica Pura ed Applicata \\
+	Via Trieste, 63 \\
+	35121 Padova
+}
 
-\begin{itemize}
+%----------------------------------------------------------------------------------------
+%	SIGNATURE
+%----------------------------------------------------------------------------------------
 
-	\item \textbf{Analisi dei requisiti};
-	\item \textbf{Glossario};
-	\item \textbf{Norme di progetto};
-	\item \textbf{Piano di progetto};
-	\item \textbf{Piano di qualifica};
-	\item \textbf{Studio di fattibilità};
-	\item \textbf{Verbale esterno 2012-12-05}.
+\signature{
+\begin{center}
+	\textit{
+		\Responsabile{} \\
+		Responsabile \GroupName{} \\
+		\small{\GroupEmail{}}
+	}
+	% TODO Firma
+\end{center}
+}
 
-\end{itemize}
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
 
-Il gruppo \GroupName{} ha stimato di consegnare il prodotto richiesto entro la fine del secondo trimestre dell'anno accademico 2013-2014 con un costo preventivo di 13.316 €.
+\opening{Egregio professor Tullio Vardanega,}
 
-Cordiali saluti,
+% Enclosing the entire letter contents in a quotation gives it a narrow centered appearance
+\begin{quotation}
+	
+	% Set a larger font with a larger line spacing for the letter content
+	%\fontsize{11pt}{15pt}\selectfont
 
-\textit{\Responsabile{}}
+	Con la presente lettera di presentazione il gruppo \GroupName{} comunica ufficialmente la decisione di impegnarsi alla realizzazione del progetto \ProjectName{} proposto dall'azienda \Proponente{}.
 
-\appendix
-%\input{appendice}
+	L'offerta è corredata dai seguenti documenti:
+
+	\begin{itemize}
+
+		\item \AnalisiDeiRequisiti;
+		\item \Glossario;
+		\item \NormeDiProgetto;
+		\item \PianoDiProgetto;
+		\item \PianoDiQualifica;
+		\item \StudioDiFattibilita;
+		\item \textit{Verbale esterno 2013-12-05}.
+
+	\end{itemize}
+
+	Il gruppo \GroupName{} ha stimato di consegnare il prodotto richiesto entro la fine del secondo trimestre dell'anno accademico 2013-2014 con un costo preventivo di 13.316 \euro.
+
+\end{quotation}
+
+\closing{Cordiali saluti,}
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
 
 \end{document}

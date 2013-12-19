@@ -69,3 +69,11 @@ grep_test "^>>>>>" "C'è un merge non risolto." $(find . -name '*.tex')
 grep_test "^=====" "C'è un merge non risolto." $(find . -name '*.tex')
 grep_test "^<<<<<" "C'è un merge non risolto." $(find . -name '*.tex')
 
+# Controlla che ci sia prima il nome e poi il cognome
+grep_test "Poli Federico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "Rotundo Enrico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "Girardi Serena" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "Tresoldi Nicolò" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "Donato Gianluca" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "De Francheschi luca" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
+grep_test "Fornari Giacomo" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')

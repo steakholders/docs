@@ -1,4 +1,4 @@
-personal_ws-1.1 it 486 
+personal_ws-1.1 it 487 
 Google
 deployment
 Amm
@@ -13,8 +13,8 @@ branch
 edition
 GitHub
 object
-Ready
 asd
+Ready
 application
 shortcut
 titolo'
@@ -40,8 +40,8 @@ text
 responsività
 BCWS
 form
-StartUp
 startup
+StartUp
 AWS
 maxhv
 Pearson
@@ -107,6 +107,7 @@ SQMT
 gray
 Imaging
 reference
+unipd
 GUI
 baseline
 Failure
@@ -133,8 +134,8 @@ nltk
 isodate
 working
 client
-regexp
 RegExp
+regexp
 Education
 community
 Fedora
@@ -151,8 +152,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
@@ -174,8 +175,8 @@ Amazon
 underscore
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -203,8 +204,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-NOM
 MVC
+NOM
 peaks
 research
 npm
@@ -227,8 +228,8 @@ num
 purpose
 Calendar
 RAU
-Medical
 backslash
+Medical
 pianificata'
 shell
 projects
@@ -315,8 +316,8 @@ UML
 proattiva
 Version
 Way
-l'overhead
 placeholder
+l'overhead
 BioComputing
 issue
 recovery
@@ -368,8 +369,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -384,8 +385,8 @@ DP
 Ember
 dsgfdgfg
 cyan
-SGAD
 blabla
+SGAD
 GG
 Number
 Kernel
@@ -481,7 +482,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

@@ -13,10 +13,7 @@ import fileinput
 
 input_text = "".join(fileinput.input(sys.argv))
 
-fk = FleschKincaid(input_text, locale='it_IT')
-dc = DaleChall(input_text, simplewordlist=awordlist, locale='it_IT')
-gu = Gulpease(input_text, simplewordlist=awordlist, locale='it_IT')
+gu = Gulpease(input_text, locale='it_IT')
 
-print fk.min_age
-print dc.min_age
+print gu.readingindex
 

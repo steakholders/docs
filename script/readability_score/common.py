@@ -48,7 +48,6 @@ def getTextScores(text, locale='en_GB', simplewordlist=[]):
     try:
         sentences = sent_tokenize(text)
     except LookupError as e:
-        print help(e)
         nltk.download()
     
     scores['sent_count'] = len(sentences)

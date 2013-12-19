@@ -1,4 +1,4 @@
-personal_ws-1.1 it 464 
+personal_ws-1.1 it 472 
 Google
 deployment
 Amm
@@ -12,6 +12,7 @@ bioinformatica
 branch
 edition
 GitHub
+object
 Ready
 application
 shortcut
@@ -38,6 +39,7 @@ text
 responsività
 BCWS
 form
+StartUp
 startup
 AWS
 maxhv
@@ -47,6 +49,7 @@ FAQ
 interface
 Service
 Cox
+Unicode
 plugin
 CamelCase
 syntax
@@ -98,6 +101,7 @@ abbandona'
 quest'ultime
 Broken
 lines
+SQMT
 gray
 Imaging
 reference
@@ -118,6 +122,7 @@ all'admin
 Relationship
 Makefile
 node
+Modeling
 Message
 Java
 index
@@ -142,8 +147,8 @@ tests
 metadati
 global
 sull'
-l'admin
 L'Admin
+l'admin
 Pianciamore
 Tresoldi
 tree
@@ -152,6 +157,7 @@ Platform
 stub
 JVM
 vers
+oriented
 Procedure'
 logout
 Mozilla
@@ -163,17 +169,19 @@ Measure
 Amazon
 dell
 dimostrabilmente
-Maap's
 MaaP's
+Maap's
 lavoro'
 mod
 rounded
 pollution
+Unified
 LUF
 JSHint
 View
 chart
 effort
+computing
 event
 Henry
 ciclomatica
@@ -189,8 +197,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-MVC
 NOM
+MVC
 peaks
 research
 npm
@@ -226,6 +234,7 @@ sottoattributi
 pre
 Verifica'
 Apple
+cloud
 practise
 HTML
 label
@@ -312,6 +321,7 @@ Location
 Rails
 URL
 utf
+main
 markup
 make
 Heroku
@@ -346,8 +356,8 @@ an
 Franceschi
 AR
 Documenti'
-dd
 as
+dd
 tools
 framework
 Requisteak
@@ -379,6 +389,7 @@ Social
 halstead
 Laurence
 scripting
+Transformation
 Abstract
 IQ
 combo
@@ -456,7 +467,7 @@ Selected
 dashboard
 logger
 Ana
-all'
 All
+all'
 and
 Techinques

@@ -77,6 +77,12 @@
 % imposta lo spazio tra le righe di una tabella
 \setlength{\tabulinesep}{6pt}
 
+% definisci un nuovo tipo di colonna P che permette di andare a capo con \newline
+% e giustificata a sinistra
+\usepackage{array}
+\usepackage{ragged2e}
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
+
 % personalizza l'intestazione e piè di pagina
 \usepackage{fancyhdr}
 

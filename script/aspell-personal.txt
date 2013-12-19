@@ -1,4 +1,4 @@
-personal_ws-1.1 it 463 
+personal_ws-1.1 it 464 
 Google
 deployment
 Amm
@@ -377,6 +377,7 @@ Principles
 versionato
 line
 Generator
+environment
 Social
 halstead
 Laurence

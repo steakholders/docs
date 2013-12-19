@@ -23,11 +23,10 @@ fi
 #  Inizio script  #
 ###################
 
-echo "Conversione dei file PDF presenti repository in formato TXT"
 for file in $REPO_DIR/documenti/*/*.pdf
 do
 	filename=$(basename "$file" .pdf)
-	echo $file
-	pdftotext -f 7 "$file" "$REPO_DIR/tmp/$filename.gulpease"
+	score=$(pdftotext -f 7 "$file" - | $REPO_DIR/script/gulpease.py)
+	log "info" "Gulpease di $filename: $score"
 done
 

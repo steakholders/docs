@@ -1,4 +1,4 @@
-personal_ws-1.1 it 461 
+personal_ws-1.1 it 480 
 Google
 deployment
 Amm
@@ -12,6 +12,7 @@ bioinformatica
 branch
 edition
 GitHub
+object
 Ready
 application
 shortcut
@@ -29,7 +30,7 @@ report
 slash
 NoSQL
 Rotundo
-Walkthrough
+walkthrough
 maxhd
 maxhe
 Astah
@@ -39,6 +40,7 @@ responsività
 BCWS
 form
 startup
+StartUp
 AWS
 maxhv
 Pearson
@@ -47,8 +49,10 @@ FAQ
 interface
 Service
 Cox
+Unicode
 plugin
 CamelCase
+Portable
 syntax
 best
 rimpiazza'
@@ -98,6 +102,7 @@ abbandona'
 quest'ultime
 Broken
 lines
+SQMT
 gray
 Imaging
 reference
@@ -118,14 +123,17 @@ all'admin
 Relationship
 Makefile
 node
+Modeling
 Message
 Java
 index
 Domain
+nltk
 isodate
 working
 client
 RegExp
+regexp
 Education
 community
 Fedora
@@ -152,6 +160,7 @@ Platform
 stub
 JVM
 vers
+oriented
 Procedure'
 logout
 Mozilla
@@ -169,15 +178,18 @@ lavoro'
 mod
 rounded
 pollution
+Unified
 LUF
 JSHint
 View
 chart
 effort
+computing
 event
 Henry
 ciclomatica
 pdc
+practice
 MUST
 McCabe
 pdf
@@ -201,6 +213,7 @@ Pgr
 issues
 admin
 Pgt
+Adobe
 project
 Maccagnan
 Well
@@ -226,6 +239,7 @@ sottoattributi
 pre
 Verifica'
 Apple
+cloud
 practise
 HTML
 label
@@ -236,6 +250,7 @@ template
 SHOULD
 BSON
 Tag
+pdftotext
 sep
 Seq
 Codifica'
@@ -255,6 +270,7 @@ Microsoft
 friendly
 position
 the
+python
 tex
 wiki
 Retired
@@ -303,6 +319,7 @@ recovery
 Solution
 lccccccccc
 proattivi
+section
 package
 correction
 AAAA
@@ -312,6 +329,7 @@ Location
 Rails
 URL
 utf
+main
 markup
 make
 Heroku
@@ -369,6 +387,7 @@ Kernel
 local
 active
 hh
+Systems
 Chrome
 Principles
 versionato
@@ -379,6 +398,7 @@ Social
 halstead
 Laurence
 scripting
+Transformation
 Abstract
 IQ
 combo

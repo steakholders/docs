@@ -3,23 +3,24 @@
 	\subsection{Contesto d'uso del prodotto}
 		
 		La tematica che \ProjectName{} affronta riguarda la necessità di creare un'interfaccia di amministrazione di dati \glossario{business} adatta ad un utente finale non esperto di informatica ma del dominio di attività. La creazione di ambienti di sviluppo per la modellazione di queste interfacce risulta spesso onerosa se non si utilizzano strutture di supporto rese disponibili dal mercato, ed è per questo che \ProjectName{} vuole essere	un ambiente di sviluppo innovativo che consenta agli sviluppatori di fare in pochi passaggi un lavoro che normalmente richiederebbe loro diverse ore.\\
-		\ProjectName{} é quindi sostanzialmente un \glossario{framework} che permette allo sviluppatore di fornire in maniera rapida pagine web per l'amministrazione di dati, al fine di offrire strumenti adeguati all'esperto di \glossario{business}. Le pagine create vengono rese disponibili agli utenti, permettendo loro (a seconda del tipo di permessi) di poter modificarne i campi e visualizzarne contenuti in maniera chiara e ordinata.\\
-		I dati verranno prelevati da \textit{MongoDB\ped{G}}, un sistema 	gestionale di base di dati di tipo \textit{NoSQL\ped{G}}. La realizzazione della componente server di \ProjectName{} include l'utilizzo di \textit{Node.js\ped{G}}, un \glossario{framework} \glossario{event-driven} per il motore \textit{Javascript\ped{G}} V8. Per la realizzazione dell'infrastruttura della \glossario{web application} generata dallo sviluppatore \ProjectName{} include \textit{Express\ped{G}}, un framework basato su \textit{Node.js\ped{G}} che mette a disposizione una serie di caratteristiche robuste per la creazione di pagine web. L'interfacciamento tra \textit{MongoDB\ped{G}} e \textit{Node.js\ped{G}} è supportato da \textit{Mongoose.js\ped{G}}, che si occupa della modellazione dei dati dell'applicazione e risolve il problema dell'assenza di vincoli di integrità referenziale di \textit{MongoDB\ped{G}}.
+		\ProjectName{} é quindi sostanzialmente un \glossario{framework} che permette allo sviluppatore di fornire in maniera rapida pagine web per l'amministrazione di dati, al fine di offrire strumenti adeguati all'esperto di \glossario{business}. Le pagine create vengono rese disponibili agli utenti, permettendo loro (a seconda del tipo di permessi) di poter modificarne i campi e visualizzarne contenuti in maniera chiara e ordinata.
+		
+I dati verranno prelevati da \textit{\glossario{MongoDB}}, un sistema gestionale di base di dati di tipo \textit{\glossario{NoSQL}}. La realizzazione della componente server di \ProjectName{} include l'utilizzo di \textit{\glossario{Node.js}}, un \glossario{framework} \glossario{event-driven} per il motore \textit{\glossario{Javascript}} V8. Per la realizzazione dell'infrastruttura della \glossario{web application} generata dallo sviluppatore \ProjectName{} include \textit{\glossario{Express}}, un framework basato su \textit{\glossario{Node.js}} che mette a disposizione una serie di caratteristiche robuste per la creazione di pagine web. L'interfacciamento tra \textit{\glossario{MongoDB}} e \textit{\glossario{Node.js}}} è supportato da \textit{\glossario{Mongoose.js}}, che si occupa della modellazione dei dati dell'applicazione e risolve il problema dell'assenza di vincoli di integrità referenziale di \textit{\glossario{MongoDB}}.
 
 	\subsection{Funzioni del Prodotto}
-	Il prodotto \ProjectName{} mette a disposizione un linguaggio astratto (\glossario{DSL}) con il quale lo sviluppatore può definire le pagine web da visualizzare. Tramite \ProjectName{} lo sviluppatore può generare nuovi progetti e definire le varie \textit{Collection\ped{G}} che l'esperto business andrà a visualizzare. Il linguaggio definito dal framework deve permettere allo sviluppatore di definire diverse proprietà sulle \textit{Collection-index\ped{G}} e \textit{Collection-show\ped{G}}. Per quanto riguarda la \textit{Collection-index\ped{G}} deve essere possibile definire:
+	Il prodotto \ProjectName{} mette a disposizione un linguaggio astratto (\glossario{DSL}) con il quale lo sviluppatore può definire le pagine web da visualizzare. Tramite \ProjectName{} lo sviluppatore può generare nuovi progetti e definire le varie \textit{\glossario{Collection}} che l'esperto \glossario{business} andrà a visualizzare. Il linguaggio definito dal \glossario{framework} deve permettere allo sviluppatore di definire diverse proprietà sulle \textit{\glossario{Collection-index}} e \textit{\glossario{Collection-show}}. Per quanto riguarda la \textit{\glossario{Collection-index}} deve essere possibile definire:
 	\begin{itemize}
 		\item Una serie di attributi da visualizzare;
 		\item Un ordinamento;
 		\item Un eventuale limite di elementi da visualizzare.
 	\end{itemize}
-	Per quanto riguarda invece la \textit{Collection-show\ped{G}} deve essere possibile definire:
+	Per quanto riguarda invece la \textit{\glossario{Collection-show}} deve essere possibile definire:
 	\begin{itemize}	
 		\item Una serie di attributi da visualizzare;
-		\item Un \textit{popolamento} di sottoattributi innestati.	
+		\item Su quali attributi eseguire la funzione \textit{\glossario{populate}} di \glossario{MongoDB} necessarie per risolvere i riferimenti ad altri \glossario{Document}. 	
 	\end{itemize}
 	
-Lo sviluppatore fondamentalmente eseguirà la creazione di un nuovo progetto e di una nuova \textit{Collection\ped{G}} da \glossario{linea di comando}, per poi andare a modificare manualmente i file di configurazione del progetto.
+Lo sviluppatore fondamentalmente eseguirà la creazione di un nuovo progetto e di una nuova \textit{\glossario{Collection}} da \glossario{linea di comando}, per poi andare a modificare manualmente i file di configurazione del progetto.
 		
 	\subsection{Caratteristiche degli utenti}
 	L'utente principale che interagisce con il prodotto offerto è uno \glossario{sviluppatore} con esperienza di programmazione che, tramite un linguaggio \glossario{DSL} fornito da \ProjectName{} sarà in grado di generare applicazioni web rivolte all'utente esperto di business. In particolare le applicazioni generate possono essere utilizzate da due tipologie di utenti:
@@ -36,9 +37,9 @@ Lo sviluppatore fondamentalmente eseguirà la creazione di un nuovo progetto e d
 	\subsection{Vincoli generali}
 	Lo sviluppatore per utilizzare \ProjectName{} deve aver installato correttamente il \glossario{framework}, il quale richiede a sua volta l'installazione di tutto lo \glossario{stack tecnologico} sui cui esso si basa:
 	\begin{itemize}
-		\item \textbf{MongoDB\ped{G}};
-		\item \textbf{Node.js\ped{G}};
-		\item \textbf{Express\ped{G}};
-		\item \textbf{Mongoose.js\ped{G}}.
+		\item \textbf{\glossario{MongoDB}};
+		\item \textbf{\glossario{Node.js}};
+		\item \textbf{\glossario{Express}};
+		\item \textbf{\glossario{Mongoose.js}}.
 	\end{itemize}
 	Le applicazioni web create dallo sviluppatore richiedono che l'esperto \glossario{business} disponga anzitutto di una connessione internet nel caso in cui l'applicazione sia resa disponibile on-line, e in secondo luogo di un browser. L'applicazione deve essere inoltre compatibile con la versione 30.0x o superiore di \glossario{Chrome} e la versione 24.x o superiore di \glossario{Firefox}.

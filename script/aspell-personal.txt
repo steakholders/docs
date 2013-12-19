@@ -1,4 +1,4 @@
-personal_ws-1.1 it 472 
+personal_ws-1.1 it 473 
 Google
 deployment
 Amm
@@ -39,8 +39,8 @@ text
 responsività
 BCWS
 form
-StartUp
 startup
+StartUp
 AWS
 maxhv
 Pearson
@@ -147,8 +147,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
@@ -169,8 +169,8 @@ Measure
 Amazon
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -187,6 +187,7 @@ Henry
 ciclomatica
 pdc
 MUST
+practice
 McCabe
 pdf
 Compiler
@@ -197,8 +198,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-NOM
 MVC
+NOM
 peaks
 research
 npm
@@ -356,8 +357,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -467,7 +468,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

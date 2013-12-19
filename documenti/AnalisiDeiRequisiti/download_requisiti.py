@@ -31,6 +31,6 @@ def download(br, link, destination):
 
 br = mechanize.Browser()
 login(br)
-download(br, "https://steakholders.herokuapp.com/admin/export_use_cases", "capitolo-use-case.tex")
+download(br, "https://steakholders.herokuapp.com/admin/export_use_cases", "capitolo-casiduso.tex")
 download(br, "https://steakholders.herokuapp.com/admin/export_requisites", "capitolo-requisiti.tex")
 

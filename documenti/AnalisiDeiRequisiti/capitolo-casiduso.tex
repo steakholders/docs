@@ -1,5 +1,5 @@
 \section{Casi d'uso}
-I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di glossario{ActiveAdmin}, un progetto analogo a ProjectName{} basato su glossario{Ruby on Rails}.\
+I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di glossario{ActiveAdmin}, un progetto analogo a \ProjectName{} basato su glossario{Ruby on Rails}.\
 Ogni caso d'uso è identificato univocamente e in modo gerarchico tramite una codifica nella forma:
 
 \begin{center}
@@ -506,9 +506,9 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso allìapplicazione. \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovey.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovery.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per la password recovery richiesta dall'utente. \\
           
@@ -654,7 +654,7 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Attori Secondari} &   \\
           \textbf{Scopo e Descrizione} & L'utente autenticato , selezionata una collection, ne visualizza in forma tabellare tutti i documenti che contiene.
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personallizzati e per ogni document, selezionarlo e visualizzarne la show-page corrispondente.
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni Document, selezionarlo e visualizzarne la show-page corrispondente.
 L'admin ha i permessi per modificare un documento o eliminare un documento. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzazione della collection.\\ 
@@ -662,11 +662,11 @@ L'admin ha i permessi per modificare un documento o eliminare un documento. \\
           \textbf{Postcondizioni} & L'applicazione ha visualizzato la collection-index selezionata dall'utente. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show page relativa ad un document (UCU9.1);
+           \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show page relativa ad un Document (UCU9.1);
 2. L'utente autenticato può filtrare la collection (UCU9.2);
 3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);
-4. L'admin può modificare un document (UCU9.4);
-4. L'admin può eliminare un document (UCU9.5). \\
+4. L'admin può modificare un Document (UCU9.4);
+4. L'admin può eliminare un Document (UCU9.5). \\
       \end{longtabu}
       \end{table}
 \subsubsection{UCS2.2 - Configurazione database Collection}
@@ -823,7 +823,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato ed in più acced
           \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\
           
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1)
-2. L'utente inseriesce la password (UC1.2) \\
+2. L'utente inserisce la password (UC1.2) \\
            \textbf{Scenari Alternativi} &  \\
       \end{longtabu}
       \end{table}
@@ -1085,7 +1085,7 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti, del document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti, del Document. \\ 
           
           \textbf{Precondizioni}  & L'applicazione riceve l'informazione necessaria per visualizzare l'attributo innestato selezionato dall'utente.\\ 
           
@@ -1095,7 +1095,7 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
            \textbf{Scenari Alternativi} &  \\
       \end{longtabu}
       \end{table}
-\subsubsection{UCU9.1.2 - Apri index page dell'array di document}
+\subsubsection{UCU9.1.2 - Apri index page dell'array di Document}
     
     \begin{figure}[H]
       %\includegraphics[width=12cm]{UML/UCU9.1.2 - Apri index page dell'array di document.png}
@@ -1107,18 +1107,18 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \begin{longtabu}{  c | X  }
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Apri index page dell'array di document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Apri index page dell'array di Document}} \\ 
       \hline
       
        & \\
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index page dell'array di document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index page dell'array di Document. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index page dell'array di document dell'attributo selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index page dell'array di Document dell'attributo selezionato dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra l'index page dell'array di document. \\
+          \textbf{Postcondizioni} & L'applicazione mostra l'index page dell'array di Document. \\
           
           \textbf{Flusso Principale} &  \\
            \textbf{Scenari Alternativi} &  \\
@@ -1143,14 +1143,14 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del document corrispondente alla page-show visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del Document corrispondente alla page-show visualizzata. \\ 
           
           \textbf{Precondizioni}  & L'applicazione visualizza gli attributi del documento permettendo di modificarli.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'admin al Document. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al document. \\
+           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al Document. \\
       \end{longtabu}
       \end{table}
 \subsubsection{UCU9.1.4 - Elimina Document}
@@ -1172,11 +1172,11 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'admin può eliminare il document corrispondente alla show-page visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può eliminare il Document corrispondente alla show-page visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del document.\\ 
+          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del Document.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il document dalla collection. \\
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document dalla collection. \\
           
           \textbf{Flusso Principale} &  \\
            \textbf{Scenari Alternativi} &  \\
@@ -1259,11 +1259,11 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'admin può eliminare un document direttamente dalla pagina collection index visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può eliminare un Document direttamente dalla pagina collection index visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni document visualizzato nella collection, la possibilità di eliminarlo.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni Document visualizzato nella collection, la possibilità di eliminarlo.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il document selezionato dalla collection. \\
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document selezionato dalla collection. \\
           
           \textbf{Flusso Principale} &  \\
            \textbf{Scenari Alternativi} &  \\
@@ -1288,19 +1288,19 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un document selezionato visualizzandone gli attributi in forma tabellare.
-In questa pagina può aprire la show page o l'index page dell'array di document degli attributi innestati se presenti, eseguire un'operazione personalizzata se ne sono disponibili.
-L'admin può eliminare il document a cui la show page corrisponde o modificarlo. \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un Document selezionato visualizzandone gli attributi in forma tabellare.
+In questa pagina può aprire la show page o l'index page dell'array di Document degli attributi innestati se presenti, eseguire un'operazione personalizzata se ne sono disponibili.
+L'admin può eliminare il Document a cui la show page corrisponde o modificarlo. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al document selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al Document selezionato dall'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\
           
           \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show page degli attributi innestati. (UCU9.1.1);
-2. L'utente autenticato può aprire l'ndex page dell'array di document (UCU9.1.2);
+2. L'utente autenticato può aprire l'index page dell'array di Document (UCU9.1.2);
 3. L'utente autenticato può eseguire se presente un'operazione personalizzata (UCU9.3);
-4. L'admin può modificare il document (UCU9.1.3);
-5. L'admin può eliminare il document (UCU9.1.4). \\
+4. L'admin può modificare il Document (UCU9.1.3);
+5. L'admin può eliminare il Document (UCU9.1.4). \\
            \textbf{Scenari Alternativi} &  \\
       \end{longtabu}
       \end{table}
@@ -1323,14 +1323,14 @@ L'admin può eliminare il document a cui la show page corrisponde o modificarlo.
       
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Attori Secondari} &   \\
-          \textbf{Scopo e Descrizione} & L'admin può selezionare un document per andarlo a modificare. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può selezionare un Document per andarlo a modificare. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i document della collection predisponendo la possibilità per ognuno di modifica.\\ 
+          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i Document della collection predisponendo la possibilità per ognuno di modifica.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al Document. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin non ha modificato il document. \\
+           \textbf{Scenari Alternativi} & 1. L'admin non ha modificato il Document. \\
       \end{longtabu}
       \end{table}
 \subsubsection{UCU11.1 - Creazione utente}

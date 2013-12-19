@@ -111,7 +111,7 @@ aspell --lang it --mode tex --encoding utf-8 --personal root/script/aspell_perso
 		\subsubsection{Script di Makefile}
 		\label{makefile}
 
-Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makefile}. Al momento sono previsti due utilizzi:
+Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makefile}. Al momento sono previsti i seguenti comandi:
 \begin{itemize}
 
 \item \textbf{\code{make test}} \\
@@ -127,12 +127,15 @@ Compila tutti i documenti presenti nelle sotto-cartelle.
 \item \textbf{\code{make test-glossary}} \\
 Controlla che tutti i termini marcati con il comando \code{\\glossario\{\dots\}} siano definiti da un corrispondente comando \code{\\definizione\{\dots\}}.
 
-\item \textbf{\code{make test-RegExp}} \\
+\item \textbf{\code{make test-regexp}} \\
 Per ogni regola della forma \code{grep\_test \{RegExp\} \{Messaggio\} \{File\}} definita internamente allo script controlla se ci sono occorrenze dell'espressione regolare \code{\{RegExp\}} nei file \code{\{File\}}. Per ciascuna occorrenza visualizza il messaggio \code{\{Messaggio\}} seguito dal nome del file e la linea in cui è stata trovata l'occorrenza. È raccomandato usarlo per la verifica dei documenti.
+
+\item \textbf{\code{make gulpease}} \\
+Per ogni documento \glossario{PDF} calcola l'indice di leggibilità \glossario{Gulpease} e lo visualizza. Richiede di avere installato il framework \code{python-nltk} e il programma \code{}.
 
 \end{itemize}
 
-È possibile eseguire questo script dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository.
+È possibile eseguire i primi due comandi dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository. I restanti comandi si possono eseguire soltanto dalla cartella principale del repository.
 
 	\subsection{Ambiente di sviluppo}
 		

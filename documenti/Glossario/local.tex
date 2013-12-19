@@ -8,9 +8,9 @@
 \newcommand{\DocTitle}{Glossario}
 \newcommand{\DocVersion}{\VersioneG{}}
 \newcommand{\DocRedazione}{Nicolò Tresoldi}
-\newcommand{\DocVerifica}{ ??}
+\newcommand{\DocVerifica}{Luca De Franceschi}
 \newcommand{\DocApprovazione}{Giacomo Fornari}
-\newcommand{\DocUso}{Interno}
+\newcommand{\DocUso}{Esterno}
 \newcommand{\DocDistribuzione}{
 	\Committente{} \\
 	Gruppo \GroupName{}
@@ -18,7 +18,7 @@
 
 % La descrizione del documento
 \newcommand{\DocDescription}{
- Questo documento descrive ... TODO ?? adottate dal gruppo \GroupName{} per la realizzazione del progetto \ProjectName{}.
+ Questo documento descrive i termini di glossario adottati dal gruppo \GroupName{} per la realizzazione del progetto \ProjectName{}.
 }
 
 %%%%%%%%%%%%%%
@@ -28,11 +28,10 @@
 % In questa seconda parte vanno definite le 'funzioni' utilizzate soltanto da questo documento.
 
 \newcommand{\letteraGlossario}[1] { 
+  \vspace{11pt}
   \textbf{\huge{#1} } % Lettera grande 
   \\
   \rule[0.3pt]{\linewidth}{0.4pt} \\ % Linea orizzontale
 } 
 
-\newcommand{\definizione}[1] {
-	\item[#1.] 
-}
+\newcommand{\definizione}[1] {\textbf{#1}:}

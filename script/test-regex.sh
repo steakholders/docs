@@ -58,6 +58,9 @@ grep_test "\\\ProjectName[^{}]" "Sostituire con \ProjectName{}." $(find . -name 
 grep_test "\\\Proponente[^{}]" "Sostituire con \Proponente{}." $(find . -name '*.tex')
 grep_test "\\\Committente[^{}]" "Sostituire con \Committente{}." $(find . -name '*.tex')
 
+# Errori tipici con LaTeX
+grep_test " [[:alpha:]]{2,}_" "Utilizzare il comando LaTeX \_ (l'underscore ha un'altra funzione)" $(find . -name '*.tex')
+
 # Errori ortografici
 grep_test "E'" "Sostituire con È." $(find . -name '*.tex')
 grep_test "[[:alpha:]]\`[aeiou]" "Riscrivere usando l'accento giusto: uno tra àèìòù" $(find . -name '*.tex')
@@ -68,6 +71,11 @@ grep_test "FIXME" "C'è un FIXME non risolto." $(find . -name '*.tex')
 grep_test "^>>>>>" "C'è un merge non risolto." $(find . -name '*.tex')
 grep_test "^=====" "C'è un merge non risolto." $(find . -name '*.tex')
 grep_test "^<<<<<" "C'è un merge non risolto." $(find . -name '*.tex')
+
+grep_test "ciao" "Togliere il ciao." $(find . -name '*.tex')
+grep_test "blabla" "Togliere il blabla." $(find . -name '*.tex')
+grep_test "bla " "Togliere il bla." $(find . -name '*.tex')
+grep_test "asd" "Togliere l'asd." $(find . -name '*.tex')
 
 # Controlla che ci sia prima il nome e poi il cognome
 grep_test "Poli Federico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')

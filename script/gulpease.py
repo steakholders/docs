@@ -11,7 +11,11 @@ from readability_score.calculators.it.gulpease import *
 # If args is empty then fileinput.input() will read from stdin; otherwise it reads from each file in turn
 import fileinput
 
+import re
+
 input_text = "".join(fileinput.input())
+
+input_text = input_text.replace("^.*Introduzione.*Introduzione", "")
 
 if len(input_text) > 0:
 	gu = Gulpease(input_text, locale='it_IT')

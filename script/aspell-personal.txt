@@ -1,4 +1,4 @@
-personal_ws-1.1 it 473 
+personal_ws-1.1 it 480 
 Google
 deployment
 Amm
@@ -52,6 +52,7 @@ Cox
 Unicode
 plugin
 CamelCase
+Portable
 syntax
 best
 rimpiazza'
@@ -127,10 +128,12 @@ Message
 Java
 index
 Domain
+nltk
 isodate
 working
 client
 RegExp
+regexp
 Education
 community
 Fedora
@@ -186,6 +189,7 @@ event
 Henry
 ciclomatica
 pdc
+practice
 MUST
 McCabe
 pdf
@@ -209,6 +213,7 @@ Pgr
 issues
 admin
 Pgt
+Adobe
 project
 Maccagnan
 Well
@@ -245,6 +250,7 @@ template
 SHOULD
 BSON
 Tag
+pdftotext
 sep
 Seq
 Codifica'
@@ -264,6 +270,7 @@ Microsoft
 friendly
 position
 the
+python
 tex
 wiki
 Retired
@@ -380,6 +387,7 @@ Kernel
 local
 active
 hh
+Systems
 Chrome
 Principles
 versionato

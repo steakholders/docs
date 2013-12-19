@@ -1,4 +1,4 @@
-personal_ws-1.1 it 464 
+personal_ws-1.1 it 474 
 Google
 deployment
 Amm
@@ -12,6 +12,7 @@ bioinformatica
 branch
 edition
 GitHub
+object
 Ready
 application
 shortcut
@@ -47,6 +48,7 @@ FAQ
 interface
 Service
 Cox
+Unicode
 plugin
 CamelCase
 syntax
@@ -98,6 +100,7 @@ abbandona'
 quest'ultime
 Broken
 lines
+SQMT
 gray
 Imaging
 reference
@@ -118,6 +121,7 @@ all'admin
 Relationship
 Makefile
 node
+Modeling
 Message
 Java
 index
@@ -152,6 +156,7 @@ Platform
 stub
 JVM
 vers
+oriented
 Procedure'
 logout
 Mozilla
@@ -169,11 +174,13 @@ lavoro'
 mod
 rounded
 pollution
+Unified
 LUF
 JSHint
 View
 chart
 effort
+computing
 event
 Henry
 ciclomatica
@@ -226,6 +233,7 @@ sottoattributi
 pre
 Verifica'
 Apple
+cloud
 practise
 HTML
 label
@@ -312,6 +320,7 @@ Location
 Rails
 URL
 utf
+main
 markup
 make
 Heroku
@@ -379,6 +388,7 @@ Social
 halstead
 Laurence
 scripting
+Transformation
 Abstract
 IQ
 combo

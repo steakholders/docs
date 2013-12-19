@@ -1,4 +1,4 @@
-i\section{Visione generale della strategia di verifica}
+\section{Visione generale della strategia di verifica}
 \sectionmark{Visione generale \dots}
 
 La strategia generale adottata è quella di automatizzare il più possibile il lavoro di verifica; questo richiede scelta e uso di \glossario{tools} adeguatamente configurati. L'obiettivo è avere un riscontro affidabile e numericamente trattabile che permetta di assicurare il grado di qualità predeterminato. Il lavoro manuale verrà così ridotto al minimo e confinato all'opera di validazione.
@@ -18,7 +18,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 	\subsection{Pianificazione strategica e temporale}
 		\subsubsection{Strategia}
 
-		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi prefissati nel calendario, oppure posso insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche; è questo il caso di \glossario{bug} o \emph{errori} (vedi paragrafo \ref{DefinizioneAnomalie}). La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}. Questo lavoro verrà svolto con l'aiuto di automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione, in particolare:
+		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi prefissati nel calendario, oppure possono insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche; è questo il caso di \glossario{bug} o \emph{errori} (vedi paragrafo \ref{DefinizioneAnomalie}). La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}. Questo lavoro verrà svolto con l'aiuto di automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione, in particolare:
 		\begin{itemize}
 			\item Documentazione: tramite uno script di \glossario{pre-commit} viene bloccato il commit nel \glossario{repository} se le modifiche eseguite impediscono la compilazione dei documenti o se gli strumenti di verifica automatica rilevano delle anomalie. In questo modo viene sempre garantita una qualità minima per il codice caricato sul \glossario{repository}.
 			%\item Software: da definire.
@@ -63,7 +63,7 @@ La speranza è che dei buoni processi portino ad un buon software.
     		\item Software System:
     			\begin{enumerate}
     			\setcounter{enumi}{1}
-    				\item \emph{Demonstrable}: le caratteristiche chiave dell'architettura software sono state individuate e gli \glossario{stakeholders} sono in accordo. Vengono individuate le unità da testare per soddisfare la richiesta del \glossario{proponente} di verificare il funzionamento di almeno il 70\% del software prodotto.
+    				\item \emph{Demonstrable}: le caratteristiche chiave dell'architettura software sono state individuate e gli \glossario{stakeholders} sono in accordo. Vengono individuate le unità da testare per soddisfare la richiesta del \glossario{proponente} di verificare il funzionamento di almeno il 70\% del software prodotto, come stabilito nel \textit{Verbale del 2013-12-05}.
     			\end{enumerate}
     		\item Way of Working:
     			\begin{enumerate}
@@ -84,7 +84,7 @@ La speranza è che dei buoni processi portino ad un buon software.
     			\end{enumerate}
     	\end{itemize}
     	
-	\paragraph{Verifica e Validazione}	
+	\paragraph{Validazione}	
 		\begin{itemize}
     		\item Software System:
     			\begin{enumerate}
@@ -135,7 +135,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 	
 		\subsubsection{Statiche}
 
-		Consiste nello studiare la documentazione ed il software senza istanze di esecuzione del sorgente. Queste tecniche possono includere attività \emph{people-intensive} o di \emph{analisi} condotte da singoli individui con o senza l'assistenza di tools automatizzati.
+		Consiste nello studiare la documentazione ed il software senza istanze di esecuzione del sorgente. Queste tecniche possono includere attività \emph{people-intensive} o di \emph{analisi} condotte da singoli individui con o senza l'assistenza di \glossario{tools} automatizzati.
 
 			\paragraph{Walkthrough} \mbox{} \\
 			
@@ -157,7 +157,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 		\subsubsection{Dinamiche}
 
 		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test ripetibili basati sull'effettiva esecuzione del codice. È quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, al fine di verificare velocemente che gli output siano quelli attesi. Un file di \glossario{log} permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di granularità.\\
-		Il \glossario{proponente}, nel corso del primo incontro, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
+		Il \glossario{proponente}, nel corso del \textit{Verbale} del 2013-12-05, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
 		
 			\paragraph{Test di unità} \mbox{} \\
 
@@ -187,7 +187,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Vengono adottate delle metriche per rendere misurabili e valutabili i processi, i documenti ed il software prodotto. La visione non vuole essere comparativa, ma serve al gruppo per monitorare l'andamento dei processi e la qualità del prodotto.
 		
 		\subsubsection{Metriche per i processi}
-		Le seguenti metriche rappresentano un indicatore volto a monitorare e prevedere l'andamento delle principali variabili critiche del progetto (i tempi e i costi). Sono state scelte metriche di tipo \glossario{consuntivo} perché danno un riscontro immediato sullo stato attuale del progetto; ad ogni iterazione verranno valutati tali indici e, se necessario, verranno stabiliti opportuni provvedimenti da parte del \emph{Responsabile} di progetto.
+		Le seguenti metriche rappresentano un indicatore volto a monitorare e prevedere l'andamento delle principali variabili critiche del progetto (i tempi e i costi). Sono state scelte metriche di tipo \glossario{consuntivo} perché danno un riscontro immediato sullo stato attuale del progetto; ad ogni incremento verranno valutati tali indici e, se necessario, verranno stabiliti opportuni provvedimenti da parte del \emph{Responsabile} di progetto.
 		
 			\paragraph{Schedule Variance} \mbox{} \\
 
@@ -195,7 +195,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\[
 			SV = BCWP - BCWS
 			\]
-			Dove $BCWP$ indica valore delle attività realizzate alla data corrente e $BCWS$ rappresenta il costo pianificato per realizzare le attività di progetto alla data corrente. 
+			Dove $BCWP$ indica il valore delle attività realizzate alla data corrente e $BCWS$ rappresenta il costo pianificato per realizzare le attività di progetto alla data corrente. 
 			È un indicatore di efficacia soprattutto nei confronti del Cliente. Se $SV>0$ significa che il progetto sta producendo con maggior velocità a quanto pianificato, viceversa se negativo.
 			
 			\paragraph{Budget Variance}\mbox{} \\
@@ -204,7 +204,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\[
 			BV = BCWS - ACWP
 			\]
-			Dove $BCWS$ indica il costo pianificato per realizzare le attività di  progetto alla  data corrente e $ACWP$ rappresenta costo effettivamente sostenuto alla data  corrente.
+			Dove $BCWS$ indica il costo pianificato per realizzare le attività di  progetto alla  data corrente e $ACWP$ rappresenta il costo effettivamente sostenuto alla data  corrente.
 			È un indicatore che ha un valore unicamente contabile e finanziario. Se $BV>0$ significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo. 
 
 			
@@ -246,7 +246,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
 				\item Range-accettazione: [0 - 15];
-				\item Range-ottimale: [0 - 10]\textsuperscript{2} .
+				\item Range-ottimale: [0 - 10]\footnote{McCabe (dicembre 1976). A Complexity Measure. IEEE Transactions on Software Engineering: 308–320.} .
 			\end{itemize}
 
 			

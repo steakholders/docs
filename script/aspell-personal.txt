@@ -1,4 +1,4 @@
-personal_ws-1.1 it 398 
+personal_ws-1.1 it 461 
 Google
 deployment
 Amm
@@ -44,7 +44,6 @@ maxhv
 Pearson
 style
 FAQ
-Cox
 interface
 Service
 Cox
@@ -111,8 +110,8 @@ TexMaker
 Part
 Mongoose
 dall
-stack
 grep
+stack
 Controller
 TODO
 all'admin
@@ -143,8 +142,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
@@ -164,8 +163,8 @@ Measure
 Amazon
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -232,13 +231,6 @@ HTML
 label
 SCR
 walktrough
-template
-Tag
-sep
-Seq
-append
-yyyy
-Markdown
 dell'array
 template
 SHOULD
@@ -354,8 +346,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -382,6 +374,7 @@ Principles
 versionato
 line
 Generator
+environment
 Social
 halstead
 Laurence
@@ -463,7 +456,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

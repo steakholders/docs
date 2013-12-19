@@ -1,4 +1,4 @@
-personal_ws-1.1 it 464 
+personal_ws-1.1 it 462 
 Google
 deployment
 Amm
@@ -29,6 +29,7 @@ report
 slash
 NoSQL
 Rotundo
+walkthrough
 Walkthrough
 maxhd
 maxhe
@@ -142,8 +143,8 @@ tests
 metadati
 global
 sull'
-l'admin
 L'Admin
+l'admin
 Pianciamore
 Tresoldi
 tree
@@ -163,8 +164,8 @@ Measure
 Amazon
 dell
 dimostrabilmente
-Maap's
 MaaP's
+Maap's
 lavoro'
 mod
 rounded
@@ -346,8 +347,8 @@ an
 Franceschi
 AR
 Documenti'
-dd
 as
+dd
 tools
 framework
 Requisteak
@@ -456,7 +457,7 @@ Selected
 dashboard
 logger
 Ana
-all'
 All
+all'
 and
 Techinques

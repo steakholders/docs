@@ -4,18 +4,20 @@
 
 % In questa prima parte vanno definite le 'costanti' utilizzate da due o più documenti.
 
-\newcommand{\GroupName}{\emph{SteakHolders}}
-\newcommand{\ProjectName}{\emph{MaaP}}
+% Meglio non mettere gli \emph dentro le costanti, in certi casi creano problemi
+\newcommand{\GroupName}{SteakHolders}
+\newcommand{\GroupEmail}{steakholders.group@gmail.com}
+\newcommand{\ProjectName}{MaaP}
 
 \newcommand{\Proponente}{CoffeeStrap}
 \newcommand{\Committente}{Prof. Tullio Vardanega}
-\newcommand{\Responsabile}{}
+\newcommand{\Responsabile}{Giacomo Fornari}
 
 % La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
 %TODO: Aggiungere tutte le versioni
 \newcommand{\VersioneG}{??.??.??}
 \newcommand{\VersionePQ}{??.??.??}
-\newcommand{\VersioneNP}{1.1.5}
+\newcommand{\VersioneNP}{1.2.5}
 \newcommand{\VersionePP}{??.??.??}
 \newcommand{\VersioneV}{ - } %Il vebale non ha versionamento.
 \newcommand{\VersioneAR}{1.1.1}
@@ -24,9 +26,10 @@
 % Quando serve riferirsi a ``Nome del Documento + ultima versione x.y.z'' usiamo queste costanti:
 \newcommand{\Glossario}{\emph{Glossario v\VersioneG{}}}
 \newcommand{\PianoDiQualifica}{\emph{Piano di Qualifica v\VersionePQ{}}}
-\newcommand{\NormeDiProgetto}{\emph{Norme di Progetto v\VersioneNP}}
-\newcommand{\PianoDiProgetto}{\emph{Piano di Progetto v\VersionePP}}
-\newcommand{\StudioDiFattibilita}{\emph{Studio di Fattibilità v\VersioneSF}}
+\newcommand{\NormeDiProgetto}{\emph{Norme di Progetto v\VersioneNP{}}}
+\newcommand{\PianoDiProgetto}{\emph{Piano di Progetto v\VersionePP{}}}
+\newcommand{\StudioDiFattibilita}{\emph{Studio di Fattibilità v\VersioneSF{}}}
+\newcommand{\AnalisiDeiRequisiti}{\emph{Analisi dei Requisiti v\VersioneAR{}}}
 
 \newcommand{\ScopoDelProdotto}{
 	Lo scopo del progetto è la realizzazione di un \glossario{framework} per generare interfacce web di amministrazione dei dati di \glossario{business} basato su \glossario{stack} \glossario{Node.js} e \glossario{MondoDB}. L'obbiettivo è quello di semplificare il processo di implementazione di tali interfacce che lo sviluppatore, appoggiandosi alla produttività del framework MaaP, potrà generare in maniera semplice e veloce ottenendo quindi un considerevole risparmio di tempo e di sforzo. Il fruitore finale delle pagine generate sarà infine l'esperto di business che potrà visualizzare, gestire e modificare le varie entità e dati residenti in \glossario{MongoDB}.
@@ -41,7 +44,7 @@
 
 % Serve a dare la giusta formattazione alle parole presenti nel glossario
 % il nome del comando \glossary è già usato da LaTeX
-\newcommand{\glossario}[1]{\mbox{\textit{#1} \ped{\ped{G}}}}
+\newcommand{\glossario}[1]{\textit{#1\ped{\ped{G}}}}
 
 % Serve a dare la giusta formattazione al codice inline
 \newcommand{\code}[1]{\texttt{#1}}
@@ -61,13 +64,13 @@
   \includegraphics[width=10cm]{../../modello/steakman.png}
   \end{center}
   
-  \vspace{33pt}
+  \vspace{15pt}
 
   \begin{Huge}
   \textbf{\DocTitle{}}
   \end{Huge}
   
-  \textbf{\emph{Gruppo} \GroupName{} \, \texttwelveudash \, \emph{Progetto} \ProjectName{}}
+  \textbf{\emph{Gruppo \GroupName{} \, \texttwelveudash{} \, Progetto \ProjectName{}}}
   
   \vspace{11pt}
 

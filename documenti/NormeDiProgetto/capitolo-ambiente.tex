@@ -113,19 +113,23 @@ aspell --lang it --mode tex --encoding utf-8 --personal root/script/aspell_perso
 
 Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makefile}. Al momento sono previsti due utilizzi:
 \begin{itemize}
- \item \textbf{\code{make test}} \\
-	Per ogni file \file{*.tex} contenuto nella cartella e nelle sue sotto-cartelle:
-	\begin{itemize}
-		\item Verifica che i file siano memorizzati con la codifica \glossario{UTF-8};
-		\item Verifica con \emph{Aspell} che le parole utilizzate nei documenti siano comprese nel dizionario italiano di \emph{Aspell} o nel dizionario personalizzato \file{root/script/aspell\_personal.txt}.
-	\end{itemize}
-	
- \item \textbf{\code{make documents}} \\
-	Compila tutti i documenti presenti nelle sotto-cartelle.
 
- \item \textbf{\code{make test-glossary}} \\
-	Controlla che tutti i termini marcati con il comando \code{\\glossario\{\dots\}} siano definiti da un corrispondente comando \code{\\definizione\{\dots\}}.
+\item \textbf{\code{make test}} \\
+Per ogni file \file{*.tex} contenuto nella cartella e nelle sue sotto-cartelle:
+\begin{itemize}
+	\item Verifica che i file siano memorizzati con la codifica \glossario{UTF-8};
+	\item Verifica con \emph{Aspell} che le parole utilizzate nei documenti siano comprese nel dizionario italiano di \emph{Aspell} o nel dizionario personalizzato \file{root/script/aspell\_personal.txt}.
+\end{itemize}
 	
+\item \textbf{\code{make documents}} \\
+Compila tutti i documenti presenti nelle sotto-cartelle.
+
+\item \textbf{\code{make test-glossary}} \\
+Controlla che tutti i termini marcati con il comando \code{\\glossario\{\dots\}} siano definiti da un corrispondente comando \code{\\definizione\{\dots\}}.
+
+\item \textbf{\code{make test-regexp}} \\
+Per ogni regola della forma \code{grep\_test \{RegExp\} \{Messaggio\} \{File\}} definita internamente allo script controlla se ci sono occorrenze dell'espressione regolare \code{\{RegExp\}} nei file \code{\{File\}}. Per ciascuna occorrenza visualizza il messaggio \code{\{Messaggio\}} seguito dal nome del file e la linea in cui è stata trovata l'occorrenza. È raccomandato usarlo per la verifica dei documenti.
+
 \end{itemize}
 
 È possibile eseguire questo script dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository.
@@ -138,6 +142,7 @@ Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makef
 		\begin{itemize}
 			\item \textbf{gedit} $\geq 3.4.1$ (\url{http://projects.gnome.org/gedit})
 			\item \textbf{Sublime text} $\geq 2.0.2$ (\url{http://www.sublimetext.com})
+			\item \textbf{Eclipse} (\url{http://www.eclipse.org})
 		\end{itemize}
 		
 		\subsubsection{Framework}

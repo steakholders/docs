@@ -45,11 +45,19 @@ function log(){
 	# Se i colori sono supportati
 	if tput colors > /dev/null
 	then
-		# Colori
-		GREEN="\e[32m"
-		RED="\e[31m"
-		ORANGE="\e[33m"
-		CLEAR="\e[0m"
+		if is_mac_os; then
+			# Colori mac
+			GREEN="\033[0;32m"
+			RED="\033[0;31m"
+			ORANGE="\033[0;33m"
+			CLEAR="\033[0m"
+		else
+			# Colori linux
+			GREEN="\e[32m"
+			RED="\e[31m"
+			ORANGE="\e[33m"
+			CLEAR="\e[0m"
+		fi
 	fi
 	
 	case $level in
@@ -81,11 +89,19 @@ function log(){
 
 function set_red_text() {
 	# Non andare a capo
-	echo -ne "\e[31m"
+	if is_mac_os; then
+		echo -ne "\033[31m"
+	else
+		echo -ne "\e[31m"
+	fi
 }
 
 function reset_text_color() {
 	# Non andare a capo
-	echo -ne "\e[0m"
+	if is_mac_os; then
+		echo -ne "\033[0m"
+	else
+		echo -ne "\e[0m"
+	fi
 }
 

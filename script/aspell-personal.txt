@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 personal_ws-1.1 it 475 
-=======
-personal_ws-1.1 it 486 
->>>>>>> e4d1f8a73946052aff59122dae969c452ce713eb
 Google
 deployment
 Amm
@@ -17,13 +13,14 @@ branch
 edition
 GitHub
 object
-Ready
 asd
+Ready
 application
 shortcut
 titolo'
 query
 source
+Reliability
 Hangouts
 parser
 DdP
@@ -38,14 +35,15 @@ Rotundo
 walkthrough
 maxhd
 maxhe
+Efficiency
 Astah
 BCWP
 text
 responsività
 BCWS
 form
-StartUp
 startup
+StartUp
 AWS
 maxhv
 Pearson
@@ -74,6 +72,7 @@ IEEE
 DSL
 black
 Lavazza
+un'array
 ActiveAdmin
 coverage
 page
@@ -84,8 +83,8 @@ vgrid
 Transactions
 sottoscrivibile
 Postcondizioni
-Quality
-Metrics
+quality
+metrics
 nomemetrica
 AngularJS
 git
@@ -97,6 +96,7 @@ checkbox
 Error
 IDE
 FunGoStudios
+IEC
 collection
 SEMAT
 Integrated
@@ -108,15 +108,19 @@ quest'ultime
 Broken
 lines
 SQMT
+PDCA
+incrementalmente
 gray
 Imaging
 reference
+unipd
 GUI
 baseline
 Failure
 repository
 path
 TexMaker
+Firebase
 Part
 Mongoose
 dall
@@ -138,14 +142,15 @@ nltk
 isodate
 working
 client
-regexp
 RegExp
+regexp
 Education
 community
 Fedora
 predeterminabili
 corners
 fault
+tool
 Tool
 MongoDB
 MAY'
@@ -156,14 +161,15 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+L'Admin
 Pianciamore
 Tresoldi
 tree
 packet
 Platform
 stub
+Portability
 JVM
 vers
 oriented
@@ -179,8 +185,8 @@ Amazon
 underscore
 dell
 dimostrabilmente
-MaaP's
 Maap's
+MaaP's
 lavoro'
 mod
 rounded
@@ -192,8 +198,8 @@ View
 chart
 effort
 computing
-event
 Henry
+event
 ciclomatica
 pdc
 practice
@@ -208,13 +214,14 @@ ways
 Process
 NomeDelDocumento
 Interaction
-NOM
 MVC
+NOM
 peaks
 research
 npm
 NOT'
 Firefox
+Usability
 true
 Pgr
 issues
@@ -229,11 +236,12 @@ Javascript
 JavaScript
 OOP
 num
+external
 purpose
 Calendar
 RAU
-Medical
 backslash
+Medical
 pianificata'
 shell
 projects
@@ -270,6 +278,7 @@ replacements
 bugs
 Everybody
 lang
+Functionality
 setup
 Express
 Teamwork
@@ -290,6 +299,7 @@ populate
 UCU
 NodeJS
 NodeJs
+nell'index
 smartphone
 Ubuntu
 Graphical
@@ -317,11 +327,12 @@ History
 left
 Mocha
 UML
+Maintainability
 proattiva
 Version
 Way
-l'overhead
 placeholder
+l'overhead
 BioComputing
 issue
 recovery
@@ -357,6 +368,7 @@ opzionalmente'
 fgfg
 driven
 storage
+column
 people
 draw
 Cardin
@@ -374,8 +386,8 @@ an
 Franceschi
 AR
 Documenti'
-as
 dd
+as
 tools
 framework
 Requisteak
@@ -390,8 +402,8 @@ DP
 Ember
 dsgfdgfg
 cyan
-SGAD
 blabla
+SGAD
 GG
 Number
 Kernel
@@ -416,6 +428,7 @@ combo
 games
 work
 it
+JSON
 fill
 Architecture
 js
@@ -429,6 +442,7 @@ Eclipse
 Mahesh
 of
 pa
+SPICE
 NP
 MU
 array
@@ -470,6 +484,7 @@ fgdfgdfgd
 title
 dell'index
 Casiraghi
+cliccabile
 height
 slack
 Gantt
@@ -488,7 +503,7 @@ Selected
 dashboard
 logger
 Ana
-All
 all'
+All
 and
 Techinques

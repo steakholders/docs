@@ -8,7 +8,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Viene verificata la qualità di ogni processo e di ogni output da esso prodotto. Ogni fase  descritta nel \PianoDiProgetto{} produce output di diverso tipo, per questo è necessario programmare l'attività di verifica in modo mirato:
 
 	\begin{itemize}
-		\item \textbf{Analisi}: in questa fase si controllano che i processi e la documentazione prodotta rispettino le \emph{Norme di Progetto};
+		\item \textbf{Analisi}: in questa fase si controllano che i processi e la documentazione prodotta rispettino le \emph{Norme di Progetto}, verrà verificato che ogni requisito abbia corrispondenza in un caso d’uso utilizzando l’applicativo web \glossario{Requisteak};
 		\item \textbf{Progettazione Architetturale}: in questa fase vanno verificati i processi incrementali relativi all'analisi e ai nuovi documenti di progettazione;
 		\item \textbf{Progettazione di Dettaglio e Codifica}: in questa fase vanno verificati i processi incrementali relativi alla progettazione.
 	\end{itemize}
@@ -149,7 +149,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\begin{itemize}
 				\item utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
 				\item utilizzo di caratteri di underscore senza prima anteporre una backslash;
-				\item errori ortografici come rappresentare la È con una \emph{e} maiuscola apostrofata;
+				\item errori ortografici come rappresentare la \emph{È} con una \emph{e} maiuscola apostrofata;
 				\item inserimento di parole comuni come placeholder, e.g. ciao, blabla, asd \dots;
 				\item formato delle date errato o non conforme alle \NormeDiProgetto{};
 				\item formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
@@ -200,10 +200,11 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Vengono adottate delle metriche per rendere misurabili e valutabili i processi, i documenti ed il software prodotto. La visione non vuole essere comparativa, ma serve al gruppo per monitorare l'andamento dei processi e la qualità del prodotto.
 		
 		\subsubsection{Metriche per i processi}
+		\label{MetricheProcessi}
 		Le seguenti metriche rappresentano un indicatore volto a monitorare e prevedere l'andamento delle principali variabili critiche del progetto (i tempi e i costi). Sono state scelte metriche di tipo \glossario{consuntivo} perché danno un riscontro immediato sullo stato attuale del progetto; ad ogni iterazione verranno valutati tali indici e, se necessario, verranno stabiliti opportuni provvedimenti da parte del \emph{Responsabile} di progetto.
 		
 			\paragraph{Schedule Variance} \mbox{} \\
-
+			\label{ScheduleVariance}
 			Indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate.
 			\[
 			SV = BCWP - BCWS
@@ -338,7 +339,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			 \]
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [0 -30];
+				\item Range-accettazione: [0 - 30];
 				\item Range-ottimale: [0 - 15].
 			\end{itemize}
 			

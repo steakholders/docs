@@ -27,14 +27,14 @@
 		
 		\item
 		{\bfseries Come avviene il recupero password?} \\
-		Il recupero password deve avvenire tramite email, quindi \ProjectName{}deve avere un servizio email configurabile dallo sviluppatore.
+		Il recupero password deve avvenire tramite email, quindi \ProjectName{} deve avere un servizio email configurabile dallo sviluppatore.
 		Il proponente mostra il pacchetto "Nodemailer".
 		
 		\item
 		{\bfseries Nel capitolato si parla di creazione di indici, cosa si intende per indici?} \\
 		Gli indici sono specifici di MongoDB, il quale fa le ricerche scansionando i documenti che talvolta possono essere di grandi dimensioni. Per migliorare le performance di interrogazione, MongoDB crea strutture dati che raccolgono informazioni sui valori dei "campi indice" specificati nei documenti di una collection e queste strutture dati, sono gli indici citati nel capitolato.
 		
-In questo modo quando effettuerà la ricerca, verrà scansionato quest'ultimo documento creato che è più piccolo della collection originale rendendo la ricerca più veloce.	 
+In questo modo, quando effettuerà la ricerca, verrà scansionato quest'ultimo documento creato che è più piccolo della collection originale rendendo la ricerca più veloce.	 
 Dopo diversi mesi di utilizzo, il database può avere una mole di informazioni tale da poter identificare quali sono le query
 maggiormente richieste dagli utenti e quindi proporre la creazione di uno o più indici.
 La creazione di un indice può essere fatta automaticamente dal database o delegata allo sviluppatore via shell.
@@ -59,7 +59,7 @@ La creazione di un indice può essere fatta automaticamente dal database o deleg
 		
 		\item
 		{\bfseries Come implementare il DSL? Si possono creare delle apposite API ad alto livello?} \\
-		Si, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso del DSL, la differenza a cui 	fare attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il parser li garantisce mentre nelle librerie API sono dinamici.
+		Sì, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso del DSL, la differenza a cui 	fare attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il parser li garantisce mentre nelle librerie API sono dinamici.
 		
 		\item
 		{\bfseries \Proponente{} è disponibile per incontri durante l'intero periodo di sviluppo?} \\
@@ -67,7 +67,7 @@ La creazione di un indice può essere fatta automaticamente dal database o deleg
 		altra sede estera, ma resta disponibile ad incontri virtuali su Skype.
 				
 		\item
-		{\bfseries Ci sono delle richieste particolari sul testing di \ProjectName{}} \\
+		{\bfseries Ci sono delle richieste particolari sul testing di \ProjectName{}}? \\
 		Almeno il 70\% codice prodotto deve essere testato nelle modalità preferite dal gruppo.
 		
 	\end{itemize}

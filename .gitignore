@@ -3,6 +3,11 @@
 *.bak
 *.pdf
 
+# Non ignorare i documenti ufficiali
+!ufficiali/*.pdf
+# Ignora i build
+build
+
 #file del Finder di Mac OS X
 *.DS_Store
 

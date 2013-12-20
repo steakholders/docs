@@ -45,7 +45,7 @@
 		
 		\item
 		{\bfseries L' object-id è semplicemente un intero o è un tipo di dato particolare?} \\
-		È un tipo di dato particolare offerto da Mongoose o dal driver di Mongo. È alfanumerico ma è configurato un un certo modo. Ci si può memorizzare dentro la data di creazione, per esempio.
+		È un tipo di dato particolare offerto da Mongoose o dal driver di Mongo. È alfanumerico ma è configurato un certo modo. Ci si può memorizzare dentro la data di creazione, per esempio.
 		
 		\item
 		{\bfseries Nel momento in cui lo sviluppatore vuole registrare una collection nel DSL, per specificare quale collection è sufficiente dare il nome della collection? Oppure ci sono altri modi? Magari con una query di MongoDB?} \\
@@ -57,7 +57,7 @@
 		
 		\item
 		{\bfseries Riferendoci al punto 5 dei requisiti opzionali, su quali dati si possono proporre gli indici da creare?} \\
-		Mongo ha una funzione explain-query, che dice come sta facendo internamente la query Mongo. Fra le varie cose dice se sta usando un indice, e questo può essere un punto di partenza per proporre in maniera proattiva quali index creare per andare più veloce su quali query. Un'analisi del database è molto più complicata.
+		Mongo ha una funzione explain-query che dice come sta facendo internamente la query Mongo. Fra le varie cose dice se sta usando un indice, e questo può essere un punto di partenza per proporre in maniera proattiva quali index creare per andare più veloce su quali query. Un'analisi del database è molto più complicata.
 		
 		\item
 		{\bfseries È l'admin a decidere quali indici creare?} \\
@@ -66,10 +66,6 @@
 		\item
 		{\bfseries Che ne dice di una pagina con la lista degli attributi, in cui l'admin può selezionare con una check-box su quali creare un indice?} \\
 		È una cosa che si può fare, attento che ci sono anche indici composti e indici temporali. È fattibile ma con un grosso avviso che dice all'admin ``Guarda che potresti bloccare il database anche per un ora''. Oppure ci sono dei modi per creare indici in background, ma non ne sono informato in dettaglio.
-		
-		\item
-		{\bfseries Che ne dice di una pagina con la lista degli attributi, in cui l'admin può selezionare con una check-box su quali creare un indice?} \\
-		È una cosa che si può fare, attento che ci sono anche indici composti e indici temporali. È fattibile ma con un grosso avviso che dice all'admin ``Guarda che potresti bloccare il database anche per un ora''. Oppure ci sono dei modi per creare indici in background, ma non sono informato io in dettaglio.
 		
 		\item
 		{\bfseries La creazione di un nuovo documento è possibile farla?} \\

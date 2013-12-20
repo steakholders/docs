@@ -29,5 +29,7 @@ clean:
 
 build: test documents
 	@mkdir -p "build"
+	@rm build/*.pdf
 	@for file in documenti/*/*.pdf; do echo "[*] Copio $$file in build/"; cp "$$file" "build/"; done
+	@zip build/documenti-pdf.zip build/*.pdf
 

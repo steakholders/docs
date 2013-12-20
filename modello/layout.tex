@@ -112,9 +112,11 @@
 % ruota le immagini
 \usepackage{rotating}
 
-
 % permetti di calcolare le larghezze facendo calcoli
 \usepackage{calc}
+
+% permetti di controllare se una macro stampa qualcosa
+\usepackage{etoolbox}
 
 \fancypagestyle{plain}{
 	% cancella tutti i campi di intestazione e piè di pagina
@@ -132,7 +134,11 @@
 		\slshape \leftmark
 	}
 
-	\lfoot{\DocTitle{} \\ v\DocVersion{}}
+	\lfoot{
+		\DocTitle{} \\
+		% sefferenzia a seconda che \DocVersion{} stampi testo o no
+		\ifdefempty{\DocVersion{}}{}{v \DocVersion{}}
+	}
 	\rfoot{Pagina \thepage{} di \pageref{LastPage}}
 
 	% Visualizza una linea orizzontale in cima e in fondo alla pagina

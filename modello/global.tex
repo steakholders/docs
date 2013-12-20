@@ -86,7 +86,13 @@
   \begin{tabular}{ r|l }
     \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
     \hline
-    \textbf{Versione} & \DocVersion{} \\
+		% differenzia a seconda che \DocVersion{} stampi testo o no
+		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
+			% nulla (non ho trovato come togliere l'a capo)
+			\\
+		\else
+			\textbf{Versione} & \DocVersion{} \\
+		\fi
     \textbf{Redazione} & \multiLineCell[t]{\DocRedazione{}} \\
     \textbf{Verifica} & \multiLineCell[t]{\DocVerifica{}} \\
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\

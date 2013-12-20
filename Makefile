@@ -27,3 +27,7 @@ clean:
 	@cd "modello" && make clean
 	@cd "script" && make clean
 
+build: test documents
+	@mkdir -p "build"
+	@for file in documenti/*/*.pdf; do echo "[*] Copio $$file in build/"; cp "$$file" "build/"; done
+

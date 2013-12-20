@@ -1,4 +1,4 @@
-personal_ws-1.1 it 509 
+personal_ws-1.1 it 516 
 Google
 deployment
 Amm
@@ -43,8 +43,8 @@ text
 responsività
 BCWS
 form
-startup
 StartUp
+startup
 AWS
 maxhv
 Pearson
@@ -144,8 +144,8 @@ nltk
 isodate
 working
 client
-RegExp
 regexp
+RegExp
 Education
 community
 Fedora
@@ -162,8 +162,8 @@ tests
 metadati
 global
 sull'
-l'admin
 L'Admin
+l'admin
 Pianciamore
 Tresoldi
 tree
@@ -187,8 +187,8 @@ underscore
 dell
 dimostrabilmente
 explain
-Maap's
 MaaP's
+Maap's
 lavoro'
 mod
 rounded
@@ -200,8 +200,8 @@ View
 chart
 effort
 computing
-Henry
 event
+Henry
 ciclomatica
 pdc
 practice
@@ -216,8 +216,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-MVC
 NOM
+MVC
 peaks
 research
 npm
@@ -495,7 +495,6 @@ cliccabile
 height
 slack
 users
-Users
 Gantt
 Foundation
 Comunicazioni'
@@ -512,7 +511,7 @@ Selected
 dashboard
 logger
 Ana
-all'
 All
+all'
 and
 Techinques

@@ -1,5 +1,5 @@
 \section{Casi d'uso}
-I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di glossario{ActiveAdmin}, un progetto analogo a ProjectName{} basato su glossario{Ruby on Rails}.\
+I casi d'uso seguenti emergono da un'attenta analisi degli \textit{Analisti} del gruppo \GroupName{} rivolta al capitolato e da un'approfondita discussione con il proponente \Proponente{}. Gran parte dei casi d'uso sono stati dedotti grazie all'esperienza derivata dall'utilizzo di \glossario{ActiveAdmin}, un progetto analogo a \ProjectName{} basato su \glossario{Ruby on Rails}.\
 Ogni caso d'uso è identificato univocamente e in modo gerarchico tramite una codifica nella forma:
 
 \begin{center}
@@ -81,14 +81,14 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password.L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password. L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
           
           \textbf{Precondizioni}  & L'applicazione è pronta a ricevere i dati e nel database è presente l'account dell'utente.\\ 
           
           \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\
           
-          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1)
-2. L'utente inseriesce la password (UC1.2) \\
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1) \newline
+2. L'utente inserisce la password (UC1.2) \newline \\
            \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
       \end{longtable}
       \egroup
@@ -202,9 +202,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso allìapplicazione. \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovey.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovery.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per la password recovery richiesta dall'utente. \\
           
@@ -310,11 +310,11 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & La pagina di gestione degli indici fornisce all'admin un elenco suggerito di attributi a cui applicare gli indici in base alle query piu utilizzate. \\ 
+          \textbf{Scopo e Descrizione} & La pagina di gestione degli indici fornisce all'admin un elenco suggerito di attributi a cui applicare gli indici in base alle query più utilizzate. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulle query più utilizzate. \\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggermenti derivati dalla ricerca. \\
+          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -414,7 +414,7 @@ Gli indici già presenti possono essere eliminati. \\
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato , selezionata una collection, ne visualizza in forma tabellare tutti i documenti che contiene.
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personallizzati e per ogni document, selezionarlo e visualizzarne la show-page corrispondente.
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni document, selezionarlo e visualizzarne la show-page corrispondente.
 L'admin ha i permessi per modificare un documento o eliminare un documento. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzazione della collection.\\ 
@@ -1897,6 +1897,13 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
 \end{center}
 
 \subsubsection{UCM1 - Registrazione} 
+    \begin{center}
+    \begin{figure}[H]
+      \includegraphics[scale=0.16]{UML/UCM1 - Registrazione.png}
+      \caption{UCM1 - Registrazione} 
+    \end{figure}
+    \end{center}
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -1994,6 +2001,13 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
 \end{center}
 
 \subsubsection{UCM4 - Login} 
+    \begin{center}
+    \begin{figure}[H]
+      \includegraphics[scale=0.16]{UML/UCM4 - Login.png}
+      \caption{UCM4 - Login} 
+    \end{figure}
+    \end{center}
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -2146,6 +2160,13 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
 \end{center}
 
 \subsubsection{UCM8 - Gestione file di configurazione} 
+    \begin{center}
+    \begin{figure}[H]
+      \includegraphics[scale=0.16]{UML/UCM8 - Gestione file di configurazione.png}
+      \caption{UCM8 - Gestione file di configurazione} 
+    \end{figure}
+    \end{center}
+    
       %Tabella 
       \begin{center}
       \bgroup

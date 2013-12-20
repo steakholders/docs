@@ -6,7 +6,7 @@
 		
 		\item
 		{\bfseries L'admin, nella sua pagina di amministrazione, può modificare le credenziali di un utente? Può quindi modificare la sua password e l'email?} \\
-		Sì, non è fondamentale. L'importante è che sia un modo per recuperare la sua password. Se può farlo anche l'utente admin, meglio, ma non è fondamentale.
+		Sì, ma non è fondamentale. L'importante è che vi sia un modo per recuperare la sua password. Se può farlo anche l'utente admin, meglio, ma non è fondamentale.
 		
 		\item
 		{\bfseries L'admin eventualmente può declassare sé stesso?} \\
@@ -31,7 +31,7 @@
 		
 		\item
 		{\bfseries Se un documento ha un array di documenti come attributo bisogna visualizzare un link alla index-page del campo innestato?} \\
-		Un array di documenti non è una collection, non ha una index-page. È simile ma non è la stessa cosa. Potrebbe esserci anche un'array di interi o di stringhe, che non sono di documenti. La questione di un array di è simpatica da gestire, perché non c'è nel database relazionale e quindi è diverso il discorso. Si potrebbe aprire un pop-up o un'altra pagina per la visualizzazione dell'array, ma fate attenzione che un array di documenti non è una collection.
+		Un array di documenti non è una collection, non ha una index-page. È simile ma non è la stessa cosa. Potrebbe esserci anche un'array di interi o di stringhe, che non sono di documenti. La questione di un array di documenti è simpatica da gestire, perché non c'è nel database relazionale e quindi è diverso il discorso. Si potrebbe aprire un pop-up o un'altra pagina per la visualizzazione dell'array, ma fate attenzione che un array di documenti non è una collection.
 		
 		Firebase è un tool che manipola JSON in real-time e ha un tool di visualizzazione interno che è fatto molto bene. Quindi potete guardare come visualizza gli array e prendere spunto da lì. Io direi di fare una piccola anteprima dell'array e mettere il link per visualizzarlo in un'altra pagina, che sarà un array-index simile ad una collection-index.
 		
@@ -48,24 +48,24 @@
 		È un tipo di dato particolare offerto da Mongoose o dal driver di Mongo. È alfanumerico ma è configurato un un certo modo. Ci si può memorizzare dentro la data di creazione, per esempio.
 		
 		\item
-		{\bfseries nel momento in cui lo sviluppatore vuole registrare una collection nel DSL, per specificare quale collection è sufficiente dare il nome della collection? Oppure ci sono altri modi? Magari con una query di MongoDB?} \\
+		{\bfseries Nel momento in cui lo sviluppatore vuole registrare una collection nel DSL, per specificare quale collection è sufficiente dare il nome della collection? Oppure ci sono altri modi? Magari con una query di MongoDB?} \\
 		Il nome della collection è univoco nel database.
 		
 		\item
 		{\bfseries Nel capitolato, a pagina 14, il secondo esempio definisce l'index passando come parametro una query. Questa è una query interna alla collection di cui si visualizza la index-page?} \\
-		Io l'ho immaginato così: questa query sta all'interno di una certa collection. Users, per esempio. Io di quella collection non voglio vedere tutti gli users, ma solo gli users che rispettano la query. Quindi il database interpreta la query, è mia responsabilità scrivere quella query in maniera corretta, e l'esecutore della query restituisce un insieme ristretto di documenti.
+		Io l'ho immaginato così: questa query sta all'interno di una certa collection, users, per esempio. Io di quella collection non voglio vedere tutti gli users, ma solo gli users che rispettano la query. Quindi il database interpreta la query, ed  è mia responsabilità scrivere quella query in maniera corretta, e l'esecutore della query restituisce un insieme ristretto di documenti.
 		
 		\item
-		{\bfseries Riferendoci al punto 5 dei requisiti opzionali, su quali dati si può proporre gli indici da creare?} \\
+		{\bfseries Riferendoci al punto 5 dei requisiti opzionali, su quali dati si possono proporre gli indici da creare?} \\
 		Mongo ha una funzione explain-query, che dice come sta facendo internamente la query Mongo. Fra le varie cose dice se sta usando un indice, e questo può essere un punto di partenza per proporre in maniera proattiva quali index creare per andare più veloce su quali query. Un'analisi del database è molto più complicata.
 		
 		\item
 		{\bfseries È l'admin a decidere quali indici creare?} \\
-		Sì, ma è una cosa delicata. Magari gli si può dire ``Guarda che se crei questo indice vai più veloce'', proponendo il codice da eseguire per creare l'indice. Poi io sviluppatore faccio il copia e incolla. Così è già più che sufficiente, perché se fate voi la creazione dell'indice andate incontro a tutta una serie di problemi. Per esempio, se il database in analisi è enorme creare quell'indice blocca tutto il database, ed è una responsabilità che è meglio non prendersi. La comodità per l'admin è avere il comando da eseguire già pronto, gli basta fare il copia incolla nella shell di Mongo.
+		Sì, ma è una cosa delicata. Magari gli si può dire ``Guarda che se crei questo indice vai più veloce'', proponendo il codice da eseguire per creare l'indice. Poi, io sviluppatore faccio il copia e incolla. Così è già più che sufficiente, perché se fate voi la creazione dell'indice andate incontro a tutta una serie di problemi. Per esempio, se il database in analisi è enorme creare quell'indice blocca tutto il database, ed è una responsabilità che è meglio non prendersi. La comodità per l'admin è avere il comando da eseguire già pronto, gli basta fare il copia incolla nella shell di Mongo.
 		
 		\item
 		{\bfseries Che ne dice di una pagina con la lista degli attributi, in cui l'admin può selezionare con una check-box su quali creare un indice?} \\
-		È una cosa che si può fare, attento che ci sono anche indici composti e indici temporali. È fattibile ma con un grosso avviso che dice all'admin ``Guarda che potresti bloccare il database anche per un ora''. Oppure ci sono dei modi per creare indici in background, ma non sono informato io in dettaglio.
+		È una cosa che si può fare, attento che ci sono anche indici composti e indici temporali. È fattibile ma con un grosso avviso che dice all'admin ``Guarda che potresti bloccare il database anche per un ora''. Oppure ci sono dei modi per creare indici in background, ma non ne sono informato in dettaglio.
 		
 		\item
 		{\bfseries Che ne dice di una pagina con la lista degli attributi, in cui l'admin può selezionare con una check-box su quali creare un indice?} \\

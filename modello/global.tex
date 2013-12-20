@@ -16,7 +16,7 @@
 % La versione dei documenti deve essere definita qui in global, perchè serve anche agli altri documenti
 %TODO: Aggiungere tutte le versioni
 \newcommand{\VersioneG}{1.3.1}
-\newcommand{\VersionePQ}{1.2.3}
+\newcommand{\VersionePQ}{1.3.1}
 \newcommand{\VersioneNP}{1.3.1}
 \newcommand{\VersionePP}{1.3.1}
 \newcommand{\VersioneAR}{1.1.1}
@@ -86,7 +86,13 @@
   \begin{tabular}{ r|l }
     \multicolumn{2}{c}{\textbf{Informazioni sul documento}} \\
     \hline
-    \textbf{Versione} & \DocVersion{} \\
+		% differenzia a seconda che \DocVersion{} stampi testo o no
+		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
+			% nulla (non ho trovato come togliere l'a capo)
+			\\
+		\else
+			\textbf{Versione} & \DocVersion{} \\
+		\fi
     \textbf{Redazione} & \multiLineCell[t]{\DocRedazione{}} \\
     \textbf{Verifica} & \multiLineCell[t]{\DocVerifica{}} \\
     \textbf{Approvazione} & \multiLineCell[t]{\DocApprovazione{}} \\

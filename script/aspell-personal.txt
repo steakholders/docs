@@ -1,4 +1,4 @@
-personal_ws-1.1 it 557 
+personal_ws-1.1 it 560 
 Google
 deployment
 Amm
@@ -68,6 +68,7 @@ Method
 stepnumber
 Demonstrable
 Ruby
+dell'Admin
 dell'admin
 callback
 Fornari
@@ -99,6 +100,7 @@ Exploring
 breakatwhitespace
 Ian
 specify
+ridenominare
 facilitatore
 SteakHolders
 checkbox
@@ -141,6 +143,7 @@ stack
 Controller
 TODO
 all'admin
+all'Admin
 Relationship
 Makefile
 node
@@ -172,8 +175,8 @@ tests
 metadati
 global
 sull'
-L'Admin
 l'admin
+l'Admin
 Pianciamore
 Tresoldi
 tree

@@ -14,18 +14,22 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
 
   \item \textbf{U} - ambito utente, che comprende sia l'utente normale che l'\textit{admin} di una applicazione generata da \ProjectName{};
   \item \textbf{S} - ambito sviluppatore.
+  \item \textbf{M} - ambito utente MaaS.
 
 \end{itemize}
 
+Nei diagrammi dei casi d'uso, il sistema dei livelli di astrazione inferiore si riferisce in modo ricorsivo al sistema del caso d'uso del padre. 
+Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi. 
+
 
 \subsection{Ambito Utente}
-\subsubsection{UCU - Operazioni ad alto livello} 
-    \begin{center}
+\subsubsection{UCU - Operazioni ad alto livello}    
     \begin{figure}[H]
-      \includegraphics[scale=0.16]{UML/UCU - Operazioni ad alto livello.png}
-      \caption{UCU - Operazioni ad alto livello} 
-    \end{figure}
-    \end{center}
+      \begin{center}
+      \includegraphics[scale=0.32]{UML/UCU - Operazioni ad alto livello.png}
+      \caption{UCU - Operazioni ad alto livello}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -44,31 +48,30 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione Maap è funzionante e pronta all'utilizzo.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente vuole eseguire. \\
-          
-          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); 
-2. Utente non autenticato può recuperare la password (UCU4);
-3. Utente non autenticato può richiedere la registrazione (UCU5);
-4. L'utente autenticato può decidere di effettuare il logout (UCU3);
-5. L'utente autenticato può visualizzare la Dashboard (UCU8);
-6. L'utente autenticato può scegliere una collection e visualizzarla (UCU9);
-7. L'utente autenticato può scegliere di modificare i propri dati (UCU10);
-8. L'admin può accede alla sua pagina di amministrazione per la gestione degli utenti (UCU11);
-9. L'admin può gestire i possibili indici (UCU7).
+          \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente vuole eseguire. \\ 
+          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline
+2. Utente non autenticato può recuperare la password (UCU4); \newline
+3. Utente non autenticato può richiedere la registrazione (UCU5); \newline
+4. L'utente autenticato può decidere di effettuare il logout (UCU3); \newline
+5. L'utente autenticato può visualizzare la Dashboard (UCU8); \newline
+6. L'utente autenticato può scegliere una collection e visualizzarla (UCU9); \newline
+7. L'utente autenticato può scegliere di modificare i propri dati (UCU10); \newline
+8. L'admin può accede alla sua pagina di amministrazione per la gestione degli utenti (UCU11); \newline
+9. L'admin può gestire i possibili indici (UCU7). \newline
  \\
-           \textbf{Esclusioni} & 1.1. L'utente visualizza un errore dato dall'inserimento errato delle credenziali. (UCU2);
-2.1. L'utente visualizza un errore dato dal fallimento della registrazione (UCU6). \\
+           \textbf{Esclusioni} & 1.1. L'utente visualizza un errore dato dall'inserimento errato delle credenziali. (UCU2); \newline
+2.1. L'utente visualizza un errore dato dal fallimento della registrazione (UCU6). \newline \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU1 - Login} 
-    \begin{center}
+\subsubsection{UCU1 - Login}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU1 - Login.png}
-      \caption{UCU1 - Login} 
-    \end{figure}
-    \end{center}
+      \caption{UCU1 - Login}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -83,11 +86,11 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password. L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione è pronta a ricevere i dati e nel database è presente l'account dell'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione è pronta a ricevere i dati e nel database delle credenziali è presente l'account dell'utente.\\ 
           
-          \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\
-          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1) \newline
-2. L'utente inserisce la password (UC1.2) \newline \\
+          \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline
+2. L'utente inserisce la password (UC1.2). \newline \\
            \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
       \end{longtable}
       \egroup
@@ -109,10 +112,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione Maap è pronta e l'utente intende autenticarsi.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -133,10 +133,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione Maap è pronta e l'utente intende autenticarsi.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa alla password inserita dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -157,10 +154,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione ha verificato le credenziali inserite dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione predispone la visualizzazione di un messaggio di errore. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione predispone la visualizzazione di un messaggio di errore. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -179,17 +173,14 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato può eseguire il logout dall'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione all'utente la possibilità di logout.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell l'utente la possibilità di logout.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eseguito il logout richiesto dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha eseguito il logout richiesto dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU4 - Password Recovery} 
+\subsubsection{UCU4 - Recupero password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -197,23 +188,27 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4 - Password Recovery}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4 - Recupero password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovery.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di recupero password.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per la password recovery richiesta dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per il recupero password richiesta dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU5 - Registrazione} 
+\subsubsection{UCU5 - Registrazione}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCU5 - Registrazione.png}
+      \caption{UCU5 - Registrazione}
+      \end{center} 
+    \end{figure}    
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -229,9 +224,8 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione predispone la possibilità di registrazione.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha creato un nuovo account utente. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce l'email (UCU5.1);
+          \textbf{Postcondizioni} & L'applicazione ha creato un nuovo account utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce l'email (UCU5.1);  \newline
 2. L'utente non autenticato inserisce la password (UCU5.2). \\
            \textbf{Scenari Alternativi} & 1. L'utente non autenticato interrompe l'operazione di registrazione non creando un nuovo account. \\
       \end{longtable}
@@ -250,25 +244,22 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza un messaggio di errore dato dal fallimento del tentativo di registrazione effettuato. \\ 
+          \textbf{Scopo e Descrizione} & L'applicazione visualizza un messaggio d'errore all'utente causata dall'inserimento di credenziali non corrette o già presenti nel database. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha ricevuto i dati di registrazione inseriti dall'utente e tenta la creazione di un nuovo account.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra un messaggio di errore per il fallimento del tentativo di registrazione richiesta dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione mostra un messaggio di errore dato dal fallimento del tentativo di registrazione richiesta dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU7 - Gestione Indici} 
-    \begin{center}
+\subsubsection{UCU7 - Gestione Indici}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU7 - Gestione Indici.png}
-      \caption{UCU7 - Gestione Indici} 
-    \end{figure}
-    \end{center}
+      \caption{UCU7 - Gestione Indici}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -281,17 +272,15 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può visualizzare i suggerimenti proposti sugli indici e può decidere di aggiungerli. 
+          \textbf{Scopo e Descrizione} & L'admin può visualizzare i suggerimenti proposti sugli indici e può decidere di aggiungerli.  \newline
 Gli indici già presenti possono essere eliminati. \\ 
           
           \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'admin la pagina per gestire gli indici.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha fornito all'admin le funzionalità di gestione degli indici. \\
-          
-          \textbf{Flusso Principale} & 1. La pagina di gestione visualizza i suggerimenti per la creazione degli indici (UCU7.1);
-2. La pagina di gestione permette all'admin la creazione degli indici suggeriti (UCU7.2);
-3. La pagina di gestione permette all'admin l'eliminazione degli indici suggeriti (UCU7.2);
- \\
+          \textbf{Postcondizioni} & L'applicazione ha fornito all'admin le funzionalità di gestione degli indici. \\ 
+          \textbf{Flusso Principale} & 1. La pagina di gestione visualizza i suggerimenti per la creazione degli indici (UCU7.1);  \newline
+2. La pagina di gestione permette all'admin la creazione degli indici suggeriti (UCU7.2);  \newline
+3. La pagina di gestione permette all'admin l'eliminazione degli indici suggeriti (UCU7.2).  \newline \\
           
       \end{longtable}
       \egroup
@@ -311,12 +300,9 @@ Gli indici già presenti possono essere eliminati. \\
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Scopo e Descrizione} & La pagina di gestione degli indici fornisce all'admin un elenco suggerito di attributi a cui applicare gli indici in base alle query più utilizzate. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulle query più utilizzate. \\ 
+          \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulla base delle query più utilizzate. \\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -335,12 +321,9 @@ Gli indici già presenti possono essere eliminati. \\
       \textbf{Attori Primari} & Admin \\ 
           \textbf{Scopo e Descrizione} & L'Admin seleziona gli indici suggeriti e li crea. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione visualizza correttamente la lista degli indici suggeriti\\ 
+          \textbf{Precondizioni}  & L'applicazione visualizza correttamente la lista degli indici suggeriti.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha creato gli indici selezionati dall'Admin. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha creato gli indici selezionati dall'Admin. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -361,10 +344,7 @@ Gli indici già presenti possono essere eliminati. \\
           
           \textbf{Precondizioni}  & L'applicazione visualizza correttamente la lista degli indici.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato gli indici selezionati dall'Admin. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha eliminato gli indici selezionati dall'Admin. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -381,25 +361,22 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di dashboard. \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di Dashboard. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone della pagina di dashboard.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone la pagina di Dashboard.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di dashboard. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di Dashboard. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU9 - Visualizzazione Collection Index} 
-    \begin{center}
+\subsubsection{UCU9 - Visualizzazione Collection Index}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU9 - Visualizzazione Collection Index.png}
-      \caption{UCU9 - Visualizzazione Collection Index} 
-    \end{figure}
-    \end{center}
+      \caption{UCU9 - Visualizzazione Collection Index}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -412,31 +389,28 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato , selezionata una collection, ne visualizza in forma tabellare tutti i documenti che contiene.
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni document, selezionarlo e visualizzarne la show-page corrispondente.
-L'admin ha i permessi per modificare un documento o eliminare un documento. \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato, selezionata una \glossario{Collection}, ne visualizza in forma tabellare tutti i documenti che contiene.  \newline
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
+L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Document}.  \newline \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzazione della collection.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzare Lola \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha visualizzato la collection-index selezionata dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show page relativa ad un Document (UCU9.1);
-2. L'utente autenticato può filtrare la collection (UCU9.2);
-3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);
-4. L'admin può modificare un Document (UCU9.4);
-4. L'admin può eliminare un Document (UCU9.5). \\
+          \textbf{Postcondizioni} & L'applicazione ha visualizzato la \glossario{Collection-Index} selezionata dall'utente. \\  \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show-page relativa ad un \glossario{Document} (UCU9.1);  \newline
+2. L'utente autenticato può filtrare la  \glossario{Collection} (UCU9.2);  \newline
+3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);  \newline
+4. L'Admin può modificare un \glossario{Document} (UCU9.4);  \newline
+5. L'Admin può eliminare un \glossario{Document} (UCU9.5).  \newline \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1 - Visualizzazione show-page Document} 
-    \begin{center}
+\subsubsection{UCU9.1 - Visualizzazione show-page Document}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU9.1 - Visualizzazione show-page Document.png}
-      \caption{UCU9.1 - Visualizzazione show-page Document} 
-    \end{figure}
-    \end{center}
+      \caption{UCU9.1 - Visualizzazione show-page Document}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -449,19 +423,18 @@ L'admin ha i permessi per modificare un documento o eliminare un documento. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un Document selezionato visualizzandone gli attributi in forma tabellare.
-In questa pagina può aprire la show page o l'index page dell'array di Document degli attributi innestati se presenti, eseguire un'operazione personalizzata se ne sono disponibili.
-L'admin può eliminare il Document a cui la show page corrisponde o modificarlo. \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un \glossario{Document} selezionato visualizzandone gli attributi in forma tabellare. \newline
+In questa pagina può aprire la show-page o l'index-page dell'array di \glossario{Document} degli attributi innestati se presenti, eseguire un'operazione personalizzata se disponibile.  \newline
+L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o modificarlo.  \newline \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al Document selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al \glossario{Document} selezionato dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show page degli attributi innestati. (UCU9.1.1);
-2. L'utente autenticato può aprire l'index page dell'array di Document (UCU9.1.2);
-3. L'utente autenticato può eseguire se presente un'operazione personalizzata (UCU9.3);
-4. L'admin può modificare il Document (UCU9.1.3);
-5. L'admin può eliminare il Document (UCU9.1.4). \\
+          \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show-page degli attributi innestati. (UCU9.1.1);  \newline
+2. L'utente autenticato può aprire l'index-page dell'array di \glossario{Document} (UCU9.1.2);  \newline
+3. L'utente autenticato può eseguire, se presente, un'operazione personalizzata (UCU9.3);  \newline
+4. L'Admin può modificare il \glossario{Document} (UCU9.1.3);  \newline
+5. L'admin può eliminare il \glossario{Document} (UCU9.1.4). \\
           
       \end{longtable}
       \egroup
@@ -479,19 +452,16 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti del Document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti del \glossario{Document}. \\ 
           
           \textbf{Precondizioni}  & L'applicazione riceve l'informazione necessaria per visualizzare l'attributo innestato selezionato dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza gli attributi dell'attributo innestato. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione visualizza gli attributi dell'attributo innestato. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.2 - Visualizzazione index page dell'array di Document} 
+\subsubsection{UCU9.1.2 - Visualizzazione index page dell'array di document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -499,18 +469,15 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Visualizzazione index page dell'array di Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Visualizzazione index page dell'array di document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index page dell'array di Document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index-page dell'array di \glossario{Document}. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index page dell'array di Document dell'attributo selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index-page dell'array di \glossario{Document} dell'attributo selezionato dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra l'index page dell'array di Document. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione mostra l'index-page dell'array di \glossario{Document}. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -527,14 +494,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del Document corrispondente alla page-show visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del \glossario{Document} corrispondente alla show-page visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione visualizza gli attributi del documento permettendo di modificarli.\\ 
+          \textbf{Precondizioni}  & L'applicazione visualizza gli attributi del \glossario{Documento} permettendo di modificarli.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al Document. \\
-          
-          \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al Document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al \glossario{Document}. \\  \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al \glossario{Document}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -551,14 +515,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può eliminare il Document selezionato nella show-page visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può eliminare il \glossario{Document} selezionato nella show-page visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del Document.\\ 
+          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del \glossario{Document}.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document dalla collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il \glossario{Document} dalla \glossario{Collection}. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -575,14 +536,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può filtrare i documenti mostrati dalla collection-index. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può filtrare i \glossario{Document} mostrati dalla \glossario{Collection-Index}. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione, nella pagina visualizzata, mette a disposizione filtri.\\ 
+          \textbf{Precondizioni}  & L'applicazione  mette a disposizione (se disponibili) i filtri nella \glossario{Collection-Index}.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha filtrato i documenti visualizzati secondo i filtri richiesti dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha filtrato i \glossario{Document} visualizzati secondo i filtri richiesti dall'utente. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -599,14 +557,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può eseguire azioni personalizzate tramite uso di bottoni se predisposti nella pagina visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eseguire azioni personalizzate tramite l'uso di pulsanti se predisposti nella pagina visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione  nella pagina visualizzata ha bottoni predisposti per l'esecuzione di azioni personalizzate.\\ 
+          \textbf{Precondizioni}  & L'applicazione visualizza i pulsanti predisposti per l'esecuzione di azioni personalizzate.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione a seconda dell'azione eseguita dall'utente ha svolto le sue funzioni. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione, a seconda dell'azione eseguita dall'utente, ha svolto le sue funzioni. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -623,14 +578,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può selezionare un Document per andarlo a modificare. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può selezionare un \glossario{Document} per andarlo a modificare. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i Document della collection predisponendo la possibilità per ognuno di modifica.\\ 
+          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i \glossario{Document} della \glossario{Collection} predisponendo la possibilità di modifica per ognuno di essi.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al Document. \\
-          
-          \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin non ha modificato il Document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\  \textbf{Scenari Alternativi} & 1. L'Admin non ha modificato il \glossario{Document}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -647,14 +599,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può eliminare un Document direttamente dalla pagina collection index visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può eliminare un \glossario{Document} direttamente dalla pagina \glossario{Collection-Index} visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni Document visualizzato nella collection, la possibilità di eliminarlo.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni \glossario{Document} visualizzato nella \glossario{Collection-Index} la possibilità di eliminarlo.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document selezionato dalla collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il \glossario{Document} selezionato dall'Admin. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -671,25 +620,22 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può creare un nuovo Document. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può creare un nuovo \glossario{Document}. \\ 
           
-          \textbf{Precondizioni}  & L'Applicazione è pronta a gestire le richieste dell'utente admin e permette la creazione di nuovi Document.\\ 
+          \textbf{Precondizioni}  & L'applicazione è pronta a gestire le richieste dell'Admin e permette la creazione di nuovi \glossario{Document}.\\ 
           
-          \textbf{Postcondizioni} & L'Applicazione Maap ha creato il nuovo Document. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha creato il nuovo \glossario{Document}. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU10 - Modifica profilo} 
-    \begin{center}
+\subsubsection{UCU10 - Modifica profilo}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU10 - Modifica profilo.png}
-      \caption{UCU10 - Modifica profilo} 
-    \end{figure}
-    \end{center}
+      \caption{UCU10 - Modifica profilo}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -704,12 +650,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \textbf{Attori Primari} & Utente autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato ha a disposizione una pagina in cui poter modificare il proprio profilo, modificando email e/o password. \\ 
           
-          \textbf{Precondizioni}  & L'utente si trova all'interno della pagina di modifica del proprio profilo.\\ 
+          \textbf{Precondizioni}  & L'applicazione visualizza all'utente la pagina di modifica del proprio profilo.\\ 
           
-          \textbf{Postcondizioni} & L'utente ha modificato il proprio profilo e il database è stato aggiornato. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente autenticato modifica la propria email (UCU10.1);
-2. L'utente autenticato modifica la propria password (UCU10.2); \\
+          \textbf{Postcondizioni} & L'applicazione ha modificato correttamente le credenziali dell'utente e le ha salvate nel database delle credenziali. \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato modifica la propria email (UCU10.1);  \newline
+2. L'utente autenticato modifica la propria password (UCU10.2). \\
           
       \end{longtable}
       \egroup
@@ -731,10 +676,7 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
           
           \textbf{Precondizioni}  & L'utente autenticato si trova all'interno della pagina di modifica del proprio profilo.\\ 
           
-          \textbf{Postcondizioni} & L'utente ha inserito la nuova email all'interno dell'apposito campo. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'utente ha inserito la nuova email all'interno dell'apposito campo. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -755,21 +697,18 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
           
           \textbf{Precondizioni}  & L'utente autenticato si trova all'interno della pagina di modifica del proprio profilo.\\ 
           
-          \textbf{Postcondizioni} & L'utente ha inserito la nuova password all'interno dell'apposito campo. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'utente ha inserito la nuova password all'interno dell'apposito campo. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU11 - Gestione utenti} 
-    \begin{center}
+\subsubsection{UCU11 - Gestione utenti}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU11 - Gestione utenti.png}
-      \caption{UCU11 - Gestione utenti} 
-    \end{figure}
-    \end{center}
+      \caption{UCU11 - Gestione utenti}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -782,26 +721,25 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin entra nella sua pagina di amministrazione dalla quale visualizza una Collection-index di tutti gli utenti registrati al sistema. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin entra nella sua pagina di amministrazione nella quale visualizza una \glossario{Collection-Index} di tutti gli utenti registrati al sistema. \\ 
           
-          \textbf{Precondizioni}  & Il sistema mostra all'admin la sua pagina di amministrazione\\ 
+          \textbf{Precondizioni}  & L'applicazione mostra all'Admin la sua pagina di amministrazione\\ 
           
-          \textbf{Postcondizioni} & Il sistema mette a disposizione dell'admin tutte le funzionalità di controllo previste. \\
-          
-          \textbf{Flusso Principale} & 1. L'admin può creare un nuovo utente (UCU11.1)
-2. L'admin può visualizzare la Collection-show di un utente (UCU11.3) \\
+          \textbf{Postcondizioni} & L'applicazione mette a disposizione dell'Admin tutte le funzionalità di controllo previste. \\ 
+          \textbf{Flusso Principale} & 1. L'Admin può creare un nuovo utente (UCU11.1); \newline
+2. L'Admin può visualizzare la \glossario{Collection-Show} di un utente (UCU11.3).  \\
            \textbf{Esclusioni} & 1.1 - Fallisce l'inserimento di un nuovo utente (UCU11.2). \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU11.1 - Creazione utente} 
-    \begin{center}
+\subsubsection{UCU11.1 - Creazione utente}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU11.1 - Creazione utente.png}
-      \caption{UCU11.1 - Creazione utente} 
-    \end{figure}
-    \end{center}
+      \caption{UCU11.1 - Creazione utente}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -814,17 +752,16 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin entra in un'apposita pagina di creazione utente, dalla quale inserisce i dati e crea un nuovo utente nel database. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin entra in un'apposita pagina di creazione utente, dalla quale inserisce i dati e crea un nuovo utente nel database delle credenziali. \\ 
           
-          \textbf{Precondizioni}  & Il sistema ha reindirizzato l'admin nella pagina di creazione di un nuovo utente.\\ 
+          \textbf{Precondizioni}  & Il sistema ha reindirizzato l'Admin nella pagina di creazione di un nuovo utente.\\ 
           
-          \textbf{Postcondizioni} & Il sistema ha creato un nuovo utente nel database con i dati immessi dall'admin. \\
-          
-          \textbf{Flusso Principale} & 1. L'admin inserisce l'indirizzo email del nuovo utente (UCU11.1.1);
-2. L'admin inserisce la password del nuovo utente (UCU11.1.2); 
-3. L'admin definisce il livello del nuovo utente (UCU11.1.3). \\
-           \textbf{Scenari Alternativi} & 1. L'admin lascia la pagina senza aver salvato le modifiche;
-2. I dati inseriti dall'admin non sono corretti e fallisce la registrazione. \\
+          \textbf{Postcondizioni} & Il sistema ha creato un nuovo utente nel database delle credenziali con i dati immessi dall'Admin. \\ 
+          \textbf{Flusso Principale} & 1. L'Admin inserisce l'indirizzo email del nuovo utente (UCU11.1.1);  \newline
+2. L'Admin inserisce la password del nuovo utente (UCU11.1.2);   \newline
+3. L'Admin definisce il livello del nuovo utente (UCU11.1.3).   \\
+           \textbf{Scenari Alternativi} & 1. L'Admin lascia la pagina senza aver salvato le modifiche;  \newline
+2. I dati inseriti dall'Admin non sono corretti e fallisce la registrazione.  \newline \\
       \end{longtable}
       \egroup
 \end{center}
@@ -841,14 +778,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può inserire in un campo di testo l'indirizzo email dell'utente da creare. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può inserire in un campo di testo l'indirizzo email dell'utente da creare. \\ 
           
-          \textbf{Precondizioni}  & Il sistema mette a disposizione dell'admin un campo di testo dove inserire la password del nuovo utente.\\ 
+          \textbf{Precondizioni}  & Il sistema mette a disposizione dell'Admin un campo di testo dove inserire la password del nuovo utente.\\ 
           
-          \textbf{Postcondizioni} & Il campo di testo è stato compilato correttamente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il campo di testo è stato compilato correttamente. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -869,10 +803,7 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
           
           \textbf{Precondizioni}  & L'admin è nella pagina di creazione di un nuovo utente.\\ 
           
-          \textbf{Postcondizioni} & L'admin ha inserito l'indirizzo email dell'utente da creare. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'Admin ha inserito l'indirizzo email dell'utente da creare. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -889,14 +820,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può selezionare il livello del nuovo utente, che potrà essere utente normale o admin. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può selezionare il livello del nuovo utente, che potrà essere utente normale o Admin. \\ 
           
-          \textbf{Precondizioni}  & Il sistema mette a disposizione dell'admin un campo selezionabile dove poter definire il livello del nuovo utente.\\ 
+          \textbf{Precondizioni}  & Il sistema mette a disposizione dell'Admin un campo selezionabile dove poter definire il livello del nuovo utente.\\ 
           
-          \textbf{Postcondizioni} & Il campo selezionabile è stato selezionato correttamente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il campo selezionabile è stato selezionato correttamente. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -913,25 +841,22 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita. \\ 
           
           \textbf{Precondizioni}  & Il sistema ha rilevato degli errori nell'inserimento di un nuovo utente.\\ 
           
-          \textbf{Postcondizioni} & Il sistema visualizza un messaggio d'errore. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il sistema visualizza un messaggio d'errore. \\ 
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3 - Visualizzazione show-page Utente} 
-    \begin{center}
+\subsubsection{UCU11.3 - Visualizzazione show-page Utente}    
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCU11.3 - Visualizzazione show-page Utente.png}
-      \caption{UCU11.3 - Visualizzazione show-page Utente} 
-    \end{figure}
-    \end{center}
+      \caption{UCU11.3 - Visualizzazione show-page Utente}
+      \end{center} 
+    \end{figure}    
     
       %Tabella 
       \begin{center}
@@ -944,16 +869,15 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin visualizza la tabella degli utenti registrati e può aprire la relativa show-page di uno di essi tramite link. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin visualizza la tabella degli utenti registrati e può aprire la relativa show-page di uno di essi tramite link. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'admin la visualizzazione della show-index dell'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la visualizzazione della show-page dell'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione MaaP ha reindirizzato l'admin nella Collection-show dell'utente selezionato. \\
-          
-          \textbf{Flusso Principale} & 1. L'admin può elevare un utente normale a livello di admin (UCU11.3.1);
-2. L'admin può declassare un admin a livello di utente normale (UCU11.3.2);
-3. L'admin può modificare l'email dell'utente selezionato (UCU11.3.3);
-4. L'admin può modificare la password dell'utente selezionato (UCU11.3.4); \\
+          \textbf{Postcondizioni} & L'applicazione ha reindirizzato l'admin nella \glossario{Collection-Show} dell'utente selezionato. \\ 
+          \textbf{Flusso Principale} & 1. L'Admin può elevare un utente normale a livello di Admin (UCU11.3.1);  \newline
+2. L'Admin può declassare un Admin a livello di utente normale (UCU11.3.2);  \newline
+3. L'Admin può modificare l'email dell'utente selezionato (UCU11.3.3);  \newline
+4. L'Admin può modificare la password dell'utente selezionato (UCU11.3.4). \\
           
       \end{longtable}
       \egroup
@@ -971,14 +895,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin eleva l'utente selezionato a livello di admin. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin eleva l'utente selezionato a livello di Admin. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP mette a disposizione dell'admin la pagina di modifica dell'utente selezionato.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione MaaP ha elevato l'utente selezionato dall'admin a livello di admin. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha elevato l'utente selezionato dall'Admin a livello di Admin. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -995,14 +916,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin declassa l'admin selezionato al livello di utente normale. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin declassa l'admin selezionato al livello di utente normale. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP mette a disposizione dell'admin la pagina di modifica dell'utente selezionato.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione MaaP ha declassato l'utente selezionato dall'admin a livello di utente normale. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha declassato l'utente selezionato dall'Admin a livello di utente normale. \\  \textbf{Inclusioni} & a \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1019,14 +937,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin modifica l'email dell'utente selezionato. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin modifica l'email dell'utente selezionato. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP mette a disposizione dell'admin la pagina di modifica dell'utente selezionato.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione MaaP ha modificato l'indirizzo email dell'utente selezionato dall'admin. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione ha modificato l'indirizzo email dell'utente selezionato dall'Admin. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -1043,25 +958,43 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può modificare la password dell'utente corrispondente alla show-page visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin modifica la password dell'utente selezionato. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP mette a disposizione dell'admin la pagina di modifica dell'utente selezionato.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha modificato la password dell'utente relativo alla show-page corrispondente. \\
+          \textbf{Postcondizioni} & L'applicazione ha modificato la password dell'utente selezionato dall'Admin. \\ 
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU11.3.5 - Eliminazione Utente} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.5 - Eliminazione Utente}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Admin \\ 
+          \textbf{Scopo e Descrizione} & L'Admin decide di eliminare l'utente selezionato. \\ 
           
-          \textbf{Flusso Principale} &  \\
+          \textbf{Precondizioni}  & L'applicazione visualizza la \glossario{Collection-Show} dell'utente selezionato.\\ 
           
+          \textbf{Postcondizioni} & L'applicazione ha eliminato l'utente selezionato dall'Admin dal database delle credenziali. \\ 
       \end{longtable}
       \egroup
 \end{center}
 \subsection{Ambito Sviluppatore}
 \subsubsection{UCS - Operazioni ad alto livello} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCS - Operazioni ad alto livello.png}
-      \caption{UCS - Operazioni ad alto livello} 
-    \end{figure}
-    \end{center}
+      \caption{UCS - Operazioni ad alto livello}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1074,15 +1007,14 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore avendo installato lo stack tecnologico richiesto per il funzionamento del Framework Maap può creare un nuovo progetto, dopo averlo creato potrà configurare i database e gestire le collection che desidera. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore avendo installato lo \glossario{stack tecnologico} richiesto per il funzionamento del \glossario{Framework} \glossario{Maap} può creare un nuovo progetto, dopo averlo creato potrà configurare i database e gestire le \glossario{Collection} che desidera. \\ 
           
-          \textbf{Precondizioni}  & Il Framework Maap è funzionante e pronto ad eseguire le azioni dello sviluppatore.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{Maap} è funzionante e pronto ad eseguire le azioni dello sviluppatore.\\ 
           
-          \textbf{Postcondizioni} & Il Framework ha ottenuto le informazioni sulle azioni che l’utente desidera eseguire. \\
-          
-          \textbf{Flusso Principale} & 1. Lo Sviluppatore crea un nuovo progetto (UCS1);
-2. Lo sviluppatore dopo aver creato il nuovo progetto può configurare i database (UCS2);
-3. Lo sviluppatore con il nuovo progetto creato può gestire le collection che desidera generare (UCS3). \\
+          \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni sulle azioni che l’utente desidera eseguire. \\
+          \textbf{Flusso Principale} & 1. Lo Sviluppatore crea un nuovo progetto (UCS1); \newline
+2. Lo sviluppatore dopo aver creato il nuovo progetto può configurare i database (UCS2); \newline
+3. Lo sviluppatore con il nuovo progetto creato può gestire le \glossario{Collection} che desidera generare (UCS3). \\
           
       \end{longtable}
       \egroup
@@ -1100,24 +1032,28 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore crea un nuovo progetto.
-Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di:
-- La creazione delle directory delle pagine web.
-- La creazione del file di configurazione.
-- L'inclusione delle librerie di sistema.
+          \textbf{Scopo e Descrizione} & Lo sviluppatore crea un nuovo progetto. \newline
+Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di: \newline
+- La creazione delle directory delle pagine web.  \newline
+- La creazione del file di configurazione.  \newline
+- L'inclusione delle librerie di sistema.  \newline
 - La generazione del sistema di autenticazione che include la creazione del database delle credenziali e la generazione dell'utente admin di default. \\ 
           
-          \textbf{Precondizioni}  & Il Framework è pronto a creare un nuovo progetto.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è pronto a creare un nuovo progetto.\\ 
           
-          \textbf{Postcondizioni} & Il Framework Maap ha creato un nuovo progetto completo di tutti i file necessari. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha creato un nuovo progetto completo di tutti i file necessari. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCS2 - Configurazione database} 
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCS2 - Configurazione database.png}
+      \caption{UCS2 - Configurazione database}
+      \end{center} 
+    \end{figure}  
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -1129,14 +1065,15 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare i due database che compongono il sistema Maap, ovvero il database delle credenziali utenti e il database contenente le collection. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare i due database che compongono il sistema MaaP, ovvero il database delle credenziali utenti e il database contenente le \glossario{Collection}. \\ 
           
-          \textbf{Precondizioni}  & Framework è funzionante, il progetto è stato creato e lo sviluppatore desidera configurare i database.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è funzionante, il progetto è stato creato e lo sviluppatore desidera configurare i database.\\ 
           
-          \textbf{Postcondizioni} & Il Framework ha ottenuto le informazioni necessarie ed ha configurato il database delle credenziali e il database delle collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni necessarie ed ha configurato il database delle credenziali e il database delle \glossario{Collection}. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore può configurare il database delle credenziali utente (UCS2.1); \newline
+2. Lo sviluppatore può configurare il database delle \glossario{Collection} (UCS2.2). \\
+           \textbf{Esclusioni} & 1.1. Lo sviluppatore può selezionare il namespace per il database delle credenziali utenti (UCS2.3); \newline
+2.1. Lo sviluppatore può selezionare il namespace per il database delle \glossario{Collection} (UCS2.3).  \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1153,14 +1090,11 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le credenziali degli utenti i quali utilizzeranno l'applicazione generata dal Framework. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le credenziali degli utenti i quali utilizzeranno l'applicazione generata dal \glossario{Framework}. \\ 
           
-          \textbf{Precondizioni}  & Il Framework permette la configurazione del database credenziali.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} permette la configurazione del database credenziali.\\ 
           
-          \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle credenziali secondo le informazioni acquisite dallo sviluppatore. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{Maap} ha configurato il database delle credenziali secondo le informazioni acquisite dallo sviluppatore. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1177,14 +1111,11 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} &  \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le collection che l'applicazione generata dal Framework utilizzerà. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà. \\ 
           
-          \textbf{Precondizioni}  & Il Framework permette la configurazione del database collection.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è  pronto per l'utilizzo e permette la configurazione del database contenente le \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle collection secondo le informazioni acquisite dallo sviluppatore. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle \glossario{Collection} secondo le informazioni acquisite dallo sviluppatore. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1201,25 +1132,22 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Se la funzione di namespace è abilitata lo sviluppatore può selezionare un namespace per il database da configurare. \\ 
+          \textbf{Scopo e Descrizione} & Se la funzione di \glossario{namespace} è abilitata lo Sviluppatore può selezionare un \glossario{namespace} per il database da configurare. \\ 
           
-          \textbf{Precondizioni}  & Il framework MaaP mette a disposizione dello sviluppatore un file di configurazione del database.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} mette a disposizione dello sviluppatore un file di configurazione del database.\\ 
           
-          \textbf{Postcondizioni} & Il framework MaaP ha selezionato correttamente il namespace per il database selezionato. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha selezionato correttamente il \glossario{namespace} per il database selezionato. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCS3 - Gestione Collection} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCS3 - Gestione Collection.png}
-      \caption{UCS3 - Gestione Collection} 
-    \end{figure}
-    \end{center}
+      \caption{UCS3 - Gestione Collection}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1232,16 +1160,15 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore, con il progetto creato, può registrare manualmente una collection o usufruire della registrazione automatica, con relativa creazione del file di configurazione della stessa.
-Può poi configurare le collection create. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore, con il progetto creato, può registrare manualmente una \glossario{Collection} o usufruire della registrazione automatica, con relativa creazione del file di configurazione della stessa. \newline
+Può poi configurare le \glossario{Collection} create. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è pronto, il progetto è stato creato e lo sviluppatore intende gestire collection.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è pronto, il progetto è stato creato e lo sviluppatore intende gestire una \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & Il Framework ha appreso le informazioni necessarie sulle azioni che lo sviluppatore vuole eseguire. \\
-          
-          \textbf{Flusso Principale} & 1. Lo sviluppatore può registrare manualmente la collection (UCS3.1);
-2. Lo sviluppatore può configurare la collection registrata (UCS3.3). \\
-           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della collection (UCS3.4) \\
+          \textbf{Postcondizioni} & Il \glossario{Framework} ha appreso le informazioni necessarie sulle azioni che lo sviluppatore vuole eseguire. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore può registrare manualmente la \glossario{Collection} (UCS3.1); \newline
+2. Lo sviluppatore può configurare la \glossario{Collection} registrata (UCS3.3).  \\
+           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della \glossario{Collection} (UCS3.4). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1258,14 +1185,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore registra manualmente una Collection creando tutti i file necessari al suo funzionamento. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore registra manualmente una \glossario{Collection} creando tutti i file necessari al suo funzionamento. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e lo sviluppatore ha creato un progetto.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e lo sviluppatore ha creato un progetto.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha registrato correttamente la nuova Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha registrato correttamente la nuova \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1282,25 +1206,22 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Nella registrazione di una nuova Collection deve essere creato un file di configurazione per essa. \\ 
+          \textbf{Scopo e Descrizione} & Nella registrazione di una nuova \glossario{Collection} deve essere creato un file di configurazione per essa. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP sta registrando una nuova Collection.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} sta registrando una nuova \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha creato il file di configurazione per la nuova Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha creato il file di configurazione per la nuova \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCS3.3 - Configurazione Collection} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCS3.3 - Configurazione Collection.png}
-      \caption{UCS3.3 - Configurazione Collection} 
-    \end{figure}
-    \end{center}
+      \caption{UCS3.3 - Configurazione Collection}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1313,28 +1234,27 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore modifica il file di configurazione di una Collection creata. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore modifica il file di configurazione di una \glossario{Collection} creata. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP ha registrato correttamente la Collection da configurare.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha registrato correttamente la \glossario{Collection} da configurare.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha configurato correttamente la Collection modificata dallo sviluppatore. \\
-          
-          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della Collection (UCS3.3.1);
-2. Lo sviluppatore personalizza la show page della Collection (UCS3.3.2);
-3. Lo sviluppatore rinomina il titolo della Collection che verrà visualizzato nel menu di navigazione (UCS3.3.3);
-4. Lo sviluppatore definisce l'ordine di visualizzazione della Collection nel menu di navigazione (UCS3.3.4); \\
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la \glossario{Collection} modificata dallo sviluppatore. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della \glossario{Collection} (UCS3.3.1); \newline
+2. Lo sviluppatore personalizza la show page della \glossario{Collection} (UCS3.3.2); \newline
+3. Lo sviluppatore rinomina il titolo della \glossario{Collection} che verrà visualizzato nel menu di navigazione (UCS3.3.3); \newline
+4. Lo sviluppatore definisce l'ordine di visualizzazione della \glossario{Collection} nel menu di navigazione (UCS3.3.4). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCS3.3.1 - Personalizzazione index page} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCS3.3.1 - Personalizzazione index page.png}
-      \caption{UCS3.3.1 - Personalizzazione index page} 
-    \end{figure}
-    \end{center}
+      \caption{UCS3.3.1 - Personalizzazione index page}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1347,20 +1267,19 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la index page della Collection selezionata. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la index-page della \glossario{Collection} selezionata. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection da configurare è stata registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} da configurare è stata registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha configurato correttamente la index page della Collection. \\
-          
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare (UCS3.3.1.1);
-2. Lo sviluppatore definisce l'ordinamento degli attributi (UCS3.3.1.2);
-3. Lo sviluppatore definisce il limite degli elementi da visualizzare (UCS3.3.1.3);
-4. Lo sviluppatore definisce quale attributo è selezionabile (UCS3.3.1.4);
-5. Lo sviluppatore definisce una query che visualizzerà un sottoinsieme di Document dalla Collection (UCS3.3.1.5);
-6. Lo sviluppatore definisce come attributo un attributo innestato o un array di attributi (UCS3.3u.1.6);
-7. Lo sviluppatore personalizza la tipologia di filtri da visualizzare (UCS3.3.1.7);
-8. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.1.8);
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la index-page della \glossario{Collection}. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare (UCS3.3.1.1); \newline
+2. Lo sviluppatore definisce l'ordinamento degli attributi (UCS3.3.1.2); \newline
+3. Lo sviluppatore definisce il limite degli elementi da visualizzare (UCS3.3.1.3); \newline
+4. Lo sviluppatore definisce quale attributo è selezionabile (UCS3.3.1.4); \newline
+5. Lo sviluppatore definisce una query che visualizzerà un sottoinsieme di \glossario{Document} dalla \glossario{Collection} (UCS3.3.1.5); \newline
+6. Lo sviluppatore definisce come attributo un attributo innestato o un array di attributi (UCS3.3u.1.6); \newline
+7. Lo sviluppatore personalizza la tipologia di filtri da visualizzare (UCS3.3.1.7); \newline
+8. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.1.8); \newline
 9. Lo sviluppatore definisce delle azioni personalizzate (UCS3.3.1.9). \\
           
       \end{longtable}
@@ -1379,14 +1298,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica quali attributi visualizzare nella index page. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica quali attributi visualizzare nella index-page. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1403,14 +1319,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection definisce un ordinamento di default e specifica quali attributi sono ordinabili o no. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} definisce un ordinamento di default e specifica quali attributi sono ordinabili o no. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1427,14 +1340,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica quanti Document per pagina verranno visualizzati nella index page. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica quanti \glossario{Document} per pagina verranno visualizzati nella index-page. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1451,14 +1361,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica quale attributo sarà identificato come chiave per poter accedere alla show page del corrispondente Document. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica quale attributo sarà identificato come chiave per poter accedere alla show-page del corrispondente \glossario{Document}. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1475,14 +1382,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection definisce delle query che andranno a selezionare un sottoinsieme di Document dalla Collection. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} definisce delle query che andranno a selezionare un sottoinsieme di \glossario{Document} dalla \glossario{Collection}. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la Collection è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1499,14 +1403,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica attributi che contengono attributi innestati o un array di Document tramite la funzione populate. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica attributi che contengono attributi innestati o un array di \glossario{Document} tramite la funzione \glossario{populate}. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1523,14 +1424,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica quali filtri inserire nella index page. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica quali filtri inserire nella index-page. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1547,14 +1445,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica delle trasformazioni sui valori degli attributi che visualizzeranno l'attributo in base all'output della funzione di trasformazione. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica delle trasformazioni sui valori degli attributi che visualizzeranno l'attributo in base all'output della funzione di trasformazione. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1571,25 +1466,22 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection definisce delle azioni personalizzate che potranno essere eseguite dall'applicazione. Deve essere possibile specificare dei permessi per l'esecuzione di ciascuna azione personalizzata, in caso venga omessa chiunque potrà eseguirla. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} definisce delle azioni personalizzate che potranno essere eseguite dall'applicazione. Deve essere possibile specificare dei permessi per l'esecuzione di ciascuna azione personalizzata, in caso venga omessa chiunque potrà eseguirla. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCS3.3.2 - Personalizzazione show page} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCS3.3.2 - Personalizzazione show page.png}
-      \caption{UCS3.3.2 - Personalizzazione show page} 
-    \end{figure}
-    \end{center}
+      \caption{UCS3.3.2 - Personalizzazione show page}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1602,17 +1494,16 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la show page della Collection selezionata. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la show-page della \glossario{Collection} selezionata. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection da configurare è stata registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} da configurare è stata registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha configurato correttamente la show page della Collection. \\
-          
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare nella show page (UCS3.3.2.1);
-2. Lo sviluppatore definisce l'ordinamento degli attributi nella show page (UCS3.3.2.2);
-3. Lo sviluppatore definisce attributi che contengono attributi innestati o array di attributi (UCS3.3.2.3);
-4. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.2.4);
-5. Lo sviluppatore definisce delle azioni personalizzate da eseguire all'interno della show page (UCS3.3.2.5). \\
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la show-page della \glossario{Collection}. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare nella show-page (UCS3.3.2.1); \newline
+2. Lo sviluppatore definisce l'ordinamento degli attributi nella show-page (UCS3.3.2.2); \newline
+3. Lo sviluppatore definisce attributi che contengono attributi innestati o array di attributi (UCS3.3.2.3); \newline
+4. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.2.4); \newline
+5. Lo sviluppatore definisce delle azioni personalizzate da eseguire all'interno della show-page (UCS3.3.2.5). \newline \\
           
       \end{longtable}
       \egroup
@@ -1630,14 +1521,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica quali attributi visualizzare nella show page. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica quali attributi visualizzare nella show-page. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1654,14 +1542,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica l'ordinamento degli attributi da visualizzare nella show page. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica l'ordinamento degli attributi da visualizzare nella show-page. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1678,14 +1563,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica attributi che contengono attributi innestati o un array di Document tramite la funzione populate. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica attributi che contengono attributi innestati o un array di \glossario{Document} tramite la funzione \glossario{populate}. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1702,14 +1584,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection specifica delle trasformazioni sui valori degli attributi che visualizzeranno l'attributo in base all'output della funzione di trasformazione. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica delle trasformazioni sui valori degli attributi che visualizzeranno l'attributo in base all'output della funzione di trasformazione. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1726,14 +1605,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della Collection definisce delle azioni personalizzate che potranno essere eseguite dalla show page. Deve essere possibile specificare dei permessi per l'esecuzione di ciascuna azione personalizzata, in caso venga omessa chiunque potrà eseguirla. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} definisce delle azioni personalizzate che potranno essere eseguite dalla show-page. Deve essere possibile specificare dei permessi per l'esecuzione di ciascuna azione personalizzata, in caso venga omessa chiunque potrà eseguirla. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e la Collection è registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha apportato le modifiche alla configurazione della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1750,14 +1626,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può rinominare una collection creata. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può rinominare una \glossario{Collection} creata. \\ 
           
-          \textbf{Precondizioni}  & Il Framework è funzionante e la Collection da configurare è stata registrata e lo sviluppatore intende rinominarla.Il Framework \\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è funzionante, la \glossario{Collection} da ridenominare è stata registrata e lo sviluppatore intende rinominarla.\\ 
           
-          \textbf{Postcondizioni} & Il Framework attraverso le informazioni date dallo sviluppatore ha rinominato la Collection desiderata. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} attraverso le informazioni date dallo sviluppatore ha rinominato la \glossario{Collection} desiderata. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1774,14 +1647,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può definire l'ordinamento della collection rispetto alle altre collection già registrate. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può definire l'ordinamento della \glossario{Collection} rispetto alle altre \glossario{Collection} già registrate. \\ 
           
-          \textbf{Precondizioni}  & Il Framework è funzionante e la Collection di cui definire l'ordinamento è stata registrata.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è funzionante e la \glossario{Collection} di cui definire l'ordinamento è stata registrata.\\ 
           
-          \textbf{Postcondizioni} & Il Framework ha appreso le informazioni date dallo sviluppatore e ha definito l'ordinamento della Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} ha appreso le informazioni date dallo sviluppatore e ha definito l'ordinamento della \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1798,14 +1668,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore crea automaticamente una nuova Collection da linea di comando. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore crea automaticamente una nuova \glossario{Collection} da linea di comando. \\ 
           
-          \textbf{Precondizioni}  & Il Framework MaaP è funzionante e lo sviluppatore ha creato un progetto.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e lo sviluppatore ha creato un progetto.\\ 
           
-          \textbf{Postcondizioni} & Il Framework MaaP ha registrato correttamente la nuova Collection. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha registrato correttamente la nuova \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1822,14 +1689,11 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di namespace è abilitata, può definire un namespace per l'applicazione MaaP generata ed associarlo alle Collection da creare. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di \glossario{namespace} è abilitata, può definire un \glossario{namespace} per l'applicazione \glossario{MaaP} generata ed associarlo alle \glossario{Collection} da creare. \\ 
           
-          \textbf{Precondizioni}  & Il framework MaaP ha generato un'applicazione funzionante.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha generato un'applicazione funzionante.\\ 
           
-          \textbf{Postcondizioni} & Il framework MaaP ha un namespace definito al suo interno. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha un \glossario{namespace} definito al suo interno. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1846,25 +1710,22 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & L'attore sviluppatore può scegliere se far utilizzare i namespace all'applicazione MaaP. Il namespace viene utilizzato da MaaP per sapere quali file considerare quando gli viene richiesta una pagina. \\ 
+          \textbf{Scopo e Descrizione} & L'attore sviluppatore può scegliere se far utilizzare i \glossario{namespace} all'applicazione \glossario{MaaP}. Il \glossario{namespace} viene utilizzato da \glossario{MaaP} per sapere quali file considerare quando gli viene richiesta una pagina. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP è stata creata ed è funzionante.\\ 
+          \textbf{Precondizioni}  & L'applicazione \glossario{MaaP} è stata creata ed è funzionante.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione MaaP dispone delle funzionalità di namespace. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & L'applicazione \glossario{MaaP} dispone delle funzionalità di \glossario{namespace}. \\
       \end{longtable}
       \egroup
 \end{center}
 \subsection{Ambito Utente MaaS}
 \subsubsection{UCM - Operazioni ad alto livello} 
-    \begin{center}
     \begin{figure}[H]
-      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello.png}
-      \caption{UCM - Operazioni ad alto livello} 
-    \end{figure}
-    \end{center}
+      \begin{center}
+      \includegraphics[scale=0.32]{UML/UCM - Operazioni ad alto livello.png}
+      \caption{UCM - Operazioni ad alto livello}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1877,31 +1738,30 @@ Può poi configurare le collection create. \\
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato, Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato può registrarsi al servizio MaaS o effettuare il login.
-L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio account o gestire i file di configurazione per la creazione della pagine. \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \newline
+L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare il proprio account o gestire i file di configurazione per la creazione della pagine. \\ 
           
-          \textbf{Precondizioni}  & MaaS è funzionante ed attende che l'utente interagisca.\\ 
+          \textbf{Precondizioni}  & \glossario{MaaS} è funzionante ed attende che l'utente interagisca.\\ 
           
-          \textbf{Postcondizioni} & Il servizio MaaS ha acquisito le informazioni necessarie per svolgere le azioni che l'utente richiede. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente MaaS non autenticato può registrarsi al servizio (UCM1);
-2. L'utente MaaS non autenticato può effettuare il login (UCM4);
-3. L'utente MaaS autenticato può modificare il proprio profilo (UCM6);
-4. L'utente MaaS autenticato può eliminare il proprio account (UCM7);
-5. L'utente MaaS autenticato può gestire i file di configurazione (UCM8). \\
-           \textbf{Esclusioni} & 1.1. L'utente visualizza un messaggio di errore dato dall'esistenza delle credenziali inserite per la registrazione (UCM3);
-2.1. L'utente visualizza un messaggio di errore dato dall'inserimento in fase di login di credenziali errate (UCU5); \\
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente richiede. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline
+2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4); \newline
+3. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline
+4. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline
+5. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8). \newline \\
+           \textbf{Esclusioni} & 1.1. L'utente visualizza un messaggio di errore dato dall'esistenza delle credenziali inserite per la registrazione (UCM3); \newline
+2.1. L'utente visualizza un messaggio di errore dato dall'inserimento in fase di login di credenziali errate (UCU5). \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCM1 - Registrazione} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCM1 - Registrazione.png}
-      \caption{UCM1 - Registrazione} 
-    \end{figure}
-    \end{center}
+      \caption{UCM1 - Registrazione}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -1914,15 +1774,14 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato intende registrarsi al servizio. \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato intende registrarsi al servizio. \\ 
           
-          \textbf{Precondizioni}  & MaaS è pronto all'utilizzo.\\ 
+          \textbf{Precondizioni}  & \glossario{MaaS} è pronto all'utilizzo mostrando all'utente una pagina di registrazione ed attende che l'utente interagisca.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha registrato correttamente l'utente e assegnatogli il namespace.
- \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha registrato correttamente l'utente e assegnatogli il \glossario{namespace}. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato inserisce la nuova email (UCM1.1); \newline
+2. L'utente \glossario{MaaS} non autenticato inserisce la password (UCM1.2). \\
+           \textbf{Scenari Alternativi} & 1. L'utente esce dalla pagina non effettuando la registrazione al servizio. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1941,12 +1800,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente inserisce la nuova email nell'intento di registrarsi. \\ 
           
-          \textbf{Precondizioni}  & Il servizio visualizza la pagina di registrazione per l'utente che l'ha richiesta ed è in attesa che l'utente interagisca.\\ 
+          \textbf{Precondizioni}  & Il servizio visualizza la pagina di registrazione per l'utente che l'ha richiesta ed è in attesa che interagisca.\\ 
           
-          \textbf{Postcondizioni} & MaaP ha appreso le informazioni inserite dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & \glossario{MaaS} ha appreso le informazioni inserite dall'utente relative alla nuova password. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1963,14 +1819,11 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente desidera inserire la password con la quale creerà un account presso il servizio MaaS. \\ 
+          \textbf{Scopo e Descrizione} & L'utente desidera inserire la password con la quale creerà un account presso il servizio \glossario{MaaS}. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina di registrazione all'utente che intende registrarsi ed è pronta all'interazione.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina di registrazione all'utente che intende registrarsi ed è pronta all'interazione.\\ 
           
-          \textbf{Postcondizioni} & Il servizio MaaS ha acquisito le informazioni inserite dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni inserite dall'utente. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1987,25 +1840,22 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & Il servizio mostra all'utente MaaS non autenticato un messaggio di errore dato dall'esistenza delle credenziali che aveva inserito per registrarsi. \\ 
+          \textbf{Scopo e Descrizione} & Il servizio mostra all'utente \glossario{MaaS} non autenticato un messaggio di errore dato dal fatto che le credenziali che aveva inserito per registrarsi sono già presenti nel database e non può utilizzarle. \\ 
           
           \textbf{Precondizioni}  & Il servizio ha appreso le informazioni di registrazione inserite dall'utente.\\ 
           
-          \textbf{Postcondizioni} & il servizio MaaS ha respinto la registrazione da parte dell'utente mostrando un errore. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & il servizio \glossario{MaaS} ha respinto la registrazione da parte dell'utente mostrando un errore. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCM4 - Login} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCM4 - Login.png}
-      \caption{UCM4 - Login} 
-    \end{figure}
-    \end{center}
+      \caption{UCM4 - Login}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -2018,14 +1868,14 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato intende accedere al servizio e per farlo deve inserire le proprie credenziali. \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato intende accedere al servizio e per farlo deve inserire le proprie credenziali. \\ 
           
-          \textbf{Precondizioni}  & Il servizio MaaS è pronto ed attende il login dell'utente.\\ 
+          \textbf{Precondizioni}  & Il servizio \glossario{MaaS} è pronto ed attende il login dell'utente.\\ 
           
-          \textbf{Postcondizioni} & Il servizio Maas ha verificato le credenziali utente ed ha eseguito l'autenticazione di quest'ultimo. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il servizio \glossario{Maas} ha verificato le credenziali utente ed ha eseguito l'autenticazione di quest'ultimo. \\
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UCM4.1); \newline
+2. L'utente inserisce la password (UCM4.2). \\
+           \textbf{Scenari Alternativi} & 1. L'utente non autenticato non effettua il login lasciando la pagina. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2044,23 +1894,20 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS non Autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente visualizza un messaggio di errore dato dall'inserimento di credenziali errate. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS verifica le credenziali che l'utente ha inserito.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} verifica le credenziali che l'utente ha inserito.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS visualizza all'utente un messaggio di errore dopo aver verificato e non accettato le credenziali inserite. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} visualizza all'utente un messaggio di errore dopo aver verificato e non accettato le credenziali inserite. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCM6 - Modifica profilo} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCM6 - Modifica profilo.png}
-      \caption{UCM6 - Modifica profilo} 
-    \end{figure}
-    \end{center}
+      \caption{UCM6 - Modifica profilo}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -2077,10 +1924,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
           
           \textbf{Precondizioni}  & Il sistema è pronto, visualizza la pagina per la modifica del profilo utente e attende che l'utente interagisca.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha acquisito le informazioni inserite dall'utente ed ha effettuato le modifiche. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente MaaS autenticato può modificare la propria email (UCU6.1);
-2. L'utente MaaS autenticato può modificare la password (UCU6.2). \\
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha acquisito le informazioni inserite dall'utente ed ha effettuato le modifiche. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare la propria email (UCU6.1); \newline
+2. L'utente \glossario{MaaS} autenticato può modificare la password (UCU6.2). \\
            \textbf{Scenari Alternativi} & L'utente può non modificare i propri dati lasciandoli invariati uscendo dalla pagina. \\
       \end{longtable}
       \egroup
@@ -2100,12 +1946,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente intende modificare L'Email. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS predispone la pagina di modifica profilo ed attente le modifiche dell'utente.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} predispone la pagina di modifica profilo ed attente le modifiche dell'utente.\\ 
           
           \textbf{Postcondizioni} & Il sistema ha acquisito le informazioni date dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
       \end{longtable}
       \egroup
 \end{center}
@@ -2126,10 +1969,7 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
           
           \textbf{Precondizioni}  & Il sistema predispone della pagina di modifica profilo ed attende che l'utente modifichi la password.\\ 
           
-          \textbf{Postcondizioni} & MaaS ha memorizzato l'informazione datagli dall'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & \glossario{MaaS} ha memorizzato l'informazione datagli dall'utente. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2146,25 +1986,22 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente accede alla propria pagina profilo nella quale è presente un azione che gli permette di eliminare il suo account. \\ 
+          \textbf{Scopo e Descrizione} & L'utente accede alla propria pagina profilo nella quale è presente un'azione che gli permette di eliminare il suo account. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS ha predisposto una apposita azione per eliminare l'account dell'utente.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} ha predisposto una apposita azione per eliminare l'account dell'utente.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha eliminato l'account dell'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato l'account dell'utente. \\
       \end{longtable}
       \egroup
 \end{center}
 
 \subsubsection{UCM8 - Gestione file di configurazione} 
-    \begin{center}
     \begin{figure}[H]
+      \begin{center}
       \includegraphics[scale=0.16]{UML/UCM8 - Gestione file di configurazione.png}
-      \caption{UCM8 - Gestione file di configurazione} 
-    \end{figure}
-    \end{center}
+      \caption{UCM8 - Gestione file di configurazione}
+      \end{center} 
+    \end{figure}  
     
       %Tabella 
       \begin{center}
@@ -2177,13 +2014,16 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente può gestire i file di configurazione attraverso i quali può registrare una nuova Collection e specificare la connessione al database delle Collection e/o al database delle credenziali. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può gestire i file di configurazione attraverso i quali può registrare una nuova \glossario{Collection} e specificare la connessione al database delle \glossario{Collection} e/o al database delle credenziali. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina necessaria alla gestione dei file di configurazione.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina necessaria alla gestione dei file di configurazione.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha eseguito le azioni di configurazione dell'utente. \\
-          
-          \textbf{Flusso Principale} &  \\
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eseguito le azioni di configurazione dell'utente. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può creare file di configurazione (UCM8.1) in due modalità:  \newline
+     L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite editor di testo (UCM8.2); \newline
+     L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite caricamento (UCM8.3); \newline
+2. L'utente \glossario{MaaS} autenticato dopo la creazione del file di configurazione lo può modificare (UCM8.4); \newline
+3. L'utente \glossario{MaaS} autenticato può eliminare un file di configurazione (UCM8.5). \\
           
       \end{longtable}
       \egroup
@@ -2201,20 +2041,16 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente ha la possibilità di creare il file di configurazione tramite editor di testo o di caricarlo tramite upload. \\ 
+          \textbf{Scopo e Descrizione} & L'utente ha la possibilità di creare il file di configurazione tramite editor di testo o di caricarlo tramite caricamento. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina necessaria alla creazione o all'upload dei file di configurazione.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina necessaria alla creazione o al caricamento dei file di configurazione.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha eseguito correttamente la creazione del file di configurazione. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente crea il file di configurazione.
-2.L'utente carica il file di configurazione. \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eseguito correttamente la creazione del file di configurazione. \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM8.2 - Creazione file di configurazione tramite editor di testo.} 
+\subsubsection{UCM8.2 - Creazione file di configurazione tramite editor di testo} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2222,18 +2058,15 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.2 - Creazione file di configurazione tramite editor di testo.}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.2 - Creazione file di configurazione tramite editor di testo}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaP fornisce un editor di testo per la creazione dei file di configurazione.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} fornisce un editor di testo per la creazione dei file di configurazione.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaP fornisce un editor di testo per la creazione dei file di configurazione. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente crea il file di configurazione \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} fornisce un editor di testo per la creazione dei file di configurazione. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2252,12 +2085,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente può caricare il proprio file di configurazione. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaP fornisce un sistema di caricamento per i file di configurazione.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} fornisce un sistema di caricamento per i file di configurazione.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS carica correttamente il file di configurazione \\
-          
-          \textbf{Flusso Principale} & 1. L'utente carica il proprio file di configurazione. \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} carica correttamente il file di configurazione \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2276,12 +2106,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente dopo aver scelto il file di configurazione può modificarlo tramite editor di testo. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaP visualizza il file scelto dall'utente ed è pronto per la modifica.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaP} visualizza il file scelto dall'utente ed è pronto per la modifica.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaP esegue correttamente la modifica del file e lo salva. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente tramite editor di testo modifica il file scelto. \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaP} esegue correttamente la modifica del file e lo salva. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2300,12 +2127,9 @@ L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio a
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazione scelto. \\ 
           
-          \textbf{Precondizioni}  & Il sistema MaaS ha predisposto per ogni file di configurazione la possibilità di eliminarlo.\\ 
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} ha predisposto per ogni file di configurazione la possibilità di eliminarlo.\\ 
           
-          \textbf{Postcondizioni} & Il sistema MaaS ha eliminato correttamente il file di configurazione. \\
-          
-          \textbf{Flusso Principale} & 1. L'utente elimina il file di configurazione \\
-          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato correttamente il file di configurazione. \\
       \end{longtable}
       \egroup
 \end{center}

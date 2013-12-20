@@ -1,13 +1,36 @@
 \section{Domande e Risposte riassunte}
 	\begin{itemize} 
 		\item 
-		{\bfseries Riguardo alla registrazione degli utenti, l'admin può creare altri admin o utenti. Si era parlato di permettere la registrazione di un utente non attraverso l'admin ma attraverso l'applicazione web, giusto? È un requisito opzionale?} \\
+		{\bfseries Si era parlato di permettere la registrazione di un utente non attraverso l'admin ma attraverso l'applicazione web, giusto? È un requisito opzionale?} \\
 		Sì, questo per il prodotto non è essenziale. Per il servizio è chiaramente importante. Sì, è opzionale.
 		
-		{\bfseries Riguardo alla registrazione degli utenti, l'admin può creare altri admin o utenti. Si era parlato di permettere la registrazione di un utente non attraverso l'admin ma attraverso l'applicazione web, giusto?} \\
-		Sì, questo per il prodotto non è essenziale. Per il servizio è chiaramente importante.
+		{\bfseries L'admin, nella sua pagina di amministrazione, può modificare le credenziali di un utente? Può quindi modificare la sua password e l'email?} \\
+		Sì, non è fondamentale. L'importante è che sia un modo per recuperare la sua password. Se può farlo anche l'utente admin, meglio, ma non è fondamentale.
 		
+		{\bfseries L'admin eventualmente può declassare sé stesso?} \\
+		No, non può declassare sé stesso. Per questo io farei una sorta di super-admin, che è scritto fisicamente in un file di configurazione o qualcosa del genere, o una soluzione che trovate intelligente. Chiaramente se io declasso me stesso dopo sono fuori dal sistema e l'unico modo per entrare è modificare il database. Quindi diventa complicato.
 		
+		{\bfseries Quindi ci sarà una gerarchia a tre, con un super admin, admin e utenti? L'admin non può modificare le credenziali di un altro admin ma può farlo solo il super admin?} \\
+		Sì, giusto.
+		
+		{\bfseries È necessario memorizzare altri attributi per gli utenti, oltre all'email, alla password e al tipo di account (admin o utente)?} \\
+		No, non è necessario.
+		
+		{\bfseries Dal DSL, è possibile modificare la visualizzazione della tabella utenti di amministrazione?} \\
+		Non è essenziale nemmeno questo. Se possibile sì, assolutamente. Immagino che voi userete lo stesso stratagemma, le stesse librerie utilizzate per visualizzare le altre tabelle delle collection.
+		È comodo che io programmatore possa dire che il campo password vada a sinistra piuttosto che a destra. Modificare il CSS per me non è interessante. Però, in generale, può essere carino che si possa cambiare il tema. Non è assolutamente richiesto ma è carino, pensateci.
+		
+		{\bfseries Se un documento ha un altro documento come attributo bisogna visualizzare un link alla show-page del documento innestato? Oppure devo mettere un attributo del documento innestato?} \\
+		Il campo innestato potrebbe avere un insieme grosso di campi, che potrebbe non essere comodo visualizzare nella pagina. Una prima soluzione è di permettere allo sviluppatore di poter dire ``questo campo innestato lo voglio cliccabile e apribile in un'altra pagina''.
+		
+		{\bfseries Se un documento ha un array di documenti come attributo bisogna visualizzare un link alla index-page del campo innestato?} \\
+		Un array di documenti non è una collection, non ha una index-page. È simile ma non è la stessa cosa. Potrebbe esserci anche un'array di interi o di stringhe, che non sono di documenti. La questione di un array di è simpatica da gestire, perché non c'è nel database relazionale e quindi è diverso il discorso. Si potrebbe aprire un pop-up o un'altra pagina per la visualizzazione dell'array, ma fate attenzione che un array di documenti non è una collection.
+		
+		Firebase è un tool che manipola JSON in real-time e ha un tool di visualizzazione interno che è fatto molto bene. Quindi potete guardare come visualizza gli array e prendere spunto da lì. Io direi di fare una piccola anteprima dell'array e mettere il link per visualizzarlo in un'altra pagina, che sarà un array-index simile ad una collection-index.
+		
+		{\bfseries Nel primo esempio del capitolato a pagina 14, perché il populate deve essere messo nell'index e non nel column?} \\
+		
+		{\bfseries ?} \\
 		
 		
 	\end{itemize}

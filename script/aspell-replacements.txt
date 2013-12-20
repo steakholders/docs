@@ -1,5 +1,6 @@
 personal_repl-1.1 it 0 
 liberia libreria
+sè sé
 dellanno dell'anno
 verrano verranno
 ec ecc

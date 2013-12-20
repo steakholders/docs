@@ -116,9 +116,6 @@
 % permetti di calcolare le larghezze facendo calcoli
 \usepackage{calc}
 
-% permetti di controllare se una macro stampa qualcosa
-\usepackage{etoolbox}
-
 \fancypagestyle{plain}{
 	% cancella tutti i campi di intestazione e piè di pagina
 	\fancyhf{}
@@ -137,8 +134,12 @@
 
 	\lfoot{
 		\DocTitle{} \\
-		% sefferenzia a seconda che \DocVersion{} stampi testo o no
-		\ifdefempty{\DocVersion{}}{}{v \DocVersion{}}
+		% differenzia a seconda che \DocVersion{} stampi testo o no
+		\setbox0=\hbox{\DocVersion{}\unskip}\ifdim\wd0=0pt
+			% nulla
+		\else
+			v \DocVersion{}
+		\fi
 	}
 	\rfoot{Pagina \thepage{} di \pageref{LastPage}}
 

@@ -88,7 +88,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\
           
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1)
-2. L'utente inserisce la password (UC1.2) \\
+2. L'utente inseriesce la password (UC1.2) \\
            \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
       \end{longtable}
       \egroup
@@ -202,9 +202,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso all'applicazione. \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso allìapplicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovery.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di password recovey.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per la password recovery richiesta dall'utente. \\
           
@@ -310,11 +310,11 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & La pagina di gestione degli indici fornisce all'admin un elenco suggerito di attributi a cui applicare gli indici in base alle query più utilizzate. \\ 
+          \textbf{Scopo e Descrizione} & La pagina di gestione degli indici fornisce all'admin un elenco suggerito di attributi a cui applicare gli indici in base alle query piu utilizzate. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulle query più utilizzate. \\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\
+          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggermenti derivati dalla ricerca. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -414,7 +414,7 @@ Gli indici già presenti possono essere eliminati. \\
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato , selezionata una collection, ne visualizza in forma tabellare tutti i documenti che contiene.
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni Document, selezionarlo e visualizzarne la show-page corrispondente.
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personallizzati e per ogni document, selezionarlo e visualizzarne la show-page corrispondente.
 L'admin ha i permessi per modificare un documento o eliminare un documento. \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzazione della collection.\\ 
@@ -422,11 +422,11 @@ L'admin ha i permessi per modificare un documento o eliminare un documento. \\
           \textbf{Postcondizioni} & L'applicazione ha visualizzato la collection-index selezionata dall'utente. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show page relativa ad un Document (UCU9.1);
+           \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show page relativa ad un document (UCU9.1);
 2. L'utente autenticato può filtrare la collection (UCU9.2);
 3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);
-4. L'admin può modificare un Document (UCU9.4);
-4. L'admin può eliminare un Document (UCU9.5). \\
+4. L'admin può modificare un document (UCU9.4);
+4. L'admin può eliminare un document (UCU9.5). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -450,19 +450,19 @@ L'admin ha i permessi per modificare un documento o eliminare un documento. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un Document selezionato visualizzandone gli attributi in forma tabellare.
-In questa pagina può aprire la show page o l'index page dell'array di Document degli attributi innestati se presenti, eseguire un'operazione personalizzata se ne sono disponibili.
-L'admin può eliminare il Document a cui la show page corrisponde o modificarlo. \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza la pagina show-page corrispondente ad un document selezionato visualizzandone gli attributi in forma tabellare.
+In questa pagina può aprire la show page o l'index page dell'array di document degli attributi innestati se presenti, eseguire un'operazione personalizzata se ne sono disponibili.
+L'admin può eliminare il document a cui la show page corrisponde o modificarlo. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al Document selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ottenuto l'informazione necessaria per poter visualizzare la show-page correlata al document selezionato dall'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\
           
           \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show page degli attributi innestati. (UCU9.1.1);
-2. L'utente autenticato può aprire l'index page dell'array di Document (UCU9.1.2);
+2. L'utente autenticato può aprire l'ndex page dell'array di document (UCU9.1.2);
 3. L'utente autenticato può eseguire se presente un'operazione personalizzata (UCU9.3);
-4. L'admin può modificare il Document (UCU9.1.3);
-5. L'admin può eliminare il Document (UCU9.1.4). \\
+4. L'admin può modificare il document (UCU9.1.3);
+5. L'admin può eliminare il document (UCU9.1.4). \\
           
       \end{longtable}
       \egroup
@@ -480,7 +480,7 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti del Document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare gli attributi degli attributi innestati se presenti del document. \\ 
           
           \textbf{Precondizioni}  & L'applicazione riceve l'informazione necessaria per visualizzare l'attributo innestato selezionato dall'utente.\\ 
           
@@ -492,7 +492,7 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.2 - Visualizzazione index page dell'array di Document} 
+\subsubsection{UCU9.1.2 - Visualizzazione index page dell'array di document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -500,15 +500,15 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Visualizzazione index page dell'array di Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Visualizzazione index page dell'array di document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index page dell'array di Document. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può visualizzare l'index page dell'array di document. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index page dell'array di Document dell'attributo selezionato dall'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index page dell'array di document dell'attributo selezionato dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra l'index page dell'array di Document. \\
+          \textbf{Postcondizioni} & L'applicazione mostra l'index page dell'array di document. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -528,14 +528,14 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del Document corrispondente alla page-show visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può modificare gli attributi del document corrispondente alla page-show visualizzata. \\ 
           
           \textbf{Precondizioni}  & L'applicazione visualizza gli attributi del documento permettendo di modificarli.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al Document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al document. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al Document. \\
+           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al document. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -552,11 +552,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può eliminare il Document corrispondente alla show-page visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può eliminare il document selezionato nella show-page visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del Document.\\ 
+          \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del document.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document dalla collection. \\
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il document dalla collection. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -600,7 +600,7 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può eseguire operazioni personalizzate tramite uso di bottoni se predisposti nella pagina visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eseguire azioni personalizzate tramite uso di bottoni se predisposti nella pagina visualizzata. \\ 
           
           \textbf{Precondizioni}  & L'applicazione  nella pagina visualizzata ha bottoni predisposti per l'esecuzione di azioni personalizzate.\\ 
           
@@ -624,14 +624,14 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può selezionare un Document per andarlo a modificare. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può selezionare un document per andarlo a modificare. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i Document della collection predisponendo la possibilità per ognuno di modifica.\\ 
+          \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i document della collection predisponendo la possibilità per ognuno di modifica.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al Document. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al document. \\
           
           \textbf{Flusso Principale} &  \\
-           \textbf{Scenari Alternativi} & 1. L'admin non ha modificato il Document. \\
+           \textbf{Scenari Alternativi} & 1. L'admin non ha modificato il document. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -648,11 +648,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può eliminare un Document direttamente dalla pagina collection index visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può eliminare un document direttamente dalla pagina collection index visualizzata. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni Document visualizzato nella collection, la possibilità di eliminarlo.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni document visualizzato nella collection, la possibilità di eliminarlo.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eliminato il Document selezionato dalla collection. \\
+          \textbf{Postcondizioni} & L'applicazione ha eliminato il document selezionato dalla collection. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -672,11 +672,11 @@ L'admin può eliminare il Document a cui la show page corrisponde o modificarlo.
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'admin può creare un nuovo Document. \\ 
+          \textbf{Scopo e Descrizione} & L'admin può creare un nuovo document. \\ 
           
-          \textbf{Precondizioni}  & L'Applicazione è pronta a gestire le richieste dell'utente admin e permette la creazione di nuovi Document.\\ 
+          \textbf{Precondizioni}  & L'Applicazione è pronta a gestire le richieste dell'utente admin e permette la creazione di nuovi document.\\ 
           
-          \textbf{Postcondizioni} & L'Applicazione Maap ha creato il nuovo Document. \\
+          \textbf{Postcondizioni} & L'Applicazione Maap ha creato il nuovo document. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -1183,6 +1183,30 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
           \textbf{Precondizioni}  & Il Framework permette la configurazione del database collection.\\ 
           
           \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle collection secondo le informazioni acquisite dallo sviluppatore. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCS2.3 - Selezione namespace} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2.3 - Selezione namespace}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore \\ 
+          \textbf{Scopo e Descrizione} & Se la funzione di namespace è abilitata lo sviluppatore può selezionare un namespace per il database da configurare. \\ 
+          
+          \textbf{Precondizioni}  & Il framework MaaP mette a disposizione dello sviluppatore un file di configurazione del database.\\ 
+          
+          \textbf{Postcondizioni} & Il framework MaaP ha selezionato correttamente il namespace per il database selezionato. \\
           
           \textbf{Flusso Principale} &  \\
           
@@ -1782,6 +1806,485 @@ Può poi configurare le collection create. \\
           \textbf{Postcondizioni} & Il Framework MaaP ha registrato correttamente la nuova Collection. \\
           
           \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCS3.5 - Definizione namespace} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.5 - Definizione namespace}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di namespace è abilitata, può definire un namespace per l'applicazione MaaP generata ed associarlo alle Collection da creare. \\ 
+          
+          \textbf{Precondizioni}  & Il framework MaaP ha generato un'applicazione funzionante.\\ 
+          
+          \textbf{Postcondizioni} & Il framework MaaP ha un namespace definito al suo interno. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCS4 - Abilitazione namespace} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS4 - Abilitazione namespace}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore \\ 
+          \textbf{Scopo e Descrizione} & L'attore sviluppatore può scegliere se far utilizzare i namespace all'applicazione MaaP. Il namespace viene utilizzato da MaaP per sapere quali file considerare quando gli viene richiesta una pagina. \\ 
+          
+          \textbf{Precondizioni}  & L'applicazione MaaP è stata creata ed è funzionante.\\ 
+          
+          \textbf{Postcondizioni} & L'applicazione MaaP dispone delle funzionalità di namespace. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+\subsection{Ambito Utente MaaS}
+\subsubsection{UCM - Operazioni ad alto livello} 
+    \begin{center}
+    \begin{figure}[H]
+      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello.png}
+      \caption{UCM - Operazioni ad alto livello} 
+    \end{figure}
+    \end{center}
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato, Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato può registrarsi al servizio MaaS o effettuare il login.
+L'utente MaaS autenticato può modificare il suo profilo, eliminare il proprio account o gestire i file di configurazione per la creazione della pagine. \\ 
+          
+          \textbf{Precondizioni}  & MaaS è funzionante ed attende che l'utente interagisca.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio MaaS ha acquisito le informazioni necessarie per svolgere le azioni che l'utente richiede. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente MaaS non autenticato può registrarsi al servizio (UCM1);
+2. L'utente MaaS non autenticato può effettuare il login (UCM4);
+3. L'utente MaaS autenticato può modificare il proprio profilo (UCM6);
+4. L'utente MaaS autenticato può eliminare il proprio account (UCM7);
+5. L'utente MaaS autenticato può gestire i file di configurazione (UCM8). \\
+           \textbf{Esclusioni} & 1.1. L'utente visualizza un messaggio di errore dato dall'esistenza delle credenziali inserite per la registrazione (UCM3);
+2.1. L'utente visualizza un messaggio di errore dato dall'inserimento in fase di login di credenziali errate (UCU5); \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM1 - Registrazione} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1 - Registrazione}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato intende registrarsi al servizio. \\ 
+          
+          \textbf{Precondizioni}  & MaaS è pronto all'utilizzo.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha registrato correttamente l'utente e assegnatogli il namespace.
+ \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM1.1 - Inserimento nuova email} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1.1 - Inserimento nuova email}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente inserisce la nuova email nell'intento di registrarsi. \\ 
+          
+          \textbf{Precondizioni}  & Il servizio visualizza la pagina di registrazione per l'utente che l'ha richiesta ed è in attesa che l'utente interagisca.\\ 
+          
+          \textbf{Postcondizioni} & MaaP ha appreso le informazioni inserite dall'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM1.2 - Inserimento nuova password} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1.2 - Inserimento nuova password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente desidera inserire la password con la quale creerà un account presso il servizio MaaS. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina di registrazione all'utente che intende registrarsi ed è pronta all'interazione.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio MaaS ha acquisito le informazioni inserite dall'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM3 - Credenziali già esistenti} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM3 - Credenziali già esistenti}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & Il servizio mostra all'utente MaaS non autenticato un messaggio di errore dato dall'esistenza delle credenziali che aveva inserito per registrarsi. \\ 
+          
+          \textbf{Precondizioni}  & Il servizio ha appreso le informazioni di registrazione inserite dall'utente.\\ 
+          
+          \textbf{Postcondizioni} & il servizio MaaS ha respinto la registrazione da parte dell'utente mostrando un errore. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM4 - Login} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM4 - Login}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente MaaS non autenticato intende accedere al servizio e per farlo deve inserire le proprie credenziali. \\ 
+          
+          \textbf{Precondizioni}  & Il servizio MaaS è pronto ed attende il login dell'utente.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio Maas ha verificato le credenziali utente ed ha eseguito l'autenticazione di quest'ultimo. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM5 - Credenziali errate} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM5 - Credenziali errate}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza un messaggio di errore dato dall'inserimento di credenziali errate. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS verifica le credenziali che l'utente ha inserito.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS visualizza all'utente un messaggio di errore dopo aver verificato e non accettato le credenziali inserite. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM6 - Modifica profilo} 
+    \begin{center}
+    \begin{figure}[H]
+      \includegraphics[scale=0.16]{UML/UCM6 - Modifica profilo.png}
+      \caption{UCM6 - Modifica profilo} 
+    \end{figure}
+    \end{center}
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6 - Modifica profilo}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato nel servizio può modificare i propri dati email e password. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema è pronto, visualizza la pagina per la modifica del profilo utente e attende che l'utente interagisca.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha acquisito le informazioni inserite dall'utente ed ha effettuato le modifiche. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente MaaS autenticato può modificare la propria email (UCU6.1);
+2. L'utente MaaS autenticato può modificare la password (UCU6.2). \\
+           \textbf{Scenari Alternativi} & L'utente può non modificare i propri dati lasciandoli invariati uscendo dalla pagina. \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM6.1 - Modifica email} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.1 - Modifica email}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende modificare l'emal. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS predispone la pagina di modifica profilo ed attente le modifiche dell'utente.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha acquisito le informazioni date dall'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM6.2 - Modifica password} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.2 - Modifica password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende modificare la password di accesso al servizio. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema predispone della pagina di modifica profilo ed attende che l'utente modifichi la password.\\ 
+          
+          \textbf{Postcondizioni} & MaaS ha memorizzato l'informazione datagli dall'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM7 - Eliminazione account} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM7 - Eliminazione account}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente accede alla propria pagina profilo nella quale è presente un azione che gli permette di eliminare il suo account. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS ha predisposto una apposita azione per eliminare l'account dell'utente.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha eliminato l'account dell'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8 - Gestione file di configurazione} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8 - Gestione file di configurazione}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente può gestire i file di configurazione attraverso i quali può registrare una nuova Collection e specificare la connessione al database delle Collection e/o al database delle credenziali. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina necessaria alla gestione dei file di configurazione.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha eseguito le azioni di configurazione dell'utente. \\
+          
+          \textbf{Flusso Principale} &  \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8.1 - Creazione file di configurazione} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.1 - Creazione file di configurazione}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente ha la possibilità di creare il file di configurazione tramite editor di testo o di caricarlo tramite upload. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS visualizza la pagina necessaria alla creazione o all'upload dei file di configurazione.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha eseguito correttamente la creazione del file di configurazione. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente crea il file di configurazione.
+2.L'utente carica il file di configurazione. \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8.2 - Creazione file di configurazione tramite editor di testo.} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.2 - Creazione file di configurazione tramite editor di testo.}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaP fornisce un editor di testo per la creazione dei file di configurazione.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaP fornisce un editor di testo per la creazione dei file di configurazione. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente crea il file di configurazione \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8.3 - Creazione file di configurazione tramite caricamento} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.3 - Creazione file di configurazione tramite caricamento}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente può caricare il proprio file di configurazione. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaP fornisce un sistema di caricamento per i file di configurazione.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS carica correttamente il file di configurazione \\
+          
+          \textbf{Flusso Principale} & 1. L'utente carica il proprio file di configurazione. \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8.4 - Modifica file di configurazione} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.4 - Modifica file di configurazione}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente dopo aver scelto il file di configurazione può modificarlo tramite editor di testo. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaP visualizza il file scelto dall'utente ed è pronto per la modifica.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaP esegue correttamente la modifca del file e lo salva. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente tramite editor di testo modifica il file scelto. \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM8.5 - Eliminazione file di configurazione} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.5 - Eliminazione file di configurazione}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazone scelto. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema MaaS ha predisposto per ogni file di configurazione la possibilità di eliminarlo.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema MaaS ha eliminato correttamente il file di configurazone. \\
+          
+          \textbf{Flusso Principale} & 1. L'utente elimina il file di configurazione \\
           
       \end{longtable}
       \egroup

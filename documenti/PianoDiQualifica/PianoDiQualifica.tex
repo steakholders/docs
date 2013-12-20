@@ -11,7 +11,7 @@
 \clearpage
 
 \tableofcontents
-%\listoftables % non ci sono tabelle
+\listoftables
 \listoffigures
 
 \clearpage
@@ -22,7 +22,12 @@
 \include{capitolo-gestione-amministrativa-revisione}
 %\include{capitolo-collaudi} % da fare in revisioni successive!
 
+
 \appendix
-\include{appendice-resoconto-verifiche}
+\addappheadtotoc
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+\input{appendice-resoconto-verifiche}
 
 \end{document}

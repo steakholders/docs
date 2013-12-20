@@ -11,7 +11,7 @@
       
         RF1O 7 & Funzionale \newline  Obbligatorio  & Maap Framework deve rendere disponibile allo sviluppatore un linguaggio astratto DSL di tipo testuale necessario per la generazione delle pagine. &  Capitolato \newline  \\ \hline      
         RF1O 8  & Funzionale \newline  Obbligatorio  & Maap Framework deve permettere allo sviluppatore di generare un nuovo progetto tramite linea di comando.
- &  UCS1 \newline  UCS \newline  Capitolato \newline  \\ \hline      
+ &  UCS1 \newline  Capitolato \newline  \\ \hline      
         RF1O 8.1  & Funzionale \newline  Obbligatorio  & Maap Framework deve generare automaticamente lo scheletro dell'applicazione creata dallo sviluppatore.
  &  UCS1 \newline  Capitolato \newline  \\ \hline      
         RF1O 8.1.1  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente importare in un'apposita directory del progetto tutte le librerie necessarie al corretto funzionamento del sistema.
@@ -21,34 +21,52 @@
         RF1O 8.1.3  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente creare il sistema di autenticazione per l'applicazione generata. &  UCS1 \newline  Capitolato \newline  \\ \hline      
         RF1O 8.1.4  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente creare le directory di descrizione delle pagine web.
  &  UCS1 \newline  Capitolato \newline  \\ \hline      
-        RF1O 8.2  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente creare un account admin di default. &  UCS1 \newline  Capitolato \newline  \\ \hline      
+        RF1O 8.2  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente creare un account admin di default. &  UCS1 \newline  Verbale-2013/12/05 \newline  \\ \hline      
+        RF1O 8.3 & Funzionale \newline  Facoltativo  & Il framework MaaP deve permettere allo sviluppatore di definire un namespace per l'applicazione generata. &  UCS3.5 \newline  Interno \newline  \\ \hline      
         RF1O 9  & Funzionale \newline  Obbligatorio  & Maap Framework deve permettere allo sviluppatore di definire delle pagine web da visualizzare sulla base del DSL fornito.
- &  Capitolato \newline  \\ \hline      
+ &  Capitolato \newline  UCS3 \newline  \\ \hline      
         RF1O 9.1  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di creare una pagina Collection-index.
  &  UCS3.1 \newline  UCS3.2 \newline  UCS3.4 \newline  UCS3 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.1  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire una serie di attributi da visualizzare all'interno della pagina Collection-index.
- &  UCS3.3.2.1 \newline  UCS3.3 \newline  Capitolato \newline  \\ \hline      
-        RF1O 9.1.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un ordinamento di default di visualizzazione dei Document all'interno della pagina Collection-index. &  UCS3.3 \newline  UCS3.3.1.2 \newline  Capitolato \newline  \\ \hline      
+ &  UCS3.3 \newline  Capitolato \newline  UCS3.3.1.3 \newline  \\ \hline      
+        RF1O 9.1.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un ordinamento di default di visualizzazione dei document all'interno della pagina Collection-index. &  UCS3.3 \newline  UCS3.3.1.2 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.3  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un eventuale limite di elementi da visualizzare all'interno della pagina Collection-index.
  &  UCS3.3 \newline  UCS3.3.1.3 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.4  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire quali attributi sono ordinabili all'interno della pagina Collection-index.
  &  \\ \hline      
         RF1O 9.1.5 & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di definire la funzione populate per far si che una chiave riferisca ad un documento esterno.
- &  UCS3.3.1.6 \newline  UCS3.3.1 \newline  \\ \hline      
+ &  UCS3.3.1.6 \newline  UCS3.3.2.3 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.6 & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di definire delle query per creare la pagina Collection-index in base al risultato della loro estrazione.
- &  UCS3.3.1 \newline  UCS3.3.1.5 \newline  Capitolato \newline  \\ \hline      
-        RF1O 9.2 & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di creare una pagina Collection-show. &  \\ \hline      
+ &  UCS3.3.1.5 \newline  Capitolato \newline  UCS3.3.1.9 \newline  UCS3.3.1.6 \newline  UCS3.3.1.7 \newline  UCS3.3.1.8 \newline  UCS3.3.1 \newline  UCS3.3.1.1 \newline  UCS3.3.1.2 \newline  UCS3.3.1.3 \newline  UCS3.3.1.4 \newline  \\ \hline      
+        RF1O 9.1.7 & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di definire delle trasformazioni sugli attributi da visualizzare. &  UCS3.3.1.8 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.2 & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di creare una pagina Collection-show. &  UCS3.1 \newline  UCS3.2 \newline  UCS3.4 \newline  UCS3.3 \newline  UCS3 \newline  \\ \hline      
         RF1O 9.2.1  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di definire una serie di attributi visualizzabili all'interno della pagina Collection-show.
  &  UCS3.3.2 \newline  UCS3.3.2.1 \newline  Capitolato \newline  \\ \hline      
-        RF1O 9.2.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di visualizzare un attributo in base al popolamento di un Document esterno.
- &  \\ \hline      
-        RS1F 10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve mettere a disposizione il framework MaaP come servizio web. &  \\ \hline      
-        RS1F 10.1 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di scrivere una Collection tramite editor di testo presente nella pagina web. &  \\ \hline      
-        RS1F 10.2 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere all'utente di poter creare una Collection caricando un file prodotto dal framework MaaP. &  \\ \hline      
-        RS1F 10.3 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di usufruire delle pagine da lui generate direttamente dal servizio web offerto, tramite un collegamento costruito ad-hoc. &  \\ \hline      
+        RF1O 9.2.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore definire gli attributi del Document come attributi innestati o array di Document tramite la funzione populate.
+ &  UCS3.3.2.3 \newline  Verbale-2013/12/05 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.2.3 & Funzionale \newline  Obbligatorio  & Lo sviluppatore deve aver la possibilitità di personalizzare la show page definendone l'ordinamento degli attributi. &  UCS3.3.2 \newline  UCS3.3.2.2 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.2.4 & Funzionale \newline  Obbligatorio  & Lo sviluppatore deve poter definire trasformazioni agli attributi per poi visualizzarli nella show-page. &  UCS3.3.2 \newline  UCS3.3.2.4 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.2.5 & Funzionale \newline  Obbligatorio  & Lo sviluppatore deve poter personalizzare la show-page definendo delle operazioni personalizzate che l'utente potrà utilizzare tramite appositi bottoni. &  UCS3.3.2 \newline  UCS3.3.2.5 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.3 & Funzionale \newline  Facoltativo  & Il framework MaaP deve permettere allo sviluppatore di cambiare il nome della Collection da visualizzare nel menu di navigazione. &  UCS3.3.3 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.4 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve permettere allo sviluppatore di modificare l'ordine di visualizzazione della Collection nel menu di navigazione. &  UCS3.3.4 \newline  Capitolato \newline  \\ \hline      
+        RF1O 14 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database di cui dispone. &  UCS2 \newline  Interno \newline  \\ \hline      
+        RF1O 14.1 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database delle credenziali. &  UCS2.1 \newline  UCS2 \newline  Interno \newline  \\ \hline      
+        RF1O 14.2 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database delle Collection. &  UCS2 \newline  UCS2.2 \newline  \\ \hline      
+        RF1F 14.3 & Funzionale \newline  Facoltativo  & Il framework MaaP deve rendere possibile la selezione di un namespace per un database se la funzione di namespace è abilitata. &  UCS2.3 \newline  Interno \newline  \\ \hline      
+        RF1F 16 & Funzionale \newline  Facoltativo  & Il framework MaaP deve permettere allo sviluppatore di abilitare i namespace per l'applicazione creata. &  UCS4 \newline  Interno \newline  \\ \hline      
+        RS1F 10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve mettere a disposizione il framework MaaP come servizio web. &  Capitolato \newline  UCM \newline  \\ \hline      
+        RS1F 10.1 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di scrivere una Collection tramite editor di testo presente nella pagina web. &  Capitolato \newline  UCM8 \newline  UCM8.2 \newline  \\ \hline      
+        RS1F 10.2 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere all'utente di poter scrivere una Collection caricando un file prodotto dal framework MaaP. &  UCM8.4 \newline  UCM8.1 \newline  UCM8.3 \newline  \\ \hline      
+        RS1F 10.3 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non registrato di registrarsi al suo servizio. &  \\ \hline      
+        RS1F 10.4 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve assengnare automaticamente un namespace sul sistema al nuovo utente registrato. &  \\ \hline      
+        RS1F 10.5 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d'errore nel caso in cui la registrazione fallisca a causa di credenziali già esistenti. &  \\ \hline      
+        RS1F 10.6 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve mettere a disposizione di un utente non autenticato la possibilità di effettuare il login al sistema. &  \\ \hline      
+        RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d'errore nel caso in cui l'utente non autenticato abbia inserito credenziali errate nel sistema di login. &  \\ \hline      
+        RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  UCM6 \newline  UCM6.1 \newline  UCM6.2 \newline  \\ \hline      
+        RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  \\ \hline      
         RA1O 1 & Funzionale \newline  Obbligatorio  & Il sistema permette all'utente non autenticato di autenticarsi tramite la visualizzazione di una pagina web, la quale conterrà al suo interno i campi di testo necessari. &  UCU1 \newline  Capitolato \newline  \\ \hline      
-        RA1O 1.1 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento dell'indirizzo email per la verifica delle credenziali in un apposito campo di testo. &  UCU1.1 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
-        RA1O 1.2 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento di password per la verifica delle credenziali in un apposito campo di testo. &  UCU1.2 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
+        RA1O 1.1 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento dell'indirizzo email per la verifica delle credenziali in un'apposito campo di testo. &  UCU1.1 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
+        RA1O 1.2 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento di password per la verifica delle credenziali in un'apposito campo di testo. &  UCU1.2 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
         RA1O 1.3  & Funzionale \newline  Obbligatorio  & Il sistema, tramite un database indipendente, provvede a verificare l'autenticità  di un utente tramite la verifica di email e password. &  Capitolato \newline  \\ \hline      
         RA1O 1.3.1 & Funzionale \newline  Obbligatorio  & Il sistema mette a disposizione la visualizzazione di una pagina di errore in caso di fallimento dell'autenticazione da parte dell'utente.
  &  UCU2 \newline  \\ \hline      
@@ -57,11 +75,14 @@
         RA1O 2  & Funzionale \newline  Obbligatorio  & Il sistema mette a disposizione dell'utente non autenticato la possibilità  di recuperare le proprie credenziali. &  UCU4 \newline  Capitolato \newline  \\ \hline      
         RA1O 3  & Funzionale \newline  Obbligatorio  & Il sistema deve mettere a disposizione dell'utente autenticato la visualizzazione della dashboard. &  UCU8 \newline  \\ \hline      
         RA1O 4 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione dell'insieme delle Collection presenti tramite un menu di navigazione e la selezione di una di esse. &  UCU9 \newline  Capitolato \newline  \\ \hline      
-        RA1O 4.1  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione di una Collection-index tramite una tabella le cui righe corrispondono ai Document presenti nel database e le colonne ai loro attributi visualizzabili.  &  Capitolato \newline  \\ \hline      
-        RA1O 4.1.1  & Funzionale \newline  Obbligatorio  & Ogni riga della tabella corrispondente ad un Document deve avere una chiave selezionabile che rimanda alla corrispondente pagina show. &  Capitolato \newline  \\ \hline      
-        RA1O 5  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione della Collection-show relativa ad un Document tramite una pagina web che ne mostra gli attributi visualizzabili strutturati in una tabella.
+        RA1O 4.1  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione di una Collection-index tramite una tabella le cui righe corrispondono ai document presenti nel database e le colonne ai loro attributi visualizzabili.  &  Capitolato \newline  \\ \hline      
+        RA1O 4.1.1  & Funzionale \newline  Obbligatorio  & Ogni riga della tabella corrispondente ad un Document deve avere una chiave selezionabile che rimanda alla corrispondente pagina show. &  Capitolato \newline  UCS3.3.1.4 \newline  \\ \hline      
+        RA1O 4.4 & Funzionale \newline  Facoltativo  & L'applicazione deve permettere all'utente di poter eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. &  \\ \hline      
+        RA1O 5  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione della Collection-show relativa ad un document tramite una pagina web che ne mostra gli attributi visualizzabili strutturati in una tabella.
  &  UCU9.1 \newline  Capitolato \newline  \\ \hline      
         RA1O 5.1 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'admin di poter editare ogni singolo attributo modificabile del documento dalla pagina show. &  UCU9.1.3 \newline  UCU9.1 \newline  Capitolato \newline  \\ \hline      
+        RA1O 5.2 & Funzionale \newline  Facoltativo  & L'applicazione deve permettere all'utente di poter eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. &  \\ \hline      
+        RA1O 5.3 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente di poter eliminare dalla show-page il Document selezionato. &  UCU9.1.4 \newline  Capitolato \newline  \\ \hline      
         RA1O 6 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin una pagina di amministrazione in cui visualizzare la Collection di tutti gli utenti registrati all'applicazione.
  &  UCU11 \newline  \\ \hline      
         RA1O 6.1  & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità  di creare un nuovo utente dalla pagina di amministrazione. &  UCU11.1 \newline  UCU11 \newline  Capitolato \newline  \\ \hline      
@@ -80,15 +101,24 @@
         RA1O 6.2.2 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di declassare l'admin selezionato a livello di utente normale dalla show-page relativa. &  UCU11.3.2 \newline  UCU11.3 \newline  \\ \hline      
         RA1O 6.2.3 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo email dell'utente selezionato dalla relativa show-page. &  UCU11.3.3 \newline  UCU11.3 \newline  \\ \hline      
         RA1O 6.2.4 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo password dell'utente selezionato dalla relativa show-page. &  UCU11.3.4 \newline  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
-        RA1D 4.1.2  & Funzionale \newline  Desiderabile  & L'utente può decidere di cambiare l'ordine di visualizzazione dei Document selezionando l'intestazione delle colonne aventi la proprietà  sortable.
- &  \\ \hline      
+        RA1D 4.1.2  & Funzionale \newline  Desiderabile  & L'utente può decidere di cambiare l'ordine di visualizzazione dei document selezionando l'intestazione delle colonne aventi la proprietà  sortable.
+ &  Interno \newline  \\ \hline      
         RA1D 4.1.3  & Funzionale \newline  Desiderabile  & L'applicazione può mettere a disposizione dell'utente per ogni riga della tabella una checkbox per consentire la selezione multipla.
- &  \\ \hline      
+ &  Interno \newline  \\ \hline      
         RA1D 4.1.4  & Funzionale \newline  Desiderabile  & L'applicazione può mettere a disposizione dell'admin un link di selezione rapida per l'eliminazione di un documento.
  &  UCU9.5 \newline  UCU9 \newline  \\ \hline      
-        RA1D 4.2  & Funzionale \newline  Desiderabile  & L'applicazione da  eventualmente la possibilità  di impostare dei filtri personalizzati secondo determinati attributi per visualizzare un sottoinsieme di documenti. &  UCU9.2 \newline  UCU9 \newline  \\ \hline      
-        RA1F 4.3 & Funzionale \newline  Facoltativo  & L'applicazione deve mettere a disposizione dell'amministratore un pulsante che lo reindirizzerà alla pagina di creazione di un nuovo Document.
- &  UCU9.6 \newline  Capitolato \newline  \\ \hline
+        RA1D 4.1.5 & Funzionale \newline  Desiderabile  & L'applicazione deve permette all'admin la modifica di un document presente nella collection-index. &  UCU9.4 \newline  Capitolato \newline  \\ \hline      
+        RA1D 4.2  & Funzionale \newline  Desiderabile  & L'applicazione dà eventualmente la possibilità di impostare dei filtri personalizzati secondo determinati attributi per visualizzare un sottoinsieme di Document. &  UCU9.2 \newline  UCU9 \newline  UCS3.3.1.7 \newline  Interno \newline  \\ \hline      
+        RA1D 11 & Funzionale \newline  Desiderabile  & Deve essere possibile da parte di un utente la registrazione all'Applicazione MaaP. &  UCU5 \newline  Verbale-2013/12/05 \newline  \\ \hline      
+        RA1D 12 & Funzionale \newline  Desiderabile  & L'utente autenticato nell'applicazione deve poter eseguire il logout.  &  UCU3 \newline  \\ \hline      
+        RA1D 13 & Funzionale \newline  Desiderabile  & L'utente con credenziali d'accesso all'applicazione deve poterle modificare all'interno dell'applicazione tramite pagina apposita. &  UCU10 \newline  \\ \hline      
+        RA1D 13.1 & Funzionale \newline  Desiderabile  & L'utente deve poter modificare la propria email con cui ha accesso all'applicazione MaaP. &  UCU10 \newline  UCU10.1 \newline  \\ \hline      
+        RA1D 13.2 & Funzionale \newline  Desiderabile  & L'utente deve poter modificare la password di accesso all'applicazione. &  UCU10 \newline  UCU10.2 \newline  \\ \hline      
+        RA1F 4.3 & Funzionale \newline  Facoltativo  & L'applicazione deve mettere a disposizione dell'aministratore di poter creare un nuovo Document all'interno della base di dati. &  UCU9.6 \newline  Capitolato \newline  \\ \hline      
+        RA1F 15 & Funzionale \newline  Facoltativo  & L'applicazione MaaP deve mettere a disposizione dell'admin una pagina di gestione degli indici. &  UCU7 \newline  Capitolato \newline  \\ \hline      
+        RA1F 15.1 & Funzionale \newline  Facoltativo  & L'applicazione MaaP deve mettere a disposizione dell'admin la visualizzazione degli indici in base alle query più richieste dall'applicazione. &  UCU7.1 \newline  Capitolato \newline  \\ \hline      
+        RA1F 15.2 & Funzionale \newline  Facoltativo  & L'applicazione MaaP deve permettere all'admin di aggiungere gli indici in base ai suggerimenti forniti. &  UCU7.2 \newline  Capitolato \newline  \\ \hline      
+        RA1F 15.3 & Funzionale \newline  Facoltativo  & L'applicazione MaaP deve permettere all'admin di rimuovere gli indici in base ai suggerimenti forniti. &  UCU7.3 \newline  Interno \newline  \\ \hline
       \end{longtable}
       \end{center}  
 \clearpage
@@ -117,8 +147,8 @@
       \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Tipologia} 
       & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Fonti} \\ \hline
       
-        R3O 1 & Qualità \newline  Obbligatorio  & Devono essere prodotti e rilasciati manuali d'uso ed ogni altra documentazione tecnica necessaria per l’utilizzo del prodotto. &  \\ \hline      
-        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verranno rispettate tutte le norme descritte nel documento \NormeDiProgetto{}, le normative sulla progettazione e stesura del codice presenti nel  documento \PianoDiQualifica{} . &  \\ \hline
+        R3O 1 & Qualità \newline  Obbligatorio  & Devono essere prodotti e rilasciati manuali d'uso ed ogni altra documentazione tecnica necessaria per l’utilizzo del prodotto. &  Capitolato \newline  \\ \hline      
+        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verrano rispettate tutte le norme descritte nel documento \NormeDiProgetto{}, le normative sulla progettazione e stesura del codice presenti nel  documento \PianoDiQualifica{} . &  Interno \newline  \\ \hline
       \end{longtable}
       \end{center}  
 \clearpage
@@ -132,14 +162,14 @@
       \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Tipologia} 
       & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Fonti} \\ \hline
       
-        R4O 1 & Vincolo \newline  Obbligatorio  & L’implementazione della componente server deve essere realizzata utilizzando Node.js. &  \\ \hline      
-        R4O 2 & Vincolo \newline  Obbligatorio  & Deve essere utilizzato Express per la realizzazione dell’infrastruttura della web application. &  \\ \hline      
-        RF4O 6 & Vincolo \newline  Obbligatorio  & Maap Framework deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  \\ \hline      
-        RS4F 6 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  \\ \hline      
-        RS4F 7 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  \\ \hline      
-        RA4O 3 & Vincolo \newline  Obbligatorio  & L’applicazione deve utilizzare Mongoose.js per l’interfacciamento con il database. &  \\ \hline      
-        RA4O 4 & Vincolo \newline  Obbligatorio  & L’applicazione deve servirsi di  MongoDB come sistema gestionale dei dati. &  \\ \hline      
-        RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il deployment su Heroku rendendo disponibile on-line l’applicazione Maap. &  \\ \hline
+        R4O 1 & Vincolo \newline  Obbligatorio  & L’implementazione della componente server deve essere realizzata utilizzando Node.js. &  Capitolato \newline  \\ \hline      
+        RF4O 6 & Vincolo \newline  Obbligatorio  & Maap Framework deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
+        RS4F 6 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
+        RS4F 7 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline      
+        RA4O 2 & Vincolo \newline  Obbligatorio  & Deve essere utilizzato Express per la realizzazione dell’infrastruttura della web application. &  Capitolato \newline  \\ \hline      
+        RA4O 3 & Vincolo \newline  Obbligatorio  & L’applicazione deve utilizzare Mongoose.js per l’interfacciamento con il database. &  Capitolato \newline  \\ \hline      
+        RA4O 4 & Vincolo \newline  Obbligatorio  & L’applicazione deve servirsi di  MongoDB come sistema gestionale dei dati. &  Capitolato \newline  \\ \hline      
+        RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il deployment su Heroku rendendo disponibile on-line l’applicazione Maap. &  Capitolato \newline  \\ \hline
       \end{longtable}
       \end{center}  
 \clearpage

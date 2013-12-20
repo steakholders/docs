@@ -1,4 +1,4 @@
-i\section{Visione generale della strategia di verifica}
+\section{Visione generale della strategia di verifica}
 \sectionmark{Visione generale \dots}
 
 La strategia generale adottata è quella di automatizzare il più possibile il lavoro di verifica; questo richiede scelta e uso di \glossario{tools} adeguatamente configurati. L'obiettivo è avere un riscontro affidabile e numericamente trattabile che permetta di assicurare il grado di qualità predeterminato. Il lavoro manuale verrà così ridotto al minimo e confinato all'opera di validazione.
@@ -142,8 +142,21 @@ La speranza è che dei buoni processi portino ad un buon software.
 			Si svolge effettuando una lettura a largo spettro. È un'attività onerosa e collaborativa che richiede la cooperazione di più persone, si tratta di una tecnica non efficiente pertanto se ne sconsiglia l'attuazione. Ne è previsto l'utilizzo principalmente durante la prima parte del progetto quando non tutti i membri del gruppo hanno piena padronanza e conoscenza delle \emph{Norme di Progetto} e del \emph{Piano di Qualità}.
 
 			\paragraph{Inspection} \mbox{} \\
+			\label{anomaliefrequenti}
 
 			Si tratta di una lettura mirata e strutturata, volta a localizzare l'errore con il minor costo possibile. Richiede una buona padronanza di tutti gli strumenti utilizzati e conoscenza di tutti i documenti di progetto. Solitamente viene effettuata da un singolo individuo. La ricerca mirata si basa sugli errori ricorrenti, uno script dovrà ricercare tali anomalie e segnalarle al \emph{Verificatore} in modo efficiente.
+			Le anomalie più frequenti sono:
+			\begin{itemize}
+				\item utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
+				\item utilizzo di caratteri di underscore senza prima anteporre una backslash;
+				\item errori ortografici come rappresentare la È con una \emph{e} maiuscola apostrofata;
+				\item inserimento di parole comuni come placeholder, e.g. ciao, blabla, asd \dots;
+				\item formato delle date errato o non conforme alle \NormeDiProgetto{};
+				\item formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
+				\item elenchi puntati non conformi alle norme, in particolare i punti spesso non terminano con il punto e virgola;
+				
+
+			\end{itemize}
 			
 			
 		\subsubsection{People-intensive}
@@ -214,6 +227,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 		La \emph{leggibilità} dei documenti è indispensabile per garantirne la qualità. Si è scelto di adottare un indice per misurare la leggibilità dei testi in lingua italiana:
 			
 			\paragraph{Gulpease}\mbox{} \\
+			\label{gulpease}
 			
 			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. Permette di misurare la complessità dello stile di un documento.
 			L'indice di Gulpease considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere.

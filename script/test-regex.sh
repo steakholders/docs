@@ -77,6 +77,7 @@ grep_test "ciao" "Togliere il ciao." $(find . -name '*.tex')
 grep_test "blabla" "Togliere il blabla." $(find . -name '*.tex')
 grep_test "bla " "Togliere il bla." $(find . -name '*.tex')
 grep_test "asd" "Togliere l'asd." $(find . -name '*.tex')
+grep_test "[[:digit:]]{2}/[[:digit:]]{2}/[[:digit:]]{4}" "Riscrivere la data nel formato AAAA-MM-GG." $(find . -name '*.tex')
 
 # Controlla che ci sia prima il nome e poi il cognome
 grep_test "Poli Federico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')

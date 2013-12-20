@@ -1,4 +1,4 @@
-personal_ws-1.1 it 494 
+personal_ws-1.1 it 498 
 Google
 deployment
 Amm
@@ -11,6 +11,7 @@ Product
 bioinformatica
 branch
 edition
+Mongo
 GitHub
 object
 asd
@@ -145,7 +146,6 @@ predeterminabili
 corners
 fault
 tool
-Tool
 MongoDB
 MAY'
 difficulty
@@ -178,6 +178,7 @@ Amazon
 underscore
 dell
 dimostrabilmente
+explain
 Maap's
 MaaP's
 lavoro'
@@ -191,8 +192,8 @@ View
 chart
 effort
 computing
-event
 Henry
+event
 ciclomatica
 pdc
 practice
@@ -287,9 +288,9 @@ shift
 inner
 populate
 UCU
+nell'index
 NodeJS
 NodeJs
-nell'index
 smartphone
 Ubuntu
 Graphical
@@ -328,6 +329,7 @@ recovery
 Solution
 lccccccccc
 proattivi
+join
 section
 package
 correction
@@ -473,6 +475,8 @@ Casiraghi
 cliccabile
 height
 slack
+users
+Users
 Gantt
 Foundation
 Comunicazioni'

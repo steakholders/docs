@@ -40,8 +40,8 @@ text
 responsività
 BCWS
 form
-startup
 StartUp
+startup
 AWS
 maxhv
 Pearson
@@ -134,8 +134,8 @@ nltk
 isodate
 working
 client
-RegExp
 regexp
+RegExp
 Education
 community
 Fedora
@@ -152,8 +152,8 @@ tests
 metadati
 global
 sull'
-l'admin
 L'Admin
+l'admin
 Pianciamore
 Tresoldi
 tree
@@ -175,8 +175,8 @@ Amazon
 underscore
 dell
 dimostrabilmente
-Maap's
 MaaP's
+Maap's
 lavoro'
 mod
 rounded
@@ -204,8 +204,8 @@ ways
 Process
 NomeDelDocumento
 Interaction
-MVC
 NOM
+MVC
 peaks
 research
 npm
@@ -369,8 +369,8 @@ an
 Franceschi
 AR
 Documenti'
-dd
 as
+dd
 tools
 framework
 Requisteak
@@ -482,7 +482,7 @@ Selected
 dashboard
 logger
 Ana
-all'
 All
+all'
 and
 Techinques

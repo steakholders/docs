@@ -18,9 +18,9 @@ asd
 Ready
 application
 shortcut
+showspaces
 titolo'
 query
-showspaces
 source
 Reliability
 Hangouts
@@ -55,9 +55,9 @@ FAQ
 interface
 Service
 Cox
+rulecolor
 Unicode
 plugin
-rulecolor
 CamelCase
 Portable
 syntax

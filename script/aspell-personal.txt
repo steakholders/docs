@@ -1,4 +1,4 @@
-personal_ws-1.1 it 521 
+personal_ws-1.1 it 525 
 Google
 deployment
 Amm
@@ -198,11 +198,13 @@ Unified
 LUF
 JSHint
 View
+upload
 chart
 effort
 computing
 Henry
 event
+namespace
 ciclomatica
 pdc
 practice
@@ -223,6 +225,7 @@ peaks
 research
 npm
 NOT'
+all'upload
 Firefox
 Usability
 true
@@ -244,7 +247,6 @@ purpose
 Calendar
 RAU
 plan
-PLAN
 backslash
 Medical
 pianificata'
@@ -296,6 +298,7 @@ the
 python
 tex
 wiki
+UCM
 Retired
 Variance
 UCS
@@ -491,7 +494,6 @@ system
 Angular
 fgdfgdfgd
 act
-ACT
 title
 dell'index
 Casiraghi

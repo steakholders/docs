@@ -1,4 +1,4 @@
-personal_ws-1.1 it 487 
+personal_ws-1.1 it 498 
 Google
 deployment
 Amm
@@ -20,6 +20,7 @@ shortcut
 titolo'
 query
 source
+Reliability
 Hangouts
 parser
 DdP
@@ -34,6 +35,7 @@ Rotundo
 walkthrough
 maxhd
 maxhe
+Efficiency
 Astah
 BCWP
 text
@@ -80,8 +82,8 @@ vgrid
 Transactions
 sottoscrivibile
 Postcondizioni
-Quality
-Metrics
+quality
+metrics
 nomemetrica
 AngularJS
 git
@@ -93,6 +95,7 @@ checkbox
 Error
 IDE
 FunGoStudios
+IEC
 collection
 SEMAT
 Integrated
@@ -104,6 +107,8 @@ quest'ultime
 Broken
 lines
 SQMT
+PDCA
+incrementalmente
 gray
 Imaging
 reference
@@ -160,6 +165,7 @@ tree
 packet
 Platform
 stub
+Portability
 JVM
 vers
 oriented
@@ -188,8 +194,8 @@ View
 chart
 effort
 computing
-event
 Henry
+event
 ciclomatica
 pdc
 practice
@@ -211,6 +217,7 @@ research
 npm
 NOT'
 Firefox
+Usability
 true
 Pgr
 issues
@@ -225,6 +232,7 @@ Javascript
 JavaScript
 OOP
 num
+external
 purpose
 Calendar
 RAU
@@ -266,6 +274,7 @@ replacements
 bugs
 Everybody
 lang
+Functionality
 setup
 Express
 Teamwork
@@ -313,6 +322,7 @@ History
 left
 Mocha
 UML
+Maintainability
 proattiva
 Version
 Way
@@ -423,6 +433,7 @@ Eclipse
 Mahesh
 of
 pa
+SPICE
 NP
 MU
 array

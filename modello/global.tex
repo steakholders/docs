@@ -61,6 +61,9 @@
 
 % Genera automaticamente la pagina di copertina
 \newcommand{\makeFrontPage}{
+  % Declare new goemetry for the title page only.
+  \newgeometry{top=4.5cm}
+  
   \begin{titlepage}
   \begin{center}
 
@@ -99,4 +102,7 @@
 
   \end{center}
   \end{titlepage}
+  
+  % Ends the declared geometry for the titlepage
+  \restoregeometry
 }

@@ -61,8 +61,9 @@ grep_test "\\\Committente[^{}]" "Sostituire con \Committente{}." $(find . -name 
 # Errori tipici con LaTeX
 grep_test " [[:alpha:]]{2,}_" "Utilizzare il comando LaTeX \_ (l'underscore ha un'altra funzione)" $(find . -name '*.tex')
 
-# Errori ortografici
+# Anomalie con gli accenti
 grep_test "E'" "Sostituire con È." $(find . -name '*.tex')
+grep_test "\\\\\`E" "Sostituire con È." $(find . -name '*.tex')
 grep_test "[[:alpha:]]\`[aeiou]" "Riscrivere usando l'accento giusto: uno tra àèìòù" $(find . -name '*.tex')
 
 # Codici speciali

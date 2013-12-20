@@ -1,4 +1,4 @@
-personal_ws-1.1 it 498 
+personal_ws-1.1 it 494 
 Google
 deployment
 Amm
@@ -72,6 +72,7 @@ IEEE
 DSL
 black
 Lavazza
+un'array
 ActiveAdmin
 coverage
 page
@@ -119,6 +120,7 @@ Failure
 repository
 path
 TexMaker
+Firebase
 Part
 Mongoose
 dall
@@ -147,6 +149,7 @@ Fedora
 predeterminabili
 corners
 fault
+tool
 Tool
 MongoDB
 MAY'
@@ -295,6 +298,7 @@ populate
 UCU
 NodeJS
 NodeJs
+nell'index
 smartphone
 Ubuntu
 Graphical
@@ -363,6 +367,7 @@ opzionalmente'
 fgfg
 driven
 storage
+column
 people
 draw
 Cardin
@@ -421,6 +426,7 @@ combo
 games
 work
 it
+JSON
 fill
 Architecture
 js
@@ -475,6 +481,7 @@ fgdfgdfgd
 title
 dell'index
 Casiraghi
+cliccabile
 height
 slack
 Gantt

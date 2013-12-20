@@ -1,73 +1,36 @@
 \section{Domande e Risposte riassunte}
 	\begin{itemize} 
 		\item 
-		{\bfseries Quanto e come devono essere personalizzabili per lo sviluppatore le pagine Collection-index
-		e Collection-show tramite l'uso di DSL?} \\
-		Il proponente utilizzando come esempio active admin mostra come devono essere composte le pagine.
-		Le funzioni principali illustrate sono la possibilità di selezionare un sottoinsieme di documenti tramite query di MongoDB scritte
-		dallo sviluppatore e la scelta dei campi visualizzabili.	
+		{\bfseries Si era parlato di permettere la registrazione di un utente non attraverso l'admin ma attraverso l'applicazione web, giusto? È un requisito opzionale?} \\
+		Sì, questo per il prodotto non è essenziale. Per il servizio è chiaramente importante. Sì, è opzionale.
 		
-		\item 
-		{\bfseries Ci deve essere una dashboard?} \\
-		Si è utile, ma non essenziale. 
+		{\bfseries L'admin, nella sua pagina di amministrazione, può modificare le credenziali di un utente? Può quindi modificare la sua password e l'email?} \\
+		Sì, non è fondamentale. L'importante è che sia un modo per recuperare la sua password. Se può farlo anche l'utente admin, meglio, ma non è fondamentale.
 		
-		\item
-		{\bfseries Dobbiamo implementare filtri sui campi restituiti dalle query?} \\
-		I filtri sono delle query particolari ed è difficile implementarli in quanto bisogna avere conoscenza di come fare le query su di un database non relazionale.
-		Possiamo implementarne di default o lasciare la possibilità allo sviluppatore di creare dei filtri.
+		{\bfseries L'admin eventualmente può declassare sé stesso?} \\
+		No, non può declassare sé stesso. Per questo io farei una sorta di super-admin, che è scritto fisicamente in un file di configurazione o qualcosa del genere, o una soluzione che trovate intelligente. Chiaramente se io declasso me stesso dopo sono fuori dal sistema e l'unico modo per entrare è modificare il database. Quindi diventa complicato.
 		
-		\item
-		{\bfseries \`E necessario creare un profilo admin di default?} \\
-		Si, l'admin va aggiunto al database con inserimento di username e password di default.
+		{\bfseries Quindi ci sarà una gerarchia a tre, con un super admin, admin e utenti? L'admin non può modificare le credenziali di un altro admin ma può farlo solo il super admin?} \\
+		Sì, giusto.
 		
-		\item
-		{\bfseries \`E possibile che lo sviluppatore possa decidere di permettere la registrazione da parte degli utenti?} \\
-		 Si lo sviluppatore lo può specificare, ma è meglio lasciarlo come opzione di default e di non togliere questa possibilità
-		 all'utente.
+		{\bfseries È necessario memorizzare altri attributi per gli utenti, oltre all'email, alla password e al tipo di account (admin o utente)?} \\
+		No, non è necessario.
 		
-		\item
-		{\bfseries Come avviene il recupero password?} \\
-		Il recupero password deve avvenire tramite email, quindi \ProjectName{}deve avere un servizio email configurabile dallo sviluppatore.
-		Il proponente mostra il pacchetto "Nodemailer".
+		{\bfseries Dal DSL, è possibile modificare la visualizzazione della tabella utenti di amministrazione?} \\
+		Non è essenziale nemmeno questo. Se possibile sì, assolutamente. Immagino che voi userete lo stesso stratagemma, le stesse librerie utilizzate per visualizzare le altre tabelle delle collection.
+		È comodo che io programmatore possa dire che il campo password vada a sinistra piuttosto che a destra. Modificare il CSS per me non è interessante. Però, in generale, può essere carino che si possa cambiare il tema. Non è assolutamente richiesto ma è carino, pensateci.
 		
-		\item
-		{\bfseries Nel capitolato si parla di creazione di indici, cosa si intende per indici?} \\
-		Gli indici sono specifici di MongoDB, il quale fa le ricerche scansionando i documenti che talvolta possono essere di grandi dimensioni. Per migliorare le performance di interrogazione, MongoDB crea strutture dati che raccolgono informazioni sui valori dei "campi indice" specificati nei documenti di una collection e queste strutture dati, sono gli indici citati nel capitolato.
+		{\bfseries Se un documento ha un altro documento come attributo bisogna visualizzare un link alla show-page del documento innestato? Oppure devo mettere un attributo del documento innestato?} \\
+		Il campo innestato potrebbe avere un insieme grosso di campi, che potrebbe non essere comodo visualizzare nella pagina. Una prima soluzione è di permettere allo sviluppatore di poter dire ``questo campo innestato lo voglio cliccabile e apribile in un'altra pagina''.
 		
-In questo modo quando effettuerà la ricerca, verrà scansionato quest'ultimo documento creato che è più piccolo della collection originale rendendo la ricerca più veloce.	 
-Dopo diversi mesi di utilizzo, il database può avere una mole di informazioni tale da poter identificare quali sono le query
-maggiormente richieste dagli utenti e quindi proporre la creazione di uno o più indici.
-La creazione di un indice può essere fatta automaticamente dal database o delegata allo sviluppatore via shell.
+		{\bfseries Se un documento ha un array di documenti come attributo bisogna visualizzare un link alla index-page del campo innestato?} \\
+		Un array di documenti non è una collection, non ha una index-page. È simile ma non è la stessa cosa. Potrebbe esserci anche un'array di interi o di stringhe, che non sono di documenti. La questione di un array di è simpatica da gestire, perché non c'è nel database relazionale e quindi è diverso il discorso. Si potrebbe aprire un pop-up o un'altra pagina per la visualizzazione dell'array, ma fate attenzione che un array di documenti non è una collection.
 		
-		\item
-		{\bfseries Cosa rende complessa la creazione di nuovi documenti o la modifica di un insieme di documenti?} \\
-		Tutto ciò che cambia la struttura del documento risulta complesso se non si conoscere la business logic dell'applicazione.
-		Per creare o modificare documenti si ha bisogno di utilizzare Mongoose che mantiene i vincoli del modello e quindi non corrompe il funzionamento dell'applicazione che si interfaccia ai documenti.
+		Firebase è un tool che manipola JSON in real-time e ha un tool di visualizzazione interno che è fatto molto bene. Quindi potete guardare come visualizza gli array e prendere spunto da lì. Io direi di fare una piccola anteprima dell'array e mettere il link per visualizzarlo in un'altra pagina, che sarà un array-index simile ad una collection-index.
 		
-		\item
-		{\bfseries Come deve essere implementato il database dei dati utente?} \\
-		Può essere implementato con qualsiasi tecnologia, anche diversa da MongoDB ma è importante che sia supportata da Heroku.
+		{\bfseries Nel primo esempio del capitolato a pagina 14, perché il populate deve essere messo nell'index e non nel column?} \\
 		
-		Le password devono essere criptate.
-		Non bisogna occuparsi dell'efficienza.
+		{\bfseries ?} \\
 		
-		\item
-		{\bfseries Siamo vincolati all'utilizzo delle issue di GitHub per segnalare bug?} \\
-		No, non è necessario l'utilizzo delle issue. 
-		Il concetto sta nell'utilizzare durante lo sviluppo una repository, anche diversa, ma la pubblicazione del
-		progetto deve avvenire su GitHub.
-		
-		\item
-		{\bfseries Come implementare il DSL? Si possono creare delle apposite API ad alto livello?} \\
-		Si, possono essere implementate delle librerie API in quanto l'output ottenuto è lo stesso del DSL, la differenza a cui 	fare attenzione sta nel dove mettere i vincoli in quanto nel DSL i vincoli sono statici e il parser li garantisce mentre nelle librerie API sono dinamici.
-		
-		\item
-		{\bfseries \Proponente{} è disponibile per incontri durante l'intero periodo di sviluppo?} \\
-		Il proponente dichiara che non potrà essere disponibile nei giorni 18-28 gennaio e che a marzo prevede il trasferimento in
-		altra sede estera, ma resta disponibile ad incontri virtuali su Skype.
-				
-		\item
-		{\bfseries Ci sono delle richieste particolari sul testing di \ProjectName{}} \\
-		Almeno il 70\% codice prodotto deve essere testato nelle modalità preferite dal gruppo.
 		
 	\end{itemize}

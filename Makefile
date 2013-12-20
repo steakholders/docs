@@ -11,6 +11,7 @@ documents:
 
 test:
 	@cd "documenti" && make test
+	@cd "modello" && make test
 
 test-glossary:
 	@$(REPO_DIR)/script/test-glossary.sh

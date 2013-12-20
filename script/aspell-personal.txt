@@ -1,4 +1,4 @@
-personal_ws-1.1 it 525 
+personal_ws-1.1 it 557 
 Google
 deployment
 Amm
@@ -20,6 +20,7 @@ application
 shortcut
 titolo'
 query
+showspaces
 source
 Reliability
 Hangouts
@@ -37,6 +38,7 @@ walkthrough
 maxhd
 maxhe
 Efficiency
+citecolor
 Astah
 BCWP
 text
@@ -55,6 +57,7 @@ Service
 Cox
 Unicode
 plugin
+rulecolor
 CamelCase
 Portable
 syntax
@@ -62,6 +65,7 @@ best
 rimpiazza'
 CSS
 Method
+stepnumber
 Demonstrable
 Ruby
 dell'admin
@@ -75,6 +79,7 @@ black
 technology
 Lavazza
 un'array
+inputencoding
 ActiveAdmin
 coverage
 page
@@ -91,11 +96,14 @@ nomemetrica
 AngularJS
 git
 Exploring
+breakatwhitespace
 Ian
 specify
 facilitatore
+SteakHolders
 checkbox
 Error
+numbers
 IDE
 FunGoStudios
 IEC
@@ -109,6 +117,7 @@ Slide
 abbandona'
 quest'ultime
 Broken
+linkcolor
 PDCA
 lines
 SQMT
@@ -190,6 +199,7 @@ dimostrabilmente
 explain
 MaaP's
 Maap's
+keepspaces
 lavoro'
 mod
 rounded
@@ -199,6 +209,7 @@ LUF
 JSHint
 View
 upload
+filecolor
 chart
 effort
 computing
@@ -214,6 +225,7 @@ pdf
 Compiler
 unit
 Stein
+basicstyle
 Nodemailer
 ways
 Process
@@ -233,6 +245,7 @@ Pgr
 issues
 admin
 Pgt
+urlcolor
 Adobe
 project
 Maccagnan
@@ -247,6 +260,7 @@ purpose
 Calendar
 RAU
 plan
+red
 backslash
 Medical
 pianificata'
@@ -264,8 +278,10 @@ Verifica'
 Apple
 cloud
 practise
+mygray
 HTML
 label
+commentstyle
 SCR
 walktrough
 dell'array
@@ -288,6 +304,7 @@ Everybody
 lang
 Functionality
 setup
+plain
 Express
 Teamwork
 format
@@ -322,14 +339,17 @@ align
 commit
 bytecode
 tasks
+breaklines
 aggiungi'
 Kile
 Language
 Ver
 Sun
 with
+numbersep
 Maap
 MaaP
+stringstyle
 MaaS
 Maas
 Skype
@@ -341,6 +361,7 @@ Maintainability
 proattiva
 Version
 Way
+colorlinks
 placeholder
 l'overhead
 BioComputing
@@ -375,6 +396,7 @@ Awesome
 potr
 Mistake
 Compito'
+numberstyle
 opzionalmente'
 fgfg
 driven
@@ -389,6 +411,7 @@ dall'Admin
 dall'admin
 group
 Analysis
+mygreen
 firstpage
 Prog
 glossary
@@ -400,6 +423,7 @@ Documenti'
 dd
 as
 tools
+Maroon
 framework
 Requisteak
 BV
@@ -428,6 +452,7 @@ versionato
 line
 Generator
 environment
+tabsize
 Social
 halstead
 Laurence
@@ -437,10 +462,12 @@ Abstract
 IQ
 combo
 games
+showstringspaces
 work
 it
 JSON
 Determination
+extendedchars
 fill
 Architecture
 js
@@ -470,6 +497,7 @@ name
 PQ
 pt
 SF
+captionpos
 sortable
 RP
 RQ
@@ -486,12 +514,15 @@ Professional
 ACWP
 Established
 WebKit
+showtabs
 versionamento
 vv
+keywordstyle
 programming
 document
 system
 Angular
+CoffeeStrap
 fgdfgdfgd
 act
 title
@@ -516,6 +547,7 @@ stakeholders
 Operational
 Selected
 dashboard
+firstnumber
 logger
 Ana
 Capability

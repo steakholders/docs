@@ -31,6 +31,6 @@ build: test documents
 	@mkdir -p "build"
 	@rm -f build/*.pdf
 	@for file in documenti/*/*.pdf; do echo "[*] Copio $$file in build/"; cp "$$file" "build/"; done
-	@zip build/documenti-pdf.zip build/*.pdf
+	@cd build && zip documenti-pdf.zip *.pdf
 	@echo "[*] L'archivio build/documenti-pdf.zip è pronto"
 

@@ -1,4 +1,4 @@
-personal_ws-1.1 it 516 
+personal_ws-1.1 it 525 
 Google
 deployment
 Amm
@@ -72,6 +72,7 @@ Programmer
 IEEE
 DSL
 black
+technology
 Lavazza
 un'array
 ActiveAdmin
@@ -197,11 +198,13 @@ Unified
 LUF
 JSHint
 View
+upload
 chart
 effort
 computing
 event
 Henry
+namespace
 ciclomatica
 pdc
 practice
@@ -222,6 +225,7 @@ peaks
 research
 npm
 NOT'
+all'upload
 Firefox
 Usability
 true
@@ -242,7 +246,7 @@ external
 purpose
 Calendar
 RAU
-PLAN
+plan
 backslash
 Medical
 pianificata'
@@ -294,6 +298,7 @@ the
 python
 tex
 wiki
+UCM
 Retired
 Variance
 UCS
@@ -435,6 +440,7 @@ games
 work
 it
 JSON
+Determination
 fill
 Architecture
 js
@@ -487,7 +493,7 @@ Document
 system
 Angular
 fgdfgdfgd
-ACT
+act
 title
 dell'index
 Casiraghi
@@ -497,6 +503,7 @@ slack
 users
 Gantt
 Foundation
+assessment
 Comunicazioni'
 Specific
 encoding
@@ -511,7 +518,9 @@ Selected
 dashboard
 logger
 Ana
+Capability
 All
 all'
 and
 Techinques
+Information

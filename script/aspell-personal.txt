@@ -11,6 +11,7 @@ Product
 bioinformatica
 branch
 edition
+Mongo
 GitHub
 object
 asd
@@ -184,6 +185,7 @@ Amazon
 underscore
 dell
 dimostrabilmente
+explain
 Maap's
 MaaP's
 lavoro'
@@ -341,6 +343,7 @@ recovery
 Solution
 lccccccccc
 proattivi
+join
 section
 package
 correction
@@ -488,6 +491,8 @@ Casiraghi
 cliccabile
 height
 slack
+users
+Users
 Gantt
 Foundation
 Comunicazioni'

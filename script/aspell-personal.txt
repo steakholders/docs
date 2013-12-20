@@ -1,4 +1,4 @@
-personal_ws-1.1 it 494 
+personal_ws-1.1 it 509 
 Google
 deployment
 Amm
@@ -98,6 +98,7 @@ IDE
 FunGoStudios
 IEC
 collection
+improvement
 SEMAT
 Integrated
 RSYZ
@@ -106,9 +107,9 @@ Slide
 abbandona'
 quest'ultime
 Broken
+PDCA
 lines
 SQMT
-PDCA
 incrementalmente
 gray
 Imaging
@@ -150,7 +151,6 @@ predeterminabili
 corners
 fault
 tool
-Tool
 MongoDB
 MAY'
 difficulty
@@ -239,6 +239,7 @@ external
 purpose
 Calendar
 RAU
+PLAN
 backslash
 Medical
 pianificata'
@@ -265,6 +266,7 @@ template
 SHOULD
 BSON
 Tag
+Continuous
 pdftotext
 sep
 Seq
@@ -296,9 +298,9 @@ shift
 inner
 populate
 UCU
+nell'index
 NodeJS
 NodeJs
-nell'index
 smartphone
 Ubuntu
 Graphical
@@ -317,6 +319,7 @@ Kile
 Language
 Ver
 Sun
+with
 Maap
 MaaP
 MaaS
@@ -478,6 +481,7 @@ Document
 system
 Angular
 fgdfgdfgd
+ACT
 title
 dell'index
 Casiraghi

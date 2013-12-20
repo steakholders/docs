@@ -5,6 +5,8 @@
 
 # Non ignorare i documenti ufficiali
 !ufficiali/*.pdf
+!ufficiali/*/*.pdf
+
 # Ignora i build
 build
 

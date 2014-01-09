@@ -49,6 +49,18 @@ for tex_file in *.tex; do
 	if [ -n "$mispelled" ]; then
 		eval "aspell check \"$tex_file\" $aspell_parameters"
 		
+		# Riordina il dizionario aspell-personal per facilitare i merge automatici
+		head_personal=$(head -n 1 "$aspell_personal")
+		body_personal=$(tail -n +2 "$aspell_personal" | sort -s)
+		echo "$head_personal" > "$aspell_personal"
+		echo -n "$body_personal" >> "$aspell_personal"
+		
+		# Riordina il dizionario aspell-replacements per facilitare i merge automatici
+		head_repl=$(head -n 1 "$aspell_repl")
+		body_repl=$(tail -n +2 "$aspell_repl" | sort -s)
+		echo "$head_repl" > "$aspell_repl"
+		echo -n "$body_repl" >> "$aspell_repl"
+		
 		mispelled=$(cat "$tex_file" | eval "aspell list \"$tex_file\" $aspell_parameters")
 		
 		# Se la variabile non è vuota

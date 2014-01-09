@@ -1,18 +1,18 @@
 personal_repl-1.1 it 0 
-liberia libreria
-sè sé
-dellanno dell'anno
-verrano verranno
-grupp gruppo
-ec ecc
-allìapplicazione all'applicazione
-un'apposito un apposito
-dell'applicatione dell'applicazione
-partecipandi Partecipanti
-rischesto richiesto
-dell'aministratore dell'amministratore
-ia La
-sarnno saranno
 all'anilisi all'analisi
+allìapplicazione all'applicazione
+dell'aministratore dell'amministratore
+dell'applicatione dell'applicazione
+dellanno dell'anno
+ec ecc
+grupp gruppo
+ia La
+liberia libreria
+partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
+rischesto richiesto
+sarnno saranno
+sè sé
+un'apposito un apposito
+verrano verranno

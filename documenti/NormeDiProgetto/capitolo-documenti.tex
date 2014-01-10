@@ -98,27 +98,22 @@ Verrà adottata una numerazione della forma
 Riguardo a \textbf{\{X\}}:
 \begin{itemize}
  \item Parte da 1;
- \item Viene incrementato dal Responsabile di Progetto ogni volta che si supera una milestone;
- \item È limitato superiormente dal numero di milestone.
+ \item Viene incrementato dal Responsabile di Progetto quando approva il documento;
+ \item Quando viene incrementato y e z sono riportati a zero.
 \end{itemize}
 
 Riguardo a \textbf{\{Y\}}:
 \begin{itemize}
- \item Parte da 1;
- \item Può assumere soltanto i seguenti valori numerici:
- \begin{enumerate}
-  \item[1] \textbf{Stesura}: viene impostato da chi fa variare l'indice \{X\}, solo quando tale indice cambia;
-  \item[2] \textbf{Verifica}: viene impostato dal primo Verificatore al termine della prima attività di verifica, solo se prima l'indice valeva 1. Non esclude che successivamente avvengano altre stesure, manterranno però questo indice;
-  \item[3] \textbf{Approvato}: viene impostato dal Responsabile di Progetto quando approva il documento, solo se prima l'indice valeva 2.
- \end{enumerate}
+ \item Parte da 0;
+ \item Viene incrementato dal verificatore del documento ad ogni verifica;
+ \item Quando viene incrementato z è riportato a zero;
+ \item Non è limitato superiormente.
 \end{itemize}
 
 Riguardo a \textbf{\{Z\}}:
 \begin{itemize}
- \item Parte da 1;
- \item Viene reimpostato a 1 dalla stessa persona che fa variare l'indice \{Y\}, solo quando tale indice cambia;
- \item Viene incrementato dal redattore ogni volta che il documento viene modificato in modo significativo;
- \item Viene incrementato dal Verificatore al termine di ogni verifica. Nella descrizione deve specificare se la verifica ha trovato anomalie o no;
+ \item Parte da 0;
+ \item Viene incrementato ad ogni modifica dalla persona che modifica il documento;
  \item Non è limitato superiormente.
 \end{itemize}
 

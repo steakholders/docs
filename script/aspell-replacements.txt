@@ -2,11 +2,13 @@ personal_repl-1.1 it 0
 all'anilisi all'analisi
 allìapplicazione all'applicazione
 dell'aministratore dell'amministratore
-dell'applicatione dell'applicazione
 dellanno dell'anno
+dell'applicatione dell'applicazione
 ec ecc
+erraro errato
 grupp gruppo
 ia La
+l'emal l'email
 liberia libreria
 partecipandi Partecipanti
 piu' PIÙ

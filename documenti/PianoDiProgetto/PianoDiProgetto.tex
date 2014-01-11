@@ -16,7 +16,6 @@
 
 \clearpage
 
-\include{capitolo-organigramma}
 \include{capitolo-introduzione}
 \include{capitolo-pianificazione}
 \include{capitolo-suddivisionelavoro}
@@ -24,6 +23,10 @@
 \include{capitolo-analisirischi}
 
 \appendix
-%\include{appendice-A.tex}
+\addappheadtotoc
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+\input{appendice-organigramma.tex}
 
 \end{document}

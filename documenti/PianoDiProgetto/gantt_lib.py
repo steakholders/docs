@@ -16,6 +16,11 @@ class GanttException(Exception):
 def warning(message):
 	print "/!\\ ATTENZIONE: "+message
 
+def pedantic_warning(message):
+	disable = False
+	if disable: return
+	print "/!\\ ATTENZIONE: "+message
+
 
 class Factory:
 	singleton_tw_client = None
@@ -174,6 +179,11 @@ class Project:
 					
 					if len(responsible_ids) == 1:
 						responsible = self.people[responsible_ids[0]]
+
+				if responsible == None and PEDANTIC:
+					pedantic_warning('Non è stato assegnato nessuno al task "{task_name}"'.format(
+						task_name = task["content"]
+					))
 					
 				new_task = Factory.createTask(self, task["id"], task["start-date"], task["due-date"], task["content"], responsible)
 				self.addTask(task["id"], new_task)

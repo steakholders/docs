@@ -3,11 +3,13 @@
 
 from gantt_lib import Factory
 
-project = Factory.createProject("steakholders", 65465)
+project = Factory.createProject("steakholders", id=65465)
 project.load()
 
-print "Milestone: {num}".format(num=len(project.milestones))
-print "Persone: {num}".format(num=len(project.people))
-print "Ruoli: {num}".format(num=len(project.roles))
-print "TaskList: {num}".format(num=len(project.tasklists))
+print "Riepilogo progetto"
+print "------------------"
+print "Milestone totali: {num}".format(num=len(project.milestones))
+print "Persone totali: {num}".format(num=len(project.people))
+print "Ruoli totali: {num}".format(num=len(project.roles))
+print "TaskList aperte: {num}".format(num=len(project.tasklists))
 print "Task aperti: {num}".format(num=len(project.tasks))

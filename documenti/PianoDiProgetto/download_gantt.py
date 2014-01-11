@@ -2,7 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 from __future__ import division
-import heapq
+from Queue import PriorityQueue
+from collections import namedtuple
 
 from gantt_lib import Factory, warning, pedantic_warning, error
 
@@ -53,6 +54,7 @@ def testTasks(project):
 def testPerson(project):
 	printTitle("Controllo vincoli sulle persone")
 	
+	# Visualizza informazioni
 	for person in project.getPeople():
 		tasks = [t for t in project.getTasks() if t.responsible == person]
 		hours = sum([t.hours for t in tasks])
@@ -60,6 +62,7 @@ def testPerson(project):
 
 	print
 
+	# Controlla vincoli sulle ore di lavoro
 	for person in project.getPeople():
 		tasks = [t for t in project.getTasks() if t.responsible == person]
 		hours = sum([t.hours for t in tasks])
@@ -77,6 +80,50 @@ def testPerson(project):
 				name=person.name,
 				max=MAX_HOURS
 			))
+
+def testConcurrentTask(project):
+	printTitle("Controllo che tutti abbiano da fare un solo task alla volta")
+	
+	# Controlla che tutti abbiano da fare un solo task alla volta
+	for person in project.getPeople():
+		tasks = [t for t in project.getTasks() if t.responsible == person]
+		
+		Range = namedtuple('Range', ['date', 'edge'])
+		queue = PriorityQueue()
+		start = 0
+		end = 1
+
+		for task in tasks:
+			queue.put(Range(date=task.start, edge=start))
+			queue.put(Range(date=task.end, edge=end))
+
+		open_task = 0
+		while not queue.empty():
+			(date, edge) = queue.get()
+			current_date = date
+
+			# Esamina tutti i task di questo giorno
+			while date == current_date:
+				if edge == start:
+					open_task += 1
+				if edge == end:
+					open_task -= 1
+				date = None
+
+				if not queue.empty():
+					(date, edge) = queue.get()
+			
+			if date is not None:
+				queue.put(Range(date=date, edge=edge))
+
+			# Controlla se ci sono troppi task aperti
+			if open_task < 0 or open_task > 1:
+				warning("{nome} ha più di un task ({num}) segnato per il giorno {date}".format(
+					nome = person.name,
+					num = open_task,
+					date = current_date
+				))
+				break
 
 def estimateCosts(project):
 	printTitle("Controllo vincoli sul preventivo")
@@ -134,4 +181,6 @@ printTaskLists(project)
 
 testTasks(project)
 testPerson(project)
+testConcurrentTask(project)
+
 estimateCosts(project)

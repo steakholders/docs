@@ -10,7 +10,6 @@ import urllib2, base64
 import json
 from os import path
 from pprint import pprint
-from collections import namedtuple
 
 DEFAULT_HOURS_PER_DAY = 2
 
@@ -136,9 +135,6 @@ class Task:
 		self.dependencies.update({
 			dependency_id: dependency
 		})
-
-	def getRange(self):
-		return namedtuple('Range', ['start', 'end'])(start=self.start, end=self.end)
 
 class TaskList:
 	def __init__(self, project, id, name, milestone):

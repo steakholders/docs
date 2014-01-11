@@ -8,32 +8,60 @@
 I dati verranno prelevati da \glossario{MongoDB}, un sistema gestionale di base di dati di tipo \glossario{NoSQL}. La realizzazione della componente server di \ProjectName{} include l'utilizzo di \textit{\glossario{Node.js}}, un \glossario{framework} \glossario{event-driven} per il motore \glossario{Javascript} V8. Per la realizzazione dell'infrastruttura della \glossario{web application} generata dallo sviluppatore \ProjectName{} include \textit{\glossario{Express}}, un framework basato su \glossario{Node.js} che mette a disposizione una serie di caratteristiche robuste per la creazione di pagine web. L'interfacciamento tra \glossario{MongoDB} e \glossario{Node.js} è supportato da \glossario{Mongoose.js}, che si occupa della modellazione dei dati dell'applicazione e risolve il problema dell'assenza di vincoli di integrità referenziale di \glossario{MongoDB}.
 
 	\subsection{Funzioni del Prodotto}
-	Il prodotto \ProjectName{} mette a disposizione un linguaggio astratto (\glossario{DSL}) con il quale lo sviluppatore può definire le pagine web da visualizzare. Tramite \ProjectName{} lo sviluppatore può generare nuovi progetti e definire le varie \textit{\glossario{Collection}} che l'esperto \glossario{business} andrà a visualizzare. Il linguaggio definito dal \glossario{framework} deve permettere allo sviluppatore di definire diverse proprietà sulle \textit{\glossario{Collection-index}} e \textit{\glossario{Collection-show}}. Per quanto riguarda la \textit{\glossario{Collection-index}} deve essere possibile definire:
+	Il prodotto \glossario{MaaP Framework} mette a disposizione un linguaggio astratto \glossario{DSL} (Domain Specific Language) con il quale lo sviluppatore potrà:
 	\begin{itemize}
-		\item Una serie di attributi da visualizzare;
-		\item Un ordinamento;
-		\item Un eventuale limite di elementi da visualizzare.
-	\end{itemize}
-	Per quanto riguarda invece la \textit{\glossario{Collection-show}} deve essere possibile definire:
-	\begin{itemize}	
-		\item Una serie di attributi da visualizzare;
-		\item Su quali attributi eseguire la funzione \textit{\glossario{populate}} di \glossario{MongoDB} necessarie per risolvere i riferimenti ad altri \glossario{Document}. 	
+		\item Creare un nuovo progetto comprensivo di:
+			\begin{itemize}
+			\item Directory di descrizione delle pagine web;
+			\item File di configurazione;
+			\item Librerie di sistema necessarie;
+			\item Sistema di autenticazione. 
+			\end{itemize}
+		\item Configurare la connessione al database delle credenziali utente e al database delle \glossario{Collection};
+		\item Registrare nuove \glossario{Collection} con la possibilità di configurare:
+		\begin{itemize}
+		\item Il nome della \glossario{Collection};
+		\item Un eventuale limite di elementi da visualizzare;
+		\item La relativa \glossario{index-page};
+		\item La relativa \glossario{show-page};
+		\end{itemize}
 	\end{itemize}
 	
-Lo sviluppatore fondamentalmente eseguirà la creazione di un nuovo progetto e di una nuova \textit{\glossario{Collection}} da \glossario{linea di comando}, per poi andare a modificare manualmente i file di configurazione del progetto.
+	Le pagine web generate da \glossario{MaaP Framework} compongono \glossario{MaaP Application}, la quale mette a disposizione dell'utente la possibilità di:
+	\begin{itemize}
+	\item Visualizzare la index-page di una \glossario{Collection} all'interno della quale sarà possibile:
+	\begin{itemize}
+		\item Visualizzare tutti i \glossario{Document} relativi alla \glossario{Collection}
+		\item Definire la funzione \textit{\glossario{populate}} di \glossario{MongoDB} necessaria per risolvere i riferimenti ad altri \glossario{Document}. 
+		\item Creare un nuovo \glossario{Document} nel caso in cui l'utente abbia permessi di scrittura;
+		\item Selezionare per ogni \glossario{Document} una chiave che rimanda alla corrispondente show-page.
+	\end{itemize}
+	
+	\item Visualizzare la show-page di un \glossario{Document} nella quale verranno mostrati tutti i suoi attributi. Nel caso l'utente abbia i permessi di scrittura, può modificare gli attributi del \glossario{Document} e 
+	\end{itemize}
 		
 	\subsection{Caratteristiche degli utenti}
-	L'utente principale che interagisce con il prodotto offerto è uno \glossario{sviluppatore} con esperienza di programmazione che, tramite un linguaggio \glossario{DSL} fornito da \ProjectName{} sarà in grado di generare applicazioni web rivolte all'utente esperto di business. In particolare le applicazioni generate possono essere utilizzate da due tipologie di utenti:
+	L'utente principale che interagisce con il \glossario{Framework MaaP} è lo
 	\begin{itemize}
-		\item \textbf{"\textit{user}"}, il quale gode di permessi di sola lettura delle pagine;
-		\item \textbf{"\textit{admin}"}, il quale ha gli stessi privilegi di uno "\textit{user}" e inoltre può:
+		\item \textbf{"\textit{Sviluppatore}"}, il quale, tramite un linguaggio \glossario{DSL} fornito da \ProjectName{}, sarà in grado di generare l'applicazione web rivolta all'utente esperto di business.
+	\end{itemize}		
+	 
+	L'\glossario{Applicazione MaaP} invece potrà essere utilizzata da due tipologie di utenti:
+	\begin{itemize}
+		\item \textbf{"\textit{Utente}"}, il quale gode di permessi di sola lettura delle pagine;
+		\item \textbf{"\textit{Admin}"}, il quale ha gli stessi privilegi di uno "\textit{Utente}" e inoltre può:
 		\begin{itemize}
 			\item creare o rimuovere utenti;
 			\item elevare o declassare utenti al livello di "\textit{admin}";
 			\item scrivere sul \glossario{database} creando o modificando indici.
 		\end{itemize}		 	
 	\end{itemize}
-	
+
+Infine il servizio \glossario{MaaS} potrà essere utilizzato da
+	\begin{itemize}
+		\item \textbf{"\textit{Utente MaaS}"}, il quale usufruirà del servizio per la creazione di pagine web.
+	\end{itemize}
+		
 	\subsection{Vincoli generali}
 	Lo sviluppatore per utilizzare \ProjectName{} deve aver installato correttamente il \glossario{framework}, il quale richiede a sua volta l'installazione di tutto lo \glossario{stack tecnologico} sui cui esso si basa:
 	\begin{itemize}

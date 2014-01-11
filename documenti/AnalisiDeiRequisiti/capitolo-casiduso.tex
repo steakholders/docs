@@ -26,7 +26,7 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
 \subsubsection{UCU - Operazioni ad alto livello}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.32]{UML/UCU - Operazioni ad alto livello.png}
+      \includegraphics[scale=0.16]{UML/UCU - Operazioni ad alto livello.png}
       \caption{UCU - Operazioni ad alto livello}
       \end{center} 
     \end{figure}    
@@ -46,7 +46,8 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
 L'Utente autenticato in qualsiasi punto dell'applicazione può accedere alle seguenti funzionalità: accedere alla Dashboard, effettuare il Logout , può scegliere una qualsiasi collection presente e può modificare i propri dati. 
 L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gli utenti creandone di nuovi o modificandoli ed inoltre può gestire nuovi indici. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione Maap è funzionante e pronta all'utilizzo.\\ 
+          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo.
+Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione o registrazione, mentre per l'utente autenticato disporrà la corrispondente pagina dashboard.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente vuole eseguire. \\ 
           \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline
@@ -84,9 +85,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password. L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password. L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione è pronta a ricevere i dati e nel database delle credenziali è presente l'account dell'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone la pagina di autenticazione all'utente non autenticato fornendo un apposito form per l'inserimento delle credenziali.\\ 
           
           \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\ 
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline
@@ -138,7 +139,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \egroup
 \end{center}
 
-\subsubsection{UCU2 - Credenziali errate} 
+\subsubsection{UCU2- Visualizzazione messaggio errore per credenziali errate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -146,7 +147,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU2 - Credenziali errate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU2- Visualizzazione messaggio errore per credenziali errate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -154,7 +155,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione ha verificato le credenziali inserite dall'utente.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione predispone la visualizzazione di un messaggio di errore. \\ 
+          \textbf{Postcondizioni} & L'applicazione predispone la visualizzazione di un messaggio di errore e non autentica l'utente al sistema. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -173,9 +174,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato può eseguire il logout dall'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell l'utente la possibilità di logout.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha una sessione attiva dell'utente autenticato e mette a disposizione a quest'ultimo la possibilità di effettuare il logout.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha eseguito il logout richiesto dall'utente. \\ 
+          \textbf{Postcondizioni} & L'applicazione ha eseguito il logout richiesto dall'utente chiudendo la sessione di quest'ultimo. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -194,9 +195,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente intende recuperare la password d'accesso all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente la possibilità di recupero password.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente non autenticato la possibilità di recupero password.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per il recupero password richiesta dall'utente. \\ 
+          \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per il recupero password richiesta dall'utente non autenticato. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -224,7 +225,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           
           \textbf{Precondizioni}  & L'applicazione predispone la possibilità di registrazione.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha creato un nuovo account utente. \\ 
+          \textbf{Postcondizioni} & L'applicazione ha creato un nuovo account utente assegnandogli di default il livello "utente". \\ 
           \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce l'email (UCU5.1);  \newline
 2. L'utente non autenticato inserisce la password (UCU5.2). \\
            \textbf{Scenari Alternativi} & 1. L'utente non autenticato interrompe l'operazione di registrazione non creando un nuovo account. \\
@@ -232,7 +233,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \egroup
 \end{center}
 
-\subsubsection{UCU6 - Registrazione fallita} 
+\subsubsection{UCU6 - Visualizzazione messaggio errore per Registrazione fallita} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -240,7 +241,7 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU6 - Registrazione fallita}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU6 - Visualizzazione messaggio errore per Registrazione fallita}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -275,9 +276,9 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
           \textbf{Scopo e Descrizione} & L'admin può visualizzare i suggerimenti proposti sugli indici e può decidere di aggiungerli.  \newline
 Gli indici già presenti possono essere eliminati. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'admin la pagina per gestire gli indici.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'admin la pagina per gestire gli indici sulla base delle query più utilizzate.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha fornito all'admin le funzionalità di gestione degli indici. \\ 
+          \textbf{Postcondizioni} & L'applicazione ha creato gli indici selezionati dall'admin. \\ 
           \textbf{Flusso Principale} & 1. La pagina di gestione visualizza i suggerimenti per la creazione degli indici (UCU7.1);  \newline
 2. La pagina di gestione permette all'admin la creazione degli indici suggeriti (UCU7.2);  \newline
 3. La pagina di gestione permette all'admin l'eliminazione degli indici suggeriti (UCU7.2).  \newline \\
@@ -361,7 +362,7 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di Dashboard. \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di Dashboard nella quale potrà aver accesso alle varie funzionalità presenti. \\ 
           
           \textbf{Precondizioni}  & L'applicazione predispone la pagina di Dashboard.\\ 
           
@@ -370,11 +371,11 @@ Gli indici già presenti possono essere eliminati. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9 - Visualizzazione Collection Index}    
+\subsubsection{UCU9 - Apertura Collection Index}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.16]{UML/UCU9 - Visualizzazione Collection Index.png}
-      \caption{UCU9 - Visualizzazione Collection Index}
+      \includegraphics[scale=0.16]{UML/UCU9 - Apertura Collection Index.png}
+      \caption{UCU9 - Apertura Collection Index}
       \end{center} 
     \end{figure}    
     
@@ -385,7 +386,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9 - Visualizzazione Collection Index}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9 - Apertura Collection Index}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -393,9 +394,9 @@ Gli indici già presenti possono essere eliminati. \\
 Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
 L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Document}.  \newline \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzare Lola \glossario{Collection}.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzare la \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha visualizzato la \glossario{Collection-Index} selezionata dall'utente. \\  \textbf{Scenari Alternativi} & 1. L'utente autenticato può visualizzare la show-page relativa ad un \glossario{Document} (UCU9.1);  \newline
+          \textbf{Postcondizioni} & L'applicazione ha visualizzato la \glossario{Collection-Index} ed ha recepito le richieste che l'utente desidera eseguire. \\  \textbf{Scenari Alternativi} & 1. L'utente autenticato può aprire la show-page relativa ad un \glossario{Document} (UCU9.1);  \newline
 2. L'utente autenticato può filtrare la  \glossario{Collection} (UCU9.2);  \newline
 3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);  \newline
 4. L'Admin può modificare un \glossario{Document} (UCU9.4);  \newline
@@ -404,11 +405,11 @@ L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Docu
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1 - Visualizzazione show-page Document}    
+\subsubsection{UCU9.1 - Apertura show-page Document}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.16]{UML/UCU9.1 - Visualizzazione show-page Document.png}
-      \caption{UCU9.1 - Visualizzazione show-page Document}
+      \includegraphics[scale=0.16]{UML/UCU9.1 - Apertura show-page Document.png}
+      \caption{UCU9.1 - Apertura show-page Document}
       \end{center} 
     \end{figure}    
     
@@ -419,7 +420,7 @@ L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Docu
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1 - Visualizzazione show-page Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1 - Apertura show-page Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -524,6 +525,27 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
+\subsubsection{UCU9.1.5 - Annulla modifica Document} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.5 - Annulla modifica Document}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Admin \\ 
+          \textbf{Scopo e Descrizione} & L'Utente Admin decide di annullare la modifica al Document. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema ha visualizzato correttamente la pagina di modifica del Document all'Admin.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha annullato correttamente le modifiche al Document. \\ 
+      \end{longtable}
+      \egroup
+\end{center}
+
 \subsubsection{UCU9.2 - Filtra risultati} 
       %Tabella 
       \begin{center}
@@ -536,7 +558,9 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può filtrare i \glossario{Document} mostrati dalla \glossario{Collection-Index}. \\ 
+          \textbf{Scopo e Descrizione} & Per ciascun tipo di dato utilizzato dalla libreria Mongoose (Number, Data, String) sarà possibile filtrare i valori per range o per testo contenuto.
+L'utente può filtrare i \glossario{Document} mostrati dalla \glossario{Collection-Index} in base agli attributi che il Document possiede.
+Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\ 
           
           \textbf{Precondizioni}  & L'applicazione  mette a disposizione (se disponibili) i filtri nella \glossario{Collection-Index}.\\ 
           
@@ -582,7 +606,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           
           \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i \glossario{Document} della \glossario{Collection} predisponendo la possibilità di modifica per ognuno di essi.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\  \textbf{Scenari Alternativi} & 1. L'Admin non ha modificato il \glossario{Document}. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\  \textbf{Esclusioni} & 1. L'Admin non ha modificato il \glossario{Document}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -620,11 +644,32 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin può creare un nuovo \glossario{Document}. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può creare un nuovo \glossario{Document} dando come informazione gli attributi con i quali il Document è strutturato. \\ 
           
           \textbf{Precondizioni}  & L'applicazione è pronta a gestire le richieste dell'Admin e permette la creazione di nuovi \glossario{Document}.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha creato il nuovo \glossario{Document}. \\ 
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU9.7 - Annulla modifica Document} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.7 - Annulla modifica Document}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Admin \\ 
+          \textbf{Scopo e Descrizione} & L'Utente Admin decide di annullare la modifica al Document. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema ha visualizzato correttamente la pagina di modifica del Document all'Admin.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha annullato correttamente le modifiche al Document. \\ 
       \end{longtable}
       \egroup
 \end{center}
@@ -820,7 +865,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin può selezionare il livello del nuovo utente, che potrà essere utente normale o Admin. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin può selezionare il livello del nuovo utente, che potrà essere il livello "utente" o "admin". \\ 
           
           \textbf{Precondizioni}  & Il sistema mette a disposizione dell'Admin un campo selezionabile dove poter definire il livello del nuovo utente.\\ 
           
@@ -841,7 +886,12 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita. \\ 
+          \textbf{Scopo e Descrizione} & L'Admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita.
+L'operazione di creazione utente può fallire nei seguenti casi : \newline
+-Formato email errato;  \newline
+-Email già presente;  \newline
+-Formato password errato;  \newline
+-Fallimento richiesta di connessione al database delle credenziali utenti. \\ 
           
           \textbf{Precondizioni}  & Il sistema ha rilevato degli errori nell'inserimento di un nuovo utente.\\ 
           
@@ -850,11 +900,11 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3 - Visualizzazione show-page Utente}    
+\subsubsection{UCU11.3 - Apertura show-page Utente}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.16]{UML/UCU11.3 - Visualizzazione show-page Utente.png}
-      \caption{UCU11.3 - Visualizzazione show-page Utente}
+      \includegraphics[scale=0.16]{UML/UCU11.3 - Apertura show-page Utente.png}
+      \caption{UCU11.3 - Apertura show-page Utente}
       \end{center} 
     \end{figure}    
     
@@ -865,7 +915,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3 - Visualizzazione show-page Utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3 - Apertura show-page Utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1012,7 +1062,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{Maap} è funzionante e pronto ad eseguire le azioni dello sviluppatore.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni sulle azioni che l’utente desidera eseguire. \\
-          \textbf{Flusso Principale} & 1. Lo Sviluppatore crea un nuovo progetto (UCS1); \newline
+          \textbf{Flusso Principale} & 1. Lo sviluppatore crea un nuovo progetto (UCS1); \newline
 2. Lo sviluppatore dopo aver creato il nuovo progetto può configurare i database (UCS2); \newline
 3. Lo sviluppatore con il nuovo progetto creato può gestire le \glossario{Collection} che desidera generare (UCS3). \\
           
@@ -1722,7 +1772,7 @@ Può poi configurare le \glossario{Collection} create. \\
 \subsubsection{UCM - Operazioni ad alto livello} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.32]{UML/UCM - Operazioni ad alto livello.png}
+      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello.png}
       \caption{UCM - Operazioni ad alto livello}
       \end{center} 
     \end{figure}  
@@ -1944,7 +1994,7 @@ L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende modificare L'Email. \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende modificare l'email. \\ 
           
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} predispone la pagina di modifica profilo ed attente le modifiche dell'utente.\\ 
           

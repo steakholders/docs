@@ -83,6 +83,9 @@ grep_test "[[:digit:]]{2}-[[:digit:]]{2}-[[:digit:]]{4}" "Riscrivere la data nel
 grep_test "\.pdf" "Strano che ci sia un '.pdf'." $(find . -name '*.tex')
 #grep_test "\"" "Usare le vergolette \`\`...'' di LaTeX." $(find . -name '*.tex')
 
+# Correzioni Tullio
+grep_test "[Oo]bbiettiv[oi]" "Sostituire con una sola 'b'" $(find . -name '*.tex')
+
 # Controlla che ci sia prima il nome e poi il cognome
 grep_test "Poli Federico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
 grep_test "Rotundo Enrico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')

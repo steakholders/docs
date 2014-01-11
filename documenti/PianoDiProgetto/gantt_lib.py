@@ -180,7 +180,7 @@ class Project:
 					if len(responsible_ids) == 1:
 						responsible = self.people[responsible_ids[0]]
 
-				if responsible == None and PEDANTIC:
+				if responsible == None:
 					pedantic_warning('Non è stato assegnato nessuno al task "{task_name}"'.format(
 						task_name = task["content"]
 					))

@@ -6,6 +6,7 @@ from gantt_lib import Factory
 project = Factory.createProject("steakholders", id=65465)
 project.load()
 
+print
 print "Riepilogo progetto"
 print "------------------"
 print "Milestone totali: {num}".format(num=len(project.milestones))

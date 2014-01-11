@@ -7,11 +7,9 @@ from rauth import OAuth1Service
 from os import path
 import thread
 import time
-import sys
 import json
 
 # globale
-server_port = 8080
 verifier = None
 
 class AuthHandler(BaseHTTPServer.BaseHTTPRequestHandler):
@@ -31,7 +29,7 @@ def runAuthServer(port):
 	httpd.serve_forever()
 
 class LucidchartClient:
-	def __init__(self, session_file="~/.lucidchart", callback_url=""):
+	def __init__(self, session_file="~/.lucidchart", callback_url="", server_port=8088):
 		"""
 		session_file: il file in cui memorizzare i token di accesso
 		callback_url: l'indirizzo a cui è raggiungibile il server in ascolto sulla porta {server_port} di questo computer
@@ -100,7 +98,7 @@ class LucidchartClient:
 			session = self.new_session()
 		return session
 	
-	def download_image(self, document, destination):
+	def download_image(self, document, destination, width=600, pagenum=1):
 		"""
 		document: l'id del documento di lucidchart
 		destination: la posizione in cui salvare le immagini
@@ -108,26 +106,8 @@ class LucidchartClient:
 		session = self.init_session()
 		
 		print "Scarico il documento {docid} in {destination} ...".format(docid=document, destination=destination)
-		r = session.get('https://www.lucidchart.com/documents/image/{docid}/{pagenum}/{width}/{square}'.format(docid=document, pagenum=1, width=600, square=0), verify=True)
+		r = session.get('https://www.lucidchart.com/documents/image/{docid}/{pagenum}/{width}/{square}'.format(docid=document, pagenum=pagenum, width=width, square=0), verify=True)
 		
 		out_file = open(destination,"w")
 		out_file.write(r.content)
 		out_file.close()
-
-
-if len(sys.argv) <= 1:
-	print "Alla prima esecuzione bisogna passare come primo argomento l'indirizzo a cui è raggiungibile la porta {server_port} di questo computer".format(server_port=server_port)
-	callback_url = None
-else:
-	callback_url = sys.argv[1]
-
-lc = LucidchartClient(callback_url = callback_url)
-
-
-lc.download_image("4f51-1824-52ae25da-a646-74fd0a00d457", "uml-processi/Pianificazione_compito_e_verifica.png")
-lc.download_image("471f-1654-52ae2a57-ad48-71840a005f9d", "uml-processi/Richiesta_di_modifica_e_segnalazione_bug.png")
-lc.download_image("4aa8-02e4-52ae2830-9412-5cb50a0086f4", "uml-processi/Valutazione_delle_modifiche.png")
-lc.download_image("4557-ff54-52ae279d-8ccc-58080a00c462", "uml-processi/Esecuzione_verifica.png")
-lc.download_image("45ee-6c9c-52ae271d-88b0-07070a0086f4", "uml-processi/Esecuzione_compito.png")
-lc.download_image("4901-7cc4-52ae1b50-a03c-42480a0086f4", "uml-processi/Creazione_compito.png")
-

@@ -1,25 +1,35 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from __future__ import division
+
+import re
+from dateutil.parser import parse as date_parse
+from datetime import date
 import urllib2, base64
 import json
 from os import path
 from pprint import pprint
+
+DEFAULT_HOURS_PER_DAY = 2
 
 class GanttException(Exception):
 	def __init__(self, message):
 		self.message = message
 
 	def __str__(self):
-		return "/!\\ ERROR: "+self.message
+		return "/!\\ ERROR: "+self.message.encode('utf-8')
+
+def error(message):
+	raise GanttException(message)
 
 def warning(message):
-	print "/!\\ ATTENZIONE: "+message
+	print "/!\\ ATTENZIONE: "+message.encode('utf-8')
 
 def pedantic_warning(message):
-	disable = False
+	disable = True
 	if disable: return
-	print "/!\\ ATTENZIONE: "+message
+	print "/!\\ ATTENZIONE: "+message.encode('utf-8')
 
 
 class Factory:
@@ -61,10 +71,10 @@ class Person:
 	def __init__(self, project, id, name):
 		self.project = project
 		self.id = id
-		self.name = name.encode("utf8")
+		self.name = name
 
 	def __repr__(self):
-		return "<Person(#{id} {name})>".format(id=self.id, name=self.name)
+		return u"<Person(#{id} {name})>".format(id=self.id, name=self.name).encode('utf-8')
 
 class Role:
 	def __init__(self, project, name, hour_cost):
@@ -73,14 +83,53 @@ class Role:
 		self.hour_cost = hour_cost
 
 class Task:
-	def __init__(self, project, id, start, end, name, responsible=None):
+	def __init__(self, project, tasklist, id, start, end, name, responsible=None, role=None, hours=None):
 		self.project = project
+		self.tasklist = tasklist
 		self.id = id
-		self.start = start
-		self.end = end
+		self.start = date_parse(start)
+		self.end = date_parse(end)
 		self.name = name
 		self.dependencies = {}
 		self.responsible = responsible
+		self.role = role
+		self.hours = hours
+
+		# Recupera il riferimento al responsabile
+		if isinstance(self.responsible, basestring):
+			self.responsible = self.project.people[self.responsible]
+
+		# Avvisa che non è stato assegnato
+		if self.responsible == None:
+			pedantic_warning(u'Non è stato assegnato nessuno al task "{name}"'.format(name = self.name))
+		
+		# Assegna di default DEFAULT_HOURS_PER_DAY di ore per giorno
+		if self.hours == None:
+			self.hours = (self.end - self.start).days * DEFAULT_HOURS_PER_DAY
+			pedantic_warning(u'Non è stato assegnato un tempo al task "{name}", assumo che richieda {hours} ore'.format(
+				name = self.name,
+				hours = self.hours
+			))
+
+		# Recupera il riferimento al ruolo
+		if isinstance(self.role, basestring):
+			self.role = self.project.roles[self.role]
+		
+		# Se non è stato specificato un ruolo, recupera il ruolo dal nome
+		if self.role == None:
+			matches = re.findall(r"\((\s*\w+\s*)\)", self.name)
+			matches = [x.strip().lower() for x in matches]
+			
+			# Per ogni elemento trovato tra parentesi, partendo dall'ultimo
+			for role_token in matches[::-1]:
+				# Se è tra i ruoli riconosciuti
+				if role_token in self.project.roles:
+					# Recupera il ruolo ed esci dal ciclo for
+					self.role = self.project.roles[role_token]
+					break
+
+		if self.role == None:
+			warning(u"Non è stato assegnato un ruolo al task {nome}".format(nome=self.name))
 
 	def addDependency(self, dependency_id, dependency):
 		self.dependencies.update({
@@ -88,22 +137,38 @@ class Task:
 		})
 
 class TaskList:
-	def __init__(self, project, id, name, milestone=None):
+	def __init__(self, project, id, name, milestone):
 		self.project = project
 		self.id = id
 		self.name = name
 		self.tasks = {}
+		self.milestone = milestone
 
+		if isinstance(self.milestone, basestring):
+			self.milestone = self.project.milestones[self.milestone]
+		
 	def addTask(self, task_id, task):
 		self.tasks.update({
 			task_id: task
 		})
 
+	def getEnd(self):
+		if len(self.tasks) == 0:
+			return None
+
+		return max([x.end for x in self.tasks.values()])
+
+	def getStart(self):
+		if len(self.tasks) == 0:
+			return None
+		
+		return min([x.start for x in self.tasks.values()])
+
 class Milestone:
 	def __init__(self, project, id, deadline, name):
 		self.project = project
 		self.id = id
-		self.deadline = deadline
+		self.deadline = date_parse(deadline)
 		self.name = name
 
 class Project:
@@ -124,12 +189,12 @@ class Project:
 
 	def initRoles(self):
 		self.roles = {
-			"responsabile": Factory.createRole(self, "responsabile", 30),
-			"analista": Factory.createRole(self, "analista", 25),
-			"amministratore": Factory.createRole(self, "amministratore", 20),
-			"progettista": Factory.createRole(self, "progettista", 22),
-			"verificatore": Factory.createRole(self, "verificatore", 15),
-			"programatore": Factory.createRole(self, "programatore", 15)
+			u"responsabile": Factory.createRole(self, u"responsabile", 30),
+			u"analista": Factory.createRole(self, u"analista", 25),
+			u"amministratore": Factory.createRole(self, u"amministratore", 20),
+			u"progettista": Factory.createRole(self, u"progettista", 22),
+			u"verificatore": Factory.createRole(self, u"verificatore", 15),
+			u"programatore": Factory.createRole(self, u"programatore", 15)
 		}
 
 	def addMilestone(self, milestone_id, milestone):
@@ -156,36 +221,33 @@ class Project:
 
 	def initTaskLists(self):
 		tw = Factory.createTeamworkClient(self.company)
-		data = tw.requestJSON("/projects/{project_id}/todo_lists".format(project_id=self.id))
+		data = tw.requestJSON("/projects/{project_id}/todo_lists".format(project_id=self.id), "status=all")
 		
 		for tasklist in data["todo-lists"]:
-			milestone = None
-			if len(tasklist["milestone-id"])> 0:
-				milestone = self.milestones[tasklist["milestone-id"]]
 
-			new_tasklist = Factory.createTaskList(self, tasklist["id"], tasklist["name"], milestone)
+			# Ignora le TaskList senza milestone
+			if len(tasklist["milestone-id"]) == 0:
+				continue
+			
+			new_tasklist = Factory.createTaskList(self, tasklist["id"], tasklist["name"], tasklist["milestone-id"])
 			self.addTaskList(tasklist["id"], new_tasklist)
 
 			for task in tasklist["todo-items"]:
-				responsible = None
+				responsible_id = None
 				if "responsible-party-ids" in task:
 					responsible_ids = task["responsible-party-ids"].split(",")
 					
 					if len(responsible_ids) > 1:
-						raise GanttException('È stato assegnato più di una persona ({responsibles}) al task "{task_name}"'.format(
+						raise GanttException(u'È stato assegnato più di una persona ({responsibles}) al task "{task_name}", lista "{tasklist_name}"'.format(
 							responsibles = ", ".join([self.people[id].name for id in responsible_ids]),
-							task_name = task["content"]
+							task_name = task["content"],
+							tasklist_name = tasklist["name"]
 						))
 					
 					if len(responsible_ids) == 1:
-						responsible = self.people[responsible_ids[0]]
-
-				if responsible == None:
-					pedantic_warning('Non è stato assegnato nessuno al task "{task_name}"'.format(
-						task_name = task["content"]
-					))
-					
-				new_task = Factory.createTask(self, task["id"], task["start-date"], task["due-date"], task["content"], responsible)
+						responsible_id = responsible_ids[0]
+	
+				new_task = Factory.createTask(self, new_tasklist, task["id"], task["start-date"], task["due-date"], task["content"], responsible_id)
 				self.addTask(task["id"], new_task)
 				new_tasklist.addTask(task["id"], new_task)
 
@@ -207,6 +269,11 @@ class Project:
 		for person in data["people"]:
 			self.addPerson(person["id"], Factory.createPerson(self, person["id"], person["first-name"]+" "+person["last-name"]))
 
+	def getTasks(self):
+		return self.tasks.values()
+
+	def getPeople(self):
+		return self.people.values()
 
 
 class TeamworkPMClient:
@@ -228,7 +295,7 @@ class TeamworkPMClient:
 		
 		# Chiedila se è vuota
 		while self.key is None or len(self.key) == 0:
-			self.key = raw_input("Inserire la chiave privata per le API di TeamworkPM del tuo utente: ")	
+			self.key = raw_input(u"Inserire la chiave privata per le API di TeamworkPM del tuo utente: ")	
 
 		# Salva la chiave privata nella home (in chiaro!)
 		out_file = open(self.private_key_file, "w")

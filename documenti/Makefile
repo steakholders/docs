@@ -4,7 +4,9 @@ REPO_DIR = ..
 # Includi i comandi comuni a tutti i makefile.
 include $(REPO_DIR)/script/global.mk
 
-all: test documents
+all:
+	@make test-spelling
+	@make documents
 
 documents:
 	@cd "NormeDiProgetto" && make documents
@@ -17,16 +19,16 @@ documents:
 	@cd "StudioDiFattibilita" && make documents
 	@cd "Verbale2013-12-18" && make documents
 
-test:
-	@cd "NormeDiProgetto" && make test
-	@cd "PianoDiProgetto" && make test
-	@cd "PianoDiQualifica" && make test
-	@cd "Glossario" && make test
-	@cd "LetteraDiPresentazione" && make test
-	@cd "Verbale2013-12-05" && make test
-	@cd "AnalisiDeiRequisiti" && make test
-	@cd "StudioDiFattibilita" && make test
-	@cd "Verbale2013-12-18" && make test
+test-spelling:
+	@cd "NormeDiProgetto" && make test-spelling
+	@cd "PianoDiProgetto" && make test-spelling
+	@cd "PianoDiQualifica" && make test-spelling
+	@cd "Glossario" && make test-spelling
+	@cd "LetteraDiPresentazione" && make test-spelling
+	@cd "Verbale2013-12-05" && make test-spelling
+	@cd "AnalisiDeiRequisiti" && make test-spelling
+	@cd "StudioDiFattibilita" && make test-spelling
+	@cd "Verbale2013-12-18" && make test-spelling
 
 clean:
 	@rm -f *~
@@ -39,4 +41,3 @@ clean:
 	@cd "AnalisiDeiRequisiti" && make clean
 	@cd "StudioDiFattibilita" && make clean
 	@cd "Verbale2013-12-18" && make clean
-

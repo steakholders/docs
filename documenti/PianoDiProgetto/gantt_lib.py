@@ -194,7 +194,7 @@ class Project:
 			u"amministratore": Factory.createRole(self, u"amministratore", 20),
 			u"progettista": Factory.createRole(self, u"progettista", 22),
 			u"verificatore": Factory.createRole(self, u"verificatore", 15),
-			u"programatore": Factory.createRole(self, u"programatore", 15)
+			u"programmatore": Factory.createRole(self, u"programatore", 15)
 		}
 
 	def addMilestone(self, milestone_id, milestone):
@@ -274,6 +274,9 @@ class Project:
 
 	def getPeople(self):
 		return self.people.values()
+
+	def getRoles(self):
+		return self.roles.values()
 
 
 class TeamworkPMClient:

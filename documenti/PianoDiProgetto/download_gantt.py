@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from __future__ import division
+import heapq
+
 from gantt_lib import Factory, warning, pedantic_warning, error
 
 MIN_HOURS = 95
@@ -25,7 +28,7 @@ def printProjectReport(project):
 	print "Task: {num}".format(num=len(project.tasks))
 
 def printTaskLists(project):
-	printTitle("Liste")
+	printTitle("Elenco delle tasklist")
 
 	for l in project.tasklists.values():
 		print "* {nome} da {start} a {end}: {num} task".format(
@@ -35,8 +38,8 @@ def printTaskLists(project):
 			num = len(l.tasks)
 		)
 
-def testMaxWorkHoursPerDay(project):
-	printTitle("testMaxWorkHoursPerDay")
+def testTasks(project):
+	printTitle("Controllo vincoli sui task")
 	
 	for task in project.getTasks():
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
@@ -47,8 +50,8 @@ def testMaxWorkHoursPerDay(project):
 				max_hours = (self.end - self.start).days * MAX_HOURS_PER_DAY
 			))
 
-def testMinMaxWorkHours(project):
-	printTitle("testMinMaxWorkHours")
+def testPerson(project):
+	printTitle("Controllo vincoli sulle persone")
 	
 	for person in project.getPeople():
 		tasks = [t for t in project.getTasks() if t.responsible == person]
@@ -91,7 +94,7 @@ def estimateCosts(project):
 		if role.name == "verificatore":
 			verifier_hours = hours
 
-		print u"- {nome}: {hours} \tore, per un totale di \t{costo} \t€".format(
+		print u"- {nome}: {hours} \tore, per un costo di \t{costo} \t€".format(
 			nome=role.name +"".join([" "]*(14-len(role.name))),
 			hours=hours,
 			costo=cost
@@ -100,7 +103,7 @@ def estimateCosts(project):
 	total_cost = sum(role_cost)
 	total_hours = sum(role_hours)
 	print u"Totale          : {total} €".format(total=total_cost).encode("utf-8")
-	print u"Ore di verifica : {perc}%".format(perc=100*verifier_hours/total_hours).encode("utf-8")
+	print u"Ore di verifica : {perc:.1f} %".format(perc=100*verifier_hours/total_hours).encode("utf-8")
 
 	print
 	
@@ -129,6 +132,6 @@ project.load()
 printProjectReport(project)
 printTaskLists(project)
 
-testMaxWorkHoursPerDay(project)
-testMinMaxWorkHours(project)
+testTasks(project)
+testPerson(project)
 estimateCosts(project)

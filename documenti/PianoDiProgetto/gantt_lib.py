@@ -10,6 +10,7 @@ import urllib2, base64
 import json
 from os import path
 from pprint import pprint
+from collections import namedtuple
 
 DEFAULT_HOURS_PER_DAY = 2
 
@@ -18,18 +19,18 @@ class GanttException(Exception):
 		self.message = message
 
 	def __str__(self):
-		return "/!\\ ERROR: "+self.message.encode('utf-8')
+		return "ERRORE: "+self.message.encode('utf-8')
 
 def error(message):
 	raise GanttException(message)
 
 def warning(message):
-	print "/!\\ ATTENZIONE: "+message.encode('utf-8')
+	print "ATTENZIONE: "+message.encode('utf-8')
 
 def pedantic_warning(message):
 	disable = True
 	if disable: return
-	print "/!\\ ATTENZIONE: "+message.encode('utf-8')
+	print "ATTENZIONE: "+message.encode('utf-8')
 
 
 class Factory:
@@ -135,6 +136,9 @@ class Task:
 		self.dependencies.update({
 			dependency_id: dependency
 		})
+
+	def getRange(self):
+		return namedtuple('Range', ['start', 'end'])(start=self.start, end=self.end)
 
 class TaskList:
 	def __init__(self, project, id, name, milestone):

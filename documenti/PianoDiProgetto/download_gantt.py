@@ -82,7 +82,7 @@ def testPerson(project):
 			))
 
 def testConcurrentTask(project):
-	printTitle("Controllo che tutti abbiano da fare un solo task alla volta")
+	printTitle("Controllo task sovrapposti")
 	
 	# Controlla che tutti abbiano da fare un solo task alla volta
 	for person in project.getPeople():

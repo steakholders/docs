@@ -13,7 +13,7 @@ from lucidchart import LucidchartClient
 ########################################
 
 # 1- scaricare il programma Ngrok http://ngrok.com/
-# 2- sul terminale A eseguire `ngrok 8888`
+# 2- sul terminale A eseguire `ngrok 8888` (8888 è il valore della variabile server_port)
 # 3- copiare l'indirizzo http://xyzxyz.ngrok.com
 # 4- sul terminale B eseguire questo script con l'indirizzo http://xyzxyz.ngrok.com come primo parametro
 #    cioè `python download_uml.py http://xyzxyz.ngrok.com`

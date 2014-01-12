@@ -1,0 +1,325 @@
+\section{Documentazione}
+
+In questo capitolo vengono descritte le regole adottate per la stesura di tutti i documenti necessari al corretto svolgimento del progetto. Dopo un'attenta valutazione delle varie alternative si è scelto di utilizzare il linguaggio di markup \textbf{\LaTeX{}}. La scelta poggia su diverse motivazioni:
+
+\begin{itemize}
+
+	\item È un linguaggio conosciuto da tutti i membri del gruppo;
+	\item Presenta un numero di librerie molto vaste che permettono di realizzare qualsiasi tipo di documento e di personalizzarlo liberamente in modo dettagliato;
+	\item La stesura viene fatta su file testuali e non binari, il che agevola il suo versionamento e permette una facile gestione su repository;
+	\item È un linguaggio molto diffuso nel mondo informatico e scientifico;
+	\item Si può produrre file in formato \glossario{PDF} con estrema facilità grazie al compilatore specifico;
+	\item Permette una facile gestione degli indici e dei glossari.
+	\item Permette di inserire diagrammi di Gantt, rendendo il loro codice tracciabile e facilmente modificabile.
+
+\end{itemize}
+
+\subsection{Template}
+
+Per la stesura dei documenti è stato creato un apposito template \LaTeX{} in cui compaiono tutte le convenzioni sullo stile descritte nel documento corrente. Questo è stato fatto per agevolare il più possibile i componenti del gruppo che andranno a produrre i documenti, in modo che chiunque lavora ad un documento debba preoccuparsi solamente della scrittura del testo senza doversi preoccupare della sua formattazione. 
+
+\subsection{Struttura del documento}
+
+	\subsubsection{Prima pagina}
+	
+	La prima pagina del documento deve essere formattata nel modo seguente:
+	
+	\begin{itemize}
+	
+		\item \textbf{Logo} del gruppo, visibile come primo elemento centrato orizzontalmente in alto;
+		\item Nome del documento, visibile subito dopo il logo, centrato orizzontalmente e marcato come \textbf{titolo};
+		\item Una \textbf{tabella} descrittiva, visibile subito dopo il titolo, centrata orizzontalmente e contenente le seguenti informazioni:
+			\begin{itemize}
+			
+				\item \textbf{Versione} del documento, indicata come da norma;
+				\item I nomi e cognomi dei \textbf{redattori} del documento;
+				\item I nomi e cognomi dei \textbf{verificatori} del documento;
+				\item Il nome e cognome del \textbf{responsabile} di progetto, che ha approvato il documento;
+				\item Il tipo di \textbf{uso} del documento;
+				\item La \textbf{lista di distribuzione} del documento.
+			
+			\end{itemize}
+		\item Una descrizione testuale sommaria del documento, centrata orizzontalmente ed il più possibile sintetica.
+	
+	\end{itemize}
+	
+	\subsubsection{Registro delle modifiche}
+È preferibile che che la numerazione sia continua	
+	La pagina (o le pagine) che seguono devono contenere uno storico di questo documento, in cui verranno riportate tutte le modifiche apportate ad esso. Il registro delle modifiche deve essere composto da una tabella di tante righe quante sono le modifiche apportate ed un numero di colonne pari agli elementi seguenti:
+	
+	\begin{itemize}
+	
+		\item Versione del documento;
+		\item Data della modifica;
+		\item Nome e cognome delle persone coinvolte nella modifica e il ruolo che ricoprono;
+		\item Descrizione concisa della modifica apportata.
+	
+	\end{itemize}
+	
+	\subsubsection{Indice}
+	
+	Ciascun documento deve contenere un suo indice, in modo da agevolare la consultazione e permettere una lettura \textit{ipertestuale} e non necessariamente sequenziale. Ciascun indice deve essere numerato a partire da 1; per ciascuna sottosezione deve esserci un punto di separazione dalla sezione padre e la numerazione deve di volta in volta ripartire. Per quanto riguarda le appendici esse non devono essere numerate ma indicate da una lettera maiuscola che di appendice in appendice verrà incrementata a partire dalla lettera A seguendo l'ordine alfabetico internazionale.
+	
+	\subsubsection{Formattazione generale delle pagine}
+	
+	Ciascuna pagina deve rispettare tutti i margini orizzontali e verticali previsti dal template. Ciascuna pagina, ad eccezione della prima, deve contenere un'\textbf{intestazione} (in alto) ed un \textbf{piè di pagina}. Ciascuna intestazione dovrà essere formattata nel modo seguente:
+
+	\begin{itemize}
+	
+		\item Logo di intestazione del gruppo disposto a sinistra;
+		\item Nome del gruppo affiancato al logo;
+		\item Titolo del progetto corrente assegnato al gruppo subito a destra del nome del gruppo separato da un trattino;
+		\item Numero e titolo della sezione corrente del documento disposto a destra dell'intestazione.
+	
+	\end{itemize}
+	
+	Il piè di pagina sarà strutturato invece nel seguente modo:
+	
+	\begin{itemize}
+	
+		\item Nome e versione del documento corrente, disposto a sinistra;
+		\item Numerazione progressiva della pagina rispetto al totale disposta a destra.
+	
+	\end{itemize}
+	
+	\subsubsection{Note a piè di pagina}
+	
+	Per ciascuna pagina interna se dovessero comparire delle note da esplicare esse vanno indicate in basso a sinistra della pagina corrente, riportate con il loro numero e la loro descrizione.
+
+\subsection{Versionamento}
+
+Ciascun documento deve essere versionato, in modo che chiunque lo utilizzi possa avere una visione specifica della sua storia e delle sue modifiche. Ad ogni versione deve corrispondere una riga nel registro delle modifiche.
+
+Verrà adottata una numerazione della forma
+\begin{center}
+ \textbf{v\{X\}.\{Y\}.\{Z\}}
+\end{center}
+
+Riguardo a \textbf{\{X\}}:
+\begin{itemize}
+ \item Parte da 1;
+ \item Viene incrementato dal Responsabile di Progetto quando approva il documento;
+ \item Quando viene incrementato y e z sono riportati a zero.
+\end{itemize}
+
+Riguardo a \textbf{\{Y\}}:
+\begin{itemize}
+ \item Parte da 0;
+ \item Viene incrementato dal verificatore del documento ad ogni verifica;
+ \item Quando viene incrementato z è riportato a zero;
+ \item Non è limitato superiormente.
+\end{itemize}
+
+Riguardo a \textbf{\{Z\}}:
+\begin{itemize}
+ \item Parte da 0;
+ \item Viene incrementato ad ogni modifica dalla persona che modifica il documento;
+ \item Non è limitato superiormente.
+\end{itemize}
+
+
+\subsection{Definizione di macro personalizzate}
+
+\subsubsection{Costanti}
+
+Tutte le macro \LaTeX{} utilizzate come costanti devono iniziare con la lettera maiuscola. Se il nome della macro è composto da più parole unite allora ciascuna deve avere l'iniziale maiuscola e il resto delle lettere minuscolo. Per esempio, \code{\textbackslash NomeDellaCostante} è un nome di costante valido.
+
+\begin{itemize}
+	\item Le costanti \textbf{utilizzate da due o più documenti} (es. il nome del gruppo) devono essere definite all'inizio del file \file{root/modello/global.tex};
+	
+	\item Le costanti \textbf{utilizzate da un solo documento} (es. titolo) devono essere definite nella cartella del documento, all'inizio del file \file{local.tex};
+\end{itemize}
+	
+\subsubsection{Funzioni}
+
+Tutte le macro \LaTeX{} utilizzate come funzioni devono iniziare con la lettera minuscola. Se il nome della macro è composto da più parole unite allora ciascuna deve avere l'iniziale maiuscola e il resto delle lettere minuscolo Per esempio, \code{\textbackslash nomeDellaFunzione} è un nome di funzione valido.
+
+\begin{itemize}
+	\item Le funzioni \textbf{utilizzate da due o più documenti} (es. il comando che genera la pagina di copertina) devono essere definite nella seconda parte del file \file{root/modello/global.tex};
+	
+	\item Le funzioni \textbf{utilizzate da un solo documento} devono essere definiti nella cartella del documento che lo utilizza, nella seconda parte di \file{local.tex}.
+\end{itemize}
+
+\subsection{Norme tipografiche e convenzioni}
+
+Ciascun documento deve rispettare le norme tipografiche definite nella seguente sezione, in modo da rendere il tutto uniforme. Per le situazioni che non sono coperti dalle seguenti norme è preferibile riferirsi a quanto stabilito dall'Accademia della Crusca (\url{http://www.accademiadellacrusca.it}).
+
+	\subsubsection{Punteggiatura}
+	
+	\begin{itemize}
+
+		\item Ciascuna frase deve essere separata da un \textbf{punto} o da un \textbf{punto virgola};
+		\item Dopo ogni punto vi dev'essere uno spazio prima dell'inizio della frase successiva;
+		\item Ogni frase (ad esclusione di quelle dopo il punto e virgola) deve iniziare con una \textbf{lettera maiuscola};
+		\item Per i \textbf{punti di domanda} e i \textbf{punti esclamativi} valgono le stesse regole per i punti;
+		\item Dopo ogni \textbf{virgola} deve esserci uno spazio che separa la parte restante della frase;
+		\item Dopo ogni \textbf{apostrofo} non deve esserci un carattere di spaziatura;
+		\item Ogni elemento di un elenco puntato deve terminare con un punto e virgola, ad eccezione dell'ultimo che deve terminare con un punto;
+		\item Ogni elemento di un elenco puntato deve iniziare con una lettera maiuscola.
+	
+	\end{itemize}
+	
+	\subsubsection{Stile del testo}
+	
+	Ogni parola di \textbf{glossario} deve essere marcata con una \textit{G} maiuscola a pedice:
+	\begin{center}
+		\glossario{repository}
+	\end{center}
+
+	Ciascuna parola chiave deve essere evidenziata in grassetto. Il \textbf{corsivo} dev'essere utilizzato nei seguenti casi:
+	\begin{itemize}
+	
+		\item \textbf{Citazioni};
+		\item \textbf{Abbreviazioni};
+		\item \textbf{Riferimenti} ad altri documenti;
+		\item \textbf{Parole particolari} solitamente poco usate o conosciute;
+		\item \textbf{Nomi di società o aziende};
+		\item \textbf{Nome di programmi o framework};
+		\item \textbf{Ruoli di progetto};
+		\item \textbf{Fase di progetto};
+		\item \textbf{Nome del progetto};
+		\item \textbf{Nome del gruppo}.
+	\end{itemize}		
+	
+	\subsubsection{Elenchi puntati}
+	
+	È raccomandato che ciascun elenco puntato sia graficamente rappresentato da un \textit{pallino} nella gerarchia principale e da un trattino nella gerarchia secondaria. Ogni elenco puntato corrisponde ad un concetto che va espresso in modo sintetico. È normalmente preferibile usare elenchi puntati piuttosto che frasi lunghe e discorsive.
+	
+	\subsubsection{Formati}
+	
+	\begin{itemize}
+	
+		\item Quando ci si riferisce a una \textbf{data}, se non diversamente specificato, bisogna applicare il formato descritto dallo standard ISO 8601:
+		\begin{center}
+
+			\textit{AAAA-MM-GG}
+		
+		\end{center}
+		dove:
+		\begin{itemize}
+
+			\item \textit{AAAA} si riferisce all'anno utilizzando quattro cifre;			
+			\item \textit{MM} si riferisce al mese utilizzando due cifre;
+			\item \textit{GG} si riferisce al giorno utilizzando due cifre.
+		
+		\end{itemize}
+		
+		\item Per indicare un \textbf{orario} si usa il formato ventiquattrore nel modo seguente:
+		
+		\begin{center}
+
+			\textit{hh:mm}		
+		
+		\end{center}
+		dove:
+		\begin{itemize}
+		
+			\item \textit{hh} si riferisce all'ora e può assumere valori da 0 a 23;
+			\item \textit{mm} si riferisce al minuto e può assumere valori da 0 a 59.		
+		
+		\end{itemize}
+	
+		\item Ogni \textbf{nome} di un membro del gruppo va indicato con il \textit{Nome} seguito dal \textit{Cognome}, a meno che il contesto non richieda diversamente (es. un elenco ordinato per cognome);
+		\item Quando ci si riferisce a \textbf{nomi dei file} si deve usare il carattere \texttt{monospace}.
+		
+	\end{itemize}		
+	
+	\subsubsection{Sigle}
+	
+	Vengono previste le seguenti sigle:
+	
+	\begin{itemize}
+
+		\item \textbf{AR} = Analisi dei requisiti;
+		\item \textbf{PP} = Piano di progetto;
+		\item \textbf{NP} = Norme di progetto;
+		\item \textbf{SF} = Studio di fattibilità;
+		\item \textbf{PQ} = Piano di qualifica;
+		\item \textbf{ST} = Specifica tecnica;
+		\item \textbf{MU} = Manuale utente;
+		\item \textbf{DP} = Definizione di prodotto;
+		\item \textbf{RR} = Revisione dei requisiti;
+		\item \textbf{RP} = Revisione di progettazione;
+		\item \textbf{RQ} = Revisione di qualifica;
+		\item \textbf{RA} = Revisione di accettazione.
+	
+	\end{itemize}
+	
+	\subsubsection{Riferimenti a documenti}
+	
+	Quando è necessario riferirsi ai contenuti di un altro documento bisogna specificarne il nome completo e la versione.
+	
+\subsection{Tabelle e immagini}
+
+	\subsubsection{Tabelle}
+	
+	Ciascuna tabella deve essere allineata al centro orizzontalmente e deve contenere sotto di essa la propria didascalia, per agevolarne il tracciamento. In questa didascalia deve comparire il numero della tabella, che dev'essere incrementale in tutto il documento, e una breve descrizione del suo contenuto.
+	
+	\subsubsection{Immagini}
+	
+	Ogni immagine deve essere centrata orizzontalmente ed avere una larghezza fissa. Inoltre deve essere nettamente separata dai paragrafi che la seguono e la precedono, in modo da definire un netto stacco tra testo e grafica e migliorare conseguentemente la leggibilità. Essa dev'essere accompagnata da una didascalia analoga a quella descritta per le tabelle. Tutti i diagrammi UML vengono inseriti nel documento sotto forma di immagine.
+	
+\subsection{Classificazione di documento}
+%	\subsubsection{Bozze}
+
+	\subsubsection{Documenti preliminari}
+	
+	Tutti i documenti sono da ritenersi preliminari fino all'approvazione da parte del Responsabile di Progetto, ed in quanto tali sono da considerarsi esclusivamente ad uso interno.
+	
+	\subsubsection{Documenti formali}
+	
+	Un documento viene definito formale quando viene validato dal Responsabile di Progetto. Solo i documenti formali possono essere distribuiti all'esterno del gruppo. Per arrivare a tale stato il documento deve aver già passato le fasi di \glossario{verifica} e \glossario{validazione}.
+	
+	\subsubsection{Verbali}
+	
+	\label{verbale}
+	Con verbale ci si riferisce ad un documento, redatto da un segretario in occasione  di riunioni interne al gruppo e di incontri con i proponenti. Un verbale viene redatto una prima volta, e non subisce successive modifiche, pertanto non é previsto versionamento. \\
+	Il verbale dovrà essere approvato dal Responsabile di Progetto.
+	\begin{itemize}
+	\item Ogni verbale dovrà indicare nel seguente ordine e con il formato indicato:
+	
+	
+	\begin{itemize}
+	\item Luogo: Città (Provincia), Via, Sede
+	\item Data: dd-mm-yyyy
+	\item Ora: hh-mm 24h
+	\item Partecipanti del gruppo:
+	\end{itemize}
+	
+	\item \textbf{Riunioni} \\
+	La struttura da seguire è inserire ogni argomento trattato in un paragrafo. Al suo interno verrà brevemente descritta la questione trattata e la decisione presa.
+	
+	\item \textbf{Incontri} \\
+	Nell'intestazione iniziale va aggiunto
+	\begin{itemize}
+	\item Partecipanti esterni:
+	\end{itemize}
+	Nel primo paragrafo "Informazioni Generali" vanno elencate le informazioni sopra descritte e gli argomenti trattati durante l'incontro. Segue nel secondo paragrafo, Domande e risposte, la trascrizione delle domande poste al proponente e le relative risposte.
+	\end{itemize}
+	
+\subsection{Verifica e validazione}
+
+La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un verificatore, scelto dal Responsabile tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione.. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle Norme di Progetto.
+
+La \textbf{\glossario{validazione}} del documento consiste nel controllare che il documento abbia \textit{il giusto contenuto}, è un compito che va oltre la semplice verifica delle norme. Richiede una conoscenza a priori del contenuto e degli scopi del documento.
+	
+	
+	\subsubsection{Passi della verifica}
+	La verifica di un documento è composta come minimo dai seguenti passi:
+	\begin{enumerate}
+		\item \textbf{Controllo ortografico e del periodo:} con un controllo walktrough bisognerà analizzare i periodi ed eventualmente correggerne la forma, oltre a controllare la presenza di errori ortografici con l'aiuto dello script \code{make test} (vedi sezione \ref{makefile});
+		\item \textbf{Verifica delle proprietà di glossario:} con l'aiuto dell'apposito script \code{make test-glossary} (vedi sezione \ref{makefile}) ci si deve assicurare che ogni termite marcato come glossario sia effettivamente definito nel glossario; 
+		% \item \textbf{Calcolo dell'indice Gulpease:} per ogni documento redatto, il \emph{Verificatore} deve calcolare l'indice di leggibilità gulpease. Qualora tale indice risultasse troppo basso andranno eseguite le opportune operazioni per semplificare frasi troppo lunghe o complesse;
+		\item \textbf{Riportare gli errori frequenti:} per migliorare ciclicamente il processo di verifica, verranno riportati gli errori frequenti. In questo modo sarà più facile eseguire, negli incrementi successivi, controlli di tipo inspection.
+		\item \textbf{Segnalazione delle anomalie riscontrate:} il \emph{Verificatore} deve generare un ticket secondo le modalità descritte nella sezione \ref{segnalazionebug}.
+	\end{enumerate}
+
+\subsection{Approvazione}
+
+L'\textbf{approvazione} di un documento deve essere eseguita dal Responsabile di Progetto. Consiste in un accertamento del percorso di vita del documento, e serve a fare in modo che soltanto documenti verificati e validati vengano distribuiti ufficialmente all'esterno del gruppo.
+
+\subsection{Glossario}
+
+Il Glossario contiene le definizioni di tutte le parole che possono creare ambiguità o essere fraintese. Nei documenti tali parole saranno marcate con una G pedice.
+
+Di pari passo con la stesura dei documenti sarà compito degli autori mantenere aggiornato il Glossario, inserendo di volta in volta i termini e le relative definizioni. È preferibile inserire nel glossario perlomeno la voce priva di descrizione, per poterla successivamente completare più facilmente.

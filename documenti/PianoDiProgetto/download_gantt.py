@@ -9,6 +9,7 @@ from gantt_lib import Factory, warning, pedantic_warning, error
 
 MIN_HOURS = 95
 MAX_HOURS = 105
+MIN_HOURS_PER_DAY = 1
 MAX_HOURS_PER_DAY = 3
 MIN_ESTIMATE_COST = 13000
 MAX_ESTIMATE_COST = 13999
@@ -46,9 +47,17 @@ def testTasks(project):
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
 		if task.hours > (task.end - task.start).days * MAX_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe ore ({hours}, {max_hours})'.format(
-				name = self.name,
-				hours = self.hours,
-				max_hours = (self.end - self.start).days * MAX_HOURS_PER_DAY
+				name = task.name,
+				hours = task.hours,
+				max_hours = (task.end - task.start).days * MAX_HOURS_PER_DAY
+			))
+
+		# Avvisa se ci sono meno di MIN_HOURS_PER_DAY ore per giorno
+		if task.hours < (task.end - task.start).days * MIN_HOURS_PER_DAY:
+			warning(u'Al task "{name}" sono state assegnate troppe poche ore ({hours}, {min_hours})'.format(
+				name = task.name,
+				hours = task.hours,
+				min_hours = (task.end - task.start).days * MIN_HOURS_PER_DAY
 			))
 
 def testPerson(project):
@@ -68,14 +77,14 @@ def testPerson(project):
 		hours = sum([t.hours for t in tasks])
 		
 		if hours < MIN_HOURS:
-			warning(u"{name} ({hours} h) deve fare almeno {min} ore di lavoro".format(
+			warning(u"{name} ({hours:.0f} h) deve fare almeno {min} ore di lavoro".format(
 				hours=hours,
 				name=person.name,
 				min=MIN_HOURS
 			))
 
 		if hours > MAX_HOURS:
-			warning(u"{name} ({hours} h) deve fare almassimo {max} ore di lavoro".format(
+			warning(u"{name} ({hours:.0f} h) deve fare almassimo {max} ore di lavoro".format(
 				hours=hours,
 				name=person.name,
 				max=MAX_HOURS

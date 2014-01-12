@@ -246,8 +246,15 @@ class Project:
 					
 					if len(responsible_ids) == 1:
 						responsible_id = responsible_ids[0]
-	
-				new_task = Factory.createTask(self, new_tasklist, task["id"], task["start-date"], task["due-date"], task["content"], responsible_id)
+
+				# Leggi la durata stimata (se c'è, altrimenti il task internamente assumerà DEFAULT_HOURS_PER_DAY ore al giorno)
+				hours = None
+				if len(task['estimated-minutes']) > 0:
+					estimated_minutes = int(task['estimated-minutes'])
+					if estimated_minutes > 0:
+						hours = estimated_minutes/60
+
+				new_task = Factory.createTask(self, new_tasklist, task["id"], task["start-date"], task["due-date"], task["content"], responsible=responsible_id, hours=hours)
 				self.addTask(task["id"], new_task)
 				new_tasklist.addTask(task["id"], new_task)
 
@@ -298,7 +305,7 @@ class TeamworkPMClient:
 		
 		# Chiedila se è vuota
 		while self.key is None or len(self.key) == 0:
-			self.key = raw_input(u"Inserire la chiave privata per le API di TeamworkPM del tuo utente: ")	
+			self.key = raw_input(u"Inserisci la chiave privata per le API di TeamworkPM del tuo utente: ")	
 
 		# Salva la chiave privata nella home (in chiaro!)
 		out_file = open(self.private_key_file, "w")

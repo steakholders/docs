@@ -79,6 +79,9 @@ class Role:
 		self.name = name
 		self.hour_cost = hour_cost
 
+	def __repr__(self):
+		return u"<Role({name})>".format(name=self.name).encode('utf-8')
+
 class Task:
 	def __init__(self, project, tasklist, id, start, end, name, responsible=None, role=None, hours=None):
 		self.project = project

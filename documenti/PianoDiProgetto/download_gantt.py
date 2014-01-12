@@ -82,13 +82,13 @@ def testPerson(project):
 	
 	# Visualizza informazioni
 	for person in project.getPeople():
-		person_tasks = [t for t in project.getTasks() if t.responsible == person]
-		total_hours = sum([t.hours for t in person_tasks])
+		personal_tasks = [t for t in project.getTasks() if t.responsible == person]
+		total_hours = sum([t.hours for t in personal_tasks])
 		personal_roles = []
 
 		for role in project.getRoles():
-			person_tasks = [t for t in person_tasks if t.role == role]
-			hours = sum([t.hours for t in person_tasks])
+			tasks = [t for t in personal_tasks if t.role == role]
+			hours = sum([t.hours for t in tasks])
 			personal_roles.append((hours, role))
 
 			if hours > total_hours * MAX_PERCENT_ON_ROLE_PER_PERSON:

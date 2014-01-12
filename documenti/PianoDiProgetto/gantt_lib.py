@@ -4,8 +4,7 @@
 from __future__ import division
 
 import re
-from dateutil.parser import parse as date_parse
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 import urllib2, base64
 import json
 from os import path
@@ -28,6 +27,9 @@ def pedantic_warning(message):
 	if disable: return
 	print "ATTENZIONE: "+message.encode('utf-8')
 
+def date_parse(str):
+	return datetime.strptime(str, "%Y%m%d")
+	#return datetime.strptime(str, "%Y-%m-%dT%H:%M:%S")
 
 class Factory:
 	singleton_tw_client = None

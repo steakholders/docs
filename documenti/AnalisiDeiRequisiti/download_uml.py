@@ -8,11 +8,23 @@ sys.path.insert(0, os.path.join(currrentdir, '../../script'))
 
 from lucidchart import LucidchartClient
 
-##########
-#  Main  #
-##########
+########################################
+#  Istruzioni per la prima esecuzione  #
+########################################
 
-server_port = 8088
+# 1- scaricare il programma Ngrok http://ngrok.com/
+# 2- sul terminale A eseguire `ngrok 8088`
+# 3- copiare l'indirizzo http://xyzxyz.ngrok.com
+# 4- sul terminale B eseguire questo script con l'indirizzo http://xyzxyz.ngrok.com come primo parametro
+#    cioè `python download_uml.py http://xyzxyz.ngrok.com`
+# 5- aprire il link che lo script dirà di aprire
+# 6- autorizzare lo script ad accedere a Lucidchart (cliccando su "permetti" nella pagina aperta con il link di prima)
+# 7- dovrebbe aprirsi una pagina con scritto "tutto a posto" o qualcosa del genere, chiuderla pure
+# 8- lo script dovrebbe scaricare tutto in automatico
+# 9- chiudere pure Ngrok
+# 10- la prossima volta non servirà Ngrok, basterà eseguire `python download_uml.py`
+
+server_port = 8888
 
 if len(sys.argv) <= 1:
 	print "Alla prima esecuzione bisogna passare come primo argomento l'indirizzo a cui è raggiungibile la porta {server_port} di questo computer".format(server_port=server_port)
@@ -28,20 +40,6 @@ lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_po
 # - la larghezza è 600px
 # - la pagina di cui scaricare il png è la 1
 # es. lucidchart.download_image("4f51-1824-52ae25da-a646-74fd0a00d457", "UML/bla bla bla bla.png", width=600, pagenum=1)
-#
-# === Istruzioni per la prima esecuzione ===
-#
-# 1- scaricare il programma Ngrok http://ngrok.com/
-# 2- sul terminale A eseguire `ngrok 80`
-# 3- copiare l'indirizzo http://xyzxyz.ngrok.com
-# 4- sul terminale B eseguire questo script con l'indirizzo http://xyzxyz.ngrok.com come primo parametro
-#    cioè `python download_uml.py http://xyzxyz.ngrok.com`
-# 5- aprire il link che lo script dirà di aprire
-# 6- autorizzare lo script ad accedere a Lucidchart (cliccando su "permetti" nella pagina aperta con il link di prima)
-# 7- dovrebbe aprirsi una pagina con scritto "tutto a posto" o qualcosa del genere, chiuderla pure
-# 8- lo script dovrebbe scaricare tutto in automatico
-# 9- chiudere pure Ngrok
-# 10- la prossima volta non servirà Ngrok, basterà eseguire `python download_uml.py`
 
 #UML AMBITO UTENTE
 lucidchart.download_image("430a-6fb0-52a701a4-82e0-5eb50a00c811", "UML/UCU - Operazioni ad alto livello.png")

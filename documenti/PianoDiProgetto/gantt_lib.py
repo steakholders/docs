@@ -28,8 +28,21 @@ def pedantic_warning(message):
 	print "ATTENZIONE: "+message.encode('utf-8')
 
 def date_parse(str):
-	return datetime.strptime(str, "%Y%m%d")
+	return datetime.strptime(str, "%Y%m%d").date()
 	#return datetime.strptime(str, "%Y-%m-%dT%H:%M:%S")
+
+def take_brackets(str):
+	matches = re.findall(r"(\(\s*\w+\s*\))", str)
+	matches = [x for x in matches]
+	
+	if len(matches) == 0:
+		return (str, None)
+
+	token = matches[-1]
+	str = str.replace(token, "")
+	content = token.strip('()').strip().lower()
+	
+	return (str, content)
 
 class Factory:
 	singleton_tw_client = None
@@ -72,6 +85,8 @@ class Person:
 		self.id = id
 		self.name = name
 
+		self.project.addPerson(self.id, self)
+
 	def __repr__(self):
 		return u"<Person(#{id} {name})>".format(id=self.id, name=self.name).encode('utf-8')
 
@@ -97,6 +112,9 @@ class Task:
 		self.role = role
 		self.hours = hours
 
+		self.project.addTask(self.id, self)
+		self.tasklist.addTask(self.id, self)
+
 		# Recupera il riferimento al responsabile
 		if isinstance(self.responsible, basestring):
 			self.responsible = self.project.people[self.responsible]
@@ -119,16 +137,20 @@ class Task:
 		
 		# Se non è stato specificato un ruolo, recupera il ruolo dal nome
 		if self.role == None:
-			matches = re.findall(r"\((\s*\w+\s*)\)", self.name)
-			matches = [x.strip().lower() for x in matches]
-			
-			# Per ogni elemento trovato tra parentesi, partendo dall'ultimo
-			for role_token in matches[::-1]:
-				# Se è tra i ruoli riconosciuti
-				if role_token in self.project.roles:
-					# Recupera il ruolo ed esci dal ciclo for
-					self.role = self.project.roles[role_token]
-					break
+			new_name, role_token = take_brackets(self.name)
+			print self.name, new_name, role_token
+
+			# Se è tra i ruoli riconosciuti
+			if role_token in self.project.roles:
+				# Recupera il ruolo
+				self.role = self.project.roles[role_token]
+				self.name = new_name
+
+			if role_token is "extra":
+				# Il tempo extra non deve essere conteggiato
+				self.hours = 0
+				self.role = None
+				self.name = new_name
 
 		if self.role == None:
 			warning(u"Non è stato assegnato un ruolo al task {nome}".format(nome=self.name))
@@ -260,14 +282,16 @@ class Project:
 						hours = estimated_minutes/60
 
 				new_task = Factory.createTask(self, new_tasklist, task["id"], task["start-date"], task["due-date"], task["content"], responsible=responsible_id, hours=hours)
-				self.addTask(task["id"], new_task)
-				new_tasklist.addTask(task["id"], new_task)
 
 				for dependency in task["predecessors"]:
 					if dependency["type"] == "start":
-						new_task.addDependency(dependency["id"], self.tasks[dependency["id"]])
-
-				
+						try:
+							new_task.addDependency(dependency["id"], self.tasks[dependency["id"]])
+						except KeyError as key:
+							pedantic_warning(u"Il task '{name}'' dipende dal task {dep} che nell'elenco viene dopo".format(
+								name=newtask.name,
+								dep=key
+							))
 
 	def addPerson(self, person_id, person):
 		self.people.update({
@@ -279,7 +303,7 @@ class Project:
 		data = tw.requestJSON("/projects/{project_id}/people".format(project_id=self.id))
 
 		for person in data["people"]:
-			self.addPerson(person["id"], Factory.createPerson(self, person["id"], person["first-name"]+" "+person["last-name"]))
+			Factory.createPerson(self, person["id"], person["first-name"]+" "+person["last-name"])
 
 	def getTasks(self):
 		return self.tasks.values()

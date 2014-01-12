@@ -1,8 +1,64 @@
+PA1.1.1 - Correzione (analista) PA1.1.1 - Correzione  analista
+PA1.1.2 - Incremento (analista) PA1.1.2 - Incremento  analista
+PA1.2 - Verifica di dettaglio analisi dei requisiti (verificatore) PA1.2 - Verifica di dettaglio analisi dei requisiti  verificatore
+PA2.1 - Correzione (amministratore) PA2.1 - Correzione  amministratore
+PA2.1.2 - Incremento (amministratore) PA2.1.2 - Incremento  amministratore
+PA2.2 - Verifica (verificatore) PA2.2 - Verifica  verificatore
+PA2.1.1 - Correzione (amministratore) PA2.1.1 - Correzione  amministratore
+PA2.1.2.1 - Incremento (amministratore) PA2.1.2.1 - Incremento  amministratore
+PA2.1.2.2 - Incremento (amministratore) PA2.1.2.2 - Incremento  amministratore
+PA3.1.1 - Correzione (amministratore) PA3.1.1 - Correzione  amministratore
+PA3.1.2 - Incremento (chiunque) PA3.1.2 - Incremento  chiunque
 ATTENZIONE: Non è stato assegnato un ruolo al task PA3.1.2 - Incremento (chiunque)
+PA3.2 - Verifica (verificatore) PA3.2 - Verifica  verificatore
+PA4.1.1 - Correzione (verificatore) PA4.1.1 - Correzione  verificatore
+PA4.1.2 - Incremento (verificatore) PA4.1.2 - Incremento  verificatore
+PA4.2 - Verifica (verificatore) PA4.2 - Verifica  verificatore
+PA5.1.1 - Correzione (responsabile) PA5.1.1 - Correzione  responsabile
+PA5.1.2 - Correzione (responsabile) PA5.1.2 - Correzione  responsabile
+PA5.2 - Incremento (responsabile) PA5.2 - Incremento  responsabile
+PA5.3 - Verifica (verificatore) PA5.3 - Verifica  verificatore
+PA5.1.1.1 - Correzione (amministratore) PA5.1.1.1 - Correzione  amministratore
+PA6.1 - Tecnologie utilizzate (progettista) PA6.1 - Tecnologie utilizzate  progettista
+PA6.2.1 - Architettura generale (progettista) PA6.2.1 - Architettura generale  progettista
+PA6.2.2 - Architettura generale (progettista) PA6.2.2 - Architettura generale  progettista
+PA6.5.1 - Verifica tecnologie e architettura generale (verificatore) PA6.5.1 - Verifica tecnologie e architettura generale  verificatore
+PA6.3 - Descrizione componenti (progettista) PA6.3 - Descrizione componenti  progettista
+PA6.5.2 - Verifica descrizione componenti (verificatore) PA6.5.2 - Verifica descrizione componenti  verificatore
+PA6.4 - Tracciamento (progettista) PA6.4 - Tracciamento  progettista
+PA6.5.3 - Verifica tracciamento (verificatore) PA6.5.3 - Verifica tracciamento  verificatore
+PDC0.1 - Progettazione requisiti opzionali (progettista) PDC0.1 - Progettazione requisiti opzionali  progettista
+PDC0.2 - Verifica requisiti opzionali (verificatore) PDC0.2 - Verifica requisiti opzionali  verificatore
+PDC0.3 - Stesura requisiti opzionali (progettista) PDC0.3 - Stesura requisiti opzionali  progettista
+PDC0.4 Verifica progettazione generale (verificatore) PDC0.4 Verifica progettazione generale  verificatore
+PDC1 - Preparazione ambiente di lavoro (amministratore) PDC1 - Preparazione ambiente di lavoro  amministratore
+PDC2.1.1 - Progettazione requisiti fondamentali e desiderabili (progettista) PDC2.1.1 - Progettazione requisiti fondamentali e desiderabili  progettista
+PDC2.1.2 - Verifica requisiti fondamentali e desiderabili (verificatore) PDC2.1.2 - Verifica requisiti fondamentali e desiderabili  verificatore
+PDC2.2.1 - Progettazione requisiti opzionali (progettista) PDC2.2.1 - Progettazione requisiti opzionali  progettista
+PDC2.2.2 - Verifica requisiti opzionali (verificatore) PDC2.2.2 - Verifica requisiti opzionali  verificatore
+PDC3.1 - Stesura (chi lo fa?) PDC3.1 - Stesura (chi lo fa?) None
 ATTENZIONE: Non è stato assegnato un ruolo al task PDC3.1 - Stesura (chi lo fa?)
+PDC3.2 - Verifica (verificatore) PDC3.2 - Verifica  verificatore
+PDC4.1.1 - Codifica requisiti fondamentali e desiderabili (programmatore) PDC4.1.1 - Codifica requisiti fondamentali e desiderabili  programmatore
+PDC4.1.2 - Verifica requisiti fondamentali e desiderabili (verificatore) PDC4.1.2 - Verifica requisiti fondamentali e desiderabili  verificatore
+PDC4.2.1 - Codifica requisiti opzionali (programmatore) PDC4.2.1 - Codifica requisiti opzionali  programmatore
+PDC4.2.2 - Verifica requisiti opzionali (verificatore) PDC4.2.2 - Verifica requisiti opzionali  verificatore
+Stesura (chi lo fa?) Stesura (chi lo fa?) None
 ATTENZIONE: Non è stato assegnato un ruolo al task Stesura (chi lo fa?)
+Verifica (verificatore) Verifica  verificatore
+PDC6.1 - Stesura (responsabile) PDC6.1 - Stesura  responsabile
+PDC6.2 - Verifica (verificatore) PDC6.2 - Verifica  verificatore
+PDC7.1 - Stesura (verificatore) PDC7.1 - Stesura  verificatore
+PDC7.2 - Verifica (verificatore) PDC7.2 - Verifica  verificatore
+VV1.1 - Aggiornamento (verificatore) VV1.1 - Aggiornamento  verificatore
+VV1.2 - Verifica (verificatore) VV1.2 - Verifica  verificatore
+VV2.1 - Aggiornamento (chi lo fa?) VV2.1 - Aggiornamento (chi lo fa?) None
 ATTENZIONE: Non è stato assegnato un ruolo al task VV2.1 - Aggiornamento (chi lo fa?)
+VV2.2 - Verifica (verificatore) VV2.2 - Verifica  verificatore
+VV3.1 - Aggiornamento (chi lo fa?) VV3.1 - Aggiornamento (chi lo fa?) None
 ATTENZIONE: Non è stato assegnato un ruolo al task VV3.1 - Aggiornamento (chi lo fa?)
+VV3.2 - Verifica (verificatore) VV3.2 - Verifica  verificatore
+VV4 - Collaudo (verificatore) VV4 - Collaudo  verificatore
 
 Riepilogo progetto
 ------------------
@@ -14,47 +70,47 @@ Task: 56
 
 Elenco delle tasklist
 ---------------------
-* VV3 - Manuale utente da 2014-03-10 00:00:00 a 2014-03-16 00:00:00: 2 task
-* VV1 - Piano di qualifica da 2014-03-10 00:00:00 a 2014-03-16 00:00:00: 2 task
-* PA2 - Norme di progetto da 2014-01-09 00:00:00 a 2014-01-16 00:00:00: 6 task
-* PA3 - Glossario da 2014-01-07 00:00:00 a 2014-01-21 00:00:00: 3 task
-* PDC0 - Progettazione generale da 2014-01-25 00:00:00 a 2014-02-07 00:00:00: 4 task
-* PDC7 - Piano di qualifica da 2014-02-10 00:00:00 a 2014-02-17 00:00:00: 2 task
-* PDC3 - Definizione di prodotto da 2014-02-19 00:00:00 a 2014-03-02 00:00:00: 2 task
-* PDC4 - Codifica da 2014-02-19 00:00:00 a 2014-03-02 00:00:00: 4 task
-* VV2 - Definizione di prodotto da 2014-03-10 00:00:00 a 2014-03-16 00:00:00: 2 task
-* PDC1 - Preparazione ambiente di lavoro da 2014-02-08 00:00:00 a 2014-02-09 00:00:00: 1 task
-* PDC2 - Progettazione di dettaglio da 2014-02-10 00:00:00 a 2014-02-18 00:00:00: 4 task
-* VV4 - Collaudo da 2014-03-14 00:00:00 a 2014-03-17 00:00:00: 1 task
-* PDC5 - manuale utente da 2014-02-27 00:00:00 a 2014-03-04 00:00:00: 2 task
-* PDC6 - Piano di progetto da 2014-02-08 00:00:00 a 2014-02-10 00:00:00: 2 task
-* PA4 - Piano di qualifica da 2014-01-13 00:00:00 a 2014-01-19 00:00:00: 3 task
-* PA6 - Specifica tecnica da 2014-01-13 00:00:00 a 2014-01-22 00:00:00: 8 task
-* PA5 - Piano di progetto da 2014-01-09 00:00:00 a 2014-01-19 00:00:00: 5 task
-* PA1 - Analisi dei requisiti da 2014-01-09 00:00:00 a 2014-01-18 00:00:00: 3 task
+* VV3 - Manuale utente da 2014-03-10 a 2014-03-16: 2 task
+* VV1 - Piano di qualifica da 2014-03-10 a 2014-03-16: 2 task
+* PA2 - Norme di progetto da 2014-01-09 a 2014-01-16: 6 task
+* PA3 - Glossario da 2014-01-07 a 2014-01-21: 3 task
+* PDC0 - Progettazione generale da 2014-01-25 a 2014-02-07: 4 task
+* PDC7 - Piano di qualifica da 2014-02-10 a 2014-02-17: 2 task
+* PDC3 - Definizione di prodotto da 2014-02-19 a 2014-03-02: 2 task
+* PDC4 - Codifica da 2014-02-19 a 2014-03-02: 4 task
+* VV2 - Definizione di prodotto da 2014-03-10 a 2014-03-16: 2 task
+* PDC1 - Preparazione ambiente di lavoro da 2014-02-08 a 2014-02-09: 1 task
+* PDC2 - Progettazione di dettaglio da 2014-02-10 a 2014-02-18: 4 task
+* VV4 - Collaudo da 2014-03-14 a 2014-03-17: 1 task
+* PDC5 - manuale utente da 2014-02-27 a 2014-03-04: 2 task
+* PDC6 - Piano di progetto da 2014-02-08 a 2014-02-10: 2 task
+* PA4 - Piano di qualifica da 2014-01-13 a 2014-01-19: 3 task
+* PA6 - Specifica tecnica da 2014-01-13 a 2014-01-22: 8 task
+* PA5 - Piano di progetto da 2014-01-09 a 2014-01-19: 5 task
+* PA1 - Analisi dei requisiti da 2014-01-09 a 2014-01-18: 3 task
 
 Controllo vincoli sui task
 --------------------------
-ATTENZIONE: Al task "PDC0.1 - Progettazione requisiti opzionali (progettista)" sono state assegnate troppe ore (sono 41.0, al massimo 15)
-ATTENZIONE: Al task "PDC2.2.2 - Verifica requisiti opzionali (verificatore)" sono state assegnate troppe ore (sono 10.0, al massimo 6)
-ATTENZIONE: Al task "Verifica (verificatore)" sono state assegnate troppe ore (sono 20.0, al massimo 6)
-ATTENZIONE: Al task "PA5.2 - Incremento (responsabile)" sono state assegnate troppe poche ore (sono 0, al minimo 1)
-ATTENZIONE: Al task "PDC2.2.1 - Progettazione requisiti opzionali (progettista)" sono state assegnate troppe ore (sono 36.0, al massimo 21)
-ATTENZIONE: Al task "PDC4.2.1 - Codifica requisiti opzionali (programmatore)" sono state assegnate troppe ore (sono 70.0, al massimo 24)
-ATTENZIONE: Al task "PDC4.2.2 - Verifica requisiti opzionali (verificatore)" sono state assegnate troppe ore (sono 18.0, al massimo 12)
-ATTENZIONE: Al task "PDC4.1.2 - Verifica requisiti fondamentali e desiderabili (verificatore)" sono state assegnate troppe ore (sono 20.0, al massimo 12)
-ATTENZIONE: Al task "PDC4.1.1 - Codifica requisiti fondamentali e desiderabili (programmatore)" sono state assegnate troppe ore (sono 90.0, al massimo 24)
+ATTENZIONE: Al task "PDC0.1 - Progettazione requisiti opzionali " sono state assegnate troppe ore (sono 41.0, al massimo 15)
+ATTENZIONE: Al task "PDC2.2.2 - Verifica requisiti opzionali " sono state assegnate troppe ore (sono 10.0, al massimo 6)
+ATTENZIONE: Al task "Verifica " sono state assegnate troppe ore (sono 20.0, al massimo 6)
+ATTENZIONE: Al task "PA5.2 - Incremento " sono state assegnate troppe poche ore (sono 0, al minimo 1)
+ATTENZIONE: Al task "PDC2.2.1 - Progettazione requisiti opzionali " sono state assegnate troppe ore (sono 36.0, al massimo 21)
+ATTENZIONE: Al task "PDC4.2.1 - Codifica requisiti opzionali " sono state assegnate troppe ore (sono 70.0, al massimo 24)
+ATTENZIONE: Al task "PDC4.2.2 - Verifica requisiti opzionali " sono state assegnate troppe ore (sono 18.0, al massimo 12)
+ATTENZIONE: Al task "PDC4.1.2 - Verifica requisiti fondamentali e desiderabili " sono state assegnate troppe ore (sono 20.0, al massimo 12)
+ATTENZIONE: Al task "PDC4.1.1 - Codifica requisiti fondamentali e desiderabili " sono state assegnate troppe ore (sono 90.0, al massimo 24)
 ATTENZIONE: Al task "PDC3.1 - Stesura (chi lo fa?)" sono state assegnate troppe ore (sono 40.0, al massimo 24)
-ATTENZIONE: Al task "PDC3.2 - Verifica (verificatore)" sono state assegnate troppe ore (sono 13.0, al massimo 12)
-ATTENZIONE: Al task "PDC1 - Preparazione ambiente di lavoro (amministratore)" sono state assegnate troppe ore (sono 7.0, al massimo 6)
+ATTENZIONE: Al task "PDC3.2 - Verifica " sono state assegnate troppe ore (sono 13.0, al massimo 12)
+ATTENZIONE: Al task "PDC1 - Preparazione ambiente di lavoro " sono state assegnate troppe ore (sono 7.0, al massimo 6)
 ATTENZIONE: Al task "VV2.1 - Aggiornamento (chi lo fa?)" sono state assegnate troppe ore (sono 14.0, al massimo 12)
-ATTENZIONE: Al task "PDC0.2 - Verifica requisiti opzionali (verificatore)" sono state assegnate troppe ore (sono 11.0, al massimo 9)
-ATTENZIONE: Al task "PDC0.3 - Stesura requisiti opzionali (progettista)" sono state assegnate troppe ore (sono 10.0, al massimo 6)
-ATTENZIONE: Al task "PDC2.1.1 - Progettazione requisiti fondamentali e desiderabili (progettista)" sono state assegnate troppe ore (sono 32.0, al massimo 21)
+ATTENZIONE: Al task "PDC0.2 - Verifica requisiti opzionali " sono state assegnate troppe ore (sono 11.0, al massimo 9)
+ATTENZIONE: Al task "PDC0.3 - Stesura requisiti opzionali " sono state assegnate troppe ore (sono 10.0, al massimo 6)
+ATTENZIONE: Al task "PDC2.1.1 - Progettazione requisiti fondamentali e desiderabili " sono state assegnate troppe ore (sono 32.0, al massimo 21)
 ATTENZIONE: Al task "Stesura (chi lo fa?)" sono state assegnate troppe ore (sono 40.0, al massimo 15)
-ATTENZIONE: Al task "PDC2.1.2 - Verifica requisiti fondamentali e desiderabili (verificatore)" sono state assegnate troppe ore (sono 10.0, al massimo 6)
-ATTENZIONE: Al task "PDC6.1 - Stesura (responsabile)" sono state assegnate troppe ore (sono 7.0, al massimo 6)
-ATTENZIONE: Al task "VV4 - Collaudo (verificatore)" sono state assegnate troppe ore (sono 36.0, al massimo 12)
+ATTENZIONE: Al task "PDC2.1.2 - Verifica requisiti fondamentali e desiderabili " sono state assegnate troppe ore (sono 10.0, al massimo 6)
+ATTENZIONE: Al task "PDC6.1 - Stesura " sono state assegnate troppe ore (sono 7.0, al massimo 6)
+ATTENZIONE: Al task "VV4 - Collaudo " sono state assegnate troppe ore (sono 36.0, al massimo 12)
 
 Controllo vincoli sulle persone
 -------------------------------
@@ -88,8 +144,8 @@ ATTENZIONE: Luca De Franceschi (34 h) deve fare almeno 95 ore di lavoro
 
 Controllo task sovrapposti
 --------------------------
-ATTENZIONE: Federico Poli ha più di un task (3) segnato per il giorno 2014-01-12 00:00:00
-ATTENZIONE: Luca De Franceschi ha più di un task (2) segnato per il giorno 2014-01-09 00:00:00
+ATTENZIONE: Federico Poli ha dei task sovrapposti. Il primo è il giorno 2014-01-12
+ATTENZIONE: Luca De Franceschi ha dei task sovrapposti. Il primo è il giorno 2014-01-09
 
 Controllo vincoli sul preventivo
 --------------------------------

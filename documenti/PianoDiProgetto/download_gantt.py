@@ -168,7 +168,7 @@ def testConcurrentTask(project):
 
 			# Controlla se ci sono troppi task aperti
 			if open_task < 0 or open_task > 1:
-				warning(u"{nome} ha più di un task ({num}) segnato per il giorno {date}".format(
+				warning(u"{nome} ha dei task sovrapposti. Il primo è il giorno {date}".format(
 					nome = person.name,
 					num = open_task,
 					date = current_date

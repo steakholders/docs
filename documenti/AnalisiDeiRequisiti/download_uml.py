@@ -1,4 +1,4 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
 # Includi la cartella /script/ nella path di ricerca degli import
@@ -24,10 +24,24 @@ else:
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
 # Download come png
-# Se non è specificato come parametro
+# Se non è specificato come parametro, di default
 # - la larghezza è 600px
 # - la pagina di cui scaricare il png è la 1
 # es. lucidchart.download_image("4f51-1824-52ae25da-a646-74fd0a00d457", "UML/bla bla bla bla.png", width=600, pagenum=1)
+#
+# === Istruzioni per la prima esecuzione ===
+#
+# 1- scaricare il programma Ngrok http://ngrok.com/
+# 2- sul terminale A eseguire `ngrok 80`
+# 3- copiare l'indirizzo http://xyzxyz.ngrok.com
+# 4- sul terminale B eseguire questo script con l'indirizzo http://xyzxyz.ngrok.com come primo parametro
+#    cioè `python download_uml.py http://xyzxyz.ngrok.com`
+# 5- aprire il link che lo script dirà di aprire
+# 6- autorizzare lo script ad accedere a Lucidchart (cliccando su "permetti" nella pagina aperta con il link di prima)
+# 7- dovrebbe aprirsi una pagina con scritto "tutto a posto" o qualcosa del genere, chiuderla pure
+# 8- lo script dovrebbe scaricare tutto in automatico
+# 9- chiudere pure Ngrok
+# 10- la prossima volta non servirà Ngrok, basterà eseguire `python download_uml.py`
 
 #UML AMBITO UTENTE
 lucidchart.download_image("430a-6fb0-52a701a4-82e0-5eb50a00c811", "UML/UCU - Operazioni ad alto livello.png")
@@ -53,6 +67,3 @@ lucidchart.download_image("43a0-e1c8-52b385b6-ab48-59f90a00dea9", "UML/UCM1 - Re
 lucidchart.download_image("4ab7-1b8c-52b3864d-8eb7-4a7b0a009f85", "UML/UCM4 - Login.png")
 lucidchart.download_image("4608-6404-52b38737-8513-792a0a005e00", "UML/UCM6 - Modifica profilo.png")
 lucidchart.download_image("47d4-44e0-52b1a49b-9b0b-6cf60a0052b1", "UML/UCM8 - Gestione file di configurazione.png")
-
-
-

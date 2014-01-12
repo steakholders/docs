@@ -9,4 +9,4 @@ include $(REPO_DIR)/script/global.mk
 include $(REPO_DIR)/script/default-doc.mk
 
 test-gantt:
-	@python download_gantt.py
+	@python download_gantt.py 2>&1 | tee esito_gantt.txt

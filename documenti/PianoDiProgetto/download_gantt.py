@@ -10,7 +10,7 @@ from gantt_lib import Factory, warning, pedantic_warning, error
 MIN_HOURS = 95
 MAX_HOURS = 105
 MIN_HOURS_PER_DAY = 1
-MAX_HOURS_PER_DAY = 3
+MAX_HOURS_PER_DAY = 4
 MIN_ESTIMATE_COST = 13000
 MAX_ESTIMATE_COST = 13999
 MIN_VERIFIER_PERCENT = 0.3
@@ -46,7 +46,7 @@ def testTasks(project):
 	for task in project.getTasks():
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
 		if task.hours > (task.end - task.start).days * MAX_HOURS_PER_DAY:
-			warning(u'Al task "{name}" sono state assegnate troppe ore ({hours}, {max_hours})'.format(
+			warning(u'Al task "{name}" sono state assegnate troppe ore (sono {hours}, al massimo {max_hours})'.format(
 				name = task.name,
 				hours = task.hours,
 				max_hours = (task.end - task.start).days * MAX_HOURS_PER_DAY
@@ -54,7 +54,7 @@ def testTasks(project):
 
 		# Avvisa se ci sono meno di MIN_HOURS_PER_DAY ore per giorno
 		if task.hours < (task.end - task.start).days * MIN_HOURS_PER_DAY:
-			warning(u'Al task "{name}" sono state assegnate troppe poche ore ({hours}, {min_hours})'.format(
+			warning(u'Al task "{name}" sono state assegnate troppe poche ore (sono {hours}, al minimo {min_hours})'.format(
 				name = task.name,
 				hours = task.hours,
 				min_hours = (task.end - task.start).days * MIN_HOURS_PER_DAY
@@ -77,14 +77,14 @@ def testPerson(project):
 		hours = sum([t.hours for t in tasks])
 		
 		if hours < MIN_HOURS:
-			warning(u"{name} ({hours:.0f} h) deve fare almeno {min} ore di lavoro".format(
+			warning(u"{name} ({hours:.0f} h) deve fare almeno {min:.0f} ore di lavoro".format(
 				hours=hours,
 				name=person.name,
 				min=MIN_HOURS
 			))
 
 		if hours > MAX_HOURS:
-			warning(u"{name} ({hours:.0f} h) deve fare almassimo {max} ore di lavoro".format(
+			warning(u"{name} ({hours:.0f} h) deve fare almassimo {max:.0f} ore di lavoro".format(
 				hours=hours,
 				name=person.name,
 				max=MAX_HOURS
@@ -150,7 +150,7 @@ def estimateCosts(project):
 		if role.name == "verificatore":
 			verifier_hours = hours
 
-		print u"- {nome}: {hours} \tore, per un costo di \t{costo} \t€".format(
+		print u"- {nome}: {hours:.0f} \tore, per un costo di \t{costo:.0f} \t€".format(
 			nome=role.name +"".join([" "]*(14-len(role.name))),
 			hours=hours,
 			costo=cost
@@ -158,26 +158,26 @@ def estimateCosts(project):
 
 	total_cost = sum(role_cost)
 	total_hours = sum(role_hours)
-	print u"Totale          : {total} €".format(total=total_cost).encode("utf-8")
+	print u"Totale          : {total:.0f} €".format(total=total_cost).encode("utf-8")
 	print u"Ore di verifica : {perc:.1f} %".format(perc=100*verifier_hours/total_hours).encode("utf-8")
 
 	print
 	
 	if verifier_hours < total_hours * MIN_VERIFIER_PERCENT:
-		warning(u"Troppe poche ore di verifica ({verifier_hours} h), bisogna fare almeno {min_verifier_hours} h".format(
+		warning(u"Troppe poche ore di verifica ({verifier_hours:.0f} h), bisogna fare almeno {min_verifier_hours:.0f} h".format(
 			verifier_hours = verifier_hours,
 			min_verifier_hours =  total_hours * MIN_VERIFIER_PERCENT
 		))
 	
 
 	if total_cost < MIN_ESTIMATE_COST:
-		warning(u"Il preventivo ({total} €) è troppo basso, bisogna raggiungere almeno {min} €".format(
+		warning(u"Il preventivo ({total:.0f} €) è troppo basso, bisogna raggiungere almeno {min:.0f} €".format(
 			total=total_cost,
 			min=MIN_ESTIMATE_COST
 		))
 
 	if total_cost > MAX_ESTIMATE_COST:
-		warning(u"Il preventivo ({total} €) è meglio che sia inferiore a {max} €".format(
+		warning(u"Il preventivo ({total:.0f} €) è meglio che sia inferiore a {max:.0f} €".format(
 			total=total_cost,
 			max=MAX_ESTIMATE_COST
 		))

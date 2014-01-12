@@ -4,13 +4,22 @@
 from __future__ import division
 from Queue import PriorityQueue
 from collections import namedtuple
+from datetime import timedelta
 
-from gantt_lib import Factory, warning, pedantic_warning, error
+from gantt_lib import Factory, warning, pedantic_warning
 
+# Numero minimo e massimo di ore di lavoro a testa
 MIN_HOURS = 95
 MAX_HOURS = 105
+# Minimo e massimo di ore di lavoro al giorno per mersona
 MIN_HOURS_PER_DAY = 1
 MAX_HOURS_PER_DAY = 4
+# Numero minimo di ruoli che una persona deve svolgere, ciascuno per almeno tot ore
+MIN_ROLES_PER_PERSON = 6
+MIN_HOURS_PER_PERSON_ROLE = 2
+# Percentuale massima di ore che una persona può passare su un unico ruolo
+MAX_PERCENT_ON_ROLE_PER_PERSON = 0.5
+# Preventivo minimo e massimo, percentuale minima di ore di verifica
 MIN_ESTIMATE_COST = 13000
 MAX_ESTIMATE_COST = 13999
 MIN_VERIFIER_PERCENT = 0.3
@@ -67,7 +76,39 @@ def testPerson(project):
 	for person in project.getPeople():
 		tasks = [t for t in project.getTasks() if t.responsible == person]
 		hours = sum([t.hours for t in tasks])
-		print u"- {nome}: \t{hours} \tore di lavoro".format(nome=person.name, hours=hours).encode("utf-8")
+		print u"- {nome}: \t{hours:.0f} \tore di lavoro".format(nome=person.name, hours=hours).encode("utf-8")
+
+	print
+	
+	# Visualizza informazioni
+	for person in project.getPeople():
+		person_tasks = [t for t in project.getTasks() if t.responsible == person]
+		total_hours = sum([t.hours for t in person_tasks])
+		personal_roles = []
+
+		for role in project.getRoles():
+			person_tasks = [t for t in person_tasks if t.role == role]
+			hours = sum([t.hours for t in person_tasks])
+			personal_roles.append((hours, role))
+
+			if hours > total_hours * MAX_PERCENT_ON_ROLE_PER_PERSON:
+				warning(u"{name} ({total:.0f} h) ha troppe ore come {role} ({hours:.0f} h), siamo al {perc:.0f}% (max {max:.0f}%)".format(
+					name=person.name,
+					total=total_hours,
+					role=role.name,
+					hours=hours,
+					perc=100*hours/total_hours,
+					max=100*MAX_PERCENT_ON_ROLE_PER_PERSON
+				))
+
+		current_roles = [r[1] for r in personal_roles if r[0] >= MIN_HOURS_PER_PERSON_ROLE]
+
+		if len(current_roles) < MIN_ROLES_PER_PERSON:
+			warning(u"{name} ha troppi pochi ruoli ({num}). Dovrebbe fare più {roles}.".format(
+				name=person.name,
+				num=len(current_roles),
+				roles=", ".join([r.name for r in project.getRoles() if r not in current_roles])
+			))
 
 	print
 
@@ -104,7 +145,7 @@ def testConcurrentTask(project):
 
 		for task in tasks:
 			queue.put(Range(date=task.start, edge=start))
-			queue.put(Range(date=task.end, edge=end))
+			queue.put(Range(date=task.end+timedelta(days=1), edge=end))
 
 		open_task = 0
 		while not queue.empty():
@@ -127,7 +168,7 @@ def testConcurrentTask(project):
 
 			# Controlla se ci sono troppi task aperti
 			if open_task < 0 or open_task > 1:
-				warning("{nome} ha più di un task ({num}) segnato per il giorno {date}".format(
+				warning(u"{nome} ha più di un task ({num}) segnato per il giorno {date}".format(
 					nome = person.name,
 					num = open_task,
 					date = current_date

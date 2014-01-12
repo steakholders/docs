@@ -20,9 +20,6 @@ class GanttException(Exception):
 	def __str__(self):
 		return "ERRORE: "+self.message.encode('utf-8')
 
-def error(message):
-	raise GanttException(message)
-
 def warning(message):
 	print "ATTENZIONE: "+message.encode('utf-8')
 

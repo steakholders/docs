@@ -20,9 +20,6 @@ class GanttException(Exception):
 	def __str__(self):
 		return "ERRORE: "+self.message.encode('utf-8')
 
-def error(message):
-	raise GanttException(message)
-
 def warning(message):
 	print "ATTENZIONE: "+message.encode('utf-8')
 
@@ -81,6 +78,9 @@ class Role:
 		self.project = project
 		self.name = name
 		self.hour_cost = hour_cost
+
+	def __repr__(self):
+		return u"<Role({name})>".format(name=self.name).encode('utf-8')
 
 class Task:
 	def __init__(self, project, tasklist, id, start, end, name, responsible=None, role=None, hours=None):

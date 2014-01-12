@@ -5,7 +5,7 @@ from __future__ import division
 
 import re
 from dateutil.parser import parse as date_parse
-from datetime import date
+from datetime import date, timedelta
 import urllib2, base64
 import json
 from os import path
@@ -130,6 +130,9 @@ class Task:
 
 		if self.role == None:
 			warning(u"Non è stato assegnato un ruolo al task {nome}".format(nome=self.name))
+
+	def getDays(self):
+		return (self.end - self.start + timedelta(days=1)).days
 
 	def addDependency(self, dependency_id, dependency):
 		self.dependencies.update({

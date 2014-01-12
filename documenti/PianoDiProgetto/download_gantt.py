@@ -54,19 +54,19 @@ def testTasks(project):
 	
 	for task in project.getTasks():
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
-		if task.hours > (task.end - task.start).days * MAX_HOURS_PER_DAY:
+		if task.hours > task.getDays() * MAX_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe ore (sono {hours}, al massimo {max_hours})'.format(
 				name = task.name,
 				hours = task.hours,
-				max_hours = (task.end - task.start).days * MAX_HOURS_PER_DAY
+				max_hours = task.getDays() * MAX_HOURS_PER_DAY
 			))
 
 		# Avvisa se ci sono meno di MIN_HOURS_PER_DAY ore per giorno
-		if task.hours < (task.end - task.start).days * MIN_HOURS_PER_DAY:
+		if task.hours < task.getDays() * MIN_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe poche ore (sono {hours}, al minimo {min_hours})'.format(
 				name = task.name,
 				hours = task.hours,
-				min_hours = (task.end - task.start).days * MIN_HOURS_PER_DAY
+				min_hours = task.getDays() * MIN_HOURS_PER_DAY
 			))
 
 def testPerson(project):
@@ -92,7 +92,7 @@ def testPerson(project):
 			personal_roles.append((hours, role))
 
 			if hours > total_hours * MAX_PERCENT_ON_ROLE_PER_PERSON:
-				warning(u"{name} ({total:.0f} h) ha troppe ore come {role} ({hours:.0f} h), siamo al {perc:.0f}% (max {max:.0f}%)".format(
+				warning(u"{name} ({total:.0f} h) ha troppe ore come {role} ({hours:.0f} h), siamo a {perc:.0f}% (max {max:.0f}%)".format(
 					name=person.name,
 					total=total_hours,
 					role=role.name,

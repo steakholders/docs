@@ -52,6 +52,14 @@ lucidchart.download_image("4c73-4560-52aaed73-83b3-40820a00d457", "UML/UCU10 - M
 lucidchart.download_image("482c-b2e4-52a73b22-9361-34180a009f85", "UML/UCU11 - Gestione utenti.png")
 lucidchart.download_image("4b7b-431c-52a73bc9-898c-552e0a00c811", "UML/UCU11.1 - Creazione Utente.png")
 lucidchart.download_image("478e-3890-52b02514-9bb1-1a050a00c462", "UML/UCU11.3 - Apertura show-page Utente.png")
+
+lucidchart.download_image("4c0e-8c78-52d3f94e-9c77-118c0a009902?", "UML/UCU4 - Recupero password.png")
+lucidchart.download_image("4f18-b848-52d3fefb-a245-23890a00d44d?", "UML/UCU4.1 - Richiesta reset password.png")
+lucidchart.download_image("4ad1-71f4-52d408a5-9481-3c2f0a00cb95?", "UML/UCU4.2 - Effettuazione reset password.png")
+lucidchart.download_image("", "UML/.png")
+lucidchart.download_image("", "UML/.png")
+lucidchart.download_image("", "UML/.png")
+
 #UML AMBITO SVILUPPATORE
 lucidchart.download_image("47e2-6998-52a85f0a-a1b4-55cd0a00c462", "UML/UCS - Operazioni ad alto livello.png")
 lucidchart.download_image("4ddd-fbf0-52a97bae-bbab-32110a009f85", "UML/UCS2 - Configurazione database.png")

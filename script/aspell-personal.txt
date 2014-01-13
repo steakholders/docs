@@ -1,4 +1,4 @@
-personal_ws-1.1 it 565 
+personal_ws-1.1 it 567 
 AAAA
 ACWP
 AR
@@ -32,7 +32,6 @@ Cardin
 Casiraghi
 Chrome
 Closure
-Codifica'
 CoffeeStrap
 Cohesion
 Compiler
@@ -175,7 +174,6 @@ Portable
 Postcondizione
 Postcondizioni
 Principles
-Procedure'
 Process
 Product
 Professional
@@ -461,6 +459,8 @@ pre
 predeterminabili
 proattiva
 proattivi
+procedure'
+processi'
 progetto'
 programming
 project
@@ -490,6 +490,7 @@ rimpiazza'
 root
 rounded
 rulecolor
+ruoli'
 scripting
 section
 sep
@@ -516,6 +517,7 @@ startup
 stepnumber
 storage
 stringstyle
+struttura'
 stub
 style
 subtask'

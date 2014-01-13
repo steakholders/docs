@@ -226,8 +226,8 @@ def estimateCosts(project):
 project = Factory.createProject("steakholders", id=65465)
 project.load()
 
-printProjectReport(project)
-printTaskLists(project)
+#printProjectReport(project)
+#printTaskLists(project)
 
 testTasks(project)
 testPerson(project)

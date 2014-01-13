@@ -6,8 +6,8 @@
 
 Abbiamo ritenuto poco efficiente utilizzare la piattaforma \glossario{TeamworkPM} per la gestione sia delle attività che delle modifiche, poiché l'utilizzo che volevamo farne non sfruttava appieno le funzionalità di ``Diagramma Gantt'' e ``Task List''. È stata fatta quindi la seguente separazione:
 \begin{itemize}
- \item \textbf{gestione delle attività}: viene fatta utilizzando la sezione ``Task'' di \glossario{TeamworkPM}
- \item \textbf{gestione delle modifiche}: viene fatta utilizzando la sezione ``Issues'' di \glossario{GitHub}
+ \item \textbf{gestione delle attività}: viene fatta utilizzando i \glossario{task} di \glossario{TeamworkPM}
+ \item \textbf{gestione delle modifiche}: viene fatta utilizzando le \glossario{issue} di \glossario{GitHub}
 \end{itemize}
 
 Quando non è specificato come modificare il valore di un parametro delle \glossario{issue} bisogna mantenere il valore già presente, o quello di default se la \glossario{issue} è appena stata creata.
@@ -17,7 +17,7 @@ Quando non è specificato come modificare il valore di un parametro delle \gloss
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/richiesta_di_modifica_e_segnalazione_bug.png}
+    \includegraphics[width=9cm]{uml-processi/richiesta_di_modifica_e_segnalazione_bug.png}
     \caption{Richiesta di modifica e segnalazione bug}
 \end{figure}
 
@@ -25,7 +25,7 @@ Se un membro del gruppo intende segnalare un bug o richiedere una modifica deve 
 \begin{itemize}
  \item \textbf{Titolo}: un titolo breve ma descrittivo.
  \item \textbf{Descrizione}: una descrizione esaustiva dell'anomalia riscontrata o della modifica richiesta.
- \item \textbf{Tag}: uno tra i seguenti
+ \item \textbf{Tag}: uno tra i seguenti:
   \begin{itemize}
    \item \textbf{segnalazione anomalia}: da usare se si vuole segnalare un bug, un malfunzionamento, un'anomalia in genere che non dovrebbe esserci nei documenti ufficiali o nel prodotto finale;
    \item \textbf{richiesta di modifica}: da usare se si vuole richiedere al Responsabile una modifica.
@@ -38,7 +38,7 @@ Se un membro del gruppo intende segnalare un bug o richiedere una modifica deve 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/progettazione_unita_di_lavoro.png}
+    \includegraphics[height=7cm]{uml-processi/progettazione_unita_di_lavoro.png}
     \caption{Creazione compito}
 \end{figure}
 
@@ -46,7 +46,7 @@ Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare 
 \begin{itemize}
  \item \textbf{Titolo}: un titolo breve ma descrittivo.
  \item \textbf{Descrizione}: una descrizione esaustiva dell'attività da svolgere, con tutti i riferimenti necessari.
- \item \textbf{Tag}: \textbf{progettazione}
+ \item \textbf{Tag}: \textbf{codifica}
  \item \textbf{Assegnato a}: il Responsabile
  \item \textbf{Milestone}: nessuna
 \end{itemize}
@@ -55,16 +55,11 @@ Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.2\textwidth]{uml-processi/valutazione_issue.png}
+    \includegraphics[width=\textwidth]{uml-processi/valutazione_issue.png}
     \caption{Valutazione issue}
 \end{figure}
 
-Il Responsabile deve valutare ogni nuova \glossario{issue}. Se ritiene che la formulazione sia corretta deve segnarle come approvate:
-\begin{itemize}
- \item \textbf{Tag}: viene aggiunto \textbf{approvato}
-\end{itemize}
-
-Se è necessario approfondire la modalità in cui verrà eseguita l'attività richiesta allora il Responsabile deve anche assegnare la \glossario{issue} ad un ruolo competente:
+Il Responsabile deve valutare ogni nuova \glossario{issue}. Se ritiene che la formulazione sia corretta e se è necessario approfondire la modalità in cui verrà eseguita l'attività richiesta, allora il Responsabile deve anche assegnare la \glossario{issue} ad un ruolo competente:
 \begin{itemize}
  \item \textbf{Assegnato a}: un ruolo a scelta del Responsabile
 \end{itemize}
@@ -75,7 +70,7 @@ Tale ruolo, dopo averla analizzata, deve riassegnarla al Responsabile aggiungend
  \item \textbf{Descrizione}: la descrizione già presente con in aggiunta i risultati dell'analisi.
 \end{itemize}
 
-A questo punto, se il Responsabile ritiene che l'attività debba essere eseguita, pianifica un compito secondo la procedura \ref{pianificazione}.
+A questo punto, se il Responsabile ritiene che l'attività debba essere eseguita, pianifica la issue secondo la procedura \ref{pianificazione}.
 
 Se il Responsabile non approva o non ritene valida la \glossario{issue} deve chiuderla impostando:
 \begin{itemize}
@@ -93,11 +88,11 @@ Se il Responsabile non approva o non ritene valida la \glossario{issue} deve chi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{uml-processi/pianificazione_issue.png}
+    \includegraphics[width=12cm]{uml-processi/pianificazione_issue.png}
     \caption{Pianificazione issue}
 \end{figure}
 
-Il Responsabile deve pianificare le \glossario{issue} a lui assegnate e marcate ``approvato'' o ``progettazione'' creando un \glossario{task}. Deve inoltre pianificare il corrispondente \glossario{task} di verifica se necessario. I \glossario{task} del compito e della modifica devono essere assegnati a persone diverse.
+Il Responsabile deve pianificare le \glossario{issue} a lui assegnate e marcate ``approvato'' o ``codifica'' creando un \glossario{task}. Deve inoltre pianificare il corrispondente \glossario{task} di verifica se necessario. I \glossario{task} del compito e della modifica devono essere assegnati a persone diverse.
 
 Modifica i parametri della \glossario{issue}:
 \begin{itemize}
@@ -141,7 +136,7 @@ Se il \glossario{task} di verifica non esiste, allora deve crearne uno nuovo seg
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/creazione_task.png}
+    \includegraphics[height=6cm]{uml-processi/creazione_task.png}
     \caption{Creazione task}
 \end{figure}
 
@@ -165,7 +160,7 @@ Solo il Responsabile può creare nuovi task.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/esecuzione_compito.png}
+    \includegraphics[width=11cm]{uml-processi/esecuzione_compito.png}
     \caption{Esecuzione compito}
 \end{figure}
 
@@ -174,7 +169,7 @@ Il ruolo a cui è assegnato un \glossario{task} non di verifica, dopo aver svolt
  \item \textbf{Stato task}: ``Chiuso''.
 \end{itemize}
 
-Inoltre deve chiudere ogni eventuale \glossario{issue} associata:
+Inoltre deve chiudere ogni eventuale \glossario{issue} aperta associata:
 \begin{itemize}
  \item \textbf{Stato issue}: ``Chiuso''.
 \end{itemize}
@@ -183,7 +178,7 @@ Inoltre deve chiudere ogni eventuale \glossario{issue} associata:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{uml-processi/esecuzione_verifica.png}
+    \includegraphics[width=10cm]{uml-processi/esecuzione_verifica.png}
     \caption{Esecuzione verifica}
 \end{figure}
 

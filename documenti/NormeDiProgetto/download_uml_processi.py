@@ -36,7 +36,7 @@ else:
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
 lucidchart.download_image("471f-1654-52ae2a57-ad48-71840a005f9d", "uml-processi/richiesta_di_modifica_e_segnalazione_bug.png")
-lucidchart.download_image("4c30-fde4-52d337d8-8fc7-71b80a005548", "uml-processi/progettazione_unita_di_lavoro.png")
+lucidchart.download_image("4ec7-9c08-52d33a69-9662-32f00a004eaf", "uml-processi/progettazione_unita_di_lavoro.png")
 lucidchart.download_image("4aa8-02e4-52ae2830-9412-5cb50a0086f4", "uml-processi/valutazione_issue.png")
 lucidchart.download_image("4f51-1824-52ae25da-a646-74fd0a00d457", "uml-processi/pianificazione_issue.png")
 lucidchart.download_image("4901-7cc4-52ae1b50-a03c-42480a0086f4", "uml-processi/creazione_task.png")

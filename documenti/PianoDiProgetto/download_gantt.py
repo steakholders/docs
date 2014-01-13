@@ -27,4 +27,6 @@ milestone_ra = 104204
 
 testEstimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])
 
-writeGanttLatex(project, milestone_rr, "gantt_rr.tex")
+writeGanttLatex(project, milestone_rp, "gantt_rp.tex")
+writeGanttLatex(project, milestone_rq, "gantt_rq.tex")
+writeGanttLatex(project, milestone_ra, "gantt_ra.tex")

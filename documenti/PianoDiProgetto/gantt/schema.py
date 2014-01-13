@@ -35,6 +35,9 @@ class TimeEntry:
 		self.description = description
 		self.datetime = datetime
 
+	def getWorkHours(self):
+		return self.hours
+
 
 class Task:
 	def __init__(self, tasklist, id, start, end, name, responsible=None, role=None, planned_hours=None):
@@ -60,16 +63,31 @@ class Task:
 	def getDays(self):
 		return (self.end - self.start + timedelta(days=1)).days
 
+	def getStart(self):
+		return self.start
+	
+	def getEnd(self):
+		return self.end
+
 	def getPlannedHours(self):
 		if self.planned_hours is None:
 			return self.getDays() * DEFAULT_HOURS_PER_DAY
 		else:
 			return self.planned_hours
 
+	def getWorkHours(self):
+		if len(self.timeentries) > 0:
+			return sum([x.getWorkHours() for x in self.timeentries])
+		else:
+			return self.getPlannedHours()
+
 	def addDependency(self, dependency):
 		self.dependencies.update({
 			dependency.id: dependency
 		})
+
+	def getDependencies(self):
+		return self.dependencies.values()
 
 	def addTimeEntry(self, timeentry):
 		self.timeentries.update({
@@ -157,9 +175,9 @@ class Milestone:
 
 	def getEnd(self):
 		if len(self.tasklists) == 0:
-			return None
+			return self.deadline
 
-		return max([x.getEnd() for x in self.tasklists.values()])
+		return max([x.getEnd() for x in self.tasklists.values()]+[self.deadline])
 
 	def getStart(self):
 		if len(self.tasklists) == 0:

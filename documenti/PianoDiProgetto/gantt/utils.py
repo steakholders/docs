@@ -14,3 +14,8 @@ def printTitle(title):
 	print
 	print title
 	print "".join(["-"]*len(title))
+
+def writeOnFile(filename, content):
+	file_in = file.open(filename, "w")
+	file_in.write(content)
+	file_in.close()

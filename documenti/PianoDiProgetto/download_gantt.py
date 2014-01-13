@@ -6,23 +6,8 @@ from Queue import PriorityQueue
 from collections import namedtuple
 from datetime import timedelta
 
-from gantt_lib import Factory, warning, pedantic_warning
-
-# Numero minimo e massimo di ore di lavoro a testa
-MIN_HOURS = 95
-MAX_HOURS = 105
-# Minimo e massimo di ore di lavoro al giorno per mersona
-MIN_HOURS_PER_DAY = 1
-MAX_HOURS_PER_DAY = 3
-# Numero minimo di ruoli che una persona deve svolgere, ciascuno per almeno tot ore
-MIN_ROLES_PER_PERSON = 6
-MIN_HOURS_PER_PERSON_ROLE = 2
-# Percentuale massima di ore che una persona può passare su un unico ruolo
-MAX_PERCENT_ON_ROLE_PER_PERSON = 0.5
-# Preventivo minimo e massimo, percentuale minima di ore di verifica
-MIN_ESTIMATE_COST = 13000
-MAX_ESTIMATE_COST = 13999
-MIN_VERIFIER_PERCENT = 0.3
+from gantt.schema import *
+from gantt.download import *
 
 def printTitle(title):
 	print
@@ -32,11 +17,11 @@ def printTitle(title):
 def printProjectReport(project):
 	printTitle("Riepilogo progetto")
 
-	print "Milestone: {num}".format(num=len(project.milestones))
-	print "Persone: {num}".format(num=len(project.people))
-	print "Ruoli: {num}".format(num=len(project.roles))
-	print "TaskList: {num}".format(num=len(project.tasklists))
-	print "Task: {num}".format(num=len(project.tasks))
+	print "Milestone: {num}".format(num=len(project.getMilestones()))
+	print "Persone: {num}".format(num=len(project.getPeople()))
+	print "Ruoli: {num}".format(num=len(project.getRoles()))
+	print "TaskList: {num}".format(num=len(project.getTaskLists()))
+	print "Task: {num}".format(num=len(project.getTasks()))
 
 def printTaskLists(project):
 	printTitle("Elenco delle tasklist")
@@ -175,14 +160,16 @@ def testConcurrentTask(project):
 				))
 				break
 
-def estimateCosts(project):
+def estimateCosts(project, milestone_ids):
 	printTitle("Controllo vincoli sul preventivo")
 	role_cost = []
 	role_hours = []
 	verifier_hours = None
 
+	all_tasks = project.getTasks(milestone_ids)
+
 	for role in project.getRoles():
-		tasks = [t for t in project.getTasks() if t.role == role]
+		tasks = [t for t in all_tasks if t.role == role]
 		hours = sum([t.hours for t in tasks])
 		cost = hours * role.hour_cost
 		
@@ -233,4 +220,9 @@ testTasks(project)
 testPerson(project)
 testConcurrentTask(project)
 
-estimateCosts(project)
+milestone_rr = 101586
+milestone_rp = 103264
+milestone_rq = 103265
+milestone_ra = 104204
+
+estimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])

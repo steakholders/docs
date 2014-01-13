@@ -100,6 +100,15 @@ class Role:
 	def __repr__(self):
 		return u"<Role({name})>".format(name=self.name).encode('utf-8')
 
+class TimeEntry:
+	def __init__(self, project, task, id, minutes):
+		self.project = project
+		self.task = task
+		self.id = id
+		self.minutes = minutes
+
+		self.task.addTime(self)
+
 class Task:
 	def __init__(self, project, tasklist, id, start, end, name, responsible=None, role=None, hours=None):
 		self.project = project
@@ -159,10 +168,21 @@ class Task:
 	def getDays(self):
 		return (self.end - self.start + timedelta(days=1)).days
 
-	def addDependency(self, dependency_id, dependency):
-		self.dependencies.update({
-			dependency_id: dependency
-		})
+	def addDependency(self, dependency_id):
+		try:
+			dependency = self.project.tasks[dependency_id]
+
+			self.dependencies.update({
+				dependency_id: dependency
+			})
+		except KeyError as key:
+			pedantic_warning(u"Il task '{name}'' dipende dal task {dep} che nell'elenco viene dopo".format(
+				name=self.name,
+				dep=tasklist.name
+			))
+
+	def addTime(self, time):
+		
 
 class TaskList:
 	def __init__(self, project, id, name, milestone):
@@ -208,10 +228,12 @@ class Project:
 		self.tasks = {}
 		self.people = {}
 		self.roles = {}
+		self.time = {}
 
 	def load(self):
 		self.initRoles()
 		self.initPeople()
+		self.initTime()
 		self.initMilestones()
 		self.initTaskLists()
 
@@ -286,13 +308,8 @@ class Project:
 
 				for dependency in task["predecessors"]:
 					if dependency["type"] == "start":
-						try:
-							new_task.addDependency(dependency["id"], self.tasks[dependency["id"]])
-						except KeyError as key:
-							pedantic_warning(u"Il task '{name}'' dipende dal task {dep} che nell'elenco viene dopo".format(
-								name=newtask.name,
-								dep=key
-							))
+						new_task.addDependency(dependency["id"])
+						
 
 	def addPerson(self, person_id, person):
 		self.people.update({
@@ -306,8 +323,38 @@ class Project:
 		for person in data["people"]:
 			Factory.createPerson(self, person["id"], person["first-name"]+" "+person["last-name"])
 
-	def getTasks(self):
-		return self.tasks.values()
+	def addTime(self, timeentry):
+		pass
+
+	def initTime(self):
+		tw = Factory.createTeamworkClient(self.company)
+		self.time = {}
+		page = 0
+		while True:
+			page += 1
+			data = tw.requestJSON("/projects/{project_id}/time_entries".format(project_id=self.id), "page={page}".format(page=page))
+
+			if len(data["time_entries"]) == 0:
+				break
+
+			for time in data["time_entries"]:
+				# TODO
+				self.addTime(time)
+	
+		for person in data["people"]:
+			Factory.createPerson(self, person["id"], person["first-name"]+" "+person["last-name"])
+
+	def getTasks(self, milestones_id=None):
+		if milestones is None:
+			return self.tasks.values()
+
+		# Restituisci i task che sono in una lista che ha una milestone tra milestones_id
+		lists = [x for x in self.tasks.values() if x.milestone.id in milestones_id]
+
+		tasks = []
+		for x in lists.getTasks():
+			tasks.append(x)
+		return tasks
 
 	def getPeople(self):
 		return self.people.values()
@@ -316,44 +363,3 @@ class Project:
 		return self.roles.values()
 
 
-class TeamworkPMClient:
-	def __init__(self, company="steakholders", key=None):
-		self.company = company
-		self.private_key_file = path.expanduser("~/.teamworkpm_private_key")
-		self.key = ""
-		
-		# Ottieni la chiave privata
-		if key is None or len(key) == 0:
-			try:
-				in_file = open(self.private_key_file, "r")
-				self.key = json.load(in_file)
-				in_file.close()
-			except IOError:
-				pass
-		else:
-			self.key = key
-		
-		# Chiedila se è vuota
-		while self.key is None or len(self.key) == 0:
-			self.key = raw_input(u"Inserisci la chiave privata per le API di TeamworkPM del tuo utente: ")	
-
-		# Salva la chiave privata nella home (in chiaro!)
-		out_file = open(self.private_key_file, "w")
-		json.dump(self.key, out_file)
-		out_file.close()
-
-	def request(self, action):
-		request = urllib2.Request("https://{0}.teamworkpm.net/{1}".format(self.company, action))
-		request.add_header("Authorization", "BASIC " + base64.b64encode(self.key + ":xxx"))
-		response = urllib2.urlopen(request)
-		data = response.read()
-		return data
-
-	def requestJSON(self, base_action, parameters=""):
-		action = base_action+".json"
-		if len(parameters) > 0:
-			action += "?" + parameters
-
-		json_data = self.request(action)
-		data = json.loads(json_data)
-		return data

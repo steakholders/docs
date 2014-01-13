@@ -46,15 +46,16 @@ I dati verranno prelevati da \glossario{MongoDB}, un sistema gestionale di base 
 		\item \textbf{"\textit{Sviluppatore}"}, il quale, tramite un linguaggio \glossario{DSL} fornito da \ProjectName{}, sarà in grado di generare l'applicazione web rivolta all'utente esperto di business.
 	\end{itemize}		
 	 
-	L'\glossario{Applicazione MaaP} invece potrà essere utilizzata da due tipologie di utenti:
+	L'\glossario{Applicazione MaaP} invece potrà essere utilizzata da tre tipologie di utenti:
 	\begin{itemize}
 		\item \textbf{"\textit{Utente}"}, il quale gode di permessi di sola lettura delle pagine;
 		\item \textbf{"\textit{Admin}"}, il quale ha gli stessi privilegi di uno "\textit{Utente}" e inoltre può:
 		\begin{itemize}
 			\item creare o rimuovere utenti;
-			\item elevare o declassare utenti al livello di "\textit{admin}";
+			\item elevare o declassare utenti al/dal livello di "\textit{admin}";
 			\item scrivere sul \glossario{database} creando o modificando indici.
-		\end{itemize}		 	
+		\end{itemize}	
+		\item \textbf{"\textit{Super Admin}"}, il quale eredita i privilegi dell'admin, non può essere declassato e non se ne possono modificare i dati.
 	\end{itemize}
 
 Infine il servizio \glossario{MaaS} potrà essere utilizzato da

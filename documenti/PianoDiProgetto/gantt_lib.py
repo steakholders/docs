@@ -44,6 +44,7 @@ def take_brackets(str):
 	
 	return (str, content)
 
+
 class Factory:
 	singleton_tw_client = None
 

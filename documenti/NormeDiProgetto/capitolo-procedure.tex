@@ -4,105 +4,69 @@
 \subsection{Procedure di progetto}
 \label{procedurediprogetto}
 
-Quando non è specificato come modificare il valore di un parametro del ticket bisogna mantenere il valore già presente, o quello di default se il ticket è appena stato creato.
+Abbiamo ritenuto poco efficiente utilizzare la piattaforma \glossario{TeamworkPM} per la gestione sia delle attività che delle modifiche, poiché l'utilizzo che volevamo farne non sfruttava appieno le funzionalità di ``Diagramma Gantt'' e ``Task List''. È stata fatta quindi la seguente separazione:
+\begin{itemize}
+ \item \textbf{gestione delle attività}: viene fatta utilizzando la sezione ``Task'' di \glossario{TeamworkPM}
+ \item \textbf{gestione delle modifiche}: viene fatta utilizzando la sezione ``Issues'' di \glossario{GitHub}
+\end{itemize}
 
-Il parametro ``Tag nel titolo'' corrisponde al testo racchiuso tra parentesi quadre che deve essere posto all'inizio del campo ``titolo'', in aggiunta al titolo esplicito.
+Quando non è specificato come modificare il valore di un parametro delle \glossario{issue} bisogna mantenere il valore già presente, o quello di default se la \glossario{issue} è appena stata creata.
 
-\subsubsection{Creazione compito}
+\subsubsection{Richiesta di modifica e segnalazione bug}
+\label{aperturaissue}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/Creazione_compito.png}
+    \includegraphics[width=7cm]{uml-processi/richiesta_di_modifica_e_segnalazione_bug.png}
+    \caption{Richiesta di modifica e segnalazione bug}
+\end{figure}
+
+Se un membro del gruppo intende segnalare un bug o richiedere una modifica deve aprire una \glossario{issue} su \glossario{GitHub} con i seguenti parametri:
+\begin{itemize}
+ \item \textbf{Titolo}: un titolo breve ma descrittivo.
+ \item \textbf{Descrizione}: una descrizione esaustiva dell'anomalia riscontrata o della modifica richiesta.
+ \item \textbf{Tag}: uno tra i seguenti
+  \begin{itemize}
+   \item \textbf{segnalazione anomalia}: da usare se si vuole segnalare un bug, un malfunzionamento, un'anomalia in genere che non dovrebbe esserci nei documenti ufficiali o nel prodotto finale;
+   \item \textbf{richiesta di modifica}: da usare se si vuole richiedere al Responsabile una modifica.
+  \end{itemize}
+ \item \textbf{Assegnato a}: il Responsabile
+ \item \textbf{Milestone}: nessuna
+\end{itemize}
+
+\subsubsection{Progettazione unità di lavoro}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/progettazione_unita_di_lavoro.png}
     \caption{Creazione compito}
 \end{figure}
 
-Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare i ticket di codifica con i seguenti parametri:
+Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare le \glossario{issue} di codifica con i seguenti parametri:
 \begin{itemize}
- \item \textbf{Sezione}:''Da pianificare''
- \item \textbf{Milestone}: la revisione entro la quale il compito dovrà essere terminato.
- \item \textbf{Tag nel titolo}: nessuno.
- \item \textbf{Titolo}: breve descrizione del compito, con il riferimento all'unità di lavoro corrispondente.
- \item \textbf{Dipendenze}: le dipendenze decise nella progettazione.
- \item \textbf{Pianificazione}: nessuna.
- \item \textbf{Assegnato a}: il Responsabile.
+ \item \textbf{Titolo}: un titolo breve ma descrittivo.
+ \item \textbf{Descrizione}: una descrizione esaustiva dell'attività da svolgere, con tutti i riferimenti necessari.
+ \item \textbf{Tag}: \textbf{progettazione}
+ \item \textbf{Assegnato a}: il Responsabile
+ \item \textbf{Milestone}: nessuna
 \end{itemize}
 
-\subsubsection{Pianificazione compito e verifica}
-\label{pianificazione}
+\subsubsection{Valutazione issue}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm]{uml-processi/Pianificazione_compito_e_verifica.png}
-    \caption{Pianificazione compito e verifica}
+    \includegraphics[width=1.2\textwidth]{uml-processi/valutazione_issue.png}
+    \caption{Valutazione issue}
 \end{figure}
 
-Il Responsabile deve pianificare i ticket delle sezioni ``Da pianificare''. Deve inoltre creare e pianificare il corrispondente ticket di verifica se necessario. I ticket del compito e della modifica devono essere assegnati a persone diverse.
-
-Modifica i parametri del compito:
+Il Responsabile deve valutare ogni nuova \glossario{issue}. Se ritiene che la formulazione sia corretta deve segnarle come approvate:
 \begin{itemize}
- \item \textbf{Sezione}: ``Compito''.
- \item \textbf{Pianificazione}: a scelta del Responsabile.
- \item \textbf{Assegnato a}: un programmatore, a scelta del Responsabile.
+ \item \textbf{Tag}: viene aggiunto \textbf{approvato}
 \end{itemize}
 
-Parametri della verifica:
+Se è necessario approfondire la modalità in cui verrà eseguita l'attività richiesta allora il Responsabile deve anche assegnare la \glossario{issue} ad un ruolo competente:
 \begin{itemize}
- \item \textbf{Sezione}: ``Verifica''
- \item \textbf{Milestone}: la revisione entro la quale la verifica dovrà essere terminata.
- \item \textbf{Titolo}: breve descrizione della verifica, con un riferimento al compito da verificare.
- \item \textbf{Dipendenze}: il compito di cui bisogna fare la verifica.
- \item \textbf{Pianificazione}: a scelta del Responsabile.
- \item \textbf{Assegnato a}: un verificatore, a scelta del Responsabile.
-\end{itemize}
-
-\subsubsection{Esecuzione compito}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=7cm]{uml-processi/Esecuzione_compito.png}
-    \caption{Esecuzione compito}
-\end{figure}
-
-Non appena il programmatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina il compito deve chiudere il ticket:
-\begin{itemize}
- \item \textbf{Stato}: ``Chiuso''.
-\end{itemize}
- 
-\subsubsection{Esecuzione verifica}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm]{uml-processi/Esecuzione_verifica.png}
-    \caption{Esecuzione verifica}
-\end{figure}
-
-Non appena il verificatore a cui è assegnato un ticket comincia a lavorare deve impostare una percentuale maggiore di $0\%$. Quando termina la verifica deve chiudere il ticket:
-\begin{itemize}
- \item \textbf{Stato}: ``Chiuso''.
-\end{itemize}
-
-Nel caso in cui il verificatore trovi bug o non conformità significative deve creare un ticket di tipo ``Da valutare'':
-\begin{itemize}
- \item \textbf{Sezione}: ``Da valutare''
- \item \textbf{Milestone}: la revisione entro la quale il bug dovrà essere corretto, è opzionale.
- \item \textbf{Tag nel titolo}: un aggettivo tra ``Error'', ``Fault'', ``Failure'', ``Mistake'', come descritto nel \PianoDiQualifica.
- \item \textbf{Titolo}: breve descrizione del bug, con un riferimento al compito nel quale lo si è trovato.
- \item \textbf{Dipendenze}: nessuna.
- \item \textbf{Pianificazione}: nessuna.
- \item \textbf{Assegnato a}: il Responsabile.
-\end{itemize}
-
-\subsubsection{Valutazione delle modifiche}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.2\textwidth]{uml-processi/Valutazione_delle_modifiche.png}
-    \caption{Valutazione delle modifiche}
-\end{figure}
-
-Il Responsabile deve valutare ogni modifica del tipo ``Da valutare''. Se la formulazione della modifica è corretta allora la assegna ad un ruolo competente:
-\begin{itemize}
- \item \textbf{Assegnato a}: un membro del gruppo a scelta del Responsabile
+ \item \textbf{Assegnato a}: un ruolo a scelta del Responsabile
 \end{itemize}
 
 Tale ruolo, dopo averla analizzata, deve riassegnarla al Responsabile aggiungendo le informazione prodotte dall'analisi:
@@ -111,40 +75,124 @@ Tale ruolo, dopo averla analizzata, deve riassegnarla al Responsabile aggiungend
  \item \textbf{Descrizione}: la descrizione già presente con in aggiunta i risultati dell'analisi.
 \end{itemize}
 
-A questo punto, se il Responsabile ritiene che la modifica debba essere eseguita, imposta i seguenti parametri:
-\begin{itemize}
- \item \textbf{Sezione}: ``Da pianificare''
- \item \textbf{Milestone}: la revisione entro la quale la modifica dovrà essere fatta.
-\end{itemize}
-e passa a pianificare il ticket, seguendo la procedura \ref{pianificazione}.
+A questo punto, se il Responsabile ritiene che l'attività debba essere eseguita, pianifica un compito secondo la procedura \ref{pianificazione}.
 
-Se il Responsabile non approva o non è ritene valida la modifica deve impostare:
+Se il Responsabile non approva o non ritene valida la \glossario{issue} deve chiuderla impostando:
 \begin{itemize}
- \item \textbf{Sezione}: ``Rifiutato''.
- \item \textbf{Assegnato a}: nessuno.
+ \item \textbf{Tag}: uno tra i seguenti
+  \begin{itemize}
+   \item \textbf{scritto male}: se la descrizione o il titolo sono poco comprensibili;
+   \item \textbf{non lo faremo}: se ritiene che non valga la pena si svolgere l'attività richiesta;
+   \item \textbf{duplicato}: se l'attività è già stata richiesta da un'altra \glossario{issue}. In questo caso è raccomandabile aggiungere nella descrizione un riferimento alla \glossario{issue} originale.
+  \end{itemize}
  \item \textbf{Stato}: ``Chiuso''.
 \end{itemize}
 
-\subsubsection{Richiesta di modifica e segnalazione bug}
-\label{segnalazionebug}
+\subsubsection{Pianificazione issue}
+\label{pianificazione}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{uml-processi/Richiesta_di_modifica_e_segnalazione_bug.png}
-    \caption{Richiesta di modifica e segnalazione bug}
+    \includegraphics[width=11cm]{uml-processi/pianificazione_issue.png}
+    \caption{Pianificazione issue}
 \end{figure}
 
-Se un membro del gruppo volesse segnalare un bug o richiedere una modifica deve creare un ticket con i seguenti parametri:
+Il Responsabile deve pianificare le \glossario{issue} a lui assegnate e marcate ``approvato'' o ``progettazione'' creando un \glossario{task}. Deve inoltre pianificare il corrispondente \glossario{task} di verifica se necessario. I \glossario{task} del compito e della modifica devono essere assegnati a persone diverse.
+
+Modifica i parametri della \glossario{issue}:
 \begin{itemize}
- \item \textbf{Sezione}: ``Da valutare''
- \item \textbf{Milestone}: la revisione entro la quale la modifica dovrà essere fatta, è opzionale.
- \item \textbf{Tag nel titolo}: un aggettivo tra ``Error'', ``Fault'', ``Failure'', ``Mistake'', come descritto nel \PianoDiQualifica, oppure ``Modifica'' se è una richiesta di modifica.
- \item \textbf{Titolo}: breve descrizione della modifica.
- \item \textbf{Descrizione}: descrizione completa e auto-sufficiente del bug o della modifica richiesta.
- \item \textbf{Dipendenze}: nessuna.
- \item \textbf{Pianificazione}: nessuna.
- \item \textbf{Assegnato a}: il Responsabile.
+ \item \textbf{Assegnato a}: nessuno.
 \end{itemize}
+
+Se esiste già un \glossario{task} a cui associare la \glossario{issue} il Responsabile deve scegliere una delle seguenti opzioni:
+\begin{itemize}
+ \item modificare tale \glossario{task} con questi parametri:
+	\begin{itemize}
+		\item \textbf{Descrizione}: la descrizione precedente, con in aggiunta un riferimento evidente alla \glossario{issue}.
+	\end{itemize}
+ \item creare un \glossario{task} secondario (``subtask'' nel gergo di TeamworkPM) con i seguenti parametri:
+	\begin{itemize}
+		\item \textbf{Titolo}: un titolo breve ma descrittivo, magari simile a quello della \glossario{issue}.
+		\item \textbf{Descrizione}: una breve descrizione, con un riferimento evidente alla \glossario{issue}.
+		\item \textbf{Assegnato a}: la stessa persona a cui è associato il \glossario{task} principale.
+	\end{itemize}
+\end{itemize}
+
+Se il \glossario{task} non esiste, allora deve crearne uno nuovo seguendo la procedura \ref{creazionetask}.
+
+Analogamente, se esiste già un \glossario{task} a cui associare la verifica, il Responsabile deve scegliere una delle seguenti opzioni:
+\begin{itemize}
+ \item modificare tale \glossario{task} di verifica con questi parametri:
+	\begin{itemize}
+		\item \textbf{Descrizione}: la descrizione precedente, con in aggiunta un riferimento evidente al \glossario{task} da verificare.
+	\end{itemize}
+ \item creare un \glossario{task} secondario (``subtask'' nel gergo di TeamworkPM) con i seguenti parametri:
+	\begin{itemize}
+		\item \textbf{Titolo}: un titolo breve ma descrittivo, magari simile a quello della \glossario{issue}.
+		\item \textbf{Descrizione}: una breve descrizione, con un riferimento evidente alla \glossario{issue}.
+		\item \textbf{Assegnato a}: la stessa persona a cui è associato il \glossario{task} principale.
+	\end{itemize}
+\end{itemize}
+
+Se il \glossario{task} di verifica non esiste, allora deve crearne uno nuovo seguendo la procedura \ref{creazionetask}.
+
+\subsubsection{Creazione task}
+\label{creazionetask}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/creazione_task.png}
+    \caption{Creazione task}
+\end{figure}
+
+Il Responsabile può creare \glossario{task} con i seguenti parametri:
+\begin{itemize}
+ \item \textbf{Titolo}: il titolo dell'attività nel formato ``\{identificativo\} - \{titolo\} (\{ruolo\})'', dove
+	\begin{itemize}
+		\item \textbf{identificativo}: il codice che identifica l'attività nel \emph{Piano di progetto}, se presente;
+		\item \textbf{titolo}: il titolo, breve e descrittivo, dell'attività.
+		\item \textbf{ruolo}: il ruolo a cui è assegnato il \glossario{task}
+	\end{itemize}
+ \item \textbf{Assegnato a}: un membro del gruppo a scelta del Responsabile.
+ \item \textbf{Pianificazione}: a scelta del Responsabile.
+ \item \textbf{Descrizione}: una descrizione dell'attività (raccomandata).
+ \item \textbf{Dipendenze}: i \glossario{task} di cui bisogna attendere il termine prima di poter svolgere questo \glossario{task}. In particolare, i \glossario{task} di verifica devono sempre dipendere dai \glossario{task} che devono verificare.
+\end{itemize}
+
+Solo il Responsabile può creare nuovi task.
+
+\subsubsection{Esecuzione compito}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{uml-processi/esecuzione_compito.png}
+    \caption{Esecuzione compito}
+\end{figure}
+
+Il ruolo a cui è assegnato un \glossario{task} non di verifica, dopo aver svolto l'attività richiesta, deve chiudere il \glossario{task}:
+\begin{itemize}
+ \item \textbf{Stato task}: ``Chiuso''.
+\end{itemize}
+
+Inoltre deve chiudere ogni eventuale \glossario{issue} associata:
+\begin{itemize}
+ \item \textbf{Stato issue}: ``Chiuso''.
+\end{itemize}
+
+\subsubsection{Esecuzione verifica}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{uml-processi/esecuzione_verifica.png}
+    \caption{Esecuzione verifica}
+\end{figure}
+
+Il verificatore a cui è assegnato un \glossario{task}, dopo aver svolto l'attività richiesta, deve chiudere il \glossario{task}:
+\begin{itemize}
+ \item \textbf{Stato}: ``Chiuso''.
+\end{itemize}
+
+Nel caso in cui il verificatore trovi bug o non conformità significative deve creare una \glossario{issue}, seguendo la procedura descritta nella sezione \ref{aperturaissue}.
 
 
 \subsection{Analisi dei requisiti}

@@ -16,8 +16,8 @@ tw.getTimeEntries(project)
 
 
 testTasks(project)
-testPerson(project)
-testConcurrentTask(project)
+testPeople(project)
+testConcurrentTasks(project)
 
 milestone_rr = 101586
 milestone_rp = 103264

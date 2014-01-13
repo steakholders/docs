@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from parametri import *
+
 def warning(message):
 	print "ATTENZIONE: "+message.encode('utf-8')
 
 def pedantic_warning(message):
-	disable = True
-	if disable: return
+	if not VERBOSE: return
 	print "ATTENZIONE: "+message.encode('utf-8')
 
 def printTitle(title):

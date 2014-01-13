@@ -8,27 +8,27 @@ from parametri import *
 from utils import *
 
 
-def testTask(project):
+def testTasks(project):
 	printTitle("Controllo vincoli sui task")
 
 	for task in project.getTasks():
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
-		if task.hours > task.getDays() * MAX_HOURS_PER_DAY:
+		if task.getPlannedHours() > task.getDays() * MAX_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe ore (sono {hours}, al massimo {max_hours})'.format(
 				name = task.name,
-				hours = task.hours,
+				hours = task.getPlannedHours(),
 				max_hours = task.getDays() * MAX_HOURS_PER_DAY
 			))
 
 		# Avvisa se ci sono meno di MIN_HOURS_PER_DAY ore per giorno
-		if task.hours < task.getDays() * MIN_HOURS_PER_DAY:
+		if task.getPlannedHours() < task.getDays() * MIN_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe poche ore (sono {hours}, al minimo {min_hours})'.format(
 				name = task.name,
-				hours = task.hours,
+				hours = task.getPlannedHours(),
 				min_hours = task.getDays() * MIN_HOURS_PER_DAY
 			))
 
-def testPerson(project):
+def testPeople(project):
 	printTitle("Controllo vincoli sulle persone")
 	
 	# Visualizza informazioni
@@ -42,14 +42,14 @@ def testPerson(project):
 	# Visualizza informazioni
 	for person in project.getPeople():
 		personal_tasks = [t for t in project.getTasks() if t.responsible == person]
-		total_hours = sum([t.hours for t in personal_tasks])
+		total_hours = sum([t.getPlannedHours() for t in personal_tasks])
 		
 		RoleHours = namedtuple('RoleHours', ['hours', 'role'])
 		personal_roles = []
 
 		for role in project.getRoles():
 			tasks = [t for t in personal_tasks if t.role == role]
-			hours = sum([t.hours for t in tasks])
+			hours = sum([t.getPlannedHours() for t in tasks])
 			personal_roles.append(RoleHours(hours=hours, role=role))
 
 			if hours > total_hours * MAX_PERCENT_ON_ROLE_PER_PERSON:
@@ -62,7 +62,7 @@ def testPerson(project):
 					max=100*MAX_PERCENT_ON_ROLE_PER_PERSON
 				))
 
-		current_roles = [r.role for r in personal_roles if r.hours >= MIN_HOURS_PER_PERSON_ROLE]
+		current_roles = [x.role for x in personal_roles if x.hours >= MIN_HOURS_PER_PERSON_ROLE]
 
 		if len(current_roles) < MIN_ROLES_PER_PERSON:
 			warning(u"{name} ha troppi pochi ruoli ({num}). Dovrebbe fare più {roles}.".format(
@@ -76,7 +76,7 @@ def testPerson(project):
 	# Controlla vincoli sulle ore di lavoro
 	for person in project.getPeople():
 		tasks = [t for t in project.getTasks() if t.responsible == person]
-		hours = sum([t.hours for t in tasks])
+		hours = sum([t.getPlannedHours() for t in tasks])
 		
 		if hours < MIN_HOURS:
 			warning(u"{name} ({hours:.0f} h) deve fare almeno {min:.0f} ore di lavoro".format(
@@ -92,7 +92,7 @@ def testPerson(project):
 				max=MAX_HOURS
 			))
 
-def testConcurrentTask(project):
+def testConcurrentTasks(project):
 	printTitle("Controllo task sovrapposti")
 	
 	# Controlla che tutti abbiano da fare un solo task alla volta
@@ -142,11 +142,11 @@ def testEstimateCosts(project, milestone_ids):
 	role_hours = []
 	verifier_hours = None
 
-	all_tasks = [x for x in project.getTasks() if x.tasklist.milestone.id in milestone_ids]
+	all_tasks = [x for x in project.getTasks() if int(x.tasklist.milestone.id) in milestone_ids]
 
 	for role in project.getRoles():
 		tasks = [t for t in all_tasks if t.role == role]
-		hours = sum([t.getEstimatedHours() for t in tasks])
+		hours = sum([t.getPlannedHours() for t in tasks])
 		cost = hours * role.hour_cost
 		
 		role_cost.append(cost)

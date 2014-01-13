@@ -4,6 +4,7 @@
 from __future__ import division
 import re
 from datetime import date, datetime, timedelta
+from pprint import pprint
 from client import TeamworkPMClient
 from utils import *
 from schema import *
@@ -12,7 +13,7 @@ def date_parse(str):
 	return datetime.strptime(str, "%Y%m%d").date()
 
 def datetime_parse(str):
-	return datetime.strptime(str, "%Y-%m-%dT%H:%M:%S")
+	return datetime.strptime(str, "%Y-%m-%dT%H:%M:%SZ")
 
 def take_brackets(str):
 	matches = re.findall(r"(\(\s*\w+\s*\))", str)
@@ -65,7 +66,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 			
 			milestone = project.getMilestone(tasklist["milestone-id"])
 
-			tasklist_obj = TaskList(project, milestone, tasklist["id"], tasklist["name"])
+			tasklist_obj = TaskList(milestone, tasklist["id"], tasklist["name"])
 			milestone.addTaskList(tasklist_obj)
 
 			for task in tasklist["todo-items"]:
@@ -104,7 +105,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 
 				for dependency in task["predecessors"]:
 					if dependency["type"] == "start":
-						new_task.addDependency(project.getTask(dependency["id"]))
+						task_obj.addDependency(project.getTask(dependency["id"]))
 
 	
 	def getTimeEntries(self, project):
@@ -113,13 +114,19 @@ class TeamworkPMDownload(TeamworkPMClient):
 			page += 1
 			data = self.requestJSON("/projects/{project_id}/time_entries".format(project_id=project.id), "page={page}".format(page=page))
 
-			if len(data["time_entries"]) == 0:
+			if len(data["time-entries"]) == 0:
 				break
 
-			for timeentry in data["time_entries"]:
+			for timeentry in data["time-entries"]:
 				task = project.getTask(timeentry["todo-item-id"])
 				hours = int(timeentry["hours"]) + int(timeentry["minutes"])/60
-				timeentry_obj = TimeEntry(task, timeentry["id"], timeentry["description"], date=datetime_parse(timeentry["date"])
+				timeentry_obj = TimeEntry(
+					task,
+					timeentry["id"],
+					timeentry["description"],
+					datetime = datetime_parse(timeentry["date"]),
+					description = timeentry["description"]
+				)
 				
 				if task is None:
 					pedantic_warning(u'La TimeEntry #{id} è assegnata ad un task sconosciuto ({task})'.format(

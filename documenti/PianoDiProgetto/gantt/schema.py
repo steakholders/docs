@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from __future__ import division
+from datetime import timedelta
 from parametri import *
 from utils import *
 
@@ -11,8 +12,6 @@ class Person:
 		self.project = project
 		self.id = id
 		self.name = name
-
-		self.project.addPerson(self.id, self)
 
 	def __repr__(self):
 		return u"<Person(#{id} {name})>".format(id=self.id, name=self.name).encode('utf-8')
@@ -29,7 +28,7 @@ class Role:
 
 
 class TimeEntry:
-	def __init__(self, task, id, hours, description="", date=None):
+	def __init__(self, task, id, hours, description="", datetime=None):
 		self.task = task
 		self.id = id
 		self.hours = hours
@@ -56,22 +55,15 @@ class Task:
 			pedantic_warning(u'Non è stato assegnato nessuno al task "{name}"'.format(name = self.name))
 		
 		if self.role is None:
-			warning(u"Non è stato assegnato nessun ruolo al task {nome}".format(nome=self.name))
+			pedantic_warning(u"Non è stato assegnato nessun ruolo al task {nome}".format(nome=self.name))
 
 	def getDays(self):
 		return (self.end - self.start + timedelta(days=1)).days
 
 	def getPlannedHours(self):
-		# Assegna di default DEFAULT_HOURS_PER_DAY di ore per giorno
 		if self.planned_hours is None:
-			planned_hours = (self.end - self.start).days * DEFAULT_HOURS_PER_DAY
-			pedantic_warning(u'Non è stato assegnato un tempo al task "{name}", assumo che richieda {hours} ore'.format(
-				name = self.name,
-				hours = planned_hours
-			))
-
-			return planned_hours
-		else
+			return self.getDays() * DEFAULT_HOURS_PER_DAY
+		else:
 			return self.planned_hours
 
 	def addDependency(self, dependency):
@@ -148,7 +140,7 @@ class Milestone:
 		return self.tasklists[tasklist_id]		
 	
 	def getTaskLists(self):
-		return self.milestones.values()
+		return self.tasklists.values()
 
 	def getTask(self, task_id):
 		for t in self.getTaskLists():
@@ -160,7 +152,7 @@ class Milestone:
 	def getTasks(self):
 		tasks = []
 		for t in self.getTaskLists():
-			task.extend(t.getTasks())
+			tasks.extend(t.getTasks())
 		return tasks
 
 	def getEnd(self):
@@ -184,7 +176,6 @@ class Project:
 		self.roles = {}
 
 		self.initRoles()
-		self.initPeople()
 
 	# Role
 	def initRoles(self):
@@ -254,5 +245,5 @@ class Project:
 	def getTasks(self):
 		tasks = []
 		for m in self.getMilestones():
-			task.extend(m.getTasks())
+			tasks.extend(m.getTasks())
 		return tasks

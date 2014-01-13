@@ -2,7 +2,10 @@
 # -*- coding: UTF-8 -*-
 
 from __future__ import division
+import re
+from datetime import date, datetime, timedelta
 from client import TeamworkPMClient
+from utils import *
 from schema import *
 
 def date_parse(str):
@@ -80,11 +83,11 @@ class TeamworkPMDownload(TeamworkPMClient):
 					if len(responsible_ids) == 1:
 						responsible_id = responsible_ids[0]
 
-				estimated_hours = None
+				planned_hours = None
 				if len(task['estimated-minutes']) > 0:
 					estimated_minutes = int(task['estimated-minutes'])
 					if estimated_minutes > 0:
-						estimated_hours = estimated_minutes/60
+						planned_hours = estimated_minutes/60
 
 				# Leggi il nome del ruolo
 				title = task["content"]
@@ -95,7 +98,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 
 				task_obj = Task(
 					tasklist_obj, task["id"], date_parse(task["start-date"]), date_parse(task["due-date"]), title,
-					responsible = project.getPerson(responsible_id), role = role_obj, estimated_hours = estimated_hours
+					responsible = project.getPerson(responsible_id), role = role_obj, planned_hours = planned_hours
 				)
 				tasklist_obj.addTask(task_obj)
 

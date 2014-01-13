@@ -2,6 +2,9 @@
 # -*- coding: UTF-8 -*-
 
 from __future__ import division
+import urllib2, base64
+import json
+from os import path
 
 class TeamworkPMClient:
 	def __init__(self, company="steakholders", key=None):

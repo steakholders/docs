@@ -3,6 +3,7 @@
 
 from __future__ import division
 from parametri import *
+from utils import *
 
 
 class Person:
@@ -37,7 +38,7 @@ class TimeEntry:
 
 
 class Task:
-	def __init__(self, tasklist, id, start, end, name, responsible=None, role=None, estimated_hours=None):
+	def __init__(self, tasklist, id, start, end, name, responsible=None, role=None, planned_hours=None):
 		self.tasklist = tasklist
 		self.id = id
 		self.start = start
@@ -45,7 +46,7 @@ class Task:
 		self.name = name
 		self.responsible = responsible
 		self.role = role
-		self.estimated_hours = estimated_hours
+		self.planned_hours = planned_hours
 		
 		self.dependencies = {}
 		self.timeentries = {}
@@ -60,18 +61,18 @@ class Task:
 	def getDays(self):
 		return (self.end - self.start + timedelta(days=1)).days
 
-	def getEstimatedHours(self):
+	def getPlannedHours(self):
 		# Assegna di default DEFAULT_HOURS_PER_DAY di ore per giorno
-		if self.estimated_hours is None:
-			estimated_hours = (self.end - self.start).days * DEFAULT_HOURS_PER_DAY
+		if self.planned_hours is None:
+			planned_hours = (self.end - self.start).days * DEFAULT_HOURS_PER_DAY
 			pedantic_warning(u'Non è stato assegnato un tempo al task "{name}", assumo che richieda {hours} ore'.format(
 				name = self.name,
-				hours = estimated_hours
+				hours = planned_hours
 			))
 
-			return estimated_hours
+			return planned_hours
 		else
-			return self.estimated_hours
+			return self.planned_hours
 
 	def addDependency(self, dependency):
 		self.dependencies.update({
@@ -110,7 +111,10 @@ class TaskList:
 			return None
 
 		return self.tasks[task_id]
-
+	
+	def getTasks(self):
+		return self.tasks.values()
+	
 	def getStart(self):
 		if len(self.tasks) == 0:
 			return None
@@ -153,6 +157,12 @@ class Milestone:
 				return task
 		return None
 
+	def getTasks(self):
+		tasks = []
+		for t in self.getTaskLists():
+			task.extend(t.getTasks())
+		return tasks
+
 	def getEnd(self):
 		if len(self.tasklists) == 0:
 			return None
@@ -167,8 +177,7 @@ class Milestone:
 
 
 class Project:
-	def __init__(self, company, id):
-		self.company = company
+	def __init__(self, id):
 		self.id = id
 		self.milestones = {}
 		self.people = {}
@@ -227,6 +236,13 @@ class Project:
 	def getPeople(self):
 		return self.people.values()
 
+	# TaskLists
+	def getTaskLists(self):
+		tasklists = []
+		for m in self.getMilestones():
+			tasklists.extend(m.getTaskLists())
+		return tasklists
+
 	# Tasks
 	def getTask(self, task_id):
 		for m in self.getMilestones():
@@ -236,8 +252,7 @@ class Project:
 		return None
 
 	def getTasks(self):
+		tasks = []
 		for m in self.getMilestones():
-			task = m.getTask(task_id)
-			if task is not None:
-				return task
-		return None
+			task.extend(m.getTasks())
+		return tasks

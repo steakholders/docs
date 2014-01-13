@@ -1,4 +1,4 @@
-personal_ws-1.1 it 565 
+personal_ws-1.1 it 566 
 AAAA
 abbandona'
 Abstract
@@ -76,7 +76,6 @@ client
 Closure
 cloud
 codifica'
-Codifica'
 CoffeeStrap
 Cohesion
 collection
@@ -379,6 +378,7 @@ predeterminabili
 Principles
 proattiva
 proattivi
+procedure'
 Procedure'
 Process
 Product
@@ -483,6 +483,7 @@ stepnumber
 storage
 String
 stringstyle
+struttura'
 stub
 style
 subtask'

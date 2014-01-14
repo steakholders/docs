@@ -80,7 +80,7 @@ Dove:
         RA1O 6.2.3 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo email dell'utente selezionato dalla relativa show-page. &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
         RA1O 6.2.4 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo password dell'utente selezionato dalla relativa show-page. &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
         RA1D 3  & Funzionale \newline  Desiderabile  & Il sistema deve mettere a disposizione dell'utente autenticato la visualizzazione della dashboard. &  UCU8 \newline  Interno \newline  \\ \hline      
-        RA1D 4.1.2  & Funzionale \newline  Desiderabile  & L'utente può decidere di cambiare l'ordine di visualizzazione dei document selezionando l'intestazione delle colonne aventi la proprietà  sortable.
+        RA1D 4.1.2  & Funzionale \newline  Desiderabile  & L'utente può decidere di cambiare l'ordine di visualizzazione dei document selezionando l'intestazione delle colonne aventi la \glossario{proprietà  sortable}.
  &  Interno \newline  \\ \hline      
         RA1D 4.1.3  & Funzionale \newline  Desiderabile  & L'applicazione può mettere a disposizione dell'utente per ogni riga della tabella una checkbox per consentire la selezione multipla.
  &  Interno \newline  \\ \hline      
@@ -106,6 +106,13 @@ Dove:
         RF1O 8.1  & Funzionale \newline  Obbligatorio  & Maap Framework deve generare automaticamente lo scheletro dell'applicazione creata dallo sviluppatore.
  &  UCS1 \newline  Capitolato \newline  \\ \hline      
         RF1O 8.1.1  & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente importare in un'apposita directory del progetto tutte le librerie necessarie al corretto funzionamento del sistema.
+Librerie necessarie:
+\begin{itemize}
+\item Express v-3.4.8
+\item MongoDB v-1.3.23
+\item Mongoose v-3.8.4
+\item Nel caso fossero necessarie ulteriori librerie è consigliata una versione uguale o maggiore rispetto a quella disponibile al 2014-01-01
+\end{itemize}
  &  UCS1 \newline  Capitolato \newline  \\ \hline      
         RF1O 8.1.2 & Funzionale \newline  Obbligatorio  & Maap Framework deve automaticamente creare in un'apposita directory il file di configurazione di default dell'applicazione generata.
  &  UCS1 \newline  Capitolato \newline  \\ \hline      
@@ -120,7 +127,7 @@ Dove:
  &  UCS3.1 \newline  UCS3.2 \newline  UCS3.4 \newline  UCS3 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.1  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire una serie di attributi da visualizzare all'interno della pagina Collection-index.
  &  UCS3.3 \newline  Capitolato \newline  UCS3.3.1.1 \newline  \\ \hline      
-        RF1O 9.1.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un ordinamento di default di visualizzazione dei document all'interno della pagina Collection-index. &  UCS3.3 \newline  UCS3.3.1.2 \newline  Capitolato \newline  \\ \hline      
+        RF1O 9.1.2  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un ordinamento di default (ordine alfanumerico) di visualizzazione dei document all'interno della pagina Collection-index. &  UCS3.3 \newline  UCS3.3.1.2 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.3  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire un eventuale limite di elementi da visualizzare all'interno della pagina Collection-index.
  &  UCS3.3 \newline  UCS3.3.1.3 \newline  Capitolato \newline  \\ \hline      
         RF1O 9.1.4  & Funzionale \newline  Obbligatorio  & Il DSL deve permettere allo sviluppatore di poter definire quali attributi sono ordinabili all'interno della pagina Collection-index.
@@ -154,25 +161,9 @@ Dove:
         RS1F 10.6 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve mettere a disposizione di un utente non autenticato la possibilità di effettuare il login al sistema. &  Interno \newline  UCM4 \newline  UCM1.1 \newline  UCM1.2 \newline  \\ \hline      
         RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d'errore nel caso in cui l'utente non autenticato abbia inserito credenziali errate nel sistema di login. &  Interno \newline  UCM5 \newline  \\ \hline      
         RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
-        RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  Interno \newline  \\ \hline
-      \end{longtable}
-      \egroup
-      \end{center}  
-\clearpage
-
-\subsection{Requisiti prestazionali }
-
-    %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}
-      \begin{longtable}{ | l | p{2cm} | p{5cm} | p{1.7cm} |}
-    
-      \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Tipologia} 
-      & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Fonti} \\ \hline
-      
-        RA2O 1 & Prestazionale \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
-        RA2O 2 & Prestazionale \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline
+        RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  Interno \newline  \\ \hline      
+        RS4F 6 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
+        RS4F 7 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -190,7 +181,8 @@ Dove:
       & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Fonti} \\ \hline
       
         R3O 1 & Qualità \newline  Obbligatorio  & Devono essere prodotti e rilasciati manuali d'uso ed ogni altra documentazione tecnica necessaria per l’utilizzo del prodotto. &  Capitolato \newline  \\ \hline      
-        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verrano rispettate tutte le norme descritte nel documento \NormeDiProgetto{}, le normative sulla progettazione e stesura del codice presenti nel  documento \PianoDiQualifica{} . &  Interno \newline  \\ \hline
+        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verranno rispettate tutte le norme descritte nel documento \NormeDiProgetto{}, le normative sulla progettazione e stesura del codice presenti nel  documento \PianoDiQualifica{} . &  Interno \newline  \\ \hline      
+        R3O 3 & Qualità \newline  Obbligatorio  & Maap Framework deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -212,9 +204,8 @@ Dove:
         RA4O 3 & Vincolo \newline  Obbligatorio  & L’applicazione deve utilizzare Mongoose.js per l’interfacciamento con il database. &  Capitolato \newline  \\ \hline      
         RA4O 4 & Vincolo \newline  Obbligatorio  & L’applicazione deve servirsi di  MongoDB come sistema gestionale dei dati. &  Capitolato \newline  \\ \hline      
         RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il deployment su Heroku rendendo disponibile on-line l’applicazione Maap. &  Capitolato \newline  \\ \hline      
-        RF4O 6 & Vincolo \newline  Obbligatorio  & Maap Framework deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
-        RS4F 6 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
-        RS4F 7 & Vincolo \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
+        RA4O 8 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
+        RA4O 9 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -314,18 +305,18 @@ Dove:
         RS1F 10.7 &  Interno \newline  UCM5 \newline  \\ \hline      
         RS1F 10.8 &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 &  UCM7 \newline  Interno \newline  \\ \hline      
-        RA2O 1 &  Capitolato \newline  \\ \hline      
-        RA2O 2 &  Capitolato \newline  \\ \hline      
+        RS4F 6 &  Capitolato \newline  \\ \hline      
+        RS4F 7 &  Capitolato \newline  \\ \hline      
         R3O 1 &  Capitolato \newline  \\ \hline      
         R3O 2 &  Interno \newline  \\ \hline      
+        R3O 3 &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
         R4O 1 &  Capitolato \newline  \\ \hline      
         RA4O 2 &  Capitolato \newline  \\ \hline      
         RA4O 3 &  Capitolato \newline  \\ \hline      
         RA4O 4 &  Capitolato \newline  \\ \hline      
         RA4O 5 &  Capitolato \newline  \\ \hline      
-        RF4O 6 &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
-        RS4F 6 &  Capitolato \newline  \\ \hline      
-        RS4F 7 &  Capitolato \newline  \\ \hline     
+        RA4O 8 &  Capitolato \newline  \\ \hline      
+        RA4O 9 &  Capitolato \newline  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  
@@ -386,7 +377,7 @@ Dove:
             UCU11.3.3 &  \\ \hline      
             UCU12 &  \\ \hline      
             UCS &  \\ \hline      
-            UCS1 &  RF1O 8.1.3  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1.1  \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
+            UCS1 &  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
             UCS2 &  RF1O 14.1 \newline  RF1O 14.2 \newline  RF1O 14 \newline  \\ \hline      
             UCS2.1 &  RF1O 14.1 \newline  \\ \hline      
             UCS2.2 &  RF1O 14.2 \newline  \\ \hline      
@@ -394,7 +385,7 @@ Dove:
             UCS3 &  RF1O 9.1  \newline  RF1O 9  \newline  \\ \hline      
             UCS3.1 &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
             UCS3.2 &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.3 &  RF1O 9.1.3  \newline  RF1O 9.1.2  \newline  RF1O 9.1.1  \newline  \\ \hline      
+            UCS3.3 &  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 9.1.1  \newline  \\ \hline      
             UCS3.3.1 &  RF1O 9.1.6 \newline  \\ \hline      
             UCS3.3.1.1 &  RF1O 9.1.1  \newline  \\ \hline      
             UCS3.3.1.2 &  RF1O 9.1.2  \newline  RF1O 9.1.4  \newline  \\ \hline      
@@ -405,7 +396,7 @@ Dove:
             UCS3.3.1.7 &  RA1D 4.2  \newline  \\ \hline      
             UCS3.3.1.8 &  RF1O 9.1.7 \newline  \\ \hline      
             UCS3.3.1.9 &  \\ \hline      
-            UCS3.3.2 &  RF1O 9.2.3 \newline  RF1O 9.2.4 \newline  RF1O 9.2.1  \newline  RF1F 9.2.5 \newline  \\ \hline      
+            UCS3.3.2 &  RF1O 9.2.4 \newline  RF1O 9.2.3 \newline  RF1O 9.2.1  \newline  RF1F 9.2.5 \newline  \\ \hline      
             UCS3.3.2.1 &  RF1O 9.2.1  \newline  \\ \hline      
             UCS3.3.2.2 &  RF1O 9.2.3 \newline  \\ \hline      
             UCS3.3.2.3 &  RF1O 9.2.2  \newline  RF1O 9.1.5 \newline  \\ \hline      

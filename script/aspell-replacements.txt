@@ -1,6 +1,7 @@
 personal_repl-1.1 it 100
 all'anilisi all'analisi
 allìapplicazione all'applicazione
+declassere declassare
 dell'aministratore dell'amministratore
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
@@ -19,4 +20,5 @@ rischesto richiesto
 sarnno saranno
 sè sé
 un'apposito un apposito
+un'array un array
 verrano verranno

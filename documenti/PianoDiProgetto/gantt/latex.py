@@ -78,6 +78,9 @@ def writeSuddivisioneOreMilestone(project, milestone_id, roles_id, filename):
 
 	for person in sortByName(project.getPeople()):
 		person_planned_hours = 0
+		
+		latex(u"\t{name}".format(name = person.getName()), False)
+		
 		for role in roles:
 			cost = milestone.getPersonRoleCost(person, role)
 			person_planned_hours += cost.getPlannedHours()
@@ -115,4 +118,77 @@ def writeSuddivisioneOreTotale(project, milestone_ids, roles_id, filename):
 
 		latex(u" \\\\")
 
+	out.close()
+
+def writeProspettoMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	planned_total_cost = 0
+	planned_total_hours = 0
+	for role in roles:
+		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+		
+		planned_cost = sum([c.getPlannedCost() for c in role_costs])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_cost += planned_cost
+		planned_total_hours += planned_hours
+
+		latex(u"\t{name} & {hours:.0f} & {cost:.0f} \\\\".format(
+			name = role.getName().title(),
+			hours = planned_hours,
+			cost = planned_cost
+		))
+	
+	latex(u"\\hline")
+	latex(u"\tTotale & {hours:.0f} & {cost:.0f} \\\\".format(
+		hours = planned_total_hours,
+		cost = planned_total_cost
+	))
+	latex(u"\\hline")
+
+	out.close()
+
+def writeProspettoTotale(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	planned_total_cost = 0
+	planned_total_hours = 0
+	for role in roles:
+		role_costs = joinLists([
+			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+			for milestone in milestones
+		])
+		
+		planned_cost = sum([c.getPlannedCost() for c in role_costs])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_cost += planned_cost
+		planned_total_hours += planned_hours
+
+		latex(u"\t{name} & {hours:.0f} & {cost:.0f} \\\\".format(
+			name = role.getName().title(),
+			hours = planned_hours,
+			cost = planned_cost
+		))
+	
+	latex(u"\\hline")
+	latex(u"\tTotale & {hours:.0f} & {cost:.0f} \\\\".format(
+		hours = planned_total_hours,
+		cost = planned_total_cost
+	))
+	latex(u"\\hline")
+	
 	out.close()

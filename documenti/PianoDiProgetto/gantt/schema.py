@@ -55,6 +55,9 @@ class Role:
 	def getHourCost(self):
 		return self.hour_cost
 
+	def getName(self):
+		return self.name
+
 	def __repr__(self):
 		return u"<Role({name})>".format(name=self.name).encode('utf-8')
 

@@ -22,6 +22,12 @@ def writeOnFile(filename, content):
 	file_in.write(content)
 	file_in.close()
 
+def joinLists(array):
+	joined = []
+	for x in array:
+		joined.extend(x)
+	return joined
+
 def sortByName(array):
 	return sorted(array, key = lambda x: x.getName())
 

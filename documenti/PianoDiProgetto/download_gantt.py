@@ -52,3 +52,8 @@ writeSuddivisioneOreMilestone(project, milestone_rp, roles, "suddivisione_rp.tex
 writeSuddivisioneOreMilestone(project, milestone_rq, roles, "suddivisione_rq.tex")
 writeSuddivisioneOreMilestone(project, milestone_ra, roles, "suddivisione_ra.tex")
 writeSuddivisioneOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "suddivisione_totale.tex")
+
+writeProspettoMilestone(project, milestone_rp, roles, "prospetto_rp.tex")
+writeProspettoMilestone(project, milestone_rq, roles, "prospetto_rq.tex")
+writeProspettoMilestone(project, milestone_ra, roles, "prospetto_ra.tex")
+writeProspettoTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "prospetto_totale.tex")

@@ -285,7 +285,7 @@ Dove:
  \item \textbf{Y} corrisponde alla tipologia del requisito e può assumere i seguenti valori:
     \begin{itemize}
      \item[] \textbf{1} = Funzionale;
-     \item[] \textbf{2} = Prestazionale;
+     \item[] \textbf{2} = Di prestazione;
      \item[] \textbf{3} = Di qualità;
      \item[] \textbf{4} = Vincolo.
     \end{itemize}
@@ -413,3 +413,70 @@ Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizza
 %\paragraph{Nomi}
 %\paragraph{Disciplina}
 %\subsubsection{Protocolli vari}
+
+
+\subsection{Tecniche di verifica}
+	Le \glossario{Software Quality Managment Techinques} adottate dal gruppo sono suddivise in quattro categorie. Di seguito ne vengono date le definizioni, tuttavia non sempre si tratta di classi nettamente distinte e la loro applicazione molto spesso prevede sovrapposizioni.
+	
+		\subsubsection{Statiche}
+
+		Consiste nello studiare la documentazione ed il software senza istanze di esecuzione del sorgente. Queste tecniche possono includere attività \emph{people-intensive} o di \emph{analisi} condotte da singoli individui con o senza l'assistenza di \glossario{tools} automatizzati.
+
+			\paragraph{Walkthrough} \mbox{} \\
+			
+			Si svolge effettuando una lettura a largo spettro. È un'attività onerosa e collaborativa che richiede la cooperazione di più persone, si tratta di una tecnica non efficiente pertanto se ne sconsiglia l'attuazione. Ne è previsto l'utilizzo principalmente durante la prima parte del progetto quando non tutti i membri del gruppo hanno piena padronanza e conoscenza delle \emph{Norme di Progetto} e del \emph{Piano di Qualità}.
+
+			\paragraph{Inspection} \mbox{} \\
+			\label{anomaliefrequenti}
+
+			Si tratta di una lettura mirata e strutturata, volta a localizzare l'errore con il minor costo possibile. Richiede una buona padronanza di tutti gli strumenti utilizzati e conoscenza di tutti i documenti di progetto. Solitamente viene effettuata da un singolo individuo. La ricerca mirata si basa sugli errori ricorrenti, gli script da utilizzare sono descritti in \ref{makefile}. Le anomalie individuate vanno segnalate secondo le modalità descritte in \ref{aperturaissue}.
+			Le anomalie più frequenti sono:
+			\begin{itemize}
+				\item utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
+				\item utilizzo di caratteri di underscore senza prima anteporre una backslash;
+				\item errori ortografici come rappresentare la \emph{È} con una \emph{e} maiuscola apostrofata;
+				\item inserimento di parole comuni come placeholder, e.g. c{}i{}a{}o, b{}l{}a{}b{}l{}a, a{}s{}d \dots; % le parentesi graffe impediscono che make test-regexp trovi queste occorrenze
+				\item formato delle date errato o non conforme alle \NormeDiProgetto{};
+				\item formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
+				\item elenchi puntati non conformi alle norme, in particolare i punti spesso non terminano con il punto e virgola;
+				
+
+			\end{itemize}
+			
+			
+		\subsubsection{People-intensive}
+
+		Sono attività che coinvolgono almeno due persone impegnate a svolgere compiti anche parzialmente non automatizzabili. Solitamente l'efficienza non è massima in quanto si paga il coordinamento tra le persone. Le risorse necessarie sono checklists e i risultati dei tests e delle altre tecniche di analisi.
+	
+		\subsubsection{Analitiche}
+
+		Le tecniche analitiche comprendono tutte quelle azioni volte a valutare criticamente un componente del prodotto. Tali tecniche si servono di metodi come l'analisi della complessità, degli algoritmi e del controllo di flusso. L'analisi di complessità è utile per valutare quanto un componente è articolato da progettare, implementare, testare o manutenere. Il controllo di flusso è volto al riconoscimento delle anomalie e può essere usato a supporto di altre attività. Infine, l'analisi degli algoritmi è fondamentale in quei software in cui vi è una componente algoritmica importante e vi è la necessità di assicurare output consistenti e corretti. 
+				
+		\subsubsection{Dinamiche}
+
+		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test ripetibili basati sull'effettiva esecuzione del codice. È quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, al fine di verificare velocemente che gli output siano quelli attesi. Un file di \glossario{log} permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di granularità.\\
+		Il \glossario{proponente}, nel corso del \textit{Verbale} del 2013-12-05, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
+		
+			\paragraph{Test di unità} \mbox{} \\
+
+			Si tratta di testare il funzionamento delle \glossario{unità} tramite l'utilizzo di \glossario{stub}, \glossario{test driver}, e \glossario{logger}. Un'\glossario{unità} consiste nella più piccola quantità di software che è utile verificare singolarmente.
+			Questi test dovrebbero procedere quanto più in parallelo, assegnando priorità alle \glossario{unità} che mostrano dei risultati utilizzabili per definire dei \glossario{prototipi}. Il corretto funzionamento di tutte le unità riduce al minimo la presenza di errori di programmazione e permette di integrare queste componenti secondo le specifiche di progetto con la garanzia che esse funzionino.
+			 
+			\paragraph{Test di integrazione} \mbox{} \\
+
+			Consiste nel test di una parte di due o più \glossario{unità} e ne valuta globalmente i risultati. Le componenti non ancora sviluppate vanno simulate con dei sostituti fittizi.
+			
+			\paragraph{Test di sistema} \mbox{} \\
+
+			Consiste nella validazione del sistema per accertare la copertura dei requisiti software e il suo collaudo viene supervisionato dal committente per mostrare la conformità del prodotto.
+			
+			\paragraph{Test di regressione} \mbox{} \\
+
+			Consiste nell'eseguire nuovamente i test riguardanti le componenti software che hanno subito modifiche.	Tale operazione è aiutata dal tracciamento, il quale permette di individuare e ripetere facilmente i test di unità, di integrazione e di sistema che sono stati potenzialmente influenzati dalla modifica.
+			
+			\paragraph{Test di accettazione} \mbox{} \\
+
+			Si tratta del collaudo del prodotto in presenza del proponente. Al superamento di tale collaudo segue il rilascio ufficiale del prodotto sviluppato.
+			
+	
+

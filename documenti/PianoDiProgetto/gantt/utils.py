@@ -44,6 +44,7 @@ def sortByCode(array):
 		if nome == "PA":  peso_nome = 20
 		if nome == "PDC": peso_nome = 30
 		if nome == "VV":  peso_nome = 40
+		if nome == "V":  peso_nome = 45
 
 		return [peso_nome]+[int(x) for x in gerarchia.split('.')]
 

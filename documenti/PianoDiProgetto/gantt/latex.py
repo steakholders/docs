@@ -192,3 +192,39 @@ def writeProspettoTotale(project, milestone_ids, roles_id, filename):
 	latex(u"\\hline")
 	
 	out.close()
+
+def writeConsuntivoTotale(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	for person in sortByName(project.getPeople()):
+		person_planned_hours = 0
+		person_work_hours = 0
+		
+		latex(u"\t{name}".format(name = person.getName()), False)
+		
+		for role in roles:
+			planned_hours = sum([m.getPersonRoleCost(person, role).getPlannedHours() for m in milestones])
+			work_hours = sum([m.getPersonRoleCost(person, role).getWorkHours() for m in milestones])
+			person_planned_hours += planned_hours
+			person_work_hours += work_hours
+			
+			latex(u" & {hours:.0f} ({diff:+.0f})".format(
+				hours = planned_hours,
+				diff = work_hours - planned_hours
+			), False)
+		
+		latex(u" & {hours:.0f} ({diff:+.0f})".format(
+			hours = person_planned_hours,
+			diff = person_work_hours - person_planned_hours
+		), False)
+
+		latex(u" \\\\")
+
+	out.close()

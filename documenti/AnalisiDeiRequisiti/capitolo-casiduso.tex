@@ -122,7 +122,7 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
           
           \textbf{Postcondizioni} & Il sistema ha autenticato l'utente e lo ha rediretto alla pagina Dashboard. \\ 
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline
-2. L'utente inseriesce la password (UC1.2). \newline \\
+2. L'utente inserisce la password (UC1.2). \newline \\
            \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
       \end{longtable}
       \egroup
@@ -296,7 +296,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente non autenticato intende inserire l'email per procedere con il recupero della propria password per l'accesso all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone la pagina per il reset password mostrando il relativo modulo per l'inserimento dell'emal ed è pronta per l'iterazione dell'utente.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone la pagina per il reset password mostrando il relativo modulo per l'inserimento dell'email ed è pronta per l'iterazione dell'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha ricevuto il dato relativo all'email inserita dall'utente ed ha effettuato l'invio dell'email con link per il completamento dell'operazione di reset. \\ 
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email per il recupero della password di accesso (UCU4.1.1). \\
@@ -463,7 +463,7 @@ Gli indici già presenti possono essere eliminati. \\
           
           \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulla base delle query più utilizzate. \\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggermenti derivati dalla ricerca. \\ 
+          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\ 
           \textbf{Flusso Principale} & 1. L'admin visualizza una serie di indici suggeriti dall'applicazione (UCU7.1). \\
           
       \end{longtable}
@@ -560,7 +560,7 @@ Gli indici già presenti possono essere eliminati. \\
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato, selezionata una \glossario{Collection}, ne visualizza in forma tabellare tutti i documenti che contiene.  \newline
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personallizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
 L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Document}.  \newline \\ 
           
           \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente autenticato di visualizzare la \glossario{Collection}.\\ 
@@ -603,7 +603,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           
           \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\ 
           \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show-page degli attributi innestati. (UCU9.1.1);  \newline
-2. L'utente autenticato può aprire l'ndex-page dell'array di \glossario{Document} (UCU9.1.2);  \newline
+2. L'utente autenticato può aprire l'index-page dell'array di \glossario{Document} (UCU9.1.2);  \newline
 3. L'utente autenticato può eseguire, se presente, un'operazione personalizzata (UCU9.3);  \newline
 4. L'Admin può modificare il \glossario{Document} (UCU9.1.3);  \newline
 5. L'admin può eliminare il \glossario{Document} (UCU9.1.4). \\
@@ -739,7 +739,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
-          \textbf{Scopo e Descrizione} & Per ciascun tipo di dato utilizzato dalla libreria mongoose (Number, Data, String) sarà possibile filtrare i valori per range o per testo contenuto.
+          \textbf{Scopo e Descrizione} & Per ciascun tipo di dato utilizzato dalla libreria Mongoose (Number, Data, String) sarà possibile filtrare i valori per range o per testo contenuto.
 L'utente può filtrare i \glossario{Document} mostrati dalla \glossario{Collection-Index} in base agli attributi che il Document possiede.
 Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\ 
           
@@ -1068,7 +1068,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
 L'operazione di creazione utente può fallire nei seguenti casi : \newline
 -Formato email errato;  \newline
 -Email già presente;  \newline
--Formato password erraro;  \newline
+-Formato password errato;  \newline
 -Fallimento richiesta di connessione al database delle credenziali utenti. \\ 
           
           \textbf{Precondizioni}  & Il sistema ha rilevato degli errori nell'inserimento di un nuovo utente.\\ 
@@ -2367,7 +2367,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazone scelto. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazione scelto. \\ 
           
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} ha predisposto per ogni file di configurazione la possibilità di eliminarlo.\\ 
           

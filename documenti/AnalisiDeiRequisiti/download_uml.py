@@ -42,7 +42,7 @@ lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_po
 # es. lucidchart.download_image("4f51-1824-52ae25da-a646-74fd0a00d457", "UML/bla bla bla bla.png", width=600, pagenum=1)
 
 #UML AMBITO UTENTE
-lucidchart.download_image("41fe-2028-52d4454e-ac2c-450f0a00d4a7?", "UML/UCU - Operazioni ad alto livello - Utente autenticato.png")
+lucidchart.download_image("41fe-2028-52d4454e-ac2c-450f0a00d4a7", "UML/UCU - Operazioni ad alto livello - Utente autenticato.png")
 lucidchart.download_image("430a-6fb0-52a701a4-82e0-5eb50a00c811", "UML/UCU - Operazioni ad alto livello - Utente non autenticato.png")
 lucidchart.download_image("4c69-50c0-52a7197f-aa9b-1feb0a005f9d", "UML/UCU1 - Login.png")
 lucidchart.download_image("443d-3480-52aad5a8-aba7-4eae0a0086f4", "UML/UCU5 - Registrazione.png")
@@ -54,9 +54,9 @@ lucidchart.download_image("482c-b2e4-52a73b22-9361-34180a009f85", "UML/UCU11 - G
 lucidchart.download_image("4b7b-431c-52a73bc9-898c-552e0a00c811", "UML/UCU11.1 - Creazione Utente.png")
 lucidchart.download_image("478e-3890-52b02514-9bb1-1a050a00c462", "UML/UCU11.3 - Apertura show-page Utente.png")
 
-lucidchart.download_image("4c0e-8c78-52d3f94e-9c77-118c0a009902?", "UML/UCU4 - Recupero password.png")
-lucidchart.download_image("4f18-b848-52d3fefb-a245-23890a00d44d?", "UML/UCU4.1 - Richiesta reset password.png")
-lucidchart.download_image("4ad1-71f4-52d408a5-9481-3c2f0a00cb95?", "UML/UCU4.2 - Effettuazione reset password.png")
+lucidchart.download_image("4c0e-8c78-52d3f94e-9c77-118c0a009902", "UML/UCU4 - Recupero password.png")
+lucidchart.download_image("4f18-b848-52d3fefb-a245-23890a00d44d", "UML/UCU4.1 - Richiesta reset password.png")
+lucidchart.download_image("4ad1-71f4-52d408a5-9481-3c2f0a00cb95", "UML/UCU4.2 - Effettuazione reset password.png")
 
 
 #UML AMBITO SVILUPPATORE
@@ -67,7 +67,7 @@ lucidchart.download_image("4af3-92a4-52a882cb-bcad-1aef0a0086f4", "UML/UCS3.3 - 
 lucidchart.download_image("429b-795c-52a8840b-8a61-2e420a009f85", "UML/UCS3.3.1 - Personalizzazione index page.png")
 lucidchart.download_image("41f9-8f68-52a88caa-9e42-09da0a00c462", "UML/UCS3.3.2 - Personalizzazione show page.png")
 #UML AMBITO MAAS
-lucidchart.download_image("4597-26dc-52d44c37-8364-109e0a00cb95?", "UML/UCM - Operazioni ad alto livello - Utente MaaS non autenticato.png")
+lucidchart.download_image("4597-26dc-52d44c37-8364-109e0a00cb95", "UML/UCM - Operazioni ad alto livello - Utente MaaS non autenticato.png")
 lucidchart.download_image("49ed-78a8-52b1a3c1-8a77-3ddc0a00dea9", "UML/UCM - Operazioni ad alto livello - Utente MaaS autenticato.png")
 lucidchart.download_image("43a0-e1c8-52b385b6-ab48-59f90a00dea9", "UML/UCM1 - Registrazione.png")
 lucidchart.download_image("4ab7-1b8c-52b3864d-8eb7-4a7b0a009f85", "UML/UCM4 - Login.png")

@@ -23,10 +23,10 @@ Di seguito viene riportato il loro significato, \textbf{nell'ordine in cui sono 
 Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguenti ruoli:
 \noindent
 \begin{table}[H]
-\begin{tabular}{lccccccccc}
+\begin{tabular}{lccccccc}
 \toprule
     \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
-     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
     \midrule
     
     E. Rotundo 		&   & 12 & 9 &  &  & 2 & 23 \\
@@ -59,18 +59,13 @@ Nella fase di Progettazione architetturale ciascun componente dovrà rivestire i
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lccccccccc}
+\begin{tabular}{lccccccc}
 \toprule 
     \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
     \midrule
-    E. Rotundo   	& 5 &  &	 15	& &   &	2 &	24 \\
-    F. Poli  		& 4	&  &	 15	& &   & 4 & 19 \\
-    G. Fornari		& 	&  &	 18	& &   &	12 & 30 \\
-    G. Donato 		& 	&  &	 25	& &   &	6 & 31 \\
-    L. De Franceschi 	& 	&  &	 18	& & 3 &	11 & 32 \\
-    N. Tresoldi 		& 	&  &	 21	& &   & 8 & 29 \\
-   	S. Girardi 		& 5	&  &	 21	& &   &	8 & 34 \\
+    
+    	\input{suddivisione_rp}
     
     \bottomrule
 \end{tabular}
@@ -91,19 +86,14 @@ Nella fase di Progettazione di dettaglio e codifica ciascun componente dovrà ri
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lccccccccc}
+\begin{tabular}{lccccccc}
 \toprule 
     \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
     \midrule
-    E. Rotundo   	& 3 &  &	 10	& 35 & 6 & 10 &	64 \\
-    F. Poli  		& 7	&  &	 28	& 35 &   & 5  & 75 \\
-    G. Fornari		& 	&  &	 32	&    &   & 27 & 59 \\
-    G. Donato 		& 	&  &	 12	& 30 &   & 14 & 56 \\
-    L. De Franceschi 	& 16	&  &	 20	&    &   & 18 & 54 \\
-    N. Tresoldi 		& 	&  &	 12	& 30 &   & 19 & 61 \\
-   	S. Girardi 		& 	&  &	 12	& 30 & 4 & 17 & 63 \\
-    
+
+    	\input{suddivisione_rq}
+
     \bottomrule
 \end{tabular}
 \caption{Ore per componente, fase di Progettazione di dettaglio e codifica}
@@ -124,19 +114,14 @@ Nella fase di Validazione ciascun componente dovrà rivestire i seguenti ruoli:
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lccccccccc}
+\begin{tabular}{lccccccc}
 \toprule 
     \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
     \midrule
-    E. Rotundo   	&   &  &	 7	&   &   & 8 & 15 \\
-    F. Poli  		& 	&  &	 	&   &   & 8 & 8  \\
-    G. Fornari		& 	&  &	 	& 8 &   & 6 & 14 \\
-    G. Donato 		& 11	&  &	 	&   &   &   & 15 \\
-    L. De Franceschi 	& 	&  &	 5	& 8 &   & 5 & 18 \\
-    N. Tresoldi 		& 	&  &	 7	&   &   & 6 & 13 \\
-    S. Girardi 		& 	&  &	 	&   & 5 & 8 & 5  \\
-    
+
+        \input{suddivisione_ra}
+
     \bottomrule
 \end{tabular}
 \caption{Ore per componente, fase di Validazione}

@@ -33,7 +33,8 @@ class TeamworkPMClient:
 		out_file.close()
 
 	def request(self, action):
-		request = urllib2.Request("https://{0}.teamworkpm.net/{1}".format(self.company, action))
+		# HTTPS è troppo lento, ma sarebbe la cosa più sicura per non passare la key in chiaro
+		request = urllib2.Request("http://{0}.teamworkpm.net/{1}".format(self.company, action))
 		request.add_header("Authorization", "BASIC " + base64.b64encode(self.key + ":xxx"))
 		response = urllib2.urlopen(request)
 		data = response.read()

@@ -18,6 +18,7 @@ documents:
 	@cd "AnalisiDeiRequisiti" && make documents
 	@cd "StudioDiFattibilita" && make documents
 	@cd "Verbale2013-12-18" && make documents
+	@cd "SpecificaTecnica" && make documents
 
 test-spelling:
 	@cd "NormeDiProgetto" && make test-spelling
@@ -29,6 +30,7 @@ test-spelling:
 	@cd "AnalisiDeiRequisiti" && make test-spelling
 	@cd "StudioDiFattibilita" && make test-spelling
 	@cd "Verbale2013-12-18" && make test-spelling
+	@cd "SpecificaTecnica" && make test-spelling
 
 clean:
 	@rm -f *~
@@ -41,3 +43,4 @@ clean:
 	@cd "AnalisiDeiRequisiti" && make clean
 	@cd "StudioDiFattibilita" && make clean
 	@cd "Verbale2013-12-18" && make clean
+	@cd "SpecificaTecnica" && make clean

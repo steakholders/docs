@@ -22,6 +22,15 @@ def writeOnFile(filename, content):
 	file_in.write(content)
 	file_in.close()
 
+def joinLists(array):
+	joined = []
+	for x in array:
+		joined.extend(x)
+	return joined
+
+def sortByName(array):
+	return sorted(array, key = lambda x: x.getName())
+
 def sortByStart(array):
 	return sorted(array, key = lambda x: x.getStart() if x.getStart() is not None else date(year=1990,month=1,day=1))
 
@@ -35,7 +44,7 @@ def sortByCode(array):
 		if nome == "PA":  peso_nome = 20
 		if nome == "PDC": peso_nome = 30
 		if nome == "VV":  peso_nome = 40
-		
+
 		return [peso_nome]+[int(x) for x in gerarchia.split('.')]
 
 	return sorted(array, key = lambda x: weight(x.getCode()))

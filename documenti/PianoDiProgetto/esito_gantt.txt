@@ -1,6 +1,44 @@
-Traceback (most recent call last):
-  File "download_gantt.py", line 15, in <module>
-    tw.getTaskLists(project)
-  File "/media/Fedux/Uni/IngSW/docs/documenti/PianoDiProgetto/gantt/download.py", line 102, in getTaskLists
-    responsible = project.getPerson(responsible_id), role = role_obj, planned_hours = planned_hours
-TypeError: __init__() takes at least 7 arguments (9 given)
+
+Controllo vincoli sui task
+--------------------------
+
+Controllo vincoli sulle persone
+-------------------------------
+- Serena Girardi: 	60 	ore di lavoro
+- Enrico Rotundo: 	60 	ore di lavoro
+- Nicolò Tresoldi: 	58 	ore di lavoro
+- Federico Poli: 	59 	ore di lavoro
+- Giacomo Fornari: 	66 	ore di lavoro
+- Gianluca Donato: 	66 	ore di lavoro
+- Luca De Franceschi: 	60 	ore di lavoro
+
+ATTENZIONE: Serena Girardi ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
+ATTENZIONE: Enrico Rotundo ha troppi pochi ruoli (4). Dovrebbe fare più responsabile, analista.
+ATTENZIONE: Nicolò Tresoldi ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
+ATTENZIONE: Federico Poli ha troppi pochi ruoli (5). Dovrebbe fare più analista.
+ATTENZIONE: Giacomo Fornari ha troppi pochi ruoli (5). Dovrebbe fare più analista.
+ATTENZIONE: Luca De Franceschi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
+
+ATTENZIONE: Serena Girardi (60 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Enrico Rotundo (60 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Nicolò Tresoldi (58 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Federico Poli (59 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Giacomo Fornari (66 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Gianluca Donato (66 h) deve fare almeno 95 ore di lavoro
+ATTENZIONE: Luca De Franceschi (60 h) deve fare almeno 95 ore di lavoro
+
+Controllo task sovrapposti
+--------------------------
+
+Controllo vincoli sul preventivo
+--------------------------------
+- amministratore: 94 	ore, per un costo di 	1880 	€
+- programmatore : 56 	ore, per un costo di 	840 	€
+- responsabile  : 17 	ore, per un costo di 	510 	€
+- analista      : 22 	ore, per un costo di 	550 	€
+- verificatore  : 160 	ore, per un costo di 	2400 	€
+- progettista   : 80 	ore, per un costo di 	1760 	€
+Totale          : 7940 €
+Ore di verifica : 37.3 %
+
+ATTENZIONE: Il preventivo (7940 €) è troppo basso, bisogna raggiungere almeno 13000 €

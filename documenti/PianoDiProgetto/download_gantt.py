@@ -30,3 +30,7 @@ testEstimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])
 writeGanttMilestone(project, milestone_rp, "gantt_rp.tex")
 writeGanttMilestone(project, milestone_rq, "gantt_rq.tex")
 writeGanttMilestone(project, milestone_ra, "gantt_ra.tex")
+
+writeHoursTableMilestone(project, milestone_rp, "ripartizione_rp.tex")
+writeHoursTableMilestone(project, milestone_rq, "ripartizione_rq.tex")
+writeHoursTableMilestone(project, milestone_ra, "ripartizione_ra.tex")

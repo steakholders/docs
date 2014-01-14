@@ -223,7 +223,7 @@ class Project:
 			u"amministratore": Role(self, u"amministratore", 20),
 			u"progettista": Role(self, u"progettista", 22),
 			u"verificatore": Role(self, u"verificatore", 15),
-			u"programmatore": Role(self, u"programatore", 15)
+			u"programmatore": Role(self, u"programmatore", 15)
 		}
 
 	def getRole(self, role_name):

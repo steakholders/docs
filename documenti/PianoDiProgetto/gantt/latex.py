@@ -37,33 +37,28 @@ def writeGanttMilestone(project, milestone_id, filename):
 
 	out.close()
 
-def writeHoursTableMilestone(project, milestone_id, filename):
+def writeHoursTableMilestone(project, milestone_id, roles_id, filename):
 	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	tasks = milestone.getTasks()
 	out = open(filename, "w")
 	def latex(str):
 		out.write((str+"\n").encode('utf-8'))
 
-	for tasklist in sortByCode(milestone.getTaskLists()):
+	for person in sortByName(milestone.getPeople()):
 		latex(u"")
-		latex(u"\t\\textbf{{{code}}} & \\textbf{{{title}}} \\\\".format(
-			code = tasklist.getCode(), title = tasklist.getName()
+		latex(u"\t{name}".format(
+			name = person.getName()
 		))
-		latex(u"\t\\cline{3-4}")
 		
-		tasks = sortByCode(tasklist.getTasks())
+		person_tasks = [t for t in tasks if t.getResponsible() == person]
 		
-		for task in tasks:
-			if task.role is not None:
-				latex(u"\t{code} & {title} & {role} & {hours} \\\\".format(
-					code = task.getCode(), title = task.getName(), role = task.role.name.title(), hours = task.getPlannedHours()
-				))
-			else:
-				pedantic_warning(u"Il task {name} non ha un ruolo assegnato".format(name=task.getFullName()))
-				latex(u"\t{code} & {title} & {role} & {hours} \\\\".format(
-					code = task.getCode(), title = task.getName(), role = "(da assegnare)", hours = task.getPlannedHours()
-				))
+		for role in roles:
+			role_tasks = [t for t in person_tasks if t.getRole() == role]
+			role_hours = sum([t.getPlannedHours() for t in role_tasks])
 
-		latex(u"\t\\hline")
+			latex(u" & {hours}".format(hours = role_hours))
+
+		latex(u" \\\\")
 
 	out.close()
-

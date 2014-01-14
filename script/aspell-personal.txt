@@ -1,12 +1,17 @@
-personal_ws-1.1 it 573 
+personal_ws-1.1 it 600
 AAAA
 ACWP
 AR
 AST
 AWS
 Abstract
+Acceptable
+Accrued
 ActiveAdmin
+Addressed
+Adjourned
 Adobe
+Agreement
 All
 Amazon
 Amm
@@ -22,6 +27,7 @@ BCWP
 BCWS
 BSON
 BV
+Benefit
 BioComputing
 Broken
 CSS
@@ -31,15 +37,19 @@ Capability
 Cardin
 Casiraghi
 Chrome
+Closed
 Closure
 CoffeeStrap
+Coherent
 Cohesion
+Collaborating
 Compiler
 Compito'
 Complexity
 Comput
 Comunicazioni'
 Continuous
+Control
 Controller
 Cox
 DP
@@ -66,9 +76,11 @@ Failure
 Fedora
 Firebase
 Firefox
+Formed
 Fornari
 Foundation
 Franceschi
+Fulfilled
 FunGoStudios
 Functionality
 GG
@@ -94,6 +106,7 @@ Imaging
 Information
 Integrated
 Interaction
+Involved
 JSHint
 JSLint
 JSON
@@ -159,11 +172,13 @@ Number
 OOP
 OT
 Operational
+Opportunity
 PDCA
 PP
 PQ
 Part
 Pearson
+Performing
 Pgr
 Pgt
 Pianciamore
@@ -173,6 +188,7 @@ Portability
 Portable
 Postcondizione
 Postcondizioni
+Prepared
 Principles
 Process
 Product
@@ -194,6 +210,7 @@ Ready
 RegExp
 Relationship
 Reliability
+Requirements
 Requisteak
 Res
 Retired
@@ -211,6 +228,7 @@ SQMT
 ST
 SV
 SWEBOK
+Satisfied
 Selected
 Seq
 Service
@@ -222,6 +240,7 @@ Solution
 Sommerville
 Specific
 StartUp
+Started
 SteakHolders
 Stein
 String
@@ -243,15 +262,19 @@ UCU
 UML
 URL
 Ubuntu
+Under
 Unicode
 Unified
 Usability
 Usable
+Useable
+Value
 Vardanega
 Variance
 Ver
 Verifica'
 Version
+Viable
 View
 Way
 WebKit
@@ -348,6 +371,7 @@ filecolor
 fill
 firstnumber
 firstpage
+for
 form
 format
 framework

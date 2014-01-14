@@ -50,13 +50,13 @@ for tex_file in *.tex; do
 		eval "aspell check \"$tex_file\" $aspell_parameters"
 		
 		# Riordina il dizionario aspell-personal per facilitare i merge automatici
-		head_personal=$(head -n 1 "$aspell_personal")
+		head_personal="personal_ws-1.1 it 600"
 		body_personal=$(tail -n +2 "$aspell_personal" | sort -s)
 		echo "$head_personal" > "$aspell_personal"
 		echo -n "$body_personal" >> "$aspell_personal"
 		
 		# Riordina il dizionario aspell-replacements per facilitare i merge automatici
-		head_repl=$(head -n 1 "$aspell_repl")
+		head_repl="personal_repl-1.1 it 100"
 		body_repl=$(tail -n +2 "$aspell_repl" | sort -s)
 		echo "$head_repl" > "$aspell_repl"
 		echo -n "$body_repl" >> "$aspell_repl"

@@ -102,11 +102,14 @@ def writeSuddivisioneOreTotale(project, milestone_ids, roles_id, filename):
 
 	for person in sortByName(project.getPeople()):
 		person_planned_hours = 0
+		
+		latex(u"\t{name}".format(name = person.getName()), False)
+		
 		for role in roles:
-			planned_cost = sum([m.getPersonRoleCost(person, role).getPlannedCost() for m in milestones])
-			person_planned_hours += planned_cost
+			planned_hours = sum([m.getPersonRoleCost(person, role).getPlannedHours() for m in milestones])
+			person_planned_hours += planned_hours
 			
-			latex(u" & {hours:.0f}".format(hours = planned_cost), False)
+			latex(u" & {hours:.0f}".format(hours = planned_hours), False)
 		
 		latex(u" & {hours:.0f}".format(hours = person_planned_hours), False)
 

@@ -8,7 +8,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Viene verificata la qualità di ogni processo e di ogni output da esso prodotto. Ogni fase  descritta nel \PianoDiProgetto{} produce output di diverso tipo, per questo è necessario programmare l'attività di verifica in modo mirato:
 
 	\begin{itemize}
-		\item \textbf{Analisi}: in questa fase si controllano che i processi e la documentazione prodotta rispettino le \emph{Norme di Progetto}, verrà verificato che ogni requisito abbia corrispondenza in un caso d’uso utilizzando l’applicativo web \glossario{Requisteak};
+		\item \textbf{Analisi}: in questa fase si controllano che i processi e la documentazione prodotta rispettino le \NormeDiProgetto{}, verrà verificato che ogni requisito abbia corrispondenza in un caso d’uso utilizzando l’applicativo web \glossario{Requisteak};
 		\item \textbf{Progettazione Architetturale}: in questa fase vanno verificati i processi incrementali relativi all'analisi e ai nuovi documenti di progettazione;
 		\item \textbf{Progettazione di Dettaglio e Codifica}: in questa fase vanno verificati i processi incrementali relativi alla progettazione.
 	\end{itemize}
@@ -18,14 +18,15 @@ La speranza è che dei buoni processi portino ad un buon software.
 	\subsection{Strategia}
 %		\subsubsection{Strategia}
 
-		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi prefissati nel calendario, oppure possono insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche; è questo il caso di \glossario{bug} o \emph{errori} (vedi paragrafo \ref{DefinizioneAnomalie}). La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle \emph{Norme di Progetto}. Questo lavoro verrà svolto con l'aiuto di automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione.
+		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi prefissati nel calendario, oppure possono insorgere come inaspettati, in questo caso sarà necessario programmare le dovute modifiche; è questo il caso di \glossario{bug} o \emph{errori} (vedi paragrafo \ref{DefinizioneAnomalie}). La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle  \NormeDiProgetto{}. Questo lavoro verrà svolto con l'aiuto di automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. L'utilizzo di software apposito permette di eseguire controlli mirati senza consumare risorse umane. L'implementazione di tali controlli viene descritta nelle \NormeDiProgetto{}.
+			
 %		 in particolare:
 %		\begin{itemize}
 %			\item Documentazione: tramite uno script di \glossario{pre-commit} viene bloccato il commit nel \glossario{repository} se le modifiche eseguite impediscono la compilazione dei documenti o se gli strumenti di verifica automatica rilevano delle anomalie. In questo modo viene sempre garantita una qualità minima per il codice caricato sul \glossario{repository}.
 %			%\item Software: da definire.
 %		\end{itemize}
 
-	Per migliorare l'efficienza dei processi si utilizzano quanto più possibile automatismi, in modo da poter destinare le risorse umane ad altri lavori. L'utilizzo di software apposito permette di eseguire controlli mirati senza consumare risorse umane. L'implementazione di tali controlli viene descritta nelle \NormeDiProgetto.
+
 	
 %		\subsubsection{Tempistiche}
 %		La pianificazione strategica si basa sul modello \glossario{SEMAT}. Le seguenti specifiche non coprono tutti gli stati indicati da questo schema considerando solo l'aspetto relativo alla \textbf{qualità}. 
@@ -103,18 +104,18 @@ La speranza è che dei buoni processi portino ad un buon software.
 		
 	\subsection{Responsabilità}
 
-	La responsabilità della verifica viene attribuita al \emph{Responsabile} di progetto e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \emph{Piano di Progetto}.
+	La responsabilità della verifica viene attribuita al \emph{Responsabile} di progetto e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \PianoDiProgetto.
 	
 	\subsection{Risorse}
 
 	La qualifica dei processi essendo un processo, consuma delle risorse che si dividono in due categorie:
 		\begin{itemize}
-  			\item \textbf{Umane}: le figure coinvolte sono il \emph{Responsabile} di progetto e il \emph{Verificatore}. I processi da loro effettuati consumano ore di produttività contabilizzate e schedulate secondo il \emph{Piano di Progetto}. Le ore di produttività sono fissate dalle regole di progetto (\url{http://www.math.unipd.it/~tullio/IS-1/2013/Progetto/PD01b.html}) in un minimo di 85 e un massimo di 105 ore individuali. Il \emph{Piano di Progetto} determina la distribuzione di tali quote orarie con la relativa retribuzione. Ai fini della qualifica si potrà parlare di ore di produttività tralasciandone l'aspetto economico, in quanto non rientra nel dominio del documento succitato; 
+  			\item \textbf{Umane}: le figure coinvolte sono il \emph{Responsabile} di progetto e il \emph{Verificatore}. I processi da loro effettuati consumano ore di produttività contabilizzate e schedulate secondo il \PianoDiProgetto{}. Le ore di produttività sono fissate dalle regole di progetto (\url{http://www.math.unipd.it/~tullio/IS-1/2013/Progetto/PD01b.html}) in un minimo di 85 e un massimo di 105 ore individuali. Il \PianoDiProgetto{} determina la distribuzione di tali quote orarie con la relativa retribuzione. Ai fini della qualifica si potrà parlare di ore di produttività tralasciandone l'aspetto economico, in quanto non rientra nel dominio del documento succitato; 
   			
   			\item \textbf{Tecnologiche}: riguardano i \emph{mezzi} utilizzati per gli automatismi per la qualità e la loro gestione. Trattandosi esclusivamente di mezzi informatici, vengono consumate unità di calcolo considerate a costo nullo. Tale considerazione si basa sul fatto che tutti i tipi di elaborazioni informatiche sono svolte su mezzi per i quali non è richiesto né un contributo economico, né un quantitativo temporale abbastanza consistente da poter essere considerato degno di nota.
 		\end{itemize}
 		
-	Le modalità del loro impiego sono descritte dettagliatamente nelle \emph{Norme di Progetto}.
+	Le modalità del loro impiego sono descritte dettagliatamente nelle \NormeDiProgetto{}.
 	
 %		\subsubsection{Risorse disponibili}
 %		Le risorse disponibili sono tutte le \emph{risorse umane} e parte delle tecnologiche, in particolare:
@@ -167,7 +168,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			La formula per il suo calcolo è: \\
 			$$
 			89 + \frac{300 * (numero\ delle\ frasi) - 10 \cdot (numero\ delle\ lettere)}{numero\ delle\ parole}
-			$$
+			$$ \\
 			I risultati sono compresi tra 0 e 100, dove il valore 100 indica la leggibilità più alta e 0 la leggibilità più bassa. In generale risulta che testi con un indice:
 			\begin{itemize}
 				\item Inferiore a 80 sono difficili da leggere per chi ha la licenza elementare;

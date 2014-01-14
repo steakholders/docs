@@ -140,14 +140,14 @@ def writeProspettoMilestone(project, milestone_id, roles_id, filename):
 		planned_total_cost += planned_cost
 		planned_total_hours += planned_hours
 
-		latex(u"\t{name} & {hours:.0f} & {cost:.0f} \\\\".format(
+		latex(u"\t{name} & {hours:.0f} & {cost:.0f} € \\\\".format(
 			name = role.getName().title(),
 			hours = planned_hours,
 			cost = planned_cost
 		))
 	
 	latex(u"\\hline")
-	latex(u"\tTotale & {hours:.0f} & {cost:.0f} \\\\".format(
+	latex(u"\tTotale & {hours:.0f} & {cost:.0f} € \\\\".format(
 		hours = planned_total_hours,
 		cost = planned_total_cost
 	))
@@ -178,14 +178,14 @@ def writeProspettoTotale(project, milestone_ids, roles_id, filename):
 		planned_total_cost += planned_cost
 		planned_total_hours += planned_hours
 
-		latex(u"\t{name} & {hours:.0f} & {cost:.0f} \\\\".format(
+		latex(u"\t{name} & {hours:.0f} & {cost:.0f} € \\\\".format(
 			name = role.getName().title(),
 			hours = planned_hours,
 			cost = planned_cost
 		))
 	
 	latex(u"\\hline")
-	latex(u"\tTotale & {hours:.0f} & {cost:.0f} \\\\".format(
+	latex(u"\tTotale & {hours:.0f} & {cost:.0f} € \\\\".format(
 		hours = planned_total_hours,
 		cost = planned_total_cost
 	))

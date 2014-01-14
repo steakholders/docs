@@ -15,7 +15,7 @@ def testTasks(project):
 		# Avvisa se ci sono più di MAX_HOURS_PER_DAY ore per giorno
 		if task.getPlannedHours() > task.getDays() * MAX_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe ore (sono {hours}, al massimo {max_hours})'.format(
-				name = task.name,
+				name = task.getFullName(),
 				hours = task.getPlannedHours(),
 				max_hours = task.getDays() * MAX_HOURS_PER_DAY
 			))
@@ -23,7 +23,7 @@ def testTasks(project):
 		# Avvisa se ci sono meno di MIN_HOURS_PER_DAY ore per giorno
 		if task.getPlannedHours() < task.getDays() * MIN_HOURS_PER_DAY:
 			warning(u'Al task "{name}" sono state assegnate troppe poche ore (sono {hours}, al minimo {min_hours})'.format(
-				name = task.name,
+				name = task.getFullName(),
 				hours = task.getPlannedHours(),
 				min_hours = task.getDays() * MIN_HOURS_PER_DAY
 			))

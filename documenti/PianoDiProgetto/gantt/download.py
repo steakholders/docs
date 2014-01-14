@@ -28,6 +28,14 @@ def take_brackets(str):
 	
 	return (str, content)
 
+def split_code_name(title):
+	array = title.split("-", 1)
+
+	if len(array) > 1:
+		return (array[0].strip(), array[1].strip())
+	else:
+		return (None, title)
+
 
 class GanttException(Exception):
 	def __init__(self, message):
@@ -66,7 +74,15 @@ class TeamworkPMDownload(TeamworkPMClient):
 			
 			milestone = project.getMilestone(tasklist["milestone-id"])
 
-			tasklist_obj = TaskList(milestone, tasklist["id"], tasklist["name"])
+			(tasklist_code, tasklist_name) = split_code_name(tasklist["name"])
+
+			if tasklist_code is None:
+				raise GanttException(u'Alla task-list #{id} "{name}" manca il codice identificativo. Me lo aspetto nel formato "XY1 - Titolo esteso"'.format(
+					id = tasklist["id"],
+					name = tasklist["name"],
+				))
+			
+			tasklist_obj = TaskList(milestone, tasklist["id"], tasklist_code, tasklist_name)
 			milestone.addTaskList(tasklist_obj)
 
 			for task in tasklist["todo-items"]:
@@ -78,7 +94,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 						raise GanttException(u'È stato assegnato più di una persona ({num}) al task "{task_name}", lista "{tasklist_name}"'.format(
 							num = len(responsible_ids),
 							task_name = task["content"],
-							tasklist_name = tasklist_obj.name
+							tasklist_name = tasklist_obj.getFullName()
 						))
 					
 					if len(responsible_ids) == 1:
@@ -91,14 +107,22 @@ class TeamworkPMDownload(TeamworkPMClient):
 						planned_hours = estimated_minutes/60
 
 				# Leggi il nome del ruolo
-				title = task["content"]
-				partial_title, role = take_brackets(title)
+				task_name = task["content"]
+				partial_title, role = take_brackets(task_name)
 				role_obj = project.getRole(role)
 				if role_obj is not None:
-					title = partial_title
+					task_name = partial_title
 
+				(code, task_name) = split_code_name(task_name)
+
+				if code is None:
+					raise GanttException(u'Al task #{id} "{task_name}" manca il codice identificativo. Me lo aspetto nel formato "XY1.2.3 - Titolo esteso (ruolo)"'.format(
+						id = task["id"],
+						task_name = task["content"],
+					))
+				
 				task_obj = Task(
-					tasklist_obj, task["id"], date_parse(task["start-date"]), date_parse(task["due-date"]), title,
+					tasklist_obj, task["id"], date_parse(task["start-date"]), date_parse(task["due-date"]), code, task_name,
 					responsible = project.getPerson(responsible_id), role = role_obj, planned_hours = planned_hours
 				)
 				tasklist_obj.addTask(task_obj)
@@ -136,7 +160,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 				
 				if task is None:
 					pedantic_warning(u'La TimeEntry #{id} è assegnata ad una persona che non è responsabile del task "{name}" a cui è associata'.format(
-						id = timeentry_obj.id, name = task.name
+						id = timeentry_obj.id, name = task.getFullName()
 					))
 					continue
 				

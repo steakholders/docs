@@ -40,11 +40,12 @@ class TimeEntry:
 
 
 class Task:
-	def __init__(self, tasklist, id, start, end, name, responsible=None, role=None, planned_hours=None):
+	def __init__(self, tasklist, id, start, end, code, name, responsible=None, role=None, planned_hours=None):
 		self.tasklist = tasklist
 		self.id = id
 		self.start = start
 		self.end = end
+		self.code = code
 		self.name = name
 		self.responsible = responsible
 		self.role = role
@@ -55,11 +56,20 @@ class Task:
 
 		# Avvisa che non è stato assegnato
 		if self.responsible is None:
-			pedantic_warning(u'Non è stato assegnato nessuno al task "{name}"'.format(name = self.name))
+			pedantic_warning(u'Non è stato assegnato nessuno al task "{name}"'.format(name = self.getFullName()))
 		
 		if self.role is None:
-			pedantic_warning(u"Non è stato assegnato nessun ruolo al task {nome}".format(nome=self.name))
+			pedantic_warning(u"Non è stato assegnato nessun ruolo al task {nome}".format(nome=self.getFullName()))
 
+	def getFullName(self):
+		return self.code + " - " + self.name
+	
+	def getName(self):
+		return self.name
+	
+	def getCode(self):
+		return self.code
+	
 	def getDays(self):
 		return (self.end - self.start + timedelta(days=1)).days
 
@@ -105,12 +115,22 @@ class Task:
 
 
 class TaskList:
-	def __init__(self, milestone, id, name):
+	def __init__(self, milestone, id, code, name):
 		self.milestone = milestone
 		self.id = id
+		self.code = code
 		self.name = name
 		self.tasks = {}
 		
+	def getFullName(self):
+		return self.code + " - " + self.name
+	
+	def getName(self):
+		return self.name
+	
+	def getCode(self):
+		return self.code
+	
 	def addTask(self, task):
 		self.tasks.update({
 			task.id: task

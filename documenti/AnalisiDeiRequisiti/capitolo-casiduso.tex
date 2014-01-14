@@ -14,22 +14,20 @@ dove il \textbf{codice dell'ambito} può assumere i seguenti valori:
 
   \item \textbf{U} - ambito utente, che comprende sia l'utente normale che l'\textit{admin} di una applicazione generata da \ProjectName{};
   \item \textbf{S} - ambito sviluppatore.
-  \item \textbf{M} - ambito utente MaaS.
+  \item \textbf{M} - ambito utente \glossario{MaaS} (MongoDB as an admin Service).
 
 \end{itemize}
-
-Per i tre ambiti(Utente,Sviluppatore,MaaS) il corrispondente diagramma delle "Operazioni ad alto livello" è stato suddiviso per tipologia di utente,mantenendo per comodità la nomenclatura che ci sarebbe stata se non avessimo effettuato la suddivisione.
-\\
+Per i tre ambiti(Utente,Sviluppatore,MaaS) il corrispondente diagramma delle "Operazioni ad alto livello" è stato suddiviso per tipologia di utente, mantenendo per comodità la nomenclatura che ci sarebbe stata se non avessimo effettuato la suddivisione.
 Nei diagrammi dei casi d'uso, il sistema dei livelli di astrazione inferiore si riferisce in modo ricorsivo al sistema del caso d'uso del padre. 
 Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi. 
 
 
 \subsection{Ambito Utente}
-\subsubsection{UCU - Operazioni ad alto livello}    
+\subsubsection{UCU - Operazioni ad alto livello - Utente autenticato}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.16]{UML/UCU - Operazioni ad alto livello.png}
-      \caption{UCU - Operazioni ad alto livello}
+      \includegraphics[scale=0.16]{UML/UCU - Operazioni ad alto livello - Utente autenticato.png}
+      \caption{UCU - Operazioni ad alto livello - Utente autenticato}
       \end{center} 
     \end{figure}    
     
@@ -40,30 +38,61 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - Operazioni ad alto livello}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - Operazioni ad alto livello - Utente autenticato}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente non autenticato, Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form e  recuperare le stesse qualora le abbia perse.
-L'Utente autenticato in qualsiasi punto dell'applicazione può accedere alle seguenti funzionalità: accedere alla Dashboard, effettuare il Logout , può scegliere una qualsiasi collection presente e può modificare i propri dati. 
+      \textbf{Attori Primari} & Utente autenticato, Admin \\ 
+          \textbf{Scopo e Descrizione} & L'Utente autenticato in qualsiasi punto dell'applicazione può accedere alle seguenti funzionalità: accedere alla Dashboard, effettuare il Logout , può scegliere una qualsiasi collection presente e può modificare i propri dati. 
 L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gli utenti creandone di nuovi o modificandoli ed inoltre può gestire nuovi indici. \\ 
           
           \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo.
-Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione o registrazione, mentre per l'utente autenticato disporrà la corrispondente pagina dashboard.\\ 
+Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.\\ 
+          
+          \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente autenticato vuole eseguire. \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato può decidere di effettuare il logout (UCU3); \newline
+2. L'utente autenticato può visualizzare la Dashboard (UCU8); \newline
+3. L'utente autenticato può scegliere una collection e visualizzarla (UCU9); \newline
+4. L'utente autenticato può scegliere di modificare i propri dati (UCU10); \newline
+5. L'admin può accede alla sua pagina di amministrazione per la gestione degli utenti (UCU11); \newline
+6. L'admin può gestire i possibili indici (UCU7). \newline
+ \\
+           \textbf{Estensioni} & 2.1. L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di /glossario{dashboard}(UCU12); \newline
+3.1.  L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della /glossario{collection} selezionata (UCU12); \newline
+6.1.  L'admin visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di /gestione degli indici (UCU12). \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU - Operazioni ad alto livello - Utente non autenticato}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCU - Operazioni ad alto livello - Utente non autenticato.png}
+      \caption{UCU - Operazioni ad alto livello - Utente non autenticato}
+      \end{center} 
+    \end{figure}    
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - Operazioni ad alto livello - Utente non autenticato}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato  \\ 
+          \textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form,può registrarsi all'applicazione se tale funzione è predisposta e può recuperare l'eventuale password d'accesso. \\ 
+          
+          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo.
+Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione, registrazione e recupero password.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente vuole eseguire. \\ 
           \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline
 2. Utente non autenticato può recuperare la password (UCU4); \newline
-3. Utente non autenticato può richiedere la registrazione (UCU5); \newline
-4. L'utente autenticato può decidere di effettuare il logout (UCU3); \newline
-5. L'utente autenticato può visualizzare la Dashboard (UCU8); \newline
-6. L'utente autenticato può scegliere una collection e visualizzarla (UCU9); \newline
-7. L'utente autenticato può scegliere di modificare i propri dati (UCU10); \newline
-8. L'admin può accede alla sua pagina di amministrazione per la gestione degli utenti (UCU11); \newline
-9. L'admin può gestire i possibili indici (UCU7). \newline
- \\
-           \textbf{Esclusioni} & 1.1. L'utente visualizza un errore dato dall'inserimento errato delle credenziali. (UCU2); \newline
-2.1. L'utente visualizza un errore dato dal fallimento della registrazione (UCU6). \newline \\
+3. Utente non autenticato può richiedere la registrazione (UCU5); \newline \\
+           \textbf{Estensioni} & 1.1 L'utente visualizza un messaggio di errore causato dall'inserimento di credenziali errate per il login (UCU2); \newline
+3.1 L'utente a seguito del fallimento della registrazione, visualizza un messaggio di errore (UCU6). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -87,13 +116,13 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente non autenticato intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password. L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password.  \\ 
           
           \textbf{Precondizioni}  & L'applicazione predispone la pagina di autenticazione all'utente non autenticato fornendo un apposito form per l'inserimento delle credenziali.\\ 
           
-          \textbf{Postcondizioni} & L'utente è autenticato e rediretto alla pagina Dashboard. \\ 
+          \textbf{Postcondizioni} & Il sistema ha autenticato l'utente e lo ha rediretto alla pagina Dashboard. \\ 
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline
-2. L'utente inserisce la password (UC1.2). \newline \\
+2. L'utente inseriesce la password (UC1.2). \newline \\
            \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
       \end{longtable}
       \egroup
@@ -111,11 +140,13 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce l'email. \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce l'email con la quale è registrato all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione Maap è pronta e l'utente intende autenticarsi.\\ 
+          \textbf{Precondizioni}  & L'applicazione  /glossario{Maap} è pronta e l'utente intende autenticarsi.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce la propria email per procedere con l'autenticazione (UCU1.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -132,16 +163,19 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce la password per effettuare l'autenticazione. \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce la password per effettuare l'autenticazione.
+Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratteri. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione Maap è pronta e l'utente intende autenticarsi.\\ 
+          \textbf{Precondizioni}  & L'applicazione  /glossario{MaaP} è pronta e l'utente intende autenticarsi.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa alla password inserita dall'utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce la propria password di accesso all'applicazione  /glossario{MaaP} (UCU1.2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU2- Visualizzazione messaggio errore per credenziali errate} 
+\subsubsection{UCU2 - Visualizzazione messaggio errore per credenziali errate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -149,7 +183,7 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU2- Visualizzazione messaggio errore per credenziali errate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU2 - Visualizzazione messaggio errore per credenziali errate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -158,6 +192,8 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
           \textbf{Precondizioni}  & L'applicazione ha verificato le credenziali inserite dall'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione predispone la visualizzazione di un messaggio di errore e non autentica l'utente al sistema. \\ 
+          \textbf{Flusso Principale} & 1. L'utente non autenticato a seguito del tentativo di effettuare il login visualizza un messaggio di errore dato dal fallimento dell'operazione (UCU2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -179,11 +215,20 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
           \textbf{Precondizioni}  & L'applicazione ha una sessione attiva dell'utente autenticato e mette a disposizione a quest'ultimo la possibilità di effettuare il logout.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha eseguito il logout richiesto dall'utente chiudendo la sessione di quest'ultimo. \\ 
+          \textbf{Flusso Principale} & 1. L'utente seleziona il logout (UCU3).  \\
+          
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU4 - Recupero password} 
+\subsubsection{UCU4 - Recupero password}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCU4 - Recupero password.png}
+      \caption{UCU4 - Recupero password}
+      \end{center} 
+    \end{figure}    
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -200,6 +245,117 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
           \textbf{Precondizioni}  & L'applicazione predispone e mostra all'utente non autenticato la possibilità di recupero password.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha effettuato le operazioni necessarie per il recupero password richiesta dall'utente non autenticato. \\ 
+          \textbf{Flusso Principale} & 1. L'utente richiede il reset della propria password d'accesso all'applicazione (UCU4.1);
+2. L'utente, il quale ha richiesto reset della password, attraverso un link contenuto nell'email inviata dal sistema, accede alla pagina per il reset della password (UCU4.2). \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU4.1 - Richiesta reset password}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCU4.1 - Richiesta reset password.png}
+      \caption{UCU4.1 - Richiesta reset password}
+      \end{center} 
+    \end{figure}    
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.1 - Richiesta reset password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende richiedere il reset della propria password d'accesso all'applicazione, per poterlo fare dovrà inserire un indirizzo email nel quale verrà inviata un email contenente il link dal quale potrà accedere alla pagina per effettuare il reset della propria password. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema predispone all'utente non autenticato una pagina con rispettivo modulo di inserimento dell'email per portare a termine la procedura di reset della password.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha inviato correttamente l'email contente il link per completare la procedura relativa al reset della password utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce una email su cui verrà inviata l'email per completare l'operazione di reset della password (UCU4.1.1). \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU4.1.1 - Inserimento email} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.1.1 - Inserimento email}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato  \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato intende inserire l'email per procedere con il recupero della propria password per l'accesso all'applicazione. \\ 
+          
+          \textbf{Precondizioni}  & L'applicazione predispone la pagina per il reset password mostrando il relativo modulo per l'inserimento dell'emal ed è pronta per l'iterazione dell'utente.\\ 
+          
+          \textbf{Postcondizioni} & L'applicazione ha ricevuto il dato relativo all'email inserita dall'utente ed ha effettuato l'invio dell'email con link per il completamento dell'operazione di reset. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email per il recupero della password di accesso (UCU4.1.1). \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU4.2 - Effettuazione reset password}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCU4.2 - Effettuazione reset password.png}
+      \caption{UCU4.2 - Effettuazione reset password}
+      \end{center} 
+    \end{figure}    
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.2 - Effettuazione reset password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato  \\ 
+          \textbf{Scopo e Descrizione} & L'utente intende una nuova password che sostituirà quella precedente per l'accesso all'applicazione.
+La password deve essere alfanumerica e con lunghezza minima 8 caratteri. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema ha inviato all'utente non autenticato un'email contenente il link della pagina corrente visualizzata.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha effettuato il reset della password dell'utente con il dato della nuova password inserito da quest'ultimo. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce la nuova password (UCU4.2.1). \\
+           \textbf{Scenari Alternativi} & 1.  L'utente può Inserire la nuova password con la quale intende accede all'applicazione (UCU4.2.1). \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU4.2.1 - Inserimento nuova password} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.2.1 - Inserimento nuova password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato  \\ 
+          \textbf{Scopo e Descrizione} & L'utente desidera inserire una nuova password che sostituisca la precedente password perduta per poter accede all'applicazione.
+La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 8 caratteri. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema ha inviato un'email contenente il link della pagina correntemente visualizzata dall'utente non autenticato e predispone un form per l'inserimento della nuova password.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema ha ricevuto il dato relativo alla nuova password di accesso del corrispondente utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce la nuova password che sostituisce la precedente come password d'accesso all'applicazione (UCU4.2.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -249,9 +405,11 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'applicazione visualizza un messaggio d'errore all'utente causata dall'inserimento di credenziali non corrette o già presenti nel database. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto i dati di registrazione inseriti dall'utente e tenta la creazione di un nuovo account.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto i dati di registrazione inseriti dall'utente non autenticato e tenta la creazione di un nuovo account.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione mostra un messaggio di errore dato dal fallimento del tentativo di registrazione richiesta dall'utente. \\ 
+          \textbf{Postcondizioni} & L'applicazione mostra un messaggio di errore dato dal fallimento del tentativo di registrazione richiesta dall'utente non autenticato. \\ 
+          \textbf{Flusso Principale} & 1. L'utente non autenticato ha tentato di registrarsi all'applicazione con risultato il fallimento dell'operazione e la visualizzazione di un messaggio di errore (UCU6). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -305,7 +463,9 @@ Gli indici già presenti possono essere eliminati. \\
           
           \textbf{Precondizioni}  & L'applicazione ha eseguito una ricerca sulla base delle query più utilizzate. \\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggerimenti derivati dalla ricerca. \\ 
+          \textbf{Postcondizioni} & L'applicazione visualizza correttamente tutti i suggermenti derivati dalla ricerca. \\ 
+          \textbf{Flusso Principale} & 1. L'admin visualizza una serie di indici suggeriti dall'applicazione (UCU7.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -327,6 +487,8 @@ Gli indici già presenti possono essere eliminati. \\
           \textbf{Precondizioni}  & L'applicazione visualizza correttamente la lista degli indici suggeriti.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha creato gli indici selezionati dall'Admin. \\ 
+          \textbf{Flusso Principale} & 1. L'admin seleziona e crea indici tra quelli disponibili suggeriti dall'applicazione (UCU7.2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -348,6 +510,8 @@ Gli indici già presenti possono essere eliminati. \\
           \textbf{Precondizioni}  & L'applicazione visualizza correttamente la lista degli indici.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha eliminato gli indici selezionati dall'Admin. \\ 
+          \textbf{Flusso Principale} & 1. L'admin seleziona e rimuove indici dalla lista di quelli presenti (UCU7.3). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -364,11 +528,14 @@ Gli indici già presenti possono essere eliminati. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di Dashboard nella quale potrà aver accesso alle varie funzionalità presenti. \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato può visualizzare la pagina di Dashboard nella quale potrà aver accesso ad esempio alla lista delle collection presenti e ad altre funzionalità disponibili. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione predispone la pagina di Dashboard.\\ 
+          \textbf{Precondizioni}  & L'applicazione predispone la pagina di Dashboard all'utente autenticato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di Dashboard. \\ 
+          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di Dashboard ed pronta ad interagire con l'utente per svolgere le operazioni che desidera eseguire.
+ \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato visualizza la propria Dashboard (UCU8). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -393,16 +560,18 @@ Gli indici già presenti possono essere eliminati. \\
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'utente autenticato, selezionata una \glossario{Collection}, ne visualizza in forma tabellare tutti i documenti che contiene.  \newline
-Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personalizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
+Di questa collection può filtrarne i risultati visualizzabili, può eseguire tramite bottoni predisposti nella pagina azioni personallizzati e per ogni \glossario{Document}, selezionarlo e visualizzarne la show-page corrispondente.  \newline
 L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Document}.  \newline \\ 
           
-          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente di visualizzare la \glossario{Collection}.\\ 
+          \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta da parte dell'utente autenticato di visualizzare la \glossario{Collection}.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha visualizzato la \glossario{Collection-Index} ed ha recepito le richieste che l'utente desidera eseguire. \\  \textbf{Scenari Alternativi} & 1. L'utente autenticato può aprire la show-page relativa ad un \glossario{Document} (UCU9.1);  \newline
+          \textbf{Postcondizioni} & L'applicazione ha visualizzato la \glossario{Collection-Index} ed ha recepito le informazioni sulle operazioni che l'utente desidera eseguire. \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show-page relativa ad un \glossario{Document} (UCU9.1);  \newline
 2. L'utente autenticato può filtrare la  \glossario{Collection} (UCU9.2);  \newline
 3. L'utente autenticato può eseguire un'azione personalizzata se è presente (UCU9.3);  \newline
 4. L'Admin può modificare un \glossario{Document} (UCU9.4);  \newline
 5. L'Admin può eliminare un \glossario{Document} (UCU9.5).  \newline \\
+           \textbf{Estensioni} & 4.1 L'admin annulla la modifica Document (UCU9.7). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -434,7 +603,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           
           \textbf{Postcondizioni} & L'applicazione mostra all'utente la show-page corrispondente ed è pronta ad eseguire azioni. \\ 
           \textbf{Flusso Principale} & 1. L'utente autenticato può aprire la show-page degli attributi innestati. (UCU9.1.1);  \newline
-2. L'utente autenticato può aprire l'index-page dell'array di \glossario{Document} (UCU9.1.2);  \newline
+2. L'utente autenticato può aprire l'ndex-page dell'array di \glossario{Document} (UCU9.1.2);  \newline
 3. L'utente autenticato può eseguire, se presente, un'operazione personalizzata (UCU9.3);  \newline
 4. L'Admin può modificare il \glossario{Document} (UCU9.1.3);  \newline
 5. L'admin può eliminare il \glossario{Document} (UCU9.1.4). \\
@@ -460,6 +629,8 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           \textbf{Precondizioni}  & L'applicazione riceve l'informazione necessaria per visualizzare l'attributo innestato selezionato dall'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione visualizza gli attributi dell'attributo innestato. \\ 
+          \textbf{Flusso Principale} & 1. L'utente seleziona un attributo per andarne a vedere gli attributi ad esso innestati (UCU9.1.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -481,6 +652,8 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           \textbf{Precondizioni}  & L'applicazione ha ricevuto la richiesta di visualizzazione dell'index-page dell'array di \glossario{Document} dell'attributo selezionato dall'utente.\\ 
           
           \textbf{Postcondizioni} & L'applicazione mostra l'index-page dell'array di \glossario{Document}. \\ 
+          \textbf{Flusso Principale} & 1. L'utente seleziona l'index-page dell'array di \glossario{Document} per andarli a visualizzare (UCU9.1.2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -501,7 +674,9 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           
           \textbf{Precondizioni}  & L'applicazione visualizza gli attributi del \glossario{Documento} permettendo di modificarli.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al \glossario{Document}. \\  \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al \glossario{Document}. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche effettuate dall'Admin al \glossario{Document}. \\ 
+          \textbf{Flusso Principale} & 1. L'admin inserisce modifiche agli attributi del document la cui show-page è visualizzata (UCU9.1.3). \\
+           \textbf{Scenari Alternativi} & 1. L'admin annulla le modifiche al \glossario{Document}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -523,6 +698,8 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           \textbf{Precondizioni}  & L'applicazione permette l'eliminazione del \glossario{Document}.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha eliminato il \glossario{Document} dalla \glossario{Collection}. \\ 
+          \textbf{Flusso Principale} & 1. L'admin seleziona l'eliminazione del \glossario{Document} cui show-page è visualizzata (UCU9.1.4). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -544,6 +721,8 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
           \textbf{Precondizioni}  & Il sistema ha visualizzato correttamente la pagina di modifica del Document all'Admin.\\ 
           
           \textbf{Postcondizioni} & Il sistema ha annullato correttamente le modifiche al Document. \\ 
+          \textbf{Flusso Principale} & 1. L'admin annulla la modifica al document selezionato (UCU9.1.5). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -559,14 +738,16 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.2 - Filtra risultati}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & Per ciascun tipo di dato utilizzato dalla libreria Mongoose (Number, Data, String) sarà possibile filtrare i valori per range o per testo contenuto.
+      \textbf{Attori Primari} & Utente autenticato \\ 
+          \textbf{Scopo e Descrizione} & Per ciascun tipo di dato utilizzato dalla libreria mongoose (Number, Data, String) sarà possibile filtrare i valori per range o per testo contenuto.
 L'utente può filtrare i \glossario{Document} mostrati dalla \glossario{Collection-Index} in base agli attributi che il Document possiede.
 Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione  mette a disposizione (se disponibili) i filtri nella \glossario{Collection-Index}.\\ 
+          \textbf{Precondizioni}  & L'applicazione mette a disposizione (se disponibili) i filtri nella \glossario{Collection-Index}.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha filtrato i \glossario{Document} visualizzati secondo i filtri richiesti dall'utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente inserisce un filtro per uno o più attributi andando a visualizzare i \glossario{Document} della \glossario{collection} filtrata con le caratteristiche definite (UCU9.2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -583,11 +764,13 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
-          \textbf{Scopo e Descrizione} & L'utente può eseguire azioni personalizzate tramite l'uso di pulsanti se predisposti nella pagina visualizzata. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eseguire azioni personalizzate tramite l'uso di pulsanti, se predisposti, nella pagina visualizzata. \\ 
           
           \textbf{Precondizioni}  & L'applicazione visualizza i pulsanti predisposti per l'esecuzione di azioni personalizzate.\\ 
           
           \textbf{Postcondizioni} & L'applicazione, a seconda dell'azione eseguita dall'utente, ha svolto le sue funzioni. \\ 
+          \textbf{Flusso Principale} & 1. L'utente seleziona un pulsante presente nella pagina per eseguire un'azione personalizzata predisposta dall'applicazione (UCU9.3). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -608,7 +791,9 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           
           \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i \glossario{Document} della \glossario{Collection} predisponendo la possibilità di modifica per ognuno di essi.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\  \textbf{Esclusioni} & 1. L'Admin non ha modificato il \glossario{Document}. \\
+          \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\ 
+          \textbf{Flusso Principale} & 1 . L'admin seleziona la modifica di un  /glossario{Document} presente nella collection (UCU9.4). \\
+           \textbf{Estensioni} & 1. L'Admin annulla la modifica al \glossario{Document} (UCU9.7). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -630,6 +815,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & L'applicazione ha predisposto per ogni \glossario{Document} visualizzato nella \glossario{Collection-Index} la possibilità di eliminarlo.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha eliminato il \glossario{Document} selezionato dall'Admin. \\ 
+          \textbf{Flusso Principale} & 1. L'admin seleziona l'eliminazione di un document presente nella collection index (UCU9.5). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -651,6 +838,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & L'applicazione è pronta a gestire le richieste dell'Admin e permette la creazione di nuovi \glossario{Document}.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha creato il nuovo \glossario{Document}. \\ 
+          \textbf{Flusso Principale} & 1. L'admin crea un \glossario{Document}, per farlo inserirà i possibili attributi con i quali un  \glossario{Document} della  \glossario{collection} è strutturato (UCU9.6). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -672,6 +861,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & Il sistema ha visualizzato correttamente la pagina di modifica del Document all'Admin.\\ 
           
           \textbf{Postcondizioni} & Il sistema ha annullato correttamente le modifiche al Document. \\ 
+          \textbf{Flusso Principale} & 1 . L'admin che intendeva modificare il document, annulla le modifiche lasciandolo invariato (UCU9.7). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -707,7 +898,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU10.1 - Modifica email} 
+\subsubsection{UCU10.1 - Modifica password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -715,28 +906,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU10.1 - Modifica email}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato inserisce la nuova email in un apposito campo di testo. \\ 
-          
-          \textbf{Precondizioni}  & L'utente autenticato si trova all'interno della pagina di modifica del proprio profilo.\\ 
-          
-          \textbf{Postcondizioni} & L'utente ha inserito la nuova email all'interno dell'apposito campo. \\ 
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCU10.2 - Modifica password} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU10.2 - Modifica password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU10.1 - Modifica password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
@@ -745,6 +915,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & L'utente autenticato si trova all'interno della pagina di modifica del proprio profilo.\\ 
           
           \textbf{Postcondizioni} & L'utente ha inserito la nuova password all'interno dell'apposito campo. \\ 
+          \textbf{Flusso Principale} & 1. L'utente autenticato modifica la propria password di accesso all'applicazione (UCU10.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -775,7 +947,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Postcondizioni} & L'applicazione mette a disposizione dell'Admin tutte le funzionalità di controllo previste. \\ 
           \textbf{Flusso Principale} & 1. L'Admin può creare un nuovo utente (UCU11.1); \newline
 2. L'Admin può visualizzare la \glossario{Collection-Show} di un utente (UCU11.3).  \\
-           \textbf{Esclusioni} & 1.1 - Fallisce l'inserimento di un nuovo utente (UCU11.2). \\
+           \textbf{Estensioni} & 1.1 - Fallisce l'inserimento di un nuovo utente (UCU11.2). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -830,6 +1002,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & Il sistema mette a disposizione dell'Admin un campo di testo dove inserire la password del nuovo utente.\\ 
           
           \textbf{Postcondizioni} & Il campo di testo è stato compilato correttamente. \\ 
+          \textbf{Flusso Principale} & 1. L'admin inserisce l'email per la creazione di un nuovo utente (UCU11.1.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -851,6 +1025,8 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & L'admin è nella pagina di creazione di un nuovo utente.\\ 
           
           \textbf{Postcondizioni} & L'Admin ha inserito l'indirizzo email dell'utente da creare. \\ 
+          \textbf{Flusso Principale} & 1. L'admin inserisce la password di accesso all'applicazione del nuovo utente che sta creando (UCU11.1.2). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -892,7 +1068,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
 L'operazione di creazione utente può fallire nei seguenti casi : \newline
 -Formato email errato;  \newline
 -Email già presente;  \newline
--Formato password errato;  \newline
+-Formato password erraro;  \newline
 -Fallimento richiesta di connessione al database delle credenziali utenti. \\ 
           
           \textbf{Precondizioni}  & Il sistema ha rilevato degli errori nell'inserimento di un nuovo utente.\\ 
@@ -977,7 +1153,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3.3 - Modifica email utente} 
+\subsubsection{UCU11.3.3 - Eliminazione Utente} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -985,49 +1161,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.3 - Modifica email utente}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin modifica l'email dell'utente selezionato. \\ 
-          
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
-          
-          \textbf{Postcondizioni} & L'applicazione ha modificato l'indirizzo email dell'utente selezionato dall'Admin. \\ 
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCU11.3.4 - Modifica Password Utente} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.4 - Modifica Password Utente}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin modifica la password dell'utente selezionato. \\ 
-          
-          \textbf{Precondizioni}  & L'applicazione mette a disposizione dell'Admin la pagina di modifica dell'utente selezionato.\\ 
-          
-          \textbf{Postcondizioni} & L'applicazione ha modificato la password dell'utente selezionato dall'Admin. \\ 
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCU11.3.5 - Eliminazione Utente} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.5 - Eliminazione Utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.3 - Eliminazione Utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1036,6 +1170,31 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
           \textbf{Precondizioni}  & L'applicazione visualizza la \glossario{Collection-Show} dell'utente selezionato.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha eliminato l'utente selezionato dall'Admin dal database delle credenziali. \\ 
+          \textbf{Flusso Principale} & 1. L'admin elimina l'utente relativo alla show-page visualizzata (UCU11.3.3). \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU12 - Visualizzazione messaggio di errore DSL} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU12 - Visualizzazione messaggio di errore DSL}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza un messaggio di errore invece della pagina richiesta, causato da un errore in uno dei file definiti tramite il DSL. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema ha rilevato un errore in uno o più file definiti tramite linguaggio DSL.\\ 
+          
+          \textbf{Postcondizioni} & L'applicazione mostra un messaggio di errore all'utente. \\ 
+          \textbf{Flusso Principale} & 1. L'utente che ha richiesto la visualizzazione di una pagina visualizza un messaggio di errore causato dal rilevamento di una irregolarità in uno dei file definiti attraverso il DSL (UCU12). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -1142,7 +1301,8 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le credenziali degli utenti i quali utilizzeranno l'applicazione generata dal \glossario{Framework}. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le credenziali degli utenti i quali utilizzeranno l'applicazione generata dal \glossario{Framework}.
+Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} permette la configurazione del database credenziali.\\ 
           
@@ -1163,7 +1323,8 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \hline
       
       \textbf{Attori Primari} &  \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare il database che conterrà le \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà.
+Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} è  pronto per l'utilizzo e permette la configurazione del database contenente le \glossario{Collection}.\\ 
           
@@ -1220,7 +1381,8 @@ Può poi configurare le \glossario{Collection} create. \\
           \textbf{Postcondizioni} & Il \glossario{Framework} ha appreso le informazioni necessarie sulle azioni che lo sviluppatore vuole eseguire. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore può registrare manualmente la \glossario{Collection} (UCS3.1); \newline
 2. Lo sviluppatore può configurare la \glossario{Collection} registrata (UCS3.3).  \\
-           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della \glossario{Collection} (UCS3.4). \\
+           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della \glossario{Collection} (UCS3.4); \newline
+2.1 Lo sviluppatore può definire il namespace della \glossario{Collection} se la funzione di namespace è stata abilitata (UCS3.5). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1708,6 +1870,27 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
+\subsubsection{UCS3.3.5 - Definizione namespace} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.5 - Definizione namespace}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di \glossario{namespace} è abilitata, può definire un \glossario{namespace} per l'applicazione \glossario{MaaP} generata ed associarlo alle \glossario{Collection} da creare. \\ 
+          
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha generato un'applicazione funzionante.\\ 
+          
+          \textbf{Postcondizioni} & La \glossario{collection} ha un \glossario{namespace} definito al suo interno. \\
+      \end{longtable}
+      \egroup
+\end{center}
+
 \subsubsection{UCS3.4 - Registrazione automatica Collection} 
       %Tabella 
       \begin{center}
@@ -1729,7 +1912,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.5 - Definizione namespace} 
+\subsubsection{UCS3.6 - Visualizzazione messaggio di errore DSL} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1737,15 +1920,15 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.5 - Definizione namespace}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.6 - Visualizzazione messaggio di errore DSL}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di \glossario{namespace} è abilitata, può definire un \glossario{namespace} per l'applicazione \glossario{MaaP} generata ed associarlo alle \glossario{Collection} da creare. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore quando configura una Collection potrebbe incappare in errori di sintassi o di tipo logico legati al linguaggio DSL con cui sta programmando. In tal caso \glossario{MaaP} deve segnalare allo sviluppatore un messaggio d'errore. \\ 
           
-          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha generato un'applicazione funzionante.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} verifica il codice prodotto dallo sviluppatore.\\ 
           
-          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha un \glossario{namespace} definito al suo interno. \\
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha riscontrato un errore logico o di sintassi all'interno del codice prodotto dallo sviluppatore e lancia un messaggio di errore. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1771,11 +1954,11 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 \subsection{Ambito Utente MaaS}
-\subsubsection{UCM - Operazioni ad alto livello} 
+\subsubsection{UCM - Operazioni ad alto livello - Utente MaaS non autenticato} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello.png}
-      \caption{UCM - Operazioni ad alto livello}
+      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello - Utente MaaS non autenticato.png}
+      \caption{UCM - Operazioni ad alto livello - Utente MaaS non autenticato}
       \end{center} 
     \end{figure}  
     
@@ -1786,23 +1969,51 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello - Utente MaaS non autenticato}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente MaaS non autenticato, Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \newline
-L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare il proprio account o gestire i file di configurazione per la creazione della pagine. \\ 
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \\ 
+          
+          \textbf{Precondizioni}  & \glossario{MaaS} è funzionante ed attende che l'utente non autenticato interagisca.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} non autenticato ha richiesto. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline
+2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4). \\
+           \textbf{Esclusioni} & 1.1 L'utente non autenticato visualizza un messaggio di errore dovuto all'esistenza delle credenziali inserite per registrarsi al servizio (UCM3); \newline
+2.1 L'utente visualizza un messaggio di errore dopo aver inserito dati non corretti nell'operazione di login (UCM5). \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM - Operazioni ad alto livello - Utente MaaS autenticato} 
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[scale=0.16]{UML/UCM - Operazioni ad alto livello - Utente MaaS autenticato.png}
+      \caption{UCM - Operazioni ad alto livello - Utente MaaS autenticato}
+      \end{center} 
+    \end{figure}  
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello - Utente MaaS autenticato}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare il proprio account o gestire i file di configurazione per la creazione della pagine. \\ 
           
           \textbf{Precondizioni}  & \glossario{MaaS} è funzionante ed attende che l'utente interagisca.\\ 
           
-          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente richiede. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline
-2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4); \newline
-3. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline
-4. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline
-5. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8). \newline \\
-           \textbf{Esclusioni} & 1.1. L'utente visualizza un messaggio di errore dato dall'esistenza delle credenziali inserite per la registrazione (UCM3); \newline
-2.1. L'utente visualizza un messaggio di errore dato dall'inserimento in fase di login di credenziali errate (UCU5). \\
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} autenticato ha richiesto. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline
+2. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline
+3. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8).  \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -1972,19 +2183,18 @@ L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente autenticato nel servizio può modificare i propri dati email e password. \\ 
+          \textbf{Scopo e Descrizione} & L'utente autenticato nel servizio può modificare la propria password. \\ 
           
           \textbf{Precondizioni}  & Il sistema è pronto, visualizza la pagina per la modifica del profilo utente e attende che l'utente interagisca.\\ 
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha acquisito le informazioni inserite dall'utente ed ha effettuato le modifiche. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare la propria email (UCU6.1); \newline
-2. L'utente \glossario{MaaS} autenticato può modificare la password (UCU6.2). \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare la password (UCU6.1). \\
            \textbf{Scenari Alternativi} & L'utente può non modificare i propri dati lasciandoli invariati uscendo dalla pagina. \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM6.1 - Modifica email} 
+\subsubsection{UCM6.1 - Modifica password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1992,28 +2202,7 @@ L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.1 - Modifica email}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente intende modificare l'email. \\ 
-          
-          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} predispone la pagina di modifica profilo ed attente le modifiche dell'utente.\\ 
-          
-          \textbf{Postcondizioni} & Il sistema ha acquisito le informazioni date dall'utente. \\
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCM6.2 - Modifica password} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.2 - Modifica password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.1 - Modifica password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
@@ -2114,7 +2303,8 @@ L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione. \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione.
+Tale editor sarà visualizzato come una text area nella pagina. \\ 
           
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} fornisce un editor di testo per la creazione dei file di configurazione.\\ 
           
@@ -2177,7 +2367,7 @@ L'utente \glossario{MaaS} autenticato può modificare il suo profilo, eliminare 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazione scelto. \\ 
+          \textbf{Scopo e Descrizione} & L'utente può eliminare il file di configurazone scelto. \\ 
           
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} ha predisposto per ogni file di configurazione la possibilità di eliminarlo.\\ 
           

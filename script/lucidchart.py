@@ -29,7 +29,7 @@ def runAuthServer(port):
 	httpd.serve_forever()
 
 class LucidchartClient:
-	def __init__(self, session_file="~/.lucidchart", callback_url="", server_port=8088):
+	def __init__(self, session_file="~/.lucidchart", callback_url="", server_port=8888):
 		"""
 		session_file: il file in cui memorizzare i token di accesso
 		callback_url: l'indirizzo a cui è raggiungibile il server in ascolto sulla porta {server_port} di questo computer
@@ -46,12 +46,13 @@ class LucidchartClient:
 		)
 		self.session_file = path.expanduser(session_file)
 		self.callback_url = callback_url
+		self.server_port = server_port
 	
 	def new_session(self):
 		global verifier
 		
 		print "Faccio partire il server"
-		thread.start_new_thread(runAuthServer,(server_port,))
+		thread.start_new_thread(runAuthServer,(self.server_port,))
 		time.sleep(1)
 		
 		if not self.callback_url:

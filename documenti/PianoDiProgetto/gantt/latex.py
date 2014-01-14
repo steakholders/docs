@@ -37,33 +37,43 @@ def writeGanttMilestone(project, milestone_id, filename):
 
 	out.close()
 
-def writeHoursTableMilestone(project, milestone_id, filename):
+def writeRipartizioneOreMilestone(project, milestone_id, filename):
 	milestone = project.getMilestone(str(milestone_id))
 	out = open(filename, "w")
-	def latex(str):
-		out.write((str+"\n").encode('utf-8'))
-
-	for tasklist in sortByCode(milestone.getTaskLists()):
-		latex(u"")
-		latex(u"\t\\textbf{{{code}}} & \\textbf{{{title}}} \\\\".format(
-			code = tasklist.getCode(), title = tasklist.getName()
-		))
-		latex(u"\t\\cline{3-4}")
-		
-		tasks = sortByCode(tasklist.getTasks())
-		
-		for task in tasks:
-			if task.role is not None:
-				latex(u"\t{code} & {title} & {role} & {hours} \\\\".format(
-					code = task.getCode(), title = task.getName(), role = task.role.name.title(), hours = task.getPlannedHours()
-				))
-			else:
-				pedantic_warning(u"Il task {name} non ha un ruolo assegnato".format(name=task.getFullName()))
-				latex(u"\t{code} & {title} & {role} & {hours} \\\\".format(
-					code = task.getCode(), title = task.getName(), role = "(da assegnare)", hours = task.getPlannedHours()
-				))
-
-		latex(u"\t\\hline")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+	
 
 	out.close()
 
+def writeSuddivisioneOreMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	tasks = milestone.getTasks()
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	for person in sortByName(project.getPeople()):
+		latex(u"\t{name}".format(
+			name = person.getName()
+		), False)
+		
+		person_tasks = [t for t in tasks if t.getResponsible() == person]
+		person_hours = sum([t.getPlannedHours() for t in person_tasks])
+
+		for role in roles:
+			role_tasks = [t for t in person_tasks if t.getRole() == role]
+			role_hours = sum([t.getPlannedHours() for t in role_tasks])
+
+			latex(u" & {hours:.0f}".format(hours = role_hours), False)
+		
+		latex(u" & {hours:.0f}".format(hours = person_hours), False)
+
+		latex(u" \\\\")
+
+	out.close()

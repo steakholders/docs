@@ -41,7 +41,7 @@ def testPeople(project):
 	
 	# Visualizza informazioni
 	for person in project.getPeople():
-		personal_tasks = [t for t in project.getTasks() if t.responsible == person]
+		personal_tasks = [t for t in project.getTasks() if t.getResponsible() == person]
 		total_hours = sum([t.getPlannedHours() for t in personal_tasks])
 		
 		RoleHours = namedtuple('RoleHours', ['hours', 'role'])

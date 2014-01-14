@@ -13,6 +13,9 @@ class Person:
 		self.id = id
 		self.name = name
 
+	def getName(self):
+		return self.name
+
 	def __repr__(self):
 		return u"<Person(#{id} {name})>".format(id=self.id, name=self.name).encode('utf-8')
 
@@ -78,6 +81,12 @@ class Task:
 	
 	def getEnd(self):
 		return self.end
+
+	def getRole(self):
+		return self.role
+
+	def getResponsible(self):
+		return self.responsible
 
 	def getPlannedHours(self):
 		if self.planned_hours is None:

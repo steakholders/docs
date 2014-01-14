@@ -8,5 +8,5 @@ include $(REPO_DIR)/script/global.mk
 # Se servisse, sostituire questa inclusione con il codice specializzato.
 include $(REPO_DIR)/script/default-doc.mk
 
-test-gantt:
+download-gantt:
 	@python download_gantt.py 2>&1 | tee esito_gantt.txt

@@ -158,47 +158,11 @@ Si suddivide la progettazione architetturale in progettazione dei requisiti fond
 \begin{figure}[H]
 \centering
 \scalebox{0.95}{%
-\begin{sideways}
+%\begin{sideways}
 
-\begin{ganttchart}{2014-01-03}{2014-02-08}
-	
-	\gantttitle{Gennaio}{29}\gantttitle{Febbraio}{8}\\
-	\gantttitlelist{3,...,31}{1}\gantttitlelist{1,...,8}{1}\\
-	
-	\ganttgroup{\textbf{PA1 - Analisi dei requisiti}}{2014-01-03}{2014-01-07} \\
-	\ganttbar[name=pa1.1]{PA1.1 - Stesura finale}{2014-01-03}{2014-01-06} \\
-	\ganttbar[name=pa1.2]{PA1.2 - Verifica}{2014-01-06}{2014-01-07} \\
-	\ganttlink{pa1.1}{pa1.2}
-	
-	\ganttgroup{\textbf{PA2 - Piano di progetto}}{2014-01-09}{2014-01-14} \\
-	\ganttbar[name=pa2.1]{PA2.1 - Aggiornamento}{2014-01-09}{2014-01-12} \\
-	\ganttbar[name=pa2.2]{PA2.2 - Verifica}{2014-01-13}{2014-01-14} \\
-	\ganttlink{pa2.1}{pa2.2}
-	
-	\ganttgroup{\textbf{PA3 - Piano di qualifica}}{2014-01-13}{2014-01-18} \\
-	\ganttbar[name=pa3.1]{PA3.1 - Aggiornamento}{2014-01-13}{2014-01-16} \\
-	\ganttbar[name=pa3.2]{PA3.2 - Verifica}{2014-01-17}{2014-01-18} \\
-	\ganttlink{pa3.1}{pa3.2}
-	
-	\ganttgroup{\textbf{PA4 - Specifica tecnica}}{2014-01-09}{2014-02-05} \\
-	\ganttbar[name=pa4.1.1]{PA4.1.1 - Progettazione requisiti fondamentali \\ e desiderabili}{2014-01-09}{2014-01-16} \\
-	\ganttbar[name=pa4.1.2]{PA4.1.2 - Verifica requisiti fondamentali \\ e desiderabili}{2014-01-17}{2014-01-19} \\
-	\ganttbar[name=pa4.1.3]{PA4.1.3 - Stesura requisiti fondamentali \\ e desiderabili}{2014-01-20}{2014-01-22} \\
-	\ganttbar[name=pa4.2.1]{PA4.2.1 - Progettazione requisiti opzionali}{2014-01-20}{2014-01-26} \\
-	\ganttbar[name=pa4.2.2]{PA4.2.2 - Verifica requisiti opzionali}{2014-01-26}{2014-01-28} \\
-	\ganttbar[name=pa4.2.3]{PA4.2.3 - Stesura requisiti opzionali}{2014-01-29}{2014-01-31} \\
-	\ganttbar[name=pa4.3]{PA4.3 - Tracciamento}{2014-01-30}{2014-02-03} \\
-	\ganttbar[name=pa4.4]{PA4.4 - Verifica specifica tecnica}{2014-02-02}{2014-02-05} \\
-	\ganttlink{pa4.1.1}{pa4.1.2}
-	\ganttlink{pa4.1.2}{pa4.1.3}
-	\ganttlink{pa4.2.1}{pa4.2.2}
-	\ganttlink{pa4.2.2}{pa4.2.3}
-	\ganttlink{pa4.1.3}{pa4.3}
-	\ganttlink{pa4.2.3}{pa4.3}
-	\ganttlink{pa4.3}{pa4.4}
-	
-\end{ganttchart}
-\end{sideways}
+	\input{gantt_rp}
+
+%\end{sideways}
 }
 \caption{Diagramma di Gantt, fase di Progettazione Architetturale}
 \end{figure}
@@ -216,64 +180,8 @@ Si suddivide la progettazione architetturale in progettazione dei requisiti fond
 	\multicolumn{1}{c}{\textbf{Ore}} \\
 	\hline
 	
-	\textbf{PA1} & \textbf{Analisi dei requisiti} \\
-	\cline{3-4}
-	PA1.1 & Stesura finale & Analista1 & 11\\ 
-    & & Analista2 & 6\\
-    & & Analista3 & 6\\
-     & & Analista4 & 6\\
-    \cline{3-4}
-	PA1.2 & Verifica & Verificatore &  4\\
+		\input{ripartizione_rp}
 	
-	\hline
-	\textbf{PA2} & \textbf{Piano di progetto} \\
-	\cline{3-4}
-	PA2.1 & Aggiornamento AN & Amministratore & 5\\ 
-    & & Responsabile & 3\\
-    \cline{3-4}
-	PA2.2 & Verifica & Verificatore & 4\\
-	
-	\hline
-	\textbf{PA3} & \textbf{Piano di qualifica} \\
-	\cline{3-4}
-	PA3.1 & Aggiornamento AN & Progettista & 8\\ 
-    \cline{3-4}
-	PA3.2 & Verifica & Verificatore &  4\\
-	
-	\hline
-	\textbf{PA4} & \textbf{Specifica tecnica} \\
-	\cline{3-4}
-	PA4.1.1 & Progettazione requisiti fondamentali e desiderabili & Progettista1 & 10\\ 
-	& & Progettista2 & 10\\
-	& & Progettista3 & 10\\
-	& & Progettista4 & 10\\
-    \cline{3-4}
-	PA4.1.2 & Verifica requisiti fondamentali e desiderabili & Verificatore1 &  4\\
-	& & Verificatore2 & 5\\
-	\cline{3-4}
-	PA4.1.3 & Stesura requisiti fondamentali e desiderabili & Amministratore &  5\\
-	& & Progettista & 5\\
-	
-	\cline{3-4}
-	PA4.2.1 & Progettazione requisiti opzionali & Progettista1 & 10\\ 
-	& & Progettista2 & 10\\
-	& & Progettista3 & 10\\
-	& & Progettista4 & 11\\
-    \cline{3-4}
-	PA4.2.2 & Verifica requisiti opzionali & Verificatore1 &  5\\
-	& & Verificatore2 & 6\\
-	\cline{3-4}
-	PA4.2.3 & Stesura requisiti opzionali & Amministratore &  4\\
-	& & Progettista & 6\\
-	\cline{3-4}
-	PA4.3 & Tracciamento & Progettista1 &  4\\
-	& & Progettista2 & 5\\
-	& & Progettista3 & 4\\
-	\cline{3-4}
-	PA4.4 & Verifica specifica tecnica & Verificatore1 &  6\\
-	& & Verificatore2 & 3\\
-	
-	\hline
 	\end{tabular}
 	\caption{Allocazione risorse, fase di Progettazione architetturale}
 	\end{adjustwidth}
@@ -292,55 +200,12 @@ In tal modo, in caso di ritardi si potrà procedere ugualmente alla fase success
 
 \begin{figure}[H]
 \centering
-\scalebox{0.78}{%
-\begin{sideways}
+\scalebox{0.71}{%
+%\begin{sideways}
 
-\begin{ganttchart}{2014-02-08}{2014-03-07}
-	
-	\gantttitle{Febbraio}{21}\gantttitle{Marzo}{7}\\
-	\gantttitlelist{8,...,28}{1}\gantttitlelist{1,...,7}{1}\\
-	
-	\ganttbar[bar label font=\scriptsize]{\textbf{PDC1 - Preparazione ambiente di lavoro}}{2014-02-08}{2014-02-09} \\
-	
-	\ganttgroup{\textbf{PDC2 - Progettazione di dettaglio}}{2014-02-10}{2014-02-18} \\
-	\ganttbar[name=pdc2.1.1]{PDC2.1.1 - Progettazione requisiti fondamentali \\ e desiderabili}{2014-02-10}{2014-02-16} \\
-	\ganttbar[name=pdc2.1.2]{PDC2.1.2 - Verifica requisiti fondamentali \\ e desiderabili}{2014-02-17}{2014-02-18} \\
-	\ganttbar[name=pdc2.2.1]{PDC2.2.1 - Progettazione opzionali}{2014-02-10}{2014-02-16} \\
-	\ganttbar[name=pdc2.2.2]{PDC2.2.2 - Verifica opzionali}{2014-02-17}{2014-02-18} \\
-	\ganttlink{pdc2.1.1}{pdc2.1.2}
-	\ganttlink{pdc2.2.1}{pdc2.2.2}
-	
-	\ganttgroup{\textbf{PDC3 - Definizione di prodotto}}{2014-02-19}{2014-03-02} \\
-	\ganttbar[name=pdc3.1]{PDC3.1 - Stesura}{2014-02-19}{2014-02-26} \\
-	\ganttbar[name=pdc3.2]{PDC3.2 - Verifica}{2014-02-27}{2014-03-02} \\
-	\ganttlink{pdc3.1}{pdc3.2}
-	
-	\ganttgroup{\textbf{PDC4 - Codifica}}{2014-02-19}{2014-03-02} \\
-	\ganttbar[name=pdc4.1.1]{PDC4.1.1 - Codifica requisiti fondamentali \\ e desiderabili}{2014-02-19}{2014-02-26} \\
-	\ganttbar[name=pdc4.1.2]{PDC4.1.2 - Verifica}{2014-02-27}{2014-03-02} \\
-	\ganttbar[name=pdc4.2.1]{PDC4.2.1 - Codifica requisiti opzionali}{2014-02-19}{2014-02-26} \\
-	\ganttbar[name=pdc4.2.2]{PDC4.2.2 - Verifica}{2014-02-27}{2014-03-02} \\
-	\ganttlink{pdc4.1.1}{pdc4.1.2}
-	\ganttlink{pdc4.2.1}{pdc4.2.2}
+	\input{gantt_rq}
 
-	\ganttgroup{\textbf{PDC5 - Manuale utente}}{2014-02-27}{2014-03-04} \\
-	\ganttbar[name=pdc5.1]{PDC5.1 - Stesura}{2014-02-27}{2014-03-03} \\
-	\ganttbar[name=pdc5.2]{PDC5.2 - Verifica}{2014-03-03}{2014-03-04} \\
-	\ganttlink{pdc5.1}{pdc5.2}
-
-	\ganttgroup{\textbf{PDC6 - Piano di progetto}}{2014-02-08}{2014-02-10} \\
-	\ganttbar[name=pdc6.1]{PDC6.1 - Stesura}{2014-02-08}{2014-02-09} \\
-	\ganttbar[name=pdc6.2]{PDC6.2 - Verifica}{2014-02-09}{2014-02-10} \\
-	\ganttlink{pdc6.1}{pdc6.2}
-
-	\ganttgroup{\textbf{PDC7 - Piano di qualifica}}{2014-02-10}{2014-02-17} \\
-	\ganttbar[name=pdc7.1]{PDC7.1 - Stesura}{2014-02-10}{2014-02-15} \\
-	\ganttbar[name=pdc7.2]{PDC7.2 - Verifica}{2014-02-16}{2014-02-17} \\
-	\ganttlink{pdc7.1}{pdc7.2}
-	
-\end{ganttchart}
-
-\end{sideways}
+%\end{sideways}
 }
 \caption{Diagramma di Gantt, fase di Progettazione di Dettaglio e Codifica}
 \end{figure}
@@ -358,69 +223,8 @@ In tal modo, in caso di ritardi si potrà procedere ugualmente alla fase success
 	\multicolumn{1}{c}{\textbf{Ore}} \\
 	\hline
 	
-	\textbf{PDC1} & \textbf{Preparazione ambiente di lavoro} & Amministratore & 7\\
-
-	\hline
-	\textbf{PDC2} & \textbf{Progettazione di dettaglio} \\
-	\cline{3-4}
-	PDC2.1.1 & Progettazione fondamentali e desiderabili AN & Progettista & 10\\ 
-    & & Progettista & 10\\
-    & & Progettista & 12\\
-    \cline{3-4}
-	PDC2.1.2 & Verifica fondamentali e desiderabili & Verificatore & 5\\
-	& & Verificatore & 5\\
-	\cline{3-4}
-	PDC2.2.1 & Progettazione opzionali & Progettista & 12\\ 
-    & & Progettista & 12\\
-    & & Progettista & 12\\
-	\cline{3-4}
-	PDC2.2.2 & Verifica opzionali & Verificatore & 5\\	
-	& & Verificatore & 5\\
-	\hline
-	\textbf{PDC3} & \textbf{Definizione di prodotto} \\
-	\cline{3-4}
-	PDC3.1 & Stesura DdP & Progettista & 20\\ 
-	 & & Progettista & 20\\
-    \cline{3-4}
-	PDC3.2 & Verifica DdP & Verificatore &  13\\
-	\hline
-	\textbf{PDC4} & \textbf{Codifica} \\
-	\cline{3-4}
-	PDC4.1.1 & Codifica fondamentali e desiderabili AN & Programmatore & 30\\ 
-    & & Programmatore & 30\\
-    & & Programmatore & 30\\
-    \cline{3-4}
-	PDC4.1.2 & Verifica fondamentali e desiderabili & Verificatore & 5\\
-	& & Verificatore & 15\\
-	\cline{3-4}
-	PDC4.2.1 & Codifica opzionali & Progettista & 35\\ 
-    & & Progettista & 35\\
-	\cline{3-4}
-	PDC4.2.2 & Verifica opzionali & Verificatore & 9\\	
-	& & Verificatore & 9\\
-	\hline
-	\textbf{PDC5} & \textbf{Manuale utente} \\
-	\cline{3-4}
-	PDC5.1 & Stesura  & Amministratore & 16\\ 
-	 & & Progettista & 18\\
-	 & & Responsabile & 6\\
-    \cline{3-4}
-	PDC5.2 & Verifica & Verificatore &  12\\
-	& & Verificatore & 8\\
-	\hline
-	\textbf{PDC6} & \textbf{Aggiornamento Piano di progetto} \\
-	\cline{3-4}
-	PDC6.1 & Aggiornamento  & Amministratore & 3\\ 
-	 & & Responsabile & 4\\
-    \cline{3-4}
-	PDC6.2 & Verifica & Verificatore &  3\\
-	\hline
-	\textbf{PDC7} & \textbf{Aggiornamento Piano di qualifica} \\
-	\cline{3-4}
-	PDC7.1 & Aggiornamento  & Verificatore & 10\\ 
-    \cline{3-4}
-	PDC7.2 & Verifica & Verificatore &  6\\
-	\hline
+		\input{ripartizione_rq}
+	
 	\end{tabular}
 	\caption{Allocazione risorse, fase di Progettazione di dettaglio e codifica}
 \end{adjustwidth}
@@ -437,29 +241,7 @@ I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Pr
 \begin{figure}[H]
 \centering
 
-\begin{ganttchart}{2014-03-10}{2014-03-18}
-	
-	\gantttitle{Marzo}{9}\\
-	\gantttitlelist{10,...,18}{1}\\
-	
-	\ganttgroup{\textbf{VV1 - Piano di qualifica}}{2014-03-10}{2014-03-16} \\
-	\ganttbar[name=vv1.1]{VV1.1 - Aggiornamento}{2014-03-10}{2014-03-13} \\
-	\ganttbar[name=vv1.2]{VV1.2 - Verifica}{2014-03-14}{2014-03-16} \\
-	\ganttlink{vv1.1}{vv1.2}
-	
-	\ganttgroup{\textbf{VV2 - Definizione di prodotto}}{2014-03-10}{2014-03-16} \\
-	\ganttbar[name=vv2.1]{VV2.1 - Aggiornamento}{2014-03-10}{2014-03-13} \\
-	\ganttbar[name=vv2.2]{VV2.2 - Verifica}{2014-03-14}{2014-03-16} \\
-	\ganttlink{vv2.1}{vv2.2}
-
-	\ganttgroup{\textbf{VV3 - Manuale utente}}{2014-03-10}{2014-03-16} \\
-	\ganttbar[name=vv3.1]{VV3.1 - Aggiornamento}{2014-03-10}{2014-03-14} \\
-	\ganttbar[name=vv3.2]{VV3.2 - Verifica}{2014-03-14}{2014-03-16} \\
-	\ganttlink{vv3.1}{vv3.2}
-	
-	\ganttbar[bar label font=\scriptsize]{\textbf{VV4 - Collaudo}}{2014-03-14}{2014-03-17} \\
-
-\end{ganttchart}
+	\input{gantt_ra}
 
 \caption{Diagramma di Gantt, fase di Validazione}
 \end{figure}
@@ -476,33 +258,9 @@ I ruoli attivi in questa fase sono quello di \textit{Amministratore}, \textit{Pr
 	\multicolumn{1}{c}{\textbf{Ruolo}}& 
 	\multicolumn{1}{c}{\textbf{Ore}} \\
 	\hline
-	\textbf{VV1} & \textbf{Aggiornamento Piano di Qualifica} \\
-	\cline{3-4}
-	VV1.1 & Aggiornamento  & Amministratore & 6\\ 
-	 & & Verificatore & 6\\
-    \cline{3-4}
-	VV1.2 & Verifica & Verificatore &  6\\
-	\hline
-	\textbf{VV2} & \textbf{Aggiornamento Definizione di prodotto} \\
-	\cline{3-4}
-	VV2.1 & Aggiornamento  & Progettista & 7\\ 
-	 & & Progettista & 7\\
-    \cline{3-4}
-	VV2.2 & Verifica & Verificatore &  5\\
-	\hline
-	\textbf{VV3} & \textbf{Aggiornamento Manuale utente} \\
-	\cline{3-4}
-	VV3.1 & Aggiornamento  & Progettista & 5\\ 
-	 & & Responsabile & 5\\
-    \cline{3-4}
-	VV3.2 & Verifica & Amministratore &  5\\
-	\hline
-	\textbf{VV4} & \textbf{Collaudo} & Verificatore & 8\\
-	 & & Verificatore & 8\\
-	 & & Programmatore & 8\\
-	 & & Programmatore & 8\\
-	 & & Responsabile & 4\\
-	\hline
+	
+		\input{ripartizione_ra}
+
 	\end{tabular}
 	\caption{Allocazione risorse, fase di Validazione}
 \end{adjustwidth}

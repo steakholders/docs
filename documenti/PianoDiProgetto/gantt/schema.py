@@ -7,6 +7,32 @@ from parametri import *
 from utils import *
 
 
+class PersonRoleCost:
+	def __init__(self, person, role, planned_hours, work_hours):
+		self.person = person
+		self.role = role
+		self.planned_hours = planned_hours
+		self.work_hours = work_hours
+
+	def getPerson(self):
+		return self.person
+	
+	def getRole(self):
+		return self.role
+	
+	def getPlannedHours(self):
+		return self.planned_hours
+
+	def getWorkHours(self):
+		return self.work_hours
+	
+	def getPlannedCost(self):
+		return self.planned_hours * self.role.getHourCost()
+
+	def getWorkCost(self):
+		return self.work_hours * self.role.getHourCost()
+
+
 class Person:
 	def __init__(self, project, id, name):
 		self.project = project
@@ -25,6 +51,9 @@ class Role:
 		self.project = project
 		self.name = name
 		self.hour_cost = hour_cost
+
+	def getHourCost(self):
+		return self.hour_cost
 
 	def __repr__(self):
 		return u"<Role({name})>".format(name=self.name).encode('utf-8')
@@ -213,6 +242,10 @@ class Milestone:
 			return None
 		
 		return min([x.getStart() for x in self.tasklists.values()])
+
+	def getPersonRoleCost(self, person, role):
+		tasks = [t for t in self.getTasks() if t.getRole() == role and t.getResponsible() == person]
+		return PersonRoleCost(person, role, sum([t.getPlannedHours() for t in tasks]), sum([t.getWorkHours() for t in tasks]))
 
 
 class Project:

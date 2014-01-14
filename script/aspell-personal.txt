@@ -260,6 +260,7 @@ line
 lines
 linkcolor
 List'
+livello'
 ln
 local
 Location
@@ -312,7 +313,7 @@ Module
 MondoDB
 Mongo
 MongoDB
-Mongoose
+mongoose
 monospace
 month
 Mozilla
@@ -438,6 +439,7 @@ Requirements
 requisteak
 Res
 research
+reset
 responsività
 Retired
 RF

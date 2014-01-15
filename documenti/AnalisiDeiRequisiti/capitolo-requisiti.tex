@@ -12,15 +12,15 @@ Dove:
  \item \textbf{X} corrisponde al sistema di riferimento e può assumere i seguenti valori:
     \begin{itemize}
      \item[] \textbf{A} = Applicazione \glossario{Maap};
-     \item[] \textbf{F} = \glossario{Framework} di \glossario{Maap};
-     \item[] \textbf{S} = \glossario{Maas}.
+     \item[] \textbf{F} = \glossario{Framework MaaP};
+     \item[] \textbf{S} = \glossario{MaaS}.
     \end{itemize}
 
  \item \textbf{Y} corrisponde alla tipologia del requisito e può assumere i seguenti valori:
     \begin{itemize}
      \item[] \textbf{1} = Funzionale;
-     \item[] \textbf{2} = Di prestazione;
-     \item[] \textbf{3} = Di qualità;
+     \item[] \textbf{2} = Prestazionale;
+     \item[] \textbf{3} = Di Qualità;
      \item[] \textbf{4} = Vincolo.
     \end{itemize}
 
@@ -28,7 +28,7 @@ Dove:
     \begin{itemize}
      \item[] \textbf{O} = Obbligatorio
      \item[] \textbf{D} = Desiderabile
-     \item[] \textbf{F} = Facoltativo o opzionale
+     \item[] \textbf{F} = Facoltativo o Opzionale
     \end{itemize}
 
  \item \textbf{Gerarchia} identifica la relazione gerarchica che c'è tra i requisiti di uno stesso tipo. C'è quindi una struttura gerarchica per ogni tipologia di requisito.
@@ -48,7 +48,7 @@ Dove:
         RA1O 1 & Funzionale \newline  Obbligatorio  & Il sistema permette all'utente non autenticato di autenticarsi tramite la visualizzazione di una pagina web, la quale conterrà al suo interno i campi di testo necessari. &  UCU1 \newline  Capitolato \newline  \\ \hline      
         RA1O 1.1 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento dell'indirizzo email per la verifica delle credenziali in un apposito campo di testo. &  UCU1.1 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
         RA1O 1.2 & Funzionale \newline  Obbligatorio  & Il sistema prevede l'inserimento di password per la verifica delle credenziali in un apposito campo di testo. &  UCU1.2 \newline  UCU1 \newline  Capitolato \newline  \\ \hline      
-        RA1O 1.3  & Funzionale \newline  Obbligatorio  & Il sistema, tramite un database indipendente, provvede a verificare l'autenticità  di un utente tramite la verifica di email e password. &  Capitolato \newline  \\ \hline      
+        RA1O 1.3  & Funzionale \newline  Obbligatorio  & Il sistema, tramite un database indipendente, ovvero separato da quello che contiene la Collection, provvede a verificare l'autenticità  di un utente tramite la verifica di email e password. &  Capitolato \newline  \\ \hline      
         RA1O 1.3.1 & Funzionale \newline  Obbligatorio  & Il sistema mette a disposizione la visualizzazione di una pagina di errore in caso di fallimento dell'autenticazione da parte dell'utente.
  &  UCU2 \newline  Interno \newline  \\ \hline      
         RA1O 1.3.2 & Funzionale \newline  Obbligatorio  & Il sistema, nel caso in cui l'autenticazione da parte dell'utente abbia avuto successo, reindirizza automaticamente l'utente sulla dashboard dell'applicazione.
@@ -331,100 +331,100 @@ Librerie necessarie:
       \begin{longtable}{ | p{5cm} | p{5cm} |}
     
       \cellcolor[gray]{0.9} \textbf{Fonti} & \cellcolor[gray]{0.9} \textbf{Requisiti} \\ \hline       
-            UCU &  \\ \hline      
-            UCU &  \\ \hline      
-            UCU1 &  RA1O 1 \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  \\ \hline      
-            UCU1.1 &  RA1O 1.1 \newline  \\ \hline      
-            UCU1.2 &  RA1O 1.2 \newline  \\ \hline      
-            UCU2 &  RA1O 1.3.1 \newline  \\ \hline      
-            UCU3 &  RA1D 12 \newline  \\ \hline      
-            UCU4 &  RA1O 2  \newline  \\ \hline      
-            UCU4.1 &  \\ \hline      
-            UCU4.1.1 &  \\ \hline      
-            UCU4.2 &  \\ \hline      
-            UCU4.2.1 &  \\ \hline      
-            UCU5 &  RA1D 11 \newline  \\ \hline      
-            UCU6 &  \\ \hline      
-            UCU7 &  RA1F 15 \newline  \\ \hline      
-            UCU7.1 &  RA1F 15.1 \newline  \\ \hline      
-            UCU7.2 &  RA1F 15.2 \newline  \\ \hline      
-            UCU7.3 &  RA1F 15.3 \newline  \\ \hline      
-            UCU8 &  RA1O 1.3.2 \newline  RA1D 3  \newline  \\ \hline      
-            UCU9 &  RA1O 4 \newline  RA1D 4.1.4  \newline  RA1O 4.1  \newline  RA1D 4.2  \newline  \\ \hline      
-            UCU9.1 &  RA1O 5.1 \newline  RA1O 5  \newline  \\ \hline      
-            UCU9.1.1 &  \\ \hline      
-            UCU9.1.2 &  \\ \hline      
-            UCU9.1.3 &  RA1O 5.1 \newline  \\ \hline      
-            UCU9.1.4 &  RA1O 5.3 \newline  \\ \hline      
-            UCU9.1.5 &  \\ \hline      
-            UCU9.2 &  RA1D 4.2  \newline  \\ \hline      
-            UCU9.3 &  RA1F 4.4 \newline  RA1F 5.2 \newline  \\ \hline      
-            UCU9.4 &  RA1D 4.1.5 \newline  \\ \hline      
-            UCU9.5 &  RA1D 4.1.4  \newline  \\ \hline      
-            UCU9.6 &  RA1F 4.3 \newline  \\ \hline      
-            UCU9.7 &  \\ \hline      
-            UCU10 &  RA1D 13 \newline  RA1D 13.1 \newline  RA1D 13.2 \newline  \\ \hline      
-            UCU10.1 &  RA1D 13.2 \newline  \\ \hline      
-            UCU11 &  RA1O 6.1  \newline  RA1O 6 \newline  RA1O 6.2  \newline  \\ \hline      
-            UCU11.1 &  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 6.1.1.2 \newline  RA1O 6.1  \newline  RA1O 6.1.1.1  \newline  RA1O 6.1.2  \newline  RA1O 6.2  \newline  \\ \hline      
-            UCU11.1.1 &  RA1O 6.1.1.1  \newline  \\ \hline      
-            UCU11.1.2 &  RA1O 6.1.1.2 \newline  \\ \hline      
-            UCU11.1.3 &  RA1O 6.1.1.3  \newline  \\ \hline      
-            UCU11.2 &  RA1O 6.1.3  \newline  \\ \hline      
-            UCU11.3 &  RA1O 6.2.3 \newline  RA1O 6.2  \newline  RA1O 6.2.1 \newline  RA1O 6.2.2 \newline  RA1O 6.2.4 \newline  \\ \hline      
-            UCU11.3.1 &  RA1O 6.2.1 \newline  \\ \hline      
-            UCU11.3.2 &  RA1O 6.2.2 \newline  \\ \hline      
-            UCU11.3.3 &  \\ \hline      
-            UCU12 &  \\ \hline      
-            UCS &  \\ \hline      
-            UCS1 &  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
-            UCS2 &  RF1O 14.1 \newline  RF1O 14.2 \newline  RF1O 14 \newline  \\ \hline      
-            UCS2.1 &  RF1O 14.1 \newline  \\ \hline      
-            UCS2.2 &  RF1O 14.2 \newline  \\ \hline      
-            UCS2.3 &  RF1F 14.3 \newline  \\ \hline      
-            UCS3 &  RF1O 9.1  \newline  RF1O 9  \newline  \\ \hline      
-            UCS3.1 &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.2 &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.3 &  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 9.1.1  \newline  \\ \hline      
-            UCS3.3.1 &  RF1O 9.1.6 \newline  \\ \hline      
-            UCS3.3.1.1 &  RF1O 9.1.1  \newline  \\ \hline      
-            UCS3.3.1.2 &  RF1O 9.1.2  \newline  RF1O 9.1.4  \newline  \\ \hline      
-            UCS3.3.1.3 &  RF1O 9.1.3  \newline  \\ \hline      
-            UCS3.3.1.4 &  RA1O 4.1.1  \newline  \\ \hline      
-            UCS3.3.1.5 &  RF1O 9.1.6 \newline  \\ \hline      
-            UCS3.3.1.6 &  RF1O 9.1.5 \newline  \\ \hline      
-            UCS3.3.1.7 &  RA1D 4.2  \newline  \\ \hline      
-            UCS3.3.1.8 &  RF1O 9.1.7 \newline  \\ \hline      
-            UCS3.3.1.9 &  \\ \hline      
-            UCS3.3.2 &  RF1O 9.2.4 \newline  RF1O 9.2.3 \newline  RF1O 9.2.1  \newline  RF1F 9.2.5 \newline  \\ \hline      
-            UCS3.3.2.1 &  RF1O 9.2.1  \newline  \\ \hline      
-            UCS3.3.2.2 &  RF1O 9.2.3 \newline  \\ \hline      
-            UCS3.3.2.3 &  RF1O 9.2.2  \newline  RF1O 9.1.5 \newline  \\ \hline      
-            UCS3.3.2.4 &  RF1O 9.2.4 \newline  \\ \hline      
-            UCS3.3.2.5 &  RF1F 9.2.5 \newline  \\ \hline      
-            UCS3.3.3 &  RF1O 9.3 \newline  \\ \hline      
-            UCS3.3.4 &  RF1O 9.4 \newline  \\ \hline      
-            UCS3.3.5 &  RF1O 8.3 \newline  \\ \hline      
-            UCS3.4 &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.6 &  \\ \hline      
-            UCS4 &  RF1F 16 \newline  \\ \hline      
-            UCM &  \\ \hline      
-            UCM &  RS1F 10 \newline  \\ \hline      
-            UCM1 &  RS1F 10.4 \newline  RS1F 10.3 \newline  \\ \hline      
-            UCM1.1 &  RS1F 10.6 \newline  \\ \hline      
-            UCM1.2 &  RS1F 10.6 \newline  \\ \hline      
-            UCM3 &  RS1F 10.5 \newline  \\ \hline      
-            UCM4 &  RS1F 10.6 \newline  \\ \hline      
-            UCM5 &  RS1F 10.7 \newline  \\ \hline      
-            UCM6 &  RS1F 10.8 \newline  \\ \hline      
-            UCM6.1 &  RS1F 10.8 \newline  \\ \hline      
-            UCM7 &  RS1F 10.9 \newline  \\ \hline      
-            UCM8 &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
-            UCM8.1 &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
-            UCM8.2 &  RS1F 10.1 \newline  \\ \hline      
-            UCM8.3 &  RS1F 10.2 \newline  \\ \hline      
-            UCM8.4 &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
-            UCM8.5 &  \\ \hline     
+            UCU - Operazioni ad alto livello - Utente non autenticato &  \\ \hline      
+            UCU - Operazioni ad alto livello - Utente autenticato &  \\ \hline      
+            UCU1 - Login &  RA1O 1 \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  \\ \hline      
+            UCU1.1 - Inserimento email &  RA1O 1.1 \newline  \\ \hline      
+            UCU1.2 - Inserimento Password &  RA1O 1.2 \newline  \\ \hline      
+            UCU2 - Visualizzazione messaggio errore per credenziali errate &  RA1O 1.3.1 \newline  \\ \hline      
+            UCU3 - Logout &  RA1D 12 \newline  \\ \hline      
+            UCU4 - Recupero password &  RA1O 2  \newline  \\ \hline      
+            UCU4.1 - Richiesta reset password &  \\ \hline      
+            UCU4.1.1 - Inserimento email &  \\ \hline      
+            UCU4.2 - Effettuazione reset password &  \\ \hline      
+            UCU4.2.1 - Inserimento nuova password &  \\ \hline      
+            UCU5 - Registrazione &  RA1D 11 \newline  \\ \hline      
+            UCU6 - Visualizzazione messaggio errore per Registrazione fallita &  \\ \hline      
+            UCU7 - Gestione indici &  RA1F 15 \newline  \\ \hline      
+            UCU7.1 - Visualizzazione suggerimenti sugli indici &  RA1F 15.1 \newline  \\ \hline      
+            UCU7.2 - Creazione indici &  RA1F 15.2 \newline  \\ \hline      
+            UCU7.3 - Rimozione indici &  RA1F 15.3 \newline  \\ \hline      
+            UCU8 - Visualizzazione Dashboard &  RA1O 1.3.2 \newline  RA1D 3  \newline  \\ \hline      
+            UCU9 - Apertura Collection Index &  RA1O 4 \newline  RA1D 4.1.4  \newline  RA1O 4.1  \newline  RA1D 4.2  \newline  \\ \hline      
+            UCU9.1 - Apertura show-page Document &  RA1O 5.1 \newline  RA1O 5  \newline  \\ \hline      
+            UCU9.1.1 -  Visualizzazione show page attributi innestati &  \\ \hline      
+            UCU9.1.2 - Visualizzazione index page dell'array di document &  \\ \hline      
+            UCU9.1.3 - Modifica Document &  RA1O 5.1 \newline  \\ \hline      
+            UCU9.1.4 - Elimina Document &  RA1O 5.3 \newline  \\ \hline      
+            UCU9.1.5 - Annulla modifica Document &  \\ \hline      
+            UCU9.2 - Filtra risultati &  RA1D 4.2  \newline  \\ \hline      
+            UCU9.3 - Esegui azione personalizzata &  RA1F 4.4 \newline  RA1F 5.2 \newline  \\ \hline      
+            UCU9.4 - Modifica Document &  RA1D 4.1.5 \newline  \\ \hline      
+            UCU9.5 - Elimina Document &  RA1D 4.1.4  \newline  \\ \hline      
+            UCU9.6 - Creazione Document &  RA1F 4.3 \newline  \\ \hline      
+            UCU9.7 - Annulla modifica Document &  \\ \hline      
+            UCU10 - Modifica profilo &  RA1D 13 \newline  RA1D 13.1 \newline  RA1D 13.2 \newline  \\ \hline      
+            UCU10.1 - Modifica password &  RA1D 13.2 \newline  \\ \hline      
+            UCU11 - Gestione utenti &  RA1O 6.1  \newline  RA1O 6 \newline  RA1O 6.2  \newline  \\ \hline      
+            UCU11.1 - Creazione utente &  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 6.1.1.2 \newline  RA1O 6.1  \newline  RA1O 6.1.1.1  \newline  RA1O 6.1.2  \newline  RA1O 6.2  \newline  \\ \hline      
+            UCU11.1.1 - Inserimento email &  RA1O 6.1.1.1  \newline  \\ \hline      
+            UCU11.1.2 - Inserimento password &  RA1O 6.1.1.2 \newline  \\ \hline      
+            UCU11.1.3 - Definizione livello utente &  RA1O 6.1.1.3  \newline  \\ \hline      
+            UCU11.2 - Creazione fallita &  RA1O 6.1.3  \newline  \\ \hline      
+            UCU11.3 - Apertura show-page Utente &  RA1O 6.2.3 \newline  RA1O 6.2  \newline  RA1O 6.2.1 \newline  RA1O 6.2.2 \newline  RA1O 6.2.4 \newline  \\ \hline      
+            UCU11.3.1 - Eleva utente &  RA1O 6.2.1 \newline  \\ \hline      
+            UCU11.3.2 - Declassa admin &  RA1O 6.2.2 \newline  \\ \hline      
+            UCU11.3.3 - Eliminazione Utente &  \\ \hline      
+            UCU12 - Visualizzazione messaggio di errore DSL &  \\ \hline      
+            UCS - Operazioni ad alto livello &  \\ \hline      
+            UCS1 - Creazione nuovo progetto &  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
+            UCS2 - Configurazione database &  RF1O 14.1 \newline  RF1O 14.2 \newline  RF1O 14 \newline  \\ \hline      
+            UCS2.1 - Configurazione database credenziali &  RF1O 14.1 \newline  \\ \hline      
+            UCS2.2 - Configurazione database Collection &  RF1O 14.2 \newline  \\ \hline      
+            UCS2.3 - Selezione namespace &  RF1F 14.3 \newline  \\ \hline      
+            UCS3 - Gestione Collection &  RF1O 9.1  \newline  RF1O 9  \newline  \\ \hline      
+            UCS3.1 - Registrazione manuale Collection &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
+            UCS3.2 - Creazione file di configurazione &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
+            UCS3.3 - Configurazione Collection &  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 9.1.1  \newline  \\ \hline      
+            UCS3.3.1 - Personalizzazione index page &  RF1O 9.1.6 \newline  \\ \hline      
+            UCS3.3.1.1 - Definizione attributi da visualizzare &  RF1O 9.1.1  \newline  \\ \hline      
+            UCS3.3.1.2 - Definizione ordinamento attributi &  RF1O 9.1.2  \newline  RF1O 9.1.4  \newline  \\ \hline      
+            UCS3.3.1.3 - Definizione limite elementi da visualizzare &  RF1O 9.1.3  \newline  \\ \hline      
+            UCS3.3.1.4 - Definizione attributo selezionabile &  RA1O 4.1.1  \newline  \\ \hline      
+            UCS3.3.1.5 - Definizione della index-query &  RF1O 9.1.6 \newline  \\ \hline      
+            UCS3.3.1.6 - Definizione populate da eseguire &  RF1O 9.1.5 \newline  \\ \hline      
+            UCS3.3.1.7 - Personalizzazione filtri &  RA1D 4.2  \newline  \\ \hline      
+            UCS3.3.1.8 - Definizione delle trasformazioni &  RF1O 9.1.7 \newline  \\ \hline      
+            UCS3.3.1.9 - Definizione azioni personalizzate &  \\ \hline      
+            UCS3.3.2 - Personalizzazione show page &  RF1O 9.2.4 \newline  RF1O 9.2.3 \newline  RF1O 9.2.1  \newline  RF1F 9.2.5 \newline  \\ \hline      
+            UCS3.3.2.1 - Definizione attributi da visualizzare &  RF1O 9.2.1  \newline  \\ \hline      
+            UCS3.3.2.2 - Definizione ordinamento attributi &  RF1O 9.2.3 \newline  \\ \hline      
+            UCS3.3.2.3 - Definizione populate da eseguire &  RF1O 9.2.2  \newline  RF1O 9.1.5 \newline  \\ \hline      
+            UCS3.3.2.4 - Definizione delle trasformazioni &  RF1O 9.2.4 \newline  \\ \hline      
+            UCS3.3.2.5 - Definizione azioni personalizzate &  RF1F 9.2.5 \newline  \\ \hline      
+            UCS3.3.3 - Rinominazione Collection &  RF1O 9.3 \newline  \\ \hline      
+            UCS3.3.4 - Definizione ordinamento Collection &  RF1O 9.4 \newline  \\ \hline      
+            UCS3.3.5 - Definizione namespace &  RF1O 8.3 \newline  \\ \hline      
+            UCS3.4 - Registrazione automatica Collection &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
+            UCS3.6 - Visualizzazione messaggio di errore DSL &  \\ \hline      
+            UCS4 - Abilitazione namespace &  RF1F 16 \newline  \\ \hline      
+            UCM - Operazioni ad alto livello - Utente MaaS non autenticato &  \\ \hline      
+            UCM - Operazioni ad alto livello - Utente MaaS autenticato &  RS1F 10 \newline  \\ \hline      
+            UCM1 - Registrazione &  RS1F 10.4 \newline  RS1F 10.3 \newline  \\ \hline      
+            UCM1.1 - Inserimento nuova email &  RS1F 10.6 \newline  \\ \hline      
+            UCM1.2 - Inserimento nuova password &  RS1F 10.6 \newline  \\ \hline      
+            UCM3 - Credenziali già esistenti &  RS1F 10.5 \newline  \\ \hline      
+            UCM4 - Login &  RS1F 10.6 \newline  \\ \hline      
+            UCM5 - Credenziali errate &  RS1F 10.7 \newline  \\ \hline      
+            UCM6 - Modifica profilo &  RS1F 10.8 \newline  \\ \hline      
+            UCM6.1 - Modifica password &  RS1F 10.8 \newline  \\ \hline      
+            UCM7 - Eliminazione account &  RS1F 10.9 \newline  \\ \hline      
+            UCM8 - Gestione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
+            UCM8.1 - Creazione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
+            UCM8.2 - Creazione file di configurazione tramite editor di testo &  RS1F 10.1 \newline  \\ \hline      
+            UCM8.3 - Creazione file di configurazione tramite caricamento &  RS1F 10.2 \newline  \\ \hline      
+            UCM8.4 - Modifica file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
+            UCM8.5 - Eliminazione file di configurazione &  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  

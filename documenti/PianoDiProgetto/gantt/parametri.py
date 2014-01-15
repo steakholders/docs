@@ -16,8 +16,8 @@ MIN_HOURS_PER_PERSON_ROLE = 2
 # Percentuale massima di ore che una persona può passare su un unico ruolo
 MAX_PERCENT_ON_ROLE_PER_PERSON = 0.6
 # Preventivo minimo e massimo, percentuale minima di ore di verifica
-MIN_ESTIMATE_COST = 13000
-MAX_ESTIMATE_COST = 13999
+MIN_ESTIMATE_COST = 13000 - 1
+MAX_ESTIMATE_COST = 13500 - 1
 MIN_VERIFIER_PERCENT = 0.3
 
 VERBOSE = False

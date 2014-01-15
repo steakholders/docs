@@ -27,6 +27,7 @@ BCWP
 BCWS
 BSON
 BV
+Before
 Benefit
 BioComputing
 Broken
@@ -49,6 +50,7 @@ Complexity
 Comput
 Comunicazioni'
 Concluded
+Constraints
 Continuous
 Control
 Controller
@@ -189,6 +191,7 @@ Portability
 Portable
 Postcondizione
 Postcondizioni
+Precincts
 Prepared
 Principles
 Process
@@ -265,6 +268,7 @@ Ubuntu
 Under
 Unicode
 Unified
+Unique
 Usability
 Usable
 Useable
@@ -298,10 +302,12 @@ as
 asd
 aspell
 assessment
+assigned
 autoformazione
 backslash
 baseline
 basicstyle
+before
 best
 between
 bioinformatica
@@ -332,9 +338,11 @@ commentstyle
 commit
 community
 computing
+conditions
 corners
 correction
 coverage
+created
 cyan
 dall
 dall'Admin
@@ -355,8 +363,11 @@ documents
 draw
 driven
 dsgfdgfg
+each
 edition
 effort
+election
+elections
 encoding
 environment
 event
@@ -376,6 +387,7 @@ form
 format
 framework
 friendly
+from
 function
 games
 gedit
@@ -397,6 +409,7 @@ inner
 inputencoding
 inspection
 interface
+is
 isodate
 issue
 issues
@@ -428,6 +441,7 @@ logic
 logout
 main
 make
+mapping
 markup
 maxhd
 maxhe
@@ -458,6 +472,9 @@ numbersep
 numberstyle
 object
 of
+official
+officials
+one
 opzionalmente'
 oriented
 pa
@@ -485,6 +502,7 @@ potr
 practice
 practise
 pre
+precinct
 predeterminabili
 proattiva
 proattivi
@@ -544,6 +562,7 @@ specify
 stack
 stakeholder
 stakeholders
+starts
 startup
 stepnumber
 storage
@@ -556,6 +575,7 @@ sull'
 syntax
 system
 tabsize
+tag
 tasks
 technology
 template
@@ -570,6 +590,7 @@ threshold
 timer'
 title
 titolo'
+to
 tool
 tools
 tree
@@ -580,6 +601,7 @@ underscore
 unipd
 unit
 upload
+url
 urlcolor
 username
 users
@@ -588,6 +610,7 @@ vers
 versionamento
 versionato
 vgrid
+voting
 vv
 walkthrough
 walktrough

@@ -72,6 +72,7 @@ Capability
 captionpos
 Cardin
 Casiraghi
+casting
 change
 chart
 checkbox
@@ -126,6 +127,7 @@ DdP
 dell
 dell'admin
 dell'Admin
+dell'application
 dell'array
 dell'index
 Demonstrable
@@ -155,6 +157,7 @@ elections
 Ember
 encoding
 Endeavor
+Engine
 environment
 Error
 Established
@@ -170,6 +173,7 @@ facilitatore
 Failure
 FAQ
 fault
+features
 Fedora
 fgdfgdfgd
 fgfg
@@ -262,6 +266,7 @@ l'admin
 l'Admin
 lang
 Language
+l'application
 Laurence
 Lavazza
 lavoro'
@@ -298,6 +303,7 @@ Maintainability
 make
 Makefile
 Managment
+Map
 mapping
 Markdown
 markup
@@ -482,8 +488,10 @@ RS
 RSYZ
 Ruby
 rulecolor
+runtime
 ruoli'
 Satisfied
+Schemaless
 SCR
 scripting
 section
@@ -563,7 +571,7 @@ text
 th
 the
 theory
-Three
+thread
 threshold
 Tier
 timer'

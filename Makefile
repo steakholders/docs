@@ -9,7 +9,7 @@ all:
 	@make documents
 
 documents:
-	@cd "documenti" && make documents
+	+cd "documenti" && make documents
 
 test-spelling:
 	@cd "documenti" && make test-spelling

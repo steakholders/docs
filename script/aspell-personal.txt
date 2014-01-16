@@ -50,7 +50,6 @@ basicstyle
 BCWP
 BCWS
 before
-Before
 Benefit
 best
 between
@@ -329,7 +328,6 @@ MondoDB
 Mongo
 MongoDB
 mongoose
-Mongoose
 monospace
 month
 Mozilla
@@ -551,7 +549,6 @@ system
 Systems
 tabsize
 tag
-Tag
 tasks
 Teamwork
 TeamworkPM
@@ -566,7 +563,9 @@ text
 th
 the
 theory
+Three
 threshold
+Tier
 timer'
 title
 titolo'
@@ -597,7 +596,6 @@ Unique
 unit
 upload
 url
-URL
 urlcolor
 Usability
 Usable

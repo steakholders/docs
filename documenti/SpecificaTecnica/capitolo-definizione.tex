@@ -47,3 +47,21 @@ I principali vantaggi derivati dal suo utilizzo sono:
 \textbf{Mongoose} è una libreria per MongoDB che ci permette di definire degli schemi per modellare i dati del database, facendo rispettare una certa struttura ai dati per la creazione di nuovi Document. Inoltre fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il casting dei tipi predefiniti. \newline
 Per interfacciare l'application server con MongoDB sono disponibili diversi progetti open-source ed in questo caso è stato scelto di utilizzare Mongoose, attualmente il più diffuso.	
 
+\subsection{Formalismo di specifica}
+\subsection{Architettura di sistema}
+\subsubsection{REST}
+REST, ovvero Representational State Transfer è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server, e solitamente tale protocollo è \glossario{HTTP}, per \ProjectName è invece stato scelto \glossario{HTTPS}.
+
+I motivi che hanno spinto alla scelta di REST sono:
+\begin{itemize}
+\item Semplicità di utilizzo;
+\item Indipendenza dal sistema operativo utilizzato dal client;
+\item Indipendente dai linguaggi di programmazione utilizzati;
+\item In coppia con HTTPS permette una certa sicurezza delle comunicazioni.
+\end{itemize}
+
+REST utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite il protocollo sopracitato.
+
+Nell'URL inviato sono presenti il nome della risorsa e la sua rappresentazione, identificata dall'estensione del file scelta, e per \ProjectName è stato scelto il formato \glossario{JSON}, in quanto il suo parsing in \glossario{JavaScript} è più semplice rispetto, ad esempio, quello di \glossario{XML} o \glossario{CSV}.
+
+Un'altra caratteristica di REST è che essendo \glossario{stateless} ogni richiesta dovrà contenere tutte le informazioni necessarie, e non dipende dallo stato del sistema.

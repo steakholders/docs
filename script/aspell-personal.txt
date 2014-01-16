@@ -50,7 +50,6 @@ basicstyle
 BCWP
 BCWS
 before
-Before
 Benefit
 best
 between
@@ -73,6 +72,7 @@ Capability
 captionpos
 Cardin
 Casiraghi
+casting
 change
 chart
 checkbox
@@ -127,6 +127,7 @@ DdP
 dell
 dell'admin
 dell'Admin
+dell'application
 dell'array
 dell'index
 Demonstrable
@@ -156,6 +157,7 @@ elections
 Ember
 encoding
 Endeavor
+Engine
 environment
 Error
 Established
@@ -171,6 +173,7 @@ facilitatore
 Failure
 FAQ
 fault
+features
 Fedora
 fgdfgdfgd
 fgfg
@@ -263,6 +266,7 @@ l'admin
 l'Admin
 lang
 Language
+l'application
 Laurence
 Lavazza
 lavoro'
@@ -299,6 +303,7 @@ Maintainability
 make
 Makefile
 Managment
+Map
 mapping
 Markdown
 markup
@@ -329,7 +334,6 @@ MondoDB
 Mongo
 MongoDB
 mongoose
-Mongoose
 monospace
 month
 Mozilla
@@ -484,8 +488,10 @@ RS
 RSYZ
 Ruby
 rulecolor
+runtime
 ruoli'
 Satisfied
+Schemaless
 SCR
 scripting
 section
@@ -551,7 +557,6 @@ system
 Systems
 tabsize
 tag
-Tag
 tasks
 Teamwork
 TeamworkPM
@@ -566,6 +571,7 @@ text
 th
 the
 theory
+thread
 threshold
 timer'
 title
@@ -597,7 +603,6 @@ Unique
 unit
 upload
 url
-URL
 urlcolor
 Usability
 Usable

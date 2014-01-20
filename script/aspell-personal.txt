@@ -290,6 +290,7 @@ lavoro'
 lccccccc
 lccccccccc
 left
+legend
 limit
 l'index
 line
@@ -387,7 +388,6 @@ NP
 npm
 num
 number
-Number
 numbers
 numbersep
 numberstyle
@@ -488,6 +488,7 @@ regexp
 RegExp
 Relationship
 Reliability
+rendering
 repl
 replacements
 report
@@ -545,7 +546,6 @@ shift
 Short
 shortcut
 should
-SHOULD
 shouldn't
 showspaces
 showstringspaces
@@ -589,6 +589,7 @@ stub
 style
 subtask'
 sull'
+sum
 Sun
 SV
 SWEBOK
@@ -615,7 +616,6 @@ then
 theory
 thread
 three
-Three
 threshold
 tier
 timer'

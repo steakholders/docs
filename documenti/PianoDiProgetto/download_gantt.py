@@ -16,8 +16,9 @@ print "Scarico People..."
 tw.getPeople(project)
 print "Scarico TaskLists..."
 tw.getTaskLists(project)
-print "Scarico TimeEntries..."
-tw.getTimeEntries(project)
+#print "Scarico TimeEntries..."
+#tw.getTimeEntries(project)
+print "Scaricamento completato."
 
 
 testTasks(project)
@@ -52,6 +53,16 @@ writeSuddivisioneOreMilestone(project, milestone_rp, roles, "suddivisione_rp.tex
 writeSuddivisioneOreMilestone(project, milestone_rq, roles, "suddivisione_rq.tex")
 writeSuddivisioneOreMilestone(project, milestone_ra, roles, "suddivisione_ra.tex")
 writeSuddivisioneOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "suddivisione_totale.tex")
+
+# writeColumnChartOreMilestone(project, milestone_rp, roles, "columnChart_rp.tex")
+# writeColumnChartOreMilestone(project, milestone_rq, roles, "columnChart_rq.tex")
+# writeColumnChartOreMilestone(project, milestone_ra, roles, "columnChart_ra.tex")
+# writeColumnChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale.tex")
+
+writePieChartOreMilestone(project, milestone_rp, roles, "pieChart_rp.tex")
+writePieChartOreMilestone(project, milestone_rq, roles, "pieChart_rq.tex")
+writePieChartOreMilestone(project, milestone_ra, roles, "pieChart_ra.tex")
+# writePieChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "pieChart_totale.tex")
 
 writeProspettoMilestone(project, milestone_rp, roles, "prospetto_rp.tex")
 writeProspettoMilestone(project, milestone_rq, roles, "prospetto_rq.tex")

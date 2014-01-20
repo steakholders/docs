@@ -228,3 +228,71 @@ def writeConsuntivoTotale(project, milestone_ids, roles_id, filename):
 		latex(u" \\\\")
 
 	out.close()
+
+def writeColumnChartOreMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	for person in sortByName(project.getPeople()):
+		person_planned_hours = 0
+		
+		latex(u"\t{name}".format(name = person.getName()), False)
+		
+		for role in roles:
+			cost = milestone.getPersonRoleCost(person, role)
+			person_planned_hours += cost.getPlannedHours()
+
+			latex(u" & {hours:.0f}".format(hours = cost.getPlannedHours()), False)
+		
+		latex(u" & {hours:.0f}".format(hours = person_planned_hours), False)
+
+		latex(u" \\\\")
+
+	out.close()
+
+
+def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	planned_total_cost = 0
+	planned_total_hours = 0
+	latex(u"\\pie[sum=auto, text=legend]{", False)
+	for role in roles:
+		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_hours += planned_hours
+
+	for role in roles[:-1]:
+		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+		
+		planned_cost = sum([c.getPlannedCost() for c in role_costs])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_cost += planned_cost
+
+		if planned_hours:
+			latex(u"{ore}/{ruolo}, ".format(
+				ruolo = role.getName().title(),
+				ore = planned_hours
+			), False)
+
+	role_costs = [milestone.getPersonRoleCost(person, roles[-1]) for person in project.getPeople()]
+	latex(u"{ore}/{ruolo}".format(
+		ruolo = roles[-1].getName().title(),
+		ore = sum([c.getPlannedHours() for c in role_costs])
+	), False)
+	latex(u"}")
+	
+	out.close()

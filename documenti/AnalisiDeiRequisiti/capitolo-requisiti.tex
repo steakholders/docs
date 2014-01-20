@@ -164,8 +164,8 @@ Librerie necessarie:
         RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  Interno \newline  \\ \hline      
         RS1F 10.10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di eliminare una \glossario{Collection} esistente. &  UCM8.5 \newline  \\ \hline      
-        RS4F 6 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
-        RS4F 7 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
+        RS4F 17 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
+        RS4F 18 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -206,9 +206,9 @@ Librerie necessarie:
         RA4O 3 & Vincolo \newline  Obbligatorio  & L’applicazione deve utilizzare Mongoose.js per l’interfacciamento con il database. &  Capitolato \newline  \\ \hline      
         RA4O 4 & Vincolo \newline  Obbligatorio  & L’applicazione deve servirsi di  MongoDB come sistema gestionale dei dati. &  Capitolato \newline  \\ \hline      
         RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il deployment su Heroku rendendo disponibile on-line l’applicazione Maap. &  Capitolato \newline  \\ \hline      
-        RA4O 8 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
-        RA4O 9 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline      
-        RA4O 10 & Vincolo \newline  Obbligatorio  & Il sistema deve mettere a disposizione un validatore del codice DSL e visualizzare gli eventuali errori logici o di sintassi in un'apposita pagina. &  UCU12 \newline  UCS3.6 \newline  \\ \hline
+        RA4O 6 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
+        RA4O 7 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline      
+        RA4O 8 & Vincolo \newline  Obbligatorio  & Il sistema deve mettere a disposizione un validatore del codice DSL e visualizzare gli eventuali errori logici o di sintassi in un'apposita pagina. &  UCU12 \newline  UCS3.6 \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -310,8 +310,8 @@ Librerie necessarie:
         RS1F 10.8 &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 &  UCM7 \newline  Interno \newline  \\ \hline      
         RS1F 10.10 &  UCM8.5 \newline  \\ \hline      
-        RS4F 6 &  Capitolato \newline  \\ \hline      
-        RS4F 7 &  Capitolato \newline  \\ \hline      
+        RS4F 17 &  Capitolato \newline  \\ \hline      
+        RS4F 18 &  Capitolato \newline  \\ \hline      
         R3O 1 &  Capitolato \newline  \\ \hline      
         R3O 2 &  Interno \newline  \\ \hline      
         R3O 3 &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
@@ -320,9 +320,9 @@ Librerie necessarie:
         RA4O 3 &  Capitolato \newline  \\ \hline      
         RA4O 4 &  Capitolato \newline  \\ \hline      
         RA4O 5 &  Capitolato \newline  \\ \hline      
-        RA4O 8 &  Capitolato \newline  \\ \hline      
-        RA4O 9 &  Capitolato \newline  \\ \hline      
-        RA4O 10 &  UCU12 \newline  UCS3.6 \newline  \\ \hline     
+        RA4O 6 &  Capitolato \newline  \\ \hline      
+        RA4O 7 &  Capitolato \newline  \\ \hline      
+        RA4O 8 &  UCU12 \newline  UCS3.6 \newline  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  
@@ -337,9 +337,9 @@ Librerie necessarie:
       \begin{longtable}{ | p{5cm} | p{5cm} |}
     
       \cellcolor[gray]{0.9} \textbf{Fonti} & \cellcolor[gray]{0.9} \textbf{Requisiti} \\ \hline       
-            Verbale-2013/12/18 &  RA1O 6.2.4 \newline  RA1O 6.2.3 \newline  \\ \hline      
+            Verbale-2013/12/18 &  RA1O 6.2.3 \newline  RA1O 6.2.4 \newline  \\ \hline      
             Verbale-2013/12/05 &  RA1D 11 \newline  RF1O 9.2.2  \newline  R3O 3 \newline  RF1O 8.2  \newline  \\ \hline      
-            Capitolato &  RF1O 7 \newline  RA1O 1 \newline  RA1O 1.1 \newline  RA1O 1.2 \newline  RA1O 1.3  \newline  RA1O 2  \newline  RA1O 4 \newline  RA1O 4.1  \newline  RA1O 4.1.1  \newline  RA1O 5  \newline  RA1O 5.1 \newline  RA1O 6.1  \newline  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 6.2.1 \newline  RA1F 4.3 \newline  RA4O 9 \newline  RA4O 8 \newline  RF1O 8  \newline  RF1O 8.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.2 \newline  RF1O 9  \newline  RF1O 9.1  \newline  RF1O 9.1.1  \newline  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 9.1.6 \newline  RF1O 9.2.1  \newline  RF1O 9.1.5 \newline  RA4O 2 \newline  R4O 1 \newline  R3O 3 \newline  RS4F 7 \newline  RS4F 6 \newline  RA4O 5 \newline  RA4O 4 \newline  RA4O 3 \newline  R3O 1 \newline  RF1O 9.2.2  \newline  RA1D 4.1.5 \newline  RA1O 5.3 \newline  RA1F 15 \newline  RA1F 15.1 \newline  RA1F 15.2 \newline  RF1O 9.2.3 \newline  RF1O 9.2.4 \newline  RF1F 9.2.5 \newline  RF1O 9.3 \newline  RF1O 9.4 \newline  RF1O 9.1.7 \newline  RS1F 10 \newline  RS1F 10.1 \newline  RF1O 9.1.4  \newline  RA1F 4.4 \newline  RA1F 5.2 \newline  RA1O 6.1.2  \newline  RF1O 9.2 \newline  \\ \hline      
+            Capitolato &  RA1D 4.1.5 \newline  RF1O 9.2.4 \newline  RA1F 15 \newline  RA1F 15.1 \newline  RA1F 15.2 \newline  RA1O 5.3 \newline  RA1F 4.4 \newline  RA1F 5.2 \newline  RF1O 9.2.3 \newline  R4O 1 \newline  RA4O 4 \newline  RA4O 5 \newline  R3O 1 \newline  RF1O 9.2.2  \newline  RF1O 8.1.3  \newline  RA4O 3 \newline  RF1O 9.2 \newline  RF1O 9.2.1  \newline  R3O 3 \newline  RA4O 6 \newline  RF1F 9.2.5 \newline  RF1O 9.1.5 \newline  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 9.3 \newline  RF1O 8  \newline  RF1O 9.1  \newline  RF1O 9.4 \newline  RA4O 2 \newline  RF1O 9.1.7 \newline  RF1O 9.1.6 \newline  RF1O 9.1.4  \newline  RF1O 9  \newline  RF1O 9.1.1  \newline  RA4O 7 \newline  RA1O 4.1.1  \newline  RF1O 7 \newline  RA1O 4 \newline  RA1O 4.1  \newline  RA1O 1 \newline  RA1F 4.3 \newline  RS1F 10 \newline  RS1F 10.1 \newline  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 2  \newline  RA1O 6.1  \newline  RA1O 6.1.2  \newline  RA1O 1.3  \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  RA1O 5.1 \newline  RA1O 5  \newline  RA1O 6.2.1 \newline  RS4F 17 \newline  RS4F 18 \newline  \\ \hline      
             UCU1 - Login &  RA1O 1 \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  \\ \hline      
             UCU1.1 - Inserimento email &  RA1O 1.1 \newline  \\ \hline      
             UCU1.2 - Inserimento Password &  RA1O 1.2 \newline  \\ \hline      
@@ -382,7 +382,7 @@ Librerie necessarie:
             UCU11.3.1 - Eleva utente &  RA1O 6.2.1 \newline  \\ \hline      
             UCU11.3.2 - Declassa admin &  RA1O 6.2.2 \newline  \\ \hline      
             UCU11.3.3 - Eliminazione Utente &  RA1O 6.2.5 \newline  \\ \hline      
-            UCU12 - Visualizzazione messaggio di errore DSL &  RA4O 10 \newline  \\ \hline      
+            UCU12 - Visualizzazione messaggio di errore DSL &  RA4O 8 \newline  \\ \hline      
             UCS - Operazioni ad alto livello &  \\ \hline      
             UCS1 - Creazione nuovo progetto &  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
             UCS2 - Configurazione database &  RF1O 14.1 \newline  RF1O 14.2 \newline  RF1O 14 \newline  \\ \hline      
@@ -413,7 +413,7 @@ Librerie necessarie:
             UCS3.3.4 - Definizione ordinamento Collection &  RF1O 9.4 \newline  \\ \hline      
             UCS3.3.5 - Definizione namespace &  RF1O 8.3 \newline  \\ \hline      
             UCS3.4 - Registrazione automatica Collection &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.6 - Visualizzazione messaggio di errore DSL &  RA4O 10 \newline  \\ \hline      
+            UCS3.6 - Visualizzazione messaggio di errore DSL &  RA4O 8 \newline  \\ \hline      
             UCS4 - Abilitazione namespace &  RF1F 16 \newline  \\ \hline      
             UCM1 - Registrazione &  RS1F 10.4 \newline  RS1F 10.3 \newline  \\ \hline      
             UCM1.1 - Inserimento nuova email &  RS1F 10.6 \newline  \\ \hline      

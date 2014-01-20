@@ -124,6 +124,7 @@ dall'Admin
 dashboard
 dd
 DdP
+Delete
 dell
 dell'admin
 dell'Admin
@@ -168,6 +169,7 @@ explain
 Exploring
 Express
 extendedchars
+eXtensible
 external
 facilitatore
 Failure
@@ -471,6 +473,7 @@ reset
 responsività
 REST
 Retired
+Retrieve
 RF
 RFC
 ridenominare
@@ -498,6 +501,7 @@ section
 Selected
 SEMAT
 sep
+Separated
 Seq
 Service
 setup
@@ -575,7 +579,6 @@ thread
 Three
 threshold
 tier
-Tier
 timer'
 title
 titolo'
@@ -604,6 +607,7 @@ Unified
 unipd
 Unique
 unit
+Update
 upload
 url
 urlcolor
@@ -614,6 +618,7 @@ username
 users
 utf
 Value
+Values
 Vardanega
 Variance
 Ver

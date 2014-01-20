@@ -173,6 +173,7 @@ encoding
 Endeavor
 Engine
 environment
+Erich
 Error
 Established
 Etzkorn
@@ -236,6 +237,7 @@ halstead
 Handbook
 Hangouts
 height
+Helm
 Henry
 Heroku
 hh
@@ -272,6 +274,8 @@ it
 Java
 Javascript
 JavaScript
+John
+Johnson
 join
 jQuery
 js
@@ -330,6 +334,7 @@ Makefile
 Managment
 Map
 mapping
+Marc
 Markdown
 markup
 Maroon
@@ -373,6 +378,7 @@ mygreen
 name
 namespace
 ND
+Nell'
 nell'index
 Nell'URL
 newline
@@ -417,6 +423,7 @@ parser
 parsing
 Part
 path
+Patterns
 pdc
 PDCA
 pdf
@@ -485,6 +492,7 @@ query
 quest'ultime
 raccomanda'
 Rails
+Ralph
 RAU
 Ready
 recovery
@@ -495,6 +503,7 @@ regexp
 RegExp
 Relationship
 Reliability
+rendering
 repl
 replacements
 report
@@ -514,6 +523,7 @@ Retired
 Retrieve
 RF
 RFC
+Richard
 ridenominare
 right
 rimpiazza'
@@ -681,10 +691,12 @@ very
 vgrid
 Viable
 View
+Vlissides
 voting
 vv
 walkthrough
 walktrough
+Wandschneider
 Way
 ways
 WebKit

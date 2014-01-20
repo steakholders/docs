@@ -142,7 +142,7 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce l'email con la quale è registrato all'applicazione. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione  /glossario{Maap} è pronta e l'utente intende autenticarsi.\\ 
+          \textbf{Precondizioni}  & L'applicazione  \glossario{Maap} è pronta e l'utente intende autenticarsi.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa all'email inserita dall'utente. \\ 
           \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce la propria email per procedere con l'autenticazione (UCU1.1). \\
@@ -166,10 +166,10 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
           \textbf{Scopo e Descrizione} & L'utente non autenticato inserisce la password per effettuare l'autenticazione.
 Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratteri. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione  /glossario{MaaP} è pronta e l'utente intende autenticarsi.\\ 
+          \textbf{Precondizioni}  & L'applicazione  \glossario{MaaP} è pronta e l'utente intende autenticarsi.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha l'informazione relativa alla password inserita dall'utente. \\ 
-          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce la propria password di accesso all'applicazione  /glossario{MaaP} (UCU1.2). \\
+          \textbf{Flusso Principale} & 1. L'utente non autenticato inserisce la propria password di accesso all'applicazione  \glossario{MaaP} (UCU1.2). \\
           
       \end{longtable}
       \egroup
@@ -330,8 +330,8 @@ La password deve essere alfanumerica e con lunghezza minima 8 caratteri. \\
           \textbf{Precondizioni}  & Il sistema ha inviato all'utente non autenticato un'email contenente il link della pagina corrente visualizzata.\\ 
           
           \textbf{Postcondizioni} & Il sistema ha effettuato il reset della password dell'utente con il dato della nuova password inserito da quest'ultimo. \\ 
-          \textbf{Flusso Principale} & 1. L'utente inserisce la nuova password (UCU4.2.1). \\
-           \textbf{Scenari Alternativi} & 1.  L'utente può Inserire la nuova password con la quale intende accede all'applicazione (UCU4.2.1). \\
+          \textbf{Flusso Principale} & 1.  L'utente può inserire la nuova password con la quale intende accedere all'applicazione (UCU4.2.1). \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -792,7 +792,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
           \textbf{Precondizioni}  & L'applicazione mostra in forma tabellare tutti i \glossario{Document} della \glossario{Collection} predisponendo la possibilità di modifica per ognuno di essi.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha salvato le modifiche apportate dall'utente al \glossario{Document}. \\ 
-          \textbf{Flusso Principale} & 1 . L'admin seleziona la modifica di un  /glossario{Document} presente nella collection (UCU9.4). \\
+          \textbf{Flusso Principale} & 1 . L'admin seleziona la modifica di un  \glossario{Document} presente nella collection (UCU9.4). \\
            \textbf{Estensioni} & 1. L'Admin annulla la modifica al \glossario{Document} (UCU9.7). \\
       \end{longtable}
       \egroup
@@ -1294,8 +1294,7 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
           \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni necessarie ed ha configurato il database delle credenziali e il database delle \glossario{Collection}. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore può configurare il database delle credenziali utente (UCS2.1); \newline
 2. Lo sviluppatore può configurare il database delle \glossario{Collection} (UCS2.2). \\
-           \textbf{Esclusioni} & 1.1. Lo sviluppatore può selezionare il namespace per il database delle credenziali utenti (UCS2.3); \newline
-2.1. Lo sviluppatore può selezionare il namespace per il database delle \glossario{Collection} (UCS2.3).  \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -1319,7 +1318,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{Maap} ha configurato il database delle credenziali secondo le informazioni acquisite dallo sviluppatore. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore configura la connessione al database delle credenziali. (UCS2.1) \\
-           \textbf{Scenari Alternativi} & 1. Lo sviluppatore definisce il namespace da associare al database delle credenziali. \\
+          
       \end{longtable}
       \egroup
 \end{center}
@@ -1335,7 +1334,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2.2 - Configurazione database Collection}} \\ 
       \hline
       
-      \textbf{Attori Primari} &  \\ 
+      \textbf{Attori Primari} & Sviluppatore \\ 
           \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare la connessione al database delle \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà.
 Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
           
@@ -1343,7 +1342,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
           
           \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle \glossario{Collection} secondo le informazioni acquisite dallo sviluppatore. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore configura la connessione al database delle \glossario{Collection}. (UCS2.2) \\
-           \textbf{Scenari Alternativi} & 2. Lo sviluppatore definisce il namespace per il database delle \glossario{Collection}. \\
+           \textbf{Scenari Alternativi} & 1. Lo sviluppatore definisce il namespace per il database delle \glossario{Collection}. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2261,7 +2260,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha acquisito le informazioni inserite dall'utente ed ha effettuato le modifiche. \\
           \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare la password (UCU6.1). \\
-           \textbf{Scenari Alternativi} & L'utente può non modificare i propri dati lasciandoli invariati uscendo dalla pagina. \\
+           \textbf{Scenari Alternativi} & 1. L'utente lascia la pagina lasciando i propri dati invariati. \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2433,7 +2432,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza il file scelto dall'utente ed è pronto per la modifica.\\ 
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} esegue correttamente la modifica del file e lo salva. \\
-          \textbf{Flusso Principale} & 1. L'utente /glossario{MaaS} autenticato procede con la modifica del file di configurazione (UCM8.4). \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato procede con la modifica del file di configurazione (UCM8.4). \\
           
       \end{longtable}
       \egroup

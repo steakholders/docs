@@ -70,6 +70,7 @@ bugs
 BV
 bytecode
 Calendar
+Call
 callback
 CamelCase
 Capability
@@ -113,6 +114,7 @@ computing
 Comunicazioni'
 Concluded
 conditions
+Consortium
 Constraints
 Construction
 Continuous
@@ -207,6 +209,7 @@ framework
 Franceschi
 friendly
 from
+FTP
 Fulfilled
 function
 Functionality
@@ -237,11 +240,14 @@ Henry
 Heroku
 hh
 History
+Howard
 HTML
 HTTPS
+HyperText
 Ian
 IDE
 ideal
+Identifier
 IEC
 IEEE
 Image
@@ -327,6 +333,7 @@ mapping
 Markdown
 markup
 Maroon
+Maurice
 maxhd
 maxhe
 maxhv
@@ -387,7 +394,6 @@ NP
 npm
 num
 number
-Number
 numbers
 numbersep
 numberstyle
@@ -470,6 +476,7 @@ programming
 project
 ProjectName
 projects
+Protocol
 pt
 purpose
 python
@@ -500,6 +507,7 @@ requisteak
 Res
 research
 reset
+Resource
 responsività
 REST
 Retired
@@ -545,7 +553,6 @@ shift
 Short
 shortcut
 should
-SHOULD
 shouldn't
 showspaces
 showstringspaces
@@ -584,6 +591,7 @@ Steve
 storage
 String
 stringstyle
+Structured
 struttura'
 stub
 style
@@ -615,7 +623,6 @@ then
 theory
 thread
 three
-Three
 threshold
 tier
 timer'
@@ -645,6 +652,7 @@ underscore
 un'email
 Unicode
 Unified
+Uniform
 unipd
 Unique
 unit
@@ -682,10 +690,12 @@ ways
 WebKit
 Well
 where
+Wide
 wiki
 windows
 with
 work
 working
+World
 year
 yyyy

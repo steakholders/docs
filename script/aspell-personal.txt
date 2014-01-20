@@ -1,6 +1,7 @@
 personal_ws-1.1 it 600
 AAAA
 abbandona'
+about
 Abstract
 Acceptable
 Accrued
@@ -28,11 +29,13 @@ Analysis
 and
 Angular
 AngularJS
+anyway
 append
 Apple
 application
 AR
 Architecture
+arguments
 array
 as
 asd
@@ -42,6 +45,7 @@ assigned
 AST
 Astah
 autoformazione
+avoided
 Awesome
 AWS
 backslash
@@ -80,9 +84,11 @@ checklists
 Chrome
 ciclomatica
 citecolor
+Clean
 cliccabile
 client
 Closed
+closely
 Closure
 cloud
 codifica'
@@ -94,18 +100,21 @@ collection
 colorlinks
 column
 combo
+comes
 commentstyle
 commit
 community
 Compiler
 Compito'
 Complexity
+comprehension
 Comput
 computing
 Comunicazioni'
 Concluded
 conditions
 Constraints
+Construction
 Continuous
 Control
 Controller
@@ -113,6 +122,7 @@ corners
 correction
 coverage
 Cox
+Craftsmanship
 created
 CRUD
 CSS
@@ -147,6 +157,7 @@ draw
 driven
 dsgfdgfg
 DSL
+dyadic
 each
 Eclipse
 edition
@@ -185,6 +196,7 @@ Firebase
 Firefox
 firstnumber
 firstpage
+followed
 for
 form
 format
@@ -218,6 +230,7 @@ group
 GUI
 gulpease
 halstead
+Handbook
 Hangouts
 height
 Henry
@@ -228,6 +241,7 @@ HTML
 HTTPS
 Ian
 IDE
+ideal
 IEC
 IEEE
 Image
@@ -258,6 +272,7 @@ js
 JSHint
 JSLint
 JSON
+justification
 JVM
 keepspaces
 Kernel
@@ -275,6 +290,7 @@ lavoro'
 lccccccc
 lccccccccc
 left
+limit
 l'index
 line
 lines
@@ -299,6 +315,7 @@ MaaP's
 Maas
 MaaS
 Maccagnan
+magic
 Mahesh
 main
 Maintainability
@@ -315,6 +332,7 @@ maxhe
 maxhv
 MAY'
 McCabe
+McConnell
 Measure
 Medical
 menu
@@ -332,6 +350,7 @@ mod
 Modeling
 Modifica'
 Module
+monadic
 MondoDB
 Mongo
 MongoDB
@@ -350,6 +369,8 @@ ND
 nell'index
 Nell'URL
 newline
+Next
+niladic
 nltk
 node
 NodeJs
@@ -365,6 +386,7 @@ NOT'
 NP
 npm
 num
+number
 Number
 numbers
 numbersep
@@ -384,6 +406,7 @@ pa
 package
 packet
 page
+parameters
 parser
 parsing
 Part
@@ -396,6 +419,7 @@ pdftotext
 peaks
 Pearson
 people
+people's
 Performing
 personal
 Pgr
@@ -409,22 +433,27 @@ plan
 Platform
 plugin
 pollution
+polyadic
 populate
 Portability
 Portable
 position
+possible
 Postcondizione
 Postcondizioni
 potr
 PP
 PQ
+Practical
 practice
 practise
 pre
 precinct
 Precincts
 predeterminabili
+Prentice
 Prepared
+Press
 Principles
 proattiva
 proattivi
@@ -466,6 +495,7 @@ repository
 Representational
 request
 Requirements
+requires
 requisteak
 Res
 research
@@ -480,9 +510,11 @@ ridenominare
 right
 rimpiazza'
 Rinominazione
+Robert
 root
 Rotundo
 rounded
+routine's
 RP
 RPC
 RQ
@@ -505,13 +537,16 @@ Separated
 Seq
 Service
 setup
+seven
 SF
 SGAD
 shell
 shift
 Short
 shortcut
+should
 SHOULD
+shouldn't
 showspaces
 showstringspaces
 showtabs
@@ -545,6 +580,7 @@ stateless
 SteakHolders
 Stein
 stepnumber
+Steve
 storage
 String
 stringstyle
@@ -573,9 +609,12 @@ tex
 TexMaker
 text
 th
+than
 the
+then
 theory
 thread
+three
 Three
 threshold
 tier
@@ -591,7 +630,9 @@ Transfer
 Transformation
 tree
 Tresoldi
+triadic
 true
+two
 txt
 Ubuntu
 UC
@@ -614,6 +655,7 @@ urlcolor
 Usability
 Usable
 Useable
+used
 username
 users
 utf
@@ -627,6 +669,7 @@ vers
 Version
 versionamento
 versionato
+very
 vgrid
 Viable
 View
@@ -638,6 +681,7 @@ Way
 ways
 WebKit
 Well
+where
 wiki
 windows
 with

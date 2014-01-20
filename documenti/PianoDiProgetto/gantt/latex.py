@@ -282,16 +282,15 @@ def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])
 		planned_total_cost += planned_cost
 
-		if planned_hours:
-			latex(u"{ore}/{ruolo}, ".format(
-				ruolo = role.getName().title(),
-				ore = planned_hours
-			), False)
+		latex(u"{ore}/{ruolo}, ".format(
+			ruolo = role.getName().title(),
+			ore = planned_hours if planned_hours != 0 else '.'
+		), False)
 
 	role_costs = [milestone.getPersonRoleCost(person, roles[-1]) for person in project.getPeople()]
 	latex(u"{ore}/{ruolo}".format(
 		ruolo = roles[-1].getName().title(),
-		ore = sum([c.getPlannedHours() for c in role_costs])
+		ore = sum([c.getPlannedHours() for c in role_costs]) if sum([c.getPlannedHours() for c in role_costs]) != 0 else '.'
 	), False)
 	latex(u"}")
 	

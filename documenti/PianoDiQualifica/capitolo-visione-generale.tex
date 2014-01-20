@@ -230,8 +230,20 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 			
 			\paragraph{Numero parametri per metodo}\mbox{} \\
-				
 			Un numero elevato di parametri per un metodo potrebbe evidenziare un metodo troppo complesso.\\
+			Non c'è una regola forte per il numero di parametri possibili in un metodo o costruttore, \\
+			citando Robert Martin, in Clean Code\footnote{Robert Martin, Clean Code: A Handbook of Agile Software Craftsmanship. 	
+			Prentice Hall (2008)} : \\ 
+			\emph{“The ideal number of arguments for a function is zero (niladic). Next 
+			comes 
+			one (monadic), followed closely by two (dyadic). Three arguments (triadic) should be avoided where possible. More than 
+			three (polyadic) requires very special justification – and then shouldn’t be used anyway.“} \\ 
+			e Steve McConnell, in Code Complete \footnote{Steve McConnell, Code Complete: A Practical Handbook of Software
+			Construction. Microsoft Press (2004)} \\
+			 \emph{“limit the number of a routine’s parameters to about seven, seven is a magic number for people’s comprehension”}  
+			\\
+			ci atteniamo come linea guida ai parametri sotto evidenziati.
+			
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
 				\item Range-accettazione: [0 - 8];
@@ -251,8 +263,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 			
 			\paragraph{\glossario{Halstead}}\mbox{} \\
 			
-			La metrica di \glossario{Halstead} non è solamente un indice di complessità, ma identifica le proprietà misurabili del software e le relative relazioni.
-			Si basa sull'osservazione che una metrica dovrebbe valutare l'implementazione di un algoritmo in linguaggi differenti ed essere indipendente dall'esecuzione su una specifica piattaforma.
+			La metrica di \glossario{Halstead} non è solamente un indice di complessità, ma identifica le proprietà misurabili del software e le relative relazioni. Si basa sull'osservazione che una metrica dovrebbe valutare l'implementazione di un algoritmo in linguaggi differenti ed essere indipendente dal esecuzione su una specifica piattaforma.
+
 			In un problema vengono identificati:
 			\begin{itemize}
 				\item $n_1$ = il numero di operatori distinti
@@ -280,7 +292,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 			\subparagraph{\glossario{Halstead} volume per-function}
-			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una funzione senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
+			Il volume descrive la dimensione dell'implementazione di un algoritmo e si basa sul numero di operazioni eseguite e sugli operandi di una funzione. Il volume di una function senza parametri composta da una sola linea è 20, mentre un indice superiore a 1000 indica che probabilmente la funzione esegue troppe operazioni.
 			\[
 			 V = N * \log_{2}n
 			\]

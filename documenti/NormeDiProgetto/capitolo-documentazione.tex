@@ -6,7 +6,7 @@ In questo capitolo vengono descritte le regole adottate per la stesura di tutti 
 
 	\item È un linguaggio conosciuto da tutti i membri del gruppo;
 	\item Presenta un numero di librerie molto vaste che permettono di realizzare qualsiasi tipo di documento e di personalizzarlo liberamente in modo dettagliato;
-	\item La stesura viene fatta su file testuali e non binari, il che agevola il suo versionamento e permette una facile gestione su repository;
+	\item La stesura viene fatta su file testuali e non binari, il che agevola il suo versionamento e permette una facile gestione su repository. Inoltre permette di utilizzare facilmente gli script che producono parti di documenti;
 	\item È un linguaggio molto diffuso nel mondo informatico e scientifico;
 	\item Si può produrre file in formato \glossario{PDF} con estrema facilità grazie al compilatore specifico;
 	\item Permette una facile gestione degli indici e dei glossari.
@@ -39,13 +39,12 @@ Per la stesura dei documenti è stato creato un apposito template \LaTeX{} in cu
 				\item La \textbf{lista di distribuzione} del documento.
 			
 			\end{itemize}
-		\item Una descrizione testuale sommaria del documento, centrata orizzontalmente ed il più possibile sintetica.
+		\item Una \textbf{descrizione} testuale sommaria del documento, centrata orizzontalmente ed il più possibile sintetica.
 	
 	\end{itemize}
 	
 	\subsubsection{Registro delle modifiche}
-È preferibile che che la numerazione sia continua	
-	La pagina (o le pagine) che seguono devono contenere uno storico di questo documento, in cui verranno riportate tutte le modifiche apportate ad esso. Il registro delle modifiche deve essere composto da una tabella di tante righe quante sono le modifiche apportate ed un numero di colonne pari agli elementi seguenti:
+È preferibile che che la numerazione sia continua. La pagina (o le pagine) che seguono devono contenere uno storico di questo documento, in cui verranno riportate tutte le modifiche apportate ad esso. Il registro delle modifiche deve essere composto da una tabella di tante righe quante sono le modifiche apportate ed un numero di colonne pari agli elementi seguenti:
 	
 	\begin{itemize}
 	
@@ -68,7 +67,7 @@ Per la stesura dei documenti è stato creato un apposito template \LaTeX{} in cu
 	
 		\item Logo di intestazione del gruppo disposto a sinistra;
 		\item Nome del gruppo affiancato al logo;
-		\item Titolo del progetto corrente assegnato al gruppo subito a destra del nome del gruppo separato da un trattino;
+		\item Titolo del progetto corrente assegnato subito sotto il nome del gruppo;
 		\item Numero e titolo della sezione corrente del documento disposto a destra dell'intestazione.
 	
 	\end{itemize}
@@ -268,41 +267,28 @@ Ciascun documento deve rispettare le norme tipografiche definite nella seguente 
 	
 	\subsubsection{Documenti formali}
 	
-	Un documento viene definito formale quando viene validato dal Responsabile di Progetto. Solo i documenti formali possono essere distribuiti all'esterno del gruppo. Per arrivare a tale stato il documento deve aver già passato le fasi di \glossario{verifica} e \glossario{validazione}.
+	Un documento viene definito formale quando viene validato dal \textit{Responsabile di Progetto}. Solo i documenti formali possono essere distribuiti all'esterno del gruppo. Per arrivare a tale stato il documento deve aver già passato le fasi di \glossario{verifica} e \glossario{validazione}.
 	
 	\subsubsection{Verbali}
 	
 	\label{verbale}
-	Con verbale ci si riferisce ad un documento, redatto da un segretario in occasione  di riunioni interne al gruppo e di incontri con i proponenti. Un verbale viene redatto una prima volta, e non subisce successive modifiche, pertanto non é previsto versionamento. \\
-	Il verbale dovrà essere approvato dal Responsabile di Progetto.
-	\begin{itemize}
-	\item Ogni verbale dovrà indicare nel seguente ordine e con il formato indicato:
-	
+	Con verbale ci si riferisce ad un documento redatto da un segretario in occasione  di riunioni interne al gruppo e di incontri con i proponenti. Un verbale viene redatto una prima volta e non subisce successive modifiche, pertanto non é previsto versionamento. \\
+	Il verbale dovrà essere approvato dal \textit{Responsabile di Progetto}. Ogni verbale dovrà indicare nel seguente ordine e con il formato indicato:	
 	
 	\begin{itemize}
-	\item Luogo: Città (Provincia), Via, Sede
-	\item Data: dd-mm-yyyy
-	\item Ora: hh-mm 24h
-	\item Partecipanti del gruppo:
+		\item Luogo: Città (Provincia), Via, Sede;
+		\item Data: dd-mm-yyyy;
+		\item Ora: hh-mm 24h;
+		\item Partecipanti del gruppo.
 	\end{itemize}
 	
-	\item \textbf{Riunioni} \\
-	La struttura da seguire è inserire ogni argomento trattato in un paragrafo. Al suo interno verrà brevemente descritta la questione trattata e la decisione presa.
-	
-	\item \textbf{Incontri} \\
-	Nell'intestazione iniziale va aggiunto
-	\begin{itemize}
-	\item Partecipanti esterni:
-	\end{itemize}
 	Nel primo paragrafo "Informazioni Generali" vanno elencate le informazioni sopra descritte e gli argomenti trattati durante l'incontro. Segue nel secondo paragrafo, Domande e risposte, la trascrizione delle domande poste al proponente e le relative risposte.
-	\end{itemize}
 	
 \subsection{Verifica e validazione}
 
-La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un verificatore, scelto dal Responsabile tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione.. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle Norme di Progetto.
+La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un \textit{Verificatore}, scelto dal \textit{Responsabile} tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle \textit{Norme di Progetto}.
 
 La \textbf{\glossario{validazione}} del documento consiste nel controllare che il documento abbia \textit{il giusto contenuto}, è un compito che va oltre la semplice verifica delle norme. Richiede una conoscenza a priori del contenuto e degli scopi del documento.
-	
 	
 	\subsubsection{Passi della verifica}
 	La verifica di un documento è composta come minimo dai seguenti passi:
@@ -316,10 +302,10 @@ La \textbf{\glossario{validazione}} del documento consiste nel controllare che i
 
 \subsection{Approvazione}
 
-L'\textbf{approvazione} di un documento deve essere eseguita dal Responsabile di Progetto. Consiste in un accertamento del percorso di vita del documento, e serve a fare in modo che soltanto documenti verificati e validati vengano distribuiti ufficialmente all'esterno del gruppo.
+L'\textbf{approvazione} di un documento deve essere eseguita dal \textit{Responsabile di Progetto}. Consiste in un accertamento del percorso di vita del documento e serve a fare in modo che soltanto documenti verificati e validati vengano distribuiti ufficialmente all'esterno del gruppo.
 
 \subsection{Glossario}
 
-Il Glossario contiene le definizioni di tutte le parole che possono creare ambiguità o essere fraintese. Nei documenti tali parole saranno marcate con una G pedice.
+Il \textit{Glossario} contiene le definizioni di tutte le parole che possono creare ambiguità o essere fraintese. Nei documenti tali parole saranno marcate con una G pedice.
 
-Di pari passo con la stesura dei documenti sarà compito degli autori mantenere aggiornato il Glossario, inserendo di volta in volta i termini e le relative definizioni. È preferibile inserire nel glossario perlomeno la voce priva di descrizione, per poterla successivamente completare più facilmente.
+Di pari passo con la stesura dei documenti sarà compito degli autori mantenere aggiornato il \textit{Glossario}, inserendo di volta in volta i termini e le relative definizioni. È preferibile inserire nel glossario perlomeno la voce priva di descrizione, per poterla successivamente completare più facilmente.

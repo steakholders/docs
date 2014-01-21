@@ -359,6 +359,9 @@ assessment
 assigned
 autoformazione
 avoided
+Awesome
+AWS
+Back
 backslash
 baseline
 basicstyle
@@ -689,6 +692,7 @@ tools
 tree
 triadic
 true
+TS
 two
 txt
 un'email

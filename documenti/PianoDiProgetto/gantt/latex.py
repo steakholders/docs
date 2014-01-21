@@ -269,7 +269,7 @@ def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
 
 	planned_total_cost = 0
 	planned_total_hours = 0
-	latex(u"\\pie[sum=auto, text=legend]{", False)
+	latex(u"\\pie[sum=auto, text=legend, color={amministratore, analista, progettista, programmatore, responsabile, verificatore}]{", False)
 	for role in roles:
 		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])

@@ -2306,7 +2306,8 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato l'account dell'utente. \\
           \textbf{Flusso Principale} & 1. L'utente elimina il proprio account dal sistema (UCM7). \\
-          
+           \textbf{Inclusioni} & UCM9 - Eliminazione namespace utente;
+UCM10 - Eliminazione Collection utente; \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2457,6 +2458,48 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato correttamente il file di configurazione. \\
           \textbf{Flusso Principale} & 1. L'utente elimina il file di configurazione scelto. \\
           
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM9 - Eliminazione namespace utente} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM9 - Eliminazione namespace utente}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & Una volta che l'utente \glossario{MaaS} elimina il proprio profilo viene automaticamente eliminato il \glossario{namespace} ad esso associato, in modo da non lasciare \glossario{garbage} nel sistema. \\ 
+          
+          \textbf{Precondizioni}  & L'utente \glossario{MaaS} ha eliminato il proprio profilo.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato il \glossario{namespace} associato all'utente eliminato. \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM10 - Eliminazione Collection utente} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM10 - Eliminazione Collection utente}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore MaaS autenticato \\ 
+          \textbf{Scopo e Descrizione} & Una volta che l'utente \glossario{MaaS} elimina il proprio profilo vengono automaticamente eliminate le \glossario{Collection} ad esso associato, in modo da non lasciare \glossario{garbage} nel sistema. \\ 
+          
+          \textbf{Precondizioni}  & L'utente \glossario{MaaS} ha eliminato il proprio profilo.\\ 
+          
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato le \glossario{Collection} associate all'utente eliminato. \\
       \end{longtable}
       \egroup
 \end{center}

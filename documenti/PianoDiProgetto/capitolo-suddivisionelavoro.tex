@@ -44,11 +44,28 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
 
 I valori in tabella sono riassunti nel seguente grafico: \\ 
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-1.png}
-\caption{Ore per componente, fase di Analisi\label{fig:nome}}
-\end{figure}
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, enlargelimits =0.15,
+legend style ={at={(0.5,-0.20)},
+anchor=north,
+legend columns=-1},
+ylabel={\#participants},
+symbolic x coords={tool1, tool2, tool3, tool4,tool5, tool6, tool7},
+xtick=data,
+x tick label style={rotate=45,anchor=east},]
+\addplot+[ybar] plotcoordinates{(tool1,0) (tool2,2)(tool3,2) (tool4,3) (tool5,0) (tool6,2) (tool7,0)};
+\addplot+[ybar] plotcoordinates{(tool1,0) (tool2,0)(tool3,0) (tool4,3) (tool5,1) (tool6,1) (tool7,0)};
+\addplot+[ybar] plotcoordinates{(tool1,6) (tool2,6)(tool3,8) (tool4,2) (tool5,6) (tool6,5) (tool7,6)};
+\addplot+[ybar] plotcoordinates{(tool1,4) (tool2,2)(tool3,0) (tool4,2) (tool5,3) (tool6,2) (tool7,4)};
+\legend{never, rarely, sometimes, often}
+\end{axis}
+\end{tikzpicture}
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.35]{4-1.png}
+%\caption{Ore per componente, fase di Analisi\label{fig:nome}}
+%\end{figure}
 
 Si fa notare che le ore sopra indicate non sono incluse nelle 105 ore rappresentanti il tetto massimo di ore somministrabile da ciascun componente.
 
@@ -73,11 +90,24 @@ Nella fase di Progettazione architetturale ciascun componente dovrà rivestire i
 \end{table}
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-2.png}
-\caption{Ore per componente, fase di Progettazione architetturale\label{fig:nome}}
-\end{figure}
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, enlargelimits =0.15,
+legend style ={at={(0.5,-0.20)},
+anchor=north,
+legend columns=-1},
+ylabel={\#Ore},
+symbolic x coords={tool1, tool2, tool3, tool4,tool5, tool6, tool7},
+xtick=data,
+x tick label style={rotate=45,anchor=east},]
+\end{axis}
+%	\input{columnChart_rp}
+
+\end{tikzpicture}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.35]{4-2.png}
+%\caption{Ore per componente, fase di Progettazione architetturale\label{fig:nome}}
+%\end{figure}
 
 \pagebreak
 \subsection{Progettazione di dettaglio e codifica}

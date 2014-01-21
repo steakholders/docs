@@ -13,6 +13,7 @@ grupp gruppo
 ia La
 l'emal l'email
 liberia libreria
+paramentri parametri
 partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno

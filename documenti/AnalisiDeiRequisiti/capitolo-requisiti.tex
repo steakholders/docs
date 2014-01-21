@@ -53,13 +53,17 @@ Dove:
  &  UCU2 \newline  Interno \newline  \\ \hline      
         RA1O 1.3.2 & Funzionale \newline  Obbligatorio  & Il sistema, nel caso in cui l'autenticazione da parte dell'utente abbia avuto successo, reindirizza automaticamente l'utente sulla dashboard dell'applicazione.
  &  UCU8 \newline  Interno \newline  \\ \hline      
-        RA1O 2  & Funzionale \newline  Obbligatorio  & Il sistema mette a disposizione dell'utente non autenticato la possibilità  di recuperare le proprie credenziali. &  UCU4 \newline  Capitolato \newline  \\ \hline      
+        RA1O 2  & Funzionale \newline  Obbligatorio  & Il sistema mette a disposizione dell'utente non autenticato la possibilità  di recuperare la propria password. &  UCU4 \newline  Capitolato \newline  UCU4.2 \newline  UCU4.1 \newline  UCU4.2.1 \newline  UCU4.1.1 \newline  \\ \hline      
+        RA1O 2.1 & Funzionale \newline  Obbligatorio  & Il sistema permette il recupero password attraverso l'inserimento dell'utente non autenticato dell'email.
+ &  UCU4 \newline  UCU4.1 \newline  UCU4.1.1 \newline  \\ \hline      
+        RA1O 2.2 & Funzionale \newline  Obbligatorio  & Il sistema deve inviare un'email contenente un link attraverso il quale l'utente non autenticato può effettuare il reset della propria password. &  UCU4 \newline  UCU4.2 \newline  \\ \hline      
+        RA1O 2.3 & Funzionale \newline  Obbligatorio  & L'applicazione \glossario{MaaP} deve permettere il reset della password ad un utente non autenticato inserendone una nuova che sostituirà la precedente come password di accesso all'applicazione. &  UCU4 \newline  UCU4.2 \newline  UCU4.2.1 \newline  \\ \hline      
         RA1O 4 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione dell'insieme delle Collection presenti tramite un menu di navigazione e la selezione di una di esse. &  UCU9 \newline  Capitolato \newline  \\ \hline      
         RA1O 4.1  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione di una Collection-index tramite una tabella le cui righe corrispondono ai document presenti nel database e le colonne ai loro attributi visualizzabili.  &  Capitolato \newline  UCU9 \newline  \\ \hline      
         RA1O 4.1.1  & Funzionale \newline  Obbligatorio  & Ogni riga della tabella corrispondente ad un Document deve avere una chiave selezionabile che rimanda alla corrispondente pagina show. &  Capitolato \newline  UCS3.3.1.4 \newline  \\ \hline      
         RA1O 5  & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente la visualizzazione della Collection-show relativa ad un document tramite una pagina web che ne mostra gli attributi visualizzabili strutturati in una tabella.
- &  UCU9.1 \newline  Capitolato \newline  \\ \hline      
-        RA1O 5.1 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'admin di poter editare ogni singolo attributo modificabile del documento dalla pagina show. &  UCU9.1.3 \newline  UCU9.1 \newline  Capitolato \newline  \\ \hline      
+ &  UCU9.1 \newline  Capitolato \newline  UCU9.1.2 \newline  UCU9.1.1 \newline  \\ \hline      
+        RA1O 5.1 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'admin di poter editare ogni singolo attributo modificabile del documento dalla pagina show. &  UCU9.1.3 \newline  UCU9.1 \newline  Capitolato \newline  UCU9.1.5 \newline  UCU9.7 \newline  \\ \hline      
         RA1O 5.3 & Funzionale \newline  Obbligatorio  & L'applicazione deve permettere all'utente di poter eliminare dalla show-page il Document selezionato. &  UCU9.1.4 \newline  Capitolato \newline  \\ \hline      
         RA1O 6 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin una pagina di amministrazione in cui visualizzare la Collection di tutti gli utenti registrati all'applicazione.
  &  UCU11 \newline  Interno \newline  \\ \hline      
@@ -79,6 +83,7 @@ Dove:
         RA1O 6.2.2 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di declassare l'admin selezionato a livello di utente normale dalla show-page relativa. &  UCU11.3.2 \newline  UCU11.3 \newline  \\ \hline      
         RA1O 6.2.3 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo email dell'utente selezionato dalla relativa show-page. &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
         RA1O 6.2.4 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di modificare l'attributo password dell'utente selezionato dalla relativa show-page. &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
+        RA1O 6.2.5 & Funzionale \newline  Obbligatorio  & L'applicazione deve fornire all'admin la possibilità di eliminare l'utente visualizzato nella \glossario{show-page}. &  UCU11.3.3 \newline  \\ \hline      
         RA1D 3  & Funzionale \newline  Desiderabile  & Il sistema deve mettere a disposizione dell'utente autenticato la visualizzazione della dashboard. &  UCU8 \newline  Interno \newline  \\ \hline      
         RA1D 4.1.2  & Funzionale \newline  Desiderabile  & L'utente può decidere di cambiare l'ordine di visualizzazione dei document selezionando l'intestazione delle colonne aventi la \glossario{proprietà  sortable}.
  &  Interno \newline  \\ \hline      
@@ -87,13 +92,13 @@ Dove:
         RA1D 4.1.4  & Funzionale \newline  Desiderabile  & L'applicazione può mettere a disposizione dell'admin un link di selezione rapida per l'eliminazione di un documento.
  &  UCU9.5 \newline  UCU9 \newline  \\ \hline      
         RA1D 4.1.5 & Funzionale \newline  Desiderabile  & L'applicazione deve permette all'admin la modifica di un document presente nella collection-index. &  UCU9.4 \newline  Capitolato \newline  \\ \hline      
-        RA1D 4.2  & Funzionale \newline  Desiderabile  & L'applicazione dà eventualmente la possibilità di impostare dei filtri personalizzati secondo determinati attributi per visualizzare un sottoinsieme di Document. &  UCU9.2 \newline  UCU9 \newline  UCS3.3.1.7 \newline  Interno \newline  \\ \hline      
-        RA1D 11 & Funzionale \newline  Desiderabile  & Deve essere possibile da parte di un utente la registrazione all'Applicazione MaaP. &  UCU5 \newline  Verbale-2013/12/05 \newline  \\ \hline      
+        RA1D 4.2  & Funzionale \newline  Desiderabile  & L'applicazione dà la possibilità di impostare dei filtri personalizzati secondo determinati attributi per visualizzare un sottoinsieme di Document. &  UCU9.2 \newline  UCU9 \newline  UCS3.3.1.7 \newline  Interno \newline  \\ \hline      
+        RA1D 11 & Funzionale \newline  Desiderabile  & Deve essere possibile da parte di un utente la registrazione all'Applicazione MaaP. &  UCU5 \newline  Verbale-2013/12/05 \newline  UCU6 \newline  \\ \hline      
         RA1D 12 & Funzionale \newline  Desiderabile  & L'utente autenticato nell'applicazione deve poter eseguire il logout.  &  UCU3 \newline  \\ \hline      
         RA1D 13 & Funzionale \newline  Desiderabile  & L'utente con credenziali d'accesso all'applicazione deve poterle modificare all'interno dell'applicazione tramite pagina apposita. &  UCU10 \newline  \\ \hline      
         RA1D 13.1 & Funzionale \newline  Desiderabile  & L'utente deve poter modificare la propria email con cui ha accesso all'applicazione MaaP. &  UCU10 \newline  \\ \hline      
         RA1D 13.2 & Funzionale \newline  Desiderabile  & L'utente deve poter modificare la password di accesso all'applicazione. &  UCU10 \newline  UCU10.1 \newline  \\ \hline      
-        RA1F 4.3 & Funzionale \newline  Facoltativo  & L'applicazione deve mettere a disposizione dell'amministratore di poter creare un nuovo Document all'interno della base di dati. &  UCU9.6 \newline  Capitolato \newline  \\ \hline      
+        RA1F 4.3 & Funzionale \newline  Facoltativo  & L'applicazione deve permettere all'amministratore di creare un nuovo Document all'interno della base di dati. &  UCU9.6 \newline  Capitolato \newline  \\ \hline      
         RA1F 4.4 & Funzionale \newline  Facoltativo  & L'applicazione deve permettere all'utente di poter eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. &  UCU9.3 \newline  Capitolato \newline  \\ \hline      
         RA1F 5.2 & Funzionale \newline  Facoltativo  & L'applicazione deve permettere all'utente di poter eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. &  UCU9.3 \newline  Capitolato \newline  \\ \hline      
         RA1F 15 & Funzionale \newline  Facoltativo  & L'applicazione MaaP deve mettere a disposizione dell'admin una pagina di gestione degli indici. &  UCU7 \newline  Capitolato \newline  \\ \hline      
@@ -149,7 +154,7 @@ Librerie necessarie:
         RF1O 14 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database di cui dispone. &  UCS2 \newline  Interno \newline  \\ \hline      
         RF1O 14.1 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database delle credenziali. &  UCS2.1 \newline  UCS2 \newline  Interno \newline  \\ \hline      
         RF1O 14.2 & Funzionale \newline  Obbligatorio  & Il framework MaaP deve rendere possibile la configurazione dei database delle Collection. &  UCS2 \newline  UCS2.2 \newline  Interno \newline  \\ \hline      
-        RF1F 9.2.5 & Funzionale \newline  Facoltativo  & Lo sviluppatore deve poter personalizzare la show-page definendo delle operazioni personalizzate che l'utente potrà utilizzare tramite appositi pulsanti. &  UCS3.3.2 \newline  UCS3.3.2.5 \newline  Capitolato \newline  \\ \hline      
+        RF1F 9.2.5 & Funzionale \newline  Facoltativo  & Lo sviluppatore deve poter personalizzare la show-page definendo delle operazioni personalizzate che l'utente potrà utilizzare tramite appositi pulsanti. &  UCS3.3.2 \newline  UCS3.3.2.5 \newline  Capitolato \newline  UCS3.3.1.9 \newline  \\ \hline      
         RF1F 14.3 & Funzionale \newline  Facoltativo  & Il framework MaaP deve rendere possibile la selezione di un namespace per un database se la funzione di namespace è abilitata. &  UCS2.3 \newline  Interno \newline  \\ \hline      
         RF1F 16 & Funzionale \newline  Facoltativo  & Il framework MaaP deve permettere allo sviluppatore di abilitare i namespace per l'applicazione creata. &  UCS4 \newline  Interno \newline  \\ \hline      
         RS1F 10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve mettere a disposizione il framework MaaP come servizio web. &  Capitolato \newline  UCM \newline  \\ \hline      
@@ -162,8 +167,10 @@ Librerie necessarie:
         RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d'errore nel caso in cui l'utente non autenticato abbia inserito credenziali errate nel sistema di login. &  Interno \newline  UCM5 \newline  \\ \hline      
         RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  Interno \newline  \\ \hline      
-        RS4F 6 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
-        RS4F 7 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
+        RS1F 10.9.1 & Funzionale \newline  Facoltativo  & Il sistema \glossario{MaaS} deve provvedere all'eliminazione dei file di configurazione associati all'utente rimosso dal sistema. &  UCM9 \newline  UCM7 \newline  \\ \hline      
+        RS1F 10.10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di eliminare una \glossario{Collection} esistente. &  UCM8.5 \newline  \\ \hline      
+        RS4F 17 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
+        RS4F 18 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -181,7 +188,7 @@ Librerie necessarie:
       & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Fonti} \\ \hline
       
         R3O 1 & Qualità \newline  Obbligatorio  & Devono essere prodotti e rilasciati manuali d'uso ed ogni altra documentazione tecnica necessaria per l’utilizzo del prodotto. &  Capitolato \newline  \\ \hline      
-        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verranno rispettate tutte le norme descritte nel documento \NormeDiProgetto{}, le normative sulla progettazione e stesura del codice presenti nel  documento \PianoDiQualifica{} . &  Interno \newline  \\ \hline      
+        R3O 2 & Qualità \newline  Obbligatorio  & Per lo sviluppo del prodotto richiesto verranno rispettate tutte le norme descritte nel documento \NormeDiProgetto{}. &  Interno \newline  \\ \hline      
         R3O 3 & Qualità \newline  Obbligatorio  & Maap Framework deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline
       \end{longtable}
       \egroup
@@ -204,8 +211,9 @@ Librerie necessarie:
         RA4O 3 & Vincolo \newline  Obbligatorio  & L’applicazione deve utilizzare Mongoose.js per l’interfacciamento con il database. &  Capitolato \newline  \\ \hline      
         RA4O 4 & Vincolo \newline  Obbligatorio  & L’applicazione deve servirsi di  MongoDB come sistema gestionale dei dati. &  Capitolato \newline  \\ \hline      
         RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il deployment su Heroku rendendo disponibile on-line l’applicazione Maap. &  Capitolato \newline  \\ \hline      
-        RA4O 8 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
-        RA4O 9 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline
+        RA4O 6 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
+        RA4O 7 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline      
+        RA4O 8 & Vincolo \newline  Obbligatorio  & Il sistema deve mettere a disposizione un validatore del codice DSL e visualizzare gli eventuali errori logici o di sintassi in un'apposita pagina. &  UCU12 \newline  UCS3.6 \newline  \\ \hline
       \end{longtable}
       \egroup
       \end{center}  
@@ -226,12 +234,15 @@ Librerie necessarie:
         RA1O 1.3  &  Capitolato \newline  \\ \hline      
         RA1O 1.3.1 &  UCU2 \newline  Interno \newline  \\ \hline      
         RA1O 1.3.2 &  UCU8 \newline  Interno \newline  \\ \hline      
-        RA1O 2  &  UCU4 \newline  Capitolato \newline  \\ \hline      
+        RA1O 2  &  UCU4 \newline  Capitolato \newline  UCU4.2 \newline  UCU4.1 \newline  UCU4.2.1 \newline  UCU4.1.1 \newline  \\ \hline      
+        RA1O 2.1 &  UCU4 \newline  UCU4.1 \newline  UCU4.1.1 \newline  \\ \hline      
+        RA1O 2.2 &  UCU4 \newline  UCU4.2 \newline  \\ \hline      
+        RA1O 2.3 &  UCU4 \newline  UCU4.2 \newline  UCU4.2.1 \newline  \\ \hline      
         RA1O 4 &  UCU9 \newline  Capitolato \newline  \\ \hline      
         RA1O 4.1  &  Capitolato \newline  UCU9 \newline  \\ \hline      
         RA1O 4.1.1  &  Capitolato \newline  UCS3.3.1.4 \newline  \\ \hline      
-        RA1O 5  &  UCU9.1 \newline  Capitolato \newline  \\ \hline      
-        RA1O 5.1 &  UCU9.1.3 \newline  UCU9.1 \newline  Capitolato \newline  \\ \hline      
+        RA1O 5  &  UCU9.1 \newline  Capitolato \newline  UCU9.1.2 \newline  UCU9.1.1 \newline  \\ \hline      
+        RA1O 5.1 &  UCU9.1.3 \newline  UCU9.1 \newline  Capitolato \newline  UCU9.1.5 \newline  UCU9.7 \newline  \\ \hline      
         RA1O 5.3 &  UCU9.1.4 \newline  Capitolato \newline  \\ \hline      
         RA1O 6 &  UCU11 \newline  Interno \newline  \\ \hline      
         RA1O 6.1  &  UCU11.1 \newline  UCU11 \newline  Capitolato \newline  \\ \hline      
@@ -246,13 +257,14 @@ Librerie necessarie:
         RA1O 6.2.2 &  UCU11.3.2 \newline  UCU11.3 \newline  \\ \hline      
         RA1O 6.2.3 &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
         RA1O 6.2.4 &  UCU11.3 \newline  Verbale-2013/12/18 \newline  \\ \hline      
+        RA1O 6.2.5 &  UCU11.3.3 \newline  \\ \hline      
         RA1D 3  &  UCU8 \newline  Interno \newline  \\ \hline      
         RA1D 4.1.2  &  Interno \newline  \\ \hline      
         RA1D 4.1.3  &  Interno \newline  \\ \hline      
         RA1D 4.1.4  &  UCU9.5 \newline  UCU9 \newline  \\ \hline      
         RA1D 4.1.5 &  UCU9.4 \newline  Capitolato \newline  \\ \hline      
         RA1D 4.2  &  UCU9.2 \newline  UCU9 \newline  UCS3.3.1.7 \newline  Interno \newline  \\ \hline      
-        RA1D 11 &  UCU5 \newline  Verbale-2013/12/05 \newline  \\ \hline      
+        RA1D 11 &  UCU5 \newline  Verbale-2013/12/05 \newline  UCU6 \newline  \\ \hline      
         RA1D 12 &  UCU3 \newline  \\ \hline      
         RA1D 13 &  UCU10 \newline  \\ \hline      
         RA1D 13.1 &  UCU10 \newline  \\ \hline      
@@ -292,7 +304,7 @@ Librerie necessarie:
         RF1O 14 &  UCS2 \newline  Interno \newline  \\ \hline      
         RF1O 14.1 &  UCS2.1 \newline  UCS2 \newline  Interno \newline  \\ \hline      
         RF1O 14.2 &  UCS2 \newline  UCS2.2 \newline  Interno \newline  \\ \hline      
-        RF1F 9.2.5 &  UCS3.3.2 \newline  UCS3.3.2.5 \newline  Capitolato \newline  \\ \hline      
+        RF1F 9.2.5 &  UCS3.3.2 \newline  UCS3.3.2.5 \newline  Capitolato \newline  UCS3.3.1.9 \newline  \\ \hline      
         RF1F 14.3 &  UCS2.3 \newline  Interno \newline  \\ \hline      
         RF1F 16 &  UCS4 \newline  Interno \newline  \\ \hline      
         RS1F 10 &  Capitolato \newline  UCM \newline  \\ \hline      
@@ -305,8 +317,10 @@ Librerie necessarie:
         RS1F 10.7 &  Interno \newline  UCM5 \newline  \\ \hline      
         RS1F 10.8 &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 &  UCM7 \newline  Interno \newline  \\ \hline      
-        RS4F 6 &  Capitolato \newline  \\ \hline      
-        RS4F 7 &  Capitolato \newline  \\ \hline      
+        RS1F 10.9.1 &  UCM9 \newline  UCM7 \newline  \\ \hline      
+        RS1F 10.10 &  UCM8.5 \newline  \\ \hline      
+        RS4F 17 &  Capitolato \newline  \\ \hline      
+        RS4F 18 &  Capitolato \newline  \\ \hline      
         R3O 1 &  Capitolato \newline  \\ \hline      
         R3O 2 &  Interno \newline  \\ \hline      
         R3O 3 &  Capitolato \newline  Verbale-2013/12/05 \newline  \\ \hline      
@@ -315,8 +329,9 @@ Librerie necessarie:
         RA4O 3 &  Capitolato \newline  \\ \hline      
         RA4O 4 &  Capitolato \newline  \\ \hline      
         RA4O 5 &  Capitolato \newline  \\ \hline      
-        RA4O 8 &  Capitolato \newline  \\ \hline      
-        RA4O 9 &  Capitolato \newline  \\ \hline     
+        RA4O 6 &  Capitolato \newline  \\ \hline      
+        RA4O 7 &  Capitolato \newline  \\ \hline      
+        RA4O 8 &  UCU12 \newline  UCS3.6 \newline  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  
@@ -331,39 +346,36 @@ Librerie necessarie:
       \begin{longtable}{ | p{5cm} | p{5cm} |}
     
       \cellcolor[gray]{0.9} \textbf{Fonti} & \cellcolor[gray]{0.9} \textbf{Requisiti} \\ \hline       
-            Verbale-2013/12/18 &  RA1O 6.2.4 \newline  RA1O 6.2.3 \newline  \\ \hline      
-            Verbale-2013/12/05 &  RA1D 11 \newline  RF1O 9.2.2  \newline  R3O 3 \newline  RF1O 8.2  \newline  \\ \hline      
-            Capitolato &  RF1O 7 \newline  RA1O 1 \newline  RA1O 1.1 \newline  RA1O 1.2 \newline  RA1O 1.3  \newline  RA1O 2  \newline  RA1O 4 \newline  RA1O 4.1  \newline  RA1O 4.1.1  \newline  RA1O 5  \newline  RA1O 5.1 \newline  RA1O 6.1  \newline  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 6.2.1 \newline  RA1F 4.3 \newline  RA4O 9 \newline  RA4O 8 \newline  RF1O 8  \newline  RF1O 8.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.2 \newline  RF1O 9  \newline  RF1O 9.1  \newline  RF1O 9.1.1  \newline  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 9.1.6 \newline  RF1O 9.2.1  \newline  RF1O 9.1.5 \newline  RA4O 2 \newline  R4O 1 \newline  R3O 3 \newline  RS4F 7 \newline  RS4F 6 \newline  RA4O 5 \newline  RA4O 4 \newline  RA4O 3 \newline  R3O 1 \newline  RF1O 9.2.2  \newline  RA1D 4.1.5 \newline  RA1O 5.3 \newline  RA1F 15 \newline  RA1F 15.1 \newline  RA1F 15.2 \newline  RF1O 9.2.3 \newline  RF1O 9.2.4 \newline  RF1F 9.2.5 \newline  RF1O 9.3 \newline  RF1O 9.4 \newline  RF1O 9.1.7 \newline  RS1F 10 \newline  RS1F 10.1 \newline  RF1O 9.1.4  \newline  RA1F 4.4 \newline  RA1F 5.2 \newline  RA1O 6.1.2  \newline  RF1O 9.2 \newline  \\ \hline      
             UCU1 - Login &  RA1O 1 \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  \\ \hline      
             UCU1.1 - Inserimento email &  RA1O 1.1 \newline  \\ \hline      
             UCU1.2 - Inserimento Password &  RA1O 1.2 \newline  \\ \hline      
             UCU2 - Visualizzazione messaggio errore per credenziali errate &  RA1O 1.3.1 \newline  \\ \hline      
             UCU3 - Logout &  RA1D 12 \newline  \\ \hline      
-            UCU4 - Recupero password &  RA1O 2  \newline  \\ \hline      
-            UCU4.1 - Richiesta reset password &  \\ \hline      
-            UCU4.1.1 - Inserimento email &  \\ \hline      
-            UCU4.2 - Effettuazione reset password &  \\ \hline      
-            UCU4.2.1 - Inserimento nuova password &  \\ \hline      
+            UCU4 - Recupero password &  RA1O 2.1 \newline  RA1O 2.2 \newline  RA1O 2.3 \newline  RA1O 2  \newline  \\ \hline      
+            UCU4.1 - Richiesta reset password &  RA1O 2.1 \newline  RA1O 2  \newline  \\ \hline      
+            UCU4.1.1 - Inserimento email &  RA1O 2.1 \newline  RA1O 2  \newline  \\ \hline      
+            UCU4.2 - Effettuazione reset password &  RA1O 2.2 \newline  RA1O 2.3 \newline  RA1O 2  \newline  \\ \hline      
+            UCU4.2.1 - Inserimento nuova password &  RA1O 2.3 \newline  RA1O 2  \newline  \\ \hline      
             UCU5 - Registrazione &  RA1D 11 \newline  \\ \hline      
-            UCU6 - Visualizzazione messaggio errore per Registrazione fallita &  \\ \hline      
+            UCU6 - Visualizzazione messaggio errore per Registrazione fallita &  RA1D 11 \newline  \\ \hline      
             UCU7 - Gestione indici &  RA1F 15 \newline  \\ \hline      
             UCU7.1 - Visualizzazione suggerimenti sugli indici &  RA1F 15.1 \newline  \\ \hline      
             UCU7.2 - Creazione indici &  RA1F 15.2 \newline  \\ \hline      
             UCU7.3 - Rimozione indici &  RA1F 15.3 \newline  \\ \hline      
             UCU8 - Visualizzazione Dashboard &  RA1O 1.3.2 \newline  RA1D 3  \newline  \\ \hline      
-            UCU9 - Apertura Collection Index &  RA1O 4 \newline  RA1D 4.1.4  \newline  RA1O 4.1  \newline  RA1D 4.2  \newline  \\ \hline      
+            UCU9 - Apertura Collection Index &  RA1D 4.2  \newline  RA1O 4 \newline  RA1D 4.1.4  \newline  RA1O 4.1  \newline  \\ \hline      
             UCU9.1 - Apertura show-page Document &  RA1O 5.1 \newline  RA1O 5  \newline  \\ \hline      
-            UCU9.1.1 -  Visualizzazione show page attributi innestati &  \\ \hline      
-            UCU9.1.2 - Visualizzazione index page dell'array di document &  \\ \hline      
+            UCU9.1.1 -  Visualizzazione show page attributi innestati &  RA1O 5  \newline  \\ \hline      
+            UCU9.1.2 - Visualizzazione index page dell'array di document &  RA1O 5  \newline  \\ \hline      
             UCU9.1.3 - Modifica Document &  RA1O 5.1 \newline  \\ \hline      
             UCU9.1.4 - Elimina Document &  RA1O 5.3 \newline  \\ \hline      
-            UCU9.1.5 - Annulla modifica Document &  \\ \hline      
+            UCU9.1.5 - Annulla modifica Document &  RA1O 5.1 \newline  \\ \hline      
             UCU9.2 - Filtra risultati &  RA1D 4.2  \newline  \\ \hline      
             UCU9.3 - Esegui azione personalizzata &  RA1F 4.4 \newline  RA1F 5.2 \newline  \\ \hline      
             UCU9.4 - Modifica Document &  RA1D 4.1.5 \newline  \\ \hline      
             UCU9.5 - Elimina Document &  RA1D 4.1.4  \newline  \\ \hline      
             UCU9.6 - Creazione Document &  RA1F 4.3 \newline  \\ \hline      
-            UCU9.7 - Annulla modifica Document &  \\ \hline      
+            UCU9.7 - Annulla modifica Document &  RA1O 5.1 \newline  \\ \hline      
             UCU10 - Modifica profilo &  RA1D 13 \newline  RA1D 13.1 \newline  RA1D 13.2 \newline  \\ \hline      
             UCU10.1 - Modifica password &  RA1D 13.2 \newline  \\ \hline      
             UCU11 - Gestione utenti &  RA1O 6.1  \newline  RA1O 6 \newline  RA1O 6.2  \newline  \\ \hline      
@@ -375,8 +387,8 @@ Librerie necessarie:
             UCU11.3 - Apertura show-page Utente &  RA1O 6.2.3 \newline  RA1O 6.2  \newline  RA1O 6.2.1 \newline  RA1O 6.2.2 \newline  RA1O 6.2.4 \newline  \\ \hline      
             UCU11.3.1 - Eleva utente &  RA1O 6.2.1 \newline  \\ \hline      
             UCU11.3.2 - Declassa admin &  RA1O 6.2.2 \newline  \\ \hline      
-            UCU11.3.3 - Eliminazione Utente &  \\ \hline      
-            UCU12 - Visualizzazione messaggio di errore DSL &  \\ \hline      
+            UCU11.3.3 - Eliminazione Utente &  RA1O 6.2.5 \newline  \\ \hline      
+            UCU12 - Visualizzazione messaggio di errore DSL &  RA4O 8 \newline  \\ \hline      
             UCS - Operazioni ad alto livello &  \\ \hline      
             UCS1 - Creazione nuovo progetto &  RF1O 8.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 8  \newline  RF1O 8.2  \newline  \\ \hline      
             UCS2 - Configurazione database &  RF1O 14.1 \newline  RF1O 14.2 \newline  RF1O 14 \newline  \\ \hline      
@@ -396,7 +408,7 @@ Librerie necessarie:
             UCS3.3.1.6 - Definizione populate da eseguire &  RF1O 9.1.5 \newline  \\ \hline      
             UCS3.3.1.7 - Personalizzazione filtri &  RA1D 4.2  \newline  \\ \hline      
             UCS3.3.1.8 - Definizione delle trasformazioni &  RF1O 9.1.7 \newline  \\ \hline      
-            UCS3.3.1.9 - Definizione azioni personalizzate &  \\ \hline      
+            UCS3.3.1.9 - Definizione azioni personalizzate &  RF1F 9.2.5 \newline  \\ \hline      
             UCS3.3.2 - Personalizzazione show page &  RF1O 9.2.4 \newline  RF1O 9.2.3 \newline  RF1O 9.2.1  \newline  RF1F 9.2.5 \newline  \\ \hline      
             UCS3.3.2.1 - Definizione attributi da visualizzare &  RF1O 9.2.1  \newline  \\ \hline      
             UCS3.3.2.2 - Definizione ordinamento attributi &  RF1O 9.2.3 \newline  \\ \hline      
@@ -407,7 +419,7 @@ Librerie necessarie:
             UCS3.3.4 - Definizione ordinamento Collection &  RF1O 9.4 \newline  \\ \hline      
             UCS3.3.5 - Definizione namespace &  RF1O 8.3 \newline  \\ \hline      
             UCS3.4 - Registrazione automatica Collection &  RF1O 9.2 \newline  RF1O 9.1  \newline  \\ \hline      
-            UCS3.6 - Visualizzazione messaggio di errore DSL &  \\ \hline      
+            UCS3.6 - Visualizzazione messaggio di errore DSL &  RA4O 8 \newline  \\ \hline      
             UCS4 - Abilitazione namespace &  RF1F 16 \newline  \\ \hline      
             UCM1 - Registrazione &  RS1F 10.4 \newline  RS1F 10.3 \newline  \\ \hline      
             UCM1.1 - Inserimento nuova email &  RS1F 10.6 \newline  \\ \hline      
@@ -417,13 +429,14 @@ Librerie necessarie:
             UCM5 - Credenziali errate &  RS1F 10.7 \newline  \\ \hline      
             UCM6 - Modifica profilo &  RS1F 10.8 \newline  \\ \hline      
             UCM6.1 - Modifica password &  RS1F 10.8 \newline  \\ \hline      
-            UCM7 - Eliminazione account &  RS1F 10.9 \newline  \\ \hline      
+            UCM7 - Eliminazione account &  RS1F 10.9 \newline  RS1F 10.9.1 \newline  \\ \hline      
             UCM8 - Gestione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
             UCM8.1 - Creazione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
             UCM8.2 - Creazione file di configurazione tramite editor di testo &  RS1F 10.1 \newline  \\ \hline      
             UCM8.3 - Creazione file di configurazione tramite caricamento &  RS1F 10.2 \newline  \\ \hline      
             UCM8.4 - Modifica file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
-            UCM8.5 - Eliminazione file di configurazione &  \\ \hline     
+            UCM8.5 - Eliminazione file di configurazione &  RS1F 10.10 \newline  \\ \hline      
+            UCM9 - Eliminazione file di configurazione &  RS1F 10.9.1 \newline  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  

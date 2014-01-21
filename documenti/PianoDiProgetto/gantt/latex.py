@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from __future__ import division
 from utils import *
 
 def writeGanttMilestone(project, milestone_id, filename):
@@ -269,29 +270,34 @@ def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
 
 	planned_total_cost = 0
 	planned_total_hours = 0
-	latex(u"\\pie[sum=auto, text=legend, color={amministratore, analista, progettista, programmatore, responsabile, verificatore}]{", False)
+	latex(u"\\pie[text=legend, color={amministratore, analista, progettista, programmatore, responsabile, verificatore}]{", False)
 	for role in roles:
 		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])
 		planned_total_hours += planned_hours
 
-	for role in roles[:-1]:
+	firstentry = True
+	for role in roles:
 		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
 		
 		planned_cost = sum([c.getPlannedCost() for c in role_costs])
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])
 		planned_total_cost += planned_cost
 
-		latex(u"{ore}/{ruolo}, ".format(
-			ruolo = role.getName().title(),
-			ore = planned_hours if planned_hours != 0 else '.'
-		), False)
+		if not firstentry:
+			latex(u", ", False)
+		firstentry = False
 
-	role_costs = [milestone.getPersonRoleCost(person, roles[-1]) for person in project.getPeople()]
-	latex(u"{ore}/{ruolo}".format(
-		ruolo = roles[-1].getName().title(),
-		ore = sum([c.getPlannedHours() for c in role_costs]) if sum([c.getPlannedHours() for c in role_costs]) != 0 else '.'
-	), False)
+		if planned_hours != 0:
+			latex(u"{ore:.1f}/{ruolo}".format(
+				ruolo = role.getName().title(),
+				ore = (planned_hours * 100 / planned_total_hours)
+			), False)
+		else:
+			latex(u"./{ruolo}".format(
+				ruolo = role.getName().title()
+			), False)
+
 	latex(u"}")
 	
 	out.close()

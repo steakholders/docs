@@ -26,6 +26,7 @@ Amm
 an
 Ana
 Analysis
+anchor
 and
 Angular
 AngularJS
@@ -44,6 +45,7 @@ assessment
 assigned
 AST
 Astah
+at
 autoformazione
 avoided
 Awesome
@@ -99,6 +101,7 @@ Collaborating
 collection
 colorlinks
 column
+columns
 combo
 comes
 commentstyle
@@ -118,6 +121,7 @@ Construction
 Continuous
 Control
 Controller
+coords
 corners
 correction
 coverage
@@ -159,6 +163,7 @@ dsgfdgfg
 DSL
 dyadic
 each
+east
 Eclipse
 edition
 Education
@@ -369,6 +374,7 @@ namespace
 ND
 nell'index
 Nell'URL
+never
 newline
 Next
 niladic
@@ -382,6 +388,7 @@ NomeDelDocumento
 NomeDellaCostante
 nomeDellaFunzione
 nomemetrica
+north
 NoSQL
 NOT'
 NP
@@ -395,6 +402,7 @@ object
 of
 official
 officials
+often
 one
 OOP
 Operational
@@ -410,6 +418,7 @@ parameters
 parser
 parsing
 Part
+participants
 path
 pdc
 PDCA
@@ -431,6 +440,7 @@ placeholder
 plain
 plan
 Platform
+plotcoordinates
 plugin
 pollution
 polyadic
@@ -478,6 +488,7 @@ query
 quest'ultime
 raccomanda'
 Rails
+rarely
 RAU
 Ready
 recovery
@@ -507,6 +518,7 @@ Retired
 Retrieve
 RF
 RFC
+RGB
 ridenominare
 right
 rimpiazza'
@@ -557,6 +569,7 @@ Slide
 smartphone
 Social
 Solution
+sometimes
 Sommerville
 somministrabile
 sortable
@@ -593,6 +606,7 @@ sum
 Sun
 SV
 SWEBOK
+symbolic
 syntax
 system
 Systems
@@ -617,6 +631,7 @@ theory
 thread
 three
 threshold
+tick
 tier
 timer'
 title
@@ -687,5 +702,8 @@ windows
 with
 work
 working
+xtick
+ybar
 year
+ylabel
 yyyy

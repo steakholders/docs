@@ -50,21 +50,21 @@ class TeamworkPMDownload(TeamworkPMClient):
 		TeamworkPMClient.__init__(self, company=company, key=key)
 
 	def getMilestones(self, project):
-		data = self.requestJSON("/projects/{project_id}/milestones".format(project_id=project.id), "find=all")
+		data, info = self.requestJSON("/projects/{project_id}/milestones".format(project_id=project.id), "find=all")
 		
 		for milestone in data["milestones"]:
 			milestone_oby = Milestone(project, milestone["id"], date_parse(milestone["deadline"]), milestone["title"])
 			project.addMilestone(milestone_oby)
 
 	def getPeople(self, project):
-		data = self.requestJSON("/projects/{project_id}/people".format(project_id=project.id))
+		data, info = self.requestJSON("/projects/{project_id}/people".format(project_id=project.id))
 
 		for person in data["people"]:
 			person_obj = Person(project, person["id"], person["first-name"]+" "+person["last-name"])
 			project.addPerson(person_obj)
 
 	def getTaskLists(self, project):
-		data = self.requestJSON("/projects/{project_id}/todo_lists".format(project_id=project.id), "status=all")
+		data, info = self.requestJSON("/projects/{project_id}/todo_lists".format(project_id=project.id), "status=all")
 		
 		for tasklist in data["todo-lists"]:
 
@@ -134,12 +134,24 @@ class TeamworkPMDownload(TeamworkPMClient):
 	
 	def getTimeEntries(self, project):
 		page = 0
-		while True:
+		num_pages = 1
+		while page < num_pages:
 			page += 1
-			data = self.requestJSON("/projects/{project_id}/time_entries".format(project_id=project.id), "page={page}".format(page=page))
+			print "- Pagina {num} di {num_pages}...".format(num=page, num_pages=num_pages)
+			
+			data, info = self.requestJSON("/projects/{project_id}/time_entries".format(project_id=project.id), "page={page}".format(page=page))
+			xrecords = info.getheader('X-Records')
+			xpage = info.getheader('X-Page')
 
-			if len(data["time-entries"]) == 0:
-				break
+			if xrecords is not None:
+				num_pages = int(xrecords)
+
+			if xpage is not None:
+				if int(xpage) is not page:
+					pedantic_warning(u"TeamworkPM è convinto di essere alla pagina {xpage}, ma siamo alla {page}".format(
+						xpage = int(xpage),
+						page = page
+					))
 
 			for timeentry in data["time-entries"]:
 				task = project.getTask(timeentry["todo-item-id"])

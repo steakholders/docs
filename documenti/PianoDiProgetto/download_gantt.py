@@ -16,8 +16,8 @@ print "Scarico People..."
 tw.getPeople(project)
 print "Scarico TaskLists..."
 tw.getTaskLists(project)
-#print "Scarico TimeEntries..."
-#tw.getTimeEntries(project)
+print "Scarico TimeEntries..."
+tw.getTimeEntries(project)
 print "Scaricamento completato."
 
 

@@ -1,3 +1,11 @@
+\definecolor{Amministratore}{RGB}{51,102,204}
+\definecolor{Analista}{RGB}{255,153,0}
+\definecolor{Progettista}{RGB}{153,0,153}
+\definecolor{Programmatore}{RGB}{7,55,99}
+\definecolor{Responsabile}{RGB}{220,57,18}
+\definecolor{Verificatore}{RGB}{16,150,24}
+
+
 \section{Suddivisione del lavoro e Prospetto Orario} 
 
 \sectionmark{Suddivisione del lavoro \dots}
@@ -44,28 +52,11 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
 
 I valori in tabella sono riassunti nel seguente grafico: \\ 
 
-\begin{tikzpicture}
-\begin{axis}[ybar stacked, enlargelimits =0.15,
-legend style ={at={(0.5,-0.20)},
-anchor=north,
-legend columns=-1},
-ylabel={\#participants},
-symbolic x coords={tool1, tool2, tool3, tool4,tool5, tool6, tool7},
-xtick=data,
-x tick label style={rotate=45,anchor=east},]
-\addplot+[ybar] plotcoordinates{(tool1,0) (tool2,2)(tool3,2) (tool4,3) (tool5,0) (tool6,2) (tool7,0)};
-\addplot+[ybar] plotcoordinates{(tool1,0) (tool2,0)(tool3,0) (tool4,3) (tool5,1) (tool6,1) (tool7,0)};
-\addplot+[ybar] plotcoordinates{(tool1,6) (tool2,6)(tool3,8) (tool4,2) (tool5,6) (tool6,5) (tool7,6)};
-\addplot+[ybar] plotcoordinates{(tool1,4) (tool2,2)(tool3,0) (tool4,2) (tool5,3) (tool6,2) (tool7,4)};
-\legend{never, rarely, sometimes, often}
-\end{axis}
-\end{tikzpicture}
-
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.35]{4-1.png}
-%\caption{Ore per componente, fase di Analisi\label{fig:nome}}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{4-1.png}
+\caption{Ore per componente, fase di Analisi\label{fig:nome}}
+\end{figure}
 
 Si fa notare che le ore sopra indicate non sono incluse nelle 105 ore rappresentanti il tetto massimo di ore somministrabile da ciascun componente.
 
@@ -90,24 +81,23 @@ Nella fase di Progettazione architetturale ciascun componente dovrà rivestire i
 \end{table}
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
+\begin{figure}
 \begin{tikzpicture}
-\begin{axis}[ybar stacked, enlargelimits =0.15,
+\begin{axis}[ybar stacked, enlargelimits =0.05,
 legend style ={at={(0.5,-0.20)},
 anchor=north,
 legend columns=-1},
 ylabel={\#Ore},
-symbolic x coords={tool1, tool2, tool3, tool4,tool5, tool6, tool7},
 xtick=data,
-x tick label style={rotate=45,anchor=east},]
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
+]
+\input{columnChart_rp}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
 \end{axis}
-%	\input{columnChart_rp}
-
 \end{tikzpicture}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.35]{4-2.png}
-%\caption{Ore per componente, fase di Progettazione architetturale\label{fig:nome}}
-%\end{figure}
+\caption{Ore per componente, periodo di progettazione architetturale}
+\end{figure}
 
 \pagebreak
 \subsection{Progettazione di dettaglio e codifica}
@@ -131,12 +121,23 @@ Nella fase di Progettazione di dettaglio e codifica ciascun componente dovrà ri
 
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-3.png}
-\caption{Ore per componente, fase di Progettazione di dettaglio e codifica \label{fig:nome}}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, enlargelimits =0.05,
+legend style ={at={(0.5,-0.20)},
+anchor=north,
+legend columns=-1},
+ylabel={\#Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
+]
+\input{columnChart_rq}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di Progettazione di dettaglio e codifica}
 \end{figure}
-
 \pagebreak
 \subsection{Validazione}
 
@@ -158,11 +159,22 @@ Nella fase di Validazione ciascun componente dovrà rivestire i seguenti ruoli:
 \end{table}
 
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-4.png}
-\caption{Ore per componente, fase di Validazione\label{fig:nome}}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, enlargelimits =0.05,
+legend style ={at={(0.5,-0.20)},
+anchor=north,
+legend columns=-1},
+ylabel={\#Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
+]
+\input{columnChart_ra}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di validazione}
 \end{figure}
 
 \pagebreak

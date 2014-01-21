@@ -239,21 +239,23 @@ def writeColumnChartOreMilestone(project, milestone_id, roles_id, filename):
 		out.write(str.encode('utf-8'))
 		if newline:
 			out.write("\n".encode('utf-8'))
+	
+	for role in roles:
 
-	for person in sortByName(project.getPeople()):
-		person_planned_hours = 0
-		
-		latex(u"\t{name}".format(name = person.getName()), False)
-		
-		for role in roles:
+		latex("\\addplot+[color={ruolo}] plotcoordinates".format(
+		ruolo=role.getName().title())
+		, False)
+		latex("{",False)
+		for person in sortByName(project.getPeople()):
+			person_planned_hours = 0
 			cost = milestone.getPersonRoleCost(person, role)
 			person_planned_hours += cost.getPlannedHours()
-
-			latex(u" & {hours:.0f}".format(hours = cost.getPlannedHours()), False)
+			latex(u"({persona},{ore})".format(
+				persona = person.getName(),
+				ore = person_planned_hours 
+			) , False)
 		
-		latex(u" & {hours:.0f}".format(hours = person_planned_hours), False)
-
-		latex(u" \\\\")
+		latex(u"};", True)
 
 	out.close()
 
@@ -300,4 +302,20 @@ def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
 
 	latex(u"}")
 	
+	out.close()
+
+def writeMembriGruppo(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+	latex("symbolic x coords={",False)
+	for person in sortByName(project.getPeople()):
+		latex(u"{persona},".format(
+		persona = person.getName()), False)
+	latex("}")
 	out.close()

@@ -48,6 +48,7 @@ roles = [
 	"responsabile",
 	"verificatore"
 ]
+#writeMembriGruppo(project, milestone_rp, roles, "membri_gruppo.tex")
 
 writeSuddivisioneOreMilestone(project, milestone_rp, roles, "suddivisione_rp.tex")
 writeSuddivisioneOreMilestone(project, milestone_rq, roles, "suddivisione_rq.tex")

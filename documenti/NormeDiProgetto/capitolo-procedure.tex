@@ -193,16 +193,9 @@ Nel caso in cui il verificatore trovi bug o non conformità significative deve c
 
 \subsection{Pianificazione}
 
-Come convenzione il gruppo ha scelto una soglia oraria giornaliera e settimanale in cui lavorare al progetto:
+Come convenzione il gruppo ha scelto una soglia oraria giornaliera in cui lavorare al progetto. In particolare l'orario di lavoro giornaliero è da considerarsi dalle 9:00 alle 12:00 e dalle 13:00 alle 17:00, per un massimo di 7 ore. Le ore impiegate oltre queste soglie sono considerate ore di \textbf{straordinario}. In particolare al Responsabile è raccomandato pianificare due ore di lavoro al giorno, per un totale di 10 ore settimanali.
 		
-		\begin{itemize}
-			\item L'orario di lavoro giornaliero è da considerarsi dalle 9:00 alle 12:00 e dalle 13:00 alle 17:00, per un massimo di 7 ore;
-			\item I giorni lavorativi settimanali sono dal Lunedì al Venerdì.
-		\end{itemize}
-		
-		Le ore impiegate oltre queste soglie sono considerate ore di \textbf{straordinario}. In particolare al Responsabile è raccomandato pianificare due ore di lavoro al giorno, per un totale di 10 ore settimanali.
-		
-		Il responsabile nell'assegnare task terrà conto di quanto inserito nel calendario, come indicato nel capitolo \ref{Calendario condiviso}, e di quanto indicato nel capitolo \ref{rotazioneruoli} riguardo la rotazione dei ruoli. 
+Il Responsabile, nell'assegnare, task terrà conto di quanto inserito nel calendario, come indicato nel capitolo \ref{Calendario condiviso}, e di quanto indicato nel capitolo \ref{rotazioneruoli} riguardo la rotazione dei ruoli. 
 		
 \subsection{Analisi dei requisiti}
 
@@ -302,7 +295,7 @@ Dove:
 
 \subsubsection{UML}
 
-Per i diagrammi deve essere utilizzata il linguaggio \emph{UML versione 2.0}.
+Per i diagrammi deve essere utilizzato il linguaggio \emph{UML versione 2.0}.
 
 
 \subsection{Progettazione}
@@ -320,7 +313,7 @@ Di seguito vengono elencate le norme a carico dei \emph{Progettisti}.
 
     \subsubsection{Stile di progettazione}
     \begin{itemize}
-        \item La progettazione dovrà usare quanto più possibile \glossario{design pattern} globalmente affermati, la loro scelta dovrà essere giustificata;
+        \item La progettazione dovrà usare quanto più possibile \glossario{design pattern} globalmente affermati e la loro scelta dovrà essere giustificata;
         \item Suddividere il progetto in \glossario{moduli}, in accordo con lo stile di progettazione dell'ambiente \glossario{Node.js};
         \item Non utilizzare codice sincrono per operazioni di \glossario{I/O};
         \item Limitare quanto più possibile le \glossario{callback} annidate;
@@ -416,7 +409,7 @@ Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizza
 
 
 \subsection{Tecniche di verifica}
-	Le \glossario{Software Quality Managment Techinques} adottate dal gruppo sono suddivise in quattro categorie. Di seguito ne vengono date le definizioni, tuttavia non sempre si tratta di classi nettamente distinte e la loro applicazione molto spesso prevede sovrapposizioni.
+	Le \glossario{Software Quality Managment Techinques} adottate dal gruppo sono suddivise in quattro categorie. Di seguito ne vengono date le definizioni. Tuttavia non sempre si tratta di classi nettamente distinte e la loro applicazione molto spesso prevede sovrapposizioni.
 	
 		\subsubsection{Statiche}
 
@@ -432,13 +425,13 @@ Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizza
 			Si tratta di una lettura mirata e strutturata, volta a localizzare l'errore con il minor costo possibile. Richiede una buona padronanza di tutti gli strumenti utilizzati e conoscenza di tutti i documenti di progetto. Solitamente viene effettuata da un singolo individuo. La ricerca mirata si basa sugli errori ricorrenti, gli script da utilizzare sono descritti in \ref{makefile}. Le anomalie individuate vanno segnalate secondo le modalità descritte in \ref{aperturaissue}.
 			Le anomalie più frequenti sono:
 			\begin{itemize}
-				\item utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
-				\item utilizzo di caratteri di underscore senza prima anteporre una backslash;
-				\item errori ortografici come rappresentare la \emph{È} con una \emph{e} maiuscola apostrofata;
-				\item inserimento di parole comuni come placeholder, e.g. c{}i{}a{}o, b{}l{}a{}b{}l{}a, a{}s{}d \dots; % le parentesi graffe impediscono che make test-regexp trovi queste occorrenze
-				\item formato delle date errato o non conforme alle \NormeDiProgetto{};
-				\item formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
-				\item elenchi puntati non conformi alle norme, in particolare i punti spesso non terminano con il punto e virgola;
+				\item Utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
+				\item Utilizzo di caratteri di underscore senza prima anteporre una backslash;
+				\item Errori ortografici come rappresentare la \emph{È} con una \emph{e} maiuscola apostrofata;
+				\item Inserimento di parole comuni come placeholder, e.g. c{}i{}a{}o, b{}l{}a{}b{}l{}a, a{}s{}d \dots; % le parentesi graffe impediscono che make test-regexp trovi queste occorrenze
+				\item Formato delle date errato o non conforme alle \NormeDiProgetto{};
+				\item Formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
+				\item Elenchi puntati non conformi alle norme, in particolare i punti spesso non terminano con il punto e virgola.
 				
 
 			\end{itemize}

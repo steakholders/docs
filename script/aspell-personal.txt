@@ -489,6 +489,7 @@ Protocol
 pt
 purpose
 python
+qualcos
 quality
 query
 quest'ultime
@@ -565,6 +566,7 @@ shift
 Short
 shortcut
 should
+shouldn
 shouldn't
 showspaces
 showstringspaces
@@ -651,6 +653,7 @@ tree
 Tresoldi
 triadic
 true
+TS
 two
 txt
 Ubuntu

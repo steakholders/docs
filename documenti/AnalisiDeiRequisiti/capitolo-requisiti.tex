@@ -167,8 +167,7 @@ Librerie necessarie:
         RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d'errore nel caso in cui l'utente non autenticato abbia inserito credenziali errate nel sistema di login. &  Interno \newline  UCM5 \newline  \\ \hline      
         RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  UCM7 \newline  Interno \newline  \\ \hline      
-        RS1F 10.9.1 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve provvedere all'eliminazione del \glossario{namespace} associato all'utente rimosso dal sistema. &  UCM9 \newline  UCM7 \newline  \\ \hline      
-        RS1F 10.9.2 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve provvedere all'eliminazione delle \glossario{Collection} associate all'utente rimosso dal sistema. &  UCM10 \newline  UCM7 \newline  \\ \hline      
+        RS1F 10.9.1 & Funzionale \newline  Facoltativo  & Il sistema \glossario{MaaS} deve provvedere all'eliminazione dei file di configurazione associati all'utente rimosso dal sistema. &  UCM9 \newline  UCM7 \newline  \\ \hline      
         RS1F 10.10 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere allo sviluppatore di eliminare una \glossario{Collection} esistente. &  UCM8.5 \newline  \\ \hline      
         RS4F 17 & Funzionale \newline  Desiderabile  & Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. &  Capitolato \newline  \\ \hline      
         RS4F 18 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve salvare le Collection create dallo sviluppatore direttamente dentro la base di dati. &  Capitolato \newline  \\ \hline
@@ -319,7 +318,6 @@ Librerie necessarie:
         RS1F 10.8 &  UCM6 \newline  UCM6.1 \newline  Interno \newline  \\ \hline      
         RS1F 10.9 &  UCM7 \newline  Interno \newline  \\ \hline      
         RS1F 10.9.1 &  UCM9 \newline  UCM7 \newline  \\ \hline      
-        RS1F 10.9.2 &  UCM10 \newline  UCM7 \newline  \\ \hline      
         RS1F 10.10 &  UCM8.5 \newline  \\ \hline      
         RS4F 17 &  Capitolato \newline  \\ \hline      
         RS4F 18 &  Capitolato \newline  \\ \hline      
@@ -348,9 +346,6 @@ Librerie necessarie:
       \begin{longtable}{ | p{5cm} | p{5cm} |}
     
       \cellcolor[gray]{0.9} \textbf{Fonti} & \cellcolor[gray]{0.9} \textbf{Requisiti} \\ \hline       
-            Verbale-2013/12/18 &  RA1O 6.2.3 \newline  RA1O 6.2.4 \newline  \\ \hline      
-            Verbale-2013/12/05 &  RA1D 11 \newline  RF1O 9.2.2  \newline  R3O 3 \newline  RF1O 8.2  \newline  \\ \hline      
-            Capitolato &  RA1D 4.1.5 \newline  RF1O 9.2.4 \newline  RA1F 15 \newline  RA1F 15.1 \newline  RA1F 15.2 \newline  RA1O 5.3 \newline  RA1F 4.4 \newline  RA1F 5.2 \newline  RF1O 9.2.3 \newline  R4O 1 \newline  RA4O 4 \newline  RA4O 5 \newline  R3O 1 \newline  RF1O 9.2.2  \newline  RF1O 8.1.3  \newline  RA4O 3 \newline  RF1O 9.2 \newline  RF1O 9.2.1  \newline  R3O 3 \newline  RA4O 6 \newline  RF1F 9.2.5 \newline  RF1O 9.1.5 \newline  RF1O 9.1.2  \newline  RF1O 9.1.3  \newline  RF1O 8.1.1  \newline  RF1O 8.1.4  \newline  RF1O 8.1.2 \newline  RF1O 8.1  \newline  RF1O 9.3 \newline  RF1O 8  \newline  RF1O 9.1  \newline  RF1O 9.4 \newline  RA4O 2 \newline  RF1O 9.1.7 \newline  RF1O 9.1.6 \newline  RF1O 9.1.4  \newline  RF1O 9  \newline  RF1O 9.1.1  \newline  RA4O 7 \newline  RA1O 4.1.1  \newline  RF1O 7 \newline  RA1O 4 \newline  RA1O 4.1  \newline  RA1O 1 \newline  RA1F 4.3 \newline  RS1F 10 \newline  RS1F 10.1 \newline  RA1O 6.1.1  \newline  RA1O 6.1.1.3  \newline  RA1O 6.1  \newline  RA1O 6.1.2  \newline  RA1O 1.3  \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  RA1O 5.1 \newline  RA1O 2  \newline  RA1O 5  \newline  RA1O 6.2.1 \newline  RS4F 17 \newline  RS4F 18 \newline  \\ \hline      
             UCU1 - Login &  RA1O 1 \newline  RA1O 1.2 \newline  RA1O 1.1 \newline  \\ \hline      
             UCU1.1 - Inserimento email &  RA1O 1.1 \newline  \\ \hline      
             UCU1.2 - Inserimento Password &  RA1O 1.2 \newline  \\ \hline      
@@ -434,15 +429,14 @@ Librerie necessarie:
             UCM5 - Credenziali errate &  RS1F 10.7 \newline  \\ \hline      
             UCM6 - Modifica profilo &  RS1F 10.8 \newline  \\ \hline      
             UCM6.1 - Modifica password &  RS1F 10.8 \newline  \\ \hline      
-            UCM7 - Eliminazione account &  RS1F 10.9.1 \newline  RS1F 10.9.2 \newline  RS1F 10.9 \newline  \\ \hline      
+            UCM7 - Eliminazione account &  RS1F 10.9 \newline  RS1F 10.9.1 \newline  \\ \hline      
             UCM8 - Gestione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
             UCM8.1 - Creazione file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
             UCM8.2 - Creazione file di configurazione tramite editor di testo &  RS1F 10.1 \newline  \\ \hline      
             UCM8.3 - Creazione file di configurazione tramite caricamento &  RS1F 10.2 \newline  \\ \hline      
             UCM8.4 - Modifica file di configurazione &  RS1F 10.1 \newline  RS1F 10.2 \newline  \\ \hline      
             UCM8.5 - Eliminazione file di configurazione &  RS1F 10.10 \newline  \\ \hline      
-            UCM9 - Eliminazione namespace utente &  RS1F 10.9.1 \newline  \\ \hline      
-            UCM10 - Eliminazione Collection utente &  RS1F 10.9.2 \newline  \\ \hline     
+            UCM9 - Eliminazione file di configurazione &  RS1F 10.9.1 \newline  \\ \hline     
       \end{longtable}
       \egroup
       \end{center}  

@@ -8,7 +8,7 @@
 
 Tutte le comunicazioni ad uso interno del gruppo avvengono tramite il servizio di messaggistica offerto da \emph{TeamworkPM}, altre vie di comunicazione sono sconsigliate.
 
-Nel caso sia particolarmente necessario comunicare in modo rapido possono essere utilizzati strumenti di messaggistica istantanea come Hangouts o Skype. L'utilizzo di \glossario{SMS} e di chiamate telefoniche è riservato alle situazioni di urgenza.
+Nel caso sia necessario comunicare in modo rapido possono essere utilizzati strumenti di messaggistica istantanea come Hangouts o Skype. L'utilizzo di \glossario{SMS} e di chiamate telefoniche è riservato alle situazioni di urgenza.
 
 \paragraph{Messaggi}
 \label{Comunicazioniinternemessaggi}
@@ -18,8 +18,8 @@ Nel caso sia particolarmente necessario comunicare in modo rapido possono essere
 \item Il \textbf{contenuto} deve includere i dettagli necessari per una corretta comprensione del messaggio e non deve essere prolisso. Il mittente può servirsi del supporto al linguaggio di \glossario{Markdown} disponibile sulla piattaforma per rendere più chiaro il suo messaggio;
 \item La \textbf{categoria} deve essere coerente con l'argomento trattato. Può essere creata una categoria nuova se ritenuto necessario;
 \item La \textbf{notifica} via mail deve includere gli interessati al messaggio;
-\item Il livello di \textbf{privacy} deve sempre essere ``Everybody on project'' in modo da permettere a tutti i componenti del gruppo di intervenire;
-\item Data l'esigua dimensione dello \glossario{storage} che offre la piattaforma nella versione free utilizzata dal gruppo e l'assenza di visualizzatori online integrati, il numero e la dimensione degli \textbf{allegati} devono essere ridotti quanto più possibile.
+\item Il livello di \textbf{privacy} deve sempre essere "\textit{Everybody on project}" in modo da permettere a tutti i componenti del gruppo di intervenire;
+\item Data l'esigua dimensione dello \glossario{storage} che offre la piattaforma nella versione \textit{free} utilizzata dal gruppo e l'assenza di visualizzatori online integrati, il numero e la dimensione degli \textbf{allegati} devono essere ridotti quanto più possibile.
 \end{itemize}
 
 \paragraph{Commenti a tasks o sub-tasks}
@@ -79,7 +79,7 @@ Il nome utilizzato per le \glossario{branch} del repository dovrà essere nella 
 
 \paragraph{Script di pre-commit}
 
-Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi \code{make test} e \code{make documents} descritti nella sezione \ref{makefile}. Se uno comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
+Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi \code{make test} e \code{make documents} descritti nella sezione \ref{makefile}. Se uno dei comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
 
 Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
 \begin{lstlisting}

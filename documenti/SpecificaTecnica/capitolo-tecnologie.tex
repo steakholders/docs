@@ -1,0 +1,45 @@
+\section{Tecnologie utilizzate}
+
+
+L'architettura è stata progettata cercando di tenere in considerazione diverse tecnologie, alcune delle quali espressamente richieste nel capitolato d'appalto. Vengono di seguito elencate e descritte le principali tecnologie impiegate e le motivazioni del loro utilizzo.
+
+\begin{itemize}
+	\item \textbf{Node.js} per la realizzazione della componente server;
+	\item \textbf{Express.js} per la realizzazione dell’infrastruttura della web application generata;
+	\item \textbf{MongoDB}: database di tipo NoSQL per la parte di recupero e salvataggio dei dati;
+	\item \textbf{Mongoose} per l’interfacciamento con il database;
+	\item \textbf{AngularJS} per gestire il rendering dell'interfaccia grafica lato client.
+\end{itemize}
+
+
+\subsection{Node.js}
+\textbf{Node.js} è un \glossario{framework} per realizzare applicazioni Web veloci e scalabili in JavaScript, permettendo di utilizzare questo linguaggio, tipicamente utilizzato nel lato client, anche per la scrittura di applicazioni lato server.
+La piattaforma è basata sul runtime di Google \glossario{V8 JavaScript Engine} utilizzato anche da \glossario{Chrome} e disponibile sulle principali piattaforme.
+
+I principali vantaggi derivati dall'utilizzo di Node.js sono:
+\begin{itemize}
+	\item \textbf{Approccio asincrono}: Node.js permette di accedere alle risorse del sistema operativo in modalità event-driven e non sfruttando il classico modello basato su processi o thread concorrenti, utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni poiché durante le attese, il runtime può gestire qualcos’altro in maniera asincrona.
+	\item \textbf{Architettura modulare}: Lavorando con Node.js è molto facile organizzare il lavoro in librerie, importare i moduli e combinarli fra loro. Questo è reso molto comodo attraverso il node package manager (npm) attraverso il quale lo sviluppatore può contribuire e accedere ai package messi a disposizione dalla community.
+\end{itemize}
+
+\subsection{Express.js}
+\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni Web con Node.js. Richiede moduli Node di terze parti per applicazioni che prevedono l’interazione con la basi di dati; \newline
+\`E stato utilizzato il \glossario{framework} Express.js per supportare lo sviluppo dell'application server grazie alle utili e robuste features da esso offerte, le quali sono pensate per non oscurare le funzionalità fornite da Node.js aprendo così le porte all'utilizzo di moduli per Node.js atti a supportare specifiche funzionalità.
+
+\subsection{MongoDB}
+\textbf{MongoDB} è un database NoSQL open-source scalabile e altamente performante di tipo document-oriented, ovvero in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura molto semplice e potente.
+
+I principali vantaggi derivati dal suo utilizzo sono:
+\begin{itemize}
+	\item \textbf{Alte performance}: non ci sono join che possono rallentare le operazioni di lettura o scrittura. L’indicizzazione include gli indici di chiave anche sui documenti innestati e sugli array permettendo una rapida interrogazione al database;
+	\item \textbf{Affidabilità}: alto meccanismo di replicazione su server;
+	\item \textbf{Schemaless}: non esiste nessuno schema, è più flessibile e può essere facilmente trasformato in oggetti;	
+	\item Permette di definire query complesse utilizzando un linguaggio che non è \glossario{SQL};
+	\item Permette di processare parallelamente i dati (\glossario{Map-Reduce});
+	\item Tipi di dato più flessibili.
+\end{itemize}
+
+\subsection{Mongoose}
+\textbf{Mongoose} è una libreria per MongoDB che permette di definire degli schemi per modellare i dati del database, facendo rispettare una certa struttura ai dati per la creazione di nuovi Document. Inoltre, fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il cast dei tipi predefiniti.
+
+Per interfacciare l'application server con MongoDB, sono disponibili diversi progetti open-source. Per questo progetto è stato scelto di utilizzare Mongoose, attualmente il più diffuso.

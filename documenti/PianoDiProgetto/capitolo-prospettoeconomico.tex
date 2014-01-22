@@ -1,3 +1,10 @@
+\definecolor{amministratore}{RGB}{51,102,204}
+\definecolor{analista}{RGB}{255,153,0}
+\definecolor{progettista}{RGB}{153,0,153}
+\definecolor{programmatore}{RGB}{7,55,99}
+\definecolor{responsabile}{RGB}{220,57,18}
+\definecolor{verificatore}{RGB}{16,150,24}
+
 \section{Prospetto economico}
 
 In questa sezione è presentato il prospetto economico del progetto \ProjectName{}, suddiviso per fasi. Per ogni fase sono indicate le ore preventivate per ogni ruolo impiegato.
@@ -58,9 +65,12 @@ Nella fase di Progettazione architetturale le ore per ogni ruolo sono state cosi
 I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fase.
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-2-1.png}
-\caption{Ore per ruolo, fase di Progettazione architetturale\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_rp}
+
+\end{tikzpicture}
+\caption{Ore per ruolo, fase di Progettazione architetturale}
 \end{figure}
 
 \begin{figure}[H]
@@ -88,9 +98,12 @@ Nella fase di Progettazione di dettaglio e codifica le ore per ogni ruolo sono s
 I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fase.
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-3-1.png}
-\caption{Ore per ruolo, fase di Progettazione di dettaglio e codifica\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_rq}
+
+\end{tikzpicture}
+\caption{Ore per ruolo, fase di Progettazione di dettaglio e codifica}
 \end{figure}
 
 \begin{figure}[H]
@@ -117,9 +130,11 @@ Nella fase di Validazione le ore per ogni ruolo sono state cosi suddivise:
 I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fase.
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-4-1.png}
-\caption{Ore per ruolo, fase di Validazione\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_ra}
+
+\end{tikzpicture}\caption{Ore per ruolo, fase di Validazione}
 \end{figure}
 
 \begin{figure}[H]

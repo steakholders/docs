@@ -1,26 +1,42 @@
 \pagebreak
 \section{Pianificazione dei test}
-Si vuole adottare una strategia di verifica del \glossario{software} tramite test opportunamente organizzati e determinati precedentemente all' attività di codifica. I test che si andranno ad applicare sono di quattro tipi, riservando la specifica dell'ultima tipologia alla prossima revisione. Ogni requisito verrà testato.
+Si vuole adottare una strategia di verifica del \glossario{software} tramite test opportunamente predeterminati e che garantiscano almeno un test per ogni requisito. I test sono l'applicazione delle tecniche di verifica dinamica introdotte nelle \NormeDiProgetto{}; tali attività, oltre a richiedere l'esecuzione del programma, devono poter essere ripetibili, ossia tramite delle specifiche su come riprodurre i test vogliamo che il loro output sia deterministico. \`E importante che i test di unità vengano svolti in parallelo, dando precedenza alle unità che producono risultati utili alla comprensione del loro funzionamento integrato, l'ambiente di testing deve soddisfare tale obiettivo. \\
+L'attività di test deve produrre un \glossario{log} che specifica quando e chi ha eseguito il test e con quali input; l'insorgenza di \glossario{failure} deve essere tracciata e catalogata.
+
+	\subsection{Livelli di testing}
+	Il testing del software viene suddiviso in livelli differenti e si concretizzano in un esecuzione bottom-up che avanza sequenzialmente alle attività di codifica e  di validazione. 
+	I test che si andranno ad applicare sono di cinque tipi, riservando la specifica delle ultime due tipologie alla prossima revisione:
 
 \begin{enumerate}
-	\item Test di Validazione (TV): viene verificato che il prodotto soddisfi quanto richiesto dal \glossario{proponente}.
-	\item Test di Sistema (TS): vengono verificate che le singole funzionalità del sistema funzioni come previsto.
-	\item Test di Integrazione (TI): vengono verificate le componenti del sistema specificate nella \SpecificaTecnica{}.
-	\item Test di Unità (TU): verrà descritta ed approfondita entro la prossima revisione.
+	\item Test di Validazione (TV): viene verificato che il prodotto soddisfi quanto richiesto dal \glossario{proponente} individuando delle macro azioni da eseguire sul sistema che un normale utente svolge comunemente;
+	\item Test di Sistema (TS): sono test relativi al comportamento dell'intero sistema ossia viene verificato che la sua architettura generale funziona complessivamente bene;
+	\item Test di Integrazione (TI): vengono verificate le componenti del sistema contenute nella \SpecificaTecnica{}, ossia viene verificato che i \glossario{package} siano funzionanti e in grado di funzionare nel loro insieme; %PACKAGE
+	\item Test di Unità (TU): viene testata ogni unità, ossia la più piccola parte di lavoro assegnabile ad un programmatore. In questo progetto una unità dovrebbe corrispondere ad una \code{function} o a un \code{method};  %FUNCION METODI
+	\item Test di Regressione (TR): possono essere test di tutte le tipologie succitate che devono mostrare il funzionamento del prodotto a seguito di una modifica.
 \end{enumerate}
 
-	
+	La figura \ref{fig:V-Model} illustra come i test elencati vengono distribuiti durante in ciclo di vita del prodotto.
+
+	\begin{figure}[h]
+	\centering \includegraphics[width=1\textwidth]{V-Model.png}
+	\caption{V-Model per il testing software}
+	\label{fig:V-Model}
+	\end{figure}
+
+	\pagebreak
 	\subsection{Test di sistema}
 	Vengono qui descritti i test di sistema che andranno a verificare il funzionamento complessivo delle componenti.
 	
 	%TODO qui va la tabella descrzione dei TS / requisiti
 	
+	\pagebreak
 	\subsection{Test di integrazione}
 	I test di integrazione vanno a controllare il corretto funzionamento delle componenti descritti dalla progettazione ad alto livello. 
 	
 	%TODO tabella TI: test / descrizione / componente / stato
 	%TODO tabellla: componente / test
 
+	\pagebreak
 	\subsection{Test di validazione}
 	In questa sezione vengono elencati i test di validazione per verificare che il prodotto sia conforme alle attese. I test si svolgono seguendo e verificano tutti passi di cui si compongono. 
 	
@@ -29,3 +45,4 @@ Si vuole adottare una strategia di verifica del \glossario{software} tramite tes
 	
 	
 	
+

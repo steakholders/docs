@@ -26,6 +26,7 @@ Amm
 an
 Ana
 Analysis
+anchor
 and
 Angular
 AngularJS
@@ -44,11 +45,13 @@ assessment
 assigned
 AST
 Astah
+at
 autoformazione
 avoided
 Awesome
 AWS
 back
+Back
 backslash
 baseline
 basicstyle
@@ -102,6 +105,7 @@ Collaborating
 collection
 colorlinks
 column
+columns
 combo
 comes
 commentstyle
@@ -122,6 +126,8 @@ Construction
 Continuous
 Control
 controller
+Controller
+coords
 corners
 correction
 coverage
@@ -139,6 +145,7 @@ dashboard
 dd
 DdP
 Delete
+delete
 dell
 dell'admin
 dell'Admin
@@ -164,6 +171,9 @@ DSL
 dyadic
 each
 Eclipse
+east
+Eclipse
+edit
 edition
 Education
 Efficiency
@@ -174,6 +184,7 @@ Ember
 encoding
 Endeavor
 Engine
+enlargelimits
 environment
 Erich
 Error
@@ -303,6 +314,7 @@ lavoro'
 lccccccc
 lccccccccc
 left
+legend
 limit
 l'index
 line
@@ -386,6 +398,7 @@ ND
 Nell'
 nell'index
 Nell'URL
+never
 newline
 Next
 niladic
@@ -399,6 +412,7 @@ NomeDelDocumento
 NomeDellaCostante
 nomeDellaFunzione
 nomemetrica
+north
 NoSQL
 NOT'
 NP
@@ -412,6 +426,7 @@ object
 of
 official
 officials
+often
 one
 OOP
 Operational
@@ -427,6 +442,7 @@ parameters
 parser
 parsing
 Part
+participants
 path
 Patterns
 pdc
@@ -449,6 +465,7 @@ placeholder
 plain
 plan
 Platform
+plotcoordinates
 plugin
 pollution
 polyadic
@@ -499,6 +516,7 @@ quest'ultime
 raccomanda'
 Rails
 Ralph
+rarely
 RAU
 Ready
 recovery
@@ -530,6 +548,7 @@ Retired
 Retrieve
 RF
 RFC
+RGB
 Richard
 ridenominare
 right
@@ -582,6 +601,7 @@ Slide
 smartphone
 Social
 Solution
+sometimes
 Sommerville
 somministrabile
 sortable
@@ -595,6 +615,7 @@ SQL
 SQMT
 ST
 stack
+stacked
 stakeholder
 stakeholders
 Started
@@ -618,6 +639,11 @@ sull'
 Sun
 SV
 SWEBOK
+sum
+Sun
+SV
+SWEBOK
+symbolic
 syntax
 system
 Systems
@@ -642,6 +668,7 @@ theory
 thread
 three
 threshold
+tick
 tier
 timer'
 title
@@ -702,6 +729,7 @@ very
 vgrid
 Viable
 view
+View
 Vlissides
 voting
 vv
@@ -721,5 +749,8 @@ with
 work
 working
 World
+xtick
+ybar
 year
+ylabel
 yyyy

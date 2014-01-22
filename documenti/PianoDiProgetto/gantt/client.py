@@ -36,15 +36,30 @@ class TeamworkPMClient:
 		# HTTPS è troppo lento, ma sarebbe la cosa più sicura per non passare la key in chiaro
 		request = urllib2.Request("http://{0}.teamworkpm.net/{1}".format(self.company, action))
 		request.add_header("Authorization", "BASIC " + base64.b64encode(self.key + ":xxx"))
-		response = urllib2.urlopen(request)
+
+		max_retry = 3
+		retry = 0
+		while True:
+			try:
+				response = urllib2.urlopen(request)
+			except urllib2.URLError as e:
+				retry += 1
+				if retry <= max_retry:
+					print "- Errore nel download, ritento ({num})...".format(num=retry)
+					continue
+				else:
+					raise e
+			break
+
 		data = response.read()
-		return data
+		info = response.info()
+		return (data, info)
 
 	def requestJSON(self, base_action, parameters=""):
 		action = base_action+".json"
 		if len(parameters) > 0:
 			action += "?" + parameters
 
-		json_data = self.request(action)
+		json_data, info = self.request(action)
 		data = json.loads(json_data)
-		return data
+		return (data, info)

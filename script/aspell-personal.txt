@@ -175,6 +175,7 @@ Ember
 encoding
 Endeavor
 Engine
+enlargelimits
 environment
 Error
 Established
@@ -583,6 +584,7 @@ SQL
 SQMT
 ST
 stack
+stacked
 stakeholder
 stakeholders
 Started

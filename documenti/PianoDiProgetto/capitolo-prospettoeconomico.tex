@@ -19,15 +19,7 @@ A scopo di trasparenza viene redatto il prospetto economico riguardante la fase 
 	\begin{tabular}{ l c c }
 	\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
 	\hline
-	Amministratore & 30 & 600 €\\
-	Analista & 58 & 870 €\\
-	Progettista & 9 & 198 €\\
-	Programmatore & 0 & 0 €\\
-	Responsabile & 14 & 420 €\\
-	Verificatore & 31 & 465 €\\
-	\hline
-	\textbf{Totale} & 142 & 2553 €\\
-	\hline
+	\input{prospetto_rr}
 	\end{tabular}
 	\caption{Ore e costo per ruolo, fase di Analisi}
 	\end{table}
@@ -35,15 +27,21 @@ A scopo di trasparenza viene redatto il prospetto economico riguardante la fase 
 I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fase.
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-1-1.png}
-\caption{Ore per ruolo, fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_rr}
+
+\end{tikzpicture}
+\caption{Ore per ruolo, fase di Analisi}
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-1-2.png}
-\caption{Costo per ruolo, fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_costo_rr}
+
+\end{tikzpicture}
+\caption{Costo per ruolo, fase di Analisi}
 \end{figure}
 
 \subsection{Progettazione architetturale}
@@ -74,10 +72,20 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fa
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{5-2-2.png}
-\caption{Costo per ruolo, fase di Progettazione architetturale\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_costo_rp}
+
+\end{tikzpicture}
+\caption{Costo per ruolo, fase di Progettazione architetturale}
 \end{figure}
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.4]{5-2-2.png}
+%\caption{Costo per ruolo, fase di Progettazione architetturale\label{fig:nome}}
+%\end{figure}
 
 \subsection{Progettazione di dettaglio e codifica}
 
@@ -107,9 +115,12 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fa
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-3-2.png}
-\caption{Costo per ruolo, fase di Progettazione di dettaglio e codifica\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_costo_rq}
+
+\end{tikzpicture}
+\caption{Costo per ruolo, fase di Progettazione di dettaglio e codifica}
 \end{figure}
 
 \subsection{Validazione}
@@ -138,9 +149,12 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa fa
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{5-4-2.png}
-\caption{Costo per ruolo, fase di Validazione\label{fig:nome}}
+\begin{tikzpicture}
+
+	\input{pieChart_costo_ra}
+
+\end{tikzpicture}
+\caption{Costo per ruolo, fase di Validazione}
 \end{figure}
 
 \subsection{Totale}

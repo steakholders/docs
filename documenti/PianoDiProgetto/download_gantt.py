@@ -65,11 +65,18 @@ writeColumnChartOreMilestone(project, milestone_ra, roles, "columnChart_ra.tex")
 writeColumnChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale.tex")
 writeColumnChartOreTotale(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale_con_analisi.tex")
 
+writePieChartCostoMilestone(project, milestone_rr, roles, "pieChart_costo_rr.tex")
+writePieChartCostoMilestone(project, milestone_rp, roles, "pieChart_costo_rp.tex")
+writePieChartCostoMilestone(project, milestone_rq, roles, "pieChart_costo_rq.tex")
+writePieChartCostoMilestone(project, milestone_ra, roles, "pieChart_costo_ra.tex")
+
+writePieChartOreMilestone(project, milestone_rr, roles, "pieChart_rr.tex")
 writePieChartOreMilestone(project, milestone_rp, roles, "pieChart_rp.tex")
 writePieChartOreMilestone(project, milestone_rq, roles, "pieChart_rq.tex")
 writePieChartOreMilestone(project, milestone_ra, roles, "pieChart_ra.tex")
 # writePieChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "pieChart_totale.tex")
 
+writeProspettoMilestone(project, milestone_rr, roles, "prospetto_rr.tex")
 writeProspettoMilestone(project, milestone_rp, roles, "prospetto_rp.tex")
 writeProspettoMilestone(project, milestone_rq, roles, "prospetto_rq.tex")
 writeProspettoMilestone(project, milestone_ra, roles, "prospetto_ra.tex")

@@ -50,6 +50,7 @@ autoformazione
 avoided
 Awesome
 AWS
+back
 Back
 backslash
 baseline
@@ -124,6 +125,7 @@ Constraints
 Construction
 Continuous
 Control
+controller
 Controller
 coords
 corners
@@ -142,6 +144,7 @@ dall'Admin
 dashboard
 dd
 DdP
+Delete
 delete
 dell
 dell'admin
@@ -167,6 +170,7 @@ dsgfdgfg
 DSL
 dyadic
 each
+Eclipse
 east
 Eclipse
 edit
@@ -384,6 +388,8 @@ Mozilla
 MU
 MUST
 MVC
+MVVM
+MVW
 mygray
 mygreen
 name
@@ -515,6 +521,7 @@ RAU
 Ready
 recovery
 red
+refactor
 reference
 rege
 regexp
@@ -629,6 +636,9 @@ stub
 style
 subtask'
 sull'
+Sun
+SV
+SWEBOK
 sum
 Sun
 SV
@@ -718,6 +728,7 @@ versionato
 very
 vgrid
 Viable
+view
 View
 Vlissides
 voting
@@ -729,6 +740,7 @@ Way
 ways
 WebKit
 Well
+Whatever
 where
 Wide
 wiki

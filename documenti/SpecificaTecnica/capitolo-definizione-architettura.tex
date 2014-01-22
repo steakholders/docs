@@ -10,10 +10,14 @@ I diagrammi dei package e delle classi presentati di seguito utilizzano la speci
 
 \subsection{Architettura generale}
 
+L'architettura scelta per lo sviluppo di \ProjectName servendosi del design pattern \glossario{MVC} (Model-View-Controller). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello evidenziando le componenti che ricoprono i ruoli di model e controller per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la view poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (JSON) è automatica e diretta.
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
+
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{3-TIER.png}
-\caption{Schema del modello utilizzato \label{fig:architetturadisistema}}
+\includegraphics[width=\textwidth]{architettura-generale-package.png}
+\caption{Architettura generale dei package}
+\label{architetturaGeneralePackage}
 \end{figure}
 
 \subsection{Three-Tier Architecture}
@@ -22,7 +26,7 @@ I diagrammi dei package e delle classi presentati di seguito utilizzano la speci
  
 Si tratta di un'architettura di tipo \glossario{client-server}, in cui i processi logici, la persistenza dei dati e l'interfaccia utente sono sviluppati e mantenuti in moduli tra loro indipendenti e distribuiti. Il vantaggio che ne consegue è che un modulo può essere aggiornato o sostituito senza dover alterare gli altri.
 
-Come da figura \ref{fig:architetturadisistema} i tre livelli sono:
+I tre livelli individuati sono:
 \begin{itemize}
 \item \textbf{Livello presentazione} Si tratta dello strato che comunica con l'utente, il quale è estraneo all'esistenza degli altri moduli. Il compito di questo strato è fornire un'interfaccia utente, la quale comunicherà con il modulo logico per aggiornarsi e trasmettere le scelte dell'utente. Solitamente questo livello si trova sul \glossario{client};
 \item \textbf{Livello logico} Questo livello racchiude le funzionalità, i processi e gli algoritmi dell'applicazione. Solitamente questo livello si trova su un \glossario{server} e si rapporta con il livello interfaccia e il livello dati; 

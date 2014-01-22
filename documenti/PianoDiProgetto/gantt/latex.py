@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+from __future__ import division
 from utils import *
 
 def writeGanttMilestone(project, milestone_id, filename):
@@ -228,3 +229,101 @@ def writeConsuntivoTotale(project, milestone_ids, roles_id, filename):
 		latex(u" \\\\")
 
 	out.close()
+
+def writeColumnChartOreMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+	
+	for role in roles:
+
+		latex("\\addplot+[color={ruolo}] plotcoordinates".format(
+		ruolo=role.getName().title())
+		, False)
+		latex("{",False)
+		for person in sortByName(project.getPeople()):
+			person_planned_hours = 0
+			cost = milestone.getPersonRoleCost(person, role)
+			person_planned_hours += cost.getPlannedHours()
+			latex(u"({persona},{ore})".format(
+				persona = person.getName(),
+				ore = person_planned_hours 
+			) , False)
+		
+		latex(u"};", True)
+
+	out.close()
+	
+def writeColumnChartOreTotale(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+		
+	for role in roles:
+		latex("\\addplot+[color={ruolo}] plotcoordinates".format(ruolo=role.getName().title()), False)
+		latex("{",False)
+		for person in sortByName(project.getPeople()):
+			person_planned_hours = 0
+			planned_hours = sum([m.getPersonRoleCost(person, role).getPlannedHours() for m in milestones])
+			latex(u"({persona},{ore})".format(
+			persona = person.getName(),
+			ore = planned_hours
+			) , False)
+		latex(u"};", True)
+
+	out.close()
+
+def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
+	milestone = project.getMilestone(str(milestone_id))
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	planned_total_cost = 0
+	planned_total_hours = 0
+	latex(u"\\pie[text=legend, color={amministratore, analista, progettista, programmatore, responsabile, verificatore}]{", False)
+	for role in roles:
+		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_hours += planned_hours
+
+	firstentry = True
+	for role in roles:
+		role_costs = [milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+		
+		planned_cost = sum([c.getPlannedCost() for c in role_costs])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		planned_total_cost += planned_cost
+
+		if not firstentry:
+			latex(u", ", False)
+		firstentry = False
+
+		if planned_hours != 0:
+			latex(u"{ore:.1f}/{ruolo}".format(
+				ruolo = role.getName().title(),
+				ore = (planned_hours * 100 / planned_total_hours)
+			), False)
+		else:
+			latex(u"./{ruolo}".format(
+				ruolo = role.getName().title()
+			), False)
+
+	latex(u"}")
+	
+	out.close()
+

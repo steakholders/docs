@@ -1,3 +1,20 @@
+\definecolor{Amministratore}{RGB}{51,102,204}
+\definecolor{Analista}{RGB}{255,153,0}
+\definecolor{Progettista}{RGB}{153,0,153}
+\definecolor{Programmatore}{RGB}{7,55,99}
+\definecolor{Responsabile}{RGB}{220,57,18}
+\definecolor{Verificatore}{RGB}{16,150,24}
+
+\pgfplotsset{
+ybar stacked, enlargelimits =0.05,
+legend style ={at={(0.5,-0.5)},
+anchor=north,
+legend columns=-1},
+ylabel={Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
+}
 \section{Suddivisione del lavoro e Prospetto Orario} 
 
 \sectionmark{Suddivisione del lavoro \dots}
@@ -29,13 +46,7 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
     \midrule
     
-    E. Rotundo 		&   & 12 & 9 &  &  & 2 & 23 \\
-    F. Poli 		&   & 9 &  &  & 4 & 9 & 22 \\
-    G. Fornari		& 9 & 2 & 	&  & 5 & 4 & 20 \\
-    G. Donato 		&   & 10 &  &  &  & 11 & 21 \\
-    L. De Franceschi  & 6 & 11 &  &  &  &  & 17 \\
-    N. Tresoldi 		& 15&  &  &  & 5 &  & 20 \\
-   	S. Girardi 		&   & 14 &  &  &  & 5 & 19 \\
+    	\input{suddivisione_rr}
     
     \bottomrule
 \end{tabular}
@@ -45,9 +56,13 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
 I valori in tabella sono riassunti nel seguente grafico: \\ 
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-1.png}
-\caption{Ore per componente, fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_rr}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di analisi}
 \end{figure}
 
 Si fa notare che le ore sopra indicate non sono incluse nelle 105 ore rappresentanti il tetto massimo di ore somministrabile da ciascun componente.
@@ -74,9 +89,13 @@ Nella fase di Progettazione architetturale ciascun componente dovrà rivestire i
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-2.png}
-\caption{Ore per componente, fase di Progettazione architetturale\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_rp}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di progettazione architetturale}
 \end{figure}
 
 \pagebreak
@@ -102,11 +121,14 @@ Nella fase di Progettazione di dettaglio e codifica ciascun componente dovrà ri
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-3.png}
-\caption{Ore per componente, fase di Progettazione di dettaglio e codifica \label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_rq}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di Progettazione di dettaglio e codifica}
 \end{figure}
-
 \pagebreak
 \subsection{Validazione}
 
@@ -128,11 +150,14 @@ Nella fase di Validazione ciascun componente dovrà rivestire i seguenti ruoli:
 \end{table}
 
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
-
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-4.png}
-\caption{Ore per componente, fase di Validazione\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_ra}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di validazione}
 \end{figure}
 
 \pagebreak
@@ -148,17 +173,22 @@ Il totale delle ore, comprensive delle ore di Analisi dei requisiti che saranno 
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
     \midrule
 
-		TODO a mano \\
+		 	\input{suddivisione_totale_con_analisi}
 
     \bottomrule
 \end{tabular}
 \caption{Ore per componente totali, inclusa fase di Analisi}
 \end{table}
 
+
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-5-1.png}
-\caption{Ore per componente totali, inclusa fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+	\input{columnChart_totale_con_analisi}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente totali, inclusa fase di Analisi}
 \end{figure}
 
 Nella seguente tabella sono invece riportate le ore fornite da ciascun componente, escluse quelle rientranti nella fase di Analisi dei requisiti. 
@@ -179,8 +209,13 @@ Le ore totali preventivabili devono essere comprese tra la soglia minima di 85 o
 \caption{Ore per componente totali, rendicontate}
 \end{table}
 
+
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-5-2.png}
-\caption{Ore per componente totali, rendicontate\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_totale}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente totali, rendicontate}
 \end{figure}

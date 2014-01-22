@@ -152,7 +152,13 @@ class TeamworkPMDownload(TeamworkPMClient):
 						xpage = int(xpage),
 						page = page
 					))
-
+			
+			if "time-entries" not in data:
+				break
+			
+			if len(data["time-entries"]) == 0:
+				break
+			
 			for timeentry in data["time-entries"]:
 				task = project.getTask(timeentry["todo-item-id"])
 				hours = int(timeentry["hours"]) + int(timeentry["minutes"])/60

@@ -5,7 +5,16 @@
 \definecolor{Responsabile}{RGB}{220,57,18}
 \definecolor{Verificatore}{RGB}{16,150,24}
 
-
+\pgfplotsset{
+ybar stacked, enlargelimits =0.05,
+legend style ={at={(0.5,-0.5)},
+anchor=north,
+legend columns=-1},
+ylabel={Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
+}
 \section{Suddivisione del lavoro e Prospetto Orario} 
 
 \sectionmark{Suddivisione del lavoro \dots}
@@ -81,17 +90,9 @@ Nella fase di Progettazione architetturale ciascun componente dovrà rivestire i
 \end{table}
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
-\begin{figure}
+\begin{figure}[H]
 \begin{tikzpicture}
-\begin{axis}[ybar stacked, enlargelimits =0.05,
-legend style ={at={(0.5,-0.20)},
-anchor=north,
-legend columns=-1},
-ylabel={\#Ore},
-xtick=data,
-x tick label style={rotate=45,anchor=east},
-symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
-]
+\begin{axis}
 \input{columnChart_rp}
 \legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
 \end{axis}
@@ -121,17 +122,9 @@ Nella fase di Progettazione di dettaglio e codifica ciascun componente dovrà ri
 
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
 
-\begin{figure}
+\begin{figure}[H]
 \begin{tikzpicture}
-\begin{axis}[ybar stacked, enlargelimits =0.05,
-legend style ={at={(0.5,-0.20)},
-anchor=north,
-legend columns=-1},
-ylabel={\#Ore},
-xtick=data,
-x tick label style={rotate=45,anchor=east},
-symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
-]
+\begin{axis}
 \input{columnChart_rq}
 \legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
 \end{axis}
@@ -159,17 +152,9 @@ Nella fase di Validazione ciascun componente dovrà rivestire i seguenti ruoli:
 \end{table}
 
 I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
-\begin{figure}
+\begin{figure}[H]
 \begin{tikzpicture}
-\begin{axis}[ybar stacked, enlargelimits =0.05,
-legend style ={at={(0.5,-0.20)},
-anchor=north,
-legend columns=-1},
-ylabel={\#Ore},
-xtick=data,
-x tick label style={rotate=45,anchor=east},
-symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi,}
-]
+\begin{axis}
 \input{columnChart_ra}
 \legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
 \end{axis}
@@ -197,10 +182,15 @@ Il totale delle ore, comprensive delle ore di Analisi dei requisiti che saranno 
 \caption{Ore per componente totali, inclusa fase di Analisi}
 \end{table}
 
+
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-5-1.png}
-\caption{Ore per componente totali, inclusa fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+	%\input{columnChart_totale_con_analisi}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente totali, inclusa fase di Analisi}
 \end{figure}
 
 Nella seguente tabella sono invece riportate le ore fornite da ciascun componente, escluse quelle rientranti nella fase di Analisi dei requisiti. 
@@ -221,8 +211,13 @@ Le ore totali preventivabili devono essere comprese tra la soglia minima di 85 o
 \caption{Ore per componente totali, rendicontate}
 \end{table}
 
+
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-5-2.png}
-\caption{Ore per componente totali, rendicontate\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_totale}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente totali, rendicontate}
 \end{figure}

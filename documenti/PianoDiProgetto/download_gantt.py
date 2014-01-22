@@ -6,6 +6,7 @@ from gantt.schema import *
 from gantt.download import *
 from gantt.process import *
 from gantt.latex import *
+from gantt.dati_rr import *
 
 tw = TeamworkPMDownload("steakholders")
 project = Project(id=65465)
@@ -20,16 +21,17 @@ print "Scarico TimeEntries..."
 tw.getTimeEntries(project)
 print "Scaricamento completato."
 
-
-testTasks(project)
-testPeople(project)
-testConcurrentTasks(project)
-
-milestone_rr = 101586
+milestone_rr = 999999 # tenere 999999
 milestone_rp = 103264
 milestone_rq = 103265
 milestone_ra = 104204
 
+testTasks(project)
+testConcurrentTasks(project)
+
+aggiungi(project, milestone_rr)
+
+testPeople(project)
 testEstimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])
 
 writeGanttMilestone(project, milestone_rp, "gantt_rp.tex")
@@ -58,7 +60,8 @@ writeSuddivisioneOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], 
 writeColumnChartOreMilestone(project, milestone_rp, roles, "columnChart_rp.tex")
 writeColumnChartOreMilestone(project, milestone_rq, roles, "columnChart_rq.tex")
 writeColumnChartOreMilestone(project, milestone_ra, roles, "columnChart_ra.tex")
-# writeColumnChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale.tex")
+writeColumnChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale.tex")
+writeColumnChartOreTotale(project, [milestone_rr ,milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale_con_analisi.tex")
 
 writePieChartOreMilestone(project, milestone_rp, roles, "pieChart_rp.tex")
 writePieChartOreMilestone(project, milestone_rq, roles, "pieChart_rq.tex")

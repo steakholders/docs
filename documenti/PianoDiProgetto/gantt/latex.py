@@ -258,7 +258,31 @@ def writeColumnChartOreMilestone(project, milestone_id, roles_id, filename):
 		latex(u"};", True)
 
 	out.close()
+	
+def writeColumnChartOreTotale(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+		
+	for role in roles:
+		latex("\\addplot+[color={ruolo}] plotcoordinates".format(ruolo=role.getName().title()), False)
+		latex("{",False)
+		for person in sortByName(project.getPeople()):
+			person_planned_hours = 0
+			planned_hours = sum([m.getPersonRoleCost(person, role).getPlannedHours() for m in milestones])
+			person_planned_hours += planned_hours
+			latex(u"({persona},{ore})".format(
+			persona = person.getName(),
+			ore = planned_hours
+			) , False)
+		latex(u"};", True)
 
+	out.close()
 
 def writePieChartOreMilestone(project, milestone_id, roles_id, filename):
 	milestone = project.getMilestone(str(milestone_id))

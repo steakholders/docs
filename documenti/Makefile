@@ -4,21 +4,26 @@ REPO_DIR = ..
 # Includi i comandi comuni a tutti i makefile.
 include $(REPO_DIR)/script/global.mk
 
+DOCUMENTS = \
+	NormeDiProgetto \
+	PianoDiProgetto \
+	PianoDiQualifica \
+	Glossario \
+	LetteraDiPresentazione \
+	Verbale2013-12-05 \
+	AnalisiDeiRequisiti \
+	StudioDiFattibilita \
+	Verbale2013-12-18 \
+	SpecificaTecnica
+
 all:
 	@make test-spelling
 	@make documents
 
-documents:
-	@cd "NormeDiProgetto" && make documents
-	@cd "PianoDiProgetto" && make documents
-	@cd "PianoDiQualifica" && make documents
-	@cd "Glossario" && make documents
-	@cd "LetteraDiPresentazione" && make documents
-	@cd "Verbale2013-12-05" && make documents
-	@cd "AnalisiDeiRequisiti" && make documents
-	@cd "StudioDiFattibilita" && make documents
-	@cd "Verbale2013-12-18" && make documents
-	@cd "SpecificaTecnica" && make documents
+# Permette di lanciarli in parallelo con -j 8
+documents: $(DOCUMENTS:=.doc)
+%.doc:
+	@cd "$(@:.doc=)" && make documents
 
 test-spelling:
 	@cd "NormeDiProgetto" && make test-spelling

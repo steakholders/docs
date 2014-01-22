@@ -51,7 +51,6 @@ avoided
 Awesome
 AWS
 back
-Back
 backslash
 baseline
 basicstyle
@@ -126,7 +125,6 @@ Construction
 Continuous
 Control
 controller
-Controller
 coords
 corners
 correction
@@ -144,8 +142,8 @@ dall'Admin
 dashboard
 dd
 DdP
-Delete
 delete
+Delete
 dell
 dell'admin
 dell'Admin
@@ -170,7 +168,6 @@ dsgfdgfg
 DSL
 dyadic
 each
-Eclipse
 east
 Eclipse
 edit
@@ -235,6 +232,7 @@ garbage
 gedit
 general
 Generator
+GET
 GG
 git
 GitHub
@@ -329,6 +327,7 @@ log
 logger
 logic
 logout
+lostpassword
 l'overhead
 Lucidchart
 LUF
@@ -363,6 +362,7 @@ McConnell
 Measure
 Medical
 menu
+message
 Message
 metadati
 method
@@ -497,6 +497,7 @@ Process
 processi'
 Product
 Professional
+profile
 Prog
 progetto'
 Programatore
@@ -508,6 +509,7 @@ projects
 Protocol
 pt
 purpose
+PUT
 python
 qualcos
 quality
@@ -535,6 +537,7 @@ report
 repository
 Representational
 request
+require
 Requirements
 requires
 requisteak
@@ -580,6 +583,7 @@ sep
 Separated
 Seq
 Service
+session
 setup
 seven
 SF
@@ -636,9 +640,6 @@ stub
 style
 subtask'
 sull'
-Sun
-SV
-SWEBOK
 sum
 Sun
 SV
@@ -711,6 +712,7 @@ Usability
 Usable
 Useable
 used
+userId
 username
 users
 utf
@@ -729,7 +731,6 @@ very
 vgrid
 Viable
 view
-View
 Vlissides
 voting
 vv

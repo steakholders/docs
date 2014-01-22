@@ -5,22 +5,22 @@ from schema import TaskList, Milestone, Task
 
 def aggiungi(project, milestone_id):
 	# id giusti
-	federico = 62756	
-	serena = 62757	
-	luca = 62758	
-	gianluca = 62760	
-	enrico = 62754	
-	nicolo = 62757	
-	giacomo = 62753	
+	federico = "62756"	
+	serena = "62755"	
+	luca = "62758"	
+	gianluca = "62760"	
+	enrico = "62754"	
+	nicolo = "62757"
+	giacomo = "62753"	
 	
-	milestone = Milestone(project, milestone_id, None, "Analisi dei requisiti")
+	milestone = Milestone(project, str(milestone_id), None, "Analisi dei requisiti")
 	project.addMilestone(milestone)
 	
 	tasklist = TaskList(milestone, 1, "AR", "Fittizia")
 	milestone.addTaskList(tasklist)
 		
 	tabella = []
-	tabella.append((federico, "analisi", 9))
+	tabella.append((federico, "analista", 9))
 	tabella.append((federico, "responsabile", 4))
 	tabella.append((federico, "verificatore", 9))
 	tabella.append((enrico, "analista", 12))

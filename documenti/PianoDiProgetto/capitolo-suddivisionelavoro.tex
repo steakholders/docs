@@ -46,13 +46,7 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
     \midrule
     
-    E. Rotundo 		&   & 12 & 9 &  &  & 2 & 23 \\
-    F. Poli 		&   & 9 &  &  & 4 & 9 & 22 \\
-    G. Fornari		& 9 & 2 & 	&  & 5 & 4 & 20 \\
-    G. Donato 		&   & 10 &  &  &  & 11 & 21 \\
-    L. De Franceschi  & 6 & 11 &  &  &  &  & 17 \\
-    N. Tresoldi 		& 15&  &  &  & 5 &  & 20 \\
-   	S. Girardi 		&   & 14 &  &  &  & 5 & 19 \\
+    	\input{suddivisione_rr}
     
     \bottomrule
 \end{tabular}
@@ -62,9 +56,13 @@ Nella fase di Analisi dei requisiti ciascun componente dovrà rivestire i seguen
 I valori in tabella sono riassunti nel seguente grafico: \\ 
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{4-1.png}
-\caption{Ore per componente, fase di Analisi\label{fig:nome}}
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_rr}
+\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+\end{axis}
+\end{tikzpicture}
+\caption{Ore per componente, periodo di analisi}
 \end{figure}
 
 Si fa notare che le ore sopra indicate non sono incluse nelle 105 ore rappresentanti il tetto massimo di ore somministrabile da ciascun componente.
@@ -175,7 +173,7 @@ Il totale delle ore, comprensive delle ore di Analisi dei requisiti che saranno 
      & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
     \midrule
 
-		TODO a mano \\
+		 	\input{suddivisione_totale_con_analisi}
 
     \bottomrule
 \end{tabular}
@@ -186,7 +184,7 @@ Il totale delle ore, comprensive delle ore di Analisi dei requisiti che saranno 
 \begin{figure}[H]
 \begin{tikzpicture}
 \begin{axis}
-	%\input{columnChart_totale_con_analisi}
+	\input{columnChart_totale_con_analisi}
 \legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
 \end{axis}
 \end{tikzpicture}

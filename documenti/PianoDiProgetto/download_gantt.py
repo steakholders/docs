@@ -50,18 +50,20 @@ roles = [
 	"responsabile",
 	"verificatore"
 ]
-#writeMembriGruppo(project, milestone_rp, roles, "membri_gruppo.tex")
 
+writeSuddivisioneOreMilestone(project, milestone_rr, roles, "suddivisione_rr.tex")
 writeSuddivisioneOreMilestone(project, milestone_rp, roles, "suddivisione_rp.tex")
 writeSuddivisioneOreMilestone(project, milestone_rq, roles, "suddivisione_rq.tex")
 writeSuddivisioneOreMilestone(project, milestone_ra, roles, "suddivisione_ra.tex")
 writeSuddivisioneOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "suddivisione_totale.tex")
+writeSuddivisioneOreTotale(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "suddivisione_totale_con_analisi.tex")
 
+writeColumnChartOreMilestone(project, milestone_rr, roles, "columnChart_rr.tex")
 writeColumnChartOreMilestone(project, milestone_rp, roles, "columnChart_rp.tex")
 writeColumnChartOreMilestone(project, milestone_rq, roles, "columnChart_rq.tex")
 writeColumnChartOreMilestone(project, milestone_ra, roles, "columnChart_ra.tex")
 writeColumnChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale.tex")
-writeColumnChartOreTotale(project, [milestone_rr ,milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale_con_analisi.tex")
+writeColumnChartOreTotale(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_totale_con_analisi.tex")
 
 writePieChartOreMilestone(project, milestone_rp, roles, "pieChart_rp.tex")
 writePieChartOreMilestone(project, milestone_rq, roles, "pieChart_rq.tex")

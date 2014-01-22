@@ -27,6 +27,7 @@ BCWP
 BCWS
 BSON
 BV
+Back
 Before
 Benefit
 BioComputing
@@ -293,6 +294,8 @@ Structured
 Sun
 Systems
 TODO
+TR
+TS
 Tag
 Teamwork
 TeamworkPM
@@ -359,9 +362,6 @@ assessment
 assigned
 autoformazione
 avoided
-Awesome
-AWS
-Back
 backslash
 baseline
 basicstyle
@@ -371,6 +371,7 @@ between
 bioinformatica
 blabla
 black
+bottom
 branch
 breakatwhitespace
 breaklines
@@ -440,6 +441,7 @@ explain
 extendedchars
 external
 facilitatore
+failure
 fault
 features
 fgdfgdfgd
@@ -521,6 +523,7 @@ maxhe
 maxhv
 menu
 metadati
+method
 methods
 metrics
 milestone
@@ -692,7 +695,6 @@ tools
 tree
 triadic
 true
-TS
 two
 txt
 un'email

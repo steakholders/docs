@@ -1,0 +1,58 @@
+\pagebreak
+
+
+% TS / req
+	
+	\begin{table}[h]
+		\begin{tabularx}{\textwidth}{ | c | P{3cm} | c | X | }
+ 			\hline \textbf{Test} & \textbf{Descrizione} & \textbf{Stato} & \textbf{Requisito} \\ % INTESTAZIONE TABELLA
+ 				\hline col1 & col2 & col3 & col4 \\ % <------ CONTENUTO
+ 			\hline % obbligatorio alla fine !
+		\end{tabularx}
+		\caption{Associazione test di sistema con relativo requisito.}
+	\end{table}
+	
+	
+	
+% TI / componente
+
+	\begin{table}[h]
+		\begin{tabularx}{\textwidth}{ | c | P{3cm} | c | X | }
+ 			\hline \textbf{Test} & \textbf{Descrizione} & \textbf{Componente} & \textbf{Stato} \\ % INTESTAZIONE TABELLA
+ 				\hline col1 & col2 & col3 & col4 \\ % <------ CONTENUTO
+ 			\hline % obbligatorio alla fine !
+		\end{tabularx}
+		\caption{Associazione test di integrazione con relativo componente.}
+	\end{table}
+
+% componente / TI
+	\begin{table}[h]
+		\begin{tabularx}{\textwidth}{ | X | X | }
+ 			\hline \textbf{Componente} & \textbf{Test}  \\ % INTESTAZIONE TABELLA
+ 				\hline col1 & col2 \\ % <------ CONTENUTO
+ 			\hline % obbligatorio alla fine !
+		\end{tabularx}
+		\caption{Tracciamento componenti test di integrazione.}
+	\end{table}
+
+% TV
+
+
+
+\textbf{NOME TEST PRIMO LIVELLO} % PRIMO LVL = TVx
+\begin{center}
+      \bgroup
+      \def\arraystretch{1.3}
+	\begin{longtable}{ p{2.3cm} p{10cm} }
+		\textbf{Scopo:} & TESTO SCOPO \\ % TESTO SCOPO TV primo livello
+		\textbf{Dipendenze:} & TESTO DIPENDENZE \\ % TESTO DIP. TV primo livevllo
+		\textbf{All'utente è richiesto di:} &
+			\begin{itemize} % ELENCO PUNTATO DEI TEST FIGLI IN MODO RICORSIVO cioè per ogni livello va un sotto-elenco puntato.
+				\item TESTO DESCRIZIONE TV DI LIVELLO 2  (TV x.x) % TESTO DESCR + CODICE TV secondo livello!
+			\end{itemize}
+	\end{longtable}
+      \egroup
+\end{center}  
+
+
+

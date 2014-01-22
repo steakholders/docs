@@ -35,4 +35,5 @@ else:
 
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
-lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura_generale_package.png")
+lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png")
+

@@ -103,13 +103,16 @@
 % permette di aggiustare i margini e centrare tabelle e figure
 \usepackage{changepage}
 
+%Permette di includere i grafici a barre
+%IMPORTANTE: deve essere caricato prima di /pgfgantt altrimenti causa conflitto
+\usepackage{pgfplots}
+
 % permette di includere i diagrammi Gantt
 % su Ubuntu non si può installare il pacchetto, deve essere in modello/
 \usepackage{../../modello/pgfgantt}
 
 % permette di includere i grafici a torta
 \usepackage{../../modello/pgf-pie}
-\usepackage{pgfplots}
 
 % necessario per pgf-pie
 \usepackage{tikz}

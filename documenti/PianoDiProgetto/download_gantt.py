@@ -69,12 +69,12 @@ writePieChartCostoMilestone(project, milestone_rr, roles, "pieChart_costo_rr.tex
 writePieChartCostoMilestone(project, milestone_rp, roles, "pieChart_costo_rp.tex")
 writePieChartCostoMilestone(project, milestone_rq, roles, "pieChart_costo_rq.tex")
 writePieChartCostoMilestone(project, milestone_ra, roles, "pieChart_costo_ra.tex")
+writePieChartCostoTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "pieChart_costo_totale.tex")
 
 writePieChartOreMilestone(project, milestone_rr, roles, "pieChart_rr.tex")
 writePieChartOreMilestone(project, milestone_rp, roles, "pieChart_rp.tex")
 writePieChartOreMilestone(project, milestone_rq, roles, "pieChart_rq.tex")
 writePieChartOreMilestone(project, milestone_ra, roles, "pieChart_ra.tex")
-# writePieChartOreTotale(project, [milestone_rp, milestone_rq, milestone_ra], roles, "pieChart_totale.tex")
 
 writeProspettoMilestone(project, milestone_rr, roles, "prospetto_rr.tex")
 writeProspettoMilestone(project, milestone_rp, roles, "prospetto_rp.tex")

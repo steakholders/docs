@@ -4,10 +4,10 @@ all'anilisi all'analisi
 allìapplicazione all'applicazione
 declassere declassare
 dell'aministratore dell'amministratore
+dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
-dellanno dell'anno
 ec ecc
 erraro errato
 grupp gruppo

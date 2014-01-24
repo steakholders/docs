@@ -1,45 +1,13 @@
 Scarico Milestones...
 Scarico People...
 Scarico TaskLists...
-Scarico TimeEntries...
-- Pagina 1 di 1...
-- Pagina 2 di 5...
-Scaricamento completato.
-
-Controllo vincoli sui task
---------------------------
-
-Controllo task sovrapposti
---------------------------
-ATTENZIONE: Nicolò Tresoldi ha dei task sovrapposti. Il primo è il giorno 2014-01-15
-
-Controllo vincoli sulle persone
--------------------------------
-- Serena Girardi: 	104 	ore di lavoro
-- Enrico Rotundo: 	102 	ore di lavoro
-- Nicolò Tresoldi: 	108 	ore di lavoro
-- Federico Poli: 	105 	ore di lavoro
-- Giacomo Fornari: 	104 	ore di lavoro
-- Gianluca Donato: 	104 	ore di lavoro
-- Luca De Franceschi: 	104 	ore di lavoro
-
-ATTENZIONE: Serena Girardi ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
-ATTENZIONE: Enrico Rotundo ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
-ATTENZIONE: Nicolò Tresoldi ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
-ATTENZIONE: Luca De Franceschi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
-
-ATTENZIONE: Nicolò Tresoldi (108 h) deve fare almassimo 105 ore di lavoro
-
-Controllo vincoli sul preventivo
---------------------------------
-- amministratore: 221 	ore, per un costo di 	4420 	€
-- programmatore : 137 	ore, per un costo di 	2055 	€
-- responsabile  : 19 	ore, per un costo di 	570 	€
-- analista      : 39 	ore, per un costo di 	975 	€
-- verificatore  : 242 	ore, per un costo di 	3630 	€
-- progettista   : 190 	ore, per un costo di 	4180 	€
-Totale          : 15830 €
-Ore di verifica : 28.5 %
-
-ATTENZIONE: Troppe poche ore di verifica (242 h), bisogna fare almeno 254 h
-ATTENZIONE: Il preventivo (15830 €) è meglio che sia inferiore a 13499 €
+Traceback (most recent call last):
+  File "download_gantt.py", line 19, in <module>
+    tw.getTaskLists(project)
+  File "/home/luca/workspace/docs/documenti/PianoDiProgetto/gantt/download.py", line 125, in getTaskLists
+    tasklist_obj, task["id"], date_parse(task["start-date"]), date_parse(task["due-date"]), code, task_name,
+  File "/home/luca/workspace/docs/documenti/PianoDiProgetto/gantt/download.py", line 13, in date_parse
+    return datetime.strptime(str, "%Y%m%d").date()
+  File "/usr/lib/python2.7/_strptime.py", line 325, in _strptime
+    (data_string, format))
+ValueError: time data '' does not match format '%Y%m%d'

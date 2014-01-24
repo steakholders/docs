@@ -1,12 +1,21 @@
 \section{Diagrammi di attività}
 
-Vengono in seguito illustrati i diagrammi di attività prodotti durante la progettazione architetturale, i quali descrivono le iterazioni con l'utente al sistema \glossario{MaaP}. Inizialmente verrà fornito uno schema ad alto livello, per poi andare sempre più nel dettaglio tramite sotto-diagrammi più specifici. Per comodità di visualizzazione le attività che verranno \textit{esplose} sono marcate in grassetto. 
+Vengono in seguito illustrati i diagrammi di attività prodotti durante la progettazione architetturale, i quali descrivono le iterazioni con l'utente al sistema \glossario{MaaP}. È stato scelto di dividere i diagrammi in tre categorie principali, in modo analogo a quanto fatto nella descrizione dei casi d'uso dell'\textit{Analisi dei requisiti}:
 
-Al fine di rendere il diagramma leggibile abbiamo considerato implicito il fatto che un utente possa in qualsiasi momento uscire dall'applicazione \glossario{MaaP}, per esempio chiudendo la finestra del browser.
+\begin{itemize}
 
-\subsection{}
+	\item \textbf{Applicazione \glossario{MaaP}}, in cui verranno descritte le iterazioni che un utente può fare all'interno di un'applicazione generata dal \glossario{framework};
+	\item \textbf{\glossario{MaaP} \glossario{framework}}, in cui vengono descritte le azioni che uno sviluppatore può effettuare utilizzando il \glossario{framework};
+	\item \textbf{\glossario{MaaS}}, in cui verranno descritte le iterazioni all'interno del suddetto servizio web.
 
-\subsection{MaaP - Attività principali}
+\end{itemize}
+Inizialmente per ogni categoria verrà fornito uno schema ad alto livello, per poi andare sempre più nel dettaglio tramite sotto-diagrammi più specifici. Per comodità di visualizzazione le attività che verranno \textit{esplose} sono marcate in grassetto. 
+
+Al fine di rendere il diagramma leggibile abbiamo considerato implicito il fatto che un utente possa in qualsiasi momento uscire dall'applicazione \glossario{MaaP} o dal servizio \glossario{MaaS}, per esempio chiudendo la finestra del browser.
+
+\subsection{Applicazione MaaP}
+
+\subsubsection{Attività principali}
 
 \begin{figure}[H]
 \centering
@@ -36,7 +45,7 @@ Una volta che l'utente ha effettuato il login viene direttamente indirizzato all
 
 Nel caso in cui l'utente avesse i privilegi di admin può inoltre accedere ad una specifica pagina di gestione degli utenti iscritti.
 
-\subsection{MaaP - Effettua registrazione}
+\subsubsection{Effettua registrazione}
 
 \begin{figure}[H]
 \centering
@@ -46,7 +55,7 @@ Nel caso in cui l'utente avesse i privilegi di admin può inoltre accedere ad un
 
 L'utente si trova all'interno della pagina di registrazione e sostanzialmente deve inserire la propria email e la propria password all'interno di due campi di testo. Una volta inseriti l'utente deve premere il pulsante di invio dati; il sistema \glossario{MaaP} procederà dunque alla verifica delle credenziali e, se quest'ultima avrà successo, alla registrazione dell'utente.
 
-\subsection{MaaP - Recupera password}
+\subsubsection{Recupera password}
 
 \begin{figure}[H]
 \centering
@@ -56,7 +65,7 @@ L'utente si trova all'interno della pagina di registrazione e sostanzialmente de
 
 L'utente si trova all'interno della pagina di recupero password, la quale presenta un campo di testo nel quale l'utente dovrà inserire il proprio indirizzo email. Una volta inserito preme il pulsante di richiesta di una nuova password; il sistema \glossario{MaaP} procederà dunque alla verifica dell'indirizzo email e, se quest'ultima avrà esito positivo, invierà un'email all'utente con le relative istruzioni per il ripristino della password.
 
-\subsection{MaaP - Esegui reset password}
+\subsubsection{Esegui reset password}
 
 \begin{figure}[H]
 \centering
@@ -66,7 +75,7 @@ L'utente si trova all'interno della pagina di recupero password, la quale presen
 
 L'utente avrà ricevuto un'email con al suo interno un link ad una pagina univoca dell'applicazione \glossario{MaaP} e quindi si troverà in una pagina con al suo interno un campo di testo nel quale inserire la nuova password. Una volta inserita la password deve premere il pulsante di reset; il sistema \glossario{MaaP} procederà dunque al cambio password per l'utente corrente nel \glossario{database} delle credenziali.
 
-\subsection{MaaP - Effettua login}
+\subsubsection{Effettua login}
 
 \begin{figure}[H]
 \centering
@@ -76,7 +85,7 @@ L'utente avrà ricevuto un'email con al suo interno un link ad una pagina univoc
 
 L'utente, che precedentemente avrà effettuato la registrazione al sistema, accede all'interno dell'applicazione tramite una pagina di login. Al suo interno saranno presenti due campi di testo in cui l'utente dovrà inserire la propria email e la propria password. Una volta inserite dovrà premere il pulsante di login; il sistema \glossario{MaaP} procederà dunque alla verifica delle credenziali e, se l'esito di tale verifica risulterà positivo, effettuerà il login dell'utente all'applicazione, reindirizzandolo alla \glossario{dashboard}.
 
-\subsection{MaaP - Modifica profilo}
+\subsubsection{Modifica profilo}
 
 \begin{figure}[H]
 \centering
@@ -84,9 +93,9 @@ L'utente, che precedentemente avrà effettuato la registrazione al sistema, acce
 \caption{Diagramma di attività - Modifica profilo utente}
 \end{figure}
 
-L'utente autenticato accede all'interno della propria pagina profilo, dalla quale può decidere di modificare la propria password. Sarà dunque presente un campo di testo in cui l'utente inserirà la nuova password e un bottone tramite il quale invierà la richiesta di modifica; il sistema \glossario{MaaP} procederà dunque alla modifica della password dell'utente.
+L'utente autenticato accede all'interno della propria pagina profilo, dalla quale può decidere di modificare la propria password. Sarà dunque presente un campo di testo in cui l'utente inserirà la nuova password e un bottone tramite il quale invierà la richiesta di modifica; il sistema \glossario{MaaP} procederà dunque alla modifica della password dell'utente. L'utente in ogni momento può decidere di annullare le modifiche e tornare alla pagina precedente.
 
-\subsection{MaaP - Index-page Collection}
+\subsubsection{Index-page Collection}
 
 \begin{figure}[H]
 \centering
@@ -113,3 +122,38 @@ Se l'utente dispone dei privilegi di admin può inoltre:
 
 \end{itemize}
 
+\subsubsection{Show-page Document}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{uml/MaaP - Show-page.png}
+\caption{Diagramma di attività - Visualizzazione show-page del Document selezionato}
+\end{figure}
+
+L'utente ha selezionato un \glossario{Document} dalla \glossario{index-page} e ora si trova davanti una pagina di visualizzazione dettagliata del \glossario{Document} selezionato. Sostanzialmente questa pagina conterrà una tabella contenente gli attributi visualizzabili del \glossario{Document}. Un utente all'interno di questa pagina può:
+
+\begin{itemize}
+
+	\item Aprire la \glossario{show-page} di un attributo innestato, se ne esiste uno;
+	\item Aprire la \glossario{index-page} di un array di \glossario{Document}, se ne esiste uno.
+
+\end{itemize}
+
+Se l'utente possiede i privilegi di admin può inoltre:
+
+\begin{itemize}
+
+	\item Modificare gli attributi del \glossario{Document};
+	\item Eliminare il \glossario{Document} corrente.
+
+\end{itemize}
+
+\subsubsection{Modifica Document}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{uml/MaaP - Modifica Document.png}
+\caption{Diagramma di attività - Modifica del Document selezionato}
+\end{figure}
+
+L'utente con privilegi di scrittura può modificare ogni singolo attributo del \glossario{Document} selezionato, editando i rispettivi campi di testo. Una volta che ha terminato le modifiche preme il pulsante di \textit{update}; il sistema \glossario{MaaP} verificherà che le modifiche apportate siano corrette e rispettino i vincoli del \glossario{database}. In ogni momento l'utente può comunque decidere di annullare le modifiche e tornare alla pagina precedente.

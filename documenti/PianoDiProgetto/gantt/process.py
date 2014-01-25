@@ -28,6 +28,15 @@ def testTasks(project):
 				min_hours = task.getDays() * MIN_HOURS_PER_DAY
 			))
 
+def testTaskLists(project):
+	printTitle("Controllo vincoli sulle tasklist")
+
+	for tasklist in project.getTaskLists():
+		if len(tasklist.getTasks()) == 0:
+			warning(u'Alla tasklist "{fullname}" non è stato assegnato nessun task'.format(
+				fullname = tasklist.getFullName()
+			))
+
 def testPeople(project):
 	printTitle("Controllo vincoli sulle persone")
 	
@@ -86,7 +95,7 @@ def testPeople(project):
 			))
 
 		if hours > MAX_HOURS:
-			warning(u"{name} ({hours:.0f} h) deve fare almassimo {max:.0f} ore di lavoro".format(
+			warning(u"{name} ({hours:.0f} h) deve fare al massimo {max:.0f} ore di lavoro".format(
 				hours=hours,
 				name=person.name,
 				max=MAX_HOURS

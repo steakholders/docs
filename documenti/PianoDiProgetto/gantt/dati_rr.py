@@ -2,21 +2,25 @@
 # -*- coding: UTF-8 -*-
 
 from schema import TaskList, Milestone, Task
+from datetime import date
 
 def aggiungi(project, milestone_id):
 	# id giusti
-	federico = "62756"	
+	giacomo = "62753"	
+	enrico = "62754"	
 	serena = "62755"	
+	federico = "62756"	
+	nicolo = "62757"
 	luca = "62758"	
 	gianluca = "62760"	
-	enrico = "62754"	
-	nicolo = "62757"
-	giacomo = "62753"	
+
+	inizio_fittizio = date(2010, 1, 1)
+	fine_fittizia = date(2010, 1, 10)
 	
-	milestone = Milestone(project, str(milestone_id), None, "Analisi dei requisiti")
+	milestone = Milestone(project, str(milestone_id), fine_fittizia, "Analisi dei requisiti")
 	project.addMilestone(milestone)
 	
-	tasklist = TaskList(milestone, 1, "AR", "Fittizia")
+	tasklist = TaskList(milestone, 1, "AR", "TaskList Fittizia")
 	milestone.addTaskList(tasklist)
 		
 	tabella = []
@@ -41,8 +45,8 @@ def aggiungi(project, milestone_id):
 	
 	for (id, (person, role, hours)) in enumerate(tabella):
 		tasklist.addTask(Task(
-			# 999999 per non far collidere gli id giusti con questi inventati
-			tasklist, 99999999+id, None, None, "AR", "Name "+str(id),
+			# 99999999+id per non far collidere gli id giusti con questi inventati
+			tasklist, 99999999+id, inizio_fittizio, fine_fittizia, "AR", "Task fittizio "+str(id),
 			responsible = project.getPerson(person),
 			role = project.getRole(role),
 			planned_hours = hours

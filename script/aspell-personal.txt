@@ -63,7 +63,6 @@ Craftsmanship
 DP
 DSL
 DdP
-Delete
 Demonstrable
 Description
 Determination
@@ -132,6 +131,7 @@ JVM
 Java
 JavaScript
 Javascript
+Jenkins
 John
 Johnson
 Kernel
@@ -170,7 +170,6 @@ McCabe
 McConnell
 Measure
 Medical
-Message
 Microsoft
 Microsystems
 Mistake
@@ -313,7 +312,6 @@ Unicode
 Unified
 Uniform
 Unique
-Update
 Usability
 Usable
 Useable
@@ -613,6 +611,7 @@ project
 projects
 pt
 purpose
+push
 python
 qualcos
 quality
@@ -709,6 +708,7 @@ thread
 three
 threshold
 tick
+ticketing
 tier
 timer'
 title
@@ -725,6 +725,7 @@ un'email
 underscore
 unipd
 unit
+update
 upload
 url
 urlcolor

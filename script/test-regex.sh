@@ -86,6 +86,9 @@ grep_test "[[:digit:]]{2}-[[:digit:]]{2}-[[:digit:]]{4}" "Riscrivere la data nel
 # Correzioni Tullio
 grep_test "[Oo]bbiettiv[oi]" "Sostituire con una sola 'b'" $(find . -name '*.tex')
 
+# Il termine Fase non va bene
+grep_test "[Ff]as[ei]" "Sostituire con sinonimo" $(find . -name '*.tex')
+
 # Controlla che ci sia prima il nome e poi il cognome
 grep_test "Poli Federico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')
 grep_test "Rotundo Enrico" "Riscrivere mettendo prima il nome e poi il cognome." $(find . -name '*.tex')

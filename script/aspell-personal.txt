@@ -228,6 +228,7 @@ function
 Functionality
 FunGoStudios
 games
+gantt
 Gantt
 GanttProject
 garbage
@@ -463,6 +464,7 @@ Pgr
 Pgt
 Pianciamore
 pianificata'
+PianoDiProgetto
 Place
 placeholder
 plain
@@ -684,6 +686,7 @@ title
 titolo'
 to
 TODO
+token
 tool
 tools
 TR

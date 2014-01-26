@@ -153,9 +153,25 @@ Per ogni documento \glossario{PDF} calcola l'indice di leggibilità \glossario{G
 \subsubsection{Script di produzione del Gantt e dei grafici}
 		\label{Gantt}
 Per agevolare la produzione dinamica del \textit{Piano di progetto} è stato scritto un apposito script che genera automaticamente i diagrammi di \glossario{Gantt} e i grafici relativi alla suddivisione del lavoro e al prospetto economico.
-
-%TODO 
-
+Tale script sfrutta le \glossario{API} messe a disposizione da \glossario{TeamworkPM} che permettono di scaricare tutto ciò che riguarda il progetto aperto sulla piattaforma, includendo \glossario{milestone}, persone, TaskList e ore.
+Lo script si preoccupa, attraverso le informazioni prelevate, di :
+\begin{itemize}
+\item Generare in output le tabelle delle ore per ruolo divise per ogni \glossario{milestone} pianificata in \glossario{TeamworkPM} in un corrispondente file \code{.txt},
+\item Generare per ogni \glossario{milestone} pianificata, un file \code{.txt} con il corrispondente diagramma di \glossario{Gantt};
+\item Generare i grafici a torta riguardanti le ore per ruolo in ogni \glossario{milestone} e in totale;
+\item Generare i grafici a torta riguardanti i costi per ruolo in ogni \glossario{milestone} e in totale;
+\item Generare i grafici a barre relativi a ore per ruolo per componente corrispondenti ad ogni \glossario{milestone} e in totale;
+\item Effettuare la verifica, con segnalazione di errore se l'esito è negativo e descrizione di tali segnalazioni in un file \code{.txt}, del rispetto delle norme nella pianificazione : 
+	\begin{itemize}
+	\item Verifica che non siano presenti per ogni persona dei task sovrapposti;
+	\item Controlla i vincoli sulle ore per persona;
+	\item Controlla i vincoli sul preventivo;
+	\item Verifica che la rotazione dei ruoli sia corretta;
+	\item Controlla che le ore di verifica siano maggiori del 30$\%$.
+	\end{itemize}
+\end{itemize} 
+Per poterlo utilizzare, abilitare le API nel proprio account \glossario{TeamworkPM} per ottenere il token da utilizzare alla richiesta dello script. \\
+Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con il comando \code{python download$\_$gantt.py}.
 
 	\subsection{Ambiente di sviluppo}
 		

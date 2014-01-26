@@ -1,13 +1,56 @@
 Scarico Milestones...
 Scarico People...
 Scarico TaskLists...
-Traceback (most recent call last):
-  File "download_gantt.py", line 19, in <module>
-    tw.getTaskLists(project)
-  File "/home/luca/workspace/docs/documenti/PianoDiProgetto/gantt/download.py", line 125, in getTaskLists
-    tasklist_obj, task["id"], date_parse(task["start-date"]), date_parse(task["due-date"]), code, task_name,
-  File "/home/luca/workspace/docs/documenti/PianoDiProgetto/gantt/download.py", line 13, in date_parse
-    return datetime.strptime(str, "%Y%m%d").date()
-  File "/usr/lib/python2.7/_strptime.py", line 325, in _strptime
-    (data_string, format))
-ValueError: time data '' does not match format '%Y%m%d'
+Scarico TimeEntries...
+- Pagina 1 di 1...
+- Pagina 2 di 11...
+Scaricamento completato.
+
+Controllo vincoli sui task
+--------------------------
+
+Controllo vincoli sulle tasklist
+--------------------------------
+
+Controllo task sovrapposti
+--------------------------
+ATTENZIONE: Serena Girardi ha dei task sovrapposti. Il primo è il giorno 2014-02-15
+ATTENZIONE: Nicolò Tresoldi ha dei task sovrapposti. Il primo è il giorno 2014-01-15
+ATTENZIONE: Federico Poli ha dei task sovrapposti. Il primo è il giorno 2014-02-14
+ATTENZIONE: Giacomo Fornari ha dei task sovrapposti. Il primo è il giorno 2014-02-12
+ATTENZIONE: Gianluca Donato ha dei task sovrapposti. Il primo è il giorno 2014-02-12
+ATTENZIONE: Luca De Franceschi ha dei task sovrapposti. Il primo è il giorno 2014-02-12
+
+Controllo vincoli sulle persone
+-------------------------------
+- Serena Girardi: 	127 	ore di lavoro
+- Enrico Rotundo: 	109 	ore di lavoro
+- Nicolò Tresoldi: 	142 	ore di lavoro
+- Federico Poli: 	123 	ore di lavoro
+- Giacomo Fornari: 	138 	ore di lavoro
+- Gianluca Donato: 	129 	ore di lavoro
+- Luca De Franceschi: 	129 	ore di lavoro
+
+ATTENZIONE: Enrico Rotundo ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
+
+ATTENZIONE: Serena Girardi (127 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Enrico Rotundo (109 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Nicolò Tresoldi (142 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Federico Poli (123 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Giacomo Fornari (138 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Gianluca Donato (129 h) deve fare al massimo 105 ore di lavoro
+ATTENZIONE: Luca De Franceschi (129 h) deve fare al massimo 105 ore di lavoro
+
+Controllo vincoli sul preventivo
+--------------------------------
+- amministratore: 164 	ore, per un costo di 	3280 	€
+- programmatore : 138 	ore, per un costo di 	2070 	€
+- responsabile  : 27 	ore, per un costo di 	810 	€
+- analista      : 32 	ore, per un costo di 	800 	€
+- verificatore  : 198 	ore, per un costo di 	2970 	€
+- progettista   : 196 	ore, per un costo di 	4312 	€
+Totale          : 14242 €
+Ore di verifica : 26.2 %
+
+ATTENZIONE: Troppe poche ore di verifica (198 h), bisogna fare almeno 226 h
+ATTENZIONE: Il preventivo (14242 €) è meglio che sia inferiore a 13499 €

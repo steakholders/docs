@@ -27,6 +27,7 @@ milestone_rq = 103265
 milestone_ra = 104204
 
 testTasks(project)
+testTaskLists(project)
 testConcurrentTasks(project)
 
 aggiungi(project, milestone_rr)

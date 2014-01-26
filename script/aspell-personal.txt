@@ -43,6 +43,7 @@ asd
 aspell
 assessment
 assigned
+Assurance
 AST
 Astah
 at
@@ -613,6 +614,7 @@ source
 Specific
 specify
 SPICE
+SQA
 SQL
 SQMT
 ST

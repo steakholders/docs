@@ -3,6 +3,41 @@
 
 La strategia generale adottata è quella di automatizzare il più possibile il lavoro di verifica; questo richiede scelta e uso di \glossario{tools} adeguatamente configurati. L'obiettivo è avere un riscontro affidabile e numericamente trattabile che permetta di assicurare il grado di qualità predeterminato. Il lavoro manuale verrà così ridotto al minimo e confinato all'opera di validazione.
 La speranza è che dei buoni processi portino ad un buon software.
+
+	\subsection{Definizione obiettivi}
+
+		\subsubsection{Qualità di processo}
+		La qualità del processo è un fattore determinante per la qualità del prodotto. Si è deciso di perseguire la qualità servendosi di due modelli:
+
+		\begin{itemize}
+			\item \glossario{SPICE}\footnote{Si veda appendice \ref{appendice-qualitaDeiProcessi} per approfondimenti}, definito nello standard ISO/IEC 15504, ai fini di una valutazione oggettiva dei processi, per darne un giudizio di maturità e per individuare azioni migliorative;
+			\item \glossario{PDCA}\footnote{Si veda appendice \ref{appendice-qualita} per approfondimenti}, per il controllo delle attività di processo ripetibili e misurabili e per la manutenibilità dei processi stessi incrementandone la qualità.
+		\end{itemize}
+
+		\subsubsection{Qualità di prodotto}
+		Oltre alla qualità di processo, sono necessari degli obiettivi rivolti direttamente alla qualità del prodotto per massimizzare l'efficacia. A tal fine, lo standard ISO/IEC 9126\footnote{Si veda appendice \ref{appendice-qualitaDelProdotto} per approfondimenti} classifica la qualità del software e definisce delle metriche per la sua misurazione.
+
+	\subsection{Procedure di controllo di qualità di processo}
+	Le linee guida per la gestione della qualità di processo seguono il modello \glossario{PDCA} descrivendo come devono essere attuate le procedure di controllo:
+
+		\begin{itemize}
+			\item La pianificazione deve essere dettagliata;
+			\item Le attività pianificate devono essere monitorate;
+			\item Le risorse necessarie per conseguire gli obiettivi devono essere definite;
+			\item Il controllo deve servirsi delle metriche per verificare il miglioramento della qualità del processo.
+		\end{itemize}
+
+	La pianificazione delle attività volte al miglioramento continuo dei processi sono descritte nel \PianoDiProgetto.
+
+	\subsection{Procedure di controllo di qualità di prodotto}
+	Il controllo per la qualità di prodotto definisce i seguenti processi:
+
+		\begin{itemize}
+			\item \textbf{Software Quality Assurance} (\glossario{SQA}): deve assicurare che i processi pianificati siano appropriati e successivamente implementati secondo la pianificazione, e che siano forniti sistemi di misurazione dei processi. Tale processo deve essere preventivo invece che correttivo;
+			\item \textbf{Verifica}: si occupa di accertare che l’esecuzione delle attività di processi svolti nella fase in esame non abbia introdotto errori nel prodotto. La verifica viene svolta sui prodotti dei processi per accertare il rispetto delle regole, delle convenzioni e delle procedure;
+			\item \textbf{Validazione}: si occupa di accertare che i prodotti finali realizzati siano conformi alle attese.
+		\end{itemize}
+
 	
 	\subsection{Organizzazione}
 	Viene verificata la qualità di ogni processo e di ogni output da esso prodotto. Ogni fase  descritta nel \PianoDiProgetto{} produce output di diverso tipo, per questo è necessario programmare l'attività di verifica in modo mirato:
@@ -16,7 +51,6 @@ La speranza è che dei buoni processi portino ad un buon software.
 	Il \emph{Diario delle modifiche} viene incluso in ogni documento al fine di tracciarne uno storico dell'evoluzione.
 	
 	\subsection{Strategia}
-%		\subsubsection{Strategia}
 
 		Il \emph{Piano di Progetto} fissa una serie di scadenze improrogabili, pertanto è necessario definire con chiarezza una strategia di qualifica efficace. Gli incrementi sulla documentazione o sul codice possono essere di natura programmata, quindi prefissati nel calendario, oppure possono insorgere come inaspettati. In questo caso sarà necessario programmare le dovute modifiche; è questo il caso di \glossario{bug} o \emph{errori} (vedi paragrafo \ref{DefinizioneAnomalie}). La qualità di ogni incremento si basa sul fatto che la struttura di qualifica garantisce il rispetto delle  \NormeDiProgetto{}. Questo lavoro verrà svolto con l'aiuto di automatismi che segnaleranno le problematiche rilevate in modo da permettere una rapida correzione. L'utilizzo di software apposito permette di eseguire controlli mirati senza consumare risorse umane. L'implementazione di tali controlli viene descritta nelle \NormeDiProgetto{}.
 			
@@ -26,82 +60,6 @@ La speranza è che dei buoni processi portino ad un buon software.
 %			%\item Software: da definire.
 %		\end{itemize}
 
-
-	
-%		\subsubsection{Tempistiche}
-%		La pianificazione strategica si basa sul modello \glossario{SEMAT}. Le seguenti specifiche non coprono tutti gli stati indicati da questo schema considerando solo l'aspetto relativo alla \textbf{qualità}. 
-%		
-%		Le sezioni coinvolte sono:
-%			\begin{itemize}
-%				\item \emph{Solution $\rightarrow$ Software System}: qualità del software;
-%				\item \emph{Endeavor $\rightarrow$ Way of Working}: qualità del ambiente di lavoro garantita dalle norme;
-%				\item \emph{Endeavor $\rightarrow$ Work}: qualità dei processi.
-%			\end{itemize}
-%		
-%	In questo modello viene fatta una distinzione tra lavoro e modo di lavorare, la qualità però è trasversale a queste due entità, per cui andrebbero considerati  anche alcuni aspetti della sezione \emph{work}. Per chiarezza è stato scelto di considerare il \emph{Way of Working} perché, in accordo con lo schema fornito da \glossario{SEMAT}, guida il lavoro stesso determinando la qualità prodotta.
-%		
-%	\begin{figure}[h]
-%	\centering \includegraphics[width=1\textwidth]{Semat.png}
-%	\caption{Software Engineering Kernel}
-%	\end{figure}
-%	Di seguito viene descritto lo stato che ogni fase descritta dal \emph{Piano di Progetto} deve soddisfare, in relazione alle sezioni del \glossario{SEMAT} sopracitate.
-%	   
-%   	\paragraph{Analisi}
-%    	\begin{itemize}
-%    		\item Software System:
-%    			\begin{enumerate}
-%    				\item \emph{Architecture Selected}: le piattaforme, le tecnologie e i linguaggi da usare sono stati selezionati. Vengono individuate le metriche per il software, i documenti ed i processi.
-%    			\end{enumerate}
-%    		\item Way of Working:
-%    			\begin{enumerate}
-%    				\item \emph{Principles Established}: i vincoli sono stati definiti nelle \NormeDiProgetto, i \glossario{tools} sono stati individuati ed il team comincia ad operare secondo quanto stabilito;
-%    				\item \emph{Foundation Established}: i \glossario{tools} per la qualità sono configurati e le buone pratiche da seguire sono definite;
-%    				\item \emph{In Use}: alcuni membri del team utilizzano le pratiche indicate e i tools vengono usati e migliorati. Vengono raccolti feedback sull'utilizzo degli strumenti per la qualità.
-%    			\end{enumerate}
-%    	\end{itemize}
-%    	
-%	\paragraph{Progettazione Architetturale}	
-%		\begin{itemize}
-%    		\item Software System:
-%    			\begin{enumerate}
-%    			\setcounter{enumi}{1}
-%    				\item \emph{Demonstrable}: le caratteristiche chiave dell'architettura software sono state individuate e gli \glossario{stakeholders} sono in accordo. Vengono individuate le unità da testare per soddisfare la richiesta del \glossario{proponente} di verificare il funzionamento di almeno il 70\% del software prodotto, come stabilito nel \textit{Verbale del 2013-12-05}.
-%    			\end{enumerate}
-%    		\item Way of Working:
-%    			\begin{enumerate}
-%    			\setcounter{enumi}{3}
-%    				\item \emph{In Place}: tutti i membri utilizzano e comprendono l'intero ambiente di lavoro che è configurato secondo le \NormeDiProgetto. Il \glossario{repository} è configurato per accettare solo materiale in linea con le norme stabilite;
-%    				\item \emph{Working Well}: tutto il team lavora in modo coordinato secondo le norme applicando le pratiche individuate nelle 	norme e i \glossario{tools} supportano a pieno regime l'attività di lavoro.
-%    			\end{enumerate}
-%    			
-%    	\end{itemize}
-%    	
-%	\paragraph{Progettazione di Dettaglio e Codifica}	
-%		\begin{itemize}
-%    		\item Software System:
-%    			\begin{enumerate}
-%    			\setcounter{enumi}{2}
-%    				\item \emph{Usable}: il sistema è parzialmente usabile. Vengono praticati gli opportuni test che saranno convalidati ed il livello di anomalie sarà accettabile;
-%    				\item\emph{Ready}: la documentazione utente è disponibile ed è conforme alle norme. Vengono forniti i risultati dell'analisi statica e dei test eseguiti, si correggono le anomalie e gli \glossario{stakeholders} accettano il sistema.
-%    			\end{enumerate}
-%    	\end{itemize}
-%    	
-%	\paragraph{Validazione}	
-%		\begin{itemize}
-%    		\item Software System:
-%    			\begin{enumerate}
-%    			\setcounter{enumi}{4}
-%    				\item \emph{Operational}: il sistema è in uso in un ambiente pienamente funzionante. Vengono ultimati gli ultimi test;
-%    				\item \emph{Retired}: il ritiro del software non viene considerato all'interno di questo progetto didattico.
-%    			\end{enumerate}
-%    		\item Way of Working:
-%    			\begin{enumerate}
-%    			\setcounter{enumi}{5}
-%    				\item \emph{Retired}: il ritiro del software non viene considerato all'interno di questo progetto didattico.
-%    			\end{enumerate}
-%    	\end{itemize}
-	
-		
 	\subsection{Responsabilità}
 
 	La responsabilità della verifica viene attribuita al \emph{Responsabile} di progetto e ai \emph{Verificatori}. I compiti e le modalità di attuazione sono definiti nel \PianoDiProgetto.

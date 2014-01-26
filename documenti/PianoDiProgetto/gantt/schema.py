@@ -73,6 +73,14 @@ class TimeEntry:
 	def getWorkHours(self):
 		return self.hours
 
+	def __repr__(self):
+		return u"<TimeEntry({id}, {hours}, {description}, {datetime})>".format(
+			id = self.id,
+			hours = self.hours,
+			description = self.description,
+			datetime = self.datetime
+		).encode('utf-8')
+
 
 class Task:
 	def __init__(self, tasklist, id, start, end, code, name, responsible=None, role=None, planned_hours=None):
@@ -88,6 +96,12 @@ class Task:
 		
 		self.dependencies = {}
 		self.timeentries = {}
+
+		if self.start is None:
+			pedantic_warning(u'Non è stato inpostato un inizio al task "{name}"'.format(name = self.getFullName()))
+
+		if self.end is None:
+			pedantic_warning(u'Non è stato inpostata una fine al task "{name}"'.format(name = self.getFullName()))
 
 		# Avvisa che non è stato assegnato
 		if self.responsible is None:
@@ -128,7 +142,7 @@ class Task:
 
 	def getWorkHours(self):
 		if len(self.timeentries) > 0:
-			return sum([x.getWorkHours() for x in self.timeentries])
+			return sum([x.getWorkHours() for x in self.getTimeEntries()])
 		else:
 			return self.getPlannedHours()
 
@@ -142,7 +156,7 @@ class Task:
 
 	def addTimeEntry(self, timeentry):
 		self.timeentries.update({
-			time.id: time
+			timeentry.id: timeentry
 		})
 
 	def getTimeEntry(self, timeentry_id):
@@ -190,7 +204,7 @@ class TaskList:
 		if len(self.tasks) == 0:
 			return None
 		
-		return min([x.start for x in self.tasks.values()])
+		return min([x.start for x in self.tasks.values() if x.start is not None])
 
 	def getEnd(self):
 		if len(self.tasks) == 0:
@@ -198,6 +212,12 @@ class TaskList:
 
 		return max([x.end for x in self.tasks.values()])
 
+	def __repr__(self):
+		return u"<TaskList({fullname}, {start}, {end})>".format(
+			fullname = self.getFullName(),
+			start = self.getStart(),
+			end = self.getEnd()
+		).encode('utf-8')
 
 class Milestone:
 	def __init__(self, project, id, deadline, name):
@@ -244,7 +264,7 @@ class Milestone:
 		if len(self.tasklists) == 0:
 			return None
 		
-		return min([x.getStart() for x in self.tasklists.values()])
+		return min([x.getStart() for x in self.tasklists.values() if x.getStart() is not None])
 
 	def getPersonRoleCost(self, person, role):
 		tasks = [t for t in self.getTasks() if t.getRole() == role and t.getResponsible() == person]

@@ -19,8 +19,10 @@ partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
 rischesto richiesto
+risportate riportate
 sarnno saranno
 sè sé
+staica statica
 un'apposito un apposito
 un'array un array
 verrano verranno

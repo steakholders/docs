@@ -37,14 +37,6 @@ def split_code_name(title):
 		return (None, title)
 
 
-class GanttException(Exception):
-	def __init__(self, message):
-		self.message = message
-
-	def __str__(self):
-		return "ERRORE: "+self.message.encode('utf-8')
-
-
 class TeamworkPMDownload(TeamworkPMClient):
 	def __init__(self, company="steakholders", key=None):
 		TeamworkPMClient.__init__(self, company=company, key=key)
@@ -118,7 +110,18 @@ class TeamworkPMDownload(TeamworkPMClient):
 				if code is None:
 					raise GanttException(u'Al task #{id} "{task_name}" manca il codice identificativo. Me lo aspetto nel formato "XY1.2.3 - Titolo esteso (ruolo)"'.format(
 						id = task["id"],
+						task_name = task["content"]
+					))
+				
+				start_date = task["start-date"]
+				end_date = task["due-date"]
+				
+				if start_date == "" or end_date == "":
+					raise GanttException(u'Al task #{id} "{task_name}" manca la data di inizio o di fine ({start}, {end})'.format(
+						id = task["id"],
 						task_name = task["content"],
+						start = start_date,
+						end = end_date
 					))
 				
 				task_obj = Task(
@@ -154,9 +157,11 @@ class TeamworkPMDownload(TeamworkPMClient):
 					))
 			
 			if "time-entries" not in data:
+				pedantic_warning(u"Non ho ricevuto l'attributo \"time-entries\"")
 				break
 			
 			if len(data["time-entries"]) == 0:
+				pedantic_warning(u"Le TimeEntry sono finite, ma TeamworkPM mi aveva detto che ce ne erano altre")
 				break
 			
 			for timeentry in data["time-entries"]:
@@ -165,7 +170,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 				timeentry_obj = TimeEntry(
 					task,
 					timeentry["id"],
-					timeentry["description"],
+					hours,
 					datetime = datetime_parse(timeentry["date"]),
 					description = timeentry["description"]
 				)
@@ -182,5 +187,5 @@ class TeamworkPMDownload(TeamworkPMClient):
 					))
 					continue
 				
-				task.addTimeEntry(time)
+				task.addTimeEntry(timeentry_obj)
 	

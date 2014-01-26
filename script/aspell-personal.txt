@@ -25,6 +25,7 @@ Amazon
 Amm
 an
 Ana
+AnalisiDeiRequisiti
 Analysis
 anchor
 and
@@ -43,6 +44,7 @@ asd
 aspell
 assessment
 assigned
+Assurance
 AST
 Astah
 at
@@ -80,6 +82,7 @@ CamelCase
 Capability
 captionpos
 Cardin
+cases
 Casiraghi
 casting
 change
@@ -285,6 +288,7 @@ it
 Java
 Javascript
 JavaScript
+Jenkins
 John
 Johnson
 join
@@ -399,6 +403,7 @@ Nell'URL
 never
 newline
 Next
+ngrok
 niladic
 nltk
 node
@@ -507,7 +512,9 @@ projects
 Protocol
 pt
 purpose
+push
 PUT
+py
 python
 qualcos
 quality
@@ -613,6 +620,7 @@ source
 Specific
 specify
 SPICE
+SQA
 SQL
 SQMT
 ST
@@ -648,6 +656,7 @@ system
 Systems
 tabsize
 tag
+TaskList
 tasks
 Teamwork
 TeamworkPM
@@ -704,7 +713,6 @@ unipd
 Unique
 unit
 update
-Update
 upload
 url
 urlcolor

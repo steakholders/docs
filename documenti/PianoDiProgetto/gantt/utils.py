@@ -5,6 +5,13 @@ from datetime import date
 import re
 from parametri import *
 
+class GanttException(Exception):
+	def __init__(self, message):
+		self.message = message
+
+	def __str__(self):
+		return "ERRORE: "+self.message.encode('utf-8')
+
 def warning(message):
 	print "ATTENZIONE: "+message.encode('utf-8')
 

@@ -162,20 +162,20 @@ Per agevolare la produzione dinamica del \textit{Piano di progetto} è stato scr
 	Gli strumenti utilizzati per effettuare l'analisi statica,dinamica e i test di unità descritti successivamente sono stati
 	integrati in \glossario{Jenkins} v1.548 e ne è stata predisposta un'esecuzione automatica prima di effettuare \glossario{push}
 	sul \glossario{repository}, in modo da garantire che le modifiche non introducano errori nel software esistente e che rispettino
-	le metriche software risportate in \PianoDiQualifica{}.
+	le metriche software riportate in \PianoDiQualifica{}.
 
 		\subsubsection{Analisi statica}
 		
-		Per l'analisi statica del codice Javascript e per aiutare a identificare automaticamente gli errori, sono integati in
+		Per l'analisi statica del codice Javascript e per aiutare a identificare automaticamente gli errori, sono integrati in
 		Jenkins:
 		\begin{itemize}
-		\item \textbf{JSHint} (\url{http://www.jshint.com}),\glossario{tool} che aiuta a identificare gli erorri e i potenziali
+		\item \textbf{JSHint} (\url{http://www.jshint.com}),\glossario{tool} che aiuta a identificare gli errori e i potenziali
 		problemi nel
 		codice JavaScript.
 		\item \textbf{JSLint} (\url{http://www.jslint.com}), \glossario{tool} usato per verificare se il codice JavaScript compila
 		secondo le regole di linguaggio.
 		\item \textbf{Closure Compiler} (\url{http://developers.google.com/closure/compiler}), \glossario{tool} utilizzato per
-		rendere JavaScrip più efficiente in termini di download e di esecuzione, migliorandolo rimuovendo \glossario{codice
+		rendere JavaScript più efficiente in termini di download e di esecuzione, migliorandolo rimuovendo \glossario{codice
 		morto} , riscrivendolo e minimizzandolo. Controlla inoltre la sintassi, i riferimenti alle variabili, i tipi ed eventuali
 		insidie.
 		\end{itemize}

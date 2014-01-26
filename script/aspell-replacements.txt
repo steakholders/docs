@@ -19,6 +19,7 @@ partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
 rischesto richiesto
+risportate riportate
 sarnno saranno
 sè sé
 un'apposito un apposito

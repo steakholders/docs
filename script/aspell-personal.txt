@@ -35,6 +35,7 @@ anyway
 append
 Apple
 application
+approvate'
 AR
 Architecture
 arguments
@@ -229,7 +230,6 @@ Functionality
 FunGoStudios
 games
 gantt
-Gantt
 GanttProject
 garbage
 gedit
@@ -327,6 +327,7 @@ livello'
 ln
 local
 Location
+LOCs
 log
 logger
 logic
@@ -378,6 +379,7 @@ Mistake
 Mocha
 mod
 Modeling
+modifica'
 Modifica'
 Module
 monadic

@@ -96,6 +96,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 		
 			\paragraph{Schedule Variance} \mbox{} \\
 			\label{ScheduleVariance}\newline
+			
 			Indica se si è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate.
 			\[
 			SV = BCWP - BCWS
@@ -103,15 +104,92 @@ La speranza è che dei buoni processi portino ad un buon software.
 			Dove $BCWP$ indica il valore delle attività realizzate alla data corrente e $BCWS$ rappresenta il costo pianificato per realizzare le attività di progetto alla data corrente. 
 			È un indicatore di efficacia soprattutto nei confronti del Cliente. Se $SV>0$ significa che il progetto sta procedendo con maggior velocità a quanto pianificato, viceversa se negativo.
 			
-			\paragraph{Budget Variance}\mbox{} \\
+			\paragraph{Budget Variance} \mbox{} \\
 			
 			Indica se alla data corrente si è speso di più o di meno rispetto a quanto previsto.
 			\[
 			BV = BCWS - ACWP
 			\]
 			Dove $BCWS$ indica il costo pianificato per realizzare le attività di  progetto alla  data corrente e $ACWP$ rappresenta il costo effettivamente sostenuto alla data  corrente.
-			È un indicatore che ha un valore unicamente contabile e finanziario. Se $BV>0$ significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo. 
+			È un indicatore che ha un valore unicamente contabile e finanziario. Se $BV>0$ significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo.
 
+			\paragraph{Produttività} \mbox{} \\
+
+				\subparagraph{Produttività di documentazione}
+				Indica la produttività media di documentazione delle risorse impiegate, cioè delle persone coinvolte, nei diversi stadi del progetto.
+				\[
+				Produttività\ di\ documentazione = Parole / Ore\ persona
+				\]
+				Dove $Parole$ indica il numero di parole presenti nei documenti e $Ore\ persona$ rappresenta il numero di ore produttive dei componenti del gruppo.
+				
+				% TODO da stabilire
+				\textbf{Parametri utilizzati}:
+				\begin{itemize}
+					\item Range-accettazione: [???? - ????];
+					\item Range-ottimale: [???? - ????].
+				\end{itemize}
+
+				\subparagraph{Produttività di test}
+				Indica la produttività media dei test realizzati.
+				\[
+				Produttività\ di\ test = Numero\ di\ test / Ore\ persona
+				\]
+				Dove $Numero di test$ indica il numero di test eseguiti e $Ore persona$ rappresenta il numero di ore produttive dei componenti del gruppo.
+				
+				% TODO da stabilire
+				\textbf{Parametri utilizzati}:
+				\begin{itemize}
+					\item Range-accettazione: [???? - ????];
+					\item Range-ottimale: [???? - ????].
+				\end{itemize}
+
+				\subparagraph{Produttività di codifica}
+				Indica la produttività media delle attività di codifica.
+				\[
+				Produttività\ di\ codifica = LOCs / Ore\ persona
+				\]
+				Dove $LOCs$ indica il numero di linee di codice prodotte e $Ore\ persona$ rappresenta il numero di ore produttive dei componenti del gruppo.
+				
+				% TODO da incrementare prima dell'inizio della codifica
+				I parametri utilizzati per questa metrica verranno stabiliti alla entro l'inizio del processo di codifica.
+
+			\paragraph{Impegno} \mbox{} \\
+
+			Indica l'impegno richiesto dal gruppo per la realizzazione del progetto.
+			\[
+			Impegno = Dimensione / Produttività
+			\]
+			Dove $Dimensione$ indica il tempo produttivo impiegato e $Produttività$ rappresenta la media delle produttività totali (di documentazione, di test, di codifica).
+			\textbf{Parametri utilizzati}:
+			\begin{itemize}
+				\item Range-accettazione: [0 - 20];
+				\item Range-ottimale: [0 - 10].
+			\end{itemize}
+
+			\paragraph{Modifiche} \mbox{} \\
+
+			Indica quante modifiche sono state approvate dal responsabile. Le modifiche possono riguardare requisiti, funzionalità, codice e documenti.
+			\[
+			Modifiche = Numero di modifiche
+			\]
+			Dove $Numero di modifiche$ indica le issue etichettate come ``richiesta di modifica'' e ``approvate''.
+			\textbf{Parametri utilizzati}:
+			\begin{itemize}
+				\item Range-accettazione: [0 - 20];
+				\item Range-ottimale: [0 - 10].
+			\end{itemize}
+
+			\paragraph{Copertura dei test} \mbox{} \\
+
+			Indica la percentuale di casi coperti da test eseguiti.
+			\[
+			Copertura\ del\ test = Numero\ di\ funzioni\ testate * 100 / Numero\ totale\ di\ funzioni\ disponibili
+			\]
+			\textbf{Parametri utilizzati}:
+			\begin{itemize}
+				\item Range-accettazione: [70 - 100];
+				\item Range-ottimale: [80 - 100].
+			\end{itemize}
 			
 		\subsubsection{Metriche per i documenti}
 		\label{metrichedocumenti}

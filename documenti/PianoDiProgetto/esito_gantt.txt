@@ -14,33 +14,28 @@ Controllo vincoli sulle tasklist
 
 Controllo task sovrapposti
 --------------------------
-ATTENZIONE: Serena Girardi ha dei task sovrapposti. Il primo è il giorno 2014-01-19
-ATTENZIONE: Giacomo Fornari ha dei task sovrapposti. Il primo è il giorno 2014-02-03
-ATTENZIONE: Luca De Franceschi ha dei task sovrapposti. Il primo è il giorno 2014-02-12
 
 Controllo vincoli sul preventivo
 --------------------------------
-- amministratore: 106 	ore, per un costo di 	2120 	€
+- amministratore: 98 	ore, per un costo di 	1960 	€
 - programmatore : 126 	ore, per un costo di 	1890 	€
-- responsabile  : 35 	ore, per un costo di 	1050 	€
-- analista      : 30 	ore, per un costo di 	750 	€
-- verificatore  : 220 	ore, per un costo di 	3300 	€
-- progettista   : 182 	ore, per un costo di 	4004 	€
-Totale          : 13114 €
-Ore di verifica : 31.5 %
+- responsabile  : 38 	ore, per un costo di 	1140 	€
+- analista      : 32 	ore, per un costo di 	800 	€
+- verificatore  : 230 	ore, per un costo di 	3450 	€
+- progettista   : 190 	ore, per un costo di 	4180 	€
+Totale          : 13420 €
+Ore di verifica : 32.0 %
 
 
 Controllo vincoli sulle persone
 -------------------------------
-- Serena Girardi: 	102 	ore di lavoro
-- Enrico Rotundo: 	96 	ore di lavoro
-- Nicolò Tresoldi: 	98 	ore di lavoro
-- Federico Poli: 	99 	ore di lavoro
+- Serena Girardi: 	100 	ore di lavoro
+- Enrico Rotundo: 	102 	ore di lavoro
+- Nicolò Tresoldi: 	102 	ore di lavoro
+- Federico Poli: 	102 	ore di lavoro
 - Giacomo Fornari: 	104 	ore di lavoro
 - Gianluca Donato: 	102 	ore di lavoro
 - Luca De Franceschi: 	102 	ore di lavoro
 
-ATTENZIONE: Enrico Rotundo ha troppi pochi ruoli (5). Dovrebbe fare più responsabile.
-ATTENZIONE: Nicolò Tresoldi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
 ATTENZIONE: Luca De Franceschi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
 

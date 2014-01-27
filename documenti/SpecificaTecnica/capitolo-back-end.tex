@@ -25,16 +25,17 @@ I tipi di permessi possibili sono:
 	\hline 
 	\textbf{Risorsa} & \textbf{Metodo } & \textbf{Permessi} \\ \hline
 	
-	\multirow{8}{*}{\emph{/session}} 
+\multirow{8}{*}{\emph{/login}} 
  	& \multirow{2}{*}{POST} \vspace{0.2cm} \\ 
 		& Crea una nuova sessione associata all'utente, corrisponde al login. 
-		& Utente \\
- 	\cmidrule{2-3}
+		& Utente \\\hline 
+ 		
+\multirow{4}{*}{ \emph{/logout} }
  	& \multirow{2}{*}{DELETE} \vspace{0.2cm} \\  
  		& Elimina la sessione utente, corrisponde al logout. 
  		& Utente \\ \hline 
  		
-\multirow{4}{*}{ \emph{/profile} } 
+\multirow{4}{*}{ \emph{/profile} }
  	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
  		& Restituisce i dati relativi all'utente. 
  		& Utente Autenticato \\ 
@@ -43,12 +44,12 @@ I tipi di permessi possibili sono:
  		& Modifica i dati utente. 
  		& Utente Autenticato \\ \hline 
 
-\multirow{2}{*}{ \emph{/lostpassword/require} } 
+\multirow{2}{*}{ \emph{/password/lost} }
  	& \multirow{2}{*}{POST} \vspace{0.2cm} \\ 
  		& Effettua la richiesta di recupero password.
  		& Utente \\ \hline
  		
-\multirow{2}{*}{ \emph{/lostpassword/reset/$\{$userId$\}$} }
+\multirow{2}{*}{ \emph{/password/reset} }
  	& \multirow{2}{*}{PUT} \vspace{0.2cm} \\ 
  		& Effettua la richiesta di modifica della password utente.
  		& Utente \\ %\tabucline[2pt]{-}
@@ -82,7 +83,7 @@ I tipi di permessi possibili sono:
  		& Utente Autenticato \\ 
  	\hline 
 
-\multirow{6}{*}{ \emph{/collection/{name}/$\{$id$\}$} } 
+\multirow{6}{*}{ \emph{/collection/$\{$name$\}$/$\{$id$\}$} } 
  	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
  		& Restituisce la lista di attributi del Document $\{$id$\}$ appartenente alla collection $\{$name$\}$
  		& Utente Autenticato \\ 

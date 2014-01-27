@@ -29,11 +29,10 @@ milestone_ra = 104204
 testTasks(project)
 testTaskLists(project)
 testConcurrentTasks(project)
+testEstimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])
+testPeople(project)
 
 aggiungi(project, milestone_rr)
-
-testPeople(project)
-testEstimateCosts(project, [milestone_rp, milestone_rq, milestone_ra])
 
 writeGanttMilestone(project, milestone_rp, "gantt_rp.tex")
 writeGanttMilestone(project, milestone_rq, "gantt_rq.tex")

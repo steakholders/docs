@@ -99,16 +99,6 @@ aspell --lang it --mode tex --encoding utf-8 --personal root/script/aspell_perso
 		 \item Se l'errore segnalato da Aspell è un falso positivo, selezionare il comando \textbf{``aggiungi''}.
 		\end{itemize}
 
-		
-		\subsubsection{UML}
-		
-		Per la produzione dei diagrammi \emph{\glossary{UML}} verrà utilizzata la piattaforma \emph{Lucidchart} (\url{https://www.lucidchart.com}).
-		
-		È stato valutato anche il software \emph{Astah Professional} (\url{http://astah.net/editions/professional}), utilizzabile con una licenza accademica accademica gratuita, ma è stato preferito Lucidchart per la facilità con cui è possibile collaborare online.
-		
-%		\subsubsection{Validazione}
-%		\subsubsection{???Database???}
-
 		\subsubsection{Script di Makefile}
 		\label{makefile}
 
@@ -139,9 +129,49 @@ Per ogni documento \glossario{PDF} calcola l'indice di leggibilità \glossario{G
 
 È possibile eseguire i primi due comandi dalle cartelle dei documenti e dalle loro cartelle superiori, fino alla cartella principale del repository. I restanti comandi si possono eseguire soltanto dalla cartella principale del repository.
 
+\subsubsection{UML}
+		
+	Per la produzione dei diagrammi \emph{\glossary{UML}} verrà utilizzata la piattaforma \emph{Lucidchart}
+	(\url{https://www.lucidchart.com}).
+		
+	È stato valutato anche il software \emph{Astah Professional} (\url{http://astah.net/editions/professional}), utilizzabile con
+	una licenza accademica gratuita, ma è stato preferito Lucidchart per la facilità con cui è possibile collaborare online.\\
+		
+	Per automatizzare il reperimento delle immagini relative ai diagrammi \glossary{UML} si è creato uno script apposito il quale
+	scaricherà nella cartella \code{/AnalisiDeiRequisiti/UML} i diagrammi presenti in Lucidchart. \\
+	Per utilizzarlo bisogna installare \glossario{ngrok} $\geq 1.3$ e per la prima esecuzione, eseguire le istruzioni nel file
+	\code{download$\_$UML.py} nella cartella \code{/AnalisiDeiRequisiti}. \\ 
+	Per le esecuzioni successive basterà utilizzare dal terminale il comando: \code{python download$\_$UML.py}.
+	
+\subsubsection{Script download use cases e requisiti}
+	In \emph{Requisteak} sono presenti le descrizioni degli use cases e i requisiti, per effettuarne il download in formato
+	\code{.tex} è stato predisposto uno script che andrà a prendere tali informazioni e creerà i corrispettivi capitoli.\\
+	 Dopo essersi posizionati all'interno della cartella \code{/AnalisiDeiRequisiti}, eseguire lo script con il comando da terminale:
+	 \code{python download$\_$requisiti.py} \\
+	
+
 \subsubsection{Script di produzione del Gantt e dei grafici}
 		\label{Gantt}
 Per agevolare la produzione dinamica del \textit{Piano di progetto} è stato scritto un apposito script che genera automaticamente i diagrammi di \glossario{Gantt} e i grafici relativi alla suddivisione del lavoro e al prospetto economico.
+Tale script sfrutta le \glossario{API} messe a disposizione da \glossario{TeamworkPM} che permettono di scaricare tutto ciò che riguarda il progetto aperto sulla piattaforma, includendo \glossario{milestone}, persone, TaskList e ore.
+Lo script si preoccupa, attraverso le informazioni prelevate, di :
+\begin{itemize}
+\item Generare in output le tabelle delle ore per ruolo divise per ogni \glossario{milestone} pianificata in \glossario{TeamworkPM} in un corrispondente file \code{.tex},
+\item Generare per ogni \glossario{milestone} pianificata, un file \code{.tex} con il corrispondente diagramma di \glossario{Gantt};
+\item Generare i grafici a torta riguardanti le ore per ruolo in ogni \glossario{milestone};
+\item Generare i grafici a torta riguardanti i costi per ruolo in ogni \glossario{milestone} e in totale;
+\item Generare i grafici a barre relativi a ore per ruolo per componente corrispondenti ad ogni \glossario{milestone} e in totale;
+\item Effettuare la verifica, con segnalazione di errore se l'esito è negativo e descrizione di tali segnalazioni in un file \code{.txt}, del rispetto delle norme nella pianificazione : 
+	\begin{itemize}
+	\item Verifica che non siano presenti per ogni persona dei task sovrapposti;
+	\item Controlla i vincoli sulle ore per persona;
+	\item Controlla i vincoli sul preventivo;
+	\item Verifica che la rotazione dei ruoli sia corretta;
+	\item Controlla che le ore di verifica siano maggiori del 30$\%$.
+	\end{itemize}
+\end{itemize} 
+Per poterlo utilizzare, abilitare le API nel proprio account \glossario{TeamworkPM} per ottenere il token da utilizzare alla richiesta dello script. \\
+Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con il comando \code{python download$\_$gantt.py}.
 
 	\subsection{Ambiente di sviluppo}
 		

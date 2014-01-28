@@ -64,38 +64,57 @@ I tipi di permessi possibili sono:
  		& Effettua la richiesta di creazione di un nuovo utente.
  		& Admin \\ \hline  
  		
-\multirow{6}{*}{ \emph{/users/$\{$id$\}$} } 
+\multirow{6}{*}{ \emph{/users/$\{$user id$\}$} } 
  	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
- 		& Restituisce i dati corrispondenti all'utente con id $\{$id$\}$.
+ 		& Restituisce i dati corrispondenti all'utente con id $\{$user id$\}$.
  		& Admin \\ 
  	\cmidrule{2-3}
  	& \multirow{2}{*}{PUT} \vspace{0.2cm} \\ 
- 		& Effettua la richiesta di modifica dei dati utente con id $\{$id$\}$.
+ 		& Effettua la richiesta di modifica dei dati utente con id $\{$user id$\}$.
  		& Admin \\
  	\cmidrule{2-3}
  	& \multirow{2}{*}{DELETE} \vspace{0.2cm} \\ 
- 		& Elimina l'utente con id $\{$id$\}$.
+ 		& Elimina l'utente con id $\{$user id$\}$.
  		& Admin \\ \hline 
  		
-\multirow{2}{*}{ \emph{/collection/$\{$name$\}$} } 
+\multirow{2}{*}{ \emph{/collection/} } 
  	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
- 		& Restituisce la lista di document della collection $\{$name$\}$
+ 		& Restituisce la lista delle collection
+ 		& Utente Autenticato \\
+ 	\hline 
+
+\multirow{2}{*}{ \emph{/collection/$\{$collection name$\}$} } 
+ 	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
+ 		& Restituisce la lista di document della collection $\{$collection name$\}$
  		& Utente Autenticato \\ 
  	\hline 
 
-\multirow{6}{*}{ \emph{/collection/$\{$name$\}$/$\{$id$\}$} } 
+\multirow{6}{*}{ \emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} } 
  	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
- 		& Restituisce la lista di attributi del Document $\{$id$\}$ appartenente alla collection $\{$name$\}$
+ 		& Restituisce la lista di attributi del Document $\{$document id$\}$ appartenente alla collection $\{$collection name$\}$
  		& Utente Autenticato \\ 
  	\cmidrule{2-3}
  	& \multirow{2}{*}{PUT} \vspace{0.2cm} \\ 
- 		& Modifica il document $\{$id$\}$
+ 		& Modifica il document $\{$document id$\}$
  		& Admin \\ 
  	\cmidrule{2-3}
  	& \multirow{2}{*}{DELETE} \vspace{0.2cm} \\ 
- 		& Elimina il document con id $\{$id$\}$  
- 		& Admin \\ 
+ 		& Elimina il document con id $\{$document id$\}$  
+ 		& Admin \\
 	\hline
+
+\multirow{2}{*}{ \emph{/action/$\{$action name$\}$/$\{$collection name$\}$} } 
+ 	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
+ 		& Esegue l'azione $\{$action name$\}$ sulla Collection $\{$collection name$\}$
+ 		& Utente Autenticato \\
+ 	\hline 
+
+\multirow{2}{*}{ \emph{/action/$\{$action name$\}$/$\{$collection name$\}$/$\{$document id$\}$} } 
+ 	& \multirow{2}{*}{GET} \vspace{0.2cm} \\ 
+ 		& Esegue l'azione $\{$action name$\}$ sul Document $\{$document name$\}$ della Collection $\{$collection name$\}$
+ 		& Utente Autenticato \\
+ 	\hline 
+
 	\end{longtable}
 	  \egroup
 \end{center} 

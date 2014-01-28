@@ -122,11 +122,9 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\]
 				Dove $Parole$ indica il numero di parole presenti nei documenti e $Ore\ persona$ rappresenta il numero di ore produttive dei componenti del gruppo.
 				
-				% TODO da stabilire
 				\textbf{Parametri utilizzati}:
 				\begin{itemize}
-					\item Range-accettazione: [???? - ????];
-					\item Range-ottimale: [???? - ????].
+					\item Range-ottimale: [$\ge$150].
 				\end{itemize}
 
 				\subparagraph{Produttività di test}
@@ -136,12 +134,8 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\]
 				Dove $Numero di test$ indica il numero di test eseguiti e $Ore persona$ rappresenta il numero di ore produttive dei componenti del gruppo.
 				
-				% TODO da stabilire
-				\textbf{Parametri utilizzati}:
-				\begin{itemize}
-					\item Range-accettazione: [???? - ????];
-					\item Range-ottimale: [???? - ????].
-				\end{itemize}
+				% TODO da incrementare prima dell'inizio dei test
+				I parametri utilizzati per questa metrica verranno stabiliti alla entro l'inizio dell'esecuzione dei test.
 
 				\subparagraph{Produttività di codifica}
 				Indica la produttività media delle attività di codifica.
@@ -160,19 +154,20 @@ La speranza è che dei buoni processi portino ad un buon software.
 			Impegno = Dimensione / Produttività
 			\]
 			Dove $Dimensione$ indica il tempo produttivo impiegato e $Produttività$ rappresenta la media delle produttività totali (di documentazione, di test, di codifica).
+
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [0 - 20];
-				\item Range-ottimale: [0 - 10].
+				\item Range-ottimale: [$\ge$0,6].
 			\end{itemize}
 
 			\paragraph{Modifiche} \mbox{} \\
 
 			Indica quante modifiche sono state approvate dal responsabile. Le modifiche possono riguardare requisiti, funzionalità, codice e documenti.
 			\[
-			Modifiche = Numero di modifiche
+			Modifiche = Numero\ di\ modifiche
 			\]
-			Dove $Numero di modifiche$ indica le issue etichettate come ``richiesta di modifica'' e ``approvate''.
+			Dove $Numero\ di\ modifiche$ indica le issue etichettate come ``richiesta di modifica'' e ``approvate''.
+
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
 				\item Range-accettazione: [0 - 20];

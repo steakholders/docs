@@ -3,8 +3,8 @@
 
 \subsection{Interfaccia REST}
 
-Ad ogni richiesta il server può rispondere con un messaggio di errore nel formato JSON e inviato con un codice HTTP della tipologia 4xx o 5xx. 
-Il formato JSON del messaggio di errore sarà:
+Ad ogni richiesta il server può rispondere con un messaggio di errore nel formato \glossario{JSON} e inviato con un codice \glossario{HTTP} della tipologia 4xx o 5xx. 
+Il formato \glossario{JSON} del messaggio di errore sarà:
 \begin{lstlisting}
 { 
   "code": [codice numerico dell'errore],
@@ -13,9 +13,9 @@ Il formato JSON del messaggio di errore sarà:
 \end{lstlisting}
 I tipi di permessi possibili sono: 
 \begin{itemize}
-\item \textbf{Utente: } questa risorsa può essere richiesta da qualsiasi tipo di utente.
-\item \textbf{Utente Autenticato: } questa risorsa può essere richiesta solo dagli utenti autenticati a \glossario{MaaP}.
-\item \textbf{Admin:} tale risorsa può essere richiesta solo da utenti con livello Admin.
+\item \textbf{Utente}: questa risorsa può essere richiesta da qualsiasi tipo di utente;
+\item \textbf{Utente Autenticato}: questa risorsa può essere richiesta solo dagli utenti autenticati a \glossario{MaaP};
+\item \textbf{Admin}: tale risorsa può essere richiesta solo da utenti con livello Admin.
 \end{itemize}
 
 \begin{center}

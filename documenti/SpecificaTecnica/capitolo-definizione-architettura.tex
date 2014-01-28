@@ -6,12 +6,12 @@
 
 \subsection{Formalismo di specifica}
 
-I diagrammi dei package e delle classi presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
+I diagrammi dei \glossario{package} e delle classi presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
 
 \subsection{Architettura generale}
 
-L'architettura scelta per lo sviluppo di \ProjectName{} servendosi del design pattern \glossario{MVC} (Model-View-Controller). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello evidenziando le componenti che ricoprono i ruoli di model e controller per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la view poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (JSON) è automatica e diretta.
-Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
+L'architettura scelta per lo sviluppo di \ProjectName{} si serve del \glossario{design pattern} \glossario{MVC} (\textit{Model-View-Controller}). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello, evidenziando le componenti che ricoprono i ruoli di \textit{model} e \textit{controller} per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta.
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName{}, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller, perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
 
 \begin{figure}[H]
 \centering
@@ -22,18 +22,18 @@ Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{Angular
 
 \subsection{REST}
 
-\glossario{REST}, ovvero Representational State Transfer è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server, e solitamente tale protocollo è \glossario{HTTP}, che è stato scelto anche per \ProjectName.
+\glossario{REST}, ovvero \textit{Representational State Transfer} è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server (solitamente \glossario{HTTP} ed è stato scelto anche per \ProjectName{}.
 
-I motivi che hanno spinto alla scelta di REST sono:
+I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 \begin{itemize}
 \item Semplicità di utilizzo;
-\item Indipendenza dal sistema operativo utilizzato dal \glossario{client};
+\item Indipendenza dal sistema operativo utilizzato dal client;
 \item Indipendenza dai linguaggi di programmazione utilizzati;
 %\item In coppia con HTTPS permette una certa sicurezza delle comunicazioni.
 \end{itemize}
 
 \glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite il protocollo sopracitato.
 
-Nell'\glossario{URI} inviato sono presenti il nome della risorsa e la sua rappresentazione, identificata dall'estensione del file scelto, e per \ProjectName{} è stato scelto il formato \glossario{JSON}, in quanto il suo \glossario{parsing} in \glossario{JavaScript} è più semplice rispetto, ad esempio, quello di \glossario{XML} o \glossario{CSV}.
+Nell'\glossario{URI} inviato sono presenti il nome della risorsa e la sua rappresentazione, identificata dall'estensione del file scelto, e per \ProjectName{} è stato scelto il formato \glossario{JSON}, in quanto il suo \glossario{parsing} in \glossario{JavaScript} è più semplice rispetto, ad esempio, a quello di \glossario{XML} o \glossario{CSV}.
 
-Un'altra caratteristica di \glossario{REST} è che essendo \glossario{stateless} ogni richiesta dovrà contenere tutte le informazioni necessarie e non dipende dallo stato del sistema.
+Un'altra caratteristica di \glossario{REST} è che essendo \glossario{stateless} ogni richiesta dovrà contenere tutte le informazioni necessarie in modo indipendente dallo stato del sistema.

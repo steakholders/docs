@@ -36,4 +36,18 @@ else:
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
 lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png")
+lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/MaaP - Apri pagina gestione utenti.png")
+lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/MaaP - Modifica profilo.png")
+
+lucidchart.download_image("4bdc-1928-52dac052-9e58-4fc30a004790", "uml/MaaP - Modifica document.png")
+lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/MaaP - Attività principali.png")
+lucidchart.download_image("440c-f4bc-52dabbcb-a162-0c630a004790", "uml/MaaP - Show-page.png")
+lucidchart.download_image("47b2-4774-52d98c99-872c-04f90a00d7c9", "uml/MaaP - Index-page.png")
+lucidchart.download_image("4709-9388-52d930e7-9fdc-44290a009998", "uml/MaaP - Effettua login.png")
+lucidchart.download_image("4cf6-0efc-52d93535-84d0-514a0a009db8", "uml/MaaP - Esegui reset password.png")
+lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/MaaP - Recupera password.png")
+lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/MaaP - Effettua registrazione.png")
+lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/MaaP - Apri show-page utente.png")
+lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/MaaP - Crea nuovo utente.png")
+
 

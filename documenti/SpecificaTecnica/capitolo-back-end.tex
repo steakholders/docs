@@ -110,6 +110,24 @@ I tipi di permessi possibili sono:
 
 \subsection{Diagramma delle classi}
 
+
+% SECTION ?
+% TODO inserire nel giusto paragrafo, l'avevo raccontato a qualcuno ma non ho tempo di farlo adesso
+Middleware previsti:
+- express.logger() (opzionale) per scrivere su terminale le richieste
+- express.compress() (opzionale) per comprimere con gzip le comunicazioni
+- express.bodyParser() per leggere i dati POST che vengono inviati assieme alla richiesta
+- express.methodOverride() per permettere anche ai browser vecchi di avere un modo per fare richieste PUT e DELETE (una volta non erano supportate)
+- express.cookieParser() per leggere i cookie che vengono inviati assieme alla richiesta
+- express.session(...) per utilizzare le sessioni
+- passport.initialize()
+- passport.session()
+- app.router per passare al router la gestione della richiesta
+- express.static(...) per servire i file statici
+- notFoundMiddleware: un middleware da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx)
+- errorMiddleware: un middleware da noi scritto per gestire gli errori sollevato da uno dei precedenti middleware (errore server 500)
+
+
 \subsection{Scenari}
 
 \subsubsection{Fallimento vincolo ``utente autenticato''}

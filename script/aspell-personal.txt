@@ -41,6 +41,7 @@ CamelCase
 Capability
 Cardin
 Casiraghi
+Chain
 Chrome
 Clean
 Closed
@@ -86,6 +87,7 @@ Exploring
 Express
 FAQ
 FTP
+Factory
 Fedora
 Firebase
 Firefox
@@ -176,6 +178,7 @@ Measure
 Medical
 Microsoft
 Microsystems
+Middleware
 Mistake
 Mocha
 Modeling
@@ -250,6 +253,7 @@ Rails
 Ralph
 Ready
 RegExp
+Registry
 Relationship
 Reliability
 Representational
@@ -303,6 +307,7 @@ TaskList
 Teamwork
 TeamworkPM
 Techinques
+TestClass
 TexMaker
 Transactions
 Transfer
@@ -355,6 +360,7 @@ an
 anchor
 and
 anyway
+app
 append
 application
 approvate'
@@ -378,6 +384,7 @@ between
 bioinformatica
 blabla
 black
+bodyParser
 bottom
 branch
 breakatwhitespace
@@ -394,6 +401,7 @@ checkbox
 checklists
 ciclomatica
 citecolor
+class
 cliccabile
 client
 closely
@@ -410,9 +418,12 @@ commentstyle
 commit
 community
 comprehension
+compress
 computing
 conditions
 controller
+cookie
+cookieParser
 coords
 corners
 correction
@@ -444,6 +455,7 @@ documents
 draw
 driven
 dsgfdgfg
+dsl
 dyadic
 eXtensible
 each
@@ -459,8 +471,11 @@ elections
 encoding
 enlargelimits
 environment
+errorMiddleware
 event
 explain
+exports
+express
 extendedchars
 external
 facilitatore
@@ -477,6 +492,7 @@ followed
 for
 form
 format
+fowler'
 framework
 friendly
 from
@@ -496,6 +512,7 @@ gray
 grep
 group
 gulpease
+gzip
 halstead
 height
 hh
@@ -504,6 +521,7 @@ improvement
 incrementalmente
 index
 indexPage
+initialize
 inner
 inputencoding
 inspection
@@ -514,6 +532,7 @@ issue
 issues
 it
 jQuery
+javascript
 join
 js
 justification
@@ -558,8 +577,10 @@ menu
 message
 metadati
 method
+methodOverride
 methods
 metrics
+middleware
 milestone
 mod
 modifica'
@@ -573,6 +594,7 @@ name
 namespace
 nell'index
 never
+new
 newline
 ngrok
 niladic
@@ -581,6 +603,7 @@ node
 nomeDellaFunzione
 nomemetrica
 north
+notFoundMiddleware
 npm
 num
 number
@@ -598,11 +621,13 @@ oriented
 pa
 package
 packet
+pag
 page
 parameters
 parser
 parsing
 participants
+passport
 path
 pdc
 pdf
@@ -655,6 +680,7 @@ refactor
 reference
 rege
 regexp
+registry
 rendering
 repl
 replacements
@@ -670,13 +696,17 @@ requires
 requisteak
 research
 reset
+responsability
 responsività
+return
 ridenominare
 right
 rimpiazza'
 root
 rounded
+router
 routine's
+routing
 rulecolor
 runtime
 ruoli'

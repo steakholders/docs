@@ -18,6 +18,7 @@ paramentri parametri
 partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
+que qua
 rischesto richiesto
 risportate riportate
 sarnno saranno

@@ -1,5 +1,31 @@
 \section{Design pattern}
 
+% TODO scrivere bene, sono solo appunti visto che non ho il tempo di rifare la scaletta del documento
+Dobbiamo distinguere tra pattern GIÀ PRESENTI nelle librerie/Node.js e pattern DA NOI USATI. I pattern da noi usati vanno qua, i pattern usati da Node.js o dalle librerie vanno in un appendice.
+
+
+Pattern DA NOI USATI:
+- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
+
+
+Pattern GIÀ PRESENTI:
+
+- Il pattern Factory ogni volta che in un modulo si utilizza lo stile:
+
+function TestClass() \{
+
+\}
+exports.create\_test\_class = function() \{
+	return new TestClass();
+\}
+
+(vedi pag. 77 del libro Creare applicazione web in javascript)
+
+- Ogni modulo è nativamente un Singleton perché viene caricato una sola volta da Node.js (poi tutti si riferiscono allo stesso)
+
+- Express usa Chain-of-responsability per la gestione dei middleware e del routing
+
+- I middleware sono un pattern, è fortemente legato al Chain-of-responsability e sono quasi la stessa cosa (scrivetelo)
 
 \subsection{ - categoria pattern - }
 

@@ -8,7 +8,8 @@ Il formato \glossario{JSON} del messaggio di errore sarà:
 \begin{lstlisting}
 { 
   "code": [codice numerico dell'errore],
-  "message": [descrizione testuale dell'errore]
+  "message": [descrizione testuale dell'errore],
+  "data": [eventuali dati aggiuntivi sull'errore]
 }
 \end{lstlisting}
 Di seguito sono elencate le risorse REST associate al tipo di metodo che è possibile richiedere su esse e i permessi richiesti per poter effettuare la richiesta. \\
@@ -83,20 +84,19 @@ I tipi di permessi possibili sono:
 	\multicolumn{3}{|c|} {Restituisce la lista di attributi del Document $\{$document id$\}$ appartenente alla collection $\{$collection name$\}$}  \\ \hline
 	\textbf{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} } & \textbf{PUT} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Modifica il document $\{$document id$\}$. }  \\ \hline
-	\textbf{\emph{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} }} & \textbf{GET} & \textbf{Utente Autenticato} \\
+	\textbf{\emph{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} }} & \textbf{DELETE} & \textbf{Admin} \\
 	\hline
 	\multicolumn{3}{|c|} {Elimina il document con id $\{$document id$\}$. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/action/$\{$action name$\}$/$\{$collection name$\}$}} & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
+	\textbf{\emph{/action/$\{$action name$\}$/$\{$collection name$\}$}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Esegue l'azione $\{$action name$\}$ sulla Collection $\{$collection name$\}$.}  \\ 
 	\specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/action/$\{$action name$\}$/$\{$collection name$\}$/$\{$document id$\}$}} & \textbf{GET} & 
-	\textbf{Utente Autenticato} \\ \hline
+	\textbf{\emph{/action/$\{$action name$\}$/$\{$collection name$\}$/$\{$document id$\}$}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Esegue l'azione $\{$action name$\}$ sul Document $\{$document name$\}$ della Collection 
 	$\{$collection name$\}$.}  \\ 
 	\specialrule{1pt}{1pt}{1pt}
@@ -109,3 +109,110 @@ I tipi di permessi possibili sono:
 \subsection{Diagramma dei package}
 
 \subsection{Diagramma delle classi}
+
+\subsection{Scenari}
+
+\subsubsection{Fallimento vincolo ``utente autenticato''}
+Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireLogged
+Diagramma: PassportLocal requireLogged ERROR
+
+\subsubsection{Fallimento vincolo ``utente non autenticato''}
+Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireNotLogged
+Diagramma: PassportLocal requireNotLogged ERROR
+
+\subsubsection{Fallimento vincolo ``utente admin''}
+Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireAdmin
+Diagramma: PassportLocal requireAdmin ERROR
+
+\subsubsection{Login POST}
+Descrizione scenario
+Precondizione: non fallisce il requireNotLogged
+Diagramma: Login POST
+
+\subsubsection{Logout DELETE}
+Descrizione scenario
+Precondizione: non fallisce il requireLogged
+Diagramma: Logout DELETE
+
+\subsubsection{Profile GET}
+Descrizione scenario
+Precondizione: non fallisce il requireLogged
+Diagramma: Profile GET
+Controller: requireLogged, ProfileController->getProfile()
+
+\subsubsection{Profile PUT}
+Descrizione scenario, dire che come precondizione non fallisce il requireLogged
+Diagramma: Profile PUT
+Controller: requireLogged, ProfileController->editProfile()
+
+\subsubsection{Password Lost POST}
+Descrizione scenario, dire che come precondizione non fallisce il requireNotLogged
+Diagramma: Password Lost POST
+Controller: requireNotLogged, ForgotController->requirePasswordReset()
+
+\subsubsection{Password Reset PUT}
+Descrizione scenario, dire che come precondizione non fallisce il requireNotLogged
+Diagramma: Password Reset PUT
+Controller: requireNotLogged, ForgotController->makePasswordReset()
+
+\subsubsection{Users GET}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Users GET
+Controller: requireLogged, requireAdmin, UserController->getUsers()
+
+\subsubsection{Users POST}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Users POST
+Controller: requireLogged, requireAdmin, UserController->createUser()
+
+\subsubsection{Users Id GET}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Users Id GET
+Controller: requireLogged, requireAdmin, UserController->getUser(id)
+
+\subsubsection{Users Id PUT}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Users Id PUT
+Controller: requireLogged, requireAdmin, UserController->editUser(id)
+Lo UserController può restituire un errore se si cerca di modificare un superadmin o se si cerca di modificare il proprio ruolo.
+
+\subsubsection{Users Id DELETE}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Users Id DELETE
+Controller: requireLogged, requireAdmin, UserController->deleteUser(id)
+Lo UserController può restituire un errore se si cerca di modificare un superadmin o se si cerca di modificare il proprio ruolo.
+
+\subsubsection{Collection GET}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection GET
+Controller: requireLogged, CollectionController->listCollections()
+
+\subsubsection{Collection Name GET}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name GET
+Controller: requireLogged, CollectionController->indexPage(collection)
+
+\subsubsection{Collection Name Document GET}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name Document GET
+Controller: requireLogged, CollectionController->showPage(collection)
+
+\subsubsection{Collection Name Document PUT}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name Document PUT
+Controller: requireLogged, requireAdmin, CollectionController->editDocument(collection, document)
+
+\subsubsection{Collection Name Document DELETE}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name document DELETE
+Controller: requireLogged, requireAdmin, CollectionController->deleteDocument(collection, document)
+
+\subsubsection{Action Name Collection PUT}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name document DELETE
+Controller: requireLogged, requireAdmin, CollectionController->collectionAction(action, collection)
+
+\subsubsection{Action Name Collection Document PUT}
+Descrizione scenario, dire che come precondizione non falliscono i controlli
+Diagramma: Collection Name document DELETE
+Controller: requireLogged, requireAdmin, CollectionController->documentAction(action, collection, document)

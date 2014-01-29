@@ -15,6 +15,7 @@ ia La
 l'emal l'email
 liberia libreria
 paramentri parametri
+paramentro parametro
 partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno

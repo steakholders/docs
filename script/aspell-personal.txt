@@ -319,6 +319,7 @@ UCS
 UCU
 UML
 Ubuntu
+Unauthorized
 Under
 Unicode
 Unified
@@ -377,6 +378,7 @@ avoided
 back
 backslash
 baseline
+basicAuth
 basicstyle
 before
 best
@@ -424,6 +426,8 @@ conditions
 controller
 cookie
 cookieParser
+cookieSession
+cookies
 coords
 corners
 correction
@@ -468,9 +472,11 @@ edition
 effort
 election
 elections
+encoded
 encoding
 enlargelimits
 environment
+error
 errorMiddleware
 event
 explain
@@ -514,6 +520,8 @@ group
 gulpease
 gzip
 halstead
+handling
+header
 height
 hh
 ideal
@@ -596,6 +604,7 @@ nell'index
 never
 new
 newline
+next
 ngrok
 niladic
 nltk
@@ -743,6 +752,7 @@ stakeholders
 starts
 startup
 stateless
+static
 stepnumber
 storage
 stringstyle
@@ -799,6 +809,7 @@ urlcolor
 used
 userId
 username
+userneme
 users
 utf
 validatore

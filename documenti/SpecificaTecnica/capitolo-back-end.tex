@@ -108,25 +108,35 @@ I tipi di permessi possibili sono:
 
 \subsection{Diagramma dei package}
 
-\subsection{Diagramma delle classi}
+\subsection{Diagrammi gestione richieste}
+Nel diagramma della gestione richieste viene mostrata l'iterazione tra server e middleware, quest'ultimi possono essere diversi, tra cui i middleware utilizzati da Express:
+\begin{itemize}
+\item{basicAuth()}: Middleware per l'autenticazione HTTP di base. Questo middleware causa il rifiuto delle richieste con userneme e password non corretti con stato HTTP "401 Unauthorized".
+\item{bodyParser()}: Middleware che analizza una richiesta di tipo JSON o di tipo www-form-encoded.
+\item{cookieParser()}: Middleware che analizza il campo header dei Cookie.
+\item{cookieSession()}: Middleware per la gestione di sessioni utente basate su cookies.
+\item{router()}: Middleware in cui Express gestisce le richieste registrate ai metodi GET,POST etc.
+\item{static()}: Middleware per la gestione dei contenuti statici.
+\item{error-handling}: middleware per la gestione degli errori. La risposta di tale middleware è di tipo arbitrario, può essere risposta una pagina HTML di errore, un semplice messaggio o una stringa JSON.
+\end{itemize}
+La richiesta arriva al server il quale va a prendere il prossimo \glossario{middleware}, inviandogli come parametri la richiesta, la risposta e next che innesca la chiamata per passare il controllo al prossimo \glossario{middleware}.  \\
+In caso di errore, l'ultimo middleware manderà un next(error) ed il server aggiungerà un parametro a quelli sopra citati con l'informazione dell'errore stesso e passerà il controllo al primo gestore dell'errore e non al successivo \glossario{middleware}. \\
+Un \glossario{middleware} può rispondere con un return() ed in questo caso ..... %TODO \\
 
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.30]{scenari/Diagramma Gestione Richiesta.png}  
+		\caption{Diagramma Gestione Richiesta}
+	\end{center} 
+\end{figure} 
 
-% SECTION ?
-% TODO inserire nel giusto paragrafo, l'avevo raccontato a qualcuno ma non ho tempo di farlo adesso
-Middleware previsti:
-- express.logger() (opzionale) per scrivere su terminale le richieste
-- express.compress() (opzionale) per comprimere con gzip le comunicazioni
-- express.bodyParser() per leggere i dati POST che vengono inviati assieme alla richiesta
-- express.methodOverride() per permettere anche ai browser vecchi di avere un modo per fare richieste PUT e DELETE (una volta non erano supportate)
-- express.cookieParser() per leggere i cookie che vengono inviati assieme alla richiesta
-- express.session(...) per utilizzare le sessioni
-- passport.initialize()
-- passport.session()
-- app.router per passare al router la gestione della richiesta
-- express.static(...) per servire i file statici
-- notFoundMiddleware: un middleware da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx)
-- errorMiddleware: un middleware da noi scritto per gestire gli errori sollevato da uno dei precedenti middleware (errore server 500)
-
+Nel seguente diagramma viene mostrato il comportamento di routing, dove si intende che ogni controllore ha associato un'espressione regolare che specifica su quali richieste agisce.
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.30]{scenari/Diagramma Routing Richiesta.png} 
+		\caption{Diagramma Routing Richiesta}
+	\end{center} 
+\end{figure}
 
 \subsection{Scenari}
 

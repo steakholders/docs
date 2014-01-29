@@ -4,10 +4,10 @@ all'anilisi all'analisi
 allìapplicazione all'applicazione
 declassere declassare
 dell'aministratore dell'amministratore
+dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
-dellanno dell'anno
 ec ecc
 erraro errato
 grupp gruppo
@@ -15,14 +15,15 @@ ia La
 l'emal l'email
 liberia libreria
 paramentri parametri
+paramentro parametro
 partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
 rischesto richiesto
 risportate riportate
 sarnno saranno
-staica statica
 sè sé
+staica statica
 un'apposito un apposito
 un'array un array
 verrano verranno

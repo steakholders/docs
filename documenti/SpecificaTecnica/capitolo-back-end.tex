@@ -115,9 +115,18 @@ Nel diagramma della gestione richieste viene mostrata l'iterazione tra server e 
 \item{bodyParser()}: Middleware che analizza una richiesta di tipo JSON o di tipo www-form-encoded.
 \item{cookieParser()}: Middleware che analizza il campo header dei Cookie.
 \item{cookieSession()}: Middleware per la gestione di sessioni utente basate su cookies.
-\item{router()}: Middleware in cui Express gestisce le richieste registrate ai metodi GET,POST etc.
+\item{router()}: Middleware in cui Express gestisce le richieste registrate ai metodi GET,POST etc, , ovvero mappa azioni diverse a richieste http diverse, sia in termini di url che in termini di metodi http.
 \item{static()}: Middleware per la gestione dei contenuti statici.
 \item{error-handling}: middleware per la gestione degli errori. La risposta di tale middleware è di tipo arbitrario, può essere risposta una pagina HTML di errore, un semplice messaggio o una stringa JSON.
+\item{passport}: middleware per Node.js utilizzati per implementare l'autenticazione in maniera semplice e veloce, vengono utilizzati:
+	\begin{itemize}
+	\item{passport.initialize()}: middleware utilizzato per l'inizializzazione di Passport.
+	\item{passport.session()}:  middleware che permette di memorizzare i record della sessione utente per mantenerne lo stato di
+	login. 
+	\end{itemize}
+\item{notFoundMiddleware}: un middleware da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx).
+\item{errorMiddleware}: middleware da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server
+500)
 \end{itemize}
 La richiesta arriva al server il quale va a prendere il prossimo \glossario{middleware}, inviandogli come parametri la richiesta, la risposta e next che innesca la chiamata per passare il controllo al prossimo \glossario{middleware}.  \\
 In caso di errore, l'ultimo middleware manderà un next(error) ed il server aggiungerà un parametro a quelli sopra citati con l'informazione dell'errore stesso e passerà il controllo al primo gestore dell'errore e non al successivo \glossario{middleware}. \\

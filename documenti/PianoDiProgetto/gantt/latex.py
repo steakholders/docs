@@ -197,10 +197,12 @@ def writeConsuntivoRole(project, milestone_ids, roles_id, filename):
 		
 		planned_cost = sum([c.getPlannedCost() for c in role_costs])
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])
-		worked_cost = sum([c.getWorkHours() for c in role_costs])
-		worked_hours = sum([c.getWorkCost() for c in role_costs])
+		worked_cost = sum([c.getWorkCost() for c in role_costs])
+		worked_hours = sum([c.getWorkHours() for c in role_costs])
 		planned_total_cost += planned_cost
 		planned_total_hours += planned_hours
+		worked_total_cost += worked_cost
+		worked_total_hours += worked_hours
 
 		latex(u"\t{name} & {hours:.0f} ({diffH:+.0f}) & {cost:.0f} ({diffC:+.0f}) € \\\\".format(
 			name = role.getName().title(),
@@ -209,6 +211,19 @@ def writeConsuntivoRole(project, milestone_ids, roles_id, filename):
 			diffH = planned_hours - worked_hours,
 			diffC = planned_cost - worked_cost
 		))
+	latex(u"\hline")
+	latex(u"\\textbf{{Totale consuntivo}} & {totCH:+.0f} & {totCC:+.0f} € \\\\".format(
+		totCH = worked_total_hours,
+		totCC = worked_total_cost
+	))
+	latex(u"\\textbf{{Totale preventivo}} & {totPH:+.0f} & {totPC:+.0f} € \\\\".format(
+		totPH = planned_total_hours,
+		totPC = planned_total_cost
+	))
+	latex(u"\\textbf{{Differenza dei totali}} & {diffH:+.0f} & {diffC:+.0f} € \\\\".format(
+		diffH = planned_total_hours - worked_total_hours,
+		diffC = planned_total_cost - worked_total_cost
+	))
 
 	out.close()
 

@@ -111,22 +111,21 @@ I tipi di permessi possibili sono:
 \subsection{Diagrammi gestione richieste}
 Nel diagramma della gestione richieste viene mostrata l'iterazione tra server e middleware, quest'ultimi possono essere diversi, tra cui i middleware utilizzati da Express:
 \begin{itemize}
-\item{basicAuth()}: Middleware per l'autenticazione HTTP di base. Questo middleware causa il rifiuto delle richieste con userneme e password non corretti con stato HTTP "401 Unauthorized".
-\item{bodyParser()}: Middleware che analizza una richiesta di tipo JSON o di tipo www-form-encoded.
-\item{cookieParser()}: Middleware che analizza il campo header dei Cookie.
-\item{cookieSession()}: Middleware per la gestione di sessioni utente basate su cookies.
-\item{router()}: Middleware in cui Express gestisce le richieste registrate ai metodi GET,POST etc, , ovvero mappa azioni diverse a richieste http diverse, sia in termini di url che in termini di metodi http.
-\item{static()}: Middleware per la gestione dei contenuti statici.
-\item{error-handling}: middleware per la gestione degli errori. La risposta di tale middleware è di tipo arbitrario, può essere risposta una pagina HTML di errore, un semplice messaggio o una stringa JSON.
-\item{passport}: middleware per Node.js utilizzati per implementare l'autenticazione in maniera semplice e veloce, vengono utilizzati:
+\item{basicAuth()}: \glossario{Middleware} per l'autenticazione HTTP di base. Questo middleware causa il rifiuto delle richieste con userneme e password non corretti con stato HTTP "401 Unauthorized".
+\item{bodyParser()}: \glossario{Middleware} che analizza una richiesta di tipo JSON o di tipo www-form-encoded.
+\item{cookieParser()}: \glossario{Middleware} che analizza il campo header dei Cookie.
+\item{cookieSession()}: \glossario{Middleware} per la gestione di sessioni utente basate su cookies.
+\item{router()}: \glossario{Middleware} in cui Express gestisce le richieste registrate ai metodi GET,POST etc, , ovvero mappa azioni diverse a richieste http diverse, sia in termini di url che in termini di metodi http.
+\item{static()}: \glossario{Middleware} per la gestione dei contenuti statici.
+\item{error-handling}: \glossario{Middleware} per la gestione degli errori. La risposta di tale middleware è di tipo arbitrario, può essere risposta una pagina HTML di errore, un semplice messaggio o una stringa JSON.
+\item{passport}: \glossario{Middleware} per Node.js utilizzati per implementare l'autenticazione in maniera semplice e veloce,
+vengono utilizzati:
 	\begin{itemize}
-	\item{passport.initialize()}: middleware utilizzato per l'inizializzazione di Passport.
-	\item{passport.session()}:  middleware che permette di memorizzare i record della sessione utente per mantenerne lo stato di
-	login. 
+	\item{passport.initialize()}: \glossario{Middleware} utilizzato per l'inizializzazione di Passport.
+	\item{passport.session()}:  \glossario{Middleware} che permette di memorizzare i record della sessione utente per mantenerne lo stato di login. 
 	\end{itemize}
-\item{notFoundMiddleware}: un middleware da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx).
-\item{errorMiddleware}: middleware da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server
-500)
+\item{notFoundMiddleware}: un \glossario{Middleware} da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx).
+\item{errorMiddleware}: \glossario{Middleware} da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server 500)
 \end{itemize}
 La richiesta arriva al server il quale va a prendere il prossimo \glossario{middleware}, inviandogli come parametri la richiesta, la risposta e next che innesca la chiamata per passare il controllo al prossimo \glossario{middleware}.  \\
 In caso di errore, l'ultimo middleware manderà un next(error) ed il server aggiungerà un parametro a quelli sopra citati con l'informazione dell'errore stesso e passerà il controllo al primo gestore dell'errore e non al successivo \glossario{middleware}. \\
@@ -139,7 +138,7 @@ Un \glossario{middleware} può rispondere con un return() ed in questo caso ....
 	\end{center} 
 \end{figure} 
 
-Nel seguente diagramma viene mostrato il comportamento di routing, dove si intende che ogni controllore ha associato un'espressione regolare che specifica su quali richieste agisce.
+Nel seguente diagramma viene mostrato il comportamento di routing, dove si intende che ogni controllore ha associato un'espressione regolare che specifica su quali richieste agisce. 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.30]{scenari/Diagramma Routing Richiesta.png} 

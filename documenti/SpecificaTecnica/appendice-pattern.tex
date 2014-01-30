@@ -1,3 +1,27 @@
 \pagebreak
-\section{Design Pattern}
+\section{Descrizione Design Pattern}
 \label{appendice-pattern}
+
+	\subsection{Chain of Responsibility} % patern comportamentale
+	Il \glossario{Chain of Responsibility} è un pattern comportamentale che permette di separare i \emph{sender} dai \emph{reciver} delle richieste. La richiesta attraversa una catena di oggetti per essere intercettata solo quando raggiunge il proprio gestore. Viene utilizzato quando non è possibile determinare staticamente il \emph{reciever} oppure l'insieme di oggetti gestori cambia dinamicamente a runtime. \\ Le richieste vengono dette \emph{implicite} poiché il \emph{sender} non ha alcuna conoscenza sull'identità del ricevente. Per permettere alla richiesta di attraversare la catena e per rimanere \emph{implicita}, ogni \emph{reciever} condivide un interfaccia comune per gestire le richieste ed accedere al proprio successore. 
+	La gerarchia che vorrà inviare richieste dovrà avere una superclasse che dichiara un metodo \emph{handler} generico, la specializzazione di tale metodo avviene tramite \emph{overriding} nelle sottoclassi opportune, come illsutrato in figura \ref{fig:chainofresponsibility}.
+	
+	\begin{figure}[h]
+	\centering \includegraphics[width=0.7\textwidth]{patterns/ChainOfResponsability.png}
+	\caption{Struttura del chain of responsibility.}
+	\label{fig:chainofresponsibility}
+	\end{figure}
+	
+	L'utilizzo di questo pattern comporta una serie di conseguenze:
+		\begin{itemize}
+			\item Ridotto accoppiamento: gli oggetti non sono a conoscenza di chi gestirà la richiesta ma sanno solo che verrà gestita in modo appropriato. Inoltre non bisognerà manutenere i riferimenti a tutti i possibili riceventi;
+			\item Aggiunge flessibilità nell'assegnamento delle responsabilità degli oggetti: è possible distribuire le responsabilità tra gli oggetti a runtime modificandone la gerarchia. Staticamente è possibile usare il \emph{subclassing} per specializzare i gestori;
+ 			\item Non c'è garanzia che la \emph{request} venga gestita, questo può avvenire quando la catena non è stata costruita in modo rigoroso.
+		\end{itemize}
+	
+		
+	
+	\subsection{Middleware} 
+	\subsection{Injection} %angular
+	\subsection{Singleton} % creazionale
+	\subsection{Registry} %libro dropbox

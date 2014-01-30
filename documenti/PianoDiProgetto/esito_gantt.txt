@@ -19,23 +19,23 @@ Controllo vincoli sul preventivo
 --------------------------------
 - amministratore: 92 	ore, per un costo di 	1840 	€
 - programmatore : 126 	ore, per un costo di 	1890 	€
-- responsabile  : 38 	ore, per un costo di 	1140 	€
+- responsabile  : 34 	ore, per un costo di 	1020 	€
 - analista      : 32 	ore, per un costo di 	800 	€
 - verificatore  : 236 	ore, per un costo di 	3540 	€
 - progettista   : 190 	ore, per un costo di 	4180 	€
-Totale          : 13390 €
+Totale          : 13270 €
 Ore di verifica : 33.0 %
 
 
 Controllo vincoli sulle persone
 -------------------------------
 - Serena Girardi: 	100 	ore di lavoro
-- Enrico Rotundo: 	102 	ore di lavoro
+- Enrico Rotundo: 	100 	ore di lavoro
 - Nicolò Tresoldi: 	102 	ore di lavoro
 - Federico Poli: 	102 	ore di lavoro
 - Giacomo Fornari: 	104 	ore di lavoro
 - Gianluca Donato: 	102 	ore di lavoro
-- Luca De Franceschi: 	102 	ore di lavoro
+- Luca De Franceschi: 	100 	ore di lavoro
 
 ATTENZIONE: Luca De Franceschi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
 

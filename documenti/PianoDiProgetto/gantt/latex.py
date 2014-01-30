@@ -139,7 +139,7 @@ def writeProspetto(project, milestone_ids, roles_id, filename):
 	
 	out.close()
 
-def writeConsuntivo(project, milestone_ids, roles_id, filename):
+def writeConsuntivoComponent(project, milestone_ids, roles_id, filename):
 	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
 	roles = [project.getRole(str(role_id)) for role_id in roles_id]
 	
@@ -172,6 +172,43 @@ def writeConsuntivo(project, milestone_ids, roles_id, filename):
 		), False)
 
 		latex(u" \\\\")
+
+	out.close()
+
+def writeConsuntivoRole(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+
+	planned_total_cost = 0
+	planned_total_hours = 0
+	worked_total_cost = 0
+	worked_total_hours = 0
+	for role in roles:
+		role_costs = joinLists([
+			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+			for milestone in milestones
+		])
+		
+		planned_cost = sum([c.getPlannedCost() for c in role_costs])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		worked_cost = sum([c.getWorkHours() for c in role_costs])
+		worked_hours = sum([c.getWorkCost() for c in role_costs])
+		planned_total_cost += planned_cost
+		planned_total_hours += planned_hours
+
+		latex(u"\t{name} & {hours:.0f} ({diffH:+.0f}) & {cost:.0f} ({diffC:+.0f}) € \\\\".format(
+			name = role.getName().title(),
+			hours = planned_hours,
+			cost = planned_cost,
+			diffH = planned_hours - worked_hours,
+			diffC = planned_cost - worked_cost
+		))
 
 	out.close()
 

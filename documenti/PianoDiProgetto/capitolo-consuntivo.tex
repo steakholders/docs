@@ -1,5 +1,42 @@
 \section{Preventivo a finire}
-
-In questa sezione verrà presentato il preventivo a finire ovvero il preventivo al netto del consuntivo, sia per le ore che per i costi sostenuti.
-
 \label{consuntivo}
+
+In questa sezione verrà presentato il preventivo a finire ovvero il preventivo al netto del consuntivo, sia per le ore che per i costi sostenuti. In base alle ore di differenza tra il preventivo e il consuntivo avremo che il bilancio è:
+\begin{itemize}
+\item \textbf{Positivo} Si sono risparmiate ore, che potranno essere ricollocate in un periodo successivo;
+\item \textbf{Negativo} Si sono consumate più ore di quante preventivate, per non fare deficit si dovranno rivedere le ore future;
+\item \textbf{In pari} Sono state consumate esattamente le ore preventivate.
+\end{itemize}
+
+\subsection{Analisi}
+\begin{table}[H]
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+    \midrule
+    
+    	\input{consuntivo_component_rr}
+    
+    \bottomrule
+\end{tabular}
+\caption{Ore per componente, periodo di Progettazione Architetturale}
+\end{table}
+
+\subsection{Progettazione architetturale}
+
+\begin{table}[H]
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+    \midrule
+    
+    	\input{consuntivo_component_rp}
+    
+    \bottomrule
+\end{tabular}
+\caption{Ore per componente, periodo di Progettazione Architetturale}
+\end{table}
+
+%\subsection{Progettazione di dettaglio e codifica}

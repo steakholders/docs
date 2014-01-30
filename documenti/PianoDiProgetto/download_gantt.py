@@ -84,6 +84,7 @@ writeProspetto(project, [milestone_rp, milestone_rq, milestone_ra], roles, "pros
 
 writeConsuntivoRole(project, [milestone_rp], roles, "consuntivo_roles_rp.tex");
 
+writeConsuntivoComponent(project, [milestone_rr], roles, "consuntivo_component_rr.tex")
 writeConsuntivoComponent(project, [milestone_rp], roles, "consuntivo_component_rp.tex")
-#writeConsuntivo(project, [milestone_rp], roles, "consuntivo_rq.tex")
+#writeConsuntivo(project, [milestone_rq], roles, "consuntivo_rq.tex")
 writeConsuntivoComponent(project, [milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_totale.tex")

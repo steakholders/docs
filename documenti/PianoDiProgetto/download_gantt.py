@@ -82,4 +82,6 @@ writeProspetto(project, [milestone_rq], roles, "prospetto_rq.tex")
 writeProspetto(project, [milestone_ra], roles, "prospetto_ra.tex")
 writeProspetto(project, [milestone_rp, milestone_rq, milestone_ra], roles, "prospetto_totale.tex")
 
+writeConsuntivo(project, [milestone_rp], roles, "consuntivo_rp.tex")
+#writeConsuntivo(project, [milestone_rp], roles, "consuntivo_rq.tex")
 writeConsuntivo(project, [milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_totale.tex")

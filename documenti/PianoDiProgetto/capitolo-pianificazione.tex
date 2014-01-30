@@ -209,7 +209,7 @@ Si suddivide la progettazione architetturale in progettazione dei requisiti fond
 
 \begin{figure}[H]
 \centering
-\scalebox{0.95}{%
+\scalebox{0.65}{%
 %\begin{sideways}
 
 	\input{gantt_rp}
@@ -220,11 +220,9 @@ Si suddivide la progettazione architetturale in progettazione dei requisiti fond
 \end{figure}
 	
 \subsubsection{Ripartizione ore}
-	
-	\begin{table}[H]
-	\begin{adjustwidth}{-4cm}{-4cm}
-	\centering
-	\begin{tabular}{ l l l c  }
+	\begin{center}
+	\begin{longtable}{ l l l c  }%[H]
+	%\begin{adjustwidth}{-4cm}{-4cm}
 	\hline
 	\multicolumn{1}{c}{\textbf{Id}} & 
 	\multicolumn{1}{c}{\textbf{Nome}} & 
@@ -234,12 +232,11 @@ Si suddivide la progettazione architetturale in progettazione dei requisiti fond
 	
 		\input{ripartizione_rp}
 	
-	\end{tabular}
 	\caption{Allocazione risorse, periodo di Progettazione architetturale}
-	\end{adjustwidth}
-	\end{table}
-	
-	\pagebreak
+	%\end{adjustwidth}
+	\end{longtable}
+	\end{center}	
+	%\pagebreak
 	\subsection{Progettazione di Dettaglio e Codifica}
 	 
 Questo periodo ha inizio il 2014-02-06 e termina il 2014-05-05, per un totale di 32 giorni. \\
@@ -262,7 +259,7 @@ In tal modo, in caso di ritardi si potrà procedere ugualmente al periodo succes
 
 \begin{figure}[H]
 \centering
-\scalebox{0.71}{%
+\scalebox{0.65}{%
 %\begin{sideways}
 
 	\input{gantt_rq}
@@ -274,10 +271,9 @@ In tal modo, in caso di ritardi si potrà procedere ugualmente al periodo succes
 
 \subsubsection{Ripartizione ore}
 
-\begin{table}[H]
-\begin{adjustwidth}{-4cm}{-4cm}
-	\centering
-	\begin{tabular}{ l l l c  }
+\begin{center}
+\begin{longtable}{ l l l c  }
+	%\begin{adjustwidth}{-4cm}{-4cm}
 	\hline
 	\multicolumn{1}{c}{\textbf{Id}} & 
 	\multicolumn{1}{c}{\textbf{Nome}} & 
@@ -287,10 +283,10 @@ In tal modo, in caso di ritardi si potrà procedere ugualmente al periodo succes
 	
 		\input{ripartizione_rq}
 	
-	\end{tabular}
 	\caption{Allocazione risorse, periodo di Progettazione di dettaglio e codifica}
-\end{adjustwidth}
-\end{table}	
+%\end{adjustwidth}
+\end{longtable}	
+\end{center}
 	
 	
 	\subsection{Validazione}

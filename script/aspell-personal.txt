@@ -42,6 +42,7 @@ CamelCase
 Capability
 Cardin
 Casiraghi
+Centric
 Chain
 Chrome
 Clean
@@ -61,6 +62,7 @@ Concluded
 Consortium
 Constraints
 Construction
+Content
 Continuous
 Control
 Cox
@@ -78,6 +80,7 @@ Efficiency
 Ember
 Endeavor
 Engine
+Enterprise
 Erich
 Established
 Etzkorn
@@ -126,6 +129,7 @@ Imaging
 Information
 Injection
 Integrated
+Intelligent
 Interaction
 Involved
 JSHint
@@ -149,6 +153,7 @@ Location
 Lucidchart
 Luzzati
 MAY'
+MOM
 MU
 MUST
 MVC
@@ -356,6 +361,7 @@ all'upload
 an
 anchor
 and
+anonimizzarli
 anyway
 app
 append
@@ -477,6 +483,7 @@ elections
 encoded
 encoding
 enlargelimits
+entreprise
 environment
 error
 errorMiddleware
@@ -588,6 +595,7 @@ maxhe
 maxhv
 menu
 message
+messaging
 metadati
 method
 methodOverride
@@ -672,6 +680,7 @@ predeterminabili
 proattiva
 proattivi
 procedure'
+processamento
 processi'
 profile
 progetto'

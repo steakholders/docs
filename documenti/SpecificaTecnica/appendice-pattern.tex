@@ -22,6 +22,34 @@
 		
 	
 	\subsection{Middleware} 
+	Il \glossario{Middleware} è uno strato software che si interpone tra l'applicazione software e il sistema operativo per semplificarne le comunicazioni e la gestione di input/output. Viene solitamente utilizzato in applicazioni distribuite e facilita l'interoperabilità fornendo servizi che permettono la comunicazione tra applicazioni di sistemi operativi diversi. La distinzione tra lo strato software del sistema operativo è, per alcune entità, arbitraria, può infatti accedere che il \glossario{Middleware} fornisca dei servizi abitualmente attribuibili a un sistema operativo. I primi utilizzi di \glossario{Middleware} risalgono agli anni '80, come soluzione ai problemi di comunicazione tra applicazioni nuove e meno recenti. \\
+	I servizi \glossario{Middleware} forniscono un set di interfacce che permetto a un applicazione di:
+	
+	\begin{itemize}
+		\item Localizzare facilmente applicazioni o servizi in una rete;
+		\item Filtrare dati per renderli user-friendly oppure anonimizzarli per renderli pubblicabili proteggendone la privacy;
+		\item Essere indipendente dai servizi di rete;
+		\item Essere affidabile e sempre disponibile;
+		\item Aggiungere attributi complementari.
+	\end{itemize}
+	
+	Si tratta quindi di funzionalità leggermente più specializzate da quelle normalmente offerte da un sistema operativo. 
+	L'avvento del web ha avuto una forte ripercussione sulla diffusione dei software di \glossario{Middleware}, hanno infatti permesso l'accesso sicuro da remoto di database locali.
+	I tipi di \glossario{Middleware} sono:
+	
+	\begin{itemize}
+		\item Message-Oriented Middleware (\glossario{MOM}): sono \glossario{Middleware} dove le notifiche degli eventi vengono spedite come messaggi tra sistemi o componenti. I messaggi inviati al client vengono memorizzati fintanto che non vengono gestiti, nel frattempo il client può svolgere altro lavoro;
+		\item Enterprise messaging system: è un tipo di \glossario{Middleware} che facilita il passaggio di messaggi tra sistemi diversi o componenti in formato standard, spesso utilizzando servizi web o \glossario{XML};
+		\item Message broker: è parte dell \emph{entreprise messaging system}. Accoda, duplica, traduce e spedisce messaggi a sistemi o componenti diverse;
+		\item Enterprise Service Bus: è definito come qualche tipo di \glossario{Middleware} integrato che supporta sia \glossario{MOM} che dei servizi web.
+		\item Intelligent Middleware: gestisce il processamento in tempo reale di grandi volumi di segnali che trasforma in informazioni di business. Particolarmente adatto per architetture scalabili e distribuite;
+		\item Content-Centric Middleware: questo tipo di \glossario{Middleware} fornisce una semplice astrazione con la quale le applicazioni possono inoltrare richieste per contenuti univocamente identificati, senza occuparsi su come e dove vanno ottenuti.
+		
+	\end{itemize}	 
+	
+	% possibile add: http://www.networkcomputing.com/netdesign/cdmwdef.htm
+	
+ 	
 	
 	\subsection{Injection} %angular
 	

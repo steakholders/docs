@@ -240,20 +240,31 @@ def writeColumnChartConsuntivo(project, milestone_ids, roles_id, filename):
 	
 	planned_total_hours = 0
 	worked_total_hours = 0
-	latex("\\addplot+[color=Pianificate] coordinates {", False)
+	latex("\\addplot+[color=Pianificate] plotcoordinates {", False)		
 	for role in roles:
 		role_costs = joinLists([
 			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
 			for milestone in milestones
 		])
-		
 		planned_hours = sum([c.getPlannedHours() for c in role_costs])
-		worked_hours = sum([c.getWorkHours() for c in role_costs])
-		planned_total_hours += planned_hours
-		worked_total_hours += worked_hours
+		#planned_total_hours += planned_hours
 		latex(u"({ruolo},{ore})".format(
 				ruolo = role.getName().title(),
 				ore = planned_hours
+			), False)
+	latex(u"};", True)
+	
+	latex("\\addplot+[color=Consumate] plotcoordinates {", False)		
+	for role in roles:
+		role_costs = joinLists([
+			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+			for milestone in milestones
+		])
+		worked_hours = sum([c.getWorkHours() for c in role_costs])
+		#worked_total_hours += worked_hours
+		latex(u"({ruolo},{ore})".format(
+				ruolo = role.getName().title(),
+				ore = worked_hours
 			), False)
 	latex(u"};", True)
 	out.close()

@@ -25,7 +25,7 @@ I tipi di permessi possibili sono:
 	\bgroup
 	\begin{longtable}{| p{9cm} | p{1.5cm} | p{4cm} |}
 	\hline 
-	\textbf{\emph{/login}} & \textbf{POST} & \textbf{Utente} \\ \hline
+	\textbf{\emph{/login}} & \textbf{PUT} & \textbf{Utente} \\ \hline
 	\multicolumn{3}{|c|} {Crea una nuova sessione associata all'utente, corrisponde al login.} \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
@@ -39,31 +39,31 @@ I tipi di permessi possibili sono:
 	
 	\textbf{\emph{/profile}} & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Restituisce i dati relativi all'utente. }  \\ \hline
-	\textbf{\emph{/profile}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
+	\textbf{\emph{/profile}} & \textbf{POST} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} { Modifica i dati utente. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/password/lost}} & \textbf{POST} & \textbf{Utente} \\ \hline
-	\multicolumn{3}{|c|} {Effettua la richiesta di recupero password. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\textbf{\emph{/password/lost}} & \textbf{PUT} & \textbf{Utente} \\ \hline
+	\multicolumn{3}{|c|} {Crea una richiesta di recupero password. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/password/reset}} & \textbf{PUT} & \textbf{Utente} \\ \hline
-	\multicolumn{3}{|c|} {Effettua la richiesta di modifica della password utente. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\textbf{\emph{/password/reset}} & \textbf{POST} & \textbf{Utente} \\ \hline
+	\multicolumn{3}{|c|} {Modifica la password utente. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
 	\textbf{\emph{/users}} & \textbf{GET} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Restituisce la lista di tutti gli utenti. }  \\ \hline
-	\textbf{\emph{/users}} & \textbf{POST} & \textbf{Admin} \\ \hline
-	\multicolumn{3}{|c|} {Effettua la richiesta di creazione di un nuovo utente. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\textbf{\emph{/users}} & \textbf{PUT} & \textbf{Admin} \\ \hline
+	\multicolumn{3}{|c|} {Crea un nuovo utente. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
 	\textbf{\emph{/users/$\{$user id$\}$}} & \textbf{GET} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Restituisce i dati corrispondenti all'utente con id $\{$user id$\}$. }  \\ \hline
-	\textbf{\emph{/users/$\{$user id$\}$}} & \textbf{PUT} & \textbf{Admin} \\ \hline
+	\textbf{\emph{/users/$\{$user id$\}$}} & \textbf{POST} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Modifica i dati dell'utente con id $\{$user id$\}$. }  \\ \hline
 	\textbf{\emph{/users/$\{$user id$\}$}} & \textbf{DELETE} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Elimina l'utente con id $\{$user id$\}$. }  \\ \specialrule{1pt}{1pt}{1pt}
@@ -82,7 +82,7 @@ I tipi di permessi possibili sono:
 	
 	\textbf{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$}  } & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Restituisce la lista di attributi del Document $\{$document id$\}$ appartenente alla collection $\{$collection name$\}$}  \\ \hline
-	\textbf{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} } & \textbf{PUT} & \textbf{Admin} \\ \hline
+	\textbf{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} } & \textbf{POST} & \textbf{Admin} \\ \hline
 	\multicolumn{3}{|c|} {Modifica il document $\{$document id$\}$. }  \\ \hline
 	\textbf{\emph{\emph{/collection/$\{$collection name$\}$/$\{$document id$\}$} }} & \textbf{DELETE} & \textbf{Admin} \\
 	\hline

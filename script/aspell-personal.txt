@@ -373,6 +373,7 @@ aspell
 assessment
 assigned
 at
+AuthController
 autoformazione
 avoided
 back
@@ -411,6 +412,8 @@ cloud
 codifica'
 collection
 collectionAction
+CollectionController
+collectionId
 colorlinks
 column
 columns
@@ -456,6 +459,8 @@ difficulty
 dimostrabilmente
 document
 documentAction
+Documenti'
+documentId
 documents
 draw
 driven
@@ -542,6 +547,10 @@ issues
 it
 jQuery
 javascript
+JavaScript
+Jenkins
+John
+Johnson
 join
 js
 justification
@@ -630,6 +639,7 @@ opzionalmente'
 oriented
 pa
 package
+Packages
 packet
 pag
 page
@@ -691,6 +701,8 @@ reference
 rege
 regexp
 registry
+Relationship
+Reliability
 rendering
 repl
 replacements

@@ -255,7 +255,7 @@ def writeColumnChartConsuntivo(project, milestone_ids, roles_id, filename):
 				ruolo = role.getName().title(),
 				ore = planned_hours
 			), False)
-		latex(u"};", True)
+	latex(u"};", True)
 	out.close()
 
 

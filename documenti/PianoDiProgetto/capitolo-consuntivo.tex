@@ -1,16 +1,16 @@
-%\definecolor{Pianificate}{RGB}{51,102,204}
-%\definecolor{Consumate}{RGB}{0,127,255}
-%
-%\pgfplotsset{
-%ybar stacked, enlargelimits =0.05,
-%legend style ={at={(0.5,-0.5)},
-%anchor=north,
-%legend columns=-1},
-%ylabel={Ore},
-%xtick=data,
-%x tick label style={rotate=45,anchor=east},
-%symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi}
-%}
+\definecolor{Pianificate}{RGB}{51,102,204}
+\definecolor{Consumate}{RGB}{32,18,77}
+
+\pgfplotsset{
+ybar, enlargelimits =0.10,
+legend style ={at={(0.5,-0.5)},
+anchor=north,
+legend columns=-1},
+ylabel={Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Amministratore, Analista, Progettista, Programmatore, Responsabile, Verificatore},
+}
 
 \section{Preventivo a finire}
 \label{consuntivo}
@@ -39,7 +39,7 @@ La tabella sottostante riporta le ore preventivate e le ore effettivamente impie
     
     \bottomrule
 \end{tabular}
-\caption{Ore per componente, periodo di Analisi}
+\caption{Differenza preventivo consuntivo per componente, periodo di Analisi}
 \end{table}
 
 La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Analisi}.
@@ -54,20 +54,22 @@ La tabella sottostante riporta le ore preventivate e le ore effettivamente impie
     
     \bottomrule
 \end{tabular}
-\caption{Ore per ruolo, periodo di Analisi}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Analisi}
 \end{table}
 
 Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Analisi}.
 
-%\begin{figure}[H]
-%\begin{tikzpicture}
-%\begin{axis}
-%\input{columnChart_consuntivo_rr}
-%\legend{preventivate,consumate}
-%\end{axis}
-%\end{tikzpicture}
-%\caption{Ore per componente, periodo di analisi}
-%\end{figure}
+\begin{center}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rr}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di analisi}
+\end{figure}
+\end{center}
 
 \subsection{Progettazione architetturale}
 
@@ -86,7 +88,7 @@ La tabella sottostante riporta le ore preventivate e le ore effettivamente impie
     
     \bottomrule
 \end{tabular}
-\caption{Ore per componente, periodo di Progettazione Architetturale}
+\caption{Differenza preventivo consuntivo per componente, periodo di Progettazione Architetturale}
 \end{table}
 
 La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione architetturale}.
@@ -101,12 +103,22 @@ La tabella sottostante riporta le ore preventivate e le ore effettivamente impie
     
     \bottomrule
 \end{tabular}
-\caption{Ore per ruolo, periodo di Progettazione Architetturale}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione Architetturale}
 \end{table}
 
 Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione architetturale}.
 
-% TODO grafico
+\begin{center}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rp}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione architetturale}
+\end{figure}
+\end{center}
 
 \subsection{Totale}
 

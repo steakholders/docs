@@ -35,7 +35,11 @@ else:
 
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
-lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png")
+
+lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png", width=1600)
+
+lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/diagramma-classi-front-end.png", width=1600)
+
 lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/MaaP - Apri pagina gestione utenti.png")
 lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/MaaP - Modifica profilo.png")
 

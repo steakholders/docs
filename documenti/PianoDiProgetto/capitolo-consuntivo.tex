@@ -1,14 +1,33 @@
+\definecolor{Pianificate}{RGB}{51,102,204}
+\definecolor{Consumate}{RGB}{32,18,77}
+
+\pgfplotsset{
+ybar, enlargelimits =0.10,
+legend style ={at={(0.5,-0.5)},
+anchor=north,
+legend columns=-1},
+ylabel={Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Amministratore, Analista, Progettista, Programmatore, Responsabile, Verificatore},
+}
+
 \section{Preventivo a finire}
 \label{consuntivo}
 
 In questa sezione verrà presentato il preventivo a finire ovvero il preventivo al netto del consuntivo, sia per le ore che per i costi sostenuti. In base alle ore di differenza tra il preventivo e il consuntivo avremo che il bilancio è:
 \begin{itemize}
-\item \textbf{Positivo} Si sono risparmiate ore, che potranno essere ricollocate in un periodo successivo;
-\item \textbf{Negativo} Si sono consumate più ore di quante preventivate, per non fare deficit si dovranno rivedere le ore future;
-\item \textbf{In pari} Sono state consumate esattamente le ore preventivate.
+\item \textbf{Positivo}, si sono risparmiate ore che potranno essere ricollocate in un periodo successivo;
+\item \textbf{Negativo}, si sono consumate più ore di quante preventivate, per non fare deficit si dovranno rivedere le ore future;
+\item \textbf{In pari}, sono state consumate esattamente le ore preventivate.
 \end{itemize}
 
 \subsection{Analisi}
+
+In questo paragrafo viene riportato il consuntivo del periodo di \textit{Analisi}.
+
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
+
 \begin{table}[H]
 \begin{tabular}{lccccccc}
 \toprule
@@ -20,10 +39,43 @@ In questa sezione verrà presentato il preventivo a finire ovvero il preventivo 
     
     \bottomrule
 \end{tabular}
-\caption{Ore per componente, periodo di Progettazione Architetturale}
+\caption{Differenza preventivo consuntivo per componente, periodo di Analisi}
 \end{table}
 
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Analisi}.
+
+\begin{table}[H]
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_rr}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Analisi}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Analisi}.
+
+\begin{center}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rr}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di analisi}
+\end{figure}
+\end{center}
+
 \subsection{Progettazione architetturale}
+
+In questo paragrafo viene riportato il consuntivo del periodo di \textit{Progettazione architetturale}.
+
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
 
 \begin{table}[H]
 \begin{tabular}{lccccccc}
@@ -33,6 +85,51 @@ In questa sezione verrà presentato il preventivo a finire ovvero il preventivo 
     \midrule
     
     	\input{consuntivo_component_rp}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per componente, periodo di Progettazione Architetturale}
+\end{table}
+
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione architetturale}.
+
+\begin{table}[H]
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_rp}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione Architetturale}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione architetturale}.
+
+\begin{center}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rp}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione architetturale}
+\end{figure}
+\end{center}
+
+\subsection{Totale}
+
+\begin{table}[H]
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+    \midrule
+    
+    	\input{consuntivo_component_totale}
     
     \bottomrule
 \end{tabular}
@@ -46,10 +143,9 @@ In questa sezione verrà presentato il preventivo a finire ovvero il preventivo 
     \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
     \midrule
     
-    	\input{consuntivo_roles_rp}
+    	\input{consuntivo_roles_totale}
     
     \bottomrule
 \end{tabular}
 \caption{Ore per ruolo, periodo di Progettazione Architetturale}
 \end{table}
-%\subsection{Progettazione di dettaglio e codifica}

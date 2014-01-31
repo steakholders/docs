@@ -226,6 +226,49 @@ def writeConsuntivoRole(project, milestone_ids, roles_id, filename):
 	))
 
 	out.close()
+	
+	
+def writeColumnChartConsuntivo(project, milestone_ids, roles_id, filename):
+	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
+	roles = [project.getRole(str(role_id)) for role_id in roles_id]
+	
+	out = open(filename, "w")
+	def latex(str, newline=True):
+		out.write(str.encode('utf-8'))
+		if newline:
+			out.write("\n".encode('utf-8'))
+	
+	planned_total_hours = 0
+	worked_total_hours = 0
+	latex("\\addplot+[color=Pianificate] plotcoordinates {", False)		
+	for role in roles:
+		role_costs = joinLists([
+			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+			for milestone in milestones
+		])
+		planned_hours = sum([c.getPlannedHours() for c in role_costs])
+		#planned_total_hours += planned_hours
+		latex(u"({ruolo},{ore})".format(
+				ruolo = role.getName().title(),
+				ore = planned_hours
+			), False)
+	latex(u"};", True)
+	
+	latex("\\addplot+[color=Consumate] plotcoordinates {", False)		
+	for role in roles:
+		role_costs = joinLists([
+			[milestone.getPersonRoleCost(person, role) for person in project.getPeople()]
+			for milestone in milestones
+		])
+		worked_hours = sum([c.getWorkHours() for c in role_costs])
+		#worked_total_hours += worked_hours
+		latex(u"({ruolo},{ore})".format(
+				ruolo = role.getName().title(),
+				ore = worked_hours
+			), False)
+	latex(u"};", True)
+	out.close()
+
 
 def writeColumnChartOre(project, milestone_ids, roles_id, filename):
 	milestones = [project.getMilestone(str(x)) for x in milestone_ids]

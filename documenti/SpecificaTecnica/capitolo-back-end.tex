@@ -140,15 +140,15 @@ Un \glossario{middleware} può rispondere con un return() ed in questo caso ....
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.30]{scenari/Diagramma Gestione Richiesta.png}  
+		\includegraphics[scale=0.60]{scenari/Diagramma Gestione Richiesta.png}  
 		\caption{Diagramma Gestione Richiesta}
-	\end{center} 
+	\end{center}  
 \end{figure} 
 
 Nel seguente diagramma viene mostrato il comportamento di routing, dove si intende che ogni controllore ha associato un'espressione regolare che specifica su quali richieste agisce. 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.30]{scenari/Diagramma Routing Richiesta.png} 
+		\includegraphics[scale=0.60]{scenari/Diagramma Routing Richiesta.png} 
 		\caption{Diagramma Routing Richiesta}
 	\end{center} 
 \end{figure}
@@ -157,110 +157,232 @@ Nel seguente diagramma viene mostrato il comportamento di routing, dove si inten
 
 \subsubsection{Fallimento vincolo ``utente autenticato''}
 Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireLogged
-Diagramma: PassportLocal requireLogged ERROR
+Diagramma: requireLogged ERROR
+
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/requireLogged ERROR.png} 
+		\caption{requireLogged ERROR}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Fallimento vincolo ``utente non autenticato''}
 Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireNotLogged
-Diagramma: PassportLocal requireNotLogged ERROR
+Diagramma: requireNotLogged ERROR
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/requireNotLogged ERROR.png} 
+		\caption{requireNotLogged ERROR}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Fallimento vincolo ``utente admin''}
 Descrizione scenario, dire che si riferisce a tutti quelli che avranno un requireAdmin
-Diagramma: PassportLocal requireAdmin ERROR
+Diagramma: requireAdmin ERROR
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/requireAdmin ERROR.png} 
+		\caption{requireAdmin ERROR}
+	\end{center} 
+\end{figure}
 
-\subsubsection{Login POST}
+
+\subsubsection{Login POST} 
 Il seguente scenario mostra la gestione di una richiesta GET per la risorsa di login, il requireNotLogged non fallisce, chiamando il successivo \glossario{middleware} AuthController che verifica il login e nell'opzione che questo fallisca, manderà un next(error) che il router andrà a gestire.
 Precondizione: non fallisce il requireNotLogged
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.30]{scenari/login POST.png} 
+		\includegraphics[scale=0.60]{scenari/login POST.png} 
 		\caption{Login POST}
 	\end{center} 
 \end{figure} 
 
-\subsubsection{Logout DELETE}
+\subsubsection{Logout DELETE} X
 Descrizione scenario
 Precondizione: non fallisce il requireLogged
 Diagramma: Logout DELETE
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/logout DELETE.png} 
+		\caption{Logout DELETE}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Profile GET} X
 Descrizione scenario
 Precondizione: non fallisce il requireLogged
 Diagramma: Profile GET
 Controller: requireLogged, ProfileController->getProfile() 
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Profile GET.png} 
+		\caption{Profile GET}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Profile PUT} X
 Descrizione scenario, dire che come precondizione non fallisce il requireLogged
 Diagramma: Profile PUT
 Controller: requireLogged, ProfileController->editProfile()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Profile GET.png} 
+		\caption{Profile PUT}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Password Lost POST} X
 Descrizione scenario, dire che come precondizione non fallisce il requireNotLogged
 Diagramma: Password Lost POST
 Controller: requireNotLogged, ForgotController->requirePasswordReset()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Password Lost POST.png} 
+		\caption{Password Lost POST}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Password Reset PUT} X
 Descrizione scenario, dire che come precondizione non fallisce il requireNotLogged
 Diagramma: Password Reset PUT
 Controller: requireNotLogged, ForgotController->makePasswordReset()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Password Reset PUT.png} 
+		\caption{Password Reset PUT}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Users GET} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Users GET
 Controller: requireLogged, requireAdmin, UserController->getUsers()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Users GET.png} 
+		\caption{Users GET}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Users POST} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Users POST
 Controller: requireLogged, requireAdmin, UserController->createUser()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Users POST.png} 
+		\caption{Users POST}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Users Id GET} X 
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Users Id GET
 Controller: requireLogged, requireAdmin, UserController->getUser(id)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Users Id GET.png} 
+		\caption{Users Id GET}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Users Id POST} X da guardare
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Users Id PUT
 Controller: requireLogged, requireAdmin, UserController->editUser(id)
 Lo UserController può restituire un errore se si cerca di modificare un superadmin o se si cerca di modificare il proprio ruolo.
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Users Id POST.png} 
+		\caption{Users Id POST}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Users Id DELETE} X da rivedere
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Users Id DELETE
 Controller: requireLogged, requireAdmin, UserController->deleteUser(id)
 Lo UserController può restituire un errore se si cerca di modificare un superadmin o se si cerca di modificare il proprio ruolo.
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Users Id DELETE.png} 
+		\caption{Users Id DELETE}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Collection GET} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection GET
 Controller: requireLogged, CollectionController->listCollections()
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Collection GET.png} 
+		\caption{Collection GET}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Collection Name GET} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name GET
 Controller: requireLogged, CollectionController->indexPage(collectionId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Collection Name GET.png} 
+		\caption{Collection Name GET}
+	\end{center} 
+\end{figure}
 
 \subsubsection{Collection Name Document GET} X 
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name Document GET
 Controller: requireLogged, CollectionController->showPage(documentId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Collection Name Document GET.png} 
+		\caption{Collection Name Document GET}
+	\end{center} 
+\end{figure}
 
-\subsubsection{Collection Name Document POST}
+\subsubsection{Collection Name Document POST} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name Document PUT
 Controller: requireLogged, requireAdmin, CollectionController->editDocument(collectionId, documentId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Collection Name Document POST.png} 
+		\caption{Collection Name Document POST}
+	\end{center} 
+\end{figure}
 
-\subsubsection{Collection Name Document DELETE}
+\subsubsection{Collection Name Document DELETE} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name document DELETE
 Controller: requireLogged, requireAdmin, CollectionController->deleteDocument(collectionId, documentId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Collection Name Document DELETE.png} 
+		\caption{Collection Name Document DELETE}
+	\end{center} 
+\end{figure}
 
-\subsubsection{Action Name Collection PUT}
+\subsubsection{Action Name Collection PUT} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name document DELETE
 Controller: requireLogged, requireAdmin, CollectionController->collectionAction(action, collectionId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Action Name Collection PUT.png} 
+		\caption{Action Name Collection PUT}
+	\end{center} 
+\end{figure}
 
-\subsubsection{Action Name Collection Document PUT}
+\subsubsection{Action Name Collection Document PUT} X
 Descrizione scenario, dire che come precondizione non falliscono i controlli
 Diagramma: Collection Name document DELETE
 Controller: requireLogged, requireAdmin, CollectionController->documentAction(action, collectionId, documentId)
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.60]{scenari/Action Name Collection Document PUT.png} 
+		\caption{Action Name Collection Document PUT}
+	\end{center} 
+\end{figure}

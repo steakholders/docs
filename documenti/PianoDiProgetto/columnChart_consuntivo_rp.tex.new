@@ -1,1 +1,0 @@
-\addplot+[color=Pianificate] coordinates {(Amministratore,42)(Analista,24)(Progettista,108)(Programmatore,0)(Responsabile,26)(Verificatore,78)};

@@ -1,12 +1,11 @@
 \section{Diagrammi di attività}
 
-Vengono in seguito illustrati i diagrammi di attività prodotti durante la progettazione architetturale, i quali descrivono le iterazioni dell'utente con il sistema \glossario{MaaP}. È stato scelto di dividere i diagrammi in tre categorie principali, in modo analogo a quanto fatto nella descrizione dei casi d'uso dell'\textit{Analisi dei requisiti}:
+Vengono in seguito illustrati i diagrammi di attività prodotti durante la progettazione architetturale, i quali descrivono le iterazioni dell'utente con il sistema \glossario{MaaP}. È stato scelto di dividere i diagrammi in due categorie principali, in modo analogo a quanto fatto nella descrizione dei casi d'uso dell'\textit{Analisi dei requisiti}:
 
 \begin{itemize}
 
 	\item \textbf{Applicazione \glossario{MaaP}}, in cui verranno descritte le iterazioni che un utente può fare all'interno di un'applicazione generata dal \glossario{framework};
-	\item \textbf{\glossario{MaaP} \glossario{framework}}, in cui vengono descritte le azioni che uno sviluppatore può effettuare utilizzando il \glossario{framework};
-	\item \textbf{\glossario{MaaS}}, in cui verranno descritte le iterazioni all'interno del suddetto servizio web.
+	\item \textbf{Servizio \glossario{MaaS}}, in cui verranno descritte le iterazioni all'interno del suddetto servizio web.
 
 \end{itemize}
 Inizialmente per ogni categoria verrà fornito uno schema ad alto livello, per poi andare sempre più nel dettaglio tramite sotto-diagrammi più specifici. Per comodità di visualizzazione le attività che verranno \textit{esplose} sono marcate in grassetto. 
@@ -15,11 +14,14 @@ Al fine di rendere il diagramma leggibile abbiamo considerato implicito il fatto
 
 \subsection{Applicazione MaaP}
 
+Vengono di seguito descritte tutte le iterazioni che un utente può effettuare con un'applicazione generata dal \glossario{framework} \glossario{MaaP}.
+
+
 \subsubsection{Attività principali}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.12]{uml/MaaP - Attivita principali.png}
+\includegraphics[scale=0.7]{uml/MaaP - Attivita principali.png}
 \caption{Diagramma di attività - Attività principali di un'applicazione MaaP}
 \end{figure}
 
@@ -59,7 +61,7 @@ L'utente si trova all'interno della pagina di registrazione e sostanzialmente de
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Recupera password.png}
+\includegraphics[scale=0.1]{uml/MaaP - Recupera password.png}
 \caption{Diagramma di attività - Recupero password}
 \end{figure}
 
@@ -69,7 +71,7 @@ L'utente si trova all'interno della pagina di recupero password, la quale presen
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Esegui reset password.png}
+\includegraphics[scale=0.1]{uml/MaaP - Esegui reset password.png}
 \caption{Diagramma di attività - Reset della password dell'utente}
 \end{figure}
 
@@ -89,7 +91,7 @@ L'utente, che precedentemente avrà effettuato la registrazione al sistema, acce
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Modifica profilo.png}
+\includegraphics[scale=0.3]{uml/MaaP - Modifica profilo.png}
 \caption{Diagramma di attività - Modifica profilo utente}
 \end{figure}
 
@@ -99,7 +101,7 @@ L'utente autenticato accede all'interno della propria pagina profilo, dalla qual
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Index-page.png}
+\includegraphics[scale=0.5]{uml/MaaP - Index-page.png}
 \caption{Diagramma di attività - Visualizzazione index-page della Collection selezionata}
 \end{figure}
 
@@ -126,7 +128,7 @@ Se l'utente dispone dei privilegi di admin può inoltre:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Show-page.png}
+\includegraphics[scale=0.5]{uml/MaaP - Show-page.png}
 \caption{Diagramma di attività - Visualizzazione show-page del Document selezionato}
 \end{figure}
 
@@ -152,8 +154,61 @@ Se l'utente possiede i privilegi di admin può inoltre:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaP - Modifica document.png}
+\includegraphics[scale=0.5]{uml/MaaP - Modifica document.png}
 \caption{Diagramma di attività - Modifica del Document selezionato}
 \end{figure}
 
 L'utente con privilegi di scrittura può modificare ogni singolo attributo del \glossario{Document} selezionato, editando i rispettivi campi di testo. Una volta che ha terminato le modifiche preme il pulsante di \textit{update}; il sistema \glossario{MaaP} verificherà che le modifiche apportate siano corrette e rispettino i vincoli del \glossario{database}. In ogni momento l'utente può comunque decidere di annullare le modifiche e tornare alla pagina precedente.
+
+\subsubsection{Apri pagina gestione utenti}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{uml/MaaP - Apri pagina gestione utenti.png}
+\caption{Diagramma di attività - Pagina di gestione degli utenti}
+\end{figure}
+
+Un admin dell'applicazione può accedere a una pagina in cui poter gestire gli utenti. Essa consiste fondamentalmente in una \glossario{index-page} contenente la lista di tutti gli utenti presenti nel sistema. L'admin può da questa pagina selezionare un utente, e visualizzare quindi la sua relativa \glossario{show-page}, o crearne uno nuovo aprendo la pagina di creazione.
+
+\subsubsection{Apri show-page utente}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{uml/MaaP - Apri show-page utente.png}
+\caption{Diagramma di attività - Pagina di visualizzazione di un utente}
+\end{figure}
+
+In questa pagina l'admin visualizza la \glossario{show-page} dell'utente selezionato e può compiere le seguenti operazioni:
+
+\begin{itemize}
+
+	\item Se l'utente selezionato è un admin può declassarlo e portarlo a livello di utente normale. Naturalmente non può declassare se stesso e il \textit{super-admin}, in modo da far sì che in qualsiasi momento sia presente almeno un admin nel sistema;
+	\item Se l'utente non è un admin può elevarlo da utente normale a livello di admin;
+	\item Eliminare l'utente selezionato dal sistema.
+
+\end{itemize}
+
+Il sistema \glossario{MaaP} si occuperò di apportare tutte le modifiche effettuate dall'admin al \glossario{database} delle credenziali.
+
+\subsubsection{Crea un nuovo utente}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{uml/MaaP - Crea nuovo utente.png}
+\caption{Diagramma di attività - Pagina di creazione di un nuovo utente}
+\end{figure}
+
+L'admin entra in un'apposita pagina di creazione di un nuovo utente e al suo interno può definire:
+
+\begin{itemize}
+
+	\item L'indirizzo email del nuovo utente;
+	\item La password del nuovo utente;
+	\item Il livello del nuovo utente, che potrà essere o utente normale o admin;
+
+\end{itemize}
+
+Una volta completate le modifiche l'utente può decidere di confermare o annullare le modifiche, premendo i relativi pulsanti. Il sistema \glossario{MaaP}, nel caso in cui l'utente abbia deciso di confermare le modifiche, si occuperà di inserire nel \glossario{database} delle credenziali il nuovo utente creato.
+
+\subsection{Servizio MaaS}
+

@@ -95,3 +95,4 @@ writeConsuntivoComponent(project, [milestone_rp], roles, "consuntivo_component_r
 # Consuntivo totale
 writeConsuntivoComponent(project, [milestone_rr, milestone_rp], roles, "consuntivo_component_totale.tex")
 writeConsuntivoRole(project, [milestone_rr, milestone_rp], roles, "consuntivo_roles_totale.tex")
+writeColumnChartConsuntivo(project, [milestone_rr, milestone_rp], roles, "columnChart_consuntivo_totale.tex")

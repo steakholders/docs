@@ -52,7 +52,7 @@ lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/MaaP - Re
 lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/MaaP - Effettua registrazione.png")
 lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/MaaP - Apri show-page utente.png")
 lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/MaaP - Crea nuovo utente.png")
-lucidchart.download_image("")
+lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/MaaS - Attivita principali.png")
 
 #uml Scenari 
 

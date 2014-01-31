@@ -231,7 +231,6 @@ def writeConsuntivoRole(project, milestone_ids, roles_id, filename):
 def writeColumnChartConsuntivo(project, milestone_ids, roles_id, filename):
 	milestones = [project.getMilestone(str(x)) for x in milestone_ids]
 	roles = [project.getRole(str(role_id)) for role_id in roles_id]
-	
 	out = open(filename, "w")
 	def latex(str, newline=True):
 		out.write(str.encode('utf-8'))

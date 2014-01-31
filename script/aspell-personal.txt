@@ -536,6 +536,7 @@ plain
 plan
 Platform
 plotcoordinates
+plots
 plugin
 pollution
 polyadic

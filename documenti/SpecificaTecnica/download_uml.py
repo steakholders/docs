@@ -44,7 +44,7 @@ lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/MaaP - Ap
 lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/MaaP - Modifica profilo.png")
 
 lucidchart.download_image("4bdc-1928-52dac052-9e58-4fc30a004790", "uml/MaaP - Modifica document.png")
-lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/MaaP - Attività principali.png")
+lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/MaaP - Attivita principali.png")
 lucidchart.download_image("440c-f4bc-52dabbcb-a162-0c630a004790", "uml/MaaP - Show-page.png")
 lucidchart.download_image("47b2-4774-52d98c99-872c-04f90a00d7c9", "uml/MaaP - Index-page.png")
 lucidchart.download_image("4709-9388-52d930e7-9fdc-44290a009998", "uml/MaaP - Effettua login.png")

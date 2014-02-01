@@ -140,7 +140,7 @@ Un \glossario{middleware} può rispondere con un return() ed in questo caso ....
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Diagramma Gestione Richiesta.png}  
+		\includegraphics[scale=0.27]{scenari/Diagramma Gestione Richiesta.png}  
 		\caption{Diagramma Gestione Richiesta}
 	\end{center}  
 \end{figure} 
@@ -148,7 +148,7 @@ Un \glossario{middleware} può rispondere con un return() ed in questo caso ....
 Nel seguente diagramma viene mostrato il comportamento di routing, dove si intende che ogni controllore ha associato un'espressione regolare che specifica su quali richieste agisce. 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Diagramma Routing Richiesta.png} 
+		\includegraphics[scale=0.27]{scenari/Diagramma Routing Richiesta.png} 
 		\caption{Diagramma Routing Richiesta}
 	\end{center} 
 \end{figure}
@@ -160,7 +160,7 @@ Per ogni richiesta bisogna verificare che il permesso dell'utente che l'ha chies
 Tale scenario rappresenta il fallimento di una richiesta richiedente come vincolo per poter essere effettuata che l'utente abbia un permesso di tipo ''utente autenticato'', dove la verifica dei permessi è gestita dal controller \emph{requireLogged} che manda un next(error) per il fallimento di tale vincolo al router il quale avrà compito di gestirlo.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/requireLogged ERROR.png} 
+		\includegraphics[scale=0.20]{scenari/requireLogged ERROR.png} 
 		\caption{requireLogged ERROR}
 	\end{center} 
 \end{figure}
@@ -170,7 +170,7 @@ Il seguente diagramma di sequenza rappresenta lo scenario in cui fallisce la ver
 La richiesta viene gestita da \emph{requireNotLogged} che verifica con esito negativo i permessi e rimanda un next(error) al router.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/requireNotLogged ERROR.png} 
+		\includegraphics[scale=0.20]{scenari/requireNotLogged ERROR.png} 
 		\caption{requireNotLogged ERROR}
 	\end{center} 
 \end{figure}
@@ -179,7 +179,7 @@ La richiesta viene gestita da \emph{requireNotLogged} che verifica con esito neg
 Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal controller \emph{requireAdmin} fallisce. 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/requireAdmin ERROR.png} 
+		\includegraphics[scale=0.20]{scenari/requireAdmin ERROR.png} 
 		\caption{requireAdmin ERROR}
 	\end{center} 
 \end{figure}
@@ -189,7 +189,7 @@ Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono perm
 Il seguente scenario mostra la gestione di una richiesta POST per la risorsa di login, \emph{requireNotLogged} non risponde con errore, chiamando il successivo \glossario{middleware} \emph{login} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/login POST.png} 
+		\includegraphics[scale=0.20]{scenari/login POST.png} 
 		\caption{Login POST}
 	\end{center} 
 \end{figure} 
@@ -199,7 +199,7 @@ Il diagramma di sequenza mostra lo scenario di una richiesta DELETE per la risor
 La verifica dei permessi in \emph{requireLogged} non fallisce, innescando la chiamata al successivo \glossario{middleware} \emph{logout} che gestisce l'eliminazione della risorsa.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/logout DELETE.png} 
+		\includegraphics[scale=0.20]{scenari/logout DELETE.png} 
 		\caption{Logout DELETE}
 	\end{center} 
 \end{figure}
@@ -208,7 +208,7 @@ La verifica dei permessi in \emph{requireLogged} non fallisce, innescando la chi
 Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere la risorsa Profile, la verifica dei permessi non fallisce e la richiesta viene gestita da \emph{getProfile}.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Profile GET.png} 
+		\includegraphics[scale=0.20]{scenari/Profile GET.png} 
 		\caption{Profile GET}
 	\end{center} 
 \end{figure}
@@ -217,7 +217,7 @@ Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere 
 Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il \emph{requireLogged} non ritorna un errore, chiamando il successivo \glossario{middleware} \emph{editProfile} che gestisce la richiesta di modifica dei dati del profilo.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Profile PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Profile PUT.png} 
 		\caption{Profile PUT}
 	\end{center} 
 \end{figure}
@@ -226,7 +226,7 @@ Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il 
 Viene rappresentato lo scenario di una richiesta POST per la risorsa password lost, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{requirePasswordReset} che gestisce la richiesta.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Password Lost POST.png} 
+		\includegraphics[scale=0.20]{scenari/Password Lost POST.png} 
 		\caption{Password Lost POST}
 	\end{center} 
 \end{figure}
@@ -235,7 +235,7 @@ Viene rappresentato lo scenario di una richiesta POST per la risorsa password lo
 Il diagramma di sequenza rappresenta lo scenario di una richiesta PUT per la risorsa password reset, dove il controller \emph{requireNotLogger} passa il controllo al successivo controller \emph{makePasswordReset} per la gestione della richiesta.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Password Reset PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Password Reset PUT.png} 
 		\caption{Password Reset PUT}
 	\end{center} 
 \end{figure}
@@ -244,7 +244,7 @@ Il diagramma di sequenza rappresenta lo scenario di una richiesta PUT per la ris
 Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richiesta GET per la risorsa user, \emph{requireAdmin} non fallisce ed il controllo viene passato a \emph{getUsers} che gestisce la richiesta.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Users GET.png} 
+		\includegraphics[scale=0.20]{scenari/Users GET.png} 
 		\caption{Users GET}
 	\end{center} 
 \end{figure}
@@ -253,7 +253,7 @@ Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richie
 Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST per la risorsa user, la verifica di \emph{requireLogged} dei permessi utente non fallisce e viene passato il controllo a \emph{createUser} che gestisce la richiesta di creazione di un nuovo user.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Users POST.png} 
+		\includegraphics[scale=0.20]{scenari/Users POST.png} 
 		\caption{Users POST}
 	\end{center} 
 \end{figure}
@@ -262,7 +262,7 @@ Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST 
 Lo scenario rappresenta una richiesta GET di una risorsa User id, vengono verificati i permessi attraverso \emph{requireAdmin} che passa il controllo a \emph{getUser} dandogli come attributo l'id dell'user da restituire.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Users Id GET.png} 
+		\includegraphics[scale=0.20]{scenari/Users Id GET.png} 
 		\caption{Users Id GET}
 	\end{center} 
 \end{figure}
@@ -272,7 +272,7 @@ Nel seguente diagramma di sequenza viene rappresentato lo scenario di una richie
 \emph{EditUser} verifica inoltre che l'userId passatogli come attributo non corrisponda all'id dello stesso user che ha effettuato la richiesta o corrisponda ad un id di un superAdmin, altrimenti risponderà con un errore.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Users Id PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Users Id PUT.png} 
 		\caption{Users Id POST}
 	\end{center} 
 \end{figure}
@@ -282,7 +282,7 @@ Il diagramma di sequenza rappresenta lo scenario di una richiesta DELETE per la 
 Nell'opzione che l'id passatogli corrisponda all'id dell'utente che ha effettuato la richiesta o ad un id di un superAdmin, \emph{deleteUser} restituisce un next(error).
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Users Id DELETE.png} 
+		\includegraphics[scale=0.20]{scenari/Users Id DELETE.png} 
 		\caption{Users Id DELETE}
 	\end{center} 
 \end{figure}
@@ -291,7 +291,7 @@ Nell'opzione che l'id passatogli corrisponda all'id dell'utente che ha effettuat
 Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection, il controller \emph{requireLogged} innescherà la chiamata del successivo controller \emph{listCollection} che gestirà la richiesta di restituzione della lista di \glossario{Collection}.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Collection GET.png} 
+		\includegraphics[scale=0.20]{scenari/Collection GET.png} 
 		\caption{Collection GET}
 	\end{center} 
 \end{figure}
@@ -300,7 +300,7 @@ Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risors
 Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection Name, il controller \emph{requireLogged} innescherà la chiamata del successivo controller \emph{indexPage} al quale verrà passato come parametro l'id della \glossario{Collection} per la restituzione dell'index page corrispondente.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Collection Name GET.png} 
+		\includegraphics[scale=0.20]{scenari/Collection Name GET.png} 
 		\caption{Collection Name GET}
 	\end{center} 
 \end{figure}
@@ -309,7 +309,7 @@ Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risors
 Il diagramma di sequenza rappresenta lo scenario di una richiesta GET per la risorsa collection name document, nel quale al controller \emph{showpage} viene passato l'id del document di cui mostrare la show page.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Collection Name Document GET.png} 
+		\includegraphics[scale=0.20]{scenari/Collection Name Document GET.png} 
 		\caption{Collection Name Document GET}
 	\end{center} 
 \end{figure}
@@ -318,7 +318,7 @@ Il diagramma di sequenza rappresenta lo scenario di una richiesta GET per la ris
 Il seguente diagramma rappresenta lo scenario di una richiesta POST su una risorsa collection name document, il controller \emph{requireAdmin} non risponde con errore e viene passato il controllo a \emph{editDocument} che gestirà la richiesta.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Collection Name Document PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Collection Name Document PUT.png} 
 		\caption{Collection Name Document PUT}
 	\end{center} 
 \end{figure}
@@ -327,7 +327,7 @@ Il seguente diagramma rappresenta lo scenario di una richiesta POST su una risor
 Il seguente scenario rappresenta la richiesta DELETE per una risorsa Collection name document, dopo che i permessi sono stati verificati il controllo è passato a \emph{deleteDocument} il quale gestirà la richiesta di eliminazione del document il cui id gli è stato passato come parametro.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Collection Name Document DELETE.png} 
+		\includegraphics[scale=0.20]{scenari/Collection Name Document DELETE.png} 
 		\caption{Collection Name Document DELETE}
 	\end{center} 
 \end{figure}
@@ -337,7 +337,7 @@ Il seguente diagramma di sequenza descrive lo scenario di una richiesta PUT per 
 Il controller \emph{collectionAction} si occupa di eseguire i controlli sugli attributi passatogli corrispondenti all'azione da eseguire e alla \glossario{Collection} sulla quale tale azione deve essere gestita.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Action Name Collection PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Action Name Collection PUT.png} 
 		\caption{Action Name Collection PUT}
 	\end{center} 
 \end{figure}
@@ -347,7 +347,7 @@ Il diagramma a seguito mostrato descrive lo scenario di una richiesta PUT per la
 Il controller \emph{documentAction} gestirà la richiesta di azione sul document corrispondente all'id passatogli come parametro.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.60]{scenari/Action Name Collection Document PUT.png} 
+		\includegraphics[scale=0.20]{scenari/Action Name Collection Document PUT.png} 
 		\caption{Action Name Collection Document PUT}
 	\end{center} 
 \end{figure}

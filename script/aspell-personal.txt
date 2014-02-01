@@ -23,6 +23,7 @@ all'admin
 all'Admin
 all'idUser
 all'upload
+all'userId
 Amazon
 Amm
 an

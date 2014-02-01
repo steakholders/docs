@@ -52,7 +52,7 @@ lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/MaaP - Re
 lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/MaaP - Effettua registrazione.png")
 lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/MaaP - Apri show-page utente.png")
 lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/MaaP - Crea nuovo utente.png")
-lucidchart.download_image("")
+lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/MaaS - Attivita principali.png")
 
 #uml Scenari 
 
@@ -67,10 +67,10 @@ lucidchart.download_image("4b4b-d5b4-52ea2d23-b9d5-3fd60a00c886", "scenari/Profi
 lucidchart.download_image("474b-5340-52ea2f14-821c-54130a0080fd", "scenari/Users GET.png")
 lucidchart.download_image("4cd0-6af8-52ea4779-a369-46c60a008a7d", "scenari/Action Name Collection Document PUT.png")
 lucidchart.download_image("4a49-1fc8-52ea472b-9701-30250a00c886", "scenari/Action Name Collection PUT.png")
-lucidchart.download_image("43d0-05a0-52ea4645-8262-14280a008a7d", "scenari/Collection Name Document POST.png")
+lucidchart.download_image("43d0-05a0-52ea4645-8262-14280a008a7d", "scenari/Collection Name Document PUT.png")
 lucidchart.download_image("4435-7f0c-52ea451d-99a0-35980a008a7d", "scenari/Collection Name GET.png")
 lucidchart.download_image("492e-8840-52ea42b6-a97b-53570a00ca2b", "scenari/Users Id DELETE.png")
-lucidchart.download_image("4686-92d4-52ea3266-b7ee-6a310a005d4c", "scenari/Users Id POST.png")
+lucidchart.download_image("4686-92d4-52ea3266-b7ee-6a310a005d4c", "scenari/Users Id PUT.png")
 lucidchart.download_image("4dd8-efd4-52e91e57-bc0a-0f790a00c47f", "scenari/login POST.png")
 lucidchart.download_image("4924-b25c-52ea46e4-98d0-041b0a00c886", "scenari/Collection Name Document DELETE.png")
 lucidchart.download_image("4dfc-0ffc-52ea43b0-adbc-2ae30a00c47f", "scenari/Collection GET.png")

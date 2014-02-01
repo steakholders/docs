@@ -24,6 +24,14 @@ from lucidchart import LucidchartClient
 # 9- chiudere pure Ngrok
 # 10- la prossima volta non servirà Ngrok, basterà eseguire `python download_uml.py`
 
+###########################################################
+#  Istruzioni per cambiare la risoluzione delle immagini  #
+###########################################################
+
+# 1 - Dalla root della repository aprire script/lucidchart.py;
+# 2 - Alla definizione del metodo download_image modificare il parametro "width";
+# 3 - Se non si specifica niente prende un valore di default.
+
 server_port = 8888
 
 if len(sys.argv) <= 1:

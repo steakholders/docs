@@ -21,6 +21,7 @@ all'
 All
 all'admin
 all'Admin
+all'idUser
 all'upload
 Amazon
 Amm
@@ -210,6 +211,7 @@ effort
 election
 elections
 Ember
+emph
 encoded
 encoding
 Endeavor
@@ -373,6 +375,7 @@ line
 lines
 linkcolor
 List'
+listCollection
 listCollections
 livello'
 ln
@@ -388,6 +391,7 @@ lostpassword
 l'overhead
 Lucidchart
 LUF
+l'userId
 Luzzati
 Maap
 MaaP
@@ -619,6 +623,7 @@ requireAdmin
 requireLogged
 Requirements
 requireNotLogged
+requireNotLogger
 requirePasswordReset
 requires
 requisteak
@@ -683,6 +688,7 @@ shortcut
 should
 shouldn
 shouldn't
+showpage
 showPage
 showspaces
 showstringspaces
@@ -735,6 +741,7 @@ sull'
 sum
 Sun
 superadmin
+superAdmin
 superclasse
 SV
 SWEBOK

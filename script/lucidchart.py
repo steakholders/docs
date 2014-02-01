@@ -99,7 +99,7 @@ class LucidchartClient:
 			session = self.new_session()
 		return session
 	
-	def download_image(self, document, destination, width=600, pagenum=1):
+	def download_image(self, document, destination, width=1600, pagenum=1):
 		"""
 		document: l'id del documento di lucidchart
 		destination: la posizione in cui salvare le immagini

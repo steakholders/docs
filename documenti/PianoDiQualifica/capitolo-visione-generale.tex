@@ -230,7 +230,13 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item Range-ottimale: [0 - 10]\footnote{McCabe (dicembre 1976). A Complexity Measure. IEEE Transactions on Software Engineering: 308–320.} .
 			\end{itemize}
 
+
+			\paragraph{Densità della complessità ciclomatica}\mbox{} \\
+
+			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			Proposta come modifica alla complessità ciclomatica, questa metrica semplicemente la riesprime come percentuale sulle linee di codice logiche. Un valore basso è migliore di un valore alto.
 			
+
 			\paragraph{Numero di metodi - NOM}\mbox{} \\
 				
 			Il \emph{Number of methods} è una metrica usata per calcolare la media delle occorrenze dei metodi per package. Un package non dovrebbe contenere un numero eccessivo di metodi. Valori superiori al range ottimale massimo potrebbero indicare una necessità di maggiore decomposizione del package.
@@ -346,4 +352,19 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 
 			
+			\paragraph{Maintainability index}\mbox{} \\
 
+			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			Questa metrica\footnote{Definita nel 1991 da Paul Oman e Jack Hagemeister alla University of Idaho.} è una scala logaritmica da $-\infty$ a 171, calcolata sulla base delle linee di codice logiche, della complessità ciclomatica e dall'indice \glossario{Halstead} effort. Un valore alto indica una maggiore manutenibilità.
+
+
+			\paragraph{First-order density}\mbox{} \\
+
+			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			La percentuale di tutte le possibili dipendenze interne che si sono effettivamente realizzata nel progetto. Un valore basso è migliore di un valore alto.
+
+
+			\paragraph{Change cost}\mbox{} \\
+
+			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			La percentuale media dei moduli condizionati dal cambiamento di un modulo nel progetto. Un valore basso è migliore di un valore alto.

@@ -154,6 +154,7 @@ coordinates
 coords
 corners
 correction
+cost
 coverage
 Cox
 Craftsmanship
@@ -180,6 +181,7 @@ dell'application
 dell'array
 dell'index
 Demonstrable
+density
 deployment
 Description
 Determination
@@ -248,6 +250,7 @@ filecolor
 fill
 Firebase
 Firefox
+First
 firstnumber
 firstpage
 followed
@@ -292,6 +295,7 @@ group
 GUI
 gulpease
 gzip
+Hagemeister
 halstead
 Handbook
 handler
@@ -503,6 +507,7 @@ OOP
 Operational
 Opportunity
 opzionalmente'
+order
 oriented
 OT
 overriding
@@ -521,6 +526,7 @@ passport
 PassportLocal
 path
 Patterns
+Paul
 pdc
 PDCA
 pdf
@@ -813,6 +819,7 @@ Uniform
 unipd
 Unique
 unit
+University
 update
 upload
 url

@@ -19,6 +19,7 @@ paramentro parametro
 partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
+prosposta Proposta
 que qua
 rischesto richiesto
 risportate riportate

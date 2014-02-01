@@ -61,6 +61,9 @@ lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/MaaP - Ef
 lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/MaaP - Apri show-page utente.png")
 lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/MaaP - Crea nuovo utente.png")
 lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/MaaS - Attivita principali.png")
+lucidchart.download_image("43a8-3e2c-52ed0031-8ac6-11420a0048dc", "uml/MaaS - Gestisci file di configurazione.png")
+lucidchart.download_image("4ff5-dafc-52ed0192-b270-1b550a00c7a5", "uml/MaaS - Crea file di configurazione.png")
+
 
 #uml Scenari 
 

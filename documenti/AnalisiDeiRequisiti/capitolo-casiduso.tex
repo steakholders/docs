@@ -23,11 +23,11 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
 
 
 \subsection{Ambito Utente}
-\subsubsection{UCU - Operazioni ad alto livello - Utente non autenticato}    
+\subsubsection{UCU 0 - Operazioni ad alto livello - Utente non autenticato}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU - Operazioni ad alto livello - Utente non autenticato.png}
-      \caption{UCU - Operazioni ad alto livello - Utente non autenticato}
+      \includegraphics[width=12cm]{UML/UCU 0 - Operazioni ad alto livello - Utente non autenticato.png}
+      \caption{UCU 0 - Operazioni ad alto livello - Utente non autenticato}
       \end{center} 
     \end{figure}    
     
@@ -38,30 +38,26 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - Operazioni ad alto livello - Utente non autenticato}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 0 - Operazioni ad alto livello - Utente non autenticato}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente non autenticato  \\ 
+      \textbf{Attori Primari} & Utente non autenticato \\ 
           \textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form,può registrarsi all'applicazione se tale funzione è predisposta e può recuperare l'eventuale password d'accesso. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo.
-Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione, registrazione e recupero password.\\ 
+          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo. Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione, registrazione e recupero password.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente vuole eseguire. \\ 
-          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline
-2. Utente non autenticato può recuperare la password (UCU4); \newline
-3. Utente non autenticato può richiedere la registrazione (UCU5); \newline \\
-           \textbf{Estensioni} & 1.1 L'utente visualizza un messaggio di errore causato dall'inserimento di credenziali errate per il login (UCU2); \newline
-3.1 L'utente a seguito del fallimento della registrazione, visualizza un messaggio di errore (UCU6). \\
+          \textbf{Postcondizioni} &  \\ 
+          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline 2. Utente non autenticato può recuperare la password (UCU4); \newline 3. Utente non autenticato può richiedere la registrazione (UCU5); \newline \\
+           \textbf{Estensioni} & 1.1 L'utente visualizza un messaggio di errore causato dall'inserimento di credenziali errate per il login (UCU2); \newline 3.1 L'utente a seguito del fallimento della registrazione, visualizza un messaggio di errore (UCU6). \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU - Operazioni ad alto livello - Utente autenticato}    
+\subsubsection{UCU 0 - Operazioni ad alto livello - Utente autenticato}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU - Operazioni ad alto livello - Utente autenticato.png}
-      \caption{UCU - Operazioni ad alto livello - Utente autenticato}
+      \includegraphics[width=12cm]{UML/UCU 0 - Operazioni ad alto livello - Utente autenticato.png}
+      \caption{UCU 0 - Operazioni ad alto livello - Utente autenticato}
       \end{center} 
     \end{figure}    
     
@@ -72,15 +68,14 @@ Il sistema predispone all'utente non autenticato la pagina principale fornendo l
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU - Operazioni ad alto livello - Utente autenticato}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 0 - Operazioni ad alto livello - Utente autenticato}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
           \textbf{Scopo e Descrizione} & L'Utente autenticato in qualsiasi punto dell'applicazione può accedere alle seguenti funzionalità: accedere alla Dashboard, effettuare il Logout , può scegliere una qualsiasi collection presente e può modificare i propri dati. 
 L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gli utenti creandone di nuovi o modificandoli ed inoltre può gestire nuovi indici. \\ 
           
-          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo.
-Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.\\ 
+          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo. Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.\\ 
           
           \textbf{Postcondizioni} & L'applicazione ha ricevuto le informazioni sulle operazioni che l'utente autenticato vuole eseguire. \\ 
           \textbf{Flusso Principale} & 1. L'utente autenticato può decidere di effettuare il logout (UCU3); \newline
@@ -88,8 +83,7 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
 3. L'utente autenticato può scegliere una collection e visualizzarla (UCU9); \newline
 4. L'utente autenticato può scegliere di modificare i propri dati (UCU10); \newline
 5. L'admin può accede alla sua pagina di amministrazione per la gestione degli utenti (UCU11); \newline
-6. L'admin può gestire i possibili indici (UCU7). \newline
- \\
+6. L'admin può gestire i possibili indici (UCU7). \newline \\
            \textbf{Estensioni} & 2.1. L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di \glossario{dashboard}(UCU12); \newline
 3.1.  L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della \glossario{collection} selezionata (UCU12); \newline
 6.1.  L'admin visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di gestione degli indici (UCU12). \\
@@ -97,11 +91,11 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \egroup
 \end{center}
 
-\subsubsection{UCU1 - Login}    
+\subsubsection{UCU 1 - Login}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU1 - Login.png}
-      \caption{UCU1 - Login}
+      \includegraphics[width=12cm]{UML/UCU 1 - Login.png}
+      \caption{UCU 1 - Login}
       \end{center} 
     \end{figure}    
     
@@ -112,23 +106,25 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU1 - Login}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 1 - Login}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente non autenticato  \\ 
-          \textbf{Scopo e Descrizione} & L'utente non autenticato intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password.  \\ 
+      \textbf{Attori Primari} & Utente non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente non autenticato intende accedere all'applicazione, per farlo deve inserire le proprie credenziali composte da una email ed una password.
+ \\ 
           
           \textbf{Precondizioni}  & L'applicazione predispone la pagina di autenticazione all'utente non autenticato fornendo un apposito form per l'inserimento delle credenziali.\\ 
           
           \textbf{Postcondizioni} & Il sistema ha autenticato l'utente e lo ha rediretto alla pagina Dashboard. \\ 
-          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline
-2. L'utente inserisce la password (UC1.2). \newline \\
-           \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione. \\
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UC1.1); \newline 2. L'utente inserisce la password (UC1.2). \newline
+ \\
+           \textbf{Scenari Alternativi} & 1. L'utente non effettua l'autenticazione.
+ \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU1.1 - Inserimento email} 
+\subsubsection{UCU 1.1 - Inserimento email} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -136,7 +132,7 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU1.1 - Inserimento email}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 1.1 - Inserimento email}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -151,7 +147,7 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \egroup
 \end{center}
 
-\subsubsection{UCU1.2 - Inserimento Password} 
+\subsubsection{UCU 1.2 - Inserimento Password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -159,7 +155,7 @@ Il sistema predispone all'utente autenticato la corrispondente pagina dashboard.
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU1.2 - Inserimento Password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 1.2 - Inserimento Password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -175,7 +171,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU2 - Visualizzazione messaggio errore per credenziali errate} 
+\subsubsection{UCU 2 - Visualizzazione messaggio errore per credenziali errate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -183,7 +179,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU2 - Visualizzazione messaggio errore per credenziali errate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 2 - Visualizzazione messaggio errore per credenziali errate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -198,7 +194,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU3 - Logout} 
+\subsubsection{UCU 3 - Logout} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -206,7 +202,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU3 - Logout}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 3 - Logout}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -221,11 +217,11 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU4 - Recupero password}    
+\subsubsection{UCU 4 - Recupero password}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU4 - Recupero password.png}
-      \caption{UCU4 - Recupero password}
+      \includegraphics[width=12cm]{UML/UCU 4 - Recupero password.png}
+      \caption{UCU 4 - Recupero password}
       \end{center} 
     \end{figure}    
     
@@ -236,7 +232,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4 - Recupero password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 4 - Recupero password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -252,11 +248,11 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU4.1 - Richiesta reset password}    
+\subsubsection{UCU 4.1 - Richiesta reset password}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU4.1 - Richiesta reset password.png}
-      \caption{UCU4.1 - Richiesta reset password}
+      \includegraphics[width=12cm]{UML/UCU 4.1 - Richiesta reset password.png}
+      \caption{UCU 4.1 - Richiesta reset password}
       \end{center} 
     \end{figure}    
     
@@ -267,10 +263,10 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.1 - Richiesta reset password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 4.1 - Richiesta reset password}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente non autenticato \\ 
+      \textbf{Attori Primari} & Utente non autenticato  \\ 
           \textbf{Scopo e Descrizione} & L'utente intende richiedere il reset della propria password d'accesso all'applicazione, per poterlo fare dovrà inserire un indirizzo email nel quale verrà inviata un email contenente il link dal quale potrà accedere alla pagina per effettuare il reset della propria password. \\ 
           
           \textbf{Precondizioni}  & Il sistema predispone all'utente non autenticato una pagina con rispettivo modulo di inserimento dell'email per portare a termine la procedura di reset della password.\\ 
@@ -282,7 +278,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU4.1.1 - Inserimento email} 
+\subsubsection{UCU 4.1.1 - Inserimento email} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -290,7 +286,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.1.1 - Inserimento email}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 4.1.1 - Inserimento email}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -305,11 +301,11 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \egroup
 \end{center}
 
-\subsubsection{UCU4.2 - Effettuazione reset password}    
+\subsubsection{UCU 4.2 - Effettuazione reset password}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU4.2 - Effettuazione reset password.png}
-      \caption{UCU4.2 - Effettuazione reset password}
+      \includegraphics[width=12cm]{UML/UCU 4.2 - Effettuazione reset password.png}
+      \caption{UCU 4.2 - Effettuazione reset password}
       \end{center} 
     \end{figure}    
     
@@ -320,7 +316,7 @@ Tale password dovrà essere alfanumerica e con una lunghezza minima di 8 caratte
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.2 - Effettuazione reset password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 4.2 - Effettuazione reset password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -336,7 +332,7 @@ La password deve essere alfanumerica e con lunghezza minima 8 caratteri. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU4.2.1 - Inserimento nuova password} 
+\subsubsection{UCU 4.2.1 - Inserimento nuova password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -344,7 +340,7 @@ La password deve essere alfanumerica e con lunghezza minima 8 caratteri. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU4.2.1 - Inserimento nuova password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 4.2.1 - Inserimento nuova password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -360,11 +356,11 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \egroup
 \end{center}
 
-\subsubsection{UCU5 - Registrazione}    
+\subsubsection{UCU 5 - Registrazione}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU5 - Registrazione.png}
-      \caption{UCU5 - Registrazione}
+      \includegraphics[width=12cm]{UML/UCU 5 - Registrazione.png}
+      \caption{UCU 5 - Registrazione}
       \end{center} 
     \end{figure}    
     
@@ -375,7 +371,7 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU5 - Registrazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 5 - Registrazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -391,7 +387,7 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \egroup
 \end{center}
 
-\subsubsection{UCU6 - Visualizzazione messaggio errore per Registrazione fallita} 
+\subsubsection{UCU 6 - Visualizzazione messaggio errore per Registrazione fallita} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -399,7 +395,7 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU6 - Visualizzazione messaggio errore per Registrazione fallita}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 6 - Visualizzazione messaggio errore per Registrazione fallita}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente non autenticato  \\ 
@@ -414,11 +410,11 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \egroup
 \end{center}
 
-\subsubsection{UCU7 - Gestione indici}    
+\subsubsection{UCU 7 - Gestione indici}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU7 - Gestione indici.png}
-      \caption{UCU7 - Gestione indici}
+      \includegraphics[width=12cm]{UML/UCU 7 - Gestione indici.png}
+      \caption{UCU 7 - Gestione indici}
       \end{center} 
     \end{figure}    
     
@@ -429,7 +425,7 @@ La nuova password che l'utente deve inserire deve essere alfanumerica di minimo 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU7 - Gestione indici}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 7 - Gestione indici}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -447,7 +443,7 @@ Gli indici già presenti possono essere eliminati. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU7.1 - Visualizzazione suggerimenti sugli indici} 
+\subsubsection{UCU 7.1 - Visualizzazione suggerimenti sugli indici} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -455,7 +451,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU7.1 - Visualizzazione suggerimenti sugli indici}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 7.1 - Visualizzazione suggerimenti sugli indici}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -470,7 +466,7 @@ Gli indici già presenti possono essere eliminati. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU7.2 - Creazione indici} 
+\subsubsection{UCU 7.2 - Creazione indici} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -478,7 +474,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU7.2 - Creazione indici}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 7.2 - Creazione indici}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -493,7 +489,7 @@ Gli indici già presenti possono essere eliminati. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU7.3 - Rimozione indici} 
+\subsubsection{UCU 7.3  - Rimozione indici} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -501,7 +497,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU7.3 - Rimozione indici}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 7.3  - Rimozione indici}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -516,7 +512,7 @@ Gli indici già presenti possono essere eliminati. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU8 - Visualizzazione Dashboard} 
+\subsubsection{UCU 8 - Visualizzazione Dashboard} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -524,7 +520,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU8 - Visualizzazione Dashboard}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 8 - Visualizzazione Dashboard}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -532,19 +528,18 @@ Gli indici già presenti possono essere eliminati. \\
           
           \textbf{Precondizioni}  & L'applicazione predispone la pagina di Dashboard all'utente autenticato.\\ 
           
-          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di Dashboard ed pronta ad interagire con l'utente per svolgere le operazioni che desidera eseguire.
- \\ 
+          \textbf{Postcondizioni} & L'applicazione visualizza all'utente la pagina di Dashboard ed pronta ad interagire con l'utente per svolgere le operazioni che desidera eseguire. \\ 
           \textbf{Flusso Principale} & 1. L'utente autenticato visualizza la propria Dashboard (UCU8). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCU9 - Apertura Collection Index}    
+\subsubsection{UCU 9 - Apertura Collection Index}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU9 - Apertura Collection Index.png}
-      \caption{UCU9 - Apertura Collection Index}
+      \includegraphics[width=12cm]{UML/UCU 9 - Apertura Collection Index.png}
+      \caption{UCU 9 - Apertura Collection Index}
       \end{center} 
     \end{figure}    
     
@@ -555,7 +550,7 @@ Gli indici già presenti possono essere eliminati. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9 - Apertura Collection Index}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9 - Apertura Collection Index}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -576,11 +571,11 @@ L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Docu
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1 - Apertura show-page Document}    
+\subsubsection{UCU 9.1 - Apertura show-page Document}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU9.1 - Apertura show-page Document.png}
-      \caption{UCU9.1 - Apertura show-page Document}
+      \includegraphics[width=12cm]{UML/UCU 9.1 - Apertura show-page Document.png}
+      \caption{UCU 9.1 - Apertura show-page Document}
       \end{center} 
     \end{figure}    
     
@@ -591,7 +586,7 @@ L'Admin ha i permessi per modificare un documento o eliminare un \glossario{Docu
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1 - Apertura show-page Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1 - Apertura show-page Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -612,7 +607,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.1 -  Visualizzazione show page attributi innestati} 
+\subsubsection{UCU 9.1.1 - Visualizzazione show page attributi innestati} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -620,7 +615,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.1 -  Visualizzazione show page attributi innestati}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1.1 - Visualizzazione show page attributi innestati}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -635,7 +630,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.2 - Visualizzazione index page dell'array di document} 
+\subsubsection{UCU 9.1.2 - Visualizzazione index page dell'array di document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -643,7 +638,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.2 - Visualizzazione index page dell'array di document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1.2 - Visualizzazione index page dell'array di document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -658,7 +653,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.3 - Modifica Document} 
+\subsubsection{UCU 9.1.3 - Modifica Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -666,7 +661,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.3 - Modifica Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1.3 - Modifica Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -681,7 +676,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.4 - Elimina Document} 
+\subsubsection{UCU 9.1.4 - Elimina Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -689,7 +684,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.4 - Elimina Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1.4 - Elimina Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -704,7 +699,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.1.5 - Annulla modifica Document} 
+\subsubsection{UCU 9.1.5 - Annulla modifica Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -712,7 +707,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.1.5 - Annulla modifica Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.1.5 - Annulla modifica Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -727,7 +722,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \egroup
 \end{center}
 
-\subsubsection{UCU9.2 - Filtra risultati} 
+\subsubsection{UCU 9.2 - Filtra risultati} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -735,7 +730,7 @@ L'Admin può eliminare il \glossario{Document} a cui la show-page corrisponde o 
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.2 - Filtra risultati}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.2 - Filtra risultati}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
@@ -752,7 +747,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9.3 - Esegui azione personalizzata} 
+\subsubsection{UCU 9.3 - Esegui azione personalizzata} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -760,7 +755,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.3 - Esegui azione personalizzata}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.3 - Esegui azione personalizzata}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato, Admin \\ 
@@ -775,7 +770,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9.4 - Modifica Document} 
+\subsubsection{UCU 9.4 - Modifica Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -783,7 +778,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.4 - Modifica Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.4 - Modifica Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -798,7 +793,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9.5 - Elimina Document} 
+\subsubsection{UCU 9.5 - Elimina Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -806,7 +801,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.5 - Elimina Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.5 - Elimina Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -821,7 +816,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9.6 - Creazione Document} 
+\subsubsection{UCU 9.6 - Creazione Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -829,7 +824,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.6 - Creazione Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.6 - Creazione Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -844,7 +839,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU9.7 - Annulla modifica Document} 
+\subsubsection{UCU 9.7 - Annulla modifica Document} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -852,7 +847,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU9.7 - Annulla modifica Document}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 9.7 - Annulla modifica Document}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -867,11 +862,11 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU10 - Modifica profilo}    
+\subsubsection{UCU 10 - Modifica profilo}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU10 - Modifica profilo.png}
-      \caption{UCU10 - Modifica profilo}
+      \includegraphics[width=12cm]{UML/UCU 10 - Modifica profilo.png}
+      \caption{UCU 10 - Modifica profilo}
       \end{center} 
     \end{figure}    
     
@@ -882,7 +877,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU10 - Modifica profilo}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 10 - Modifica profilo}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
@@ -898,7 +893,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU10.1 - Modifica password} 
+\subsubsection{UCU 10.1 - Modifica password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -906,7 +901,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU10.1 - Modifica password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 10.1 - Modifica password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
@@ -921,11 +916,11 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11 - Gestione utenti}    
+\subsubsection{UCU 11 - Gestione utenti}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU11 - Gestione utenti.png}
-      \caption{UCU11 - Gestione utenti}
+      \includegraphics[width=12cm]{UML/UCU 11 - Gestione utenti.png}
+      \caption{UCU 11 - Gestione utenti}
       \end{center} 
     \end{figure}    
     
@@ -936,7 +931,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11 - Gestione utenti}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11 - Gestione utenti}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -952,11 +947,11 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11.1 - Creazione utente}    
+\subsubsection{UCU 11.1 - Creazione utente}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU11.1 - Creazione utente.png}
-      \caption{UCU11.1 - Creazione utente}
+      \includegraphics[width=12cm]{UML/UCU 11.1 - Creazione utente.png}
+      \caption{UCU 11.1 - Creazione utente}
       \end{center} 
     \end{figure}    
     
@@ -967,7 +962,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.1 - Creazione utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.1 - Creazione utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -985,7 +980,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11.1.1 - Inserimento email} 
+\subsubsection{UCU 11.1.1 - Inserimento email} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -993,7 +988,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.1.1 - Inserimento email}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.1.1 - Inserimento email}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1008,7 +1003,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11.1.2 - Inserimento password} 
+\subsubsection{UCU 11.1.2 - Inserimento password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1016,7 +1011,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.1.2 - Inserimento password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.1.2 - Inserimento password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1031,7 +1026,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11.1.3 - Definizione livello utente} 
+\subsubsection{UCU 11.1.3 - Definizione livello utente} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1039,7 +1034,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.1.3 - Definizione livello utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.1.3 - Definizione livello utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1054,7 +1049,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU11.2 - Creazione fallita} 
+\subsubsection{UCU 11.2 - Creazione fallita} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1062,7 +1057,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.2 - Creazione fallita}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.2 - Creazione fallita}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1082,11 +1077,11 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3 - Apertura show-page Utente}    
+\subsubsection{UCU 11.3 - Apertura show-page Utente}    
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCU11.3 - Apertura show-page Utente.png}
-      \caption{UCU11.3 - Apertura show-page Utente}
+      \includegraphics[width=12cm]{UML/UCU 11.3 - Apertura show-page Utente.png}
+      \caption{UCU 11.3 - Apertura show-page Utente}
       \end{center} 
     \end{figure}    
     
@@ -1097,7 +1092,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3 - Apertura show-page Utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.3 - Apertura show-page Utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1115,7 +1110,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3.1 - Eleva utente} 
+\subsubsection{UCU 11.3.1 - Eleva utente} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1123,7 +1118,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.1 - Eleva utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.3.1 - Eleva utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1138,7 +1133,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3.2 - Declassa admin} 
+\subsubsection{UCU 11.3.2 - Declassa admin} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1146,7 +1141,7 @@ L'operazione di creazione utente può fallire nei seguenti casi : \newline
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.2 - Declassa admin}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.3.2 - Declassa admin}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1162,7 +1157,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \egroup
 \end{center}
 
-\subsubsection{UCU11.3.3 - Eliminazione Utente} 
+\subsubsection{UCU 11.3.3 - Eliminazione Utente} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1170,7 +1165,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU11.3.3 - Eliminazione Utente}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.3.3 - Eliminazione Utente}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
@@ -1185,7 +1180,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \egroup
 \end{center}
 
-\subsubsection{UCU12 - Visualizzazione messaggio di errore DSL} 
+\subsubsection{UCU 12 - Visualizzazione messaggio di errore DSL} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1193,7 +1188,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU12 - Visualizzazione messaggio di errore DSL}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 12 - Visualizzazione messaggio di errore DSL}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente autenticato \\ 
@@ -1208,11 +1203,11 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \egroup
 \end{center}
 \subsection{Ambito Sviluppatore}
-\subsubsection{UCS - Operazioni ad alto livello} 
+\subsubsection{UCS 0 - Operazioni ad alto livello} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS - Operazioni ad alto livello.png}
-      \caption{UCS - Operazioni ad alto livello}
+      \includegraphics[width=12cm]{UML/UCS 0 - Operazioni ad alto livello.png}
+      \caption{UCS 0 - Operazioni ad alto livello}
       \end{center} 
     \end{figure}  
     
@@ -1223,7 +1218,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS - Operazioni ad alto livello}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 0 - Operazioni ad alto livello}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1232,15 +1227,13 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{Maap} è funzionante e pronto ad eseguire le azioni dello sviluppatore.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni sulle azioni che l’utente desidera eseguire. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore crea un nuovo progetto (UCS1); \newline
-2. Lo sviluppatore dopo aver creato il nuovo progetto può configurare i database (UCS2); \newline
-3. Lo sviluppatore con il nuovo progetto creato può gestire le \glossario{Collection} che desidera generare (UCS3). \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore crea un nuovo progetto (UCS1); \newline 2. Lo sviluppatore dopo aver creato il nuovo progetto può configurare i database (UCS2); \newline 3. Lo sviluppatore con il nuovo progetto creato può gestire le \glossario{Collection} che desidera generare  \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS1 - Creazione nuovo progetto} 
+\subsubsection{UCS 1 - Creazione nuovo progetto} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1248,31 +1241,26 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS1 - Creazione nuovo progetto}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 1 - Creazione nuovo progetto}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore crea un nuovo progetto. \newline
-Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di: \newline
-- La creazione delle directory delle pagine web.  \newline
-- La creazione del file di configurazione.  \newline
-- L'inclusione delle librerie di sistema.  \newline
-- La generazione del sistema di autenticazione che include la creazione del database delle credenziali e la generazione dell'utente admin di default. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore crea un nuovo progetto. \newline Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di: \newline - La creazione delle directory delle pagine web. \newline - La creazione del file di configurazione. \newline - L'inclusione delle librerie di sistema. \newline - La generazione del sistema di autenticazione che include la creazione del database delle credenziali e la generazione dell'utente admin di default. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} è pronto a creare un nuovo progetto.\\ 
           
-          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha creato un nuovo progetto completo di tutti i file necessari. \\
+          \textbf{Postcondizioni} &  \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore crea un nuovo progetto. (UCS1) \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS2 - Configurazione database} 
+\subsubsection{UCS 2 - Configurazione database} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS2 - Configurazione database.png}
-      \caption{UCS2 - Configurazione database}
+      \includegraphics[width=12cm]{UML/UCS 2 - Configurazione database.png}
+      \caption{UCS 2 - Configurazione database}
       \end{center} 
     \end{figure}  
     
@@ -1283,23 +1271,22 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2 - Configurazione database}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 2 - Configurazione database}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare i due database che compongono il sistema MaaP, ovvero il database delle credenziali utenti e il database contenente le \glossario{Collection}. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare i due database che compongono il sistema MaaP, ovvero il database delle credenziali utenti e il database contenente le \glossario{Collection} \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} è funzionante, il progetto è stato creato e lo sviluppatore desidera configurare i database.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} ha ottenuto le informazioni necessarie ed ha configurato il database delle credenziali e il database delle \glossario{Collection}. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore può configurare il database delle credenziali utente (UCS2.1); \newline
-2. Lo sviluppatore può configurare il database delle \glossario{Collection} (UCS2.2). \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore può configurare il database delle credenziali utente (UCS2.1); \newline 2. Lo sviluppatore può configurare il database delle \glossario{Collection} (UCS2.2). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS2.1 - Configurazione database credenziali} 
+\subsubsection{UCS 2.1  - Configurazione database credenziali} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1307,12 +1294,11 @@ Alla creazione del nuovo progetto ne viene creato lo scheletro che si compone di
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2.1 - Configurazione database credenziali}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 2.1  - Configurazione database credenziali}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare la connessione al database delle credenziali degli utenti, i quali utilizzeranno l'applicazione generata dal \glossario{Framework}.
-Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare la connessione al database delle credenziali degli utenti, i quali utilizzeranno l'applicazione generata dal \glossario{Framework}. Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} permette la configurazione del database credenziali.\\ 
           
@@ -1323,7 +1309,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \egroup
 \end{center}
 
-\subsubsection{UCS2.2 - Configurazione database Collection} 
+\subsubsection{UCS 2.2  - Configurazione database Collection} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1331,14 +1317,13 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2.2 - Configurazione database Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 2.2  - Configurazione database Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare la connessione al database delle \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà.
-Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può configurare la connessione al database delle \glossario{Collection} che l'applicazione generata dal \glossario{Framework} utilizzerà. Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato anche il \glossario{namespace} corrispondente. \\ 
           
-          \textbf{Precondizioni}  & Il \glossario{Framework} è  pronto per l'utilizzo e permette la configurazione del database contenente le \glossario{Collection}.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} è pronto per l'utilizzo e permette la configurazione del database contenente le \glossario{Collection}.\\ 
           
           \textbf{Postcondizioni} & Il Framework Maap ha configurato il database delle \glossario{Collection} secondo le informazioni acquisite dallo sviluppatore. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore configura la connessione al database delle \glossario{Collection}. (UCS2.2) \\
@@ -1347,7 +1332,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \egroup
 \end{center}
 
-\subsubsection{UCS2.3 - Selezione namespace} 
+\subsubsection{UCS 2.3  - Selezione namespace} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1355,7 +1340,7 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS2.3 - Selezione namespace}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 2.3  - Selezione namespace}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1370,11 +1355,11 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \egroup
 \end{center}
 
-\subsubsection{UCS3 - Gestione Collection} 
+\subsubsection{UCS 3 - Gestione Collection} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS3 - Gestione Collection.png}
-      \caption{UCS3 - Gestione Collection}
+      \includegraphics[width=12cm]{UML/UCS 3 - Gestione Collection.png}
+      \caption{UCS 3 - Gestione Collection}
       \end{center} 
     \end{figure}  
     
@@ -1385,25 +1370,22 @@ Se la funzione di \glossario{namespace} è abilitata dovrà essere configurato a
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3 - Gestione Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3 - Gestione Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore, con il progetto creato, può registrare manualmente una \glossario{Collection} o usufruire della registrazione automatica, con relativa creazione del file di configurazione della stessa. \newline
-Può poi configurare le \glossario{Collection} create. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore, con il progetto creato, può registrare manualmente una \glossario{Collection} o usufruire della registrazione automatica, con relativa creazione del file di configurazione della stessa. \newline Può poi configurare le \glossario{Collection} create. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è pronto, il progetto è stato creato e lo sviluppatore intende gestire una \glossario{Collection}.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} ha appreso le informazioni necessarie sulle azioni che lo sviluppatore vuole eseguire. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore può registrare manualmente la \glossario{Collection} (UCS3.1); \newline
-2. Lo sviluppatore può configurare la \glossario{Collection} registrata (UCS3.3).  \\
-           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della \glossario{Collection} (UCS3.4); \newline
-2.1 Lo sviluppatore può definire il namespace della \glossario{Collection} se la funzione di namespace è stata abilitata (UCS3.5). \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore può registrare manualmente la \glossario{Collection} (UCS3.1); \newline 2. Lo sviluppatore può configurare la \glossario{Collection} registrata (UCS3.3). \\
+           \textbf{Inclusioni} & Viene creato il file di configurazione (UCS3.2). \\ \textbf{Esclusioni} & 1.1. Lo sviluppatore non esegue la registrazione manuale ma eseguire la registrazione automatica della \glossario{Collection} (UCS3.4); \newline 2.1 Lo sviluppatore può definire il namespace della \glossario{Collection} se la funzione di namespace è stata abilitata (UCS3.5). \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.1 - Registrazione manuale Collection} 
+\subsubsection{UCS 3.1  - Registrazione manuale Collection} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1411,7 +1393,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.1 - Registrazione manuale Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.1  - Registrazione manuale Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1426,7 +1408,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.2 - Creazione file di configurazione} 
+\subsubsection{UCS 3.2  - Creazione file di configurazione} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1434,7 +1416,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.2 - Creazione file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.2  - Creazione file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1449,11 +1431,11 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3 - Configurazione Collection} 
+\subsubsection{UCS 3.3  - Configurazione Collection} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS3.3 - Configurazione Collection.png}
-      \caption{UCS3.3 - Configurazione Collection}
+      \includegraphics[width=12cm]{UML/UCS 3.3  - Configurazione Collection.png}
+      \caption{UCS 3.3  - Configurazione Collection}
       \end{center} 
     \end{figure}  
     
@@ -1464,29 +1446,26 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3 - Configurazione Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3  - Configurazione Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore modifica il file di configurazione di una \glossario{Collection} creata. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore modifica il file di configurazione di una \glossario{Collection} cre \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha registrato correttamente la \glossario{Collection} da configurare.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la \glossario{Collection} modificata dallo sviluppatore. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della \glossario{Collection} (UCS3.3.1); \newline
-2. Lo sviluppatore personalizza la show page della \glossario{Collection} (UCS3.3.2); \newline
-3. Lo sviluppatore rinomina il titolo della \glossario{Collection} che verrà visualizzato nel menu di navigazione (UCS3.3.3); \newline
-4. Lo sviluppatore definisce l'ordine di visualizzazione della \glossario{Collection} nel menu di navigazione (UCS3.3.4). \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della \glossario{Collection} (UCS3.3.1); \newline 2. Lo sviluppatore personalizza la show page della \glossario{Collection} (UCS3.3.2); \newline 3. Lo sviluppatore rinomina il titolo della \glossario{Collection} che verrà visualizzato nel menu di navigazione (UCS3.3.3); \newline 4. Lo sviluppatore definisce l'ordine di visualizzazione della \glossario{Collection} nel menu di navigazione ( \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1 - Personalizzazione index page} 
+\subsubsection{UCS 3.3.1 - Personalizzazione index page} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS3.3.1 - Personalizzazione index page.png}
-      \caption{UCS3.3.1 - Personalizzazione index page}
+      \includegraphics[width=12cm]{UML/UCS 3.3.1 - Personalizzazione index page.png}
+      \caption{UCS 3.3.1 - Personalizzazione index page}
       \end{center} 
     \end{figure}  
     
@@ -1497,30 +1476,22 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1 - Personalizzazione index page}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1 - Personalizzazione index page}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la index-page della \glossario{Collection} selezionata. \\ 
+          \textbf{Scopo e Descrizione} & Lo svilupLo sviluppatore personalizza la index-page della \glossario{Collection} selezionata. \\ 
           
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} da configurare è stata registrata.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la index-page della \glossario{Collection}. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare (UCS3.3.1.1); \newline
-2. Lo sviluppatore definisce l'ordinamento degli attributi (UCS3.3.1.2); \newline
-3. Lo sviluppatore definisce il limite degli elementi da visualizzare (UCS3.3.1.3); \newline
-4. Lo sviluppatore definisce quale attributo è selezionabile (UCS3.3.1.4); \newline
-5. Lo sviluppatore definisce una query che visualizzerà un sottoinsieme di \glossario{Document} dalla \glossario{Collection} (UCS3.3.1.5); \newline
-6. Lo sviluppatore definisce come attributo un attributo innestato o un array di attributi (UCS3.3u.1.6); \newline
-7. Lo sviluppatore personalizza la tipologia di filtri da visualizzare (UCS3.3.1.7); \newline
-8. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.1.8); \newline
-9. Lo sviluppatore definisce delle azioni personalizzate (UCS3.3.1.9). \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare (UCS3.3.1.1); \newline 2. Lo sviluppatore definisce l'ordinamento degli attributi (UCS3.3.1.2); \newline 3. Lo sviluppatore definisce il limite degli elementi da visualizzare (UCS3.3.1.3); \newline 4. Lo sviluppatore definisce quale attributo è selezionabile (UCS3.3.1.4); \newline 5. Lo sviluppatore definisce una query che visualizzerà un sottoinsieme di \glossario{Document} dalla \glossario{Collection} (UCS3.3.1.5); \newline 6. Lo sviluppatore definisce come attributo un attributo innestato o un array di attributi (UCS3.3u.1.6); \newline 7. Lo sviluppatore personalizza la tipologia di filtri da visualizzare (UCS3.3.1.7); \newline 8. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.1.8); \newline 9. Lo sviluppatore definisce delle azioni personalizzate (UCS3.3.1.9). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.1 - Definizione attributi da visualizzare} 
+\subsubsection{UCS 3.3.1.1  - Definizione attributi da visualizzare} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1528,7 +1499,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.1 - Definizione attributi da visualizzare}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.1  - Definizione attributi da visualizzare}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1543,7 +1514,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.2 - Definizione ordinamento attributi} 
+\subsubsection{UCS 3.3.1.2  -  Definizione ordinamento attributi} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1551,7 +1522,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.2 - Definizione ordinamento attributi}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.2  -  Definizione ordinamento attributi}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1566,7 +1537,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.3 - Definizione limite elementi da visualizzare} 
+\subsubsection{UCS 3.3.1.3  - Definizione limite elementi da visualizzare} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1574,7 +1545,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.3 - Definizione limite elementi da visualizzare}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.3  - Definizione limite elementi da visualizzare}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1589,7 +1560,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.4 - Definizione attributo selezionabile} 
+\subsubsection{UCS 3.3.1.4 - Definizione attributo selezionabile} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1597,7 +1568,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.4 - Definizione attributo selezionabile}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.4 - Definizione attributo selezionabile}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1612,7 +1583,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.5 - Definizione della index-query} 
+\subsubsection{UCS 3.3.1.5 - Definizione della index-query} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1620,7 +1591,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.5 - Definizione della index-query}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.5 - Definizione della index-query}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1635,7 +1606,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.6 - Definizione populate da eseguire} 
+\subsubsection{UCS 3.3.1.6 - Definizione populate da eseguire} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1643,7 +1614,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.6 - Definizione populate da eseguire}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.6 - Definizione populate da eseguire}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1658,7 +1629,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.7 - Personalizzazione filtri} 
+\subsubsection{UCS 3.3.1.7 - Personalizzazione filtri} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1666,7 +1637,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.7 - Personalizzazione filtri}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.7 - Personalizzazione filtri}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1681,7 +1652,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.8 - Definizione delle trasformazioni} 
+\subsubsection{UCS 3.3.1.8 - Definizione delle trasformazioni} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1689,7 +1660,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.8 - Definizione delle trasformazioni}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.8 - Definizione delle trasformazioni}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1704,7 +1675,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.1.9 - Definizione azioni personalizzate} 
+\subsubsection{UCS 3.3.1.9 - Definizione azioni personalizzate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1712,7 +1683,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.1.9 - Definizione azioni personalizzate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.1.9 - Definizione azioni personalizzate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1721,18 +1692,17 @@ Può poi configurare le \glossario{Collection} create. \\
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce delle azioni personalizzate. (UCS3.3.1.9 ) \newline 
-2. Lo sviluppatore specifica i permessi delle azioni personalizzate definite. (UCS3.3.1.9 ) \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce delle azioni personalizzate. (UCS3.3.1.9 ) \newline 2. Lo sviluppatore specifica i permessi delle azioni personalizzate definite. (UCS3.3.1.9 ) \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2 - Personalizzazione show page} 
+\subsubsection{UCS 3.3.2 - Personalizzazione show page} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCS3.3.2 - Personalizzazione show page.png}
-      \caption{UCS3.3.2 - Personalizzazione show page}
+      \includegraphics[width=12cm]{UML/UCS 3.3.2 - Personalizzazione show page.png}
+      \caption{UCS 3.3.2 - Personalizzazione show page}
       \end{center} 
     \end{figure}  
     
@@ -1743,7 +1713,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2 - Personalizzazione show page}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2 - Personalizzazione show page}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1752,17 +1722,20 @@ Può poi configurare le \glossario{Collection} create. \\
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} da configurare è stata registrata.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la show-page della \glossario{Collection}. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare nella show-page (UCS3.3.2.1); \newline
-2. Lo sviluppatore definisce l'ordinamento degli attributi nella show-page (UCS3.3.2.2); \newline
-3. Lo sviluppatore definisce attributi che contengono attributi innestati o array di attributi (UCS3.3.2.3); \newline
-4. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.2.4); \newline
-5. Lo sviluppatore definisce delle azioni personalizzate da eseguire all'interno della show-page (UCS3.3.2.5). \newline \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare nella show-page (UCS3.3.2.1); \newline 2. Lo sviluppatore definisce l'ordinamento degli attributi nella show-page (UCS3.3.2.2); \newline 3. Lo sviluppatore definisce attributi che contengono attributi innestati o array di attributi (UCS3.3.2.3); \newline 4. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.2.4); \newline 5. Lo sviluppatore definisce delle azioni personalizzate da eseguire all'interno della show-page (UCS3.3.2.5). \newline \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2.1 - Definizione attributi da visualizzare} 
+\subsubsection{UCS 3.3.2  -  Personalizzazione show page} 
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=12cm]{UML/UCS 3.3.2  -  Personalizzazione show page.png}
+      \caption{UCS 3.3.2  -  Personalizzazione show page}
+      \end{center} 
+    \end{figure}  
+    
       %Tabella 
       \begin{center}
       \bgroup
@@ -1770,7 +1743,30 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2.1 - Definizione attributi da visualizzare}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2  -  Personalizzazione show page}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Sviluppatore \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore personalizza la show-page della \glossario{Collection} selezionata. \\ 
+          
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} da configurare è stata registrata.\\ 
+          
+          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la show-page della \glossario{Collection}. \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce gli attributi da visualizzare nella show-page (UCS3.3.2.1); \newline 2. Lo sviluppatore definisce l'ordinamento degli attributi nella show-page (UCS3.3.2.2); \newline 3. Lo sviluppatore definisce attributi che contengono attributi innestati o array di attributi (UCS3.3.2.3); \newline 4. Lo sviluppatore definisce delle trasformazioni sugli attributi (UCS3.3.2.4); \newline 5. Lo sviluppatore definisce delle azioni personalizzate da eseguire all'interno della show-page (UCS3.3.2.5). \newline \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCS 3.3.2.1 -  Definizione attributi da visualizzare} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2.1 -  Definizione attributi da visualizzare}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1785,7 +1781,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2.2 - Definizione ordinamento attributi} 
+\subsubsection{UCS 3.3.2.2 - Definizione ordinamento attributi} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1793,13 +1789,13 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2.2 - Definizione ordinamento attributi}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2.2 - Definizione ordinamento attributi}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica l'ordinamento degli attributi da visualizzare nella show-page. \\ 
+          \textbf{Scopo e Descrizione} &  \\ 
           
-          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
+          \textbf{Precondizioni}  & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica l'ordinamento degli attributi da visualizzare nella show-page.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
           \textbf{Flusso Principale} & 1. Lo sviluppatore specifica l'ordinamento degli attributi da visualizzare nella show-page. (UCS3.3.2.2) \\
@@ -1808,7 +1804,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2.3 - Definizione populate da eseguire} 
+\subsubsection{UCS 3.3.2.3 - Definizione populate da eseguire} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1816,7 +1812,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2.3 - Definizione populate da eseguire}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2.3 - Definizione populate da eseguire}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1831,7 +1827,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2.4 - Definizione delle trasformazioni} 
+\subsubsection{UCS 3.3.2.4 - Definizione delle trasformazioni} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1839,7 +1835,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2.4 - Definizione delle trasformazioni}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2.4 - Definizione delle trasformazioni}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1854,7 +1850,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.2.5 - Definizione azioni personalizzate} 
+\subsubsection{UCS 3.3.2.5 - Definizione azioni personalizzate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1862,7 +1858,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.2.5 - Definizione azioni personalizzate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.2.5 - Definizione azioni personalizzate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1871,14 +1867,13 @@ Può poi configurare le \glossario{Collection} create. \\
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} è funzionante e la \glossario{Collection} è registrata.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha apportato le modifiche alla configurazione della \glossario{Collection}. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce delle azioni personalizzate. (UCS3.3.2.5) \newline
-2. Lo sviluppatore specifica i permessi delle azioni personalizzate definite. (UCS3.3.2.5) \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore definisce delle azioni personalizzate. (UCS3.3.2.5) \newline 2. Lo sviluppatore specifica i permessi delle azioni personalizzate definite. (UCS3.3.2.5) \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.3 - Rinominazione Collection} 
+\subsubsection{UCS 3.3.3  - Rinominazione Collection} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1886,7 +1881,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.3 - Rinominazione Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.3  - Rinominazione Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1901,7 +1896,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.4 - Definizione ordinamento Collection} 
+\subsubsection{UCS 3.3.4  - Definizione ordinamento Collection} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1909,7 +1904,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.4 - Definizione ordinamento Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.4  - Definizione ordinamento Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1924,7 +1919,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.3.5 - Definizione namespace} 
+\subsubsection{UCS 3.3.5 - Definizione namespace} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1932,13 +1927,13 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.3.5 - Definizione namespace}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.3.5 - Definizione namespace}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore, se la funzione di \glossario{namespace} è abilitata, può definire un \glossario{namespace} per l'applicazione \glossario{MaaP} generata ed associarlo alle \glossario{Collection} da creare. \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore può definire un \glossario{namespace} per l'applicazione \glossario{MaaP} generata ed associarlo alle \glossario{Collection} da creare. \\ 
           
-          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha generato un'applicazione funzionante.\\ 
+          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha generato un'applicazione funzionante e la funzione di \glossario{namespace} è abilitata.\\ 
           
           \textbf{Postcondizioni} & La \glossario{collection} ha un \glossario{namespace} definito al suo interno. \\
           \textbf{Flusso Principale} & 1. Lo Sviluppatore associa il \glossario{namespace} da lui definito alle \glossario{Collection} da creare (UCS3.3.5) \\
@@ -1947,7 +1942,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.4 - Registrazione automatica Collection} 
+\subsubsection{UCS 3.4  - Registrazione automatica Collection} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1955,7 +1950,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.4 - Registrazione automatica Collection}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 3.4  - Registrazione automatica Collection}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -1970,7 +1965,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCS3.6 - Visualizzazione messaggio di errore DSL} 
+\subsubsection{UCS 4 - Abilitazione namespace} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1978,30 +1973,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS3.6 - Visualizzazione messaggio di errore DSL}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} & Lo sviluppatore quando configura una Collection potrebbe incappare in errori di sintassi o di tipo logico legati al linguaggio DSL con cui sta programmando. In tal caso \glossario{MaaP} deve segnalare allo sviluppatore un messaggio d'errore. \\ 
-          
-          \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} verifica il codice prodotto dallo sviluppatore.\\ 
-          
-          \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha riscontrato un errore logico o di sintassi all'interno del codice prodotto dallo sviluppatore e lancia un messaggio di errore. \\
-          \textbf{Flusso Principale} & 1. Lo Sviluppatore visualizza il messaggio d'errore relativo al DSL fornito. \\
-          
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCS4 - Abilitazione namespace} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS4 - Abilitazione namespace}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCS 4 - Abilitazione namespace}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
@@ -2016,11 +1988,11 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 \subsection{Ambito Utente MaaS}
-\subsubsection{UCM - Operazioni ad alto livello - Utente MaaS non autenticato} 
+\subsubsection{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCM - Operazioni ad alto livello - Utente MaaS non autenticato.png}
-      \caption{UCM - Operazioni ad alto livello - Utente MaaS non autenticato}
+      \includegraphics[width=12cm]{UML/UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato.png}
+      \caption{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}
       \end{center} 
     \end{figure}  
     
@@ -2031,28 +2003,26 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello - Utente MaaS non autenticato}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
           \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \\ 
           
-          \textbf{Precondizioni}  & \glossario{MaaS} è funzionante ed attende che l'utente non autenticato interagisca.\\ 
+          \textbf{Precondizioni}  & glossario{MaaS} è funzionante ed attende che l'utente non autenticato interagisca.\\ 
           
           \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} non autenticato ha richiesto. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline
-2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4). \\
-           \textbf{Esclusioni} & 1.1 L'utente non autenticato visualizza un messaggio di errore dovuto all'esistenza delle credenziali inserite per registrarsi al servizio (UCM3); \newline
-2.1 L'utente visualizza un messaggio di errore dopo aver inserito dati non corretti nell'operazione di login (UCM5). \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline 2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4). \\
+           \textbf{Esclusioni} & 1.1 L'utente non autenticato visualizza un messaggio di errore dovuto all'esistenza delle credenziali inserite per registrarsi al servizio (UCM3); \newline 2.1 L'utente visualizza un messaggio di errore dopo aver inserito dati non corretti nell'operazione di login (UCM5). \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM - Operazioni ad alto livello - Utente MaaS autenticato} 
+\subsubsection{UCM 0 - Operazioni ad alto livello - Utente MaaS autenticato} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCM - Operazioni ad alto livello - Utente MaaS autenticato.png}
-      \caption{UCM - Operazioni ad alto livello - Utente MaaS autenticato}
+      \includegraphics[width=12cm]{UML/UCM 0 - Operazioni ad alto livello - Utente MaaS autenticato.png}
+      \caption{UCM 0 - Operazioni ad alto livello - Utente MaaS autenticato}
       \end{center} 
     \end{figure}  
     
@@ -2063,7 +2033,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM - Operazioni ad alto livello - Utente MaaS autenticato}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 0 - Operazioni ad alto livello - Utente MaaS autenticato}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
@@ -2072,22 +2042,13 @@ Può poi configurare le \glossario{Collection} create. \\
           \textbf{Precondizioni}  & \glossario{MaaS} è funzionante ed attende che l'utente interagisca.\\ 
           
           \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} autenticato ha richiesto. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline
-2. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline
-3. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8).  \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline 2. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline 3. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8) \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM1 - Registrazione} 
-    \begin{figure}[H]
-      \begin{center}
-      \includegraphics[width=12cm]{UML/UCM1 - Registrazione.png}
-      \caption{UCM1 - Registrazione}
-      \end{center} 
-    \end{figure}  
-    
+\subsubsection{UCM 1 -  Inserimento nuova email} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2095,31 +2056,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1 - Registrazione}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato intende registrarsi al servizio. \\ 
-          
-          \textbf{Precondizioni}  & \glossario{MaaS} è pronto all'utilizzo mostrando all'utente una pagina di registrazione ed attende che l'utente interagisca.\\ 
-          
-          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha registrato correttamente l'utente e assegnatogli il \glossario{namespace}. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato inserisce la nuova email (UCM1.1); \newline
-2. L'utente \glossario{MaaS} non autenticato inserisce la password (UCM1.2). \\
-           \textbf{Scenari Alternativi} & 1. L'utente esce dalla pagina non effettuando la registrazione al servizio. \\
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCM1.1 - Inserimento nuova email} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1.1 - Inserimento nuova email}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 1 -  Inserimento nuova email}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
@@ -2134,7 +2071,7 @@ Può poi configurare le \glossario{Collection} create. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM1.2 - Inserimento nuova password} 
+\subsubsection{UCM 1.1 -  Inserimento nuova email} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2142,23 +2079,22 @@ Può poi configurare le \glossario{Collection} create. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM1.2 - Inserimento nuova password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 1.1 -  Inserimento nuova email}} \\ 
       \hline
       
-      \textbf{Attori Primari} & Utente MaaS autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente desidera inserire la password con la quale creerà un account presso il servizio \glossario{MaaS}. 
-La password dovrà essere alfanumerica e di 8 caratteri minimo. \\ 
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente inserisce la nuova email nell'intento di registrarsi. \\ 
           
-          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina di registrazione all'utente che intende registrarsi ed è pronta all'interazione.\\ 
+          \textbf{Precondizioni}  & Il servizio visualizza la pagina di registrazione per l'utente che l'ha richiesta ed è in attesa che interagisca.\\ 
           
-          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni inserite dall'utente. \\
-          \textbf{Flusso Principale} & 1. L'utente inserisce la password che vuole usare per accedere  all'applicazione, una volta completata a buon fine la registrazione (UCM1.2) \\
+          \textbf{Postcondizioni} & \glossario{MaaS} ha appreso le informazioni inserite dall'utente relative alla nuova password. \\
+          \textbf{Flusso Principale} & 1. L'utente intende registrarsi all'applicazione ed inserisce l'email che vuole usare per l'accesso (UCM1.1). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM3 - Credenziali già esistenti} 
+\subsubsection{UCM 1.2 - Inserimento nuova password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2166,7 +2102,30 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM3 - Credenziali già esistenti}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 1.2 - Inserimento nuova password}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente desidera inserire la password con la quale creerà un account presso il servizio \glossario{MaaS}. La password dovrà essere alfanumerica e di 8 caratteri minimo. \\ 
+          
+          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina di registrazione all'utente che intende registrarsi ed è pronta all'interazione.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni inserite dall'utente. \\
+          \textbf{Flusso Principale} & 1. L'utente inserisce la password che vuole usare per accedere all'applicazione, una volta completata a buon fine la registrazione (UCM1.2) \\
+          
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM 3 - Credenziali già esistenti} 
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 3 - Credenziali già esistenti}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
@@ -2174,21 +2133,14 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
           
           \textbf{Precondizioni}  & Il servizio ha appreso le informazioni di registrazione inserite dall'utente.\\ 
           
-          \textbf{Postcondizioni} & il servizio \glossario{MaaS} ha respinto la registrazione da parte dell'utente mostrando un errore. \\
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha respinto la registrazione da parte dell'utente mostrando un errore. \\
           \textbf{Flusso Principale} & 1. l'utente MaaS non autenticato visualizza un errore a seguito dell'inserimento di credenziali già esistenti nel database in fase di registrazione (UCM3). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM4 - Login} 
-    \begin{figure}[H]
-      \begin{center}
-      \includegraphics[width=12cm]{UML/UCM4 - Login.png}
-      \caption{UCM4 - Login}
-      \end{center} 
-    \end{figure}  
-    
+\subsubsection{UCM 4 - Login} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2196,7 +2148,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM4 - Login}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 4 - Login}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
@@ -2205,14 +2157,13 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
           \textbf{Precondizioni}  & Il servizio \glossario{MaaS} è pronto ed attende il login dell'utente.\\ 
           
           \textbf{Postcondizioni} & Il servizio \glossario{Maas} ha verificato le credenziali utente ed ha eseguito l'autenticazione di quest'ultimo. \\
-          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UCM4.1); \newline
-2. L'utente inserisce la password (UCM4.2). \\
+          \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UCM4.1); \newline 2. L'utente inserisce la password (UCM4.2). \\
            \textbf{Scenari Alternativi} & 1. L'utente non autenticato non effettua il login lasciando la pagina. \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM5 - Credenziali errate} 
+\subsubsection{UCM 5 - Credenziali errate} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2220,7 +2171,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM5 - Credenziali errate}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 5 - Credenziali errate}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS non Autenticato \\ 
@@ -2235,11 +2186,11 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM6 - Modifica profilo} 
+\subsubsection{UCM 6 - Modifica profilo} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCM6 - Modifica profilo.png}
-      \caption{UCM6 - Modifica profilo}
+      \includegraphics[width=12cm]{UML/UCM 6 - Modifica profilo.png}
+      \caption{UCM 6 - Modifica profilo}
       \end{center} 
     \end{figure}  
     
@@ -2250,7 +2201,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6 - Modifica profilo}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 6 - Modifica profilo}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
@@ -2265,7 +2216,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM6.1 - Modifica password} 
+\subsubsection{UCM 6.1 - Modifica password} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2273,7 +2224,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM6.1 - Modifica password}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 6.1 - Modifica password}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS autenticato \\ 
@@ -2288,7 +2239,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM7 - Eliminazione account} 
+\subsubsection{UCM 7 - Eliminazione account} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2296,7 +2247,7 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM7 - Eliminazione account}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 7 - Eliminazione account}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2306,17 +2257,16 @@ La password dovrà essere alfanumerica e di 8 caratteri minimo. \\
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eliminato l'account dell'utente. \\
           \textbf{Flusso Principale} & 1. L'utente elimina il proprio account dal sistema (UCM7). \\
-           \textbf{Inclusioni} & UCM9 - Eliminazione namespace utente;
-UCM10 - Eliminazione Collection utente; \\
+           \textbf{Inclusioni} & UCM9 - Eliminazione namespace utente; UCM10 - Eliminazione Collection utente; \\
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM8 - Gestione file di configurazione} 
+\subsubsection{UCM 8 - Gestione file di configurazione} 
     \begin{figure}[H]
       \begin{center}
-      \includegraphics[width=12cm]{UML/UCM8 - Gestione file di configurazione.png}
-      \caption{UCM8 - Gestione file di configurazione}
+      \includegraphics[width=12cm]{UML/UCM 8 - Gestione file di configurazione.png}
+      \caption{UCM 8 - Gestione file di configurazione}
       \end{center} 
     \end{figure}  
     
@@ -2327,7 +2277,7 @@ UCM10 - Eliminazione Collection utente; \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8 - Gestione file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8 - Gestione file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2336,17 +2286,13 @@ UCM10 - Eliminazione Collection utente; \\
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} visualizza la pagina necessaria alla gestione dei file di configurazione.\\ 
           
           \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha eseguito le azioni di configurazione dell'utente. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può creare file di configurazione (UCM8.1) in due modalità:  \newline
-     L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite editor di testo (UCM8.2); \newline
-     L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite caricamento (UCM8.3); \newline
-2. L'utente \glossario{MaaS} autenticato dopo la creazione del file di configurazione lo può modificare (UCM8.4); \newline
-3. L'utente \glossario{MaaS} autenticato può eliminare un file di configurazione (UCM8.5). \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può creare file di configurazione (UCM8.1) in due modalità: \newline L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite editor di testo (UCM8.2); \newline L'utente \glossario{MaaS} autenticato può creare file di configurazione tramite caricamento (UCM8.3); \newline 2. L'utente \glossario{MaaS} autenticato dopo la creazione del file di configurazione lo può modificare (UCM8.4); \newline 3. L'utente \glossario{MaaS} autenticato può eliminare un file di configurazione (UCM8.5). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM8.1 - Creazione file di configurazione} 
+\subsubsection{UCM 8.1 - Creazione file di configurazione} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2354,7 +2300,7 @@ UCM10 - Eliminazione Collection utente; \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.1 - Creazione file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8.1 - Creazione file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2369,7 +2315,7 @@ UCM10 - Eliminazione Collection utente; \\
       \egroup
 \end{center}
 
-\subsubsection{UCM8.2 - Creazione file di configurazione tramite editor di testo} 
+\subsubsection{UCM 8.2 - Creazione file di configurazione tramite editor di testo} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2377,23 +2323,22 @@ UCM10 - Eliminazione Collection utente; \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.2 - Creazione file di configurazione tramite editor di testo}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8.2 - Creazione file di configurazione tramite editor di testo}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione.
-Tale editor sarà visualizzato come una text area nella pagina. \\ 
+          \textbf{Scopo e Descrizione} & L'utente visualizza un editor di testo con il quale può effettuare la creazione dei file di configurazione. Tale editor sarà visualizzato come una text area nella pagina. \\ 
           
           \textbf{Precondizioni}  & Il sistema \glossario{MaaS} fornisce un editor di testo per la creazione dei file di configurazione.\\ 
           
-          \textbf{Postcondizioni} & Il sistema \glossario{MaaS}  ha creato il file di configurazione utilizzando i dati inseriti dall'utente nell'editor di testo. \\
-          \textbf{Flusso Principale} & 1. L'utente  \glossario{MaaS} Autenticato crea il file di configurazione utilizzando l'editor di testo predisposto nella pagina (UCM8.2). \\
+          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} ha creato il file di configurazione utilizzando i dati inseriti dall'utente nell'editor di testo. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} Autenticato crea il file di configurazione utilizzando l'editor di testo predisposto nella pagina (UCM8.2). \\
           
       \end{longtable}
       \egroup
 \end{center}
 
-\subsubsection{UCM8.3 - Creazione file di configurazione tramite caricamento} 
+\subsubsection{UCM 8.3 - Creazione file di configurazione tramite caricamento} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2401,7 +2346,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.3 - Creazione file di configurazione tramite caricamento}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8.3 - Creazione file di configurazione tramite caricamento}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2416,7 +2361,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM8.4 - Modifica file di configurazione} 
+\subsubsection{UCM 8.4 - Modifica file di configurazione} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2424,7 +2369,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.4 - Modifica file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8.4 - Modifica file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2439,7 +2384,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM8.5 - Eliminazione file di configurazione} 
+\subsubsection{UCM 8.5 - Eliminazione file di configurazione} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2447,7 +2392,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM8.5 - Eliminazione file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 8.5 - Eliminazione file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Utente MaaS Autenticato \\ 
@@ -2462,7 +2407,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \egroup
 \end{center}
 
-\subsubsection{UCM9 - Eliminazione file di configurazione} 
+\subsubsection{UCM 9 - Eliminazione file di configurazione} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -2470,7 +2415,7 @@ Tale editor sarà visualizzato come una text area nella pagina. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM9 - Eliminazione file di configurazione}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 9 - Eliminazione file di configurazione}} \\ 
       \hline
       
       \textbf{Attori Primari} & Sviluppatore MaaS autenticato \\ 

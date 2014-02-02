@@ -11,10 +11,10 @@ class RequisteakClient:
 
 	def login(self, username="admin@steakholders.com", password=""):
 		print "Eseguo il login..."
-		text = self.browser.open("https://steakholders.herokuapp.com/admin/login")
+		text = self.browser.open("https://steakholders.herokuapp.com/users/sign_in")
 		self.browser.select_form(nr = 0)
-		self.browser["admin_user[email]"] = username
-		self.browser["admin_user[password]"] = password
+		self.browser["user[email]"] = username
+		self.browser["user[password]"] = password
 		text = self.browser.submit().read()
 		
 		if "Signed in successfully" not in text:
@@ -44,5 +44,5 @@ while password is None or len(password) == 0:
 
 requisteak = RequisteakClient()
 requisteak.login(username, password)
-requisteak.download("https://steakholders.herokuapp.com/admin/export_use_cases", "capitolo-casiduso.tex")
-requisteak.download("https://steakholders.herokuapp.com/admin/export_requisites", "capitolo-requisiti.tex")
+requisteak.download("https://steakholders.herokuapp.com/export_use_cases", "capitolo-casiduso.tex")
+requisteak.download("https://steakholders.herokuapp.com/export_requirements", "capitolo-requisiti.tex")

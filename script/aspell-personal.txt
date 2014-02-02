@@ -139,6 +139,7 @@ comunicarLe
 Comunicazioni'
 Concluded
 conditions
+config
 Consortium
 Constraints
 Construction
@@ -353,6 +354,7 @@ jQuery
 js
 JSHint
 JSLint
+json
 JSON
 justification
 JVM

@@ -63,6 +63,9 @@ lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/MaaP - Cr
 lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/MaaS - Attivita principali.png")
 lucidchart.download_image("43a8-3e2c-52ed0031-8ac6-11420a0048dc", "uml/MaaS - Gestisci file di configurazione.png")
 lucidchart.download_image("4ff5-dafc-52ed0192-b270-1b550a00c7a5", "uml/MaaS - Crea file di configurazione.png")
+lucidchart.download_image("4dfb-2698-52ed0f8b-9e03-50580a0048dc", "uml/Framework - Diagramma di installazione.png")
+lucidchart.download_image("44d6-9194-52ee820c-8332-30020a0048dc", "uml/Framework - Crea cartella front-end di default.png")
+
 
 
 #uml Scenari 

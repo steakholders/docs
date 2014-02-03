@@ -164,7 +164,7 @@ created
 createUser
 creazionale
 CRUD
-CSS
+css
 CSV
 cyan
 dall
@@ -259,6 +259,7 @@ First
 firstnumber
 firstpage
 fittizia'
+fittizie'
 Foemmel
 followed
 for
@@ -317,8 +318,9 @@ Heroku
 hh
 Hieatt
 History
+home
 Howard
-HTML
+html
 HTTPS
 HyperText
 Ian
@@ -384,6 +386,7 @@ lccccccccc
 Learning
 left
 legend
+lib
 limit
 l'index
 line

@@ -446,6 +446,7 @@ compress
 computing
 comunicarLe
 conditions
+config
 controller
 cookie
 cookieParser
@@ -577,6 +578,7 @@ jQuery
 javascript
 join
 js
+json
 justification
 keepspaces
 keyword

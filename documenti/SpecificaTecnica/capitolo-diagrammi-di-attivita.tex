@@ -5,12 +5,13 @@ Vengono in seguito illustrati i diagrammi di attività prodotti durante la proge
 \begin{itemize}
 
 	\item \textbf{Applicazione \glossario{MaaP}}, in cui verranno descritte le iterazioni che un utente può fare all'interno di un'applicazione generata dal \glossario{framework};
-	\item \textbf{Servizio \glossario{MaaS}}, in cui verranno descritte le iterazioni all'interno del suddetto servizio web.
+	\item \textbf{Framework \glossario{MaaP}}, in cui verrà descritto il modo in cui uno sviluppatore può creare un'applicazione.
 
 \end{itemize}
+
 Inizialmente per ogni categoria verrà fornito uno schema ad alto livello, per poi andare sempre più nel dettaglio tramite sotto-diagrammi più specifici. Per comodità di visualizzazione le attività che verranno \textit{esplose} sono marcate in grassetto. 
 
-Al fine di rendere il diagramma leggibile abbiamo considerato implicito il fatto che un utente possa in qualsiasi momento uscire dall'applicazione \glossario{MaaP} o dal servizio \glossario{MaaS}, per esempio chiudendo la finestra del browser.
+Al fine di rendere il diagramma leggibile abbiamo considerato implicito il fatto che un utente possa in qualsiasi momento uscire dall'applicazione \glossario{MaaP}, per esempio chiudendo la finestra del browser.
 
 \subsection{Applicazione MaaP}
 
@@ -210,82 +211,114 @@ L'admin entra in un'apposita pagina di creazione di un nuovo utente e al suo int
 
 Una volta completate le modifiche l'utente può decidere di confermare o annullare le modifiche, premendo i relativi pulsanti. Il sistema \glossario{MaaP}, nel caso in cui l'utente abbia deciso di confermare le modifiche, si occuperà di inserire nel \glossario{database} delle credenziali il nuovo utente creato.
 
-\subsection{Servizio MaaS}
+%\subsection{Servizio MaaS}
+%
+%Vengono di seguito descritte tutte le iterazioni che un utente può effettuare con il servizio web \glossario{MaaS}.
+%
+%\subsubsection{Attività principali}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.2]{uml/MaaS - Attivita principali.png}
+%\caption{Diagramma di attività - Attività principali di MaaS}
+%\end{figure}
+%
+%L'utente sviluppatore accede tramite il proprio browser al servizio \glossario{MaaS}, il quale gli richiederà l'autenticazione o gli offrirà la possibilità di registrarsi presso di esso. Una volta effettuato l'accesso l'utente si trova di fronte alla propria pagina personale, dalla quale può navigare su altre pagine. Può sostanzialmente effettuare le seguenti operazioni:
+%
+%\begin{itemize}
+%
+%	\item Modificare il proprio profilo, cambiando la password di accesso;
+%	\item Eliminare il proprio account, eliminando di conseguenza tutti i file di configurazione ad esso associati;
+%	\item Gestire i propri file di configurazione della propria applicazione.
+%
+%\end{itemize}
+%
+%\subsubsection{Effettua registrazione}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.1]{uml/MaaP - Effettua registrazione.png}
+%\caption{Diagramma di attività - Registrazione al servizio MaaS}
+%\end{figure}
+%
+%In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} l'utente visualizza una pagina di registrazione nella quale deve inserire in appositi campi di testo l'email e la password con le quali vuole registrarsi al servizio. Una volta inseriti i dati premerà il pulsante di richiesta registrazione. Il sistema procederà dunque alla verifica delle credenziali inserite e, se l'indirizzo email non è già presente, procederà alla registrazione del nuovo utente.
+%
+%\subsubsection{Effettua login}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.1]{uml/MaaP - Effettua login.png}
+%\caption{Diagramma di attività - Login al servizio MaaS}
+%\end{figure}
+%
+%In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} l'utente visualizza una pagina di login nella quale deve inserire la propria email e la propria password in appositi campi di testo. Una volta inseriti i dati premerà quindi un pulsante per accedere al servizio \glossario{MaaS}. Il sistema si occuperà di verificare la correttezza delle credenziali e, in caso positivo, effettuerà il login dell'utente.
+%
+%\subsubsection{Modifica profilo}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.1]{uml/MaaP - Modifica profilo.png}
+%\caption{Diagramma di attività - Modifica profilo dell'utente MaaS}
+%\end{figure}
+%
+%In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} lo sviluppatore entra all'interno della pagina del proprio profilo, dalla quale può modificare la propria password premendo il relativo pulsante. Se decidesse di non voler modificare può in qualsiasi momento annullare le modifiche premendo l'apposito pulsante. Una volta salvate le modifiche il servizio \glossario{MaaS} si occuperà di effettuare correttamente l'upgrade della password nel \glossario{database} delle credenziali.
+%
+%\subsubsection{Gestisci file di configurazione}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.2]{uml/MaaS - Gestisci file di configurazione.png}
+%\caption{Diagramma di attività - Gestione dei file di configurazione}
+%\end{figure}
+%
+%L'utente sviluppatore si trova davanti a una pagina in cui visualizza la lista di tutti i propri file di configurazione presenti. Da questa pagina può decidere di:
+%
+%\begin{itemize}
+%
+%	\item Creare un nuovo file di configurazione tramite la procedura descritta in seguito;
+%	\item Eliminare un file di configurazione esistente;
+%	\item Modificare un file di configurazione esistente in maniera analoga alla creazione.
+%
+%\end{itemize}
+%
+%\subsubsection{Crea file di configurazione}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.2]{uml/MaaS - Crea file di configurazione.png}
+%\caption{Diagramma di attività - Creazione di un file di configurazione}
+%\end{figure}
+%
+%L'utente sviluppatore si trova davanti a una pagina in cui è presente un editor di testo e un pulsante per effettuare l'upload di un file. Queste sono sostanzialmente le due strade con cui lo sviluppatore può creare un nuovo file di configurazione. Una volta creato o caricato il nuovo file, lo sviluppatore può decidere di procedere al salvataggio oppure annullare la creazione, premendo i relativi pulsanti. Il sistema \glossario{MaaS} nel caso in cui lo sviluppatore decida di procedere alla creazione si occuperà di salvare il file nel sistema.
 
-Vengono di seguito descritte tutte le iterazioni che un utente può effettuare con il servizio web \glossario{MaaS}.
+\subsection{Framework MaaP}
 
-\subsubsection{Attività principali}
+Viene di seguito descritta la procedura con la quale viene creata una nuova applicazione \glossario{MaaP}. Fondamentalmente lo sviluppatore si deve prendere carico di installare tutte le librerie necessarie al corretto funzionamento del \glossario{framework}. Una volta ottenute tutte le \textit{dipendenze} potrà da linea di comando inizializzare un nuovo progetto \glossario{MaaP}. Vengono descritti in seguito i diagrammi di attività per la creazione di una nuova applicazione da parte del sistema.
+
+\subsubsection{Crea nuova applicazione}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{uml/MaaS - Attivita principali.png}
-\caption{Diagramma di attività - Attività principali di MaaS}
+\includegraphics[scale=0.2]{uml/Framework - Diagramma di installazione.png}
+\caption{Diagramma di attività - Creazione scheletro nuova applicazione}
 \end{figure}
 
-L'utente sviluppatore accede tramite il proprio browser al servizio \glossario{MaaS}, il quale gli richiederà l'autenticazione o gli offrirà la possibilità di registrarsi presso di esso. Una volta effettuato l'accesso l'utente si trova di fronte alla propria pagina personale, dalla quale può navigare su altre pagine. Può sostanzialmente effettuare le seguenti operazioni:
+Il \glossario{framework} \glossario{MaaP} si occupa di creare tutti i file necessari al corretto funzionamento dell'applicazione nella sua versione di \textit{default}. In particolare si occupa di:
 
 \begin{itemize}
 
-	\item Modificare il proprio profilo, cambiando la password di accesso;
-	\item Eliminare il proprio account, eliminando di conseguenza tutti i file di configurazione ad esso associati;
-	\item Gestire i propri file di configurazione della propria applicazione.
+	\item Creare una cartella dove andranno tutti i file relativi al \glossario{front-end};
+	\item Creare il file \texttt{package.json} di default, nel quale verrà descritta l'applicazione specificando, ad esempio, il nome, le dipendenze, la versione;
+	\item Il file \texttt{server.js} di default, il quale fornisce uno script da eseguire per avviare il server;
+	\item Il file \texttt{config.js} di default nel quale viene configurata l'applicazione impostando ad esempio i database;
+	\item Una cartella contenente tutti i file \glossario{DSL} che lo sviluppatore andrà a configurare. Di default questa cartella conterrà inizialmente un file \glossario{DSL} di esempio.
 
 \end{itemize}
 
-\subsubsection{Effettua registrazione}
+\subsubsection{Creazione cartella front-end di default}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.1]{uml/MaaP - Effettua registrazione.png}
-\caption{Diagramma di attività - Registrazione al servizio MaaS}
+\includegraphics[scale=0.2]{uml/Framework - Crea cartella front-end di default.png}
+\caption{Diagramma di attività - Creazione scheletro nuova applicazione}
 \end{figure}
-
-In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} l'utente visualizza una pagina di registrazione nella quale deve inserire in appositi campi di testo l'email e la password con le quali vuole registrarsi al servizio. Una volta inseriti i dati premerà il pulsante di richiesta registrazione. Il sistema procederà dunque alla verifica delle credenziali inserite e, se l'indirizzo email non è già presente, procederà alla registrazione del nuovo utente.
-
-\subsubsection{Effettua login}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.1]{uml/MaaP - Effettua login.png}
-\caption{Diagramma di attività - Login al servizio MaaS}
-\end{figure}
-
-In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} l'utente visualizza una pagina di login nella quale deve inserire la propria email e la propria password in appositi campi di testo. Una volta inseriti i dati premerà quindi un pulsante per accedere al servizio \glossario{MaaS}. Il sistema si occuperà di verificare la correttezza delle credenziali e, in caso positivo, effettuerà il login dell'utente.
-
-\subsubsection{Modifica profilo}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.1]{uml/MaaP - Modifica profilo.png}
-\caption{Diagramma di attività - Modifica profilo dell'utente MaaS}
-\end{figure}
-
-In maniera pressoché identica da quanto offerto da un'applicazione \glossario{MaaP} lo sviluppatore entra all'interno della pagina del proprio profilo, dalla quale può modificare la propria password premendo il relativo pulsante. Se decidesse di non voler modificare può in qualsiasi momento annullare le modifiche premendo l'apposito pulsante. Una volta salvate le modifiche il servizio \glossario{MaaS} si occuperà di effettuare correttamente l'upgrade della password nel \glossario{database} delle credenziali.
-
-\subsubsection{Gestisci file di configurazione}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{uml/MaaS - Gestisci file di configurazione.png}
-\caption{Diagramma di attività - Gestione dei file di configurazione}
-\end{figure}
-
-L'utente sviluppatore si trova davanti a una pagina in cui visualizza la lista di tutti i propri file di configurazione presenti. Da questa pagina può decidere di:
-
-\begin{itemize}
-
-	\item Creare un nuovo file di configurazione tramite la procedura descritta in seguito;
-	\item Eliminare un file di configurazione esistente;
-	\item Modificare un file di configurazione esistente in maniera analoga alla creazione.
-
-\end{itemize}
-
-\subsubsection{Crea file di configurazione}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{uml/MaaS - Crea file di configurazione.png}
-\caption{Diagramma di attività - Creazione di un file di configurazione}
-\end{figure}
-
-L'utente sviluppatore si trova davanti a una pagina in cui è presente un editor di testo e un pulsante per effettuare l'upload di un file. Queste sono sostanzialmente le due strade con cui lo sviluppatore può creare un nuovo file di configurazione. Una volta creato o caricato il nuovo file, lo sviluppatore può decidere di procedere al salvataggio oppure annullare la creazione, premendo i relativi pulsanti. Il sistema \glossario{MaaS} nel caso in cui lo sviluppatore decida di procedere alla creazione si occuperà di salvare il file nel sistema.

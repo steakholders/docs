@@ -11,6 +11,7 @@ active
 ActiveAdmin
 ACWP
 Addressed
+Addy
 Adjourned
 admin
 Adobe
@@ -139,6 +140,7 @@ comunicarLe
 Comunicazioni'
 Concluded
 conditions
+config
 Consortium
 Constraints
 Construction
@@ -162,13 +164,14 @@ created
 createUser
 creazionale
 CRUD
-CSS
+css
 CSV
 cyan
 dall
 dall'admin
 dall'Admin
 dashboard
+David
 dd
 DdP
 delete
@@ -199,6 +202,7 @@ draw
 driven
 dsgfdgfg
 dsl
+duck
 dyadic
 each
 east
@@ -209,6 +213,7 @@ edition
 editProfile
 editUser
 Education
+Edward
 Efficiency
 effort
 election
@@ -253,6 +258,9 @@ Firefox
 First
 firstnumber
 firstpage
+fittizia'
+fittizie'
+Foemmel
 followed
 for
 ForgotController
@@ -262,6 +270,7 @@ Formed
 Fornari
 Foundation
 fowler'
+Fowler
 framework
 Franceschi
 friendly
@@ -307,9 +316,11 @@ Helm
 Henry
 Heroku
 hh
+Hieatt
 History
+home
 Howard
-HTML
+html
 HTTPS
 HyperText
 Ian
@@ -353,7 +364,7 @@ jQuery
 js
 JSHint
 JSLint
-JSON
+json
 justification
 JVM
 keepspaces
@@ -372,8 +383,10 @@ Lavazza
 lavoro'
 lccccccc
 lccccccccc
+Learning
 left
 legend
+lib
 limit
 l'index
 line
@@ -386,6 +399,7 @@ livello'
 ln
 local
 Location
+Locator
 LOCs
 log
 logger
@@ -421,6 +435,7 @@ Marc
 Markdown
 markup
 Maroon
+Matthew
 Maurice
 maxhd
 maxhe
@@ -430,6 +445,7 @@ McCabe
 McConnell
 Measure
 Medical
+Mee
 menu
 message
 messaging
@@ -489,6 +505,7 @@ nomemetrica
 north
 NoSQL
 NOT'
+Notation
 notFoundMiddleware
 NP
 npm
@@ -509,6 +526,7 @@ Opportunity
 opzionalmente'
 order
 oriented
+Osmani
 OT
 overriding
 pa
@@ -606,6 +624,7 @@ quest'ultime
 raccomanda'
 Rails
 Ralph
+Randy
 rarely
 RAU
 Ready
@@ -650,6 +669,7 @@ return
 RF
 RFC
 RGB
+Rice
 Richard
 ridenominare
 right
@@ -684,7 +704,7 @@ sender
 sep
 Separated
 Seq
-Service
+service
 session
 setup
 seven
@@ -725,6 +745,7 @@ SQMT
 ST
 stack
 stacked
+Stafford
 stakeholder
 stakeholders
 Started
@@ -738,6 +759,7 @@ Stein
 stepnumber
 Steve
 storage
+stream
 String
 stringstyle
 Structured
@@ -803,6 +825,7 @@ true
 TS
 two
 txt
+typing
 Ubuntu
 UC
 UCM
@@ -867,9 +890,11 @@ windows
 with
 work
 working
+works
 World
 xtick
 ybar
 year
 ylabel
+you
 yyyy

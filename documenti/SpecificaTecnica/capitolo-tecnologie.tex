@@ -1,45 +1,43 @@
 \section{Tecnologie utilizzate}
 
 
-L'architettura è stata progettata cercando di tenere in considerazione diverse tecnologie, alcune delle quali espressamente richieste nel capitolato d'appalto. Vengono di seguito elencate e descritte le principali tecnologie impiegate e le motivazioni del loro utilizzo.
+L'architettura è stata progettata utilizzando diverse tecnologie, alcune delle quali espressamente richieste nel capitolato d'appalto. Vengono di seguito elencate e descritte le principali tecnologie impiegate e le motivazioni del loro utilizzo.
 
 \begin{itemize}
-	\item \textbf{Node.js} per la realizzazione della componente server;
-	\item \textbf{Express.js} per la realizzazione dell’infrastruttura della web application generata;
+	\item \textbf{Node.js}: piattaforma per il \glossario{back-end};
+	\item \textbf{Express.js}: framework per la realizzazione dell’applicazione web in \glossario{Node.js};
 	\item \textbf{MongoDB}: database di tipo \glossario{NoSQL} per la parte di recupero e salvataggio dei dati;
-	\item \textbf{Mongoose} per l’interfacciamento con il database;
-	\item \textbf{AngularJS} per gestire il rendering dell'interfaccia grafica lato client.
+	\item \textbf{Mongoose}: libreria per interfacciarsi con il driver di \textbf{MongoDB};
+	\item \textbf{AngularJS}: framework \glossario{JavaScript} la realizzazione del \glossario{front-end}.
 \end{itemize}
 
-
 \subsection{Node.js}
-\textbf{Node.js} è un \glossario{framework} per realizzare applicazioni web veloci e scalabili in \glossario{Javascript}, permettendo di utilizzare questo linguaggio, tipicamente utilizzato nel lato client, anche per la scrittura di applicazioni lato server.
-La piattaforma è basata sul runtime di Google \glossario{V8 JavaScript Engine} utilizzato anche da \glossario{Chrome} e disponibile sulle principali piattaforme.
+\textbf{Node.js} è una \glossario{piattaforma} software costruita sul motore JavaScript di Chrome che permette di realizzare facilmente applicazioni di rete scalabili e veloci. \textbf{Node.js} utilizza \textbf{JavaScript} come linguaggio di programmazione, e grazie al suo modello event-driver con chiamate di I/O non bloccanti risulta essere leggero e efficiente.
 
-I principali vantaggi derivati dall'utilizzo di \glossario{Node.js} sono:
+I principali vantaggi dell'utilizzo di \glossario{Node.js} sono:
 \begin{itemize}
 	\item \textbf{Approccio asincrono}: \glossario{Node.js} permette di accedere alle risorse del sistema operativo in modalità event-driven e non sfruttando il classico modello basato su processi o thread concorrenti utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni, poiché durante le attese il runtime può gestire qualcos’altro in maniera asincrona.
 	\item \textbf{Architettura modulare}: Lavorando con \glossario{Node.js} è molto facile organizzare il lavoro in librerie, importare i moduli e combinarli fra loro. Questo è reso molto comodo attraverso il \emph{node package manager} (\textbf{npm}) attraverso il quale lo sviluppatore può contribuire e accedere ai \glossario{package} messi a disposizione dalla community.
 \end{itemize}
 
 \subsection{Express.js}
-\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni web con \glossario{Node.js}. Richiede moduli Node di terze parti per applicazioni che prevedono l’interazione con le basi di dati; \newline
+\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni web con \glossario{Node.js}. Richiede moduli Node di terze parti per applicazioni che prevedono l’interazione con le basi di dati. \\
 È stato utilizzato il \glossario{framework} Express.js per supportare lo sviluppo dell'application server grazie alle utili e robuste features da esso offerte, le quali sono pensate per non oscurare le funzionalità fornite da \glossario{Node.js} aprendo così le porte all'utilizzo di moduli per \glossario{Node.js} atti a supportare specifiche funzionalità.
 
 \subsection{MongoDB}
-\textbf{MongoDB} è un database \glossario{NoSQL} \glossario{open-source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura molto semplice e potente.
+\textbf{MongoDB} è un database \glossario{NoSQL} \glossario{open-source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura semplice e potente.
 
 I principali vantaggi derivati dal suo utilizzo sono:
 \begin{itemize}
 	\item \textbf{Alte performance}: non ci sono \emph{join} che possono rallentare le operazioni di lettura o scrittura. L’indicizzazione include gli indici di chiave anche sui documenti innestati e sugli array, permettendo una rapida interrogazione al database;
 	\item \textbf{Affidabilità}: alto meccanismo di replicazione su server;
-	\item \textbf{Schemaless}: non esiste nessuno \glossario{schema}, è più flessibile e può essere facilmente trasformato in oggetti;	
+	\item \textbf{Schemaless}: non esiste nessuno \glossario{schema}, è più flessibile e può essere facilmente trasposto in un modello ad oggetti;
 	\item Permette di definire query complesse utilizzando un linguaggio che non è \glossario{SQL};
 	\item Permette di processare parallelamente i dati (\glossario{Map-Reduce});
 	\item Tipi di dato più flessibili.
 \end{itemize}
 
 \subsection{Mongoose}
-\textbf{Mongoose} è una libreria per \glossario{MongoDB} che permette di definire degli schemi per modellare i dati del database, facendo rispettare una certa struttura ai dati per la creazione di nuovi \glossario{Document}. Inoltre fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il cast dei tipi predefiniti.
+\textbf{Mongoose} è una libreria per interfacciarsi a \glossario{MongoDB} che permette di definire degli schemi per modellare i dati del database, imponendo una certa struttura per la creazione di nuovi \glossario{Document}. Inoltre fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il cast dei tipi predefiniti.
 
 Per interfacciare l'application server con \glossario{MongoDB} sono disponibili diversi progetti \glossario{open-source}. Per questo progetto è stato scelto di utilizzare \glossario{Mongoose.js}, attualmente il più diffuso.

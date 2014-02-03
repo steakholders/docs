@@ -19,35 +19,47 @@ Per descrivere il sistema si è rivelato molto più comodo utilizzare i diagramm
 
 I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e di attività presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
 
-\subsection{Diagramma di deployment e REST}
-%TODO Diagramma di deployment client server al posto dello schema colorato
-\glossario{REST}, ovvero \textit{Representational State Transfer} è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server (solitamente \glossario{HTTP} ed è stato scelto anche per \ProjectName{}.
-
-I motivi che hanno spinto alla scelta di \glossario{REST} sono:
-\begin{itemize}
-\item Semplicità di utilizzo;
-\item Indipendenza dal sistema operativo utilizzato dal client;
-\item Indipendenza dai linguaggi di programmazione utilizzati;
-%\item In coppia con HTTPS permette una certa sicurezza delle comunicazioni.
-\end{itemize}
-
-\glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite il protocollo sopracitato.
-
-Nell'\glossario{URI} inviato sono presenti il nome della risorsa e la sua rappresentazione, identificata dall'estensione del file scelto, e per \ProjectName{} è stato scelto il formato \glossario{JSON}, in quanto il suo \glossario{parsing} in \glossario{JavaScript} è più semplice rispetto, ad esempio, a quello di \glossario{XML} o \glossario{CSV}.
-
-Un'altra caratteristica di \glossario{REST} è che essendo \glossario{stateless} ogni richiesta dovrà contenere tutte le informazioni necessarie in modo indipendente dallo stato del sistema.
-
 \subsection{Architettura generale}
 
-L'architettura scelta per lo sviluppo di \ProjectName{} si serve del \glossario{design pattern} \glossario{MVC} (\textit{Model-View-Controller}). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello, evidenziando le componenti che ricoprono i ruoli di \textit{model} e \textit{controller} per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta.
+L'architettura scelta per lo sviluppo di \ProjectName{} si serve del \glossario{pattern architetturale} \glossario{MVC} (\textit{Model-View-Controller}). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello, evidenziando le componenti che ricoprono i ruoli di \textit{model} e \textit{controller} per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta.
 Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName{}, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller, perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
 
-\begin{figure}[H] %TODO modificare
+\begin{figure}[H] %TODO modificare con il deployment
 \centering
 \includegraphics[width=\textwidth]{uml/architettura-generale-package.png}
 \caption{Architettura generale dei package}
 \label{architetturaGeneralePackage}
 \end{figure}
 
+\subsection{Interfaccia REST}
+Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di utilizzare uno stile REST-like, ovvero basato sullo stile \glossario{REST} ma modificato quel tanto che basta per permettere l'autenticazione tramite cookie. All'interno di un'unica sessione utente, a partire dall'operazione di login fino a quella di logout, l'interfaccia può considerarsi effettivamente \glossario{REST}.
+
+I motivi che hanno spinto alla scelta di \glossario{REST} sono:
+\begin{itemize}
+	\item Semplicità di utilizzo;
+	\item Facile integrazione con i framework esistenti (AngularJS e Express);
+	\item Indipendenza dal linguaggio di programmazione utilizzato;
+\end{itemize}
+
+\glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite la seguente corrispondenza:
+
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{Risorsa} & URI della collection, come http://example.com/users & URI di un elemento, come http://example.com/users/42 \\
+\hline
+\textbf{GET} & \textbf{Fornisce} informazioni sui membri della collection. & \textbf{Fornisce} una rappresentazione dell'elemento della collection indicato, espresso in un appropriato formato. \\
+\hline
+\textbf{PUT} & Non usata. & \textbf{Sostituisce} l'elemento della collection indicato, o se non esiste, lo \textbf{crea}. \\
+\hline
+\textbf{POST} & \textbf{Crea} un nuovo elemento nella collection. La URI del nuovo elemento è generata automaticamente ed è di solito restituita dall'operazione. & Non usato. \\
+\hline
+\textbf{DELETE} & Non usata. & \textbf{Cancella} l'elemento della collection indicato. \\
+\hline
+\end{tabularx}
+
+Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in quanto si integra molto facilmente con i framework utilizzati e con il linguaggio \glossario{JavaScript}, a differenza di \glossario{XML} o \glossario{CSV} che richiederebbero l'utilizzo di librerie specifiche.
+
+
 \subsubsection{Back-end}
+
 \subsubsection{Front-End}

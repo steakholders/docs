@@ -52,6 +52,9 @@ Si tratta di ore spese dai componenti del gruppo per apprendere le tecnologie ut
 
 \letteraGlossario{B}
 
+\definizione{Back-end}
+Parte di un software che elabora i dati generati dal front end e non interagisce con l'\glossario{utente}. Spesso si trova in una macchina diversa da quella del front-end.
+
 \definizione{Baseline}
 Uno stato dell'insieme di documenti e del software in cui ogni elemento è verificato ed approvato.
 
@@ -87,8 +90,14 @@ Funzione, o blocco di codice che viene passata come parametro ad un'altra funzio
 \definizione{CamelCase}
 Metodo per scrivere parole composte o frasi unendo tutte le parole tra loro, ma lasciando le loro iniziali maiuscole.
 
+\definizione{Chain of Responsability}
+\glossario{Design pattern} comportamentale che fa in modo di non accoppiare il mittente di una richiesta con il ricevitore, dando a più oggetti la possibilità di gestire la richiesta.
+
 \definizione{Chrome}
 Browser basato su WebKit sviluppato da Google. La versione più recente alla stesura di questo documento è la 31.x
+
+\definizione{Client-Server}
+Architettura di rete nella quale un computer client si connette ad un server per richiedere un certo servizio, quale ad esempio la condivisione di una certa risorsa, appoggiandosi ad una suite di protocolli.
 
 \definizione{Collection}
 In \glossario{MongoDB} è un insieme di \glossario{documents}.
@@ -106,11 +115,9 @@ Il committente è la figura che commissiona un lavoro, in questo caso il progett
 Rendiconto  dei risultati di un dato periodo di attività.
 
 \definizione{CRUD}
-
 Acronimo per Create, Retrieve, Update, Delete. Sono le funzioni standard di una \glossario{base di dati}.
 
 \definizione{CSV}
-
 Acronimo per Comma-Separated Values, è un formato di file basato su file di testo utilizzato per l'importazione ed esportazione di una tabella di dati.
 
 \letteraGlossario{D}
@@ -123,6 +130,12 @@ Vedi Base di dati.
 
 \definizione{Dati di business}
 Vedi Business.
+
+\definizione{Debugging}
+Attività volta ad eliminare i \glossario{bug} interni ad un sistema. 
+
+\definizione{Deployment}
+Traducibile con spiegamento, si intende la consegna al cliente del software.
 
 \definizione{Design pattern}
 Soluzione progettuale generale per la risoluzione di un problema ricorrente.
@@ -148,6 +161,9 @@ Paradigma di programmazione, nei programmi scritti utilizzando la tecnica a even
 \glossario{Framework} per \glossario{Node.js}.
 
 \letteraGlossario{F}
+
+\definizione{Failure}
+Traducibile con malfunzionamento. In un software si ha una failure quando il comportamento del sistema discosta da quanto era stato progettato.
 
 \definizione{Facilitatore}
 È qualcuno che aiuta un gruppo di persone a capire i loro obiettivi comuni e che le assiste nel raggiungerli senza prendere posizione nella discussione.
@@ -197,6 +213,9 @@ L'indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua i
 \definizione{Halstead}
 Metriche software introdotte da Maurice Howard Halstead nel 1977.
 
+\definizione{Heroku}
+Offre una piattaforma in cloud per ospitare applicazioni, supportando svariati linguaggi.
+
 \definizione{HTML/CSS/JS}
 Linguaggi comunemente utilizzati nell'ambito web.
 
@@ -225,6 +244,12 @@ Linguaggio di programmazione orientato agli oggetti, creato da Sun Microsystems.
 
 \definizione{Javascript}
 Linguaggio di scripting orientato agli oggetti comunemente usato nella programmazione Web.
+
+\definizione{Jenkins}
+Strumento \glossario{open source} per l'integrazione continua, scritto in linguaggio \glossario{Java}. 
+
+\definizione{JSON}
+Acronimo di \glossario{JavaScript} Object Notation, è un formato adatto per lo scambio dei dati in applicazioni \glossario{client-server} basato sul linguaggio \glossario{JavaScript}.
 
 \letteraGlossario{L}
 
@@ -266,12 +291,19 @@ Linguaggio basato su un meccanismo sintattico che consente di definire e control
 \definizione{Microsoft Project}
 Software di pianificazione sviluppato e venduto da Microsoft. È  uno strumento per assistere i project manager nella pianificazione, nell'assegnazione delle risorse, nella verifica del rispetto dei tempi, nella gestione dei budget e nell'analisi dei carichi di lavoro.
 
+\definizione{Middleware}
+Insieme di programmi che fungono da intermediari tra diverse applicazioni e componenti software. Sono spesso utilizzati come supporto per sistemi distribuiti complessi.
+
 \definizione{Milestone}
 Termine inglese che letteralmente significa pietra miliare. Viene utilizzato nella pianificazione e gestione di progetti per indicare il raggiungimento di obiettivi stabiliti in periodo di definizione del progetto. 
 Le milestone indicano quindi importanti traguardi intermedi nello svolgimento del progetto.
 
 \definizione{Moduli}
 \glossario{Unità} di lavoro di programmazione affidabile ad una singola persona. Tali moduli dovrebbero avere dimensione predefinita per evitare carichi di lavoro troppo grandi. Si può lavorare a più moduli in parallelo.
+
+\definizione{MOM}
+Acronimo di Message-oriented middleware, è un'infrastruttura \glossario{client-server} che, distribuendo un'applicazione tra più piattaforme eterogenee, ne incrementa l'interoperabilità, la portabilità e la flessibilità, semplificando lo sviluppo di applicazioni che usano sistemi operativi e protocolli di rete diversi, permettendo al programmatore di ignorare i dettagli degli stessi.
+Il software MOM risiede sia sul client che sul server e consente l'esecuzione di chiamate asincrone fra gli stessi.
 
 \definizione{MongoDB}
 Sistema gestionale di basi di dati non relazionale, orientato ai documenti, di tipo \glossario{NoSQL}. Il linguaggio utilizzato per la gestione dei dati è \glossario{JavaScript}, del quale sfrutta in particolare la notazione BSON.
@@ -280,12 +312,22 @@ Sistema gestionale di basi di dati non relazionale, orientato ai documenti, di t
 Utilizzato per creare una struttura logica nei documenti di \glossario{MongoDB}.
 
 \definizione{MVC}
-\glossario{Design Pattern} architetturale che divide l'applicazione in tre parti interconnesse, separando l'interfaccia utente, la logica e i dati.
+Acronimo di Model View Controller, è un \glossario{Design Pattern} architetturale che divide l'applicazione in tre parti interconnesse, separando l'interfaccia utente, la logica e i dati.
+
+\definizione{MVW}
+Acronimo di Model View Whatever  \glossario{Design Pattern} architetturale derivato da \glossario{MVC} ed utilizzato dal \glossario{framework} \glossario{Angular.js}.
+Il significato del termine Whatever dichiarato dagli \glossario{sviluppatori} è "Whatever works for you".
+
+\definizione{MVVM}
+Acronimo di Model View View-Controller, è un \glossario{Design Pattern} derivato da \glossario{MVC}, in cui la view non comunica direttamente con il model.
 
 \letteraGlossario{N}
 
 \definizione{Namespace}
 Collezione di nomi di entità, definite dal programmatore, omogeneamente usate in uno o più file sorgente.  Lo scopo dei namespace è quello di evitare confusione ed equivoci nel caso siano necessarie molte entità con nomi simili, fornendo il modo di raggruppare i nomi per categorie. 
+
+\definizione{ngrok}
+Software che permette di interfacciare un web service locale a internet in modo sicuro, su una data porta.
 
 \definizione{Node.js}
 Piattaforma software utilizzata per creare applicazioni distribuite facilmente scalabili.
@@ -311,8 +353,11 @@ Il \textbf{Portable Document Format}, comunemente abbreviato PDF, è un formato 
 \definizione{Package}
 In alcuni linguaggi orientati agli oggetti, tra cui \glossario{Java}, è un meccanismo che permette di organizzare un insieme di classi tra loro correlate che concorrono allo stesso fine.
 
-\definizione{Packet manager}
+\definizione{Package manager}
 Collezione di strumenti presenti in un sistema operativo che automatizzano il processo di installazione, aggiornamento, configurazione e rimozione dei pacchetti software in un computer.
+
+\definizione{Parsing}
+Traducibile con analisi sintattica, è il processo atto ad analizzare uno stream continuo in input in modo da determinare la sua struttura grammaticale grazie ad una data grammatica formale.
 
 \definizione{Pollution}
 Con tale termine ci si riferisce a tutti i file che non devono entrare nella \glossario{repository}.
@@ -329,6 +374,9 @@ Nello specifico ci si riferisce a \Proponente{}.
 
 \definizione{Prototipi}
 Un modello approssimato o parziale del sistema che vogliamo sviluppare che simula o esegue alcune funzioni del sistema finale, realizzato allo scopo di valutarne le caratteristiche, se interno o per mostrarlo all'utente se esterno.
+
+\definizione{Push}
+Comando di \glossario{GitHub} per applicare i cambiamenti fatti nella \glossario{repository} locale alla \glossario{repository}
 
 \letteraGlossario{Q}
 
@@ -348,7 +396,7 @@ Nel nostro caso il sistema informativo è gestito con \glossario{GitHub}.
 Software sviluppato da \GroupName{} per il tracciamento dei requisiti e relativi casi d'uso, è raggiungibile all'indirizzo \url{http://steakholders.herokuapp.com}.
 
 \definizione{REST}
-Acronimo di Representational State Transfer è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server, e solitamente tale protocollo è \glossario{HTTP}.
+Acronimo di Representational State Transfer è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo \glossario{client-server}, e solitamente tale protocollo è \glossario{HTTP}.
 
 \definizione{RPC}
 Acronimo di Remote Procedure Call, si riferisce all'attivazione di una procedura da parte di un programma, nel caso in cui tale procedura venga attivata su un computer diverso da quello sul quale il programma stesso viene eseguito.
@@ -367,6 +415,9 @@ Capacità di un sistema di ``crescere'' o ``decrescere'' (aumentare o diminuire 
 \definizione{Schema}
 Lo schema di un \glossario{database} è la struttura o organizzazione logica dei dati in esso contenuti descritta mediante l'uso di un linguaggio formale supportato da un database management system.
 
+\definizione{SCR}
+Acronimo di software change request, indica lo strumento (software) utilizzato per gestire le richieste di modifica.
+
 \definizione{SEMAT}
 Software Engineering Method and Theory è un'iniziativa nata con lo scopo di rimodellare il mondo dell'Ingegneria del Software imponendo metodi i cui fini sono la \glossario{qualità} e la disciplina.
 
@@ -375,6 +426,9 @@ Componente che fornisce, attraverso una rete, un qualunque tipo di servizio o ri
 
 \definizione{Show-page}
 Vedi Collection-show
+
+\definizione{Singleton}
+\glossario{Design Pattern} creazionale che assicura l'esistenza di una sola istanza di una classe, e ne fornisce un punto di accesso globale.
 
 \definizione{Slack time}
 Durante la pianificazione delle attività di progetto, periodo di tempo lasciato libero da ogni attività per ammortizzare eventuali ritardi, in particolare se in presenza di forti dipendenze tra le attività.
@@ -389,6 +443,9 @@ Termine inglese traducibile con ordinabile.
 ISO/IEC 15504 \emph{Information technology - Process assessment}, conosciuto anche come SPICE (Software Process Improvement and Capability Determination), è un insieme di documenti di standard tecnici che fornisce informazioni generali sui concetti di valutazione dei processi e dei suoi usi nei due contesti di miglioramento dei processi e valutazione della maturità dei processi.
 
 Riguardano i processo di sviluppo di software e le relative funzioni gestionali di azienda. In sostanza, spiega come poterne fare una valutazione.
+
+\definizione{SQA}
+Acronimo di Software Quality Assurance, insieme di azioni pro-attive che garantiscono \glossario{qualità} e rendono meno difficoltoso la \glossario{verifica}.
 
 \definizione{Software Quality Managment Techinques}
 Tecniche utili alla gestione della \glossario{qualità} mediante valutazione della qualità dei prodotti.
@@ -457,7 +514,10 @@ Ad oggi si è giunti alla versione 2.0.
 La più piccola parte di lavoro assegnabile ad un programmatore e che è utile verificare singolarmente. Un'unità raggruppa più \glossario{moduli}.
 
 \definizione{URI}
-Acronimo di Uniform Resource Identifier è una stringa che identifica univocamente una risorsa generica che può essere un indirizzo Web, un documento, un'immagine, un file, un servizio, ecc. e la rende disponibile tramite protocolli quali HTTP, FTP, ecc.
+Acronimo di Uniform Resource Identifier, è una stringa che identifica univocamente una risorsa generica che può essere un indirizzo Web, un documento, un'immagine, un file, un servizio, ecc. e la rende disponibile tramite protocolli quali HTTP, FTP, ecc.
+
+\definizione{URL}
+Acronimo di Uniform Resource Locator,  è una sequenza di caratteri che identifica univocamente l'indirizzo di una risorsa in Internet, si tratta di un termine più specifico di \glossario{URI}.
 
 \definizione{User-friendly}
 Usabilità, il grado di facilità e soddisfazione con cui si compie l'interazione tra l'uomo e uno strumento.
@@ -480,6 +540,9 @@ Controllo effettuato sul software, per controllare se tutti i requisiti previsti
 Ricerca la consistenza, correttezza e completezza.
 
 \letteraGlossario{W}
+
+\definizione{W3C}
+Abbreviazione per World Wide Web Consortium, è un'organizzazione non governativa internazionale che ha come scopo quello di sviluppare e standardizzare tutte le potenzialità del World Wide Web.
 
 \definizione{Web application}
 Applicazione accessibile via web, che offre determinati servizi all'utente.

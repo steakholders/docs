@@ -160,12 +160,12 @@ cost
 coverage
 Cox
 Craftsmanship
+cre
 created
 createUser
 creazionale
 CRUD
 css
-CSS
 CSV
 cyan
 dall
@@ -321,7 +321,6 @@ History
 home
 Howard
 html
-HTML
 HTTPS
 HyperText
 Ian
@@ -400,6 +399,7 @@ livello'
 ln
 local
 Location
+Locator
 LOCs
 log
 logger
@@ -505,6 +505,7 @@ nomemetrica
 north
 NoSQL
 NOT'
+Notation
 notFoundMiddleware
 NP
 npm
@@ -703,7 +704,7 @@ sender
 sep
 Separated
 Seq
-Service
+service
 session
 setup
 seven
@@ -758,6 +759,7 @@ Stein
 stepnumber
 Steve
 storage
+stream
 String
 stringstyle
 Structured
@@ -888,9 +890,11 @@ windows
 with
 work
 working
+works
 World
 xtick
 ybar
 year
 ylabel
+you
 yyyy

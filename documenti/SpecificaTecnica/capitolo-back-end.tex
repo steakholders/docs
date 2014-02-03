@@ -43,13 +43,8 @@ I tipi di permessi possibili sono:
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/password/lost}} & \textbf{POST} & \textbf{Utente} \\ \hline
+	\textbf{\emph{/password/forgot}} & \textbf{POST} & \textbf{Utente} \\ \hline
 	\multicolumn{3}{|c|} {Crea una richiesta di recupero password. }  \\ \specialrule{1pt}{1pt}{1pt}
-	
-	\multicolumn{3}{c} {} \\ \hline
-	
-	\textbf{\emph{/password/reset}} & \textbf{PUT} & \textbf{Utente} \\ \hline
-	\multicolumn{3}{|c|} {Modifica la password utente. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
@@ -105,9 +100,8 @@ I tipi di permessi possibili sono:
 	  \egroup
 \end{center}
 
-\subsection{Packages}
-%Diagramma
-%Descrizione per ogni package
+%\import{back-end-packages}
+
 \subsection{Oggetti dopo l'inizializzazione}
 %Descrizione 
 
@@ -222,21 +216,12 @@ Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il 
 	\end{center} 
 \end{figure}
 
-\subsubsection{Password Lost POST} 
-Viene rappresentato lo scenario di una richiesta POST per la risorsa password lost, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{requirePasswordReset} che gestisce la richiesta.
+\subsubsection{Password Forgot POST} 
+Viene rappresentato lo scenario di una richiesta POST per la risorsa password forgot, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{requirePasswordReset} che gestisce la richiesta.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.20]{scenari/Password Lost POST.png} 
-		\caption{Password Lost POST}
-	\end{center} 
-\end{figure}
-
-\subsubsection{Password Reset PUT}
-Il diagramma di sequenza rappresenta lo scenario di una richiesta PUT per la risorsa password reset, dove il controller \emph{requireNotLogger} passa il controllo al successivo controller \emph{makePasswordReset} per la gestione della richiesta.
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[scale=0.20]{scenari/Password Reset PUT.png} 
-		\caption{Password Reset PUT}
+		\includegraphics[scale=0.20]{scenari/Password Forgot POST.png} 
+		\caption{Password Forgot POST}
 	\end{center} 
 \end{figure}
 

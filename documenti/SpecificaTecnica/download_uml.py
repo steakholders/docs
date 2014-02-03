@@ -43,6 +43,7 @@ else:
 
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
+lucidchart.download_image("437d-f4e4-52efd47d-907f-3aaf0a00c7a5", "uml/diagramma-deployment.png", width=1600)
 
 lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png", width=1600)
 

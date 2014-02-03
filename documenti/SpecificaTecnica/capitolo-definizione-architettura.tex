@@ -21,6 +21,15 @@ I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e 
 
 \subsection{Architettura generale}
 
+L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il front-end dell'applicazione, e in un web server, su cui verrà posto il back-end. Il server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il back-end.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{uml/diagramma-deployment.png}
+\caption{Diagramma di deployment}
+\label{architetturaGeneralePackage}
+\end{figure}
+
 L'architettura scelta per lo sviluppo di \ProjectName{} si serve del \glossario{pattern architetturale} \glossario{MVC} (\textit{Model-View-Controller}). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello, evidenziando le componenti che ricoprono i ruoli di \textit{model} e \textit{controller} per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta.
 Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName{}, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller, perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
 
@@ -31,8 +40,8 @@ Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{Angular
 \label{architetturaGeneralePackage}
 \end{figure}
 
-\subsection{Interfaccia REST}
-Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di utilizzare uno stile REST-like, ovvero basato sullo stile \glossario{REST} ma modificato quel tanto che basta per permettere l'autenticazione tramite cookie. All'interno di un'unica sessione utente, a partire dall'operazione di login fino a quella di logout, l'interfaccia può considerarsi effettivamente \glossario{REST}.
+\subsection{Interfaccia REST-like}
+Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di utilizzare uno stile \glossario{REST-like}, ovvero basato sullo stile \glossario{REST} ma modificato per permettere l'autenticazione (tramite cookie) e l'attivazione di determinate operazioni. All'interno di un'unica sessione utente, a partire dall'operazione di login fino a quella di logout, l'interfaccia con cui si accede agli elementi delle collection può considerarsi effettivamente \glossario{REST}.
 
 I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 \begin{itemize}
@@ -43,17 +52,17 @@ I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 
 \glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite la seguente corrispondenza:
 
-\begin{tabularx}{\textwidth}{|X|X|X|}
+\begin{tabularx}{\textwidth}{|P{2.5cm}|X|X|}
 \hline
-\textbf{Risorsa} & URI della collection, come http://example.com/users & URI di un elemento, come http://example.com/users/42 \\
+	\textbf{Risorsa} & \textbf{URI della collection} \newline es. http://example.com/users & \textbf{URI di un elemento} \newline es. http://example.com/users/42 \\
 \hline
-\textbf{GET} & \textbf{Fornisce} informazioni sui membri della collection. & \textbf{Fornisce} una rappresentazione dell'elemento della collection indicato, espresso in un appropriato formato. \\
+	\textbf{GET} & \textbf{Fornisce} informazioni sui membri della collection. & \textbf{Fornisce} una rappresentazione dell'elemento della collection indicato, espresso in un appropriato formato. \\
 \hline
-\textbf{PUT} & Non usata. & \textbf{Sostituisce} l'elemento della collection indicato, o se non esiste, lo \textbf{crea}. \\
+	\textbf{PUT} & Non usata. & \textbf{Sostituisce} l'elemento della collection indicato, o se non esiste, lo \textbf{crea}. \\
 \hline
-\textbf{POST} & \textbf{Crea} un nuovo elemento nella collection. La URI del nuovo elemento è generata automaticamente ed è di solito restituita dall'operazione. & Non usato. \\
+	\textbf{POST} & \textbf{Crea} un nuovo elemento nella collection. La URI del nuovo elemento è generata automaticamente ed è di solito restituita dall'operazione. & Non usato. \\
 \hline
-\textbf{DELETE} & Non usata. & \textbf{Cancella} l'elemento della collection indicato. \\
+	\textbf{DELETE} & Non usata. & \textbf{Cancella} l'elemento della collection indicato. \\
 \hline
 \end{tabularx}
 

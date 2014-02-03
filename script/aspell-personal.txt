@@ -158,6 +158,7 @@ Lavazza
 Learning
 List'
 Location
+Locator
 Lucidchart
 Luzzati
 MAY'
@@ -211,6 +212,7 @@ NodeJs
 Nodemailer
 NomeDelDocumento
 NomeDellaCostante
+Notation
 OOP
 OT
 Operational
@@ -458,10 +460,7 @@ corners
 correction
 cost
 coverage
-Cox
-Craftsmanship
 cre
-created
 createUser
 created
 creazionale
@@ -611,9 +610,6 @@ listCollections
 livello'
 ln
 local
-Location
-Locator
-LOCs
 log
 logger
 logic
@@ -661,9 +657,6 @@ node
 nomeDellaFunzione
 nomemetrica
 north
-NoSQL
-NOT'
-Notation
 notFoundMiddleware
 npm
 num
@@ -783,6 +776,7 @@ scripting
 section
 sender
 sep
+service
 session
 setup
 seven
@@ -818,7 +812,6 @@ static
 stepnumber
 storage
 stream
-String
 stringstyle
 struttura'
 stub
@@ -899,7 +892,6 @@ with
 work
 working
 works
-World
 xtick
 ybar
 year

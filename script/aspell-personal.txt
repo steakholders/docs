@@ -160,7 +160,7 @@ cost
 coverage
 Cox
 Craftsmanship
-cre
+created
 createUser
 creazionale
 CRUD

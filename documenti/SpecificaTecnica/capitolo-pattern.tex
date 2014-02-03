@@ -1,39 +1,41 @@
-\section{Design pattern utilizzati}
+\section{Design pattern}
 
-% TODO scrivere bene, sono solo appunti visto che non ho il tempo di rifare la scaletta del documento
-Dobbiamo distinguere tra pattern GIÀ PRESENTI nelle librerie/Node.js e pattern DA NOI USATI. I pattern da noi usati vanno qua, i pattern usati da Node.js o dalle librerie vanno in un appendice.
-
-
-Pattern DA NOI USATI:
-- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
-
-
-Pattern GIÀ PRESENTI:
-
-- Il pattern Factory ogni volta che in un modulo si utilizza lo stile:
-
-function TestClass() \{
-
-\}
-exports.create\_test\_class = function() \{
-	return new TestClass();
-\}
-
-(vedi pag. 77 del libro Creare applicazione web in javascript)
-
-- Ogni modulo è nativamente un Singleton perché viene caricato una sola volta da Node.js (poi tutti si riferiscono allo stesso)
-
-- Express usa Chain-of-responsability per la gestione dei middleware e del routing
-
-- I middleware sono un pattern, è fortemente legato al Chain-of-responsability e sono quasi la stessa cosa (scrivetelo)
-
-\subsection{ - categoria pattern - }
-
-\subsubsection{ - nome pattern - }
+Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte nel nostro ambiente. Oltre al problema descrive anche la soluzione ad esso e i risultati che si ottengono nell'applicarlo. È fondamentale per qualsiasi progettista conoscere a fondo i \glossario{Design Pattern}, in quanto facilita l'attività di progettazione, favorisce la riusabilità e dà benefici enormi in termini di manutenibilità. Fondamentalmente possiamo suddividere i \glossario{Design Pattern} in quattro categorie:
 
 \begin{itemize}
 
-	\item \textbf{Scopo}:
-	\item \textbf{Contesto}:
+	\item \textbf{\glossario{Design Pattern} architetturali}, che esprimono schemi di base per impostare l'organizzazione strutturale di un sistema software;
+	\item \textbf{\glossario{Design Pattern} creazionali}, che forniscono un'astrazione del processo di istanziazione degli oggetti;
+	\item \textbf{\glossario{Design Pattern} strutturali}, che si occupano delle modalità di composizione di classi e oggetti per formare strutture complesse; 
+	\item \textbf{\glossario{Design Pattern} comportamentali}, che si occupano di algoritmi e dell'assegnamento di responsabilità tra oggetti collaboranti.
 
 \end{itemize}
+
+Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}.
+
+%%Pattern DA NOI USATI:
+%%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
+%
+%
+%Pattern DA NOI USATI:
+%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
+%
+%
+%Pattern GIÀ PRESENTI:
+%
+%- Il pattern Factory ogni volta che in un modulo si utilizza lo stile:
+%
+%function TestClass() \{
+%
+%\}
+%exports.create\_test\_class = function() \{
+%	return new TestClass();
+%\}
+%
+%(vedi pag. 77 del libro Creare applicazione web in javascript)
+%
+%- Ogni modulo è nativamente un Singleton perché viene caricato una sola volta da Node.js (poi tutti si riferiscono allo stesso)
+%
+%- Express usa Chain-of-responsability per la gestione dei middleware e del routing
+%
+%- I middleware sono un pattern, è fortemente legato al Chain-of-responsability e sono quasi la stessa cosa (scrivetelo)

@@ -44,5 +44,5 @@ while password is None or len(password) == 0:
 
 requisteak = RequisteakClient()
 requisteak.login(username, password)
-requisteak.download("https://steakholders.herokuapp.com/export_use_cases", "capitolo-casiduso.tex")
-requisteak.download("https://steakholders.herokuapp.com/export_requirements", "capitolo-requisiti.tex")
+requisteak.download("https://steakholders.herokuapp.com/downloads/use_cases", "capitolo-casiduso.tex")
+requisteak.download("https://steakholders.herokuapp.com/downloads/requirements", "capitolo-requisiti.tex")

@@ -1,21 +1,28 @@
 \section{Descrizione architettura}
-
 % Nell'indice proposto da Tullio c'è:
 % a. Metodo e formalismo di specifica
 % b. Presentazione dell'architettura generale del sistema e identificazione dei componenti architetturali di alto livello
 
-\subsection{Formalismo di specifica}
+\subsection{Metodo e formalismo di specifica}
 
-I diagrammi dei \glossario{package} e delle classi presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
-\\
+Le scelte progettuali per lo sviluppo di \ProjectName{} sono state fortemente influenzate dallo stack tecnologico utilizzato.
 
-Le scelte progettuali per lo sviluppo di \ProjectName{} sono state fortemente influenzate dallo stack tecnologico utilizzato, da una parte abbiamo l'utilizzo di node.js e quindi di javascript che essendo un linguaggio funzionale rende innaturale l'utilizzo di classi per la progettazione, dall'altra abbiamo Express, questo framework è caratterizzato dall'utilizzo di \glossario{middleware} per gestire le richieste e quindi appreso il loro utilizzo segue una progettazione con logica affine.
+In primo luogo il progetto è basato su Node.js ed è scritto quindi in JavaScript: un linguaggio che è (tra le altre caratteristiche) orientato agli oggetti (\glossario{OOP}), ma che lascia grande libertà al programmatore nella scelta della tecnica da utilizzare per l'implementazione di pattern come l'\glossario{incapsulamento} e l'\glossario{ereditarietà}. Al contrario di altri linguaggi (C++, Java e derivati) non c'è una keyword esplicita con la quale il programmatore può definire classi. Progettare il sistema utilizzando un diagramma UML delle classi si scontra con la gestione dinamica dei tipi e non è sufficiente per rappresentare le caratteristiche tipiche degli stili di programmazione funzionali.
 
-TODO spiegare metodo utilizzato per schemi e classi.
-%TODO
+Il \glossario{duck-typing} è uno dei casi più evidenti: spesso vengono utilizzati oggetti presupponendo che abbiano una certa interfaccia, che però non può essere definita esplicitamente nel codice. Nella progettazione si potrebbe descrivere un'interfaccia ``fittizia'', che non verrà codificata, ma questo introdurrebbe numerosi schematismi che appesantirebbero i diagrammi e che non sono per nulla richiesti dal linguaggio di programmazione.
+
+In definitiva, il linguaggio di programmazione non aiuta ad astrarre. Per questa difficoltà progettare un'applicazione in modo esaustivo riteniamo sia più complicato che in altri ambienti.
+
+Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e AngularJS). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open-source che di progetti proposti come best-practise.
+
+L'approccio top-down è stato schematizzato nei diagrammi di deployment e dei package. Per la costruzione dei diagrammi delle classi, invece, questo approccio si è rivelato essere molto poco produttivo e rigoroso. Il risultato è che i diagrammi delle classi proposti sono \emph{uno dei possibili diagrammi} che descrivono l'applicazione, qualsiasi gerarchia o relazione complicata tra le classi verrebbe tradotta pressapoco nello stesso codice.
+
+Per descrivere il sistema si è rivelato molto più comodo utilizzare i diagrammi di sequenza e di attività in un approccio bottom-up, descrivendo l'interazione tra i singoli oggetti senza preoccuparci della loro classificazione. In questo modo siamo anche riusciti a descrivere alcuni dei meccanismi tipici dell'applicazione, in particolar modo l'ordine in cui agiscono i \glossario{middleware} di Express. Riteniamo che saranno molto utili per la progettazione di dettaglio e per la codifica.
+
+I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e di attività presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
 
 \subsection{Diagramma di deployment e REST}
-%TODO Diagramma client server
+%TODO Diagramma di deployment client server al posto dello schema colorato
 \glossario{REST}, ovvero \textit{Representational State Transfer} è un tipo di \glossario{RPC}. Si basa su un protocollo di comunicazione \glossario{stateless} di tipo client-server (solitamente \glossario{HTTP} ed è stato scelto anche per \ProjectName{}.
 
 I motivi che hanno spinto alla scelta di \glossario{REST} sono:

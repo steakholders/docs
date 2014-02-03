@@ -161,7 +161,6 @@ coverage
 Cox
 Craftsmanship
 cre
-created
 createUser
 creazionale
 CRUD
@@ -260,6 +259,7 @@ First
 firstnumber
 firstpage
 fittizia'
+fittizie'
 Foemmel
 followed
 for

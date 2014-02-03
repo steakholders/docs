@@ -159,6 +159,7 @@ cost
 coverage
 Cox
 Craftsmanship
+cre
 created
 createUser
 creazionale
@@ -355,7 +356,6 @@ js
 JSHint
 JSLint
 json
-JSON
 justification
 JVM
 keepspaces
@@ -388,6 +388,7 @@ livello'
 ln
 local
 Location
+Locator
 LOCs
 log
 logger
@@ -491,6 +492,7 @@ nomemetrica
 north
 NoSQL
 NOT'
+Notation
 notFoundMiddleware
 NP
 npm
@@ -740,6 +742,7 @@ Stein
 stepnumber
 Steve
 storage
+stream
 String
 stringstyle
 Structured
@@ -869,9 +872,11 @@ windows
 with
 work
 working
+works
 World
 xtick
 ybar
 year
 ylabel
+you
 yyyy

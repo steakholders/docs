@@ -56,6 +56,7 @@ AST
 Astah
 at
 AuthController
+AuthModel
 autoformazione
 avoided
 Awesome
@@ -195,6 +196,7 @@ dependent
 deployment
 Description
 Determination
+DeveloperProject
 development
 difficulty
 dimostrabilmente
@@ -209,6 +211,7 @@ draw
 driven
 dsgfdgfg
 dsl
+DSLModel
 duck
 dyadic
 each
@@ -390,6 +393,7 @@ lang
 Language
 l'application
 Laurence
+l'AuthModel
 Lavazza
 lavoro'
 lccccccc
@@ -438,6 +442,7 @@ MaaS
 Maccagnan
 magic
 Mahesh
+MailView
 main
 Maintainability
 make
@@ -722,6 +727,7 @@ Separated
 Seq
 ServerApp
 service
+services
 session
 setter
 setup

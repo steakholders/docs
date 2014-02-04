@@ -43,36 +43,11 @@ else:
 
 lucidchart = LucidchartClient(callback_url = callback_url, server_port=server_port)
 
-# Architettura generale
+lucidchart.download_image("437d-f4e4-52efd47d-907f-3aaf0a00c7a5", "uml/diagramma-deployment.png", width=1600)
 
-lucidchart.download_image("437d-f4e4-52efd47d-907f-3aaf0a00c7a5", "uml/diagramma-deployment.png")
-lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png")
+lucidchart.download_image("4e5d-5500-52dfaeac-975e-420b0a009998", "uml/architettura-generale-package.png", width=1600)
 
-# Back-end
-
-lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "uml/Back-end-Diagramma dei Packages.png")
-lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/Back-end-Diagramma delle classi.png")
-
-# Front-end
-
-lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/Front-end-Diagramma delle classi.png")
-lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/Front-end-Diagramma dei packages.png")
-
-# Packages Back-end e Front-end
-
-lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "packages/Back-end::DeveloperProject.png")
-lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "packages/Back-end::Lib::DSLModel.png")
-lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "packages/Back-end::Lib::Controller.png")
-lucidchart.download_image("49f6-9050-52ee5daf-aee7-1f600a00c7a5", "packages/Back-end::Lib::AuthModel.png")
-lucidchart.download_image("460b-0034-52ee5d18-8e58-1b740a00c7a5", "packages/Back-end::Lib::Middleware.png")
-lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "packages/Back-end::Lib::MailView.png")
-lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "packages/Back-end::Lib::AuthModel.png")
-
-lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "packages/Front-end::Services.png")
-lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "packages/Front-end::Controllers.png")
-lucidchart.download_image("48ba-c3f8-52efbb7d-b3ee-3d760a008cac", "packages/Front-end::Model.png")
-
-# Diagrammi di attività
+lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/diagramma-classi-front-end.png", width=1600)
 
 lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/MaaP - Apri pagina gestione utenti.png")
 lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/MaaP - Modifica profilo.png")
@@ -92,12 +67,9 @@ lucidchart.download_image("4ff5-dafc-52ed0192-b270-1b550a00c7a5", "uml/MaaS - Cr
 lucidchart.download_image("4dfb-2698-52ed0f8b-9e03-50580a0048dc", "uml/Framework - Diagramma di installazione.png")
 lucidchart.download_image("44d6-9194-52ee820c-8332-30020a0048dc", "uml/Framework - Crea cartella front-end di default.png")
 
-# Scenari generali
 
-lucidchart.download_image("4b48-aacc-52e916f6-8d9b-7f110a0080fd", "scenari/Diagramma Routing Richiesta.png")
-lucidchart.download_image("426d-99f8-52e9169b-a010-263b0a0049fb", "scenari/Diagramma Gestione Richiesta.png")
 
-# Scenari controller
+#uml Scenari 
 
 lucidchart.download_image("40ef-da14-52e92878-b851-4bb70a009cc4", "scenari/requireNotLogged ERROR.png")
 lucidchart.download_image("4f11-86bc-52ea65a0-aff2-549c0a004801", "scenari/requireLogged ERROR.png")
@@ -119,5 +91,32 @@ lucidchart.download_image("4dfc-0ffc-52ea43b0-adbc-2ae30a00c47f", "scenari/Colle
 lucidchart.download_image("4b55-e628-52ea3161-84f4-1cfe0a008a7d", "scenari/Users Id GET.png")
 lucidchart.download_image("4caa-b984-52ea3079-80dc-54820a0080fd", "scenari/Users POST.png")
 lucidchart.download_image("4fb7-7948-52ea45c2-a882-6f990a00c886", "scenari/Collection Name Document GET.png")
+
+lucidchart.download_image("4b48-aacc-52e916f6-8d9b-7f110a0080fd", "scenari/Diagramma Routing Richiesta.png")
+lucidchart.download_image("426d-99f8-52e9169b-a010-263b0a0049fb", "scenari/Diagramma Gestione Richiesta.png")
+
+#Back-end, Front-end e packages 
+
+lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "uml/Back-end-Diagramma dei Packages.png")
+lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/Back-end-Diagramma delle classi.png")
+lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "packages/Back-end::Lib::DSLModel.png")
+lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "packages/Back-end::Lib::Controller.png")
+lucidchart.download_image("49f6-9050-52ee5daf-aee7-1f600a00c7a5", "packages/Back-end::Lib::AuthModel.png")
+lucidchart.download_image("460b-0034-52ee5d18-8e58-1b740a00c7a5", "packages/Back-end::Lib::Middleware.png")
+lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "packages/Back-end::Lib::MailView.png")
+lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "packages/Back-end::DeveloperProject.png")
+
+lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "packages/Back-end::Lib::AuthModel.png")
+
+lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/Front-end-Diagramma delle classi.png")
+lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/Front-end-Diagramma dei packages.png")
+lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "packages/Front-end::Services.png")
+lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "packages/Front-end::Controllers.png")
+lucidchart.download_image("48ba-c3f8-52efbb7d-b3ee-3d760a008cac", "packages/Front-end::Model.png")
+
+lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "packages/Back-end::Lib.png")
+lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "packages/Back-end.png")
+
+
 
 

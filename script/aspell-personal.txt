@@ -134,7 +134,6 @@ CollectionController
 collectionId
 CollectionListService
 collections
-Collections
 CollectionService
 colorlinks
 column

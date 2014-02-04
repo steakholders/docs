@@ -748,6 +748,7 @@ slash
 Slide
 smartphone
 Social
+soddisfacibilità
 Solution
 sometimes
 Sommerville
@@ -763,6 +764,7 @@ SQA
 SQL
 SQMT
 ST
+stabile'
 stack
 stacked
 Stafford

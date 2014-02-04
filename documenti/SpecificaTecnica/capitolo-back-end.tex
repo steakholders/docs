@@ -99,28 +99,10 @@ I tipi di permessi possibili sono:
 \end{longtable}
 	  \egroup
 \end{center}
-\subsection{Diagramma dei package}
 
-\begin{figure}[H]
-\centering
-%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
-\caption{Diagramma delle classi del Front-end}
-\label{diagrammaClassiFrontEnd}
-\end{figure}
+\subsection{Descrizione packages e classi}
 
-\subsection{Diagramma delle classi}
-
-\begin{figure}[H]
-\centering
-%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi.png}
-\caption{Diagramma delle classi del Front-end}
-\label{diagrammaClassiFrontEnd}
-\end{figure}
-
-%\import{back-end-packages} Contiene "Descrizione componenti Back-end"
-
-%\subsection{Oggetti dopo l'inizializzazione} %TODO
-%Descrizione 
+\include{backend-packages}
 
 \subsection{Diagrammi generali di gestione richieste}
 Nel diagramma della gestione richieste viene mostrata l'iterazione tra server e middleware, alcuni dei quali sono offerti da Express, altri sono definiti dall'utente o da altre librerie. I \glossario{Middleware} si distinguono in Middleware di gestione delle richieste e Middleware di gestione degli errori, a seconda del numero di parametri con cui vengono invocati.

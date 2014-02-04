@@ -362,6 +362,7 @@ is
 isodate
 issue
 issues
+istanziata
 istanziazione
 it
 Java
@@ -407,6 +408,7 @@ l'injection
 l'injector
 linkcolor
 List'
+l'istanziazione
 listCollection
 listCollections
 livello'
@@ -777,6 +779,7 @@ Stein
 stepnumber
 Steve
 storage
+strategy
 Strategy
 stream
 String

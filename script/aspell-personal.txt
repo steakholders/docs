@@ -151,6 +151,7 @@ Content
 Continuous
 Control
 controller
+ControllerFactory
 cookie
 cookieParser
 cookies
@@ -248,9 +249,9 @@ express
 extendedchars
 eXtensible
 external
-Facade
+facade
 facilitatore
-Factory
+factory
 failure
 FAQ
 fault
@@ -471,13 +472,13 @@ metrics
 Microsoft
 Microsystems
 middleware
+MiddlewareLoader
 milestone
 Mistake
 Mocha
 mod
 Modeling
 modifica'
-Module
 module
 MOM
 monadic
@@ -719,6 +720,7 @@ sender
 sep
 Separated
 Seq
+ServerApp
 service
 session
 setter

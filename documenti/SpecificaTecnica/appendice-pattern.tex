@@ -6,7 +6,24 @@
 
 \subsubsection{MVC}
 
+\textit{Model-View-Controller} (MVC) è un pattern per l'implementazione di interfacce utente. Esso divide un'applicazione software in tre parti interconnesse, in modo da separare nettamente la rappresentazione interna dei dati dal modo in cui essa viene presentata all'utente. Il componente centrale, il modello, consiste di dati business, regole, logica e funzioni. Una \textit{view} può essere qualsiasi output dell'informazione, come ad esempio un testo o un diagramma. Si possono avere molteplici \textit{view} della stessa informazione. La terza parte, il \textit{controller}, si occupa di accettare degli input e di convertirli in \textit{comandi} per il \textit{model} o per la \textit{view}.
 
+Oltre a dividere l'applicazione in queste tre componenti, \glossario{MVC} si occupa anche di definire le interazioni tra esse:
+
+\begin{itemize}
+
+	\item Un \textit{controller} può inviare comandi al \textit{model} per aggiornare il suo stato. Può inoltre inviare comandi alla sua \textit{view} associata, in modo da cambiarne la presentazione;
+	\item Un \textit{model} quando cambia il suo stato interno notifica le sue \textit{view} e i suoi \textit{controller} associati. Questo permette alle \textit{view} di cambiare la loro presentazione e ai \textit{controller} di cambiare il loro insieme di comandi disponibili. 
+	\item Una \textit{view} viene aggiornata dal \textit{controller} sui dati che necessita per generare un output per l'utente.
+
+\end{itemize}
+
+Sebbene inizialmente sviluppata per applicazioni desktop, \glossario{MVC} è stato usato moltissimo come architettura per le Web applications in tutti i principali linguaggi di programmazione. Moltissimi \glossario{framework} commerciali e non sono stati progettati utilizzando questo pattern.
+
+\begin{figure}[h]
+\centering \includegraphics[width=0.6\textwidth]{patterns/mvc.png}
+\caption{Struttura logica di Model-View-Controller}
+\end{figure}
 
 \subsubsection{MVW}
 

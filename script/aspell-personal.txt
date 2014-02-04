@@ -41,6 +41,7 @@ app
 append
 Apple
 application
+applications
 approvate'
 AR
 Architecture
@@ -782,7 +783,6 @@ stepnumber
 Steve
 storage
 strategy
-Strategy
 stream
 String
 stringstyle

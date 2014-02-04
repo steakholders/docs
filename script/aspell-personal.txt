@@ -13,6 +13,7 @@ Addy
 Adjourned
 Adobe
 Agreement
+All
 Amazon
 Amm
 Ana
@@ -61,6 +62,7 @@ Concluded
 Consortium
 Constraints
 Construction
+Constructor
 Content
 Continuous
 Control
@@ -91,6 +93,8 @@ Everybody
 Exploring
 FAQ
 FTP
+Facade
+Factory
 Fedora
 Firebase
 Firefox
@@ -133,6 +137,7 @@ Identifier
 Image
 Imaging
 Information
+Injection
 Integrated
 Intelligent
 Interaction
@@ -193,6 +198,7 @@ MiddlewareLoader
 Mistake
 Mocha
 Modeling
+Module
 MondoDB
 Mongo
 MongoDB
@@ -201,6 +207,7 @@ ND
 NOM
 NOT'
 NP
+Nell'
 Nell'URL
 NoSQL
 NodeJS
@@ -297,6 +304,7 @@ Selected
 Separated
 Seq
 ServerApp
+Setter
 Short
 Skype
 Slide
@@ -448,7 +456,6 @@ computing
 comunicarLe
 conditions
 config
-constructor
 controller
 cookie
 cookieParser
@@ -580,12 +587,13 @@ injector
 inner
 inputencoding
 inspection
-instanziare
 interface
 is
 isodate
 issue
 issues
+istanziare
+istanziata
 istanziazione
 it
 jQuery
@@ -601,8 +609,7 @@ l'Admin
 l'admin
 l'application
 l'index
-l'injection
-l'injector
+l'istanziazione
 l'overhead
 l'upgrade
 l'upload
@@ -629,7 +636,6 @@ log
 logger
 logic
 logout
-lookup
 lost
 lostpassword
 magic
@@ -781,6 +787,7 @@ return
 ridenominare
 right
 rimpiazza'
+riusabile
 riusabili
 root
 rounded
@@ -813,6 +820,7 @@ showtabs
 slack
 slash
 smartphone
+soddisfacibilità
 sometimes
 somministrabile
 sortable
@@ -820,6 +828,7 @@ sottoattributi
 sottoscrivibile
 source
 specify
+stabile'
 stack
 stacked
 stakeholder
@@ -830,6 +839,7 @@ stateless
 static
 stepnumber
 storage
+strategy
 stream
 stringstyle
 struttura'

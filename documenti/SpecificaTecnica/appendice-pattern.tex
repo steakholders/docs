@@ -2,6 +2,8 @@
 \section{Descrizione Design Pattern}
 \label{appendice-pattern}
 
+
+
 	\subsection{Chain of Responsibility} % patern comportamentale
 	Il \glossario{Chain of Responsibility} è un pattern comportamentale che permette di separare i \emph{sender} dai \emph{receiver} delle richieste. La richiesta attraversa una catena di oggetti per essere intercettata solo quando raggiunge il proprio gestore. Viene utilizzato quando non è possibile determinare staticamente il \emph{receiver} oppure l'insieme di oggetti gestori cambia dinamicamente a runtime. \\ Le richieste vengono dette \emph{implicite} poiché il \emph{sender} non ha alcuna conoscenza sull'identità del ricevente. Per permettere alla richiesta di attraversare la catena e per rimanere \emph{implicita}, ogni \emph{receiver} condivide un interfaccia comune per gestire le richieste ed accedere al proprio successore. 
 	La gerarchia che vorrà inviare richieste dovrà avere una superclasse che dichiara un metodo \emph{handler} generico, la specializzazione di tale metodo avviene tramite \emph{overriding} nelle sottoclassi opportune, come illustrato in figura \ref{fig:chainofresponsibility}.
@@ -20,12 +22,14 @@
 		\end{itemize}
 	
 		
-	
+		
+		
+	\pagebreak
 	\subsection{Middleware} 
 	Il \glossario{Middleware} è uno strato software che si interpone tra l'applicazione software e il sistema operativo per semplificarne le comunicazioni e la gestione di input/output. Viene solitamente utilizzato in applicazioni distribuite e facilita l'interoperabilità fornendo servizi che permettono la comunicazione tra applicazioni di sistemi operativi diversi. La distinzione tra lo strato software del sistema operativo è, per alcune entità, arbitraria, può infatti accedere che il \glossario{Middleware} fornisca dei servizi abitualmente attribuibili a un sistema operativo. I primi utilizzi di \glossario{Middleware} risalgono agli anni '80, come soluzione ai problemi di comunicazione tra applicazioni nuove e meno recenti. 
 	
 	\begin{figure}[h]
-	\centering \includegraphics[width=0.7\textwidth]{patterns/Middleware.png}
+	\centering \includegraphics[width=0.6\textwidth]{patterns/Middleware.png}
 	\caption{Struttura del middleware.}
 	\label{fig:middleware}
 	\end{figure}
@@ -51,14 +55,46 @@
 		\item Enterprise Service Bus: è definito come qualche tipo di \glossario{Middleware} integrato che supporta sia \glossario{MOM} che dei servizi web.
 		\item Intelligent Middleware: gestisce il processamento in tempo reale di grandi volumi di segnali che trasforma in informazioni di business. Particolarmente adatto per architetture scalabili e distribuite;
 		\item Content-Centric Middleware: questo tipo di \glossario{Middleware} fornisce una semplice astrazione con la quale le applicazioni possono inoltrare richieste per contenuti univocamente identificati, senza occuparsi su come e dove vanno ottenuti.
-		
 	\end{itemize}	 
-	
 	% possibile add: http://www.networkcomputing.com/netdesign/cdmwdef.htm
 	
  	
 	
-	\subsection{Injection} %angular
+	
+	\subsection{Dependency Injection} %angular
+	Il \glossario{Dependency Injection} è un design pattern che permette la separazione del comportamento degli oggetti dalla loro dipendenze. Invece di instanziare le classi in modo diretto, ogni componente riceve i riferimenti agli latri componenti necessari come parametri nel costruttore. Un utilizzo comune è quello con i 	\emph{plugin} che vengono caricati dinamicamente. Gli elementi coinvolti sono:
+	\begin{itemize}
+		\item un dipendente consumatore;
+		\item una dichiarazione delle dipendenze tra la componenti, definita come contratto di un interfaccia;
+		\item un injector che crea istanze di classi che implementano una data dipendenza su richiesta.
+	\end{itemize}
+	Il dependent object dichiara da quali componenti dipende, l'injector decide quali classi soddisfano suoi requisiti e in caso affermativo gliele fornisce. Questa operazione può avvenire anche a runtime, questo è un chiaro vantaggio poiché possono essere create dinamicamente diverse implementazioni di un componente software da passare allo stesso test. In questo modo il test può testare componenti diverse senza sapere che le loro implementazioni sono diverse. \\
+	Il scopo principale di questo pattern è quello di permettere una selezione a runtime su più implementazioni di una interfaccia dipendente. \`E particolarmente utile per fornire delle implementazioni di \glossario{stub} per componenti complesse, ma anche per gestire i plugin e per inizializzare servizi software. I test di unità comportano delle problematiche poiché spesso richiedono la presenza di una parte di infrastruttura non ancora implementata, il \glossario{Dependency Injection} semplifica il processo di testing per un istanza isolata. Poiché le componenti dichiarano le proprie dipendenze, un test può automaticamente instanziare le componenti necessarie. \\
+	 
+		L'utilizzo di questo pattern comporta una serie di conseguenze:
+		\begin{itemize}
+				\item vi è una riduzione di \glossario{Boilerplate code} poiché il lavoro di set up delle dipendenze viene gestito da un componente dedicato;
+				\item offre una certa flessibilità di configurazione perché diverse implementazione di un servizio posso essere usate senza essere ricompilate;
+				\item facilita la scrittura di codice testabile;
+				\item le dipendenze dichiarate sono \glossario{black box}, questo rende più difficile trovare gli errori al loro interno;
+				\item dipendenze non completamente implementate o errate generano errori in runtime e non a tempo di compilazione;
+				\item rende il codice più difficile da manutenere;
+				\item l'injection a runtime di dipendenze va ad inficiare le prestazioni;
+				\item i benefici sono difficilmente commisurabili rispetto ai costi di implementazione.
+		\end{itemize}
+		
+		Di seguito vengono elencati tre modi con cui un oggetto può ricevere un riferimento da un modulo esterno:
+		\begin{itemize}
+			\item interface injection: l'oggetto fornisce un interfaccia che gli utenti possono implementare in modo da ottenere a runtime le dipendenze;
+			\item setter injection: il dependent module espone un metodo setter che il \glossario{framework} usa per iniettarvi le dipendenze;
+			\item constructor injection: le dipendenze vengono fornite tramite il costruttore della classe.
+		\end{itemize}
+	
+	
+	
+	
+	
+	
 	
 	\subsection{Singleton} % creazionale
 	Il \glossario{Singleton} è un design pattern creazionale che permette di avere un unica istanza di una classe con un unico punto di accesso noto. Tale condizione è tipica di alcuni contesti e trova risvolti pratici in svariate applicazioni. Per permettere l'implementazione di questo pattern è sufficiente che la classe stessa si occupi di tracciare la propria istanziazione e bloccarla qualora sia già avvenuta almeno una volta. Il \glossario{Singleton} dovrebbe essere estensibile usando il \emph{subclassing} il client può utilizzarne l'estensione senza quindi modificarne il codice.
@@ -78,4 +114,12 @@
 		\item Flessibilità; un modo per avere una funzionalità riconducibile al \glossario{Singleton} è quello di utilizzare le operazioni sulle classi, come per esempio la keyword \code{static} del C++, ma in questo modo è più difficile controllarne il design e permetterne più istanze. Inoltre nel linguaggio succitato le funzioni statiche non sono mai virtuali, rendendone impossibile l'utilizzo polimorfo alle sottoclassi che le ridefiniscono.
 	\end{itemize}
 	
-	\subsection{Registry} %libro dropbox
+	
+	
+	
+	
+	
+	
+	\subsection{Registry} %libro dropbox martin fowler
+	Il \glossario{Registry} è simile ad un oggetto globale che gli altri oggetti usano per accedere a servizi e oggetti comuni. Quando si vuole recuperare un oggetto capita spesso di accedervi tramite un altro oggetto legato da un qualche tipo di associazione, ma in alcuni casi non è possibile conoscere a priori l'oggetto da cui partire, così vi è la necessità di avere un metodo di lookup accedibile tramite il \glossario{Registry}.  \\
+	Le interfacce del \glossario{Registry} possono essere metodi statici.

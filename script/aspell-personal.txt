@@ -3,6 +3,7 @@ AAAA
 abbandona'
 about
 Abstract
+accedibile
 Acceptable
 Accrued
 act
@@ -75,6 +76,7 @@ bioinformatica
 blabla
 black
 bodyParser
+Boilerplate
 bottom
 branch
 breakatwhitespace
@@ -126,6 +128,7 @@ columns
 combo
 comes
 commentstyle
+commisurabili
 commit
 community
 Compiler
@@ -143,6 +146,7 @@ config
 Consortium
 Constraints
 Construction
+constructor
 Content
 Continuous
 Control
@@ -185,6 +189,8 @@ dell'array
 dell'index
 Demonstrable
 density
+Dependency
+dependent
 deployment
 Description
 Determination
@@ -242,6 +248,7 @@ express
 extendedchars
 eXtensible
 external
+Facade
 facilitatore
 Factory
 failure
@@ -338,10 +345,12 @@ index
 indexPage
 Information
 initialize
-Injection
+injection
+injector
 inner
 inputencoding
 inspection
+instanziare
 Integrated
 Intelligent
 Interaction
@@ -393,6 +402,8 @@ limit
 l'index
 line
 lines
+l'injection
+l'injector
 linkcolor
 List'
 listCollection
@@ -407,6 +418,7 @@ log
 logger
 logic
 logout
+lookup
 lost
 lostpassword
 l'overhead
@@ -466,6 +478,7 @@ mod
 Modeling
 modifica'
 Module
+module
 MOM
 monadic
 MondoDB
@@ -708,6 +721,7 @@ Separated
 Seq
 service
 session
+setter
 setup
 seven
 SF
@@ -761,6 +775,7 @@ Stein
 stepnumber
 Steve
 storage
+Strategy
 stream
 String
 stringstyle

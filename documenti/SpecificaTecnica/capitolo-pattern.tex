@@ -11,10 +11,100 @@ Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte
 
 \end{itemize}
 
-Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}.
+Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}. In seguito verranno descritti i \glossario{Design Pattern} implementati.
+
+\subsection{Design Pattern Architetturali}
+
+\subsubsection{MVC}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}: 
+
+\end{itemize}
+
+\subsubsection{MVW}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: È un \glossario{Design Pattern} molto simile a \glossario{MVC}, che dà un grado di libertà e flessibilità nettamente maggiore. \glossario{MVW} sta infatti per \textit{Model-View-Whatever}, dove \textit{Whatever} sta per "\textit{qualsiasi cosa vada bene e funzioni per te}". In questo modo si semplifica di molto il lavoro del programmatore agevolandolo nella costruzione dell'applicazione.
+	\item \textbf{Contesto}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js} tramite il quale verrà sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
+
+\end{itemize}
+
+\subsubsection{Middleware} 
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione.
+	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsability}.
+
+\end{itemize}
+
+\subsection{Design Pattern Creazionali}
+
+\subsubsection{Registry}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
+
+\subsubsection{Factory method}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
+
+\subsubsection{Singleton}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
+
+\subsection{Design Pattern Strutturali}
+
+\subsubsection{Facade}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
+
+\subsection{Design Pattern Comportamentali}
+
+\subsubsection{Chain of responsability}
+\label{chain-of-responsability}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
+
+\subsubsection{Strategy}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Contesto}:
+
+\end{itemize}
 
 %%Pattern DA NOI USATI:
-%%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
+%%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le varie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
 %
 %
 %Pattern DA NOI USATI:

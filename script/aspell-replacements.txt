@@ -12,6 +12,7 @@ ec ecc
 erraro errato
 grupp gruppo
 ia La
+istanzare instanziare
 l'emal l'email
 liberia libreria
 paramentri parametri

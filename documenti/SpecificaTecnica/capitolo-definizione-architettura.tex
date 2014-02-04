@@ -21,7 +21,7 @@ I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e 
 
 \subsection{Architettura generale}
 
-L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il \glossario{front-end} dell'applicazione, e in un web server, su cui verrà posto il \glossario{back-end}. Il server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il \glossario{back-end}.
+L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il \glossario{front-end} dell'applicazione, e in una componente WebServer, su cui verrà posto il \glossario{back-end}. Riguardo al server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il \glossario{back-end}.
 
 \begin{figure}[H]
 \centering
@@ -41,6 +41,8 @@ I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 
 \glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite la seguente corrispondenza:
 
+\begingroup
+\renewcommand*{\arraystretch}{1.5}
 \begin{tabularx}{\textwidth}{|P{2.5cm}|X|X|}
 \hline
 	\textbf{Risorsa} & \textbf{URI della collection} \newline es. http://example.com/users & \textbf{URI di un elemento} \newline es. http://example.com/users/42 \\
@@ -54,6 +56,7 @@ I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 	\textbf{DELETE} & Non usata. & \textbf{Cancella} l'elemento della collection indicato. \\
 \hline
 \end{tabularx}
+\endgroup
 
 Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in quanto si integra molto facilmente con i framework utilizzati e con il linguaggio \glossario{JavaScript}, a differenza di \glossario{XML} o \glossario{CSV} che richiederebbero l'utilizzo di librerie specifiche.
 
@@ -72,8 +75,8 @@ L'architettura del back-end si serve del pattern architetturale \glossario{MVC} 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{uml/Front-end-Diagramma dei packages.png}
+\includegraphics[width=0.5\textwidth]{uml/Front-end-Diagramma dei packages.png}
 \caption{Diagramma dei package del Front-end}
 \end{figure}
 
-Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare il modello di AngularJS.
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare i modelli di AngularJS. La view non è rappresentata poiché consiste unicamente in dei file statici di template scritti in un linguaggio molto simile all'HTML. Tali file risiedono fisicamente sul Server, assieme alle librerie JavaScript e ad altri file statici; vengono caricati da AngularJS nel momento in cui il controller ne fa richiesta.

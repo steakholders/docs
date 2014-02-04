@@ -2,8 +2,9 @@
 
 \subsection{Interfaccia REST}
 
-Ad ogni richiesta il server può rispondere con un messaggio di errore nel formato \glossario{JSON} e inviato con un codice \glossario{HTTP} della tipologia 4xx o 5xx. 
+A molte delle richieste il server può rispondere con un messaggio di errore nel formato \glossario{JSON}, inviato con un codice \glossario{HTTP} della tipologia 4xx (errore client) o 5xx (errore server). 
 Il formato \glossario{JSON} del messaggio di errore sarà:
+
 \begin{lstlisting}
 { 
   "code": [codice numerico dell'errore],
@@ -11,7 +12,9 @@ Il formato \glossario{JSON} del messaggio di errore sarà:
   "data": [eventuali dati aggiuntivi sull'errore]
 }
 \end{lstlisting}
-Di seguito sono elencate le risorse REST associate al tipo di metodo che è possibile richiedere su esse e i permessi richiesti per poter effettuare la richiesta. \\
+
+Di seguito sono elencate le risorse REST associate al tipo di metodo che è possibile richiedere su esse e i permessi richiesti per poter effettuare la richiesta.
+
 I tipi di permessi possibili sono: 
 \begin{itemize}
 \item \textbf{Utente}: questa risorsa può essere richiesta da qualsiasi tipo di utente;
@@ -22,7 +25,7 @@ I tipi di permessi possibili sono:
 \begin{center}
 	\def\arraystretch{1.5}
 	\bgroup
-	\begin{longtable}{| p{9cm} | p{1.5cm} | p{4cm} |}
+\begin{longtable}{| p{9cm} | p{1.5cm} | p{4cm} |}
 	\hline 
 	\textbf{\emph{/login}} & \textbf{POST} & \textbf{Utente} \\ \hline
 	\multicolumn{3}{|c|} {Crea una nuova sessione associata all'utente, corrisponde al login.} \\ \specialrule{1pt}{1pt}{1pt}
@@ -99,11 +102,12 @@ I tipi di permessi possibili sono:
 \end{longtable}
 	  \egroup
 \end{center}
+
 \subsection{Diagramma dei package}
 
 \begin{figure}[H]
 \centering
-%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
+\includegraphics[width=\textwidth]{uml/Front-end-Diagramma delle classi.png}
 \caption{Diagramma delle classi del Front-end}
 \label{diagrammaClassiFrontEnd}
 \end{figure}
@@ -112,7 +116,7 @@ I tipi di permessi possibili sono:
 
 \begin{figure}[H]
 \centering
-%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi.png}
+\includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi.png}
 \caption{Diagramma delle classi del Front-end}
 \label{diagrammaClassiFrontEnd}
 \end{figure}

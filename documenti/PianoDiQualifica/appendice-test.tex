@@ -29,9 +29,21 @@ L'attività di test deve produrre un \glossario{log} che specifica quando e chi 
 	%TODO qui va la tabella descrzione dei TS / requisiti
 	
 	\subsection{Test di integrazione}
-	I test di integrazione vanno a controllare il corretto funzionamento delle componenti descritti dalla progettazione ad alto livello. Si è scelto di utilizzare un approccio \glossario{top-down} ad eccezione del test TI 10 che viene eseguito con la metodologia \glossario{bottom-up}.
+	I test di integrazione vanno a controllare il corretto funzionamento delle componenti descritti dalla progettazione ad alto livello. Si è scelto di utilizzare un approccio \glossario{top-down} ad eccezione del test TI 10 che viene eseguito con la metodologia \glossario{bottom-up}. Di seguito viene riportato un diagramma informale per chiarire l'albero dei test di integrazione.
+
+	\begin{figure}[H]
+	\centering \includegraphics[width=1\textwidth]{sequenza-di-integrazione.png}
+	\caption{Sequenza d'integrazione delle componenti}
+	\label{fig:sequenza-di-integrazione}
+	\end{figure}
 
 	Con la tecnica \glossario{top-down} le componenti di più alto livello sono testate non appena sono implementate. Le componenti del sottosistema che non sono ancora state sviluppate, vengono simulate dagli \glossario{stub}. Man mano che si procede con la codifica delle componenti di più basso livello, queste vengono integrate e viene eseguito il relativo test. Grazie all'integrazione incrementale delle componenti del sistema, è più semplice determinare quale componente crea problemi e le funzioni di più alto livello sono testate.
+
+	\begin{figure}[H]
+	\centering \includegraphics[width=0.57\textwidth]{sequenza-dei-test.png}
+	\caption{Diagramma di attività dei test}
+	\label{fig:sequenza-dei-test}
+	\end{figure}
 	
 	%TODO tabella: componente / test
 	\bgroup

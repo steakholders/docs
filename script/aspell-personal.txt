@@ -368,6 +368,7 @@ active
 admin
 aggiungi'
 align
+all
 all'
 all'Admin
 all'admin
@@ -460,7 +461,6 @@ createUser
 created
 creazionale
 creazionali
-CRUD
 css
 cyan
 dall
@@ -531,6 +531,7 @@ fittizia'
 fittizie'
 followed
 for
+forgot
 form
 format
 fowler'
@@ -648,6 +649,7 @@ mygray
 mygreen
 name
 namespace
+nell
 nell'index
 never
 new

@@ -11,31 +11,99 @@ Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte
 
 \end{itemize}
 
-Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}.
+Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}. In seguito verranno descritti i \glossario{Design Pattern} implementati.
 
-%%Pattern DA NOI USATI:
-%%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
-%
-%
-%Pattern DA NOI USATI:
-%- Registry: (cerca su Google ``registry martin fowler'') quando registriamo le carie collection del dsl le memorizziamo in un registro per nome, poi quando ci arriva la richiesta carichiamo il giusto dsl. Il pattern è registry.
-%
-%
-%Pattern GIÀ PRESENTI:
-%
-%- Il pattern Factory ogni volta che in un modulo si utilizza lo stile:
-%
-%function TestClass() \{
-%
-%\}
-%exports.create\_test\_class = function() \{
-%	return new TestClass();
-%\}
-%
-%(vedi pag. 77 del libro Creare applicazione web in javascript)
-%
-%- Ogni modulo è nativamente un Singleton perché viene caricato una sola volta da Node.js (poi tutti si riferiscono allo stesso)
-%
-%- Express usa Chain-of-responsability per la gestione dei middleware e del routing
-%
-%- I middleware sono un pattern, è fortemente legato al Chain-of-responsability e sono quasi la stessa cosa (scrivetelo)
+\subsection{Design Pattern Architetturali}
+
+\subsubsection{MVC}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}:
+	\item \textbf{Utilizzo}:
+	
+\end{itemize}
+
+\subsubsection{MVW}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: È un \glossario{Design Pattern} molto simile a \glossario{MVC}, che dà un grado di libertà e flessibilità nettamente maggiore. \glossario{MVW} sta infatti per \textit{Model-View-Whatever}, dove \textit{Whatever} sta per "\textit{qualsiasi cosa vada bene e funzioni per te}". In questo modo si semplifica di molto il lavoro del programmatore agevolandolo nella costruzione dell'applicazione.
+	\item \textbf{Contesto}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js} tramite il quale verrà sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
+
+\end{itemize}
+
+\subsubsection{Middleware} 
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione.
+	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsability}.
+
+\end{itemize}
+
+\subsection{Design Pattern Creazionali}
+
+\subsubsection{Registry}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene utilizzato per ottenere oggetti a partire da altri oggetti che hanno un'associazione con esso. Questa ricerca viene effettuata tramite una \textit{classe registro}.
+	\item \textbf{Utilizzo}: Le diverse \glossario{Collection} presenti nei file \glossario{DSL} verranno memorizzate per nome in un registro, in modo tale che quando arriva una richiesta venga caricato il file \glossario{DSL} giusto.
+
+\end{itemize}
+
+\subsubsection{Factory method}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Nel contesto di \glossario{Node.js} questo pattern viene usato creare una classe attraverso una \textit{funzione factory} esportata dal modulo. In questo modo si potrà costruire e ottenere qualsiasi classe definita in un modulo.
+	\item \textbf{Contesto}: 
+
+\end{itemize}
+
+\subsubsection{Singleton}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene utilizzato per le classi che devono avere un'unica istanza durante l'esecuzione dell'applicazione;
+	\item \textbf{Contesto}: Ogni modulo è nativamente un singleton, perché viene caricato una sola volta da \glossario{Node.js} e poi tutti si riferiscono allo stesso.
+
+\end{itemize}
+
+\subsection{Design Pattern Strutturali}
+
+\subsubsection{Facade}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene utilizzato per rendere visibili solamente alcune cose agli altri oggetti.
+	\item \textbf{Contesto}: 
+	\begin{itemize}
+	
+		\item La classe \texttt{MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp};
+		\item La classe \texttt{ControllerFactory} utilizza \textit{facade} per nascondere le classi interne.
+		
+	\end{itemize}
+\end{itemize}
+
+\subsection{Design Pattern Comportamentali}
+
+\subsubsection{Chain of responsability}
+\label{chain-of-responsability}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario.
+	\item \textbf{Contesto}: \glossario{Express} usa chain-of-responsability per la gestione dei \glossario{middleware} e del \glossario{routing}.
+
+\end{itemize}
+
+\subsubsection{Strategy}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene utilizzato perché in futuro potrebbe essere necessario cambiare l'algoritmo di interpretazione del \glossario{DSL}. Utilizzando questo pattern l'algoritmo potrà essere cambiato in modo indipendente da chi ne fa uso.
+	\item \textbf{Contesto}:
+
+\end{itemize}

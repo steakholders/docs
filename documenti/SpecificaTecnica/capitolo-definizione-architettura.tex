@@ -11,7 +11,7 @@ In primo luogo il progetto è basato su Node.js ed è scritto quindi in JavaScri
 
 Progettare il sistema con un'architettura ad oggetti classica non permette di rappresentare in modo immediato la gestione dinamica dei tipi e le caratteristiche tipiche degli stili di programmazione funzionali. In certi casi è stato necessario introdurre interfacce ``fittizie'', che non verranno codificate. Dato che questo introduce numerosi schematismi che appesantiscono i diagrammi e che non sono richiesti dal linguaggio di programmazione, si è cercato di limitarli soltanto ai casi in cui sono particolarmente utili.
 
-Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e AngularJS). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open-source che di progetti proposti come best-practise.
+Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e Angular.js). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open source che di progetti proposti come best-practise.
 
 L'approccio top-down è stato schematizzato nei diagrammi di deployment e dei package. Per la costruzione dei diagrammi delle classi, invece, questo approccio si è rivelato essere molto poco produttivo e rigoroso. I diagrammi delle classi proposti sono quindi \emph{uno dei possibili diagrammi} che descrivono l'applicazione, qualsiasi gerarchia o relazione complicata tra le classi verrebbe tradotta pressapoco nello stesso codice.
 
@@ -21,23 +21,12 @@ I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e 
 
 \subsection{Architettura generale}
 
-L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il front-end dell'applicazione, e in un web server, su cui verrà posto il back-end. Il server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il back-end.
+L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il \glossario{front-end} dell'applicazione, e in un web server, su cui verrà posto il \glossario{back-end}. Il server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il \glossario{back-end}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{uml/diagramma-deployment.png}
 \caption{Diagramma di deployment}
-\label{architetturaGeneralePackage}
-\end{figure}
-
-L'architettura scelta per lo sviluppo di \ProjectName{} si serve del \glossario{pattern architetturale} \glossario{MVC} (\textit{Model-View-Controller}). Nel diagramma in figura \ref{architetturaGeneralePackage} viene presentata la struttura ad alto livello, evidenziando le componenti che ricoprono i ruoli di \textit{model} e \textit{controller} per il \glossario{back-end}, e controller per il \glossario{front-end}. Il \glossario{back-end} non presenta la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta.
-Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è stata per diversi anni vicina al modello \glossario{MVC}. Nel tempo si è avvicinato più al modello \glossario{MVVM}. Ora \glossario{AngularJS} si dichiara \glossario{MVW} ossia Model-View-Whatever\footnote{Si rimanda al sito ufficiale di AngularJS: \url{http://angularjs.org/}}, per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura scelta per \ProjectName{}, si è scelto di descrivere soltanto i \glossario{package} che compongono il controller, perché l'aggiornamento della view e del model viene gestito da \glossario{AngularJS} internamente.
-
-\begin{figure}[H] %TODO modificare con il deployment
-\centering
-\includegraphics[width=\textwidth]{uml/architettura-generale-package.png}
-\caption{Architettura generale dei package}
-\label{architetturaGeneralePackage}
 \end{figure}
 
 \subsection{Interfaccia REST-like}
@@ -46,7 +35,7 @@ Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di ut
 I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 \begin{itemize}
 	\item Semplicità di utilizzo;
-	\item Facile integrazione con i framework esistenti (AngularJS e Express);
+	\item Facile integrazione con i framework esistenti (Angular.js e Express);
 	\item Indipendenza dal linguaggio di programmazione utilizzato;
 \end{itemize}
 
@@ -71,4 +60,20 @@ Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in
 
 \subsubsection{Back-end}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
+\caption{Diagramma dei package del Back-end}
+\end{figure}
+
+L'architettura del back-end si serve del pattern architetturale \glossario{MVC} (\textit{Model-View-Controller}), suddividendo i controller tradizionali dai controller \glossario{middleware}, come incoraggiato dal framework Express. Nei diagrammi non è rappresentata la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta. La struttura dati inviata, in particolare, coincide con la componente \textit{model} del front-end.
+
 \subsubsection{Front-End}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{uml/Front-end-Diagramma dei packages.png}
+\caption{Diagramma dei package del Front-end}
+\end{figure}
+
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{Angular.js}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare il modello di Angular.js.

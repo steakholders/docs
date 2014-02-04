@@ -2,16 +2,18 @@ personal_repl-1.1 it 100
 all all'
 all'anilisi all'analisi
 allìapplicazione all'applicazione
+chiamarà chiamerà
 declassere declassare
 dell'aministratore dell'amministratore
+dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
-dellanno dell'anno
 ec ecc
 erraro errato
 grupp gruppo
 ia La
+istanzare instanziare
 l'emal l'email
 liberia libreria
 paramentri parametri
@@ -24,8 +26,8 @@ que qua
 rischesto richiesto
 risportate riportate
 sarnno saranno
-staica statica
 sè sé
+staica statica
 un'apposito un apposito
 un'array un array
 verrano verranno

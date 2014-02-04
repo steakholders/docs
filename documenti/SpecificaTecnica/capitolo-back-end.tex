@@ -103,7 +103,7 @@ I tipi di permessi possibili sono:
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
+%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
 \caption{Diagramma delle classi del Front-end}
 \label{diagrammaClassiFrontEnd}
 \end{figure}
@@ -112,7 +112,7 @@ I tipi di permessi possibili sono:
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi.png}
+%TODO \includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi.png}
 \caption{Diagramma delle classi del Front-end}
 \label{diagrammaClassiFrontEnd}
 \end{figure}
@@ -132,25 +132,22 @@ Segue un elenco ordinato dei middleware utilizzati. L'ordine in cui elaborano la
 \item{express.logger()}: \glossario{Middleware} utilizzato per registrare un log delle richieste, utile per fare il
 \glossario{debugging} dell'applicazione.
 \item{express.json()}: \glossario{Middleware} che estrae dalle richiesta i parametri che sono nel formato JSON.
-\item{express.urlencoded()}: \glossario{Middleware} che estrae dalle richiesta i parametri che sono nel formato di tipo www-form-encoded.
+\item{express.urlencoded()}: \glossario{Middleware} che estrae dalle richiesta i parametri di tipo www-form-encoded, arrivati ad esempio con una richiesta POST.
 \item{express.methodOverride()}: \glossario{Middleware} utilizzato per permettere anche ai vecchi browser di avere un modo per fare richieste PUT e DELETE.
-\item{express.cookieParser()}: \glossario{Middleware} che analizza il campo header dei Cookie.
+\item{express.cookieParser()}: \glossario{Middleware} che analizza i \glossario{cookie}.
 \item{express.cookieSession()}: \glossario{Middleware} per la gestione di sessioni utente basate su cookies.
-\item{express.router()}: \glossario{Middleware} in cui Express gestisce le richieste registrate ai metodi GET,POST etc, ovvero mappa azioni diverse a richieste http diverse, sia in termini di url che in termini di metodi http.
-\item{express.static()}: \glossario{Middleware} per la gestione dei contenuti statici.
-%\item{clientErrorHandler}: \glossario{Middleware} per la gestione degli errori. La risposta di tale middleware è di tipo arbitrario, può essere risposta una pagina HTML di errore, un semplice messaggio o una stringa JSON.
-\item{passport}: \glossario{Middleware} per Node.js utilizzati per implementare l'autenticazione in maniera semplice e veloce,
-vengono utilizzati nello specifico:
+\item{Authentication}: \glossario{Middleware} da noi scritto per gestire l'autenticazione. Utilizza nello specifico:
 	\begin{itemize}
 	\item{passport.initialize()}: \glossario{Middleware} utilizzato per l'inizializzazione di Passport.
 	\item{passport.session()}:  \glossario{Middleware} che permette di memorizzare i record della sessione utente per mantenerne lo stato di login. 
 	\end{itemize}
-\item{notFoundMiddleware}: un \glossario{Middleware} da noi scritto per gestire le richieste che non vengono gestite (errore client 4xx).
-\item{errorMiddleware}: \glossario{Middleware} da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server 500).
+\item{express.router()}: \glossario{Middleware} con cui Express gestisce le richieste, smistandole a diversi controller in base alla URI e al metodo HTTP con cui sono state richieste (GET, PUT, POST, DELETE).
+\item{express.static()}: \glossario{Middleware} per servire contenuti statici.
+\item{NotFoundHandler}: un \glossario{Middleware} da noi scritto per gestire le richieste che non vengono gestite da nessun controller (errore client 404).
+\item{ErrorHandler}: \glossario{Middleware} da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server 500).
 \end{itemize}
-Nel seguente diagramma viene rappresentata una generica richiesta al server,tale richiesta arriva al server il quale va a prendere il prossimo \glossario{middleware}, inviandogli come parametri la richiesta, la risposta e next che innesca la chiamata per passare il controllo al prossimo \glossario{middleware}.  \\
-In caso di errore, l'ultimo middleware manderà un next(error) ed il server aggiungerà un parametro a quelli sopra citati con l'informazione dell'errore stesso e passerà il controllo al primo gestore dell'errore e non al successivo \glossario{middleware}. \\
-Un \glossario{middleware} può rispondere con un return() ed in questo caso ..... %TODO \\
+
+Nel seguente diagramma viene rappresentata una generica richiesta al server: utilizzando il pattern della Chain of responsability, il server invoca in sequenza i middleware, passando come parametri l'oggetto della richiesta, della risposta e una callback per passare il controllo al successivo middleware. In caso di errore, un middleware può chiamare la callback passandogli la descrizione dell'errore come parametro \code{next(error)}. In questo modo il server passerà il controllo al primo middleware in grado di gestire un errore. Come terza alternativa, un middleware può terminare la propria esecuzione con un \code{return}. In tal caso la richiesta non verrà più gestita da nessun altro middleware.
 
 \begin{figure}[H]
 	\begin{center} 

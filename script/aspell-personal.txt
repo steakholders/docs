@@ -26,6 +26,7 @@ Architecture
 Assurance
 Astah
 AuthController
+Authentication
 Awesome
 BCWP
 BCWS
@@ -87,6 +88,7 @@ Endeavor
 Engine
 Enterprise
 Erich
+ErrorHandler
 Established
 Etzkorn
 Everybody
@@ -215,6 +217,7 @@ NodeJs
 Nodemailer
 NomeDelDocumento
 NomeDellaCostante
+NotFoundHandler
 Notation
 OOP
 OT

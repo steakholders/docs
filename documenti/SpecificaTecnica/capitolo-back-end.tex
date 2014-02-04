@@ -226,7 +226,7 @@ Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere 
 
 \subsubsection{Profile PUT} 
 Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il \emph{requireLogged} non ritorna un errore, chiamando il successivo \glossario{middleware} \emph{editProfile} che gestisce la richiesta di modifica dei dati del profilo.
-Nell'opzione che i paramentri passati per la modifica del profilo siano errati, \emph{editProfile} chiamarà la callback passandogli la descrizione dell'errore come parametro che il router andrà a gestire.
+Nell'opzione che i parametri passati per la modifica del profilo siano errati, \emph{editProfile} chiamerà la callback passandogli la descrizione dell'errore come parametro che il router andrà a gestire.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{scenari/Profile PUT.png} 
@@ -254,7 +254,7 @@ Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richie
 \end{figure}
 
 \subsubsection{Users POST} 
-Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST per la risorsa user, la verifica di \emph{requireLogged} dei permessi utente non fallisce e viene passato il controllo a \emph{createUser} che gestisce la richiesta di creazione di un nuovo user, e nel caso la verifica dei paramentri passati per la creazione di quest'ultimo siano errati, il controllore chiamerà la callback con l'errore.
+Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST per la risorsa user, la verifica di \emph{requireLogged} dei permessi utente non fallisce e viene passato il controllo a \emph{createUser} che gestisce la richiesta di creazione di un nuovo user, e nel caso la verifica dei parametri passati per la creazione di quest'ultimo siano errati, il controllore chiamerà la callback con l'errore.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{scenari/Users POST.png} 
@@ -354,7 +354,7 @@ Il controller \emph{collectionAction} si occupa di eseguire i controlli sugli at
 \subsubsection{Action Name Collection Document PUT}
 Il diagramma a seguito mostrato descrive lo scenario di una richiesta PUT per la risorsa Action name Document.
 Il controller \emph{documentAction} gestirà la richiesta di azione sul document corrispondente all'id passatogli come parametro.
-Nell'opzione i parametri siano errati, \emph{documentAction} chiamarà la callback passandogli la descrizione dell'errore come parametro.
+Nell'opzione i parametri siano errati, \emph{documentAction} chiamerà la callback passandogli la descrizione dell'errore come parametro.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{scenari/Action Name Collection Document PUT.png} 

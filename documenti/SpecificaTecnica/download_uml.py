@@ -112,8 +112,10 @@ lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/Front-end
 lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/Front-end-Diagramma dei packages.png")
 lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "packages/Front-end::Services.png")
 lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "packages/Front-end::Controllers.png")
-
 lucidchart.download_image("48ba-c3f8-52efbb7d-b3ee-3d760a008cac", "packages/Front-end::Model.png")
+
+lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "packages/Back-end::Lib.png")
+lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "packages/Back-end.png")
 
 
 

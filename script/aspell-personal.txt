@@ -11,6 +11,7 @@ ActiveAdmin
 Addressed
 Addy
 Adjourned
+Adler
 Adobe
 Agreement
 All
@@ -69,6 +70,7 @@ Content
 Continuous
 Control
 ControllerFactory
+Correllato
 Cox
 Craftsmanship
 DP
@@ -117,6 +119,7 @@ Functionality
 GET
 GG
 GUI
+Gailly
 GanttProject
 Generator
 GitHub
@@ -152,20 +155,24 @@ JSLint
 JVM
 Java
 JavaScript
+Jean
 Jenkins
 John
 Johnson
 Kernel
 Kile
+LIFO
 LOCs
 LUF
 Language
+Last
 Laurence
 Lavazza
 Learning
 List'
 Location
 Locator
+Loup
 Lucidchart
 Luzzati
 MAY'
@@ -189,6 +196,7 @@ Makefile
 Managment
 Map
 Marc
+Mark
 Markdown
 Maroon
 Matthew
@@ -524,6 +532,7 @@ effort
 election
 elections
 emph
+encapsulation
 encoded
 encoding
 enlargelimits
@@ -795,6 +804,7 @@ responsibility
 responsività
 return
 ridenominare
+ridonandante
 right
 rimpiazza'
 riusabile
@@ -836,6 +846,7 @@ sometimes
 somministrabile
 sortable
 sottoattributi
+sottoproblemi
 sottoscrivibile
 source
 specify
@@ -863,6 +874,7 @@ sum
 superAdmin
 superadmin
 superclasse
+switch
 symbolic
 syntax
 system
@@ -871,6 +883,7 @@ tag
 tasks
 technology
 template
+testabilità
 testing
 tests
 tex

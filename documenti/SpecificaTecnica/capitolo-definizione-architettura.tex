@@ -11,7 +11,7 @@ In primo luogo il progetto è basato su Node.js ed è scritto quindi in JavaScri
 
 Progettare il sistema con un'architettura ad oggetti classica non permette di rappresentare in modo immediato la gestione dinamica dei tipi e le caratteristiche tipiche degli stili di programmazione funzionali. In certi casi è stato necessario introdurre interfacce ``fittizie'', che non verranno codificate. Dato che questo introduce numerosi schematismi che appesantiscono i diagrammi e che non sono richiesti dal linguaggio di programmazione, si è cercato di limitarli soltanto ai casi in cui sono particolarmente utili.
 
-Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e AngularJS). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open-source che di progetti proposti come best-practise.
+Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e Angular.js). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open source che di progetti proposti come best-practise.
 
 L'approccio top-down è stato schematizzato nei diagrammi di deployment e dei package. Per la costruzione dei diagrammi delle classi, invece, questo approccio si è rivelato essere molto poco produttivo e rigoroso. I diagrammi delle classi proposti sono quindi \emph{uno dei possibili diagrammi} che descrivono l'applicazione, qualsiasi gerarchia o relazione complicata tra le classi verrebbe tradotta pressapoco nello stesso codice.
 
@@ -35,7 +35,7 @@ Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di ut
 I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 \begin{itemize}
 	\item Semplicità di utilizzo;
-	\item Facile integrazione con i framework esistenti (AngularJS e Express);
+	\item Facile integrazione con i framework esistenti (Angular.js e Express);
 	\item Indipendenza dal linguaggio di programmazione utilizzato;
 \end{itemize}
 
@@ -80,3 +80,4 @@ L'architettura del back-end si serve del pattern architetturale \glossario{MVC} 
 \end{figure}
 
 Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare i modelli di AngularJS. La view non è rappresentata poiché consiste unicamente in dei file statici di template scritti in un linguaggio molto simile all'HTML. Tali file risiedono fisicamente sul Server, assieme alle librerie JavaScript e ad altri file statici; vengono caricati da AngularJS nel momento in cui il controller ne fa richiesta.
+

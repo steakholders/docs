@@ -306,6 +306,7 @@ SCR
 SEMAT
 SF
 SGAD
+SMTP
 SPICE
 SQA
 SQL
@@ -914,6 +915,7 @@ txt
 typing
 un'email
 underscore
+unicode
 unipd
 unit
 update

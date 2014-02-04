@@ -16,6 +16,7 @@ ia La
 istanzare instanziare
 l'emal l'email
 liberia libreria
+liberie librerie
 paramentri parametri
 paramentro parametro
 partecipandi Partecipanti

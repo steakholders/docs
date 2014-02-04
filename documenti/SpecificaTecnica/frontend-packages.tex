@@ -1,14 +1,12 @@
-\subsection{Descrizione componenti Front-end}
-  \subsubsection{Front-end}
-  \paragraph{Informazioni sul package} 
 
+  \subsubsection{Front-end}
+  \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        %\includegraphics[scale=1]{packages/NomePackage.png}  
+        \includegraphics[width=\textwidth]{packages/Front-end.png}  
         \caption{Componente Front-end}
       \end{center}  
     \end{figure} 
-
   \subparagraph{Descrizione} 
     \begin{itemize}
     \item[] 
@@ -20,15 +18,13 @@
         \item Front-end::Model
     \end{itemize}
   \subsubsection{Front-end::Controllers}
-  \paragraph{Informazioni sul package} 
-
+  \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        %\includegraphics[scale=1]{packages/NomePackage.png}  
+        \includegraphics[width=\textwidth]{packages/Front-end::Controllers.png}  
         \caption{Componente Front-end::Controllers}
       \end{center}  
     \end{figure} 
-
   \subparagraph{Descrizione} 
     \begin{itemize}
     \item[] 
@@ -145,15 +141,13 @@
             \item[] 
           \end{itemize}
   \subsubsection{Front-end::Services}
-  \paragraph{Informazioni sul package} 
-
+  \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        %\includegraphics[scale=1]{packages/NomePackage.png}  
+        \includegraphics[width=\textwidth]{packages/Front-end::Services.png}  
         \caption{Componente Front-end::Services}
       \end{center}  
     \end{figure} 
-
   \subparagraph{Descrizione} 
     \begin{itemize}
     \item[] 
@@ -163,11 +157,17 @@
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] 
+            \item[] Questa classe permette il recupero della risorsa REST rappresentante l'utente tramite la chiamata /users/$\{$user_id$\}$
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] 
+            \item[] Le funzionalità offerte dalla classe sono: 
+\begin{itemize} 
+\item elenco dei dati relativi all'utente. 
+\item modifica della password relativa al utente.
+\item elevare o declassare un utente ad admin 
+\item rimozione dell'utente. 
+Tali funzionalità richiedono che l'utente sia un admin.
           \end{itemize}
       \subparagraph{Front-end::Services::AuthenticationService}
         
@@ -177,7 +177,7 @@
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] La funzionalitàà offeerta dalla classe è quella di poter fornire al Controller lo stato della sessione utente.
+            \item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller lo stato della sessione utente.
           \end{itemize}
       \subparagraph{Front-end::Services::ProfileService}
         
@@ -203,7 +203,7 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] La funzionalitàà offeerta dalla classe è quella di poter fornire al Controller la lista degli utenti presenti nel database delle credenziali.
+            \item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller la lista degli utenti presenti nel database delle credenziali.
 Tale funzionalità richiede che l'utente sia un admin.
           \end{itemize}
       \subparagraph{Front-end::Services::CollectionListService}
@@ -247,6 +247,16 @@ Tale funzionalità richiede che l'utente sia registrato.
           \begin{itemize}
             \item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller la lista di Document presenti nella Collection.
           \end{itemize}
+      \subparagraph{Front-end::Services::ForgotPasswordService}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe si occupa di inviare al server una richiesta di recupero password tramite la chiamata /password/lost e la conseguente modifica attraverso la chiamata /password/reset.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] La funzionalità offerta dalla classe è quella di interagire col server delegando quest'ultimo all'invio di una mail all'utente per il recupero della password e successivamente alla sua modifica.
+          \end{itemize}
       \subparagraph{Front-end::Services::DocumentService}
         
         \textbf{\\ \\ Descrizione} 
@@ -263,26 +273,14 @@ Tale funzionalità richiede che l'utente sia registrato.
 \end{itemize} 
 Tali funzionalità richiedono che l'utente sia autenticato al sistema.
           \end{itemize}
-      \subparagraph{Front-end::Services::ForgotPasswordService}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Questa classe si occupa di inviare al server una richiesta di recupero password tramite la chiamata /password/lost e la conseguente modifica attraverso la chiamata /password/reset.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] La funzionalità offerta dalla classe è quella di interagire col server delegando quest'ultimo all'invio di una mail all'utente per il recupero della password e successivamente alla sua modifica.
-          \end{itemize}
   \subsubsection{Front-end::Model}
-  \paragraph{Informazioni sul package} 
-
+  \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        %\includegraphics[scale=1]{packages/NomePackage.png}  
+        \includegraphics[width=\textwidth]{packages/Front-end::Model.png}  
         \caption{Componente Front-end::Model}
       \end{center}  
     \end{figure} 
-
   \subparagraph{Descrizione} 
     \begin{itemize}
     \item[] 

@@ -3,7 +3,7 @@
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end.png}  
         \caption{Componente Back-end}
       \end{center}  
     \end{figure} 
@@ -20,7 +20,7 @@
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::AuthModel.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::AuthModel.png}  
         \caption{Componente Back-end::Lib::AuthModel}
       \end{center}  
     \end{figure} 
@@ -37,14 +37,14 @@
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] Viene utilizzata per l'interfacciamento con la libreria \glossario{mongoose} per la registrazione dello schema dei dati, e con la libreria passport-local-mongoose per il popolamento automatico dello schema con campi dati e metodi predefiniti.
+            \item[] Viene utilizzata per l'interfacciamento con la libreria \glossario{Mongoose} per la registrazione dello schema dei dati, e con la libreria passport-local-mongoose per il popolamento automatico dello schema con campi dati e metodi predefiniti.
 Il costruttore del modello dello schema dei dati viene registrato nella \glossario{Factory} di \glossario{Mongoose} ed ogni istanza condividerà la stessa connessione al server.
           \end{itemize}
   \subsubsection{Back-end::DeveloperProject}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::DeveloperProject.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::DeveloperProject.png}  
         \caption{Componente Back-end::DeveloperProject}
       \end{center}  
     \end{figure} 
@@ -67,7 +67,7 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::MailView.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::MailView.png}  
         \caption{Componente Back-end::Lib::MailView}
       \end{center}  
     \end{figure} 
@@ -90,7 +90,7 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib.png}  
         \caption{Componente Back-end::Lib}
       \end{center}  
     \end{figure} 
@@ -110,7 +110,7 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::Middleware.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Middleware.png}  
         \caption{Componente Back-end::Lib::Middleware}
       \end{center}  
     \end{figure} 
@@ -118,10 +118,6 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
     \begin{itemize}
     \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene passata la responsabilità di gestire una richiesta,  decorando quest'ultima con parametri e metodi utilizzabili dai controller. Costituisce una parte dell' \glossario{application logic} nell'architettura mvc del back-end.
     \end{itemize} 
-    \subparagraph{Package contenuti} 
-    \begin{itemize}
-        \item Back-end::Lib::Middleware::Errorhandler
-    \end{itemize}
     \paragraph{Classi}
       \subparagraph{Back-end::Lib::Middleware::Router}
         
@@ -175,16 +171,6 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
           \begin{itemize}
               \item{Back-end::Lib::MailView::ForgotMailView}
           \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::NotFoundHandler}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
-          \end{itemize}
       \subparagraph{Back-end::Lib::Middleware::MiddlewareLoader}
         
         \textbf{\\ \\ Descrizione} 
@@ -203,11 +189,32 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
               \item{Back-end::Lib::Middleware::Mailer}
               \item{Back-end::Lib::Middleware::NotFoundHandler}
           \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::NotFoundHandler}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::Errorhandler}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
+È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
+          \end{itemize}
   \subsubsection{Back-end::Lib::DSLModel}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::DSLModel.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::DSLModel.png}  
         \caption{Componente Back-end::Lib::DSLModel}
       \end{center}  
     \end{figure} 
@@ -339,20 +346,6 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \begin{itemize}
             \item[] 
           \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che concretizza l'interprete del \glossario{DSL}. È uno dei componenti ConcreteStrategy del \glossario{Design Pattern} \glossario{Strategy}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per implementare l'algoritmo utilizzato nell'interfaccia \texttt{Back-end::Lib::DSLModel::DSLInterpreterStrategy} per l'interpretazione del linguaggio \glossario{DSL}. Conterrà al suo interno un metodo che genererà il \glossario{parser} a partire da una grammatica regolare.
-          \end{itemize}
-          \textbf{Classi Ereditate}
-          \begin{itemize}
-                \item{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
-          \end{itemize}
       \subparagraph{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
         
         \textbf{\\ \\ Descrizione} 
@@ -382,11 +375,25 @@ Costituisce la componente model dell'architettura MVC del back-end.
               \item{Back-end::Lib::DSLModel::ShowModel}
               \item{Back-end::Lib::DSLModel::IndexModel}
           \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che concretizza l'interprete del \glossario{DSL}. È uno dei componenti ConcreteStrategy del \glossario{Design Pattern} \glossario{Strategy}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per implementare l'algoritmo utilizzato nell'interfaccia \texttt{Back-end::Lib::DSLModel::DSLInterpreterStrategy} per l'interpretazione del linguaggio \glossario{DSL}. Conterrà al suo interno un metodo che genererà il \glossario{parser} a partire da una grammatica regolare.
+          \end{itemize}
+          \textbf{Classi Ereditate}
+          \begin{itemize}
+                \item{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
+          \end{itemize}
   \subsubsection{Back-end::Lib::Controller}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::Controller.png}  
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller.png}  
         \caption{Componente Back-end::Lib::Controller}
       \end{center}  
     \end{figure} 
@@ -404,19 +411,6 @@ Costituisce la componente model dell'architettura MVC del back-end.
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Controller::IndexController}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe di gestione per la risorsa index 
-È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituendone gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
-
           \end{itemize}
       \subparagraph{Back-end::Lib::Controller::ActionController}
         
@@ -438,16 +432,6 @@ Costituisce la componente model dell'architettura MVC del back-end.
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Viene costruita una sola volta dalla classe \texttt{Back-end::Lib::Middleware::Router} e si occupa di creare e restituire l'oggetto \textit{Controller} richiesto.
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Controller::ForgotController}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che rappresenta il sistema di recupero e ripristino password. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] La classe fornisce dei metodi per effettuare una richiesta di reset password e, in un secondo momento, procedere al suo ripristino. La richiesta di reset avviene mandando un'email all'indirizzo dell'utente tramite la classe \texttt{Back-end::Lib::Middleware::Mailer}. All'interno di questo messaggio sarà presente un link che procederà ad effettuare il login dell'utente e a reindirizzarlo nella pagina di modifica profilo, dalla quale potrà modificare la password.
           \end{itemize}
       \subparagraph{Back-end::Lib::Controller::AuthController}
         
@@ -481,16 +465,26 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \begin{itemize}
             \item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain} la sua visualizzazione.
           \end{itemize}
-  \subsubsection{Back-end::Lib::Middleware::Errorhandler}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[scale=1]{packages/Back-end::Lib::Middleware::Errorhandler.png}  
-        \caption{Componente Back-end::Lib::Middleware::Errorhandler}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
-È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-    \end{itemize} 
+      \subparagraph{Back-end::Lib::Controller::IndexController}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe di gestione per la risorsa index 
+È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituirne gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
+
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Controller::ForgotController}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che rappresenta il sistema di recupero e ripristino password. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] La classe fornisce dei metodi per effettuare una richiesta di reset password e, in un secondo momento, procedere al suo ripristino. La richiesta di reset avviene mandando un'email all'indirizzo dell'utente tramite la classe \texttt{Back-end::Lib::Middleware::Mailer}. All'interno di questo messaggio sarà presente un link che procederà ad effettuare il login dell'utente e a reindirizzarlo nella pagina di modifica profilo, dalla quale potrà modificare la password.
+          \end{itemize}

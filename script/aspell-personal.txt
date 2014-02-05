@@ -512,6 +512,7 @@ column
 columns
 combo
 comes
+command
 commentstyle
 commisurabili
 commit
@@ -520,6 +521,11 @@ comprehension
 compress
 computing
 comunicarLe
+Comunicazioni'
+Concluded
+ConcreteCommand
+ConcreteDSLInterpreter
+ConcreteStrategy
 conditions
 config
 controller
@@ -554,6 +560,8 @@ dell'admin
 dell'application
 dell'array
 dell'index
+dell'istanziazione
+Demonstrable
 density
 dependent
 deployment

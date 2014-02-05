@@ -103,7 +103,16 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Viene utilizzato perché in futuro potrebbe essere necessario cambiare l'algoritmo di interpretazione del \glossario{DSL}. Utilizzando questo pattern l'algoritmo potrà essere cambiato in modo indipendente da chi ne fa uso.
+	\item \textbf{Scopo}: In futuro potrebbe essere necessario cambiare l'algoritmo di interpretazione del \glossario{DSL}. Utilizzando questo pattern l'algoritmo potrà essere cambiato in modo indipendente da chi ne fa uso.
 	\item \textbf{Utilizzo}: Viene utilizzato all'interno del \glossario{package} \texttt{Back-End::DSLModel}.
+
+\end{itemize}
+
+\subsubsection{Command}
+
+\begin{itemize}
+
+	\item \textbf{Scopo}: Viene usato per parametrizzare gli oggetti rispetto a un'azione da compiere.
+	\item \textbf{Utilizzo}: Viene utilizzato nel \glossario{package} \texttt{Back-End::DSLModel} per definire le azioni personalizzate da intraprendere sulle \glossario{Collection} o sui \glossario{Document}. In particolare \texttt{Back-End::DSLModel::DocumentAction} e \texttt{Back-End::DSLModel::CollectionAction} rappresentano ciascuno il componente \textit{Command} del pattern (applicato in due contesti diversi). La componente \textit{ConcreteCommand} del pattern consiste in una delle due precedenti classi estese dinamicamente, ridefinendo un metodo.
 
 \end{itemize}

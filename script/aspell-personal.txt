@@ -59,7 +59,10 @@ Cohesion
 Collaborating
 CollectionActionService
 CollectionController
+CollectionListModel
 CollectionListService
+CollectionModel
+CollectionPage
 CollectionService
 Compiler
 Compito'
@@ -96,6 +99,9 @@ Description
 Determination
 DeveloperProject
 DocumentActionService
+DocumentModel
+DocumentPage
+DocumentPageEdit
 DocumentService
 Documenti'
 Domain
@@ -285,6 +291,7 @@ Principles
 Process
 Professional
 ProfileController
+ProfileEditController
 ProfileModel
 ProfilePage
 ProfilePageEdit
@@ -314,6 +321,7 @@ RegExp
 Relationship
 Reliability
 Representational
+RequestResetModel
 Requirements
 Res
 ResetModel
@@ -349,6 +357,7 @@ Short
 ShowController
 ShowModel
 ShowPageEdit
+Simple
 Skype
 Slide
 Social
@@ -396,10 +405,14 @@ Usable
 Useable
 UserController
 UserListModel
+UserListPage
 UserListService
 UserModel
+UserPage
 UserService
 UsersIndex
+UsersListModel
+UsersListPage
 Value
 Values
 Vardanega
@@ -543,6 +556,7 @@ dell'index
 density
 dependent
 deployment
+developer
 development
 difficulty
 dimostrabilmente
@@ -860,6 +874,7 @@ routing
 rulecolor
 runtime
 ruoli'
+scaffhold
 scripting
 section
 sender
@@ -881,8 +896,6 @@ showpage
 showspaces
 showstringspaces
 showtabs
-Simple
-Skype
 slack
 slash
 smartphone
@@ -987,11 +1000,7 @@ vv
 walkthrough
 walktrough
 ways
-WebKit
-WebServer
-Well
 whatever
-Whatever
 where
 wiki
 windows

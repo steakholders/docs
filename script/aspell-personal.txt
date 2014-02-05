@@ -983,7 +983,7 @@ ways
 WebKit
 WebServer
 Well
-Whatever
+whatever
 where
 Wide
 wiki

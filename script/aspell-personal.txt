@@ -143,7 +143,6 @@ column
 columns
 combo
 comes
-Command
 command
 commentstyle
 commisurabili

@@ -62,21 +62,21 @@ Controllo task sovrapposti
 
 Controllo vincoli sul preventivo
 --------------------------------
-- amministratore: 92 	ore, per un costo di 	1840 	€
+- amministratore: 91 	ore, per un costo di 	1820 	€
 - programmatore : 126 	ore, per un costo di 	1890 	€
 - responsabile  : 34 	ore, per un costo di 	1020 	€
 - analista      : 32 	ore, per un costo di 	800 	€
 - verificatore  : 236 	ore, per un costo di 	3540 	€
 - progettista   : 190 	ore, per un costo di 	4180 	€
-Totale          : 13270 €
-Ore di verifica : 33.0 %
+Totale          : 13250 €
+Ore di verifica : 33.3 %
 
 
 Controllo vincoli sulle persone
 -------------------------------
 - Serena Girardi: 	100 	ore di lavoro
 - Enrico Rotundo: 	100 	ore di lavoro
-- Nicolò Tresoldi: 	102 	ore di lavoro
+- Nicolò Tresoldi: 	101 	ore di lavoro
 - Federico Poli: 	102 	ore di lavoro
 - Giacomo Fornari: 	104 	ore di lavoro
 - Gianluca Donato: 	102 	ore di lavoro

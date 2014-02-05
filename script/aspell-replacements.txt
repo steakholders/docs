@@ -34,4 +34,5 @@ sè sé
 staica statica
 un'apposito un apposito
 un'array un array
+vengno vengono
 verrano verranno

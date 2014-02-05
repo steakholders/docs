@@ -143,6 +143,8 @@ column
 columns
 combo
 comes
+Command
+command
 commentstyle
 commisurabili
 commit
@@ -157,6 +159,7 @@ computing
 comunicarLe
 Comunicazioni'
 Concluded
+ConcreteCommand
 ConcreteDSLInterpreter
 ConcreteStrategy
 conditions
@@ -210,6 +213,7 @@ dell'Admin
 dell'application
 dell'array
 dell'index
+dell'istanziazione
 Demonstrable
 density
 Dependency
@@ -776,6 +780,7 @@ RS
 RSYZ
 Ruby
 rulecolor
+run
 runtime
 ruoli'
 Satisfied

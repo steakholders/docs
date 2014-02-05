@@ -12,24 +12,24 @@ L'architettura è stata progettata utilizzando diverse tecnologie, alcune delle 
 \end{itemize}
 
 \subsection{Node.js}
-\textbf{Node.js} è una \glossario{piattaforma} software costruita sul motore JavaScript di Chrome che permette di realizzare facilmente applicazioni di rete scalabili e veloci. \textbf{Node.js} utilizza \textbf{JavaScript} come linguaggio di programmazione, e grazie al suo modello event-driver con chiamate di I/O non bloccanti risulta essere leggero e efficiente.
+\textbf{Node.js} è una \glossario{piattaforma} software costruita sul motore \glossario{JavaScript} di \glossario{Chrome} che permette di realizzare facilmente applicazioni di rete scalabili e veloci. \glossario{\textbf{Node.js}} utilizza \glossario{\textbf{JavaScript}} come linguaggio di programmazione, e grazie al suo modello \glossario{event-driver} con chiamate di \glossario{I/O} non bloccanti risulta essere leggero e efficiente.
 
 I principali vantaggi dell'utilizzo di \glossario{Node.js} sono:
 \begin{itemize}
-	\item \textbf{Approccio asincrono}: \glossario{Node.js} permette di accedere alle risorse del sistema operativo in modalità event-driven e non sfruttando il classico modello basato su processi o thread concorrenti utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni, poiché durante le attese il runtime può gestire qualcos’altro in maniera asincrona.
-	\item \textbf{Architettura modulare}: Lavorando con \glossario{Node.js} è molto facile organizzare il lavoro in librerie, importare i moduli e combinarli fra loro. Questo è reso molto comodo attraverso il \emph{node package manager} (\textbf{npm}) attraverso il quale lo sviluppatore può contribuire e accedere ai \glossario{package} messi a disposizione dalla community.
+	\item \textbf{Approccio asincrono}: \glossario{Node.js} permette di accedere alle risorse del sistema operativo in modalità \glossario{event-driven} e non sfruttando il classico modello basato su processi o thread concorrenti utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni, poiché durante le attese il runtime può gestire qualcos'altro in maniera asincrona.
+	\item \textbf{Architettura modulare}: Lavorando con \glossario{Node.js} è molto facile organizzare il lavoro in librerie, importare i \glossario{moduli} e combinarli fra loro. Questo è reso molto comodo attraverso il \glossario{\emph{node package manager}} (\textbf{npm}) attraverso il quale lo sviluppatore può contribuire e accedere ai \glossario{package} messi a disposizione dalla community.
 \end{itemize}
 
 \subsection{Express.js}
-\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni web con \glossario{Node.js}. Richiede moduli Node di terze parti per applicazioni che prevedono l’interazione con le basi di dati. \\
-È stato utilizzato il \glossario{framework} Express.js per supportare lo sviluppo dell'application server grazie alle utili e robuste features da esso offerte, le quali sono pensate per non oscurare le funzionalità fornite da \glossario{Node.js} aprendo così le porte all'utilizzo di moduli per \glossario{Node.js} atti a supportare specifiche funzionalità.
+\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni web con \glossario{Node.js}. Richiede \glossario{moduli} Node di terze parti per applicazioni che prevedono l'interazione con le \glossario{basi di dati}. \\
+È stato utilizzato il \glossario{framework} \glossario{Express.js} per supportare lo sviluppo dell'application server grazie alle utili e robuste features da esso offerte, le quali sono pensate per non oscurare le funzionalità fornite da \glossario{Node.js} aprendo così le porte all'utilizzo di moduli per \glossario{Node.js} atti a supportare specifiche funzionalità.
 
 \subsection{MongoDB}
-\textbf{MongoDB} è un database \glossario{NoSQL} \glossario{open source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura semplice e potente.
+\glossario{\textbf{MongoDB}} è un database \glossario{NoSQL} \glossario{open source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura semplice e potente.
 
 I principali vantaggi derivati dal suo utilizzo sono:
 \begin{itemize}
-	\item \textbf{Alte performance}: non ci sono \emph{join} che possono rallentare le operazioni di lettura o scrittura. L’indicizzazione include gli indici di chiave anche sui documenti innestati e sugli array, permettendo una rapida interrogazione al database;
+	\item \textbf{Alte performance}: non ci sono \emph{join} che possono rallentare le operazioni di lettura o scrittura. L'indicizzazione include gli indici di chiave anche sui documenti innestati e sugli array, permettendo una rapida interrogazione al database;
 	\item \textbf{Affidabilità}: alto meccanismo di replicazione su server;
 	\item \textbf{Schemaless}: non esiste nessuno \glossario{schema}, è più flessibile e può essere facilmente trasposto in un modello ad oggetti;
 	\item Permette di definire query complesse utilizzando un linguaggio che non è \glossario{SQL};

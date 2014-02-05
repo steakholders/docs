@@ -30,7 +30,7 @@ clean:
 	@cd "modello" && make clean
 	@cd "script" && make clean
 
-build: test documents
+build: test-spelling documents
 	@mkdir -p "build"
 	@rm -f build/*.pdf build/documenti-pdf.zip
 	@for file in documenti/*/*.pdf; do echo "[*] Copio $$file in build/"; cp "$$file" "build/"; done

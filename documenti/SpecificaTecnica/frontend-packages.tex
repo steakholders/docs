@@ -9,7 +9,7 @@
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] \glossario{Package} che racchiude tutta la componente di \glossario{Front-end}. Comprende il sottosistema che viene eseguito nei browser degli utenti e che fornisce l'interfaccia grafica all'utente non-tecnico che utilizzerà l'applicazione.
     \end{itemize} 
     \subparagraph{Package contenuti} 
     \begin{itemize}
@@ -27,7 +27,7 @@
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] \glossario{Package} comprendente le classi che costituiscono i controller del componente \glossario{Front-end}. Ogni controller gestisce le operazioni e la logica applicativa riguardante una determinata pagina, e specifica quale view verrà utilizzata per la presentazione all'utente dei dati.
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Front-end::Controllers::ForgotPageRequest}
@@ -60,6 +60,16 @@
           \begin{itemize}
             \item[] Viene utilizzata per gestire il controllo sull'autenticazione di un utente.
           \end{itemize}
+      \subparagraph{Front-end::Controllers::CollectionPage}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina di gestione della Collection.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Utilizza la CollectionService per popolare correttamente lo scope con la lista di tutti i Document presenti nella Collection, e la CollectionActionService per gestire le azioni personalizzate sulla Collection.
+          \end{itemize}
       \subparagraph{Front-end::Controllers::UsersListPage}
         
         \textbf{\\ \\ Descrizione} 
@@ -70,61 +80,21 @@
           \begin{itemize}
             \item[] Utilizza la UserListService per popolare correttamente lo scope fornendo quindi alla view la lista degli utenti.
           \end{itemize}
-      \subparagraph{Front-end::Controllers::CollectionPage}
+      \subparagraph{Front-end::Controllers::DashboardPage}
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] 
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina di gestione delle Collections.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] 
-          \end{itemize}
-      \subparagraph{Front-end::Controllers::DocumentPageEdit}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-      \subparagraph{Front-end::Controllers::DocumentPage}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
+            \item[] Utilizza la CollectionListService per popolare correttamente lo scope fornendo quindi alla view la lista di tutte le Collections registrate.
           \end{itemize}
       \subparagraph{Front-end::Controllers::LogoutPage}
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
             \item[] Classe che gestisce l'operazione di logout di un utente.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-      \subparagraph{Front-end::Controllers::DashboardPage}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-      \subparagraph{Front-end::Controllers::ProfilePage}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -144,11 +114,42 @@
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] 
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina profilo di un utente visualizzabile dall'admin.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] 
+            \item[] Utilizza lo UserService per popolare correttamente lo scope fornendo quindi alla view i dati dell'utente.
+          \end{itemize}
+      \subparagraph{Front-end::Controllers::DocumentPageEdit}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni di modifica di un Document.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Si occupa di prelevare i dati inseriti dall'admin nella view e utilizzando il DocumentService provvede a gestire la modifica delle informazioni riguardanti il Document.
+          \end{itemize}
+      \subparagraph{Front-end::Controllers::DocumentPage}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina di gestione di un Document.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Utilizza il DocumentService per popolare correttamente lo scope fornendo quindi alla view la lista degli attributi del Document. \newline
+Utilizza il DocumentActionService per gestire le azioni personalizzate sul Document.
+          \end{itemize}
+      \subparagraph{Front-end::Controllers::ProfilePage}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina profilo di un utente.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Utilizza il ProfileService per popolare correttamente lo scope fornendo quindi alla view i dati dell'utente.
           \end{itemize}
   \subsubsection{Front-end::Services}
   \paragraph{Informazioni sul package}
@@ -160,7 +161,7 @@
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] \glossario{Package} comprendente le classi che descrivono i meccanismi con cui il \glossario{Front-end} può interfacciarsi con le \glossario{API} del \glossario{Back-end}. Permette di recuperare i dati da inserire nel model e permette di azionare determinate procedure sul \glossario{Back-end} (per esempio la richiesta di recupero password o le ``action'' definite nel DSL).
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Front-end::Services::AuthenticationService}
@@ -321,7 +322,9 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] \glossario{Package} che comprende le classi dei modelli dei dati utilizzati dal \glossario{Front-end}. Servono a fornire ai controller e ai service le informazioni su quali campi potranno aspettarsi negli oggetti che arrivano tramite le \glossario{API} del \glossario{Back-end}.
+
+Le classi di questo \glossario{package} sono state progettate, ma si prevede che non verranno codificate poiché verrà sfruttato lo stile di \glossario{duck-typing} della gestione dei tipi di \glossario{JavaScript}.
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Front-end::Model::ErrorModel}
@@ -333,6 +336,16 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Utilizzato da tutti i controller per poter accedere alle informazioni riguardanti l'errore.
+          \end{itemize}
+      \subparagraph{Front-end::Model::CollectionListModel}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] E la classe che rappresenta la struttura dati delle Collections.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla CollectionListService e alla DashboardPage Controller di poter accedere alla lista delle Collections.
           \end{itemize}
       \subparagraph{Front-end::Model::RequestResetModel}
         
@@ -383,16 +396,6 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla CollectionService e alla CollectionPage Controller di poter accedere alla lista delle Collections.
-          \end{itemize}
-      \subparagraph{Front-end::Model::CollectionListModel}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
           \end{itemize}
       \subparagraph{Front-end::Model::ProfileModel}
         

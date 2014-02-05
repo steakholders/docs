@@ -49,7 +49,7 @@ ATTENZIONE: La TimeEntry #307040 è assegnata ad un task sconosciuto (1218686)
 ATTENZIONE: La TimeEntry #333127 è assegnata ad un task sconosciuto ()
 ATTENZIONE: La TimeEntry #333122 è assegnata ad un task sconosciuto ()
 ATTENZIONE: La TimeEntry #333125 è assegnata ad un task sconosciuto ()
-- Pagina 2 di 12...
+- Pagina 2 di 14...
 ATTENZIONE: Non ho ricevuto l'attributo "time-entries"
 Scaricamento completato.
 

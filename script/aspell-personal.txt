@@ -433,6 +433,7 @@ l'application
 Last
 Laurence
 l'AuthModel
+l'AuthModela
 Lavazza
 lavoro'
 lccccccc
@@ -733,6 +734,7 @@ ResetModel
 Resource
 responsability
 responsibility
+responsivit
 responsività
 REST
 Retired
@@ -810,6 +812,7 @@ Slide
 smartphone
 SMTP
 Social
+soddisfacibilit
 soddisfacibilità
 Solution
 sometimes

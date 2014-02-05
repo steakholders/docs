@@ -805,6 +805,7 @@ ShowPageEdit
 showspaces
 showstringspaces
 showtabs
+Simple
 Skype
 slack
 slash
@@ -982,6 +983,7 @@ ways
 WebKit
 WebServer
 Well
+whatever
 Whatever
 where
 Wide

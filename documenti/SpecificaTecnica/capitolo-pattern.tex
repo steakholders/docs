@@ -19,8 +19,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}:
-	\item \textbf{Utilizzo}:
+	\item \textbf{Scopo}: Questo pattern è utilizzato per separare le responsabilità dell'applicazione a diversi componenti e permettere di fare una chiara divisione tra componenti di presentazione, struttura dei dati e operazioni su di essi.
+	\item \textbf{Utilizzo}: Viene utilizzato dall'applicazione principalmente per delegare il ruolo di presentazione dei dati al \glossario{front-end}, lasciando al \glossario{back-end} la gestione della logica dell'applicazione (autenticazione, corrispondenza tra \glossario{API} e operazioni sui dati) e la logica di business.
 	
 \end{itemize}
 
@@ -28,8 +28,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: È un \glossario{Design Pattern} molto simile a \glossario{MVC}, che dà un grado di libertà e flessibilità nettamente maggiore. \glossario{MVW} sta infatti per \textit{Model-View-Whatever}, dove \textit{Whatever} sta per "\textit{qualsiasi cosa vada bene e funzioni per te}". In questo modo si semplifica di molto il lavoro del programmatore agevolandolo nella costruzione dell'applicazione.
-	\item \textbf{Contesto}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js} tramite il quale verrà sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
+	\item \textbf{Scopo}: È un \glossario{Design Pattern} simile a \glossario{MVC} che permette di avere una corrispondenza più diretta e automatica tra la \textit{view} e il \textit{model}. L'acronimo \glossario{MVW} sta per \textit{Model-View-Whatever}, dove \textit{Whatever} secondo i progettisti di \glossario{Angular.js} indica "\textit{whatever works for you}".
+	\item \textbf{Utilizzo}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js} con il quale viene sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
 
 \end{itemize}
 
@@ -38,7 +38,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione.
-	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsability}.
+	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsability}. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::Middleware}.
 
 \end{itemize}
 
@@ -49,7 +49,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per ottenere oggetti a partire da altri oggetti che hanno un'associazione con esso. Questa ricerca viene effettuata tramite una \textit{classe registro}.
-	\item \textbf{Utilizzo}: Le diverse \glossario{Collection} presenti nei file \glossario{DSL} verranno memorizzate per nome in un registro, in modo tale che quando arriva una richiesta venga caricato il file \glossario{DSL} giusto.
+	\item \textbf{Utilizzo}: Le diverse \glossario{Collection} presenti nei file \glossario{DSL} verranno memorizzate per nome in un registro, in modo tale che quando arriva una richiesta venga caricato il file \glossario{DSL} giusto. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::DSLModel}.
 
 \end{itemize}
 
@@ -58,7 +58,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Nel contesto di \glossario{Node.js} questo pattern viene usato creare una classe attraverso una \textit{funzione factory} esportata dal modulo. In questo modo si potrà costruire e ottenere qualsiasi classe definita in un modulo.
-	\item \textbf{Contesto}: 
+	\item \textbf{Utilizzo}: È utilizzato all'interno del \glossario{package} \texttt{Back-End::Controller}.
 
 \end{itemize}
 
@@ -67,7 +67,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per le classi che devono avere un'unica istanza durante l'esecuzione dell'applicazione;
-	\item \textbf{Contesto}: Ogni modulo è nativamente un singleton, perché viene caricato una sola volta da \glossario{Node.js} e poi tutti si riferiscono allo stesso.
+	\item \textbf{Utilizzo}: Ogni modulo di \glossario{Node.js} è nativamente un singleton, perché viene caricato al primo \code{require} e poi tutti si riferiscono allo stesso. In architettura è utilizzato per la classe \texttt{Back-End::Controller::ControllerFactory}.
 
 \end{itemize}
 
@@ -78,11 +78,11 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per rendere visibili solamente alcune cose agli altri oggetti.
-	\item \textbf{Contesto}: 
+	\item \textbf{Utilizzo}: Viene utilizzato nei seguenti casi:
 	\begin{itemize}
 	
-		\item La classe \texttt{MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp};
-		\item La classe \texttt{ControllerFactory} utilizza \textit{facade} per nascondere le classi interne.
+		\item La classe \texttt{Back-End::Middleware::MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp};
+		\item La classe \texttt{Back-End::Controller::ControllerFactory} utilizza \textit{facade} per nascondere le classi interne.
 		
 	\end{itemize}
 \end{itemize}
@@ -95,7 +95,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario.
-	\item \textbf{Contesto}: \glossario{Express} usa chain-of-responsability per la gestione dei \glossario{middleware} e del \glossario{routing}.
+	\item \textbf{Utilizzo}: \glossario{Express} usa chain-of-responsability per la gestione dei \glossario{middleware} e del \glossario{routing}. In particolare viene utilizzato nell'architettura nel \glossario{package} \texttt{Back-End::Middleware}.
 
 \end{itemize}
 
@@ -104,6 +104,6 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato perché in futuro potrebbe essere necessario cambiare l'algoritmo di interpretazione del \glossario{DSL}. Utilizzando questo pattern l'algoritmo potrà essere cambiato in modo indipendente da chi ne fa uso.
-	\item \textbf{Contesto}:
+	\item \textbf{Utilizzo}: Viene utilizzato all'interno del \glossario{package} \texttt{Back-End::DSLModel}.
 
 \end{itemize}

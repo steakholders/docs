@@ -805,6 +805,7 @@ ShowPageEdit
 showspaces
 showstringspaces
 showtabs
+Simple
 Skype
 slack
 slash

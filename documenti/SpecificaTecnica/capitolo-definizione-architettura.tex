@@ -17,6 +17,8 @@ L'approccio top-down è stato schematizzato nei diagrammi di deployment e dei pa
 
 Per descrivere il sistema si è rivelato molto più comodo utilizzare i diagrammi di sequenza e di attività in un approccio bottom-up, descrivendo l'interazione tra i singoli oggetti senza preoccuparci della loro classificazione. In questo modo siamo anche riusciti a descrivere alcuni dei meccanismi tipici dell'applicazione, in particolar modo l'ordine in cui agiscono i \glossario{middleware} di Express. Riteniamo che saranno molto utili per la progettazione di dettaglio e per la codifica.
 
+A posteriori, riteniamo che sarebbe stato molto meglio progettare il sistema seguendo uno stile di scomposizione modulare \emph{orientato alle funzioni}\footnote{Descritto alla sezione 11.3.2 del libro ``Ingegneria del software - Sommerville - 8a edizione (2007)''} o a flusso di dati piuttosto che \emph{a oggetti}. Con questa modifica radicale al metodo di specifica sarebbe stato possibile rappresentare in modo più naturale diverse delle caratteristiche salienti delle tecnologie e librerie utilizzate, che si strutturano meglio come pipeline piuttosto che come classi.
+
 I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e di attività presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
 
 \subsection{Architettura generale}

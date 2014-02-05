@@ -104,7 +104,10 @@ class TeamworkPMDownload(TeamworkPMClient):
 				role_obj = project.getRole(role)
 				if role_obj is not None:
 					task_name = partial_title
-
+				
+				if role == "extra":
+					task_name = partial_title
+				
 				(code, task_name) = split_code_name(task_name)
 
 				if code is None:
@@ -148,7 +151,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 
 			if xrecords is not None:
 				num_pages = int(xrecords)
-
+			
 			if xpage is not None:
 				if int(xpage) is not page:
 					pedantic_warning(u"TeamworkPM è convinto di essere alla pagina {xpage}, ma siamo alla {page}".format(

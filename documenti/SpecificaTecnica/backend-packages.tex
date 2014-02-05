@@ -9,7 +9,7 @@
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria.
     \end{itemize} 
     \subparagraph{Package contenuti} 
     \begin{itemize}
@@ -50,7 +50,7 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] 
+    \item[] Questo \glossario{Package} ha il compito di fornire la configurazione e avviare il web server di \glossario{MaaP}. Consiste negli oggetti che dovranno essere predisposti dal developer che vorrà installare il framework \glossario{MaaP}. L'installazione dell framework \glossario{MaaP} fornisce uno \glossario{scaffold} dei file e delle classi necessarie per il funzionamento dell'applicazione. Sarà compito del developer modificare tali file inserendo i dati corretti.
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Back-end::DeveloperProject::ProjectConfig}
@@ -62,153 +62,6 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Viene utilizzata per descrivere tutti i parametri dell'applicazione. Quando viene creata una \texttt{Back-end::Lib::ServerApp} le viene passato un oggetto di questo tipo ed essa avvierà l'applicazione a partire da questa configurazione.
-          \end{itemize}
-  \subsubsection{Back-end::Lib::MailView}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::MailView.png}  
-        \caption{Componente Back-end::Lib::MailView}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] 
-    \end{itemize} 
-    \paragraph{Classi}
-      \subparagraph{Back-end::Lib::MailView::ForgotMailView}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che fornisce una rappresentazione della mail.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata come template di email da inviare nel caso in cui l'utente richieda il recupero password.
-          \end{itemize}
-  \subsubsection{Back-end::Lib}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib.png}  
-        \caption{Componente Back-end::Lib}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] 
-    \end{itemize} 
-    \subparagraph{Package contenuti} 
-    \begin{itemize}
-        \item Back-end::Lib::AuthModel
-        \item Back-end::Lib::MailView
-        \item Back-end::Lib::Middleware
-        \item Back-end::Lib::DSLModel
-        \item Back-end::Lib::Controller
-    \end{itemize}
-  \subsubsection{Back-end::Lib::Middleware}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Middleware.png}  
-        \caption{Componente Back-end::Lib::Middleware}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene passata la responsabilità di gestire una richiesta,  decorando quest'ultima con parametri e metodi utilizzabili dai controller. Costituisce una parte dell' \glossario{application logic} nell'architettura mvc del back-end.
-    \end{itemize} 
-    \paragraph{Classi}
-      \subparagraph{Back-end::Lib::Middleware::Router}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Si occupa di smistare la richiesta in base all'\glossario{URI} ricevuto e ad invocare l'opportuno metodo di creazione sulla classe \texttt{Back-end::Lib::Controller::ControllerFactory}.
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::Authentication}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::AuthModel::User}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::DSLLoaderHandler}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per caricare i \glossario{DSL} delle \glossario{Collection} all'interno del \glossario{database}.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::DSLModel::DSLDomain}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::Mailer}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per inviare un'email ad un utente che ha effettuato la richiesta di recupero password.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::MailView::ForgotMailView}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::MiddlewareLoader}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzato per istanziare in modo "nascosto" all'applicazione tutti i \glossario{middleware} presenti nel componente \texttt{Back-end::Lib::Middleware}.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::Middleware::Router}
-              \item{Back-end::Lib::Middleware::Authentication}
-              \item{Back-end::Lib::Middleware::DSLLoaderHandler}
-              \item{Back-end::Lib::Middleware::Mailer}
-              \item{Back-end::Lib::Middleware::NotFoundHandler}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::NotFoundHandler}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
-          \end{itemize}
-      \subparagraph{Back-end::Lib::Middleware::Errorhandler}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
-È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
           \end{itemize}
   \subsubsection{Back-end::Lib::DSLModel}
   \paragraph{Informazioni sul package} 
@@ -389,6 +242,153 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \begin{itemize}
                 \item{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
           \end{itemize}
+  \subsubsection{Back-end::Lib}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib.png}  
+        \caption{Componente Back-end::Lib}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} che costituisce la libreria principale dell'applicazione MaaP, che verrà fornita ai developer per installare e utilizzare l'applicazione. Comprende gli script per l'installazione, non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
+    \end{itemize} 
+    \subparagraph{Package contenuti} 
+    \begin{itemize}
+        \item Back-end::Lib::AuthModel
+        \item Back-end::Lib::DSLModel
+        \item Back-end::Lib::MailView
+        \item Back-end::Lib::Middleware
+        \item Back-end::Lib::Controller
+    \end{itemize}
+  \subsubsection{Back-end::Lib::MailView}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::MailView.png}  
+        \caption{Componente Back-end::Lib::MailView}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} contenente le classi che costituiscono i template utilizzati per le email di recupero-password. Verranno utilizzate dal \glossario{middleware} Mailer.
+    \end{itemize} 
+    \paragraph{Classi}
+      \subparagraph{Back-end::Lib::MailView::ForgotMailView}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che fornisce una rappresentazione della mail.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata come template di email da inviare nel caso in cui l'utente richieda il recupero password.
+          \end{itemize}
+  \subsubsection{Back-end::Lib::Middleware}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Middleware.png}  
+        \caption{Componente Back-end::Lib::Middleware}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene passata la responsabilità di gestire una richiesta,  decorando quest'ultima con parametri e metodi utilizzabili dai controller. Costituisce una parte dell' \glossario{application logic} nell'architettura \glossario{MVC} del \glossario{Back-end}.
+    \end{itemize} 
+    \paragraph{Classi}
+      \subparagraph{Back-end::Lib::Middleware::Router}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Si occupa di smistare la richiesta in base all'\glossario{URI} ricevuto e ad invocare l'opportuno metodo di creazione sulla classe \texttt{Back-end::Lib::Controller::ControllerFactory}.
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::Authentication}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::AuthModel::User}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::DSLLoaderHandler}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per caricare i \glossario{DSL} delle \glossario{Collection} all'interno del \glossario{database}.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::DSLModel::DSLDomain}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::Mailer}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per inviare un'email ad un utente che ha effettuato la richiesta di recupero password.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::MailView::ForgotMailView}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::MiddlewareLoader}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzato per istanziare in modo "nascosto" all'applicazione tutti i \glossario{middleware} presenti nel componente \texttt{Back-end::Lib::Middleware}.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::Middleware::Router}
+              \item{Back-end::Lib::Middleware::Authentication}
+              \item{Back-end::Lib::Middleware::DSLLoaderHandler}
+              \item{Back-end::Lib::Middleware::Mailer}
+              \item{Back-end::Lib::Middleware::NotFoundHandler}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::NotFoundHandler}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
+          \end{itemize}
+      \subparagraph{Back-end::Lib::Middleware::Errorhandler}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
+È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
+          \end{itemize}
   \subsubsection{Back-end::Lib::Controller}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
@@ -399,7 +399,7 @@ Costituisce la componente model dell'architettura MVC del back-end.
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] \glossario{Package} per il componente che realizza parte dell'application logic nell'architettura mvc nel back-end. Contiene classi per le funzionalità di controllo e visualizzazione delle risorse, dove ogni classe gestisce in modo esclusivo una sola di queste, in base all' \glossario{URI}.
+    \item[] \glossario{Package} per il componente che realizza parte controller nell'architettura mvc nel back-end. Contiene classi per le funzionalità di controllo e visualizzazione delle risorse, dove ogni classe gestisce in modo esclusivo una sola di queste, in base all' \glossario{URI}.
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Back-end::Lib::Controller::UserController}

@@ -140,17 +140,22 @@ class TeamworkPMDownload(TeamworkPMClient):
 	
 	def getTimeEntries(self, project):
 		page = 0
-		num_pages = 1
-		while page < num_pages:
+		records_received = 0
+		num_records = 1
+		while records_received < num_records:
 			page += 1
-			print "- Pagina {num} di {num_pages}...".format(num=page, num_pages=num_pages)
+			print "- Pagina {num}, Ricevuti {rnum} record su {rtot}...".format(
+				num=page,
+				rnum=records_received,
+				rtot=num_records
+			)
 			
 			data, info = self.requestJSON("/projects/{project_id}/time_entries".format(project_id=project.id), "page={page}".format(page=page))
 			xrecords = info.getheader('X-Records')
 			xpage = info.getheader('X-Page')
 
 			if xrecords is not None:
-				num_pages = int(xrecords)
+				num_records = int(xrecords)
 			
 			if xpage is not None:
 				if int(xpage) is not page:
@@ -168,6 +173,8 @@ class TeamworkPMDownload(TeamworkPMClient):
 				break
 			
 			for timeentry in data["time-entries"]:
+				records_received += 1
+				
 				task = project.getTask(timeentry["todo-item-id"])
 				hours = int(timeentry["hours"]) + int(timeentry["minutes"])/60
 				timeentry_obj = TimeEntry(

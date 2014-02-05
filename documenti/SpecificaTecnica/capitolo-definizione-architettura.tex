@@ -71,7 +71,9 @@ Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in
 \caption{Diagramma dei package del Back-end}
 \end{figure}
 
-L'architettura del back-end si serve del pattern architetturale \glossario{MVC} (\textit{Model-View-Controller}), suddividendo i controller tradizionali dai controller \glossario{middleware}, come incoraggiato dal framework Express. Nei diagrammi non è rappresentata la \textit{view} poiché, utilizzando il formato \glossario{JSON}, la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta. La struttura dati inviata, in particolare, coincide con la componente \textit{model} del front-end.
+L'architettura del \glossario{back-end} si serve del pattern architetturale \glossario{MVC} (\textit{Model-View-Controller}), suddividendo i controller tradizionali dai controller \glossario{middleware}, come incoraggiato dal framework Express. Nei diagrammi non è rappresentata la \textit{view} poiché essa consiste nel \glossario{front-end}.
+
+Il \glossario{front-end}, come descritto più avanti, utilizza anch'esso internamente un'architettura della famiglia \glossario{MVC}, ma dal punto di vista del \glossario{back-end} può considerarsi semplicemente una \textit{view}. La comunicazione tra i due avviene utilizzando il formato \glossario{JSON} e la conversione dalla rappresentazione interna alla presentazione testuale (\glossario{JSON}) è automatica e diretta. La struttura dati inviata, in particolare, coincide con la componente \textit{model} del front-end.
 
 \subsubsection{Front-End}
 
@@ -81,5 +83,4 @@ L'architettura del back-end si serve del pattern architetturale \glossario{MVC} 
 \caption{Diagramma dei package del Front-end}
 \end{figure}
 
-Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare i modelli di AngularJS. La view non è rappresentata poiché consiste unicamente in dei file statici di template scritti in un linguaggio molto simile all'HTML. Tali file risiedono fisicamente sul Server, assieme alle librerie JavaScript e ad altri file statici; vengono caricati da AngularJS nel momento in cui il controller ne fa richiesta.
-
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia \textit{Model-View-Whatever}) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il \glossario{back-end} e popolare i modelli di AngularJS. La view non è rappresentata poiché consiste unicamente in dei file statici di template scritti in un linguaggio molto simile all'\glossario{HTML}. Tali file risiedono fisicamente sul web-server, assieme alle librerie \glossario{JavaScript} e ad altri file statici; vengono caricati da \glossario{AngularJS} nel momento in cui il controller ne fa richiesta.

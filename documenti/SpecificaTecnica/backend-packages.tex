@@ -3,19 +3,49 @@
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end.png}  
-        \caption{Componente Back-end}
+        \includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}  
+        \caption{Diagramma dei packages Back-end}
       \end{center}  
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria.
+    \item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria. \\ I packages colorati nel diagramma, rappresentano librerie esterne.
     \end{itemize} 
     \subparagraph{Package contenuti} 
     \begin{itemize}
         \item Back-end::DeveloperProject
         \item Back-end::Lib
     \end{itemize}
+    
+   \subparagraph{Diagramma delle classi}
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{uml/Back-end-Diagramma delle classi}
+        \caption{Diagramma delle classi Back-end}
+      \end{center}  
+    \end{figure} 
+  
+  \subsubsection{Back-end::Lib}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib.png}  
+        \caption{Componente Back-end::Lib}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} che costituisce la libreria principale dell'applicazione MaaP, che verrà fornita ai developer per installare e utilizzare l'applicazione. Comprende gli script per l'installazione, non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
+    \end{itemize} 
+    \subparagraph{Package contenuti} 
+    \begin{itemize}
+        \item Back-end::Lib::AuthModel
+        \item Back-end::Lib::DSLModel
+        \item Back-end::Lib::MailView
+        \item Back-end::Lib::Middleware
+        \item Back-end::Lib::Controller
+    \end{itemize}
+    
   \subsubsection{Back-end::Lib::AuthModel}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
@@ -78,19 +108,30 @@ Il \glossario{package} contiene principalmente classi che si occupano del carica
 Costituisce la componente model dell'architettura MVC del back-end.
     \end{itemize} 
     \paragraph{Classi}
-      \subparagraph{Back-end::Lib::DSLModel::Column}
+      \subparagraph{Back-end::Lib::DSLModel::Row}
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] 
+            \item[] Classe che racchiude tutte le informazioni relative ad un elemento (una riga) della show-page. Tali informazioni vengono dichiarate dal developer nel DSL.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] 
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing). 
           \end{itemize}
-          \textbf{Relazioni con altre classi}
+      \subparagraph{Back-end::Lib::DSLModel::AbstractAction}
+        
+        \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-              \item{Back-end::Lib::DSLModel::Trasform}
+            \item[] Questa classe è una classe astratta che rappresenta le azione definibili dal developer nel DSL, e che potranno essere azionata tramite le \glossario{API} del \glossario{Back-end} per essere eseguite lato-server.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene utilizzata per raggruppare elementi comuni alle classi DocumentAction e CollectionAction.
+          \end{itemize}
+          \textbf{Classi Figlie}
+          \begin{itemize}
+              \item{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
+              \item{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
           \end{itemize}
       \subparagraph{Back-end::Lib::DSLModel::DSLDomain}
         
@@ -106,98 +147,6 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \begin{itemize}
               \item{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
               \item{Back-end::Lib::DSLModel::DSLCollectionModel}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::AbstractAction}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-          \textbf{Classi Figlie}
-          \begin{itemize}
-              \item{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
-              \item{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::ShowModel}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::DSLModel::Row}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::IndexModel}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
-              \item{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::Row}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-          \textbf{Classi Ereditate}
-          \begin{itemize}
-                \item{Back-end::Lib::DSLModel::AbstractAction}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
-          \textbf{Classi Ereditate}
-          \begin{itemize}
-                \item{Back-end::Lib::DSLModel::AbstractAction}
-          \end{itemize}
-      \subparagraph{Back-end::Lib::DSLModel::Trasform}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
           \end{itemize}
       \subparagraph{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
         
@@ -225,8 +174,8 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \end{itemize}
           \textbf{Relazioni con altre classi}
           \begin{itemize}
-              \item{Back-end::Lib::DSLModel::ShowModel}
               \item{Back-end::Lib::DSLModel::IndexModel}
+              \item{Back-end::Lib::DSLModel::ShowModel}
           \end{itemize}
       \subparagraph{Back-end::Lib::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
         
@@ -242,26 +191,93 @@ Costituisce la componente model dell'architettura MVC del back-end.
           \begin{itemize}
                 \item{Back-end::Lib::DSLModel::DSLInterpreterStrategy}
           \end{itemize}
-  \subsubsection{Back-end::Lib}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib.png}  
-        \caption{Componente Back-end::Lib}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} che costituisce la libreria principale dell'applicazione MaaP, che verrà fornita ai developer per installare e utilizzare l'applicazione. Comprende gli script per l'installazione, non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
-    \end{itemize} 
-    \subparagraph{Package contenuti} 
-    \begin{itemize}
-        \item Back-end::Lib::AuthModel
-        \item Back-end::Lib::DSLModel
-        \item Back-end::Lib::MailView
-        \item Back-end::Lib::Middleware
-        \item Back-end::Lib::Controller
-    \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::IndexModel}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che racchiude tutte le informazioni relative ad una index-page. Tali informazioni vengono dichiarate dal developer nel DSL. Comprende a sua volta altre classi di tipo Column, DocumentAction e CollectionAction.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
+              \item{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::ShowModel}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che racchiude tutte le informazioni relative ad una show-page. 
+Tali informazioni vengono dichiarate dal developer nel DSL. 
+Comprende a sua volta altre classi di tipo Row e DocumentAction.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::DSLModel::Row}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::Trasform}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che racchiude tutte le informazioni relative alla modalità con cui i dati prelevati dal database verranno modificati prima di essere inviati al front-end.
+Tali trasformazioni vengono dichiarate dal developer nel DSL.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+          \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::Column}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che racchiude tutte le informazioni relative ad una riga della show-page. Tali informazioni vengono dichiarate dal developer nel DSL.
+
+
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Back-end::Lib::DSLModel::Trasform}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::AbstractAction::CollectionAction}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe descrive un azione definita dal developer nel DSL, che potrà essere azionata tramite le \glossario{API} del \glossario{Back-end} ed eseguita lato-server. Tale azione potrà eseguire operazioni sulla collection corrispondente al DSLCollectionModel che contiene indirettamente questa classe. La classe assume il ruolo di Command descritto dal \glossario{design pattern} Command. Gli oggetti che avranno il ruolo di ConcreteCommand verranno creati dinamicamente, definendo a run-time dei metodi aggiuntivi per questa classe.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+          \end{itemize}
+          \textbf{Classi Ereditate}
+          \begin{itemize}
+                \item{Back-end::Lib::DSLModel::AbstractAction}
+          \end{itemize}
+      \subparagraph{Back-end::Lib::DSLModel::AbstractAction::DocumentAction}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe descrive un azione definita dal developer nel DSL, che potrà essere azionata tramite le \glossario{API} del \glossario{Back-end} ed eseguita lato-server. Tale azione potrà eseguire operazioni su un document della collection corrispondente al DSLCollectionModel che contiene indirettamente questa classe. La classe assume il ruolo di Command descritto dal \glossario{design pattern} Command. Gli oggetti che avranno il ruolo di ConcreteCommand verranno creati dinamicamente, definendo a run-time dei metodi aggiuntivi per questa classe.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing). 
+          \end{itemize}
+          \textbf{Classi Ereditate}
+          \begin{itemize}
+                \item{Back-end::Lib::DSLModel::AbstractAction}
+          \end{itemize}
+  
   \subsubsection{Back-end::Lib::MailView}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 

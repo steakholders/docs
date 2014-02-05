@@ -3,8 +3,8 @@
   \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Front-end.png}  
-        \caption{Componente Front-end}
+        \includegraphics[scale=0.18]{uml/Front-end-Diagramma dei packages.png}  
+        \caption{Diagramma dei packages Front-end}
       \end{center}  
     \end{figure} 
   \subparagraph{Descrizione} 
@@ -17,6 +17,15 @@
         \item Front-end::Services
         \item Front-end::Model
     \end{itemize}
+    
+   \subparagraph{Diagramma delle classi}
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{uml/Front-end-Diagramma delle classi.png}  
+        \caption{Diagramma delle classi Front-end}
+      \end{center}  
+    \end{figure} 
+    
   \subsubsection{Front-end::Controllers}
   \paragraph{Informazioni sul package}
     \begin{figure}[H] 
@@ -30,25 +39,15 @@
     \item[] \glossario{Package} comprendente le classi che costituiscono i controller del componente \glossario{Front-end}. Ogni controller gestisce le operazioni e la logica applicativa riguardante una determinata pagina, e specifica quale view verrà utilizzata per la presentazione all'utente dei dati.
     \end{itemize} 
     \paragraph{Classi}
-      \subparagraph{Front-end::Controllers::ForgotPageRequest}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
       \subparagraph{Front-end::Controllers::ForgotPageReset}
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] 
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina di modifica della password.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] 
+            \item[] Si occupa di prelevare la nuova  password inserita dall'utente nella view e gestirne la modifica.
           \end{itemize}
       \subparagraph{Front-end::Controllers::LoginPage}
         
@@ -100,16 +99,6 @@
           \begin{itemize}
             \item[] 
           \end{itemize}
-      \subparagraph{Front-end::Controllers::ProfilePageEdit}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] 
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] 
-          \end{itemize}
       \subparagraph{Front-end::Controllers::UserPage}
         
         \textbf{\\ \\ Descrizione} 
@@ -129,6 +118,16 @@
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Si occupa di prelevare i dati inseriti dall'admin nella view e utilizzando il DocumentService provvede a gestire la modifica delle informazioni riguardanti il Document.
+          \end{itemize}
+      \subparagraph{Front-end::Controllers::ProfilePageEdit}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni di modifica di un utente attraverso la pagina profilo.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Si occupa di prelevare i dati inseriti dall'utente nella view e utilizzando il ProfileService provvede a gestire la loro modifica. 
           \end{itemize}
       \subparagraph{Front-end::Controllers::DocumentPage}
         
@@ -150,6 +149,16 @@ Utilizza il DocumentActionService per gestire le azioni personalizzate sul Docum
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Utilizza il ProfileService per popolare correttamente lo scope fornendo quindi alla view i dati dell'utente.
+          \end{itemize}
+      \subparagraph{Front-end::Controllers::ForgotPageRequest}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che gestisce le operazioni e la logica applicativa riguardante la pagina di richiesta di recupero password.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Permette di inviare al Back-end una richiesta di recupero password attraverso il ForgotPasswordService. Sarà poi compito del \glossario{Back-end} inviare all'utente una mail contenente il link che bisogna aprire per poter scegliere una nuova password.
           \end{itemize}
   \subsubsection{Front-end::Services}
   \paragraph{Informazioni sul package}
@@ -183,6 +192,7 @@ Utilizza il DocumentActionService per gestire le azioni personalizzate sul Docum
         \textbf{Utilizzo}  
           \begin{itemize}
             \item[] Le funzionalità offerte dalla classe sono: 
+          \end{itemize}
 \begin{itemize} 
 \item elenco dei dati relativi all'utente. 
 \item modifica della password relativa al utente.

@@ -11,17 +11,19 @@ In primo luogo il progetto è basato su Node.js ed è scritto quindi in JavaScri
 
 Progettare il sistema con un'architettura ad oggetti classica non permette di rappresentare in modo immediato la gestione dinamica dei tipi e le caratteristiche tipiche degli stili di programmazione funzionali. In certi casi è stato necessario introdurre interfacce ``fittizie'', che non verranno codificate. Dato che questo introduce numerosi schematismi che appesantiscono i diagrammi e che non sono richiesti dal linguaggio di programmazione, si è cercato di limitarli soltanto ai casi in cui sono particolarmente utili.
 
-Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e AngularJS). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open-source che di progetti proposti come best-practise.
+Il nostro approccio alla progettazione è stato contemporaneamente top-down e bottom-up. Da un lato siamo partiti suddividendo il sistema in front-end e back-end, definendo l'interfaccia di comunicazione, scegliendo di seguire in ciascuno l'organizzazione suggeritaci dai framework (Express e Angular.js). Dall'altro lato siamo partiti dal basso, componendo e cercando di riutilizzare il più possibile le librerie già esistenti. Per far questo abbiamo prima cercato e confrontato con attenzione la struttura e le scelte sia di progetti open source che di progetti proposti come best-practise.
 
 L'approccio top-down è stato schematizzato nei diagrammi di deployment e dei package. Per la costruzione dei diagrammi delle classi, invece, questo approccio si è rivelato essere molto poco produttivo e rigoroso. I diagrammi delle classi proposti sono quindi \emph{uno dei possibili diagrammi} che descrivono l'applicazione, qualsiasi gerarchia o relazione complicata tra le classi verrebbe tradotta pressapoco nello stesso codice.
 
 Per descrivere il sistema si è rivelato molto più comodo utilizzare i diagrammi di sequenza e di attività in un approccio bottom-up, descrivendo l'interazione tra i singoli oggetti senza preoccuparci della loro classificazione. In questo modo siamo anche riusciti a descrivere alcuni dei meccanismi tipici dell'applicazione, in particolar modo l'ordine in cui agiscono i \glossario{middleware} di Express. Riteniamo che saranno molto utili per la progettazione di dettaglio e per la codifica.
 
+A posteriori, riteniamo che sarebbe stato molto meglio progettare il sistema seguendo uno stile di scomposizione modulare \emph{orientato alle funzioni}\footnote{Descritto alla sezione 11.3.2 del libro ``Ingegneria del software - Sommerville - 8a edizione (2007)''} o a flusso di dati piuttosto che \emph{a oggetti}. Con questa modifica radicale al metodo di specifica sarebbe stato possibile rappresentare in modo più naturale diverse delle caratteristiche salienti delle tecnologie e librerie utilizzate, che si strutturano meglio come pipeline piuttosto che come classi.
+
 I diagrammi di deployment, dei \glossario{package}, delle classi, di sequenza e di attività presentati di seguito utilizzano la specifica \glossario{UML} 2.0.
 
 \subsection{Architettura generale}
 
-L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il \glossario{front-end} dell'applicazione, e in un web server, su cui verrà posto il \glossario{back-end}. Il server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il \glossario{back-end}.
+L'architettura del progetto si suddivide innanzitutto in una componente Client, costituita dal browser degli utenti che interagiranno con il \glossario{front-end} dell'applicazione, e in una componente WebServer, su cui verrà posto il \glossario{back-end}. Riguardo al server che ospita i database (la cui configurazione non è compito del progetto) non è necessario che risieda sullo stesso nodo su cui è posto il \glossario{back-end}.
 
 \begin{figure}[H]
 \centering
@@ -35,12 +37,14 @@ Per l'interfaccia della componente Back-end di \ProjectName{} si è scelto di ut
 I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 \begin{itemize}
 	\item Semplicità di utilizzo;
-	\item Facile integrazione con i framework esistenti (AngularJS e Express);
+	\item Facile integrazione con i framework esistenti (Angular.js e Express);
 	\item Indipendenza dal linguaggio di programmazione utilizzato;
 \end{itemize}
 
 \glossario{REST} utilizza il concetto di risorsa, ovvero un aggregato di dati con un nome (\glossario{URI}) e una rappresentazione, su cui è possibile invocare le operazioni \glossario{CRUD} tramite la seguente corrispondenza:
 
+\begingroup
+\renewcommand*{\arraystretch}{1.5}
 \begin{tabularx}{\textwidth}{|P{2.5cm}|X|X|}
 \hline
 	\textbf{Risorsa} & \textbf{URI della collection} \newline es. http://example.com/users & \textbf{URI di un elemento} \newline es. http://example.com/users/42 \\
@@ -54,6 +58,7 @@ I motivi che hanno spinto alla scelta di \glossario{REST} sono:
 	\textbf{DELETE} & Non usata. & \textbf{Cancella} l'elemento della collection indicato. \\
 \hline
 \end{tabularx}
+\endgroup
 
 Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in quanto si integra molto facilmente con i framework utilizzati e con il linguaggio \glossario{JavaScript}, a differenza di \glossario{XML} o \glossario{CSV} che richiederebbero l'utilizzo di librerie specifiche.
 
@@ -62,7 +67,7 @@ Per il formato di rappresentazione dei dati è stato scelto \glossario{JSON}, in
 
 \begin{figure}[H]
 \centering
-%TODO \includegraphics[width=\textwidth]{uml/diagramma-package-back-end.png}
+\includegraphics[width=\textwidth]{uml/Back-end-Diagramma dei Packages.png}
 \caption{Diagramma dei package del Back-end}
 \end{figure}
 
@@ -72,8 +77,9 @@ L'architettura del back-end si serve del pattern architetturale \glossario{MVC} 
 
 \begin{figure}[H]
 \centering
-%TODO \includegraphics[width=\textwidth]{uml/diagramma-package-front-end.png}
+\includegraphics[width=0.5\textwidth]{uml/Front-end-Diagramma dei packages.png}
 \caption{Diagramma dei package del Front-end}
 \end{figure}
 
-Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare il modello di AngularJS.
+Il \glossario{front-end} è gestito dal \glossario{framework} \glossario{AngularJS}, la cui architettura è definita \glossario{MVW} (ossia Model-View-Whatever) per la caratteristica di non corrispondere esattamente ad uno dei modelli classici. Nell'architettura si è scelto di descrivere i \glossario{package} del controller e del model, nonché un package che definisce i servizi con i quali i controller potranno interagire con il back-end e popolare i modelli di AngularJS. La view non è rappresentata poiché consiste unicamente in dei file statici di template scritti in un linguaggio molto simile all'HTML. Tali file risiedono fisicamente sul Server, assieme alle librerie JavaScript e ad altri file statici; vengono caricati da AngularJS nel momento in cui il controller ne fa richiesta.
+

@@ -2,6 +2,7 @@ personal_repl-1.1 it 100
 all all'
 all'anilisi all'analisi
 allìapplicazione all'applicazione
+chiamarà chiamerà
 declassere declassare
 dell'aministratore dell'amministratore
 dellanno dell'anno
@@ -11,10 +12,14 @@ dell'emal dell'email
 ec ecc
 erraro errato
 grupp gruppo
+i'admin l'admin
 ia La
 istanzare instanziare
 l'emal l'email
 liberia libreria
+liberie librerie
+l'interpetazione l'interpretazione
+off offe
 paramentri parametri
 paramentro parametro
 partecipandi Partecipanti

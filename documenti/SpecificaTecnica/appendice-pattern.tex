@@ -20,12 +20,11 @@ Oltre a dividere l'applicazione in queste tre componenti, \glossario{MVC} si occ
 
 Sebbene inizialmente sviluppata per applicazioni desktop, \glossario{MVC} è stato usato moltissimo come architettura per le Web application in tutti i principali linguaggi di programmazione. Moltissimi \glossario{framework} commerciali e non sono stati progettati utilizzando questo pattern.
 
-\begin{figure}[h]
-\centering \includegraphics[width=0.6\textwidth]{patterns/mvc.png}
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/mvc.png}
 \caption{Struttura logica di Model-View-Controller}
+\label{fig:mvc}
 \end{figure}
-
-\subsubsection{MVW}
 
 \subsubsection{Middleware} 
 Il \glossario{Middleware} è uno strato software che si interpone tra l'applicazione software e il sistema operativo per semplificarne le comunicazioni e la gestione di input/output. Viene solitamente utilizzato in applicazioni distribuite e facilita l'interoperabilità, fornendo servizi che permettono la comunicazione tra applicazioni di sistemi operativi diversi. La distinzione tra lo strato software del sistema operativo è, per alcune entità, arbitraria; può infatti accedere che il \glossario{Middleware} fornisca dei servizi abitualmente attribuibili a un sistema operativo. I primi utilizzi di \glossario{Middleware} risalgono agli anni '80, come soluzione ai problemi di comunicazione tra applicazioni nuove e meno recenti. I servizi \glossario{Middleware} forniscono un set di interfacce che permetto a un'applicazione di:
@@ -54,9 +53,10 @@ Si tratta quindi di funzionalità leggermente più specializzate da quelle norma
 \end{itemize}	 
 	
 % possibile add: http://www.networkcomputing.com/netdesign/cdmwdef.htm
-\begin{figure}[h]
-\centering \includegraphics[width=0.6\textwidth]{patterns/Middleware.png}
-\caption{Struttura del middleware.}
+\begin{figure}[H]
+\centering \includegraphics[width=\textwidth]{patterns/Middleware.png}
+\caption{Struttura logica di Middleware}
+\label{fig:middleware}
 \end{figure}
 
 \subsection{Design Pattern Creazionali}
@@ -77,19 +77,20 @@ L'utilizzo di questo pattern comporta una serie di conseguenze:
 	
 \end{itemize}
 
-\begin{figure}[h]
-\centering \includegraphics[width=0.7\textwidth]{patterns/Singleton.png}
+\begin{figure}[H]
+\centering \includegraphics[width=\textwidth]{patterns/Singleton.png}
 \caption{Struttura logica di singleton}
+\label{fig:singleton}
 \end{figure}
 
 \subsubsection{Registry} %libro dropbox martin fowler
 
 Il \glossario{Registry} è simile ad un oggetto globale che gli altri oggetti usano per accedere a servizi e oggetti comuni. Quando si vuole recuperare un oggetto capita spesso di accedervi tramite un altro oggetto legato da un qualche tipo di associazione, ma in alcuni casi non è possibile conoscere a priori l'oggetto da cui partire, così vi è la necessità di avere un metodo di look-up accedibile tramite il \glossario{Registry}. Le interfacce del \glossario{Registry} possono essere metodi statici.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering \includegraphics[width=0.4\textwidth]{patterns/registry.png}
 \caption{Struttura logica di registry}
-\label{fig:factory-method}
+\label{fig:registry}
 \end{figure}
 
 \subsubsection{Factory method}
@@ -104,9 +105,10 @@ Questo pattern definisce un'interfaccia per la creazione di un oggetto, lasciand
 
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering \includegraphics[width=0.7\textwidth]{patterns/factory-method.jpg}
 \caption{Struttura logica di factory method}
+\label{fig:factory-method}
 \end{figure}
 
 \subsection{Design Pattern Strutturali}
@@ -123,9 +125,10 @@ Questo pattern fornisce un'interfaccia unificata per un insieme di interfacce pr
 
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering \includegraphics[width=0.7\textwidth]{patterns/facade.jpg}
 \caption{Struttura logica di facade}
+\label{fig:facade}
 \end{figure}
 
 \subsection{Design Pattern Comportamentali}
@@ -145,7 +148,7 @@ L'utilizzo di questo pattern comporta una serie di conseguenze:
  	
 \end{itemize}
 	 	
-\begin{figure}[h]
+\begin{figure}[H]
 \centering \includegraphics[width=0.7\textwidth]{patterns/ChainOfResponsability.png}
 \caption{Struttura del chain of responsibility.}
 \label{fig:chainofresponsibility}
@@ -164,10 +167,10 @@ L'utilizzo di questo pattern comporta una serie di conseguenze:
 	
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering \includegraphics[width=0.7\textwidth]{patterns/strategy.jpg}
 \caption{Struttura del chain of responsibility.}
-\label{fig:chainofresponsibility}
+\label{fig:strategy}
 \end{figure}
 	
 \subsubsection{Dependency Injection}
@@ -208,4 +211,10 @@ Di seguito vengono elencati tre modi con cui un oggetto può ricevere un riferim
 	\item \textbf{Constructor injection}: le dipendenze vengono fornite tramite il costruttore della classe.
 
 \end{itemize}
+
+%\begin{figure}[h]
+%\centering \includegraphics[width=0.7\textwidth]{patterns/dependency-injection.jpg}
+%\caption{Struttura logica di Dependency Injection}
+%\label{fig:strategy}
+%\end{figure}
 

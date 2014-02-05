@@ -1,9 +1,56 @@
 Scarico Milestones...
 Scarico People...
 Scarico TaskLists...
+ATTENZIONE: Non è stato assegnato nessuno al task "AN1.1 - Stesura"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN1.1 - Stesura
+ATTENZIONE: Non è stato assegnato nessuno al task "AN1.2 - Verifica"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN1.2 - Verifica
+ATTENZIONE: Non è stato assegnato nessuno al task "AN2.1 - Stesura"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN2.1 - Stesura
+ATTENZIONE: Non è stato assegnato nessuno al task "AN2.2 - Verifica"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN2.2 - Verifica
+ATTENZIONE: Non è stato assegnato nessuno al task "AN3.1 - Stesura fondamentali e desiderabili"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN3.1 - Stesura fondamentali e desiderabili
+ATTENZIONE: Non è stato assegnato nessuno al task "AN3.2 - Verifica fondamentali e desiderabili"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN3.2 - Verifica fondamentali e desiderabili
+ATTENZIONE: Non è stato assegnato nessuno al task "AN3.3 - Stesura opzionali"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN3.3 - Stesura opzionali
+ATTENZIONE: Non è stato assegnato nessuno al task "AN3.4 - Verifica opzionali"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN3.4 - Verifica opzionali
+ATTENZIONE: Non è stato assegnato nessuno al task "AN4.1 - Stesuraa AN"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN4.1 - Stesuraa AN
+ATTENZIONE: Non è stato assegnato nessuno al task "AN4.2 - Verifica AN"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN4.2 - Verifica AN
+ATTENZIONE: Non è stato assegnato nessuno al task "AN4.3 - Stesura PA, PDC, VV"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN4.3 - Stesura PA, PDC, VV
+ATTENZIONE: Non è stato assegnato nessuno al task "AN4.4 - Verifica PA, PDC, VV"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN4.4 - Verifica PA, PDC, VV
+ATTENZIONE: Non è stato assegnato nessuno al task "AN5.1 - Stesura"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN5.1 - Stesura
+ATTENZIONE: Non è stato assegnato nessuno al task "AN5.2 - Verifica"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task AN5.2 - Verifica
+ATTENZIONE: Non è stato assegnato nessuno al task "PA3.1.2 - Incremento"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task PA3.1.2 - Incremento
+ATTENZIONE: Non è stato assegnato nessuno al task "PDC3.1 - Correzione"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task PDC3.1 - Correzione
+ATTENZIONE: Non è stato assegnato nessuno al task "PDC3.2 - Incremento"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task PDC3.2 - Incremento
+ATTENZIONE: Non è stato assegnato nessuno al task "V7.1 - Correzione"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task V7.1 - Correzione
+ATTENZIONE: Non è stato assegnato nessuno al task "V7.2 - Incremento"
+ATTENZIONE: Non è stato assegnato nessun ruolo al task V7.2 - Incremento
 Scarico TimeEntries...
 - Pagina 1 di 1...
-- Pagina 2 di 9...
+ATTENZIONE: La TimeEntry #294815 è assegnata ad un task sconosciuto (1193823)
+ATTENZIONE: La TimeEntry #294816 è assegnata ad un task sconosciuto (1193823)
+ATTENZIONE: La TimeEntry #294844 è assegnata ad un task sconosciuto (1193823)
+ATTENZIONE: La TimeEntry #307037 è assegnata ad un task sconosciuto ()
+ATTENZIONE: La TimeEntry #307040 è assegnata ad un task sconosciuto (1218686)
+ATTENZIONE: La TimeEntry #333127 è assegnata ad un task sconosciuto ()
+ATTENZIONE: La TimeEntry #333122 è assegnata ad un task sconosciuto ()
+ATTENZIONE: La TimeEntry #333125 è assegnata ad un task sconosciuto ()
+- Pagina 2 di 12...
+ATTENZIONE: Non ho ricevuto l'attributo "time-entries"
 Scaricamento completato.
 
 Controllo vincoli sui task
@@ -39,3 +86,8 @@ Controllo vincoli sulle persone
 
 ATTENZIONE: Luca De Franceschi ha troppi pochi ruoli (5). Dovrebbe fare più analista.
 
+ATTENZIONE: Il task PA3.1.2 - Incremento non ha un ruolo assegnato
+ATTENZIONE: Il task PDC3.1 - Correzione non ha un ruolo assegnato
+ATTENZIONE: Il task PDC3.2 - Incremento non ha un ruolo assegnato
+ATTENZIONE: Il task V7.1 - Correzione non ha un ruolo assegnato
+ATTENZIONE: Il task V7.2 - Incremento non ha un ruolo assegnato

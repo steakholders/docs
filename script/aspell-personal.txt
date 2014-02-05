@@ -140,6 +140,7 @@ column
 columns
 combo
 comes
+command
 commentstyle
 commisurabili
 commit
@@ -154,6 +155,7 @@ computing
 comunicarLe
 Comunicazioni'
 Concluded
+ConcreteCommand
 ConcreteDSLInterpreter
 ConcreteStrategy
 conditions
@@ -207,6 +209,7 @@ dell'Admin
 dell'application
 dell'array
 dell'index
+dell'istanziazione
 Demonstrable
 density
 Dependency

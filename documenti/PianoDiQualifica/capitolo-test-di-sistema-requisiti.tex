@@ -1,0 +1,245 @@
+
+
+  \begin{center}
+  \def\arraystretch{1.5}
+  \bgroup
+    \begin{longtable}{| p{3cm} | p{6cm} | p{1.5cm} | p{2cm} | }
+    \hline 
+     \textbf{Test Sistema} & \textbf{Descrizione} & \textbf{Stato} & \textbf{Requisito} \\ \hline
+        TS-RA1O 1.1 & 
+        Verificare che durante la verifica delle credenziali l'indirizzo email venga immesso tramite un campo di testo apposito. & N.E &       
+            RA1O 1.1 \newline  \\ \hline 
+        TS-RA1O 1.2 & 
+        Verificare che durante la verifica delle credenziali, la password venga immessa tramite un capo di testo apposito.
+ & N.E &       
+            RA1O 1.2 \newline  \\ \hline 
+        TS-RA1O 1.3 & 
+        Verificare che il sistema verifichi le credenziali di un utente tramite un database indipendente da quello che contiene la Collection. & N.E &       
+            RA1O 1.3 \newline  \\ \hline 
+        TS-RA1O 1.3.1 & 
+        Verificare che, in caso di fallimento dell'autenticazione di un utente, il sistema visualizzi una pagina di errore. & N.E &       
+            RA1O 1.3.1 \newline  \\ \hline 
+        TS-RA1O 1.3.2 & 
+        Verificare che in caso in cui autenticazione vada a buon fine, l'utente venga reindirizzato automaticamente sulla dashboard dell'applicazione.  & N.E &       
+            RA1O 1.3.2 \newline  \\ \hline 
+        TS-RA1O 2.1 & 
+        Verificare che il sistema permetta il recupero password attraverso l'inserimento dell'email.
+ & N.E &       
+            RA1O 2.1 \newline  \\ \hline 
+        TS-RA1O 2.2 & 
+        Verificare che un utente non autenticato che richiede il reset della propria password riceva un email con un link per il reset. & N.E &       
+            RA1O 2.2 \newline  \\ \hline 
+        TS-RA1O 2.3 & 
+        Verificare che un utente non autenticato possa resettare la propria password tramite l'inserimento di una nuova password.
+ & N.E &       
+            RA1O 2.3 \newline  \\ \hline 
+        TS-RA1O 4.1 & 
+        Verificare che la visualizzazione di una Collection-index consista in una tabella le cui righe corrispondono ai document presenti nel database e le cui colonne siano i relativi attributi. & N.E &       
+            RA1O 4.1 \newline  \\ \hline 
+        TS-RA1O 4.1.1 & 
+        Verificare che ogni riga della tabella corrispondente ad un Document abbia una chiave selezionabile che rimanda alla corrispondente pagina show.
+ & N.E &       
+            RA1O 4.1.1 \newline  \\ \hline 
+        TS-RA1D 4.1.2 & 
+        Verificare che l'admin possa eliminare un documento tramite un link rapido. & N.E &       
+            RA1D 4.1.2 \newline  \\ \hline 
+        TS-RA1D 4.1.3 & 
+        Verificare che l'admin possa modificare un document della collection-index.
+ & N.E &       
+            RA1D 4.1.3 \newline  \\ \hline 
+        TS-RA1D 4.2 & 
+        Verificare che sia possibile visualizzare un sottoinsieme di Document tramite dei filtri personalizzati sugli attributi. & N.E &       
+            RA1D 4.2 \newline  \\ \hline 
+        TS-RA1F 4.3 & 
+        Verificare che l'amministratore possa creare un nuovo Document nella base di dati. & N.E &       
+            RA1F 4.3 \newline  \\ \hline 
+        TS-RA1F 4.4 & 
+        Verificare che sia possibile eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. & N.E &       
+            RA1F 4.4 \newline  \\ \hline 
+        TS-RA1O 5.1 & 
+        Verificare che l'admin possa editare ogni singolo attributo modificabile del documento della pagina show. & N.E &       
+            RA1O 5.1 \newline  \\ \hline 
+        TS-RA1F 5.2 & 
+        Verificare che l'utente possa eseguire un'azione personalizzata tramite l'esecuzione di un pulsante. & N.E &       
+            RA1F 5.2 \newline  \\ \hline 
+        TS-RA1O 5.3 & 
+        Viene verificato che l'utente possa eliminare il Document selezionato nella show-page. & N.E &       
+            RA1O 5.3 \newline  \\ \hline 
+        TS-RA1O 6.1 & 
+        Viene verificato che l'admin possa creare un nuovo utente dalla pagina di amministrazione. & N.E &       
+            RA1O 6.1 \newline  \\ \hline 
+        TS-RA1O 6.1.1 & 
+        Viene verificato che l'admin disponga di una pagina di creazione di un nuovo utente. & N.E &       
+            RA1O 6.1.1 \newline  \\ \hline 
+        TS-RA1O 6.1.1.1 & 
+        Verificare che l'admin possa inserire l'indirizzo email del nuovo utente in un apposito campo di testo presente all'interno della pagina di creazione di un nuovo utente. & N.E &       
+            RA1O 6.1.1.1 \newline  \\ \hline 
+        TS-RA1O 6.1.1.2 & 
+        Viene verificato che l'admin possa inserire la password del nuovo utente in un apposito campo di testo presente all'interno della pagina di creazione di un nuovo utente. & N.E &       
+            RA1O 6.1.1.2 \newline  \\ \hline 
+        TS-RA1O 6.1.1.3 & 
+        Verificare che l'admin possa inserire il ``livello utente'' del nuovo utente tramite una combo-box presente all'interno della pagina di creazione di un nuovo utente. & N.E &       
+            RA1O 6.1.1.3 \newline  \\ \hline 
+        TS-RA1O 6.1.2 & 
+        Viene verificato che l'applicazione prelevi tutti i dati inseriti dall'admin nella pagina di creazione di un nuovo utente e li invii al database delle credenziali, il quale provvederà all'inserimento del nuovo record. & N.E &       
+            RA1O 6.1.2 \newline  \\ \hline 
+        TS-RA1O 6.1.3 & 
+        Verificare che venga visualizzato un messaggio d'errore nel caso in cui l'admin non abbia compilato correttamente i campi presenti all'interno della pagina di creazione di un nuovo utente. & N.E &       
+            RA1O 6.1.3 \newline  \\ \hline 
+        TS-RA1O 6.2 & 
+        Viene verificato che l'admin abbia la possibilità di selezionare un utente dalla index-page e visualizzare la sua relativa show-page. & N.E &       
+            RA1O 6.2 \newline  \\ \hline 
+        TS-RA1O 6.2.1 & 
+        Verificare che l'admin possa elevare l'utente normale selezionato al livello ``admin'' dalla show-page relativa. & N.E &       
+            RA1O 6.2.1 \newline  \\ \hline 
+        TS-RA1O 6.2.2 & 
+        Verificare che l'admin possa declassare l'admin selezionato a livello di utente normale dalla show-page relativa. & N.E &       
+            RA1O 6.2.2 \newline  \\ \hline 
+        TS-RA1O 6.2.3 & 
+        Viene verificato che l'admin possa modificare l'attributo email dell'utente selezionato dalla relativa show-page. & N.E &       
+            RA1O 6.2.3 \newline  \\ \hline 
+        TS-RA1O 6.2.4 & 
+        Verificare che l'admin possa modificare l'attributo password dell'utente selezionato dalla relativa show-page. & N.E &       
+            RA1O 6.2.4 \newline  \\ \hline 
+        TS-RA1O 6.2.5 & 
+        Viene verificato che l'admin possa eliminare l'utente visualizzato nella \glossario{show-page}. & N.E &       
+            RA1O 6.2.5 \newline  \\ \hline 
+        TS-RF1O 7 & 
+        Verificare che il linguaggio DSL all'interno di MaaP Framework sia stato implementato e sia funzionante. & N.E &       
+            RF1O 7 \newline  \\ \hline 
+        TS-RF1O 8.1  & 
+        Verificare che Maap Framework generi automaticamente lo scheletro dell’applicazione creata dallo sviluppatore. & N.E &       
+            RF1O 8.1  \newline  \\ \hline 
+        TS-RF1O 8.1.1 & 
+        Verificare che Maap Framework importi automaticamente in un'apposita directory del progetto tutte le librerie necessarie al corretto funzionamento del sistema. Librerie necessarie: \begin{itemize} \item Express v-3.4.8 \item MongoDB v-1.3.23 \item Mongoose v-3.8.4 \end{itemize} & N.E &       
+            RF1O 8.1.1 \newline  \\ \hline 
+        TS-RF1O 8.1.2 & 
+        Verificare che Maap Framework crei automaticamente in un’apposita directory il file di configurazione di default dell’applicazione generata. & N.E &       
+            RF1O 8.1.2 \newline  \\ \hline 
+        TS-RF1O 8.1.3 & 
+        Viene verificato che Maap Framework crei automaticamente il sistema di autenticazione per l’applicazione generata. & N.E &       
+            RF1O 8.1.3 \newline  \\ \hline 
+        TS-RF1O 8.1.4 & 
+        Verificare che Maap Framework crei automaticamente le directory di descrizione delle pagine web. & N.E &       
+            RF1O 8.1.4 \newline  \\ \hline 
+        TS-RF1O 8.2 & 
+        Verificare che Maap Framework crei automaticamente un account admin di default. & N.E &       
+            RF1O 8.2 \newline  \\ \hline 
+        TS-RF1F 8.3 & 
+        Verificare che il framework MaaP permetta allo sviluppatore di definire un namespace per l’applicazione generata. & N.E &       
+            RF1F 8.3 \newline  \\ \hline 
+        TS-RF1O 9.1 & 
+        Verificare che il DSL permetta allo sviluppatore di creare una pagina Collection-index. & N.E &       
+            RF1O 9.1 \newline  \\ \hline 
+        TS-RF1O 9.1.1 & 
+        Verificare che il DSL deve permetta allo sviluppatore di poter definire una serie di attributi da visualizzare all’interno della pagina Collection-index. & N.E &       
+            RF1O 9.1.1 \newline  \\ \hline 
+        TS-RF1O 9.1.2 & 
+        Viene verificato che il DSL permetta allo sviluppatore di poter definire un ordinamento di default (ordine alfanumerico) di visualizzazione dei document all'interno della pagina Collection-index. & N.E &       
+            RF1O 9.1.2 \newline  \\ \hline 
+        TS-RF1O 9.1.3 & 
+        Verificare che il DSL permetta allo sviluppatore di poter definire un eventuale limite di elementi da visualizzare all’interno della pagina Collection-index. & N.E &       
+            RF1O 9.1.3 \newline  \\ \hline 
+        TS-RF1O 9.1.4 & 
+        Viene verificato che il DSL permetta allo sviluppatore di poter definire quali attributi sono ordinabili all’interno della pagina Collection-index. & N.E &       
+            RF1O 9.1.4 \newline  \\ \hline 
+        TS-RF1O 9.1.5 & 
+        Verificare che il DSL permetta allo sviluppatore di definire la funzione populate per far si che una chiave riferisca ad un documento esterno. & N.E &       
+            RF1O 9.1.5 \newline  \\ \hline 
+        TS-RF1O 9.1.6 & 
+        Verificare che il DSL permetta allo sviluppatore di definire delle query per creare la pagina Collection-index in base al risultato della loro estrazione. & N.E &       
+            RF1O 9.1.6 \newline  \\ \hline 
+        TS-RF1O 9.1.7 & 
+        Viene verificato che il DSL permetta allo sviluppatore di definire delle trasformazioni sugli attributi da visualizzare. & N.E &       
+            RF1O 9.1.7 \newline  \\ \hline 
+        TS-RF1O 9.2 & 
+        Viene verificato che il DSL permetta allo sviluppatore di creare una pagina Collection-show. & N.E &       
+            RF1O 9.2 \newline  \\ \hline 
+        TS-RF1O 9.2.1 & 
+        Verificare che il DSL permetta allo sviluppatore di definire una serie di attributi visualizzabili all’interno della pagina Collection-show. & N.E &       
+            RF1O 9.2.1 \newline  \\ \hline 
+        TS-RF1O 9.2.2 & 
+        Verificare che il DSL permetta allo sviluppatore la definizione degli attributi del Document come attributi innestati o array di Document tramite la funzione populate. & N.E &       
+            RF1O 9.2.2 \newline  \\ \hline 
+        TS-RF1O 9.2.3 & 
+        Verificare che lo sviluppatore abbia la possibilità di personalizzare la show page definendone l’ordinamento degli attributi. & N.E &       
+            RF1O 9.2.3 \newline  \\ \hline 
+        TS-RF1O 9.2.4 & 
+        Viene verificato che lo sviluppatore possa definire trasformazioni agli attributi per poi visualizzarli nella show-page. & N.E &       
+            RF1O 9.2.4 \newline  \\ \hline 
+        TS-RF1F 9.2.5 & 
+        Verificare che lo sviluppatore possa personalizzare la show-page definendo delle operazioni personalizzate che l’utente potrà utilizzare tramite appositi pulsanti. & N.E &       
+            RF1F 9.2.5 \newline  \\ \hline 
+        TS-RF1O 9.3 & 
+        Viene verificato che il framework MaaP permetta allo sviluppatore di cambiare il nome della Collection da visualizzare nel menu di navigazione. & N.E &       
+            RF1O 9.3 \newline  \\ \hline 
+        TS-RF1O 9.4 & 
+        Verificare che il framework MaaP permetta allo sviluppatore di modificare l’ordine di visualizzazione della Collection nel menu di navigazione. & N.E &       
+            RF1O 9.4 \newline  \\ \hline 
+        TS-RS1F 10.1 & 
+        Verificare che il sistema MaaS permetta allo sviluppatore di scrivere una Collection tramite editor di testo presente nella pagina web. & N.E &       
+            RS1F 10.1 \newline  \\ \hline 
+        TS-RS1F 10.2 & 
+        Verificare che il sistema MaaS permetta all'utente di poter scrivere una Collection caricando un file prodotto dal framework MaaP. & N.E &       
+            RS1F 10.2 \newline  \\ \hline 
+        TS-RS1F 10.3 & 
+        Verificare che il sistema MaaS permetta ad un utente non registrato di registrarsi al suo servizio. & N.E &       
+            RS1F 10.3 \newline  \\ \hline 
+        TS-RS1F 10.4 & 
+        Verificare che il sistema MaaS assegni automaticamente un \glossario{namespace} sul sistema al nuovo utente registrato. & N.E &       
+            RS1F 10.4 \newline  \\ \hline 
+        TS-RS1F 10.5 & 
+        Verificare che il servizio MaaS visualizzi un messaggio d’errore nel caso in cui la registrazione fallisca a causa di credenziali già esistenti. & N.E &       
+            RS1F 10.5 \newline  \\ \hline 
+        TS-RS1F 10.6 & 
+        Verificare che il servizio MaaS metta a disposizione di un utente non autenticato la possibilità di effettuare il login al sistema. & N.E &       
+            RS1F 10.6 \newline  \\ \hline 
+        TS-RS1F 10.7 & 
+        Verificare che il servizio MaaS visualizzi un messaggio d’errore nel caso in cui l’utente non autenticato abbia inserito credenziali errate nel sistema di login. & N.E &       
+            RS1F 10.7 \newline  \\ \hline 
+        TS-RS1F 10.8 & 
+        Verificare che il sistema MaaS permetta ad un utente non autenticato di modificare il proprio profilo. & N.E &       
+            RS1F 10.8 \newline  \\ \hline 
+        TS-RS1F 10.9 & 
+        Verificare che il sistema MaaS permetta ad un utente non autenticato di eliminare il proprio account dal sistema. & N.E &       
+            RS1F 10.9 \newline  \\ \hline 
+        TS-RS1F 10.9.1 & 
+        Verificare che il sistema MaaS provveda all'eliminazione dei file di configurazione associati all'utente rimosso dal sistema. & N.E &       
+            RS1F 10.9.1 \newline  \\ \hline 
+        TS-RS1F 10.10 & 
+        Verificare che il sistema MaaS permetta allo sviluppatore di eliminare una Collection esistente. & N.E &       
+            RS1F 10.10 \newline  \\ \hline 
+        TS-RA1D 13.1 & 
+        Verificare che l’utente possa modificare la password di accesso all'applicazione. & N.E &       
+            RA1D 13.1 \newline  \\ \hline 
+        TS-RF1O 14.1 & 
+        Verificare che il framework MaaP renda possibile la configurazione dei database delle credenziali. & N.E &       
+            RF1O 14.1 \newline  \\ \hline 
+        TS-RF1O 14.2 & 
+        Verificare che il framework MaaP renda possibile la configurazione dei database delle Collection. & N.E &       
+            RF1O 14.2 \newline  \\ \hline 
+        TS-RF1F 14.3 & 
+        Verificare che il framework MaaP renda possibile la selezione di un name-space per un database se la funzione di \glossario{namespace} è abilitata. & N.E &       
+            RF1F 14.3 \newline  \\ \hline 
+        TS-RA1F 15.1 & 
+        Verificare che l’applicazione MaaP metta a disposizione dell’admin la visualizzazione degli indici in base alle query più richieste dall’applicazione. & N.E &       
+            RA1F 15.1 \newline  \\ \hline 
+        TS-RA1F 15.2 & 
+        Verificare che l’applicazione MaaP permetta all’admin di aggiungere gli indici in base ai suggerimenti forniti. & N.E &       
+            RA1F 15.2 \newline  \\ \hline 
+        TS-RA1F 15.3 & 
+        Verificare che l’applicazione MaaP permetta all’admin di rimuovere gli indici in base ai suggerimenti forniti. & N.E &       
+            RA1F 15.3 \newline  \\ \hline 
+        TS-RS1F 17 & 
+        Verificare che Il sistema MaaS si accerti che documenti creati rispettano i vincoli del database. & N.E &       
+            RS1F 17 \newline  \\ \hline 
+        TS-RA1O 18 & 
+        Verificare che il sistema metta a disposizione un validatore del codice DSL e visualizzi gli eventuali errori logici o di sintassi in un'apposita pagina. & N.E &       
+            RA1O 18 \newline  \\ \hline 
+        TS-RS1F 19 & 
+        Verificare che il sistema MaaS salvi le pagine definite dagli utenti nel database e non su disco. & N.E &       
+            RS1F 19 \newline  \\ \hline 
+    \caption{Tracciamento Test di Sistema - Requisiti}
+    \end{longtable}
+   \egroup
+\end{center}

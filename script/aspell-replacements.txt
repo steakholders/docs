@@ -5,19 +5,20 @@ allìapplicazione all'applicazione
 chiamarà chiamerà
 declassere declassare
 dell'aministratore dell'amministratore
-dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
+dellanno dell'anno
 ec ecc
 erraro errato
 grupp gruppo
+i'admin l'admin
 ia La
 istanzare instanziare
 l'emal l'email
+l'interpetazione l'interpretazione
 liberia libreria
 liberie librerie
-l'interpetazione l'interpretazione
 off offe
 paramentri parametri
 paramentro parametro
@@ -29,8 +30,8 @@ que qua
 rischesto richiesto
 risportate riportate
 sarnno saranno
-sè sé
 staica statica
+sè sé
 un'apposito un apposito
 un'array un array
 verrano verranno

@@ -881,6 +881,8 @@ showpage
 showspaces
 showstringspaces
 showtabs
+Simple
+Skype
 slack
 slash
 smartphone
@@ -985,6 +987,11 @@ vv
 walkthrough
 walktrough
 ways
+WebKit
+WebServer
+Well
+whatever
+Whatever
 where
 wiki
 windows

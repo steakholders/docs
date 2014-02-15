@@ -38,7 +38,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione.
-	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsability}. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::Middleware}.
+	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsibility}. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::Middleware}.
 
 \end{itemize}
 
@@ -89,13 +89,13 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \subsection{Design Pattern Comportamentali}
 
-\subsubsection{Chain of responsability}
-\label{chain-of-responsability}
+\subsubsection{Chain of responsibility}
+\label{chain-of-responsibility}
 
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario.
-	\item \textbf{Utilizzo}: \glossario{Express} usa chain-of-responsability per la gestione dei \glossario{middleware} e del \glossario{routing}. In particolare viene utilizzato nell'architettura nel \glossario{package} \texttt{Back-End::Middleware}.
+	\item \textbf{Utilizzo}: \glossario{Express} usa chain-of-responsibility per la gestione dei \glossario{middleware} e del \glossario{routing}. In particolare viene utilizzato nell'architettura nel \glossario{package} \texttt{Back-End::Middleware}.
 
 \end{itemize}
 

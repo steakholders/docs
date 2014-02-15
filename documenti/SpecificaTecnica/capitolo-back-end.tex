@@ -109,7 +109,7 @@ I tipi di permessi possibili sono:
 \subsubsection{Gestione generale delle richieste}
 Nel diagramma che rappresenta lo scenario della gestione richieste viene mostrata l'iterazione tra server e middleware, alcuni dei quali sono offerti da Express, altri sono definiti dall'utente o da altre librerie. I \glossario{Middleware} si distinguono in Middleware di gestione delle richieste e Middleware di gestione degli errori, a seconda del numero di parametri con cui vengono invocati.
 
-Segue un elenco ordinato dei middleware utilizzati. L'ordine in cui elaborano la richiesta è determinante, poiché ciascuno costituisce un handler del pattern Chain of responsability e ha la facoltà di interrompere la catena di chiamate.
+Segue un elenco ordinato dei middleware utilizzati. L'ordine in cui elaborano la richiesta è determinante, poiché ciascuno costituisce un handler del pattern Chain of responsibility e ha la facoltà di interrompere la catena di chiamate.
 
 \begin{itemize}
 \item{express.compress()}: \glossario{Middleware} per comprimere  con il formato \glossario{gzip} le comunicazioni.
@@ -131,7 +131,7 @@ Segue un elenco ordinato dei middleware utilizzati. L'ordine in cui elaborano la
 \item{ErrorHandler}: \glossario{Middleware} da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server 500).
 \end{itemize}
 
-Nel seguente diagramma viene rappresentata una generica richiesta al server: utilizzando il pattern della Chain of responsability, il server invoca in sequenza i middleware, passando come parametri l'oggetto della richiesta, della risposta e una callback per passare il controllo al successivo middleware. In caso di errore, un middleware può chiamare la callback passandogli la descrizione dell'errore come parametro \code{next(error)}. In questo modo il server passerà il controllo al primo middleware in grado di gestire un errore. Come terza alternativa, un middleware può terminare la propria esecuzione con un \code{return}. In tal caso la richiesta non verrà più gestita da nessun altro middleware.
+Nel seguente diagramma viene rappresentata una generica richiesta al server: utilizzando il pattern della Chain of responsibility, il server invoca in sequenza i middleware, passando come parametri l'oggetto della richiesta, della risposta e una callback per passare il controllo al successivo middleware. In caso di errore, un middleware può chiamare la callback passandogli la descrizione dell'errore come parametro \code{next(error)}. In questo modo il server passerà il controllo al primo middleware in grado di gestire un errore. Come terza alternativa, un middleware può terminare la propria esecuzione con un \code{return}. In tal caso la richiesta non verrà più gestita da nessun altro middleware.
 
 \begin{figure}[H]
 	\begin{center} 
@@ -365,7 +365,7 @@ Nell'opzione i parametri siano errati, \emph{documentAction} chiamerà la callba
 \clearpage
 \subsection{Descrizione librerie aggiuntive}
 
-Vengono di seguito descritte le librerie aggiuntive utilizzate dal Back-end. La scelta è stata effettuata cercando di valutare la diffusione, il livello di stabilità, l'assenza di errori noti.
+Vengono di seguito descritte le librerie aggiuntive utilizzate dal Back-end che corrispondono nei diagrammi precedenti ai packages colorati. La scelta è stata effettuata cercando di valutare la diffusione, il livello di stabilità, l'assenza di errori noti.
 
 \begin{itemize}
  \item \textbf{Passport:} è un middleware di autenticazione per \glossario{Node.js}. Estremamente flessibile e modulare, Passport può essere facilmente inserito in qualsiasi applicazione web basata su Express.

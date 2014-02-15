@@ -125,7 +125,7 @@ Costituisce la componente model dell'architettura MVC del back-end.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Questa classe è una classe astratta che rappresenta le azione definibili dal developer nel DSL, e che potranno essere azionata tramite le \glossario{API} del \glossario{Back-end} per essere eseguite lato-server.
+            \item[] Questa classe è una classe astratta che rappresenta le azione definibili dal developer nel DSL, e che potranno essere azionate tramite le \glossario{API} del \glossario{Back-end} per essere eseguite lato-server.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -314,14 +314,14 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
     \end{figure} 
   \subparagraph{Descrizione} 
     \begin{itemize}
-    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene passata la responsabilità di gestire una richiesta,  decorando quest'ultima con parametri e metodi utilizzabili dai controller. Costituisce una parte dell' \glossario{application logic} nell'architettura \glossario{MVC} del \glossario{Back-end}.
+    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene passata la responsabilità di gestire una richiesta,  decorando quest'ultima con parametri e metodi utilizzabili dai controller. Costituisce una parte controller nell'architettura \glossario{MVC} del \glossario{Back-end}.
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Back-end::Lib::Middleware::Router}
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -331,7 +331,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -345,7 +345,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -359,7 +359,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -373,7 +373,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -391,7 +391,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+            \item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
@@ -402,7 +402,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
             \item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
-È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsability}.
+È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}

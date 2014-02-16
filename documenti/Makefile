@@ -25,6 +25,23 @@ documents: $(DOCUMENTS:=.doc)
 %.doc:
 	@cd "$(@:.doc=)" && make documents
 
+parallel:
+	xterm -e "cd "NormeDiProgetto" && make test-spelling && make documents -j" &
+	xterm -e "cd "PianoDiProgetto" && make test-spelling && make documents -j" &	
+	xterm -e "cd "PianoDiQualifica" && make test-spelling && make documents -j" &	
+	xterm -e "cd "Glossario" && make test-spelling && make documents -j" &	
+	xterm -e "cd "LetteraDiPresentazione" && make test-spelling && make documents -j" &	
+	xterm -e "cd "Verbale2013-12-05" && make test-spelling && make documents -j" &	
+	xterm -e "cd "AnalisiDeiRequisiti" && make test-spelling && make documents -j" &	
+	xterm -e "cd "StudioDiFattibilita" && make test-spelling && make documents -j" &	
+	xterm -e "cd "Verbale2013-12-18" && make test-spelling && make documents -j" &	
+	xterm -e "cd "SpecificaTecnica" && make test-spelling && make documents -j" &	
+#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
+#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
+#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
+#	xterm -e "cd "" && make test-spelling && make documents -j 8" 
+
+
 test-spelling:
 	@cd "NormeDiProgetto" && make test-spelling
 	@cd "PianoDiProgetto" && make test-spelling

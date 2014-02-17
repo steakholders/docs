@@ -11,6 +11,9 @@ all:
 documents:
 	+cd "documenti" && make documents
 
+parallel:
+	@cd "documenti" && make parallel
+
 test-spelling:
 	@cd "documenti" && make test-spelling
 	@cd "modello" && make test-spelling

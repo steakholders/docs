@@ -43,6 +43,6 @@ while password is None or len(password) == 0:
 	password = raw_input("Password per {username}: ".format(username=username))
 
 requisteak = RequisteakClient()
-requisteak.login(username, password)
-requisteak.download("http://steakholders.herokuapp.com/downloads/back-end", "backend-packages.tex")
-requisteak.download("http://steakholders.herokuapp.com/downloads/front-end", "frontend-packages.tex")
+if requisteak.login(username, password):
+	requisteak.download("http://steakholders.herokuapp.com/downloads/back-end", "backend-packages.tex")
+	requisteak.download("http://steakholders.herokuapp.com/downloads/front-end", "frontend-packages.tex")

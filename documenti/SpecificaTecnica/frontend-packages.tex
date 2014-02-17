@@ -3,8 +3,8 @@
   \paragraph{Informazioni sul package}
     \begin{figure}[H] 
       \begin{center} 
-        \includegraphics[scale=0.18]{uml/Front-end-Diagramma dei packages.png}  
-        \caption{Diagramma dei packages Front-end}
+        \includegraphics[width=\textwidth]{packages/Front-end.png}  
+        \caption{Componente Front-end}
       \end{center}  
     \end{figure} 
   \subparagraph{Descrizione} 
@@ -17,15 +17,6 @@
         \item Front-end::Services
         \item Front-end::Model
     \end{itemize}
-    
-   \subparagraph{Diagramma delle classi}
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{uml/Front-end-Diagramma delle classi.png}  
-        \caption{Diagramma delle classi Front-end}
-      \end{center}  
-    \end{figure} 
-    
   \subsubsection{Front-end::Controllers}
   \paragraph{Informazioni sul package}
     \begin{figure}[H] 
@@ -183,27 +174,6 @@ Utilizza il DocumentActionService per gestire le azioni personalizzate sul Docum
           \begin{itemize}
             \item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller lo stato della sessione utente.
           \end{itemize}
-      \subparagraph{Front-end::Services::UserService}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Questa classe permette il recupero della risorsa REST rappresentante l'utente tramite la chiamata /users/$\{$user$\_$id$\}$
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Le funzionalità offerte dalla classe sono: 
-          \end{itemize}
-\begin{itemize} 
-\item elenco dei dati relativi all'utente. 
-\item modifica della password relativa al utente.
-\item elevare o declassare un utente ad admin 
-\item rimozione dell'utente. 
-Tali funzionalità richiedono che l'utente sia un admin.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{Front-end::Model::UserModel}
-          \end{itemize}
       \subparagraph{Front-end::Services::ProfileService}
         
         \textbf{\\ \\ Descrizione} 
@@ -321,6 +291,27 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
           \textbf{Relazioni con altre classi}
           \begin{itemize}
               \item{Front-end::Model::RequestResetModel}
+          \end{itemize}
+      \subparagraph{Front-end::Services::UserService}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Questa classe permette il recupero della risorsa REST rappresentante l'utente tramite la chiamata /users/$\{$user$\_$id$\}$
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Le funzionalità offerte dalla classe sono: 
+\begin{itemize} 
+\item elenco dei dati relativi all'utente. 
+\item modifica della password relativa al utente.
+\item elevare o declassare un utente ad admin 
+\item rimozione dell'utente.
+\end{itemize}
+Tali funzionalità richiedono che l'utente sia un admin.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{Front-end::Model::UserModel}
           \end{itemize}
   \subsubsection{Front-end::Model}
   \paragraph{Informazioni sul package}

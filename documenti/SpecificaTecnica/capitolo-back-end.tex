@@ -131,7 +131,7 @@ Segue un elenco ordinato dei middleware utilizzati. L'ordine in cui elaborano la
 \item{ErrorHandler}: \glossario{Middleware} da noi scritto per gestire gli errori sollevati da uno dei precedenti middleware (errore server 500).
 \end{itemize}
 
-Nel seguente diagramma viene rappresentata una generica richiesta al server: utilizzando il pattern della Chain of responsibility, il server invoca in sequenza i middleware, passando come parametri l'oggetto della richiesta, della risposta e una callback per passare il controllo al successivo middleware. In caso di errore, un middleware può chiamare la callback passandogli la descrizione dell'errore come parametro \code{next(error)}. In questo modo il server passerà il controllo al primo middleware in grado di gestire un errore. Come terza alternativa, un middleware può terminare la propria esecuzione con un \code{return}. In tal caso la richiesta non verrà più gestita da nessun altro middleware.
+Nel seguente diagramma viene rappresentata una generica richiesta al server: utilizzando il pattern della Chain of responsibility, il server invoca in sequenza i middleware(ad esempio i middleware Router,Gestore Errore), passando come parametri l'oggetto della richiesta, della risposta e una callback per passare il controllo al successivo middleware. In caso di errore, un middleware può chiamare la callback passandogli la descrizione dell'errore come parametro \code{next(error)}. In questo modo il server passerà il controllo al primo middleware in grado di gestire un errore. Come terza alternativa, un middleware può terminare la propria esecuzione con un \code{return}. In tal caso la richiesta non verrà più gestita da nessun altro middleware.
 
 \begin{figure}[H]
 	\begin{center} 

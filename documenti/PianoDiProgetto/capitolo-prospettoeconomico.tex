@@ -5,6 +5,22 @@
 \definecolor{responsabile}{RGB}{220,57,18}
 \definecolor{verificatore}{RGB}{16,150,24}
 
+\definecolor{Pianificate}{RGB}{51,102,204}
+\definecolor{Consumate}{RGB}{32,18,77}
+
+\pgfplotsset{
+ybar, 
+stack plots=false,
+enlargelimits =0.10,
+legend style ={at={(0.5,-0.5)},
+anchor=north,
+legend columns=-1},
+ylabel={Ore},
+xtick=data,
+x tick label style={rotate=45,anchor=east},
+symbolic x coords={Amministratore, Analista, Progettista, Programmatore, Responsabile, Verificatore},
+}
+
 \section{Prospetto economico}
 
 In questa sezione è presentato il prospetto economico del progetto \ProjectName{}, suddiviso per periodi. Per ogni periodo sono indicate le ore preventivate per ogni ruolo impiegato.
@@ -44,6 +60,35 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questo pe
 \caption{Costo per ruolo, periodo di Analisi}
 \end{figure}
 
+Di seguito viene invece presentato il consuntivo relativo al periodo di \textit{Analisi}. La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_rr}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Analisi}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Analisi}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rr}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di analisi}
+\end{figure}
+
 \subsection{Progettazione architetturale}
 
 Nel periodo di Progettazione architetturale le ore per ogni ruolo sono state cosi suddivise:
@@ -78,6 +123,35 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questo pe
 
 \end{tikzpicture}
 \caption{Costo per ruolo, periodo di Progettazione architetturale}
+\end{figure}
+
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione architetturale}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_rp}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione Architetturale}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione architetturale}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rp}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione architetturale}
 \end{figure}
 
 \subsection{Progettazione di dettaglio e codifica}
@@ -116,6 +190,35 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questo pe
 \caption{Costo per ruolo, periodo di Progettazione di dettaglio e codifica}
 \end{figure}
 
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione di dettaglio e codifica}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_rq}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione di dettaglio e codifica}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione di dettaglio e codifica}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_rq}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione di dettaglio e codifica}
+\end{figure}
+
 \subsection{Validazione}
 
 Nel periodo di Validazione le ore per ogni ruolo sono state cosi suddivise:
@@ -150,6 +253,35 @@ I seguenti grafici mostrano il peso orario e di costo di ogni ruolo in questa pe
 \caption{Costo per ruolo, periodo di Validazione}
 \end{figure}
 
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Validazione}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_ra}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Validazione}
+\end{table}
+
+Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Validazione}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_ra}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, periodo di Validazione}
+\end{figure}
+
 \subsection{Totale}
 
 In totale le ore per ogni ruolo sono state cosi suddivise:
@@ -175,4 +307,31 @@ Il seguente grafico mostra il costo di ogni ruolo durante tutto lo svolgimento d
 
 \end{tikzpicture}
 \caption{Costo per ruolo}
+\end{figure}
+
+La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo totale corrente alla consegna del presente documento, escluso il periodo di Analisi dei requisiti.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccccccc}
+\toprule
+    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+    \midrule
+    
+    	\input{consuntivo_roles_totale_1}
+    
+    \bottomrule
+\end{tabular}
+\caption{Differenza preventivo consuntivo per ruolo, totale corrente}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\input{columnChart_consuntivo_totale_1}
+\legend{preventivate,consumate}
+\end{axis}
+\end{tikzpicture}
+\caption{Differenza preventivo consuntivo per ruolo, totale corrente}
 \end{figure}

@@ -24,3 +24,4 @@ clean:
 	@rm -f *.aux *.out *.toc
 	@rm -f *.pdf
 	@rm -f *.tex.bak
+	@rm -f *.lof *.lot

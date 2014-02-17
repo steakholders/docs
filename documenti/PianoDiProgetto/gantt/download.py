@@ -8,6 +8,7 @@ from pprint import pprint
 from client import TeamworkPMClient
 from utils import *
 from schema import *
+from lazyschemaproxy import *
 
 def date_parse(str):
 	return datetime.strptime(str, "%Y%m%d").date()
@@ -135,7 +136,7 @@ class TeamworkPMDownload(TeamworkPMClient):
 
 				for dependency in task["predecessors"]:
 					if dependency["type"] == "start":
-						task_obj.addDependency(project.getTask(dependency["id"]))
+						task_obj.addDependency(LazyTaskProxy(dependency["id"], tasklist_obj))
 
 	
 	def getTimeEntries(self, project):

@@ -151,7 +151,13 @@ class Task:
 			dependency.id: dependency
 		})
 
+	def solveDependencies(self):
+		for dependency_id in self.dependencies:
+			if self.dependencies[dependency_id] is None:
+				self.dependencies[dependency_id] = self.tasklist.getTask(dependency_id)
+
 	def getDependencies(self):
+		self.solveDependencies()
 		return self.dependencies.values()
 
 	def addTimeEntry(self, timeentry):

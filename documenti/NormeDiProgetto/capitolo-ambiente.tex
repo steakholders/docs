@@ -1,4 +1,4 @@
-\section{Ambiente di lavoro}
+\section{Strumenti e Ambiente di lavoro}
 	
 	\subsection{Ambiente Generale}
 		
@@ -11,13 +11,13 @@
 		
 		Per assicurarsi la corretta visualizzazione dei caratteri accentati tutti i file testuali presenti nel \glossario{repository} devono essere memorizzati con la codifica \textbf{\glossario{UTF-8}}.
 		
-		\subsubsection{Versionamento}
+		\subsubsection{Strumenti per il versionamento}
 		\label{github}
 		
 		Per il versionamento dei documenti e del codice viene usato \textbf{Git $\ge$ v1.7.9.5} (\url{http://git-scm.com/}).
 		Si utilizzerà il servizio \textbf{GitHub} per creare e gestire i repository privati utilizzati dal gruppo.
 		
-	\subsection{Coordinamento}
+	\subsection{Strumenti per il coordinamento}
 	\label{teamworkpm}
 	
 		Per coordinare le attività, gli eventi, per le comunicazioni e per il conteggio delle ore viene utilizzata la piattaforma \textbf{Teamwork Project Manager} (\url{http://teamworkpm.net}):
@@ -41,11 +41,11 @@
 		
 		Il responsabile annoterà qui gli impegni comuni al gruppo quali riunioni ed incontri, specificando orario e luogo.
 		
-		\subsubsection{Gestione dei ticket}
+		\subsubsection{Strumenti per la gestione dei ticket}
 		\label{teamwork}
 		Per la gestione dei ticket si utilizzerà il sistema di task offerto da \glossario{TeamworkPM}, utilizzabile unicamente attraverso le procedure descritte nella sezione \ref{gestioneticket}.
 		
-		\subsubsection{Gestione del piano di lavoro}
+		\subsubsection{Strumenti per la gestione del piano di lavoro}
 		
 		Al fine di pianificare le attività da svolgere per lo sviluppo del progetto, il gruppo si è affidato alla piattaforma \glossario{TeamworkPM} per i seguenti motivi:
 		\begin{itemize}
@@ -81,7 +81,7 @@
 		
 		L'output dei documenti sarà in formato \glossario{PDF} e verrà prodotto attraverso il comando \code{pdflatex} (versione $\geq$ 3.1415926-1.40.10-2.2). Per velocizzare questa operazione è stato predisposto il comando \code{make documents}, il cui utilizzo è descritto nella sezione \ref{makefile}.
 		
-		\subsubsection{Controllo ortografico}
+		\subsubsection{Strumenti per il controllo ortografico}
 		
 		Per aiutare il controllo ortografico verrà utilizzato il software \emph{Aspell} (\url{http://aspell.net}, versione $\geq 0.60.7$) con il dizionario italiano.
 		
@@ -201,7 +201,7 @@ Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con
 	sul \glossario{repository}, in modo da garantire che le modifiche non introducano errori nel software esistente e che rispettino
 	le metriche software riportate in \PianoDiQualifica{}.
 
-		\subsubsection{Analisi statica}
+		\subsubsection{Strumenti per l'analisi statica}
 		
 		Per l'analisi statica del codice Javascript e per aiutare a identificare automaticamente gli errori, sono integrati in
 		Jenkins:
@@ -217,7 +217,7 @@ Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con
 		insidie.
 		\end{itemize}
 		
-		\subsubsection{Analisi dinamica} 
+		\subsubsection{Strumenti per l'analisi dinamica} 
 		Tool integrati in Jenkins per l'analisi dinamica: 
 		\begin{itemize}
 		\item \textbf{Mocha} (\url{https://github.com/visionmedia/mocha}) Mocha è una libreria ricca di funzionalità per l'esecuzione
@@ -225,7 +225,7 @@ Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con
 		\end{itemize}
 	
 			
-		\subsubsection{Validazione}
+		\subsubsection{Strumenti per la validazione}
 		Per la validazione delle pagine web si utilizzeranno gli strumenti messi a disposizione da \glossario{W3C} alle pagine 
 		 (\url{http://validator.w3.org}) e (\url{ http://jigsaw.w3.org/css-validator}).			
 		

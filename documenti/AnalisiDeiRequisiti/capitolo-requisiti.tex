@@ -117,9 +117,9 @@ Dove:
         RS1F 10.2 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere all’utente di poter scrivere una Collection caricando un file prodotto dal framework MaaP. &  Capitolato \newline  UCM 8 \newline  UCM 8.1 \newline  UCM 8.3 \newline  UCM 8.4 \newline  \\ \hline      
         RS1F 10.3 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non registrato di registrarsi al suo servizio. &  Interno \newline  UCM 1 \newline  \\ \hline      
         RS1F 10.4 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve assegnare automaticamente un namespace sul sistema al nuovo utente registrato. &  Interno \newline  UCM 1 \newline  \\ \hline      
-        RS1F 10.5 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d’errore nel caso in cui la registrazione fallisca a causa di credenziali già esistenti. &  Interno \newline  UCM 3 \newline  \\ \hline      
+        RS1F 10.5 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d’errore nel caso in cui la registrazione fallisca a causa di credenziali già esistenti. &  Interno \newline  UCU 6 \newline  \\ \hline      
         RS1F 10.6 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve mettere a disposizione di un utente non autenticato la possibilità di effettuare il login al sistema. &  Interno \newline  UCM 1.1 \newline  UCM 1.2 \newline  UCM 4 \newline  \\ \hline      
-        RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d’errore nel caso in cui l’utente non autenticato abbia inserito credenziali errate nel sistema di login. &  Interno \newline  UCM 5 \newline  \\ \hline      
+        RS1F 10.7 & Funzionale \newline  Facoltativo  & Il servizio MaaS deve visualizzare un messaggio d’errore nel caso in cui l’utente non autenticato abbia inserito credenziali errate nel sistema di login. &  Interno \newline  UCU 2 \newline  \\ \hline      
         RS1F 10.8 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di modificare il proprio profilo. &  Interno \newline  UCM 6 \newline  UCM 6.1 \newline  \\ \hline      
         RS1F 10.9 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve permettere ad un utente non autenticato di eliminare il proprio account dal sistema. &  Interno \newline  UCM 7 \newline  \\ \hline      
         RS1F 10.9.1 & Funzionale \newline  Facoltativo  & Il sistema MaaS deve provvedere all’eliminazione dei file di configurazione associati all’utente rimosso dal sistema. &  UCM 7 \newline  UCM 9 \newline  \\ \hline      
@@ -178,12 +178,12 @@ Dove:
       
         RF4O 1 & Vincolo \newline  Obbligatorio  & L’implementazione della componente server deve essere realizzata utilizzando Node.js. &  Capitolato \newline  \\ \hline      
         RF4O 2 & Vincolo \newline  Obbligatorio  & Deve essere utilizzato Express per la realizzazione dell’infrastruttura per la componente server. &  Capitolato \newline  \\ \hline      
-        RF4F 3 & Vincolo \newline  Facoltativo  & Per l'interfacciamento al database delle \glossario{Collection} deve venire utilizzato Mongoose.js. &  Capitolato \newline  \\ \hline      
         RF4O 3 & Vincolo \newline  Obbligatorio  & \glossario{MaaP} \glossario{Framework} deve essere pubblicato in una repository di GitHub e quest'ultima deve permettere l'utilizzo di Issues per la segnalazione di bug. &  Capitolato \newline  \\ \hline      
         RF4O 4 & Vincolo \newline  Obbligatorio  & \glossario{MaaP} \glossario{Framework} deve servirsi di MongoDB come sistema gestionale dei dati. &  Capitolato \newline  \\ \hline      
         RA4O 5 & Vincolo \newline  Obbligatorio  & Deve essere fatto il \glossario{deployment} su \glossario{Heroku} rendendo disponibile on-line l’applicazione \glossario{MaaP}. &  Capitolato \newline  \\ \hline      
         RA4O 6 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 24.x o superiori di Firefox. &  Capitolato \newline  \\ \hline      
-        RA4O 7 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline
+        RA4O 7 & Vincolo \newline  Obbligatorio  & L’applicazione deve funzionare con versioni 30.0.x o superiori di Chrome. &  Capitolato \newline  \\ \hline      
+        RF4O 8 & Vincolo \newline  Obbligatorio  & Per l'interfacciamento al database delle \glossario{Collection} deve venire utilizzato Mongoose.js. &  Capitolato \newline  \\ \hline
       \caption{Requisiti di vincolo}
       \end{longtable}
       \egroup
@@ -266,9 +266,9 @@ Dove:
         RS1F 10.2 &  Capitolato \newline  UCM 8 \newline  UCM 8.1 \newline  UCM 8.3 \newline  UCM 8.4 \newline  \\ \hline      
         RS1F 10.3 &  Interno \newline  UCM 1 \newline  \\ \hline      
         RS1F 10.4 &  Interno \newline  UCM 1 \newline  \\ \hline      
-        RS1F 10.5 &  Interno \newline  UCM 3 \newline  \\ \hline      
+        RS1F 10.5 &  Interno \newline  UCU 6 \newline  \\ \hline      
         RS1F 10.6 &  Interno \newline  UCM 1.1 \newline  UCM 1.2 \newline  UCM 4 \newline  \\ \hline      
-        RS1F 10.7 &  Interno \newline  UCM 5 \newline  \\ \hline      
+        RS1F 10.7 &  Interno \newline  UCU 2 \newline  \\ \hline      
         RS1F 10.8 &  Interno \newline  UCM 6 \newline  UCM 6.1 \newline  \\ \hline      
         RS1F 10.9 &  Interno \newline  UCM 7 \newline  \\ \hline      
         RS1F 10.9.1 &  UCM 7 \newline  UCM 9 \newline  \\ \hline      
@@ -293,12 +293,12 @@ Dove:
         R3O 2 &  Interno \newline  \\ \hline      
         RF4O 1 &  Capitolato \newline  \\ \hline      
         RF4O 2 &  Capitolato \newline  \\ \hline      
-        RF4F 3 &  Capitolato \newline  \\ \hline      
         RF4O 3 &  Capitolato \newline  \\ \hline      
         RF4O 4 &  Capitolato \newline  \\ \hline      
         RA4O 5 &  Capitolato \newline  \\ \hline      
         RA4O 6 &  Capitolato \newline  \\ \hline      
-        RA4O 7 &  Capitolato \newline  \\ \hline  
+        RA4O 7 &  Capitolato \newline  \\ \hline      
+        RF4O 8 &  Capitolato \newline  \\ \hline  
       \caption{Tracciamento requisiti-fonti}    
       \end{longtable}
       \egroup
@@ -316,7 +316,7 @@ Dove:
             UCU 1 - Login &  RA1O 1 \newline  RA1O 1.1 \newline  RA1O 1.2 \newline  \\ \hline      
             UCU 1.1 - Inserimento email &  RA1O 1.1 \newline  \\ \hline      
             UCU 1.2 - Inserimento Password &  RA1O 1.2 \newline  \\ \hline      
-            UCU 2 - Visualizzazione messaggio errore per credenziali errate &  RA1O 1.3.1 \newline  \\ \hline      
+            UCU 2 - Visualizzazione messaggio errore per credenziali errate &  RS1F 10.7 \newline  RA1O 1.3.1 \newline  \\ \hline      
             UCU 3 - Logout &  RA1D 12 \newline  \\ \hline      
             UCU 4 - Recupero password &  RA1O 2.2 \newline  RA1O 2.1 \newline  RA1O 2 \newline  RA1O 2.3 \newline  \\ \hline      
             UCU 4.1 - Richiesta reset password &  RA1O 2.1 \newline  RA1O 2 \newline  \\ \hline      
@@ -324,7 +324,7 @@ Dove:
             UCU 4.2 - Effettuazione reset password &  RA1O 2.2 \newline  RA1O 2 \newline  RA1O 2.3 \newline  \\ \hline      
             UCU 4.2.1 - Inserimento nuova password &  RA1O 2 \newline  RA1O 2.3 \newline  \\ \hline      
             UCU 5 - Registrazione &  RA1D 11 \newline  \\ \hline      
-            UCU 6 - Visualizzazione messaggio errore per Registrazione fallita &  RA1D 11 \newline  \\ \hline      
+            UCU 6 - Visualizzazione messaggio errore per Registrazione fallita &  RA1D 11 \newline  RS1F 10.5 \newline  \\ \hline      
             UCU 7 - Gestione indici &  RA1F 15 \newline  \\ \hline      
             UCU 7.1 - Visualizzazione suggerimenti sugli indici &  RA1F 15.1 \newline  \\ \hline      
             UCU 7.2 - Creazione indici &  RA1F 15.2 \newline  \\ \hline      
@@ -350,7 +350,7 @@ Dove:
             UCU 11.1.1 - Inserimento email &  RA1O 6.1.1.1 \newline  \\ \hline      
             UCU 11.1.2 - Inserimento password &  RA1O 6.1.1.2 \newline  \\ \hline      
             UCU 11.1.3 - Definizione livello utente &  RA1O 6.1.1.3 \newline  RA1O 6.2 \newline  \\ \hline      
-            UCU 11.2 - Creazione fallita &  RA1O 6.1.3 \newline  \\ \hline      
+            UCU 11.2 - Visualizzazione messaggio errore per creazione fallita &  RA1O 6.1.3 \newline  \\ \hline      
             UCU 11.3 - Apertura show-page Utente &  RA1O 6.2.1 \newline  RA1O 6.2.2 \newline  RA1O 6.2.3 \newline  RA1O 6.2.4 \newline  \\ \hline      
             UCU 11.3.1 - Eleva utente &  RA1O 6.2.1 \newline  \\ \hline      
             UCU 11.3.2 - Declassa admin &  RA1O 6.2.2 \newline  \\ \hline      
@@ -390,9 +390,7 @@ Dove:
             UCM 1 -  Inserimento nuova email &  RS1F 10.3 \newline  RS1F 10.4 \newline  \\ \hline      
             UCM 1.1 -  Inserimento nuova email &  RS1F 10.6 \newline  \\ \hline      
             UCM 1.2 - Inserimento nuova password &  RS1F 10.6 \newline  \\ \hline      
-            UCM 3 - Credenziali già esistenti &  RS1F 10.5 \newline  \\ \hline      
             UCM 4 - Login &  RS1F 10.6 \newline  \\ \hline      
-            UCM 5 - Credenziali errate &  RS1F 10.7 \newline  \\ \hline      
             UCM 6 - Modifica profilo &  RS1F 10.8 \newline  \\ \hline      
             UCM 6.1 - Modifica password &  RS1F 10.8 \newline  \\ \hline      
             UCM 7 - Eliminazione account &  RS1F 10.9 \newline  RS1F 10.9.1 \newline  \\ \hline      
@@ -571,9 +569,7 @@ Dove:
         RS1F 10.10 & 
         Il sistema MaaS deve permettere allo sviluppatore di eliminare una Collection esistente. & TS-RS1F 10.10 & \\ \hline 
         RA1D 11 & 
-
         Deve essere possibile da parte di un utente la registrazione all’Applicazione MaaP. &  & TV-RA1D 11 \\ \hline 
-
         RA1D 12 & 
         L’utente autenticato nell’applicazione deve poter eseguire il logout. &  & TV-RA1D 12 \\ \hline 
         RA1D 13 & 
@@ -581,9 +577,7 @@ Dove:
         RA1D 13.1 & 
         L’utente deve poter modificare la password di accesso all’applicazione. & TS-RA1D 13.1 & \\ \hline 
         RF1O 14 & 
-
         Il framework MaaP deve rendere possibile la configurazione dei database di cui dispone. &  & TV-RF1O 14 \\ \hline 
-
         RF1O 14.1 & 
         Il framework MaaP deve rendere possibile la configurazione dei database delle credenziali. & TS-RF1O 14.1 & \\ \hline 
         RF1O 14.2 & 
@@ -601,7 +595,6 @@ Dove:
         RF1F 16 & 
         Il framework MaaP deve permettere allo sviluppatore di abilitare i namespace per l’applicazione creata. &  & TV-RF1F 16 \\ \hline 
         RS1F 17 & 
-
         Il sistema MaaS deve verificare se i documenti creati rispettano i vincoli del database. & TS-RS1F 17 & \\ \hline 
         RA1O 18 & 
         Il sistema deve mettere a disposizione un validatore del codice DSL e visualizzare gli eventuali errori logici o di sintassi in un'apposita pagina. & TS-RA1O 18 & \\ \hline 

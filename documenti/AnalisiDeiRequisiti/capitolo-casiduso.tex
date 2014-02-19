@@ -23,36 +23,6 @@ Per comodità di lettura viene utilizzato il nome del caso d'uso in analisi.
 
 
 \subsection{Ambito Utente}
-\subsubsection{UCU 0 - Operazioni ad alto livello - Utente non autenticato}    
-    \begin{figure}[H]
-      \begin{center}
-      \includegraphics[width=12cm]{UML/UCU 0 - Operazioni ad alto livello - Utente non autenticato.png}
-      \caption{UCU 0 - Operazioni ad alto livello - Utente non autenticato}
-      \end{center} 
-    \end{figure}    
-    
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 0 - Operazioni ad alto livello - Utente non autenticato}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente non autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form,può registrarsi all'applicazione se tale funzione è predisposta e può recuperare l'eventuale password d'accesso. \\ 
-          
-          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo. Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione, registrazione e recupero password.\\ 
-          
-          \textbf{Postcondizioni} &  \\ 
-          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline 2. Utente non autenticato può recuperare la password (UCU4); \newline 3. Utente non autenticato può richiedere la registrazione (UCU5); \newline \\
-           \textbf{Estensioni} & 1.1 L'utente visualizza un messaggio di errore causato dall'inserimento di credenziali errate per il login (UCU2); \newline 3.1 L'utente a seguito del fallimento della registrazione, visualizza un messaggio di errore (UCU6). \\
-      \end{longtable}
-      \egroup
-\end{center}
-
 \subsubsection{UCU 0 - Operazioni ad alto livello - Utente autenticato}    
     \begin{figure}[H]
       \begin{center}
@@ -87,6 +57,36 @@ L'Utente Admin eredita le funzionalità dell'Utente Autenticato, può gestire gl
            \textbf{Estensioni} & 2.1. L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di \glossario{dashboard}(UCU12); \newline
 3.1.  L'utente visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della \glossario{collection} selezionata (UCU12); \newline
 6.1.  L'admin visualizza un messaggio di errore dovuto al rilevamento da parte dell'applicazione di un errore causato da un file scritto con il DSL invece della pagina di gestione degli indici (UCU12). \\
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCU 0 - Operazioni ad alto livello - Utente non autenticato}    
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=12cm]{UML/UCU 0 - Operazioni ad alto livello - Utente non autenticato.png}
+      \caption{UCU 0 - Operazioni ad alto livello - Utente non autenticato}
+      \end{center} 
+    \end{figure}    
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 0 - Operazioni ad alto livello - Utente non autenticato}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'Utente non autenticato può autenticarsi inserendo le credenziali nell'apposito form,può registrarsi all'applicazione se tale funzione è predisposta e può recuperare l'eventuale password d'accesso. \\ 
+          
+          \textbf{Precondizioni}  & L'applicazione MaaP è funzionante e pronta all'utilizzo. Il sistema predispone all'utente non autenticato la pagina principale fornendo le funzionalità di autenticazione, registrazione e recupero password.\\ 
+          
+          \textbf{Postcondizioni} & L’applicazione ha ricevuto le informazioni sulle operazioni che l’utente non autenticato vuole eseguire. \\ 
+          \textbf{Flusso Principale} & 1. Utente non autenticato esegue il login (UCU1); \newline 2. Utente non autenticato può recuperare la password (UCU4); \newline 3. Utente non autenticato può richiedere la registrazione (UCU5); \newline \\
+           \textbf{Estensioni} & 1.1 L'utente visualizza un messaggio di errore causato dall'inserimento di credenziali errate per il login (UCU2); \newline 3.1 L'utente a seguito del fallimento della registrazione, visualizza un messaggio di errore (UCU6). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -1049,7 +1049,7 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \egroup
 \end{center}
 
-\subsubsection{UCU 11.2 - Creazione fallita} 
+\subsubsection{UCU 11.2 - Visualizzazione messaggio errore per creazione fallita} 
       %Tabella 
       \begin{center}
       \bgroup
@@ -1057,11 +1057,11 @@ Tale funzionalità è disponibile se è stata configurata dallo sviluppatore. \\
       \begin{longtable}{  p{3.5cm} | p{8cm} } 
             
       \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.2 - Creazione fallita}} \\ 
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCU 11.2 - Visualizzazione messaggio errore per creazione fallita}} \\ 
       \hline
       
       \textbf{Attori Primari} & Admin \\ 
-          \textbf{Scopo e Descrizione} & L'Admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita.
+          \textbf{Scopo e Descrizione} & L'Admin ha inserito delle credenziali errate e la creazione di un nuovo utente è fallita, viene quindi visualizzato un messaggio d'errore.
 L'operazione di creazione utente può fallire nei seguenti casi : \newline
 -Formato email errato;  \newline
 -Email già presente;  \newline
@@ -1455,7 +1455,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
           \textbf{Precondizioni}  & Il \glossario{Framework} \glossario{MaaP} ha registrato correttamente la \glossario{Collection} da configurare.\\ 
           
           \textbf{Postcondizioni} & Il \glossario{Framework} \glossario{MaaP} ha configurato correttamente la \glossario{Collection} modificata dallo sviluppatore. \\
-          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della \glossario{Collection} (UCS3.3.1); \newline 2. Lo sviluppatore personalizza la show page della \glossario{Collection} (UCS3.3.2); \newline 3. Lo sviluppatore rinomina il titolo della \glossario{Collection} che verrà visualizzato nel menu di navigazione (UCS3.3.3); \newline 4. Lo sviluppatore definisce l'ordine di visualizzazione della \glossario{Collection} nel menu di navigazione ( \\
+          \textbf{Flusso Principale} & 1. Lo sviluppatore personalizza la index page della \glossario{Collection} (UCS3.3.1); \newline 2. Lo sviluppatore personalizza la show page della \glossario{Collection} (UCS3.3.2); \newline 3. Lo sviluppatore rinomina il titolo della \glossario{Collection} che verrà visualizzato nel menu di navigazione (UCS3.3.3); \newline 4. Lo sviluppatore definisce l'ordine di visualizzazione della \glossario{Collection} nel menu di navigazione (UCS3.3.4). \\
           
       \end{longtable}
       \egroup
@@ -1793,7 +1793,7 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \hline
       
       \textbf{Attori Primari} & Sviluppatore \\ 
-          \textbf{Scopo e Descrizione} &  \\ 
+          \textbf{Scopo e Descrizione} & Lo sviluppatore all’interno del file di configurazione della \glossario{Collection} specifica l’ordinamento degli attributi da visualizzare nella show-page. \\ 
           
           \textbf{Precondizioni}  & Lo sviluppatore all'interno del file di configurazione della \glossario{Collection} specifica l'ordinamento degli attributi da visualizzare nella show-page.\\ 
           
@@ -1988,36 +1988,6 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \egroup
 \end{center}
 \subsection{Ambito Utente MaaS}
-\subsubsection{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato} 
-    \begin{figure}[H]
-      \begin{center}
-      \includegraphics[width=12cm]{UML/UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato.png}
-      \caption{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}
-      \end{center} 
-    \end{figure}  
-    
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \\ 
-          
-          \textbf{Precondizioni}  & glossario{MaaS} è funzionante ed attende che l'utente non autenticato interagisca.\\ 
-          
-          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} non autenticato ha richiesto. \\
-          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline 2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4). \\
-           \textbf{Esclusioni} & 1.1 L'utente non autenticato visualizza un messaggio di errore dovuto all'esistenza delle credenziali inserite per registrarsi al servizio (UCM3); \newline 2.1 L'utente visualizza un messaggio di errore dopo aver inserito dati non corretti nell'operazione di login (UCM5). \\
-      \end{longtable}
-      \egroup
-\end{center}
-
 \subsubsection{UCM 0 - Operazioni ad alto livello - Utente MaaS autenticato} 
     \begin{figure}[H]
       \begin{center}
@@ -2044,6 +2014,36 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
           \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} autenticato ha richiesto. \\
           \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} autenticato può modificare il proprio profilo (UCM6); \newline 2. L'utente \glossario{MaaS} autenticato può eliminare il proprio account (UCM7); \newline 3. L'utente \glossario{MaaS} autenticato può gestire i file di configurazione (UCM8) \\
           
+      \end{longtable}
+      \egroup
+\end{center}
+
+\subsubsection{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato} 
+    \begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=12cm]{UML/UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato.png}
+      \caption{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}
+      \end{center} 
+    \end{figure}  
+    
+      %Tabella 
+      \begin{center}
+      \bgroup
+      \def\arraystretch{1.8}     
+      \begin{longtable}{  p{3.5cm} | p{8cm} } 
+            
+      \hline
+      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 0 - Operazioni ad alto livello - Utente MaaS non autenticato}} \\ 
+      \hline
+      
+      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
+          \textbf{Scopo e Descrizione} & L'utente \glossario{MaaS} non autenticato può registrarsi al servizio \glossario{MaaS} o effettuare il login. \\ 
+          
+          \textbf{Precondizioni}  & glossario{MaaS} è funzionante ed attende che l'utente non autenticato interagisca.\\ 
+          
+          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha acquisito le informazioni necessarie per svolgere le azioni che l'utente \glossario{MaaS} non autenticato ha richiesto. \\
+          \textbf{Flusso Principale} & 1. L'utente \glossario{MaaS} non autenticato può registrarsi al servizio (UCM1); \newline 2. L'utente \glossario{MaaS} non autenticato può effettuare il login (UCM4). \\
+           \textbf{Esclusioni} & 1.1 L'utente non autenticato visualizza un messaggio di errore dovuto all'esistenza delle credenziali inserite per registrarsi al servizio (UCM3); \newline 2.1 L'utente visualizza un messaggio di errore dopo aver inserito dati non corretti nell'operazione di login (UCM5). \\
       \end{longtable}
       \egroup
 \end{center}
@@ -2117,29 +2117,6 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
       \egroup
 \end{center}
 
-\subsubsection{UCM 3 - Credenziali già esistenti} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 3 - Credenziali già esistenti}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente MaaS non autenticato \\ 
-          \textbf{Scopo e Descrizione} & Il servizio mostra all'utente \glossario{MaaS} non autenticato un messaggio di errore dato dal fatto che le credenziali che aveva inserito per registrarsi sono già presenti nel database e non può utilizzarle. \\ 
-          
-          \textbf{Precondizioni}  & Il servizio ha appreso le informazioni di registrazione inserite dall'utente.\\ 
-          
-          \textbf{Postcondizioni} & Il servizio \glossario{MaaS} ha respinto la registrazione da parte dell'utente mostrando un errore. \\
-          \textbf{Flusso Principale} & 1. l'utente MaaS non autenticato visualizza un errore a seguito dell'inserimento di credenziali già esistenti nel database in fase di registrazione (UCM3). \\
-          
-      \end{longtable}
-      \egroup
-\end{center}
-
 \subsubsection{UCM 4 - Login} 
       %Tabella 
       \begin{center}
@@ -2159,29 +2136,6 @@ L'admin ha potere di declassamento di ruolo su tutti gli admin al di fuori di se
           \textbf{Postcondizioni} & Il servizio \glossario{Maas} ha verificato le credenziali utente ed ha eseguito l'autenticazione di quest'ultimo. \\
           \textbf{Flusso Principale} & 1. L'utente inserisce l'email (UCM4.1); \newline 2. L'utente inserisce la password (UCM4.2). \\
            \textbf{Scenari Alternativi} & 1. L'utente non autenticato non effettua il login lasciando la pagina. \\
-      \end{longtable}
-      \egroup
-\end{center}
-
-\subsubsection{UCM 5 - Credenziali errate} 
-      %Tabella 
-      \begin{center}
-      \bgroup
-      \def\arraystretch{1.8}     
-      \begin{longtable}{  p{3.5cm} | p{8cm} } 
-            
-      \hline
-      \multicolumn{2}{ | c | }{ \cellcolor[gray]{0.9} \textbf{UCM 5 - Credenziali errate}} \\ 
-      \hline
-      
-      \textbf{Attori Primari} & Utente MaaS non Autenticato \\ 
-          \textbf{Scopo e Descrizione} & L'utente visualizza un messaggio di errore dato dall'inserimento di credenziali errate. \\ 
-          
-          \textbf{Precondizioni}  & Il sistema \glossario{MaaS} verifica le credenziali che l'utente ha inserito.\\ 
-          
-          \textbf{Postcondizioni} & Il sistema \glossario{MaaS} visualizza all'utente un messaggio di errore dopo aver verificato e non accettato le credenziali inserite. \\
-          \textbf{Flusso Principale} & 1. L'utente MaaS non Autenticato visualizza un messaggio di errore avendo inserito delle credenziali errate per l'autenticazione (UCM5). \\
-          
       \end{longtable}
       \egroup
 \end{center}

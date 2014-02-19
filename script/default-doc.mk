@@ -15,7 +15,7 @@ test-spelling: test-spelling.cache
 test-spelling.cache: *.tex $(DICTIONARIES)
 	@$(REPO_DIR)/script/test-encoding.sh
 	@$(REPO_DIR)/script/test-spelling.sh
-	@touch test.cache
+	@touch $@
 
 clean:
 	@rm -f *.cache

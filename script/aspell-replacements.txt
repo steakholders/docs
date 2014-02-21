@@ -16,6 +16,7 @@ grupp gruppo
 i'admin l'admin
 ia La
 istanzare instanziare
+l'ambiete l'ambiente
 l'emal l'email
 l'interpetazione l'interpretazione
 liberia libreria

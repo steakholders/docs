@@ -117,6 +117,7 @@ Ember
 Endeavor
 Engine
 Enterprise
+Entry
 Erich
 ErrorHandler
 ErrorModel
@@ -124,6 +125,7 @@ Errorhandler
 Established
 Etzkorn
 Everybody
+Exit
 Exploring
 FAQ
 FTP
@@ -175,6 +177,7 @@ Image
 Imaging
 IndexController
 IndexModel
+Individual
 Information
 Integrated
 Intelligent
@@ -266,6 +269,7 @@ OT
 Operational
 Opportunity
 Osmani
+Overview
 PDCA
 PP
 PQ
@@ -281,6 +285,7 @@ Pgt
 Pianciamore
 PianoDiProgetto
 Place
+Planning
 Platform
 Portability
 Portable
@@ -333,6 +338,7 @@ ResetModel
 Resource
 Retired
 Retrieve
+Rework
 Rice
 Richard
 Rinominazione
@@ -374,6 +380,7 @@ Specific
 Stafford
 StartUp
 Started
+Std
 SteakHolders
 Stein
 Steve
@@ -470,6 +477,7 @@ aspell
 assessment
 assigned
 at
+audit
 autoformazione
 avoided
 back
@@ -499,6 +507,7 @@ chain
 change
 chart
 checkbox
+checklist
 checklists
 ciclomatica
 citecolor
@@ -598,7 +607,9 @@ entreprise
 environment
 error
 errorMiddleware
+evaluation
 event
+examination
 explain
 exports
 express
@@ -618,6 +629,7 @@ firstnumber
 firstpage
 fittizia'
 fittizie'
+follow
 followed
 for
 forgot
@@ -641,6 +653,7 @@ git
 global
 glossary
 gray
+green
 grep
 group
 gulpease
@@ -817,9 +830,11 @@ practise
 pre
 precinct
 predeterminabili
+preparation
 proattiva
 proattivi
 procedure'
+procedures
 processamento
 processi'
 product
@@ -867,6 +882,7 @@ responsability
 responsibility
 responsività
 return
+review
 ridenominare
 ridonandante
 right

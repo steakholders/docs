@@ -1,6 +1,6 @@
 \section{Design pattern}
 
-Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte nel nostro ambiente. Oltre al problema descrive anche la soluzione ad esso e i risultati che si ottengono nell'applicarlo. È fondamentale per qualsiasi progettista conoscere a fondo i \glossario{Design Pattern}, in quanto facilita l'attività di progettazione, favorisce la riusabilità e dà benefici enormi in termini di manutenibilità. Fondamentalmente possiamo suddividere i \glossario{Design Pattern} in quattro categorie:
+Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte nel nostro ambiente. Oltre al problema descrive anche soluzioni eleganti ad esso e i risultati che si ottengono nell'applicarlo. È fondamentale per qualsiasi progettista conoscere a fondo i \glossario{Design Pattern}, in quanto facilita l'attività di progettazione, favorisce la riusabilità e dà benefici enormi in termini di manutenibilità. Fondamentalmente possiamo suddividere i \glossario{Design Pattern} in quattro categorie:
 
 \begin{itemize}
 
@@ -19,7 +19,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Questo pattern è utilizzato per separare le responsabilità dell'applicazione a diversi componenti e permettere di fare una chiara divisione tra componenti di presentazione, struttura dei dati e operazioni su di essi.
+	\item \textbf{Scopo}: Questo pattern è utilizzato per separare le responsabilità dell'applicazione a diversi componenti e permettere di fare una chiara divisione presentazione, struttura dei dati e operazioni su di essi.
 	\item \textbf{Utilizzo}: Viene utilizzato dall'applicazione principalmente per delegare il ruolo di presentazione dei dati al \glossario{front-end}, lasciando al \glossario{back-end} la gestione della logica dell'applicazione (autenticazione, corrispondenza tra \glossario{API} e operazioni sui dati) e la logica di business.
 	
 \end{itemize}
@@ -28,8 +28,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: È un \glossario{Design Pattern} simile a \glossario{MVC} che permette di avere una corrispondenza più diretta e automatica tra la \textit{view} e il \textit{model}. L'acronimo \glossario{MVW} sta per \textit{Model-View-Whatever}, dove \textit{Whatever} secondo i progettisti di \glossario{Angular.js} indica "\textit{whatever works for you}".
-	\item \textbf{Utilizzo}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js} con il quale viene sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
+	\item \textbf{Scopo}: È un \glossario{Design Pattern} simile a \glossario{MVC} che permette di avere una corrispondenza più diretta e automatica tra la \textit{view} e il \textit{model}. L'acronimo \glossario{MVW} sta per \textit{Model-View-Whatever}, dove \textit{Whatever}, secondo i progettisti di \glossario{Angular.js}, indica "\textit{whatever works for you}".
+	\item \textbf{Utilizzo}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js}, con il quale viene sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
 
 \end{itemize}
 
@@ -37,10 +37,16 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione.
-	\item \textbf{Utilizzo}: Viene utilizzato da \glossario{express}, è fortemente legato a \ref{chain-of-responsibility}. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::Middleware}.
+	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione in modo da semplificare notevolmente la loro connessione e collaborazione. Questo pattern in generale è molto utile nello sviluppo e nella gestione di di sistemi distribuiti complessi, e in questo contesto il progetto \glossario{MaaP} si colloca perfettamente.
+	\item \textbf{Utilizzo}: Viene utilizzato dal \glossario{framework} \glossario{Express} attraverso il modulo \textit{connect} per fornire una libreria di funzioni comuni. Definisce una serie di \textit{livelli} (o funzioni) per gestire le varie richieste dell'applicazione e richiamare i rispettivi \textit{handler}. Tutti i componenti del middleware sono collegati l'uno con l'altro e ricevono a turno una richiesta in ingresso, finché uno di questi non decide di partire con l'elaborazione per poi chiamare la funzione \texttt{next}. Come si può notare è molto legato a \glossario{Chain of Responsability}, che verrà descritto in seguito. Tutti i componenti di \glossario{Express} vengono utilizzati con il metodo \texttt{use} di \glossario{Express}. Nella progettazione architetturale è utilizzato nel package \texttt{Back-End::Lib::Middleware}.
 
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/middleware.png}
+\caption{Contestualizzazione di Middleware}
+\label{fig:mvc}
+\end{figure}
 
 \subsection{Design Pattern Creazionali}
 
@@ -48,26 +54,38 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Viene utilizzato per ottenere oggetti a partire da altri oggetti che hanno un'associazione con esso. Questa ricerca viene effettuata tramite una \textit{classe registro}.
-	\item \textbf{Utilizzo}: Le diverse \glossario{Collection} presenti nei file \glossario{DSL} verranno memorizzate per nome in un registro, in modo tale che quando arriva una richiesta venga caricato il file \glossario{DSL} giusto. In particolare è utilizzato all'interno del \glossario{package} \texttt{Back-End::DSLModel}.
+	\item \textbf{Scopo}: Viene utilizzato per ottenere oggetti a partire da altri oggetti che hanno un'associazione con esso. Questa ricerca viene effettuata tramite una \textit{classe registro}, che conterrà una funzione di ricerca in base a una chiave.
+	\item \textbf{Utilizzo}: Le diverse \glossario{Collection} presenti nell'applicazione si differenziano per il loro nome. Utilizzando questo pattern, quando arriva una richiesta la classe che lo implementa sarà in grado di fornire il file \glossario{DSL} corretto in quanto possiederà al suo interno un registro sul quale sarà possibile effettuare una ricerca. È implementato nella classe \texttt{Back-End::Lib::DSLModel}. Alla sua creazione verrà caricato il registro. Questa classe inoltre conterrà un metodo di ricerca e un metodo di caricamento del file DSL.
 
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/registry.png}
+\caption{Contestualizzazione di Registry}
+\label{fig:mvc}
+\end{figure}
 
 \subsubsection{Factory method}
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Nel contesto di \glossario{Node.js} questo pattern viene usato creare una classe attraverso una \textit{funzione factory} esportata dal modulo. In questo modo si potrà costruire e ottenere qualsiasi classe definita in un modulo.
-	\item \textbf{Utilizzo}: È utilizzato all'interno del \glossario{package} \texttt{Back-End::Controller}.
+	\item \textbf{Scopo}: Nel contesto di \glossario{Node.js} questo pattern viene usato creare una classe e restituire una sua istanza attraverso una \textit{funzione factory} che verrà esportata dal modulo. In questo modo si potrà costruire e ottenere qualsiasi classe definita in un modulo.
+	\item \textbf{Utilizzo}: Alle basi del \textit{routing}, che utilizza la rappresentazione \glossario{REST}, vi sarà un controller associato per l'esecuzione delle diverse funzioni a seconda dell'URL indicato. In base a quest'ultimo dev'essere istanziata l'apposita classe che si occuperà di effettuare le sue funzioni. Per creare un oggetto di quella classe ci si avvale di una classe \textit{factory}, la quale si occuperà di invocare la costruzione dell'oggetto. È implementata nella classe \texttt{Back-End::Lib::Controller::ControllerFactory}.
 
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/factory-method.png}
+\caption{Contestualizzazione di Factory Method}
+\label{fig:mvc}
+\end{figure}
 
 \subsubsection{Singleton}
 
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per le classi che devono avere un'unica istanza durante l'esecuzione dell'applicazione;
-	\item \textbf{Utilizzo}: Ogni modulo di \glossario{Node.js} è nativamente un singleton, perché viene caricato al primo \code{require} e poi tutti si riferiscono allo stesso. In architettura è utilizzato per la classe \texttt{Back-End::Controller::ControllerFactory}.
+	\item \textbf{Utilizzo}: Ogni modulo di \glossario{Node.js} è nativamente un singleton, perché viene caricato al primo \code{require} e poi tutti i successivi riferiscono allo stesso.
 
 \end{itemize}
 

@@ -116,6 +116,10 @@ lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "packages/Back
 lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "packages/Back-end.png")
 lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "packages/Front-end.png")
 
+# Design pattern - contestualizzazione
 
+lucidchart.download_image("460b-0034-52ee5d18-8e58-1b740a00c7a5", "patterns/contestualizzazione/middleware.png");
+lucidchart.download_image("45f7-3c94-5308e7a5-a7b0-72850a005bed", "patterns/contestualizzazione/registry.png");
+lucidchart.download_image("4ca7-e2d0-5308ee50-931b-56930a00cc50", "patterns/contestualizzazione/factory-method.png");
 
 

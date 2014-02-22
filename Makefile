@@ -6,7 +6,7 @@ include $(REPO_DIR)/script/global.mk
 
 all:
 	@make test-spelling
-	@make documents
+	+make documents
 
 documents:
 	+cd "documenti" && make documents

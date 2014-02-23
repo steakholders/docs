@@ -32,6 +32,7 @@ prosposta Proposta
 que qua
 rischesto richiesto
 risportate riportate
+risportati riportati
 sarnno saranno
 sè sé
 staica statica

@@ -4,14 +4,18 @@ abbandona'
 about
 Abstract
 AbstractAction
+acc
 accedibile
 Acceptable
 Accrued
+ACF
 act
 action
 ActionController
 active
 ActiveAdmin
+Actor
+Actors
 ACWP
 Addressed
 Addy
@@ -37,6 +41,7 @@ an
 Ana
 AnalisiDeiRequisiti
 Analysis
+Analyst
 anchor
 and
 Angular
@@ -67,6 +72,7 @@ Authentication
 AuthenticationService
 AuthModel
 autoformazione
+Average
 avoided
 Awesome
 AWS
@@ -98,6 +104,7 @@ BSON
 bugs
 BV
 bytecode
+Calculated
 Calendar
 Call
 callback
@@ -154,6 +161,7 @@ commit
 community
 Compiler
 Compito'
+Complex
 Complexity
 comprehension
 compress
@@ -165,6 +173,7 @@ Concluded
 ConcreteCommand
 ConcreteDSLInterpreter
 ConcreteStrategy
+Concurrent
 conditions
 config
 connect
@@ -200,6 +209,7 @@ creazionali
 CRUD
 css
 CSV
+Custom
 cyan
 dall
 dall'admin
@@ -213,6 +223,7 @@ delete
 deleteDocument
 deleteUser
 dell
+dell'Actor
 dell'admin
 dell'Admin
 dell'application
@@ -222,6 +233,7 @@ dell'istanziazione
 dell'URL
 Demonstrable
 density
+Dependence
 Dependency
 dependent
 deployment
@@ -230,8 +242,10 @@ Determination
 developer
 DeveloperProject
 development
+Difficult
 difficulty
 dimostrabilmente
+Distributed
 document
 documentAction
 DocumentActionService
@@ -257,7 +271,9 @@ DSLModel
 duck
 dyadic
 each
+Ease
 east
+Easy
 Eclipse
 edit
 editDocument
@@ -266,6 +282,7 @@ editProfile
 editUser
 Education
 Edward
+EF
 Efficiency
 effort
 election
@@ -282,6 +299,7 @@ Enterprise
 entreprise
 Entry
 environment
+Environmental
 Erich
 error
 Errorhandler
@@ -296,6 +314,7 @@ event
 Everybody
 examination
 Exit
+Experience
 explain
 Exploring
 exports
@@ -305,8 +324,10 @@ eXtensible
 external
 facade
 facilitatore
+Factor
 factory
 failure
+Familiarity
 FAQ
 fault
 features
@@ -389,11 +410,13 @@ Henry
 Heroku
 hh
 Hieatt
+Highly
 History
 home
 Howard
 html
 HTTPS
+HUCP
 HyperText
 Ian
 IDE
@@ -403,6 +426,7 @@ IEC
 IEEE
 Image
 Imaging
+Important
 improvement
 incrementalmente
 index
@@ -417,6 +441,7 @@ injector
 inner
 inputencoding
 inspection
+Installation
 Integrated
 Intelligent
 Interaction
@@ -466,9 +491,11 @@ Lavazza
 lavoro'
 lccccccc
 lccccccccc
+Lead
 Learning
 left
 legend
+l'Environmental
 lib
 LIFO
 like
@@ -483,6 +510,7 @@ listCollection
 listCollections
 livello'
 ln
+l'Object
 local
 Location
 Locator
@@ -511,6 +539,7 @@ Maas
 MaaS
 Maccagnan
 magic
+Magnitude
 Mahesh
 Mailer
 MailView
@@ -566,9 +595,11 @@ MongoDB
 mongoose
 monospace
 month
+Motivation
 Mozilla
 MU
-MUST
+Multiplier
+Must
 mvc
 MVVM
 MVW
@@ -579,6 +610,7 @@ namespace
 ND
 nell
 nell'index
+nell'Object
 Nell'URL
 never
 new
@@ -616,6 +648,7 @@ official
 officials
 often
 one
+OO
 OOP
 Operational
 Opportunity
@@ -635,7 +668,7 @@ page
 parameters
 parser
 parsing
-Part
+part
 participants
 passport
 PassportLocal
@@ -667,7 +700,8 @@ Platform
 plotcoordinates
 plots
 plugin
-Points
+Point
+points
 pollution
 polyadic
 populate
@@ -699,6 +733,7 @@ procedures
 Process
 processamento
 processi'
+Processing
 product
 Professional
 profile
@@ -758,6 +793,7 @@ request
 RequestResetModel
 require
 requireAdmin
+Required
 requireLogged
 Requirements
 requireNotLogged
@@ -771,12 +807,14 @@ reset
 ResetModel
 Resource
 responsability
+Response
 responsibility
 responsività
 REST
 Retired
 Retrieve
 return
+Reusable
 review
 Rework
 RF
@@ -818,6 +856,7 @@ Schemaless
 SCR
 scripting
 section
+Security
 Selected
 SEMAT
 sender
@@ -876,6 +915,7 @@ SQL
 SQMT
 ST
 stabile'
+Stable
 stack
 stacked
 Stafford
@@ -910,6 +950,7 @@ Sun
 superadmin
 superAdmin
 superclasse
+Support
 SV
 SWEBOK
 switch
@@ -921,11 +962,14 @@ tabsize
 tag
 TaskList
 tasks
+TCF
 Teamwork
 TeamworkPM
 Techinques
+Technical
 technology
 template
+tenant
 testabilità
 TestClass
 testing
@@ -938,6 +982,7 @@ than
 the
 then
 theory
+Third
 thread
 three
 threshold
@@ -972,6 +1017,7 @@ UCP
 UCS
 UCU
 UML
+Unadjusted
 Unauthorized
 Under
 underscore
@@ -1007,6 +1053,7 @@ UsersIndex
 UsersListModel
 UsersListPage
 utf
+UUCP
 validatore
 Value
 Values

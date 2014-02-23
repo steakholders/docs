@@ -1,0 +1,216 @@
+\section{Use Case Points}
+
+La metrica Use Case Points è stata applicata al fine di valutare l'attuabilità dello sviluppo di quali e quanti requisiti prima dell'accettazione.
+
+Segue un breve studio di fattibilità basato sui risultati derivanti dall'applicazione degli Use Case Points.
+
+
+\subsection{Fattori tecnici dell'implementazione}
+
+I 13 fattori tecnici valutati sono:
+
+\begin{enumerate}
+	\item \textbf{Distributed System Required}: l'architettura della soluzione può essere centralizzata o single-tenant, o può essere distribuita (come una soluzione n-tier) o multi-tenant. Numeri più alti rappresentano un'architettura più complessa;
+	\item \textbf{Response Time Is Important}: la rapidità di risposta per gli utenti è un fattore importante (e non banale). Ad esempio, se il carico del server dovrebbe essere molto bassa, questo può essere un fattore banale. Numeri alti rappresentano un'alta importanza del tempo di risposta;
+	\item \textbf{End User Efficiency}: l'applicazione è sviluppata per migliorare l'efficienza d'uso, o semplicemente la capacità? Numeri alti rappresentano progetti che si basano più pesantemente sull'applicazione per migliorare l'efficienza d'uso;
+	\item \textbf{Complex Internal Processing Required}: ci sono molti algoritmi complessi da implementare e testare? Algoritmi complessi hanno numeri alti. Delle semplici query al database dovrebbero avere numeri bassi;
+	\item \textbf{Reusable Code Must Be a Focus}: il riuso massivo del codice è un obiettivo? Maggiore è il riuso del codice, minore è il valore relativo;
+	\item \textbf{Installation Ease}: un'installazione agevole è un fattore chiave? Maggiore è il livello di competenza degli utenti, minore è il valore relativo;
+	\item \textbf{Usability}: la facilità di utilizzo è un criterio primario per l'accettazione? Maggiore è l'importanza dell'usabilità, maggiore è il valore relativo;
+	\item \textbf{Cross-Platform Support}: è richiesto il supporto multi-piattaforma? Più piattaforme devono essere supportate, più alto è il valore relativo;
+	\item \textbf{Easy To Change}: il fornitore richiede di poter cambiare o personalizzare l'applicazione in futuro? Più richieste sono mosse in questa direzione, maggiore è il valore relativo;
+	\item \textbf{Highly Concurrent}: bisogna preoccuparsi di questioni di concorrenza? Più attenzione bisogna prestare a risolvere conflitti su dati o sull'applicazione, maggiore è il valore relativo;
+	\item \textbf{Custom Security}: è possibile utilizzare soluzioni già esistenti riguardanti la sicurezza o è necessario svilupparne di personali? Maggiori soluzioni personalizzare si devono implementare, più alto è il valore relativo;
+	\item \textbf{Dependence on Third Party Code}: l'applicazione necessita l'uso di librerie o altro di terze parti? Più codice di terze parti (e più affidabile è), minore è li valore relativo;
+	\item \textbf{User Training}: quanta formazione dell'utente è richiesta? L'applicazione è complessa o supporta attività complesse? Più tempo l'utente impiega nella formazione, maggiore è il valore relativo. 
+\end{enumerate}
+
+Per ogni fattore è necessario attribuire un valore da 0 a 5 che costituisce l'importanza relativa.
+
+Il Technical Complexity Factor è calcolato sommando le importanze relative moltiplicate per il peso corrispondente, diviso per 100 e sommato a 0,6.
+
+\begin{table}[H]
+\begin{adjustwidth}{-4cm}{-4cm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{ 2}{|c|}{\raisebox{-1\height}{\textbf{Fattori tecnici}}} & \multicolumn{ 1}{c|}{\raisebox{-1\height}{\textbf{Peso}}} & \multicolumn{ 2}{c|}{\textbf{Importanza relativa}} \\ \cline{ 4- 5}
+			\multicolumn{ 2}{|c|}{} & \multicolumn{ 1}{c|}{} & \textbf{Con tutti i requisiti} & \textbf{Solo requisiti acc.} \\ \hline
+			1 & Distributed System Required & 2 & \textbf{4} & \textbf{0} \\ \hline
+			2 & Response Time Is Important & 1 & \textbf{1} & \textbf{1} \\ \hline
+			3 & End User Efficiency & 1 & \textbf{3} & \textbf{3} \\ \hline
+			4 & Complex Internal Processing Required & 1 & \textbf{1} & \textbf{1} \\ \hline
+			5 & Reusable Code Must Be A Focus & 1 & \textbf{2} & \textbf{2} \\ \hline
+			6 & Installation Ease & 0.5 & \textbf{1} & \textbf{1} \\ \hline
+			7 & Usability & 0.5 & \textbf{3} & \textbf{3} \\ \hline
+			8 & Cross-Platform Support & 2 & \textbf{4} & \textbf{4} \\ \hline
+			9 & Easy To Change & 1 & \textbf{1} & \textbf{1} \\ \hline
+			10 & Highly Concurrent & 1 & \textbf{1} & \textbf{1} \\ \hline
+			11 & Custom Security & 1 & \textbf{2} & \textbf{2} \\ \hline
+			12 & Dependence On Third-Party Code & 1 & \textbf{2} & \textbf{2} \\ \hline
+			13 & User Training & 1 & \textbf{3} & \textbf{2} \\ \hline
+			\multicolumn{ 3}{|c|}{\textbf{Technical Complexity Factor}} & \textbf{0.94} & \textbf{0.85} \\ \hline
+		\end{tabular}
+	\end{center}
+\caption{UCP - Fattori tecnici}
+\end{adjustwidth}
+\end{table}
+
+I fattori che variano sono \emph{Distributed System Required} poiché non verrà implementato \glossario{MaaS} e \emph{User Training} in quanto la formazione degli utenti dovrà trattare di una minore mole di materiale.
+
+
+\subsection{Fattori ambientali}
+
+Gli 8 fattori ambientali valutati sono:
+
+\begin{enumerate}
+	\item \textbf{Familiarity With The Project}: quanta esperienza ha maturato il team nel dominio di sviluppo? Un alto livello di esperienza corrisponde ad un numero alto;
+	\item \textbf{Application Experience}: quanta esperienza ha maturato il team con l'applicazione? Questo è rilevante solo quando si attuano cambiamenti a applicazioni già esistenti. Un valore alto corrisponde a molta esperienza;
+	\item \textbf{Object Oriented Programming Experience}: quanta esperienza ha maturato il team verso l'Object Oriented? Un valore alto corrisponde a molta esperienza nell'Object Oriented;
+	\item \textbf{Lead Analyst Capability}: quanto è esperto e abile la persona responsabile dei requisiti? Un valore alto rappresenta abilità e esperienza;
+	\item \textbf{Motivation}: quanto è motivato il team? Un valore alto corrisponde a molta motivazione;
+	\item \textbf{Stable Requirements}: cambiamenti nei requisiti comportano un incremento della mole di lavoro. Un valore alto corrisponde a molti cambiamenti;
+	\item \textbf{Part Time Staff}: un valore alto riflette un team part time, consulenti esterni e sviluppatori che si occupano contemporaneamente di più progetti. Un cambiamento di contesto è causa di inefficienza;
+	\item \textbf{Difficult Programming Language}: linguaggi di programmazione complessi corrispondono a numeri elevati. Questo valore è da attribuire in relazione alle capacità del team e non in senso assoluto.
+\end{enumerate}
+
+Per ogni fattore è necessario attribuire un valore da 0 a 5 che costituisce l'importanza relativa.
+
+Ponendo $S$ la somma delle importanze relative moltiplicate per il peso corrispondente, l'Environmental Factor viene così calcolato:
+
+\[
+EF=1.4-(0.03 \cdot S)
+\]
+
+\begin{table}[H]
+\begin{adjustwidth}{-4cm}{-4cm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{ 2}{|c|}{\raisebox{-1\height}{\textbf{Fattori ambientali}}} & \multicolumn{ 1}{c|}{\raisebox{-1\height}{\textbf{Peso}}} & \multicolumn{ 2}{c|}{\textbf{Importanza relativa}} \\ \cline{ 4- 5}
+			\multicolumn{ 2}{|c|}{\textbf{}} & \multicolumn{ 1}{c|}{} & \textbf{Con tutti i requisiti} & \textbf{Solo requisiti acc.} \\ \hline
+			1 & Familiarity With The Project & 1.5 & \textbf{0} & \textbf{0} \\ \hline
+			2 & Application Experience & 0.5 & \textbf{0} & \textbf{0} \\ \hline
+			3 & OO Programming Experience & 1 & \textbf{1} & \textbf{1} \\ \hline
+			4 & Lead Analyst Capability & 0.5 & \textbf{1} & \textbf{1} \\ \hline
+			5 & Motivation & 1 & \textbf{5} & \textbf{5} \\ \hline
+			6 & Stable Requirements & 2 & \textbf{2} & \textbf{3} \\ \hline
+			7 & Part Time Staff & -1 & \textbf{3} & \textbf{3} \\ \hline
+			8 & Difficult Programming Language & -1 & \textbf{5} & \textbf{5} \\ \hline
+			\multicolumn{ 3}{|c|}{\textbf{Environmental Factor}} & \textbf{1.325} & \textbf{1.265} \\ \hline
+		\end{tabular}
+	\end{center}
+\caption{UCP - Fattori ambientali}
+\end{adjustwidth}
+\end{table}
+
+L'unico fattore che varia è \emph{Stable Requirements} poiché un maggior numero di requisiti porta ad una maggiore probabilità di cambiamento degli stessi.
+
+
+\subsection{Quantità e complessità degli use case}
+
+Ad ogni use case valutato viene attribuito un numero di \emph{use case points} in base al suo grado di complessità, calcolato sul numero di transazioni, inteso come scambio, una risposta del sistema ad un'azione dell'utente:
+
+\begin{itemize}
+	\item \textbf{Simple}: fino a 3 transazioni;
+	\item \textbf{Average}: da 4 a 7 transazioni;
+	\item \textbf{Complex}: più di 7 transazioni.
+\end{itemize}
+
+Il calcolo degli Unadjusted Use Case Points è uguale alla somma delle importanze relative moltiplicate per il peso corrispondente.
+
+\begin{table}[H]
+\begin{adjustwidth}{-4cm}{-4cm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{ 2}{|c|}{\raisebox{-1\height}{\textbf{Use Case Points grezzi}}} & \multicolumn{ 1}{c|}{\raisebox{-1\height}{\textbf{Peso}}} & \multicolumn{ 2}{c|}{\textbf{Numero di use case}} \\ \cline{ 4- 5}
+			\multicolumn{ 2}{|c|}{\textbf{}} & \multicolumn{ 1}{c|}{} & \textbf{Con tutti i requisiti} & \textbf{Solo requisiti acc.} \\ \hline
+			1 & Simple & 5 & \textbf{21} & \textbf{15} \\ \hline
+			2 & Average & 10 & \textbf{1} & \textbf{1} \\ \hline
+			3 & Complex & 15 & \textbf{0} & \textbf{0} \\ \hline
+			\multicolumn{ 3}{|c|}{\textbf{Unadjusted Use Case Points}} & \textbf{115} & \textbf{85} \\ \hline
+		\end{tabular}
+	\end{center}
+\caption{UCP - Quantità e complessità degli use case}
+\end{adjustwidth}
+\end{table}
+
+Il tracciamento dei requisiti riportato in \AnalisiDeiRequisiti{} permette di non considerare i casi d'uso che sono legati a requisiti non accettati.
+
+
+\subsection{Quantità e complessità degli attori}
+
+Ad ogni attore valutato viene attribuito un peso in base al suo grado di complessità:
+
+\begin{itemize}
+	\item \textbf{Simple}: sono altri sistemi che comunicano con il proprio software attraverso delle \glossario{API} predefinite. L'elemento chiave è che si sta esponendo un'interazione con il proprio software attraverso un meccanismo specifico e ben definito;
+	\item \textbf{Average}: possono essere sia uomini che interagiscono con un protocollo ben definito, sia sistemi che utilizzano \glossario{API} più complesse o flessibili;
+	\item \textbf{Complex}: utenti che interagiscono con il sistema in modo imprevedibile anche attraverso interfacce grafiche.
+\end{itemize}
+
+Il calcolo dell'Actor Complexity Factor è uguale alla somma delle importanze relative moltiplicate per il peso corrispondente.
+
+\begin{table}[H]
+\begin{adjustwidth}{-4cm}{-4cm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{ 2}{|c|}{\raisebox{-1\height}{\textbf{Attori}}} & \multicolumn{ 1}{c|}{\raisebox{-1\height}{\textbf{Peso}}} & \multicolumn{ 2}{c|}{\textbf{Number of Actors}} \\ \cline{ 4- 5}
+			\multicolumn{ 2}{|c|}{\textbf{}} & \multicolumn{ 1}{c|}{} & \textbf{Con tutti i requisiti} & \textbf{Solo requisiti acc.} \\ \hline
+			1 & Simple & 1 & \textbf{0} & \textbf{0} \\ \hline
+			2 & Average & 2 & \textbf{1} & \textbf{1} \\ \hline
+			3 & Complex & 3 & \textbf{6} & \textbf{4} \\ \hline
+			\multicolumn{ 3}{|c|}{\textbf{Actor Complexity Factor}} & \textbf{20} & \textbf{14} \\ \hline
+		\end{tabular}
+	\end{center}
+\caption{UCP - Quantità e complessità degli attori}
+\end{adjustwidth}
+\end{table}
+
+Gli attori implicati nell'interazione con il sistema \glossario{MaaS} non vengono calcolati. Il fattore di complessità risulta diminuire sensibilmente considerando solo i requisiti accettati poiché gli utenti \glossario{MaaS} sono ritenuti \emph{complessi}.
+
+
+\subsection{Risultati e conclusioni}
+
+Ponendo
+
+\begin{itemize}
+	\item Technical Complexity Factor = $TCF$;
+	\item Environmental Factor = $EF$;
+	\item Unadjusted Use Case Points = $UUCP$;
+	\item Actor Complexity Factor = $ACF$;
+	\item Use Case Points = $UCP$;
+	\item Ore di impegno per Use Case Point = $HUCP$;
+\end{itemize}
+
+il calcolo delle ore di impegno sarà
+
+\[
+Ore = [ (UUCP+ACF) \cdot TCF \cdot EF ] \cdot HUCP
+\]
+
+\begin{table}[H]
+\begin{adjustwidth}{-4cm}{-4cm}
+	\begin{center}
+		\begin{tabular}{|r|r|r|r|}
+			\hline
+			\multicolumn{ 4}{|c|}{\textbf{Fattori di complessità}} \\ \hline
+			TCF & Technical Complexity Factor & 0.94 & 0.85 \\ \hline
+			EF & Environmental Factor & 1.325 & 1.265 \\ \hline
+			UUCP & Unadjusted Use Case Points & 115 & 85 \\ \hline
+			ACF & Actor Complexity Factor & 20 & 14 \\ \hline
+			\multicolumn{ 4}{|c|}{\textbf{Calcolo Use Case Points}} \\ \hline
+			UCP & Use Case Points & 168.1 & 106.4 \\ \hline
+			\multicolumn{ 4}{|c|}{\textbf{Calcolo ore di sviluppo}} \\ \hline
+			Rapporto & Ore di impegno per Use Case Point & 7 & 7 \\ \hline
+			\multicolumn{ 4}{|c|}{} \\ \hline
+			\multicolumn{ 2}{|r|}{\textbf{Ore di impegno}} & \textbf{ 1,177 } & \textbf{ 745 } \\ \hline
+		\end{tabular}
+	\end{center}
+\caption{UCP - Ore di impegno stimate}
+\label{tab:UCP-ore-di-impegno-stimate}
+\end{adjustwidth}
+\end{table}
+
+I risultati riportati in tabella \ref{tab:UCP-ore-di-impegno-stimate} mettono in evidenza come le ore necessarie per lo sviluppo di tutti i requisiti richieda uno sforzo quantificato in ore non sostenibile per il gruppo, e che eccede eccessivamente il limite superiore delle 105 ore produttive per ciascun componente del gruppo. Considerando solo i requisiti accettati (vedi \AnalisiDeiRequisiti), si nota come le ore di impegno scendano ad un livello molto vicino alle attese. Dal momento che la quantificazione risultante dalla tecnica utilizzata è una stima, è plausibile ritenere accettabile tale livello e procedere verso la direzione scelta con l'accettazione dei requisiti.

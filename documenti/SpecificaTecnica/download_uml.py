@@ -102,7 +102,7 @@ lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/Back-end-
 lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "packages/Back-end::Lib::DSLModel.png")
 lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "packages/Back-end::Lib::Controller.png")
 lucidchart.download_image("49f6-9050-52ee5daf-aee7-1f600a00c7a5", "packages/Back-end::Lib::AuthModel.png")
-lucidchart.download_image("460b-0034-52ee5d18-8e58-1b740a00c7a5", "packages/Back-end::Lib::Middleware.png")
+lucidchart.download_image("4e50-af68-5308deea-8459-466f0a005bed", "packages/Back-end::Lib::Middleware.png")
 lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "packages/Back-end::Lib::MailView.png")
 lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "packages/Back-end::DeveloperProject.png")
 
@@ -121,5 +121,10 @@ lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "packages/Fron
 lucidchart.download_image("460b-0034-52ee5d18-8e58-1b740a00c7a5", "patterns/contestualizzazione/middleware.png");
 lucidchart.download_image("45f7-3c94-5308e7a5-a7b0-72850a005bed", "patterns/contestualizzazione/registry.png");
 lucidchart.download_image("4ca7-e2d0-5308ee50-931b-56930a00cc50", "patterns/contestualizzazione/factory-method.png");
+lucidchart.download_image("4395-1dac-530a11f7-9fe0-0fde0a005bed", "patterns/contestualizzazione/chain-of-responsability.png");
+lucidchart.download_image("4879-d7d0-530a152d-8294-42aa0a0055ba", "patterns/contestualizzazione/strategy.png");
+lucidchart.download_image("42e5-7fac-530a178b-9ed7-56be0a00cc50", "patterns/contestualizzazione/command.png");
+
+
 
 

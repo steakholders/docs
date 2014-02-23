@@ -70,7 +70,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Nel contesto di \glossario{Node.js} questo pattern viene usato creare una classe e restituire una sua istanza attraverso una \textit{funzione factory} che verrà esportata dal modulo. In questo modo si potrà costruire e ottenere qualsiasi classe definita in un modulo.
-	\item \textbf{Utilizzo}: Alle basi del \textit{routing}, che utilizza la rappresentazione \glossario{REST}, vi sarà un controller associato per l'esecuzione delle diverse funzioni a seconda dell'URL indicato. In base a quest'ultimo dev'essere istanziata l'apposita classe che si occuperà di effettuare le sue funzioni. Per creare un oggetto di quella classe ci si avvale di una classe \textit{factory}, la quale si occuperà di invocare la costruzione dell'oggetto. È implementata nella classe \texttt{Back-End::Lib::Controller::ControllerFactory}.
+	\item \textbf{Utilizzo}: Alle basi del \textit{routing}, che utilizza la rappresentazione \glossario{REST}, vi sarà un controller associato per l'esecuzione delle diverse funzioni a seconda dell'URL indicato. In base a quest'ultimo dev'essere istanziata l'apposita classe che si occuperà di effettuare le sue funzioni. Per creare un oggetto di quella classe ci si avvale di una classe \textit{factory}, la quale si occuperà di invocare la costruzione dell'oggetto. Nell'architettura del progetto il pattern è implementato nella classe \texttt{Back-End::Lib::Controller::ControllerFactory}.
 
 \end{itemize}
 
@@ -95,15 +95,27 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Viene utilizzato per rendere visibili solamente alcune cose agli altri oggetti.
+	\item \textbf{Scopo}: Viene utilizzato per rendere visibili solamente alcune cose agli altri oggetti ed avere un unico punto di accesso semplificato a un sottosistema fornendo un'interfaccia di alto livello e minimizzando dunque le comunicazioni e le dipendenze.
 	\item \textbf{Utilizzo}: Viene utilizzato nei seguenti casi:
 	\begin{itemize}
 	
-		\item La classe \texttt{Back-End::Middleware::MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp};
-		\item La classe \texttt{Back-End::Controller::ControllerFactory} utilizza \textit{facade} per nascondere le classi interne.
+		\item La classe \texttt{Back-End::Lib::Middleware::MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp}. In questo modo le richieste vengono delegate agli oggetti appropriati senza che la classe cliente conosca le classi del sottosistema. Sarà il \textit{Facade} che si occuperà di trasferire la comunicazione all'oggetto appropriato.
+		\item La classe \texttt{Back-End::Lib::Controller::ControllerFactory} utilizza \textit{facade} per nascondere le classi interne, in modo analogo a quanto effettuato dalla classe descritta nel punto precedente. Il package \texttt{Back-End::Lib::Controllers} è un sottosistema complesso composto da diverse classi. Utilizzando \textit{facade} la classe \texttt{Back-End::Lib::Middleware::Routing} è all'oscuro delle classi presenti e comunica con il pacchetto attraverso la classe \textit{facade} \texttt{Back-End::Lib::Controller::ControllerFactory}.
 		
 	\end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/facade1.png}
+\caption{Contestualizzazione di Facade in \texttt{Back-End::Lib::Middleware::MiddlewareLoader}}
+\label{fig:mvc}
+\end{figure}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/facade2.png}
+\caption{Contestualizzazione di Facade in \texttt{Back-End::Lib::Controller::ControllerFactory}}
+\label{fig:mvc}
+\end{figure}
 
 \subsection{Design Pattern Comportamentali}
 
@@ -112,19 +124,31 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario.
-	\item \textbf{Utilizzo}: \glossario{Express} usa chain-of-responsibility per la gestione dei \glossario{middleware} e del \glossario{routing}. In particolare viene utilizzato nell'architettura nel \glossario{package} \texttt{Back-End::Middleware}.
+	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario. Tutti gli oggetti destinatari della richiesta sono \textit{concatenati} tra di loro. Ogni nodo della catena se può esaudire la richiesta la effettua, altrimenti delega l'onere al nodo successivo. La catena viene attraversata finché un nodo non può eseguire l'ordine del mittente. 
+	\item \textbf{Utilizzo}: \glossario{Express} usa \textit{chain of responsability} per la gestione dei \glossario{middleware} e del \glossario{routing}. Come già accennato è particolarmente legato al pattern \textit{Middleware}. Viene utilizzato nella nostra architettura all'interno del package \texttt{Back-End::Lib::Middleware}. La classe \texttt{Back-End::Lib::Middleware::MiddlewareHandler} gestisce la richiesta scorrendo tutta la lista delle sottoclassi e richiamando il metodo \texttt{next} finché una di queste non può soddisfarla.
 
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/chain-of-responsability.png}
+\caption{Contestualizzazione di Chain of Responsability}
+\label{fig:mvc}
+\end{figure}
 
 \subsubsection{Strategy}
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: In futuro potrebbe essere necessario cambiare l'algoritmo di interpretazione del \glossario{DSL}. Utilizzando questo pattern l'algoritmo potrà essere cambiato in modo indipendente da chi ne fa uso.
-	\item \textbf{Utilizzo}: Viene utilizzato all'interno del \glossario{package} \texttt{Back-End::DSLModel}.
+	\item \textbf{Scopo}: Questo pattern serve per definire una famiglia di algoritmi e renderli intercambiabili, in modo che essi possano variare indipendentemente dal client che ne fa utilizzo. In un progetto software che guarda al futuro e che verrà manutenuto è fondamentale poter effettuare modifiche alle procedure in modo non intrusivo.
+	\item \textbf{Utilizzo}: Viene utilizzato all'interno della classe \texttt{Back-End::Lib::DSLModel::DSLInterpreterStrategy} in modo da permettere in futuro cambiamenti all'algoritmo di interpretazione del \glossario{DSL} senza dover intervenire sulla classe che ne fa uso, ovvero \texttt{Back-End::Lib::DSLModel::DSLDomain}.
 
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/strategy.png}
+\caption{Contestualizzazione di Strategy}
+\label{fig:mvc}
+\end{figure}
 
 \subsubsection{Command}
 

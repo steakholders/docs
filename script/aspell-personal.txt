@@ -545,6 +545,7 @@ metrics
 Microsoft
 Microsystems
 middleware
+MiddlewareHandler
 MiddlewareLoader
 milestone
 Mistake

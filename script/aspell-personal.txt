@@ -167,6 +167,7 @@ ConcreteDSLInterpreter
 ConcreteStrategy
 conditions
 config
+connect
 Consortium
 Constraints
 Construction
@@ -218,6 +219,7 @@ dell'application
 dell'array
 dell'index
 dell'istanziazione
+dell'URL
 Demonstrable
 density
 Dependency
@@ -547,6 +549,7 @@ metrics
 Microsoft
 Microsystems
 middleware
+MiddlewareHandler
 MiddlewareLoader
 milestone
 Mistake

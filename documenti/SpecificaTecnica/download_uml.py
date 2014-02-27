@@ -106,6 +106,15 @@ lucidchart.download_image("4e50-af68-5308deea-8459-466f0a005bed", "packages/Back
 lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "packages/Back-end::Lib::MailView.png")
 lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "packages/Back-end::DeveloperProject.png")
 
+# Nuovi dopo modifica di Federico (Luca)
+lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "packages/Back-end::Lib::View.png")
+lucidchart.download_image("45fd-9d18-530efd72-8ab9-34430a005bed", "packages/Back-end::Lib::Model.png")
+lucidchart.download_image("4e50-af68-5308deea-8459-466f0a005bed", "packages/Back-end::Lib::Controller::Middleware.png")
+lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "packages/Back-end::Lib::Controller::Controller.png")
+lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "packages/Back-end::Lib::Model::DSLModel.png")
+
+
+
 lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/Front-end-Diagramma delle classi.png")
 lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/Front-end-Diagramma dei packages.png")
 lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "packages/Front-end::Services.png")

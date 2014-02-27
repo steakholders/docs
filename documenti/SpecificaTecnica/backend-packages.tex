@@ -13,15 +13,15 @@
     \end{itemize} 
     \subparagraph{Package contenuti} 
     \begin{itemize}
-        \item Back-end::DeveloperProject
-        \item Back-end::Lib
+        \item DeveloperProject
+        \item Lib
     \end{itemize}
-  \subsubsection{Back-end::DeveloperProject}
+  \subsubsection{DeveloperProject}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
         \includegraphics[width=\textwidth]{packages/Back-end::DeveloperProject.png}  
-        \caption{Componente Back-end::DeveloperProject}
+        \caption{Componente DeveloperProject}
       \end{center}  
     \end{figure} 
   \subparagraph{Descrizione} 
@@ -58,7 +58,98 @@
           \begin{itemize}
             \item[] Viene utilizzata per descrivere tutti i parametri dell'applicazione. Quando viene creata una \texttt{Back-end::Lib::ServerApp} le viene passato un oggetto di questo tipo ed essa avvierà l'applicazione a partire da questa configurazione.
           \end{itemize}
-  \subsubsection{Back-end::Lib}
+  \subsubsection{View}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::View.png}  
+        \caption{Componente View}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} contenente le classi che costituiscono i template utilizzati per le email di recupero-
+password. Verranno utilizzate dal \glossario{middleware} Mailer.
+
+    \end{itemize} 
+  \subsubsection{Controller}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller.png}  
+        \caption{Componente Controller}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] 
+    \end{itemize} 
+    \subparagraph{Package contenuti} 
+    \begin{itemize}
+        \item Middleware
+        \item Controller
+    \end{itemize}
+  \subsubsection{Model}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Model.png}  
+        \caption{Componente Model}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] 
+    \end{itemize} 
+    \subparagraph{Package contenuti} 
+    \begin{itemize}
+        \item DSLModel
+    \end{itemize}
+  \subsubsection{DSLModel}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Model::DSLModel.png}  
+        \caption{Componente DSLModel}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} costituito da classi per la definizione delle regole di business sui dati definite tramite il \glossario{DSL} . Il \glossario{package} contiene principalmente classi che si occupano del caricamento del \glossario{DSL} e della sua rappresentazione in un modello ad oggetti. Costituisce la componente model dell’architettura MVC del back-end.
+
+    \end{itemize} 
+  \subsubsection{Middleware}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller::Middleware.png}  
+        \caption{Componente Middleware}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene
+passata la responsabilità di gestire una richiesta, decorando quest’ultima con parametri e
+metodi utilizzabili dai controller. Costituisce una parte controller nell’architettura \glossario{MVC}
+del \glossario{Back-end} .
+
+    \end{itemize} 
+  \subsubsection{Controller}
+  \paragraph{Informazioni sul package} 
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller::Controller.png}  
+        \caption{Componente Controller}
+      \end{center}  
+    \end{figure} 
+  \subparagraph{Descrizione} 
+    \begin{itemize}
+    \item[] \glossario{Package} per il componente che realizza parte controller nell’architettura mvc nel back-
+end. Contiene classi per le funzionalità di controllo e visualizzazione delle risorse, dove ogni
+classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{URI} .
+
+    \end{itemize} 
+  \subsubsection{Lib}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
       \begin{center} 
@@ -75,98 +166,18 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
     \end{itemize} 
     \subparagraph{Package contenuti} 
     \begin{itemize}
-        \item Back-end::Lib::View
-        \item Back-end::Lib::Model
-        \item Back-end::Lib::Controller
+        \item View
+        \item Controller
+        \item Model
     \end{itemize}
-  \subsubsection{Back-end::Lib::View}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::View.png}  
-        \caption{Componente Back-end::Lib::View}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} contenente le classi che costituiscono i template utilizzati per le email di recupero-
-password. Verranno utilizzate dal \glossario{middleware} Mailer.
-
-    \end{itemize} 
-  \subsubsection{Back-end::Lib::Model}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Model.png}  
-        \caption{Componente Back-end::Lib::Model}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] 
-    \end{itemize} 
-    \subparagraph{Package contenuti} 
-    \begin{itemize}
-        \item Back-end::Lib::Model::DSLModel
-    \end{itemize}
-  \subsubsection{Back-end::Lib::Controller}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller.png}  
-        \caption{Componente Back-end::Lib::Controller}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] 
-    \end{itemize} 
-    \subparagraph{Package contenuti} 
-    \begin{itemize}
-        \item Back-end::Lib::Controller::Middleware
-        \item Back-end::Lib::Controller::Controller
-    \end{itemize}
-  \subsubsection{Back-end::Lib::Controller::Middleware}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller::Middleware.png}  
-        \caption{Componente Back-end::Lib::Controller::Middleware}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} contenente classi che costituiscono gli handler della catena di chiamate a cui viene
-passata la responsabilità di gestire una richiesta, decorando quest’ultima con parametri e
-metodi utilizzabili dai controller. Costituisce una parte controller nell’architettura \glossario{MVC}
-del \glossario{Back-end} .
-
-    \end{itemize} 
-  \subsubsection{Back-end::Lib::Controller::Controller}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Controller::Controller.png}  
-        \caption{Componente Back-end::Lib::Controller::Controller}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} per il componente che realizza parte controller nell’architettura mvc nel back-
-end. Contiene classi per le funzionalità di controllo e visualizzazione delle risorse, dove ogni
-classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{URI} .
-
-    \end{itemize} 
-  \subsubsection{Back-end::Lib::Model::DSLModel}
-  \paragraph{Informazioni sul package} 
-    \begin{figure}[H] 
-      \begin{center} 
-        \includegraphics[width=\textwidth]{packages/Back-end::Lib::Model::DSLModel.png}  
-        \caption{Componente Back-end::Lib::Model::DSLModel}
-      \end{center}  
-    \end{figure} 
-  \subparagraph{Descrizione} 
-    \begin{itemize}
-    \item[] \glossario{Package} costituito da classi per la definizione delle regole di business sui dati definite tramite il \glossario{DSL} . Il \glossario{package} contiene principalmente classi che si occupano del caricamento del \glossario{DSL} e della sua rappresentazione in un modello ad oggetti. Costituisce la componente model dell’architettura MVC del back-end.
-
-    \end{itemize} 
+    \paragraph{Classi}
+      \subparagraph{Back-end::Lib::Error}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che rappresenta un errore all'interno del package \texttt{Back-end::Lib}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata da tutte le classi presente all'interno del package \texttt{Back-end::Lib} per rappresentare un errore generato, identificandolo tramite nome, descrizione e codice.
+          \end{itemize}

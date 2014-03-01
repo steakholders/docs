@@ -807,9 +807,8 @@ research
 reset
 ResetModel
 Resource
-responsability
 Response
-responsibility
+Responsibility
 responsività
 REST
 Retired

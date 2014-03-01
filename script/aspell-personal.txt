@@ -78,6 +78,7 @@ Awesome
 AWS
 back
 backend
+backlog
 backslash
 baseline
 basicAuth
@@ -102,6 +103,7 @@ breaklines
 Broken
 BSON
 bugs
+burndown
 BV
 bytecode
 Calculated
@@ -216,6 +218,7 @@ dall
 dall'admin
 dall'Admin
 dashboard
+DashboardController
 DashboardPage
 David
 dd
@@ -250,6 +253,8 @@ Distributed
 document
 documentAction
 DocumentActionService
+DocumentController
+DocumentEditController
 Documenti'
 documentId
 DocumentModel
@@ -354,6 +359,8 @@ ForgotMailView
 ForgotPageRequest
 ForgotPageReset
 ForgotPasswordService
+ForgotRequestController
+ForgotResetController
 form
 format
 Formed
@@ -519,8 +526,10 @@ LOCs
 log
 logger
 logic
+LoginController
 LoginPage
 logout
+LogoutController
 LogoutPage
 lost
 lostpassword
@@ -1040,6 +1049,7 @@ Useable
 used
 UserController
 userId
+UserListController
 UserListModel
 UserListPage
 UserListService
@@ -1050,6 +1060,7 @@ UserPage
 users
 UserService
 UsersIndex
+UsersListController
 UsersListModel
 UsersListPage
 utf

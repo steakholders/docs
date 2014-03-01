@@ -96,24 +96,12 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per rendere visibili solamente alcune cose agli altri oggetti ed avere un unico punto di accesso semplificato a un sottosistema fornendo un'interfaccia di alto livello e minimizzando dunque le comunicazioni e le dipendenze.
-	\item \textbf{Utilizzo}: Viene utilizzato nei seguenti casi:
-	\begin{itemize}
-	
-		\item La classe \texttt{Back-End::Lib::Middleware::MiddlewareLoader} utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp}. In questo modo le richieste vengono delegate agli oggetti appropriati senza che la classe cliente conosca le classi del sottosistema. Sarà il \textit{Facade} che si occuperà di trasferire la comunicazione all'oggetto appropriato.
-		\item La classe \texttt{Back-End::Lib::Controller::ControllerFactory} utilizza \textit{facade} per nascondere le classi interne, in modo analogo a quanto effettuato dalla classe descritta nel punto precedente. Il package \texttt{Back-End::Lib::Controllers} è un sottosistema complesso composto da diverse classi. Utilizzando \textit{facade} la classe \texttt{Back-End::Lib::Middleware::Routing} è all'oscuro delle classi presenti e comunica con il pacchetto attraverso la classe \textit{facade} \texttt{Back-End::Lib::Controller::ControllerFactory}.
-		
-	\end{itemize}
+	\item \textbf{Utilizzo}: Viene utilizzato all'interno della classe \texttt{Back-End::Lib::Middleware::MiddlewareLoader}, la quale utilizza \textit{facade} per nascondere l'esistenza di tutti i \glossario{middleware} alla \texttt{ServerApp}. In questo modo le richieste vengono delegate agli oggetti appropriati senza che la classe cliente conosca le classi del sottosistema. Sarà il \textit{Facade} che si occuperà di trasferire la comunicazione all'oggetto appropriato.
 \end{itemize}
 
 \begin{figure}[H]
 \centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/facade1.png}
 \caption{Contestualizzazione di Facade in \texttt{Back-End::Lib::Middleware::MiddlewareLoader}}
-\label{fig:mvc}
-\end{figure}
-
-\begin{figure}[H]
-\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/facade2.png}
-\caption{Contestualizzazione di Facade in \texttt{Back-End::Lib::Controller::ControllerFactory}}
 \label{fig:mvc}
 \end{figure}
 

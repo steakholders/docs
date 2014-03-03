@@ -946,8 +946,11 @@ requires
 requisteak
 research
 reset
-responsability
 responsibility
+ResetModel
+Resource
+Response
+Responsibility
 responsività
 return
 review

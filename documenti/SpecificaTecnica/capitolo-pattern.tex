@@ -38,7 +38,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Si è scelto di utilizzare questo \glossario{Design Pattern} per fornire un \textit{intermediario} tra i vari componenti software dell'applicazione in modo da semplificare notevolmente la loro connessione e collaborazione. Questo pattern in generale è molto utile nello sviluppo e nella gestione di di sistemi distribuiti complessi, e in questo contesto il progetto \glossario{MaaP} si colloca perfettamente.
-	\item \textbf{Utilizzo}: Viene utilizzato dal \glossario{framework} \glossario{Express} attraverso il modulo \textit{connect} per fornire una libreria di funzioni comuni. Definisce una serie di \textit{livelli} (o funzioni) per gestire le varie richieste dell'applicazione e richiamare i rispettivi \textit{handler}. Tutti i componenti del middleware sono collegati l'uno con l'altro e ricevono a turno una richiesta in ingresso, finché uno di questi non decide di partire con l'elaborazione per poi chiamare la funzione \texttt{next}. Come si può notare è molto legato a \glossario{Chain of Responsability}, che verrà descritto in seguito. Tutti i componenti di \glossario{Express} vengono utilizzati con il metodo \texttt{use} di \glossario{Express}. Nella progettazione architetturale è utilizzato nel package \texttt{Back-End::Lib::Middleware}.
+	\item \textbf{Utilizzo}: Viene utilizzato dal \glossario{framework} \glossario{Express} attraverso il modulo \textit{connect} per fornire una libreria di funzioni comuni. Definisce una serie di \textit{livelli} (o funzioni) per gestire le varie richieste dell'applicazione e richiamare i rispettivi \textit{handler}. Tutti i componenti del middleware sono collegati l'uno con l'altro e ricevono a turno una richiesta in ingresso, finché uno di questi non decide di partire con l'elaborazione per poi chiamare la funzione \texttt{next}. Come si può notare è molto legato a \glossario{Chain of Responsibility}, che verrà descritto in seguito. Tutti i componenti di \glossario{Express} vengono utilizzati con il metodo \texttt{use} di \glossario{Express}. Nella progettazione architetturale è utilizzato nel package \texttt{Back-End::Lib::Middleware}.
 
 \end{itemize}
 
@@ -107,19 +107,19 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \subsection{Design Pattern Comportamentali}
 
-\subsubsection{Chain of responsibility}
+\subsubsection{Chain of Responsibility}
 \label{chain-of-responsibility}
 
 \begin{itemize}
 
 	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario. Tutti gli oggetti destinatari della richiesta sono \textit{concatenati} tra di loro. Ogni nodo della catena se può esaudire la richiesta la effettua, altrimenti delega l'onere al nodo successivo. La catena viene attraversata finché un nodo non può eseguire l'ordine del mittente. 
-	\item \textbf{Utilizzo}: \glossario{Express} usa \textit{chain of responsability} per la gestione dei \glossario{middleware} e del \glossario{routing}. Come già accennato è particolarmente legato al pattern \textit{Middleware}. Viene utilizzato nella nostra architettura all'interno del package \texttt{Back-End::Lib::Middleware}. La classe \texttt{Back-End::Lib::Middleware::MiddlewareHandler} gestisce la richiesta scorrendo tutta la lista delle sottoclassi e richiamando il metodo \texttt{next} finché una di queste non può soddisfarla.
+	\item \textbf{Utilizzo}: \glossario{Express} usa \textit{chain of Responsibility} per la gestione dei \glossario{middleware} e del \glossario{routing}. Come già accennato è particolarmente legato al pattern \textit{Middleware}. Viene utilizzato nella nostra architettura all'interno del package \texttt{Back-End::Lib::Middleware}. La classe \texttt{Back-End::Lib::Middleware::MiddlewareHandler} gestisce la richiesta scorrendo tutta la lista delle sottoclassi e richiamando il metodo \texttt{next} finché una di queste non può soddisfarla.
 
 \end{itemize}
 
 \begin{figure}[H]
 \centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/chain-of-responsability.png}
-\caption{Contestualizzazione di Chain of Responsability}
+\caption{Contestualizzazione di Chain of Responsibility}
 \label{fig:mvc}
 \end{figure}
 

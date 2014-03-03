@@ -773,6 +773,7 @@ python
 qualcos
 quality
 query
+quest
 quest'ultime
 raccomanda'
 Rails

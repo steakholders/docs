@@ -29,6 +29,7 @@ Analyst
 Angular
 AngularJS
 Apple
+Approved
 Architecture
 Assurance
 Astah
@@ -58,6 +59,7 @@ Cardin
 Casiraghi
 Centric
 Chrome
+Classes
 Clean
 Closed
 Closure
@@ -76,6 +78,7 @@ Compiler
 Compito'
 Complex
 Complexity
+Components
 Comput
 Comunicazioni'
 Concluded
@@ -150,6 +153,7 @@ Everybody
 Exit
 Experience
 Exploring
+Extension
 FAQ
 FTP
 Factor
@@ -182,6 +186,7 @@ GanttProject
 Generator
 GitHub
 Google
+Graph
 Graphical
 Gustav
 HTTPS
@@ -206,12 +211,14 @@ Identifier
 Image
 Imaging
 Important
+Inclusion
 IndexController
 IndexModel
 Individual
 Information
 Installation
 Integrated
+Integration
 Intelligent
 Interaction
 Involved
@@ -230,6 +237,7 @@ Kile
 LIFO
 LOCs
 LUF
+LaTex
 Language
 Last
 Laurence
@@ -251,6 +259,7 @@ MOM
 MU
 MVVM
 MVW
+Maa
 MaaP
 MaaP's
 MaaS
@@ -319,6 +328,7 @@ PassportLocal
 Patterns
 Paul
 Pearson
+Pending
 Performing
 Pgr
 Pgt
@@ -331,14 +341,18 @@ Plato
 Point
 Portability
 Portable
+Postcondition
 Postcondizione
 Postcondizioni
 Practical
 Precincts
+Precondition
 Prentice
 Prepared
 Press
+Primary
 Principles
+Priority
 Process
 Processing
 Professional
@@ -409,6 +423,7 @@ SWEBOK
 Satisfied
 Scaffolding
 Schemaless
+Secondary
 Security
 Selected
 Separated
@@ -435,6 +450,7 @@ Stein
 Steve
 String
 Structured
+Subtitle
 Sun
 Support
 Systems
@@ -455,6 +471,7 @@ Transfer
 Transformation
 Trasform
 Tresoldi
+Typology
 UC
 UCM
 UCP
@@ -485,6 +502,7 @@ UsersIndex
 UsersListController
 UsersListModel
 UsersListPage
+Validation
 Value
 Values
 Vardanega
@@ -501,6 +519,7 @@ WebServer
 Well
 Wide
 World
+aaS
 abbandona'
 about
 acc
@@ -588,6 +607,7 @@ collections
 colorlinks
 column
 columns
+com
 combo
 comes
 command
@@ -696,6 +716,7 @@ firstnumber
 firstpage
 fittizia'
 fittizie'
+flow
 follow
 followed
 for
@@ -800,6 +821,7 @@ logic
 logout
 lost
 lostpassword
+lucidchart
 magic
 main
 make
@@ -898,6 +920,7 @@ populate
 position
 possible
 potr
+pplication
 practice
 practise
 pre
@@ -928,6 +951,7 @@ query
 quest
 quest'ultime
 raccomanda'
+ramework
 rarely
 receiver
 recovery
@@ -1047,6 +1071,7 @@ tasks
 technology
 template
 tenant
+tente
 testabilità
 testing
 tests
@@ -1070,6 +1095,7 @@ to
 token
 tool
 tools
+tracciabilità
 tree
 triadic
 true
@@ -1099,6 +1125,7 @@ versionato
 very
 vgrid
 view
+viluppatore
 voting
 vv
 walkthrough

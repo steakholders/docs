@@ -585,3 +585,56 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
 	
 	Ogni build fallita viene notificata all'autore del commit e al Responsabile di progetto via email. Le build che superano la verifica automatica, invece, vengono integrate automaticamente nel branch ``stable'' del repository.
 	
+	\subsubsection{Strumenti per la tracciabilità}
+	\label{requisteak}
+	Di seguito viene descritto lo strumento principale che è stato sviluppato dal gruppo per gestire la tracciabilità di molti degli aspetti affrontati durante il progetto. Il software in questione, denominato \emph{Requisteak}, è strutturato secondo il V-Model descritto nel \PianoDiQualifica{}.
+	Tale strumento è raggiungibile all'indirizzo:
+     \begin{center}
+         \url{http://steakholders.herokuapp.com}.
+     \end{center} 
+     Le credenziali di accesso sono le seguenti:
+     \begin{itemize}
+        \item \textbf{Username}: \texttt{committente@steakholders.com};
+        \item \textbf{Password}: \texttt{unipd2013}.
+     \end{itemize}
+     
+     \paragraph{Use Cases}
+     Permette di visualizzare una index-page della collection dei casi d'uso da dove è possibile creare, eliminare, modificare un caso d'uso. Sarà possibile creare dei casi d'uso figli dalla show-page del padre utilizzando l'apposito pulsante in alto a destra.
+     In dettaglio, i casi d'uso sono composti dai seguenti attributi:
+     \begin{itemize}
+     	\item Ambito (\underline{U}tente, \underline{S}viluppatore, Utente \underline{M}aaS);
+     	\item Subtitle;
+     	\item Codice Gerarchia;
+     	\item Primary Actors;
+     	\item Secondary Actors;
+     	\item Description;
+     	\item Precondition;
+     	\item Postcondition;
+     	\item Main flow;
+     	\item Alternative flow;
+     	\item Inclusion;
+     	\item Extension;
+     	\item Graph: fa riferimento al relativo diagramma UML in \url{lucidchart.com}.
+     \end{itemize}
+     
+     \paragraph{Requirements}
+     Permette di creare, visualizzare, modificare ed eliminare i requisiti del progetto. 
+     In dettaglio, i requisiti sono composti dai seguenti attributi:
+     \begin{itemize}
+     	\item Sistema (\underline{A}pplication, \underline{F}ramework, Maa\underline{S});
+     	\item Typology (Funzionale, Prestazionale, Di Qualità, Di Vincolo);
+     	\item Priority;
+     	\item Numero gerarchia;
+     	\item Descrizione;
+     	\item Status (Pending, Approved);
+     \end{itemize}
+     
+     \paragraph{Components}
+     
+     \paragraph{Classes}
+     \paragraph{Unit Tests}
+     \paragraph{Integration Tests}
+     \paragraph{System Tests}
+     \paragraph{Validation Tests}
+     \paragraph{Esportazione in LaTex}
+   

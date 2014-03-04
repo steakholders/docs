@@ -24,22 +24,25 @@ I tipi di permessi possibili sono:
 	\bgroup
 	\begin{longtable}{| p{9cm} | p{1.5cm} | p{4cm} |}
 	\hline 
-	\textbf{\emph{/login}} & \textbf{POST} & \textbf{Utente} \\ \hline
+	
+	\textbf{\emph{/profile}} & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
+	\multicolumn{3}{|c|} {Restituisce i dati relativi all'utente. }  \\ \hline
+	\textbf{\emph{/profile}} & \textbf{POST} & \textbf{Utente} \\ \hline
 	\multicolumn{3}{|c|} {Crea una nuova sessione associata all'utente, corrisponde al login.} \\ \specialrule{1pt}{1pt}{1pt}
-	
-	\multicolumn{3}{c} {} \\ \hline
-	
-	%\specialrule{1pt}{1pt}{1pt} 
-	
-	\textbf{\emph{/logout}} & \textbf{DELETE} & \textbf{Utente Autenticato} \\ \hline
+	\textbf{\emph{/profile}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
+	\multicolumn{3}{|c|} { Modifica i dati utente. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\textbf{\emph{/profile}} & \textbf{DELETE} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Elimina la sessione utente, corrisponde al logout. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	
-	\textbf{\emph{/profile}} & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
-	\multicolumn{3}{|c|} {Restituisce i dati relativi all'utente. }  \\ \hline
-	\textbf{\emph{/profile}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
-	\multicolumn{3}{|c|} { Modifica i dati utente. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\textbf{\emph{/register}} & \textbf{POST} & \textbf{Utente} \\ \hline
+	\multicolumn{3}{|c|} { Crea una richiesta di registrazione. }  \\ \specialrule{1pt}{1pt}{1pt}
+	
+	\multicolumn{3}{c} {} \\ \hline
+	
+	\textbf{\emph{/dashboard}} & \textbf{GET} & \textbf{Utente} \\ \hline
+	\multicolumn{3}{|c|} { Restituisce i dati da visualizzare nella dashboard. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
 	\multicolumn{3}{c} {} \\ \hline
 	

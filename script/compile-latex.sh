@@ -41,7 +41,7 @@ log "info" "Compilo $pretty_file ..."
 # Compila tante volte (serve per poter fare l'indice)
 
 # 1: Draft mode
-errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -draftmode "$main_tex" | grep -E ".*:[0-9]+:.*")
+errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -draftmode "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
 
 # Se c'è stato un errore
 if [[ $errors != "" ]]; then
@@ -53,7 +53,7 @@ if [[ $errors != "" ]]; then
 fi
 
 # 1: Completo
-errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error "$main_tex" | grep -E ".*:[0-9]+:.*")
+errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
 
 # Se c'è stato un errore
 if [[ $errors != "" ]]; then

@@ -104,6 +104,7 @@ breaklines
 Broken
 BSON
 bugs
+build
 burndown
 BV
 bytecode
@@ -129,7 +130,7 @@ Chrome
 ciclomatica
 citecolor
 class
-Clean
+clean
 cliccabile
 client
 Closed
@@ -475,6 +476,7 @@ Johnson
 join
 jQuery
 js
+jshint
 JSHint
 JSLint
 json
@@ -708,6 +710,7 @@ plain
 plan
 Planning
 Platform
+Plato
 plotcoordinates
 plots
 plugin
@@ -734,6 +737,7 @@ Precincts
 predeterminabili
 Prentice
 preparation
+prepare
 Prepared
 Press
 Principles
@@ -926,6 +930,8 @@ SQL
 SQMT
 ST
 stabile'
+stable
+stable'
 Stable
 stack
 stacked
@@ -937,6 +943,7 @@ starts
 startup
 StartUp
 stateless
+statement
 static
 Std
 SteakHolders

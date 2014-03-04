@@ -1,0 +1,29 @@
+\input{../../modello/layout}
+\input{../../modello/global}
+\input{local}
+
+\begin{document}
+
+\makeFrontPage
+
+\input{diario_modifiche}
+
+\clearpage
+
+\tableofcontents
+% \listoftables TODO ancora non presenti
+% \listoffigures TODO ancora non presenti
+
+\clearpage
+
+\include{capitolo-introduzione}
+
+
+\appendix
+\addappheadtotoc
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+\end{document}
+
+

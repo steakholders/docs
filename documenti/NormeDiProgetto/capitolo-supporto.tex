@@ -387,8 +387,17 @@ ln -s {percorso assoluto del repository}/script/pre-commit {percorso assoluto de
 	
 La struttura del repository, la cui cartella principale chiameremo \file{root}, è così composta:
 \begin{itemize}
+ \item \textbf{\file{root/extra/}} \\
+	Contiene script e file di supporto utilizzati per le attività di codifica.
+
+ \item \textbf{\file{root/test/}} \\
+	Contiene i file relativi ai test d'unità della libreria MaaP.
+
  \item \textbf{\file{root/lib/}} \\
-	Contiene i file della componente Backend del progetto, posizionati in una cartella \code{lib} secondo la convenzione dei moduli di Node.js.
+	Contiene i file della libreria MaaP usata dalla Backend del progetto, posizionati in una cartella \code{lib} secondo la convenzione dei moduli di Node.js.
+
+ \item \textbf{\file{root/node_modules/}} \\
+	Contiene le librerie richieste dalla libreria MaaP.
 
  \item \textbf{\file{root/lib/model/}} \\
 	Contiene i file che gestiscono i dati utilizzati dall'applicazione e l'interfacciamento con il database.
@@ -411,26 +420,42 @@ La struttura del repository, la cui cartella principale chiameremo \file{root}, 
  \item \textbf{\file{root/lib/utils/}} \\
 	Contiene i file di generica utilità, che non rientrano nella classificazione tra model, view e controller.
 
- \item \textbf{\file{root/test/}} \\
-	Contiene i file relativi ai test d'unità della libreria.
-
  \item \textbf{\file{root/scaffold/}} \\
 	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto.
 
- \item \textbf{\file{root/scaffold/config}} \\
+ \item \textbf{\file{root/scaffold/config/}} \\
 	Contiene i file di configurazione dell'applicazione scaffold.
 
- \item \textbf{\file{root/scaffold/config/collections}} \\
-	Contiene i file di configurazione delle collection (nel formato dsl) utilizzate dall'applicazione scaffold.
+ \item \textbf{\file{root/scaffold/config/collections/}} \\
+	Contiene i file di configurazione delle collection utilizzate dall'applicazione scaffold.
 
- \item \textbf{\file{root/scaffold/config/env}} \\
+ \item \textbf{\file{root/scaffold/config/env/}} \\
 	Contiene i file di configurazione dell'ambiente (development o production, di default) dell'applicazione scaffold.
 
- \item \textbf{\file{root/scaffold/public}} \\
+ \item \textbf{\file{root/scaffold/app/}} \\
 	Contiene i file relativi al Frontend dell'applicazione scaffold.
 
- \item \textbf{\file{root/extra/}} \\
-	Contiene script e file di supporto utilizzati per le attività di codifica.
+ \item \textbf{\file{root/scaffold/app/view/}} \\
+	Contiene i file statici html usati dal Frontend dell'applicazione scaffold.
+
+ \item \textbf{\file{root/scaffold/app/style/}} \\
+	Contiene i file statici di stile usati dal Frontend dell'applicazione scaffold.
+
+ \item \textbf{\file{root/scaffold/app/scripts/}} \\
+	Contiene i file dell'applicazione AngularJS usata nel Frontend.
+
+ \item \textbf{\file{root/scaffold/app/scripts/services/}} \\
+	Contiene i file dei service di AngularJS usata nel Frontend.
+
+ \item \textbf{\file{root/scaffold/app/scripts/controllers/}} \\
+	Contiene i file dei controller di AngularJS usata nel Frontend.
+
+ \item \textbf{\file{root/scaffold/app/bower_components/}} \\
+	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione scaffold.
+	
+ \item \textbf{\file{root/scaffold/node_modules/}} \\
+	Contiene i file delle librerie utilizzate dal Backend dell'applicazione scaffold.
+
 
 \end{itemize}
 

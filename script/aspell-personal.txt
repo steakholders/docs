@@ -99,6 +99,7 @@ black
 bodyParser
 Boilerplate
 bottom
+bower
 branch
 breakatwhitespace
 breaklines
@@ -168,6 +169,7 @@ Compiler
 Compito'
 Complex
 Complexity
+components
 comprehension
 compress
 Comput
@@ -192,6 +194,7 @@ Continuous
 Control
 controller
 ControllerFactory
+controllers
 Controllers
 cookie
 cookieParser
@@ -604,6 +607,7 @@ mod
 Modeling
 modifica'
 module
+modules
 MOM
 monadic
 MondoDB
@@ -802,6 +806,7 @@ reference
 rege
 regexp
 RegExp
+register
 registry
 Relationship
 Reliability
@@ -829,7 +834,7 @@ reset
 ResetModel
 Resource
 Response
-Responsibility
+responsibility
 responsività
 REST
 Retired
@@ -876,6 +881,7 @@ Scaffolding
 Schemaless
 SCR
 scripting
+scripts
 section
 Security
 Selected

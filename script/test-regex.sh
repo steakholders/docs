@@ -80,6 +80,8 @@ grep_test "asd" "Togliere l'asd." $(find . -name '*.tex')
 grep_test "[[:digit:]]{2}/[[:digit:]]{2}/[[:digit:]]{4}" "Riscrivere la data nel formato AAAA-MM-GG." $(find . -name '*.tex')
 grep_test "[[:digit:]]{2}-[[:digit:]]{2}-[[:digit:]]{4}" "Riscrivere la data nel formato AAAA-MM-GG." $(find . -name '*.tex')
 
+grep_test "[uU]se cases" "I termini inglesi plurali vanno al singolare in italiano, sostituire con 'use case'." $(find . -name '*.tex')
+
 #grep_test "\.pdf" "Strano che ci sia un '.pdf'." $(find . -name '*.tex')
 #grep_test "\"" "Usare le vergolette \`\`...'' di LaTeX." $(find . -name '*.tex')
 

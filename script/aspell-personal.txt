@@ -327,6 +327,7 @@ PianoDiProgetto
 Place
 Planning
 Platform
+Plato
 Point
 Portability
 Portable
@@ -381,6 +382,7 @@ Res
 ResetModel
 Resource
 Response
+Responsibility
 Retired
 Retrieve
 Reusable
@@ -534,6 +536,7 @@ aspell
 assessment
 assigned
 at
+attivita
 audit
 autoformazione
 avoided
@@ -556,6 +559,7 @@ branch
 breakatwhitespace
 breaklines
 bugs
+build
 burndown
 bytecode
 callback
@@ -571,6 +575,7 @@ checklists
 ciclomatica
 citecolor
 class
+clean
 cliccabile
 client
 closely
@@ -752,6 +757,7 @@ jQuery
 javascript
 join
 js
+jshint
 json
 justification
 keepspaces
@@ -898,6 +904,7 @@ pre
 precinct
 predeterminabili
 preparation
+prepare
 proattiva
 proattivi
 procedure'
@@ -929,6 +936,7 @@ refactor
 reference
 rege
 regexp
+register
 registry
 rendering
 repl
@@ -947,10 +955,6 @@ requisteak
 research
 reset
 responsibility
-ResetModel
-Resource
-Response
-Responsibility
 responsività
 return
 review
@@ -1007,6 +1011,7 @@ sottoscrivibile
 source
 specify
 stabile'
+stable
 stack
 stacked
 stakeholder
@@ -1014,6 +1019,7 @@ stakeholders
 starts
 startup
 stateless
+statement
 static
 stepnumber
 storage

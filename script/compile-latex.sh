@@ -38,18 +38,31 @@ log "info" "Compilo $pretty_file ..."
 # Cartella in cui LaTeX deve cercare gli *.sty
 #export TEXINPUTS="$REPO_DIR/modello:"
 
-# Compila il pdf 3 volte (serve per poter fare l'indice)
-for iter in $(seq 2); do
-	pdflatex -interaction=nonstopmode -halt-on-error "$main_tex" > /dev/null
-	
-	# Se c'è stato un errore
-	if [[ $? != 0 ]]; then
-		log "error" "ERRORE"
-		log "error" "C'è stato un errore nella compilazione."
-		log "error" "Controllare in un editor il file $pretty_file e riprovare."
-		exit 1
-	fi
-done
+# Compila tante volte (serve per poter fare l'indice)
+
+# 1: Draft mode
+errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -draftmode "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
+
+# Se c'è stato un errore
+if [[ $errors != "" ]]; then
+	log "error" "ERRORE"
+	log "error" "Ci sono stati errori nella compilazione draftmode di $pretty_file"
+	set_red_text; echo "$errors"; reset_text_color;
+	rm "${main_tex%.tex}.pdf"
+	exit 1
+fi
+
+# 1: Completo
+errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
+
+# Se c'è stato un errore
+if [[ $errors != "" ]]; then
+	log "error" "ERRORE"
+	log "error" "Ci sono stati errori nella compilazione completa di $pretty_file"
+	set_red_text; echo "$errors"; reset_text_color;
+	rm "${main_tex%.tex}.pdf"
+	exit 1
+fi
 
 # Se non ci sono stati errori
 log "success" "OK"

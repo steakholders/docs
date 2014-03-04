@@ -384,8 +384,21 @@ ln -s {percorso assoluto del repository}/script/pre-commit {percorso assoluto de
 	
 	\paragraph{Branch}
 	
+	Sono previsti due branch ufficiali:
+	\begin{itemize}
+	\item \textbf{stable}: contiene sempre una versione del codice che rispetta i controlli automatici effettuati dallo script `make test-report`, descritto alla sezione \ref{makefile-codifica}. Gli sviluppatori non devono effettuare modifiche direttamente su questo branch;
+	
+	\item \textbf{master}: è il branch usato dagli sviluppatori per la codifica. Ad ogni commit, se il codice supera determinati test, Jenkins (descritto alla sezione \ref{jenkins}) propagherà le modifiche anche sul branch \emph{stable}.
+	\end{itemize}
+	
+	\paragraph{Script di pre-commit}
 
+Con l'intenzione di ridurre al minimo la presenza di errori nel codice caricato sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico il comando \code{make jshint} descritto nella sezione \ref{makefile-codifica} e controlla che non si stia facendo un commit alla branch \emph{stable}. Se il comando trova un'anomalia il commit viene annullato e all'utente viene mostrato un messaggio di errore.
 
+Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
+\begin{lstlisting}
+ln -s {percorso assoluto del repository}/extra/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
+\end{lstlisting}
 
 \subsection{Condivisione file}
 

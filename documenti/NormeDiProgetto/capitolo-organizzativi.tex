@@ -438,7 +438,7 @@ aspell --lang it --mode tex --encoding utf-8 --personal root/script/aspell_perso
 		\paragraph{Script di Makefile}
 		\label{makefile}
 
-Per agevolare alcune operazioni è stato predisposto uno script \glossario{Makefile}. Al momento sono previsti i seguenti comandi:
+Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefile}. Al momento sono previsti i seguenti comandi:
 \begin{itemize}
 
 \item \textbf{\code{make test}} \\
@@ -479,8 +479,8 @@ Per ogni documento \glossario{PDF} calcola l'indice di leggibilità \glossario{G
 	\code{download$\_$UML.py} nella cartella \code{/AnalisiDeiRequisiti}. \\ 
 	Per le esecuzioni successive basterà utilizzare dal terminale il comando: \code{python download$\_$UML.py}.
 	
-\paragraph{Script download use cases e requisiti}
-	In \emph{Requisteak} sono presenti le descrizioni degli use cases e i requisiti, per effettuarne il download in formato
+\paragraph{Script download use case e requisiti}
+	In \emph{Requisteak} sono presenti le descrizioni degli use case e i requisiti, per effettuarne il download in formato
 	\code{.tex} è stato predisposto uno script che andrà a prendere tali informazioni e creerà i corrispettivi capitoli.\\
 	 Dopo essersi posizionati all'interno della cartella \code{/AnalisiDeiRequisiti}, eseguire lo script con il comando da terminale:
 	 \code{python download$\_$requisiti.py} \\
@@ -517,41 +517,71 @@ Per poterlo utilizzare, abilitare le API nel proprio account \glossario{Teamwork
 Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con il comando \code{python download$\_$gantt.py}.
 
 	\subsubsection{Ambiente e strumenti per la verifica e validazione}
-	Gli strumenti utilizzati per effettuare l'analisi statica,dinamica e i test di unità descritti successivamente sono stati
-	integrati in \glossario{Jenkins} v1.548 e ne è stata predisposta un'esecuzione automatica prima di effettuare \glossario{push}
-	sul \glossario{repository}, in modo da garantire che le modifiche non introducano errori nel software esistente e che rispettino
-	le metriche software riportate in \PianoDiQualifica{}.
 
-		\paragraph{Strumenti per l'analisi statica}
+	\paragraph{Strumenti per l'analisi statica}
+		Gli strumenti utilizzati per effettuare l'analisi statica del prodotto sono stati
+	integrati in uno script \glossario{Makefile}, descritto alla sezione \ref{makefile-codifica}.
 		
-		Per l'analisi statica del codice Javascript e per aiutare a identificare automaticamente gli errori, sono integrati in
-		Jenkins:
+		Sono stati utilizzati i seguenti software:
 		\begin{itemize}
-		\item \textbf{JSHint} (\url{http://www.jshint.com}),\glossario{tool} che aiuta a identificare gli errori e i potenziali
-		problemi nel
-		codice JavaScript.
-		\item \textbf{JSLint} (\url{http://www.jslint.com}), \glossario{tool} usato per verificare se il codice JavaScript compila
-		secondo le regole di linguaggio.
-		\item \textbf{Closure Compiler} (\url{http://developers.google.com/closure/compiler}), \glossario{tool} utilizzato per
-		rendere JavaScript più efficiente in termini di download e di esecuzione, migliorandolo rimuovendo \glossario{codice
-		morto} , riscrivendolo e minimizzandolo. Controlla inoltre la sintassi, i riferimenti alle variabili, i tipi ed eventuali
-		insidie.
+		\item \textbf{JSHint} (\url{http://www.jshint.com}), \glossario{tool} che aiuta a controllare che il codice sorgente rispetti le regole descritte nella sezione \ref{formattazione};
+		\item \textbf{Plato} (\url{https://github.com/es-analysis/plato}), \glossario{tool} usato per misurare e visualizzare le metriche descritte nel \PianoDiQualifica{}.
 		\end{itemize}
 		
 		\paragraph{Strumenti per l'analisi dinamica} 
-		Tool integrati in Jenkins per l'analisi dinamica: 
+		Gli strumenti utilizzati per effettuare l'analisi dinamica del prodotto sono stati
+	integrati in uno script \glossario{Makefile}, descritto alla sezione \ref{makefile-codifica}.
+		
+		Sono stati utilizzati i seguenti software:
 		\begin{itemize}
 		\item \textbf{Mocha} (\url{https://github.com/visionmedia/mocha}) Mocha è una libreria ricca di funzionalità per l'esecuzione
 		di test Javascript, con esecuzione di quest'ultimi asincrona ed in serie, permettendo segnalazioni flessibili ed accurate.
+		\item \textbf{Istanbul} (\url{http://gotwarlost.github.io/istanbul/}) Istanbul è uno strumento che effettua statement, branch, function e line coverage.
 		\end{itemize}
-	
-			
+		
 		\paragraph{Strumenti per la validazione}
+		
 		Per la validazione delle pagine web si utilizzeranno gli strumenti messi a disposizione da \glossario{W3C} alle pagine 
 		 (\url{http://validator.w3.org}) e (\url{ http://jigsaw.w3.org/css-validator}).			
 		
+		\paragraph{Script di Makefile}
+		\label{makefile-codifica}
 
+Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefile} per le attività di codifica. Al momento sono previsti i seguenti comandi:
 
+\begin{itemize}
+	\item \textbf{\code{make prepare}} \\
+	Prepara l'ambiente di lavoro di Node.js, principalmente scaricando e installando le librerie richieste dal progetto.
+		
+	\item \textbf{\code{make clean}} \\
+	Annulla le operazioni effettuate da \code{make prepare}.
 
+	\item \textbf{\code{make test}} \\
+	Esegue i principali script di analisi statica e dinamica. In particolare:
+	\begin{itemize}
+	\item Controlla la formattazione del codice con JSHint;
+	\item Esegue i test d'unità con Mocha.
+	\end{itemize}
 
+	\item \textbf{\code{make test-report}} \\
+	Esegue gli script di analisi statica e dinamica, inoltre memorizza l'esito in dei file di report interpretabile automaticamente da Jenkins. In particolare:
+	\begin{itemize}
+	\item Controlla la formattazione del codice con JSHint;
+	\item Effettua le misurazioni sul software con Plato;
+	\item Esegue i test d'unità con Mocha;
+	\item Misura la copertura del software con Istanbul.
+	\end{itemize}
 
+	\item \textbf{\code{make jshint}} \\
+	Controlla la formattazione del codice con JSHint.
+\end{itemize}
+
+È possibile eseguire i comandi soltanto dalla cartella principale del repository del codice.
+
+	\paragraph{Strumenti per l'integrazione continua}
+	\label{jenkins}
+	
+	Grazie all'utilizzo del software \textbf{\glossario{Jenkins}} (v1.548) è stata predisposta un'esecuzione automatica dello script \code{make test-report} ad ogni \glossario{push} effettuato sul \glossario{repository}, in modo da verificare costantemente che le modifiche non introducano errori e che rispettino le metriche software riportate nel \PianoDiQualifica{}.
+	
+	Ogni build fallita viene notificata all'autore del commit e al Responsabile di progetto via email. Le build che superano la verifica automatica, invece, vengono integrate automaticamente nel branch ``stable'' del repository.
+	

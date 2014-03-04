@@ -17,7 +17,8 @@ DOCUMENTS = \
 	SpecificaTecnica \
 	ManualeAdmin \
 	ManualeSviluppatore \
-	ManualeUtente
+	ManualeUtente \
+	DefinizioneDiProdotto
 
 all:
 	@make test-spelling
@@ -39,10 +40,10 @@ parallel:
 	xterm -e "cd "StudioDiFattibilita" && make test-spelling && make documents -j" &	
 	xterm -e "cd "Verbale2013-12-18" && make test-spelling && make documents -j" &	
 	xterm -e "cd "SpecificaTecnica" && make test-spelling && make documents -j" &	
-#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
-#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
-#	xterm -e "cd "" && make test-spelling && make documents -j 8" &	
-#	xterm -e "cd "" && make test-spelling && make documents -j 8" 
+	xterm -e "cd "DefinizioneDiProdotto" && make test-spelling && make documents -j" &	
+	xterm -e "cd "ManualeAdmin" && make test-spelling && make documents -j 8" &	
+	xterm -e "cd "ManualeSviluppatore" && make test-spelling && make documents -j 8" &	
+	xterm -e "cd "ManualeUtente" && make test-spelling && make documents -j 8"
 
 
 test-spelling:
@@ -59,6 +60,8 @@ test-spelling:
 	@cd "ManualeAdmin" && make test-spelling
 	@cd "ManualeSviluppatore" && make test-spelling
 	@cd "ManualeUtente" && make test-spelling
+	@cd "DefinizioneDiProdotto" && make test-spelling
+
 
 clean:
 	@rm -f *~
@@ -75,3 +78,4 @@ clean:
 	@cd "ManualeAdmin" && make clean
 	@cd "ManualeSviluppatore" && make clean
 	@cd "ManualeUtente" && make clean
+	@cd "DefinizioneDiProdotto" && make clean

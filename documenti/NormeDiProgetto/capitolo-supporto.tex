@@ -379,19 +379,46 @@ Per abilitare tale script di \code{pre-commit} è necessario creare un \glossari
 ln -s {percorso assoluto del repository}/script/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
 \end{lstlisting}
 
+
+
 \subsubsection{Repository del codice}
-	\paragraph{Struttura del repository}
+
+\paragraph{Struttura del repository}
 	
-	\paragraph{Branch}
-	
-	Sono previsti due branch ufficiali:
-	\begin{itemize}
-	\item \textbf{stable}: contiene sempre una versione del codice che rispetta i controlli automatici effettuati dallo script `make test-report`, descritto alla sezione \ref{makefile-codifica}. Gli sviluppatori non devono effettuare modifiche direttamente su questo branch;
-	
-	\item \textbf{master}: è il branch usato dagli sviluppatori per la codifica. Ad ogni commit, se il codice supera determinati test, Jenkins (descritto alla sezione \ref{jenkins}) propagherà le modifiche anche sul branch \emph{stable}.
-	\end{itemize}
-	
-	\paragraph{Script di pre-commit}
+La struttura del repository, la cui cartella principale chiameremo \file{root}, è così composta:
+\begin{itemize}
+ \item \textbf{\file{root/lib/}} \\
+	Contiene i file comuni a due o più documenti.
+
+ \item \textbf{\file{root/test/}} \\
+	Contiene ...
+
+ \item \textbf{\file{root/scaffold/}} \\
+	Contiene ...
+
+ \item \textbf{\file{root/scaffold/}} \\
+	Contiene ...
+
+ \item \textbf{\file{root/scaffold/}} \\
+	Contiene ...
+
+ \item \textbf{\file{root/extra/}} \\
+	Contiene ...
+
+\end{itemize}
+
+È raccomandato che tutti i file e le cartelle non contengano spazi nel loro nome. Non devono mai esserci due file o cartelle il cui percorso differisca soltanto per maiuscole/minuscole. Non bisogna inoltre rinominare file o cartelle modificandone soltanto il \glossario{case} di alcuni caratteri del nome.
+
+\paragraph{Branch}
+
+Sono previsti due branch ufficiali:
+\begin{itemize}
+\item \textbf{stable}: contiene sempre una versione del codice che rispetta i controlli automatici effettuati dallo script `make test-report`, descritto alla sezione \ref{makefile-codifica}. Gli sviluppatori non devono effettuare modifiche direttamente su questo branch;
+
+\item \textbf{master}: è il branch usato dagli sviluppatori per la codifica. Ad ogni commit, se il codice supera determinati test, Jenkins (descritto alla sezione \ref{jenkins}) propagherà le modifiche anche sul branch \emph{stable}.
+\end{itemize}
+
+\paragraph{Script di pre-commit}
 
 Con l'intenzione di ridurre al minimo la presenza di errori nel codice caricato sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico il comando \code{make jshint} descritto nella sezione \ref{makefile-codifica} e controlla che non si stia facendo un commit alla branch \emph{stable}. Se il comando trova un'anomalia il commit viene annullato e all'utente viene mostrato un messaggio di errore.
 
@@ -399,6 +426,8 @@ Per abilitare tale script di \code{pre-commit} è necessario creare un \glossari
 \begin{lstlisting}
 ln -s {percorso assoluto del repository}/extra/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
 \end{lstlisting}
+
+
 
 \subsection{Condivisione file}
 
@@ -408,56 +437,60 @@ Per condividere internamente al gruppo dei file che non necessitano di versionam
  \item \textbf{TeamworkPM}, descritta nella sezione \ref{teamworkpm}.
 \end{itemize}
 
+
+
 \subsection{Modalità di consegna}
 I documenti verranno consegnati secondo le date prestabilite dal committente e corrispondenti alle \glossario{milestone}, la modalità di consegna dovrà avvenire utilizzando \textbf{Google Drive}, creando una cartella apposita, rendendola pubblica e inviando l'email contenente il link di pubblicazione alle seguenti email: \code{tullio.vardanega@math.unipd.it}, \code{rcardin@math.unipd.it}.
 
-	\subsection{Strumenti per il coordinamento}
-	\label{teamworkpm}
-	
-		Per coordinare le attività, gli eventi, per le comunicazioni e per il conteggio delle ore viene utilizzata la piattaforma \textbf{Teamwork Project Manager} (\url{http://teamworkpm.net}):
-		\begin{itemize}
-			\item Offre un'elevata portabilità ed accessibilità essendo una piattaforma online;
-			\item Offre gratuitamente i servizi necessari;
-			\item Mette a disposizione delle \glossario{API} per comunicare con la piattaforma ed estenderne eventualmente le funzionalità.
-		\end{itemize}
-		
-		L'indirizzo per accedere all'ambiente di lavoro riservato al gruppo è
-		\begin{center}
-			\url{https://steakholders.teamworkpm.net}
-		\end{center}
-		
-		\subsubsection{Calendario condiviso}
-		\label{Calendario condiviso}
-				
-		Il gruppo si avvale del calendario di Google, \glossario{Google Calendar}, come calendario condiviso.
-		Tramite la propria mail personale ogni membro può accedere al calendario in modalità lettura/scrittura.
-		Ogni membro è tenuto a \emph{segnalare qui i periodi di non disponibilità} nel completare i lavori assegnati, selezionando le ore o i giorni di interesse e marcandoli con la dicitura [ND], si possono aggiungere delle note se si ritiene ve ne sia necessità. 
-		
-		Il responsabile annoterà qui gli impegni comuni al gruppo quali riunioni ed incontri, specificando orario e luogo.
-		
-		\subsubsection{Strumenti per la gestione dei ticket}
-		\label{teamwork}
-		Per la gestione dei ticket si utilizzerà il sistema di task offerto da \glossario{TeamworkPM}, utilizzabile unicamente attraverso le procedure descritte nella sezione \ref{gestioneticket}.
-		
-		\subsubsection{Strumenti per la gestione del piano di lavoro}
-		
-		Al fine di pianificare le attività da svolgere per lo sviluppo del progetto, il gruppo si è affidato alla piattaforma \glossario{TeamworkPM} per i seguenti motivi:
-		\begin{itemize}
-			\item Genera automaticamente un grafico \glossario{Gantt} che visualizza e permette di modificare i task pianificati, gestendo anche le relative dipendenze;
-			\item Permette di esportare il grafico \glossario{Gantt} in un formato compatibile con \glossario{GanttProject} e \glossario{Microsoft Project};
-			\item Permette di gestire le \glossario{Milestone};
-			\item Permette di registrare il tempo di lavoro trascorso su ogni task.
-		\end{itemize}
 
-		\subsubsection{Gestione degli eventi}
-		
-		Gli eventi di interesse collettivo vengono inseriti nel calendario dall'Amministratore sempre e solo nel \emph{Calendario condiviso} descritto in \ref{Calendario condiviso}.
-		
-		Le tipologie di eventi sono:
-		\begin{itemize}
-	  		\item \textbf{Riunioni}: vanno programmate almeno con 48 ore di anticipo tenendo conto della disponibilità dei membri. Ogni evento riunione avrà un ora di inizio e fine, un luogo e la lista dei membri che hanno confermato la partecipazione. L'\emph{ordine del giorno} dovrà essere compilato nella descrizione dell'evento;
-	  		%In futuro potremo decidere di stilare l' \emph{ordine del giorno} nel template del verbale delle riunioni.
-	  		\item Le \textbf{Revisioni} previste dal committente;
-	  		\item \textbf{Non disponibilità}: un membro del gruppo dichiara di non essere disponibile a svolgere attività legate al progetto. Per creare un evento di \emph{Non disponibilità} bisogna, oltre a compilare i soliti campi (titolo, descrizione, data e ora), impostare la visibilità a \emph{tutti i membri della propria azienda}, selezionare la categoria \emph{Non disponibilità} e segnare la persona interessata. In questo modo tutti i membri del gruppo \GroupName{} potranno visualizzare tale evento. 
-	  		Il titolo sarà nel formato \textbf{[ND] \{nome membro\}} ossia le iniziali di \emph{Non disponibilità} racchiuse tra parentesi quadre, seguite da il nome del membro del gruppo. Questo formato permetterà di individuare con immediatezza i giorni nei quali non è possibile fissare delle riunioni.
-		\end{itemize}
+
+\subsection{Strumenti per il coordinamento}
+\label{teamworkpm}
+
+	Per coordinare le attività, gli eventi, per le comunicazioni e per il conteggio delle ore viene utilizzata la piattaforma \textbf{Teamwork Project Manager} (\url{http://teamworkpm.net}):
+	\begin{itemize}
+		\item Offre un'elevata portabilità ed accessibilità essendo una piattaforma online;
+		\item Offre gratuitamente i servizi necessari;
+		\item Mette a disposizione delle \glossario{API} per comunicare con la piattaforma ed estenderne eventualmente le funzionalità.
+	\end{itemize}
+	
+	L'indirizzo per accedere all'ambiente di lavoro riservato al gruppo è
+	\begin{center}
+		\url{https://steakholders.teamworkpm.net}
+	\end{center}
+	
+	\subsubsection{Calendario condiviso}
+	\label{Calendario condiviso}
+			
+	Il gruppo si avvale del calendario di Google, \glossario{Google Calendar}, come calendario condiviso.
+	Tramite la propria mail personale ogni membro può accedere al calendario in modalità lettura/scrittura.
+	Ogni membro è tenuto a \emph{segnalare qui i periodi di non disponibilità} nel completare i lavori assegnati, selezionando le ore o i giorni di interesse e marcandoli con la dicitura [ND], si possono aggiungere delle note se si ritiene ve ne sia necessità. 
+	
+	Il responsabile annoterà qui gli impegni comuni al gruppo quali riunioni ed incontri, specificando orario e luogo.
+	
+	\subsubsection{Strumenti per la gestione dei ticket}
+	\label{teamwork}
+	Per la gestione dei ticket si utilizzerà il sistema di task offerto da \glossario{TeamworkPM}, utilizzabile unicamente attraverso le procedure descritte nella sezione \ref{gestioneticket}.
+	
+	\subsubsection{Strumenti per la gestione del piano di lavoro}
+	
+	Al fine di pianificare le attività da svolgere per lo sviluppo del progetto, il gruppo si è affidato alla piattaforma \glossario{TeamworkPM} per i seguenti motivi:
+	\begin{itemize}
+		\item Genera automaticamente un grafico \glossario{Gantt} che visualizza e permette di modificare i task pianificati, gestendo anche le relative dipendenze;
+		\item Permette di esportare il grafico \glossario{Gantt} in un formato compatibile con \glossario{GanttProject} e \glossario{Microsoft Project};
+		\item Permette di gestire le \glossario{Milestone};
+		\item Permette di registrare il tempo di lavoro trascorso su ogni task.
+	\end{itemize}
+
+	\subsubsection{Gestione degli eventi}
+	
+	Gli eventi di interesse collettivo vengono inseriti nel calendario dall'Amministratore sempre e solo nel \emph{Calendario condiviso} descritto in \ref{Calendario condiviso}.
+	
+	Le tipologie di eventi sono:
+	\begin{itemize}
+		\item \textbf{Riunioni}: vanno programmate almeno con 48 ore di anticipo tenendo conto della disponibilità dei membri. Ogni evento riunione avrà un ora di inizio e fine, un luogo e la lista dei membri che hanno confermato la partecipazione. L'\emph{ordine del giorno} dovrà essere compilato nella descrizione dell'evento;
+		%In futuro potremo decidere di stilare l' \emph{ordine del giorno} nel template del verbale delle riunioni.
+		\item Le \textbf{Revisioni} previste dal committente;
+		\item \textbf{Non disponibilità}: un membro del gruppo dichiara di non essere disponibile a svolgere attività legate al progetto. Per creare un evento di \emph{Non disponibilità} bisogna, oltre a compilare i soliti campi (titolo, descrizione, data e ora), impostare la visibilità a \emph{tutti i membri della propria azienda}, selezionare la categoria \emph{Non disponibilità} e segnare la persona interessata. In questo modo tutti i membri del gruppo \GroupName{} potranno visualizzare tale evento. 
+		Il titolo sarà nel formato \textbf{[ND] \{nome membro\}} ossia le iniziali di \emph{Non disponibilità} racchiuse tra parentesi quadre, seguite da il nome del membro del gruppo. Questo formato permetterà di individuare con immediatezza i giorni nei quali non è possibile fissare delle riunioni.
+	\end{itemize}

@@ -67,6 +67,7 @@ AST
 Astah
 at
 attivita
+Attribute
 audit
 AuthController
 Authentication
@@ -931,8 +932,6 @@ SQMT
 ST
 stabile'
 stable
-stable'
-Stable
 stack
 stacked
 Stafford

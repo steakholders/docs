@@ -536,6 +536,7 @@ Eseguirlo da terminale posizionandosi nella cartella \code{/PianoDiProgetto} con
 		\begin{itemize}
 		\item \textbf{Mocha} (\url{https://github.com/visionmedia/mocha}) Mocha è una libreria ricca di funzionalità per l'esecuzione
 		di test Javascript, con esecuzione di quest'ultimi asincrona ed in serie, permettendo segnalazioni flessibili ed accurate.
+		\item \textbf{Karma} (\url{https://github.com/visionmedia/mocha}) Karma è un ambiente di testing utile per effettuare test lato-browser. Richiede una libreria di testing come Mocha per l'esecuzione dei test.
 		\item \textbf{Istanbul} (\url{http://gotwarlost.github.io/istanbul/}) Istanbul è uno strumento che effettua statement, branch, function e line coverage.
 		\end{itemize}
 		
@@ -560,7 +561,7 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
 	Esegue i principali script di analisi statica e dinamica. In particolare:
 	\begin{itemize}
 	\item Controlla la formattazione del codice con JSHint;
-	\item Esegue i test d'unità con Mocha.
+	\item Esegue i test d'unità con Mocha e con Karma.
 	\end{itemize}
 
 	\item \textbf{\code{make test-report}} \\
@@ -568,7 +569,7 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
 	\begin{itemize}
 	\item Controlla la formattazione del codice con JSHint;
 	\item Effettua le misurazioni sul software con Plato;
-	\item Esegue i test d'unità con Mocha;
+	\item Esegue i test d'unità con Mocha e Karma;
 	\item Misura la copertura del software con Istanbul.
 	\end{itemize}
 

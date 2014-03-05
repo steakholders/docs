@@ -136,7 +136,6 @@ citecolor
 class
 Classes
 clean
-Clean
 cliccabile
 client
 Closed
@@ -175,7 +174,6 @@ Compito'
 Complex
 Complexity
 components
-Components
 comprehension
 compress
 Comput
@@ -201,7 +199,6 @@ Control
 controller
 ControllerFactory
 controllers
-Controllers
 cookie
 cookieParser
 cookies
@@ -558,7 +555,6 @@ lostpassword
 Loup
 l'overhead
 lucidchart
-Lucidchart
 LUF
 l'upgrade
 l'upload
@@ -856,7 +852,6 @@ ResetModel
 Resource
 Response
 responsibility
-Responsibility
 responsività
 REST
 Retired
@@ -966,7 +961,6 @@ SQMT
 ST
 stabile'
 stable
-Stable
 stack
 stacked
 Stafford

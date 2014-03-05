@@ -591,12 +591,12 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
 	Di seguito viene descritto lo strumento principale che è stato sviluppato dal gruppo per gestire la tracciabilità di molti degli aspetti affrontati durante il progetto. Il software in questione, denominato \emph{Requisteak}, è strutturato secondo il V-Model descritto nel \PianoDiQualifica{}.
 	Tale strumento è raggiungibile all'indirizzo:
      \begin{center}
-         \url{http://steakholders.herokuapp.com}.
+         \url{http://steakholders.herokuapp.com}
      \end{center} 
      Le credenziali di accesso sono le seguenti:
      \begin{itemize}
-        \item \textbf{Username}: \texttt{committente@steakholders.com};
-        \item \textbf{Password}: \texttt{unipd2013}.
+        \item \textbf{Username}: \texttt{committente@steakholders.com}
+        \item \textbf{Password}: \texttt{unipd2013}
      \end{itemize}
      
      \paragraph{Use Cases}
@@ -619,7 +619,7 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
      \end{itemize}
      
      \paragraph{Requirements}
-     Permette di creare, visualizzare, modificare ed eliminare i requisiti del progetto. 
+     Permette di creare, visualizzare, modificare ed eliminare i requisiti del progetto. Ad un requisito possono essere associati requisiti figlio, casi d'uso, test di sistema e test di validazione; la loro gestione avviene tramite la show-page del requisito.
      In dettaglio, i requisiti sono composti dai seguenti attributi:
      \begin{itemize}
      	\item Sistema (\underline{A}pplication, \underline{F}ramework, Maa\underline{S});
@@ -631,11 +631,39 @@ Per agevolare molte operazioni è stato predisposto uno script \glossario{Makefi
      \end{itemize}
      
      \paragraph{Components}
+	Corrispondono ai package e sono divisi in \glossario{front end} e \glossario{back end}, hanno struttura gerarchica e sono associati a classi, test di integrazione e altri package. 
+     In dettaglio, i componenti sono composti dai seguenti attributi:
+	\begin{itemize}
+		\item Title;
+		\item Parent;
+		\item Description;
+		\item Use;
+		\item Graph: fa riferimento al relativo diagramma UML in \url{lucidchart.com}.
+	\end{itemize}	     
      
      \paragraph{Classes}
+	Le classi sono interne ai package, hanno un gerarchia, possono essere relazionate tra loro e con i test di unità.
+	In dettaglio, le classi sono composti dai seguenti attributi:
+	\begin{itemize}
+		\item Title;
+		\item Parent;
+		\item Description;
+		\item Typology;
+		\item Use.
+	\end{itemize}		
+	
+     
      \paragraph{Unit Tests}
+     Hanno un titolo e una descrizione, il loro inserimento avviene a partire dalla classe che si vuole testare.
+     
      \paragraph{Integration Tests}
+     Hanno un titolo e una descrizione, il loro inserimento avviene a partire dal componente che si vuole testare.
+     
      \paragraph{System Tests}
+	 Hanno un titolo e una descrizione, il loro inserimento avviene a partire dal requisito aggregato che si vuole testare.
+     
      \paragraph{Validation Tests}
-     \paragraph{Esportazione in LaTex}
-   
+	 Hanno un titolo e una descrizione, il loro inserimento avviene a partire dal requisito radice che si vuole testare.     
+     
+%     \paragraph{Esportazione in LaTex}
+%     Si possono scaricare i file \code{.tex} relativi a:

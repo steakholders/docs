@@ -41,26 +41,32 @@ log "info" "Compilo $pretty_file ..."
 # Compila tante volte (serve per poter fare l'indice)
 
 # 1: Draft mode
-errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -draftmode "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
+rm -f "${main_tex%.tex}.pdf"
+
+output=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -draftmode "$main_tex" 2>&1)
+exitcode=$?
+errors=$(echo "$output" | grep -E "error:|.*:[0-9]+:.*" -a1)
 
 # Se c'è stato un errore
-if [[ $errors != "" ]]; then
+if [[ $exitcode != "0" ]]; then
 	log "error" "ERRORE"
 	log "error" "Ci sono stati errori nella compilazione draftmode di $pretty_file"
 	set_red_text; echo "$errors"; reset_text_color;
-	rm "${main_tex%.tex}.pdf"
 	exit 1
 fi
 
 # 1: Completo
-errors=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error "$main_tex" 2>&1 | grep -E ".*:[0-9]+:.*")
+rm -f "${main_tex%.tex}.pdf"
+
+output=$(pdflatex -interaction=nonstopmode -halt-on-error -file-line-error "$main_tex" 2>&1)
+exitcode=$?
+errors=$(echo "$output" | grep -E "error:|.*:[0-9]+:.*" -a1)
 
 # Se c'è stato un errore
-if [[ $errors != "" ]]; then
+if [[ $exitcode != "0" ]]; then
 	log "error" "ERRORE"
 	log "error" "Ci sono stati errori nella compilazione completa di $pretty_file"
 	set_red_text; echo "$errors"; reset_text_color;
-	rm "${main_tex%.tex}.pdf"
 	exit 1
 fi
 

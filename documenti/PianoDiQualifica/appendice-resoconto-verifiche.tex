@@ -15,21 +15,44 @@ In questa revisione non è stato possibile valutare i processi poiché lo stato 
     \begin{tabular}{ | p{5cm} | p{5cm} | p{2cm} | }
 	\hline
 	Problema & Possibile soluzione & Stato \\ \hline
-    Il dizionario personale di \glossario{Aspell}, essendo un file collaborativo compilato in automatico da tale \glossario{tool}, impone molto spesso attività manuali extra di gestione del \glossario{repository}, in particolare vanno risolti molti conflitti. & Uno script che ordina il file in questione dovrebbe diminuire i conflitti. & Da eseguire. \\ \hline
+    Il dizionario personale di \glossario{Aspell}, essendo un file collaborativo compilato in automatico da tale \glossario{tool}, impone molto spesso attività manuali extra di gestione del \glossario{repository}, in particolare vanno risolti molti conflitti. & Uno script che ordina il file in questione dovrebbe diminuire i conflitti. & Eseguito. \\ \hline
 	 Contrassegnare le parole di glossario con il relativo \glossario{tag} è un attività fortemente propensa a dimenticanze ed errori. & Uno script potrebbe contrassegnare le parole di glossario presenti nei documenti in automatico. & Da eseguire.  \\ \hline
 	Scarsa frammentazione dei \glossario{task} & Incremento dell'utilizzo dello strumento di gestione dei processi. & Completato.   \\ \hline
 	Mantenere la corrispondenza tra casi d'uso e relativi \glossario{url} dei diagrammi è un operazione lunga e manuale. & Uno script può automatizzare tale attività. & Completato. \\ \hline
 	Difficoltà nell'uso dello strumento di controllo di versione. & I membri del gruppo devono eseguire attività extra di autoformazione sulla base del materiale messo a disposizione da alcuni membri. & Completato. \\	
 	\hline
     \end{tabular}
-    	\caption{Problemi pre RR individuati e relative soluzioni.}
+    	\caption{Problemi individuati in RR e relative soluzioni.}
 \end{table}
 
 
-	\subsubsection{Revisione dei Requisiti}
+	\subsubsection{Revisione di Progettazione Architetturale}
 	L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. Successivamente si è proceduto con le misurazioni delle metriche relative ai documenti.
 Sono quindi state misurate le metriche sui processi per valutarne la bontà e fornire una base per la pianificazione dei cicli \glossario{PDCA}.
 
+	\paragraph{Miglioramenti post RP}
+	A seguito delle attività di verifica e controllo è stato sottoposto un questionario ad ogni membro del gruppo che ha contribuito ad identificare le problematiche relative ai processi e a formulare proposte risolutive. Da queste idee sono nate diverse modifiche e miglioramenti ai documenti e in generale al nostro modo di lavorare. Seguendo questa linea abbiamo applicato coerentemente la politica di \textit{plan-do-check-act}, utilissima per il miglioramento della qualità: \\
+	
+		\begin{table}[H]
+    		\begin{tabular}{ | p{5cm} | p{5cm} | p{2cm} | }
+				\hline
+				Problema & Possibile soluzione & Stato \\ \hline
+				Forte sbilanciamento tra i membri del gruppo in merito alle conoscenze dello \glossario{stack tecnologico} utilizzato. & Autoformazione teorica e pratica. & Eseguito. \\ \hline
+				Forte sbilanciamento in merito alla capacità di effettuare scelte di design architetturale, con la conseguente necessità di un'interazione ripetitiva tra i membri del gruppo. & Autoformazione. & Eseguito. \\ \hline
+				Difficoltà nell'apportare modifiche allo strumento \glossario{Requisteak} (descritto in \NormeDiProgetto{}) dovute al linguaggio di sviluppo (\glossario{Ruby on Rails}) conosciuto solo da una parte dei membri del gruppo. & Utilizzo sistematico delle issues di \glossario{GitHub} per lo strumento in questione. & Eseguito. \\ \hline
+				Sviluppo di \glossario{Requisteak} (descritto in \NormeDiProgetto{}) ritardatario per mancanza di progettazione e tempi ristretti. & Per la progettazione è necessario interagire con i docenti per capire al meglio le associazioni tra quanto progettato ed i relativi test. & Eseguito. \\ \hline
+				Difficoltà nel approcciare con un documento al quale non si è lavorato in precedenza. & Va predisposta una maggiore sistematicità nel commentare il materiale prodotto, per la Specifica Tecnica sono necessari commenti per i diagrammi e le scelte architetturali. & Eseguito. \\ \hline
+				Segnalazioni delle anomalie nel repository dei documenti troppo informali e non tracciabili. & Utilizzo delle issues per il \glossario{repository} dei documenti e relativa autoformazione per il loro corretto utilizzo. & Eseguito. \\ \hline
+				 & & \\ \hline
+				 
+    		\end{tabular}
+    			\caption{Problemi individuati in RP e relative soluzioni.}
+		\end{table}
+
+
+	\subsubsection{Revisione di Progettazione di Dettaglio e Codifica}
+	%TODO
+	%https://tricider.com/en/admin/1NFbH/3H6KtT
 	
 	 \pagebreak
 	 

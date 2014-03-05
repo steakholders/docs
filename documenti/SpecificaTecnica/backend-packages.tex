@@ -154,17 +154,6 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
           \begin{itemize}
             \item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
           \end{itemize}
-      \subparagraph{AuthController}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che rappresenta i metodi per la gestione delle risorse di login e logout. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
-          \end{itemize}
       \subparagraph{ShowController}
         
         \textbf{\\ \\ Descrizione} 
@@ -179,11 +168,12 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
         
         \textbf{\\ \\ Descrizione} 
           \begin{itemize}
-            \item[] Classe che rappresenta la gestione di un profilo utente. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+            \item[] Classe che rappresenta la gestione di un profilo utente, il login e il logout. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+
           \end{itemize}      
         \textbf{Utilizzo}  
           \begin{itemize}
-            \item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT.
+            \item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT. Viene anche utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
           \end{itemize}
       \subparagraph{ForgotController}
         

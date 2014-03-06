@@ -7,7 +7,20 @@
 	 	L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. L'attività di \emph{walkthrough} ha evidenziato una serie di anomalie, in questo modo è stato possibile stilare la lista di anomalie frequenti (vedi \NormeDiProgetto{}) che si potranno controllare tramite \emph{Inspection}. Successivamente si è proceduto con le misurazioni delle metriche relative ai documenti.
 In questa revisione non è stato possibile valutare i processi poiché lo stato embrionale del team e   impegni universitari sovrapposti non hanno permesso il rilevamento accurato di tutti i parametri necessari. Il gruppo ha in programma di colmare tale mancanza per la revisione successiva.
 
-		\paragraph{Miglioramenti post RR}
+
+
+	\subsubsection{Revisione di Progettazione Architetturale}
+	L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. Successivamente si è proceduto con le misurazioni delle metriche relative ai documenti.
+Sono quindi state misurate le metriche sui processi per valutarne la bontà e fornire una base per la pianificazione dei cicli \glossario{PDCA}.
+
+	
+	\subsubsection{Revisione di Progettazione di Dettaglio e Codifica}
+
+	
+	 \pagebreak
+	 \subsection{Miglioramenti post Revisione}
+	 
+	 \subsubsection{Miglioramenti post RR}
 		A seguito delle attività di verifica e controllo è stato sottoposto un questionario ad ogni membro del gruppo che ha contribuito ad identificare le problematiche relative ai processi e a formulare proposte risolutive. Da queste idee sono nate diverse modifiche e miglioramenti ai documenti e in generale al nostro modo di lavorare. Seguendo questa linea abbiamo applicato coerentemente la politica di \textit{plan-do-check-act}, utilissima per il miglioramento della qualità: \\
 			
 
@@ -25,12 +38,7 @@ In questa revisione non è stato possibile valutare i processi poiché lo stato 
     	\caption{Problemi individuati in RR e relative soluzioni.}
 \end{table}
 
-
-	\subsubsection{Revisione di Progettazione Architetturale}
-	L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. Successivamente si è proceduto con le misurazioni delle metriche relative ai documenti.
-Sono quindi state misurate le metriche sui processi per valutarne la bontà e fornire una base per la pianificazione dei cicli \glossario{PDCA}.
-
-	\paragraph{Miglioramenti post RP}
+\subsubsection{Miglioramenti post RP}
 	A seguito delle attività di verifica e controllo è stato sottoposto un questionario ad ogni membro del gruppo che ha contribuito ad identificare le problematiche relative ai processi e a formulare proposte risolutive. Da queste idee sono nate diverse modifiche e miglioramenti ai documenti e in generale al nostro modo di lavorare. Seguendo questa linea abbiamo applicato coerentemente la politica di \textit{plan-do-check-act}, utilissima per il miglioramento della qualità: \\
 	
 		\begin{table}[H]
@@ -42,19 +50,12 @@ Sono quindi state misurate le metriche sui processi per valutarne la bontà e fo
 				Difficoltà nell'apportare modifiche allo strumento \glossario{Requisteak} (descritto in \NormeDiProgetto{}) dovute al linguaggio di sviluppo (\glossario{Ruby on Rails}) conosciuto solo da una parte dei membri del gruppo. & Utilizzo sistematico delle issues di \glossario{GitHub} per lo strumento in questione. & Eseguito. \\ \hline
 				Sviluppo di \glossario{Requisteak} (descritto in \NormeDiProgetto{}) ritardatario per mancanza di progettazione e tempi ristretti. & Per la progettazione è necessario interagire con i docenti per capire al meglio le associazioni tra quanto progettato ed i relativi test. & Eseguito. \\ \hline
 				Difficoltà nel approcciare con un documento al quale non si è lavorato in precedenza. & Va predisposta una maggiore sistematicità nel commentare il materiale prodotto, per la Specifica Tecnica sono necessari commenti per i diagrammi e le scelte architetturali. & Eseguito. \\ \hline
-				Segnalazioni delle anomalie nel repository dei documenti troppo informali e non tracciabili. & Utilizzo delle issues per il \glossario{repository} dei documenti e relativa autoformazione per il loro corretto utilizzo. & Eseguito. \\ \hline
-				 & & \\ \hline
-				 
+				Segnalazioni delle anomalie nel repository dei documenti troppo informali e non tracciabili. & Utilizzo delle issues per il \glossario{repository} dei documenti e relativa autoformazione per il loro corretto utilizzo. & Eseguito. \\ \hline	 
     		\end{tabular}
     			\caption{Problemi individuati in RP e relative soluzioni.}
 		\end{table}
 
 
-	\subsubsection{Revisione di Progettazione di Dettaglio e Codifica}
-	%TODO
-	%https://tricider.com/en/admin/1NFbH/3H6KtT
-	
-	 \pagebreak
 	 
 	 \subsection{Dettaglio delle verifiche tramite analisi}
 	 \label{DettaglioVerificheAnalisi}
@@ -157,7 +158,7 @@ Sono quindi state misurate le metriche sui processi per valutarne la bontà e fo
 			\item \emph{Norme di Progetto}: il documento è stato riorganizzato secondo quanto definito nello standard ISO/IEC 12207;
 			\item \emph{Analisi dei Requisiti}: sono stati rivisti tutti i requisiti e casi d'uso segnalati dal committente;
 			\item \emph{Specifica Tecnica}: rivisti e corretti i contenuti segnalati dal committente. I design pattern sono stati contestualizzati come suggerito;
-			\item \emph{Piano di Progetto}: sono state aggiunte le dipendenze ai diagrammi di Gantt, l'analisi dei rischi è stata attualizzata allo stato dell'arte, è stato riorganizzato il documento prima individuando i rischi, poi pianificando e infine fissando i costi a preventivo mettendoli in relazione con il consuntivo corrente, è stato pianificato il raggiungimento degli stati del \glossario{SEMAT};
+			\item \emph{Piano di Progetto}: sono state aggiunte le dipendenze ai diagrammi di Gantt, l'analisi dei rischi è stata attualizzata allo stato dell'arte, è stato riorganizzato il documento prima individuando i rischi, poi pianificando e infine fissando i costi a preventivo mettendoli in relazione con il consuntivo corrente, è stato pianificato il raggiungimento degli stati del \glossario{SEMAT};
 			\item \emph{Piano di Qualifica}: sono state aggiunte metriche relative ai prodotti dell'Analisi e della Progettazione, è stato discusso il significato del ciclo \glossario{PDCA} con il committente.
 		\end{itemize}
 

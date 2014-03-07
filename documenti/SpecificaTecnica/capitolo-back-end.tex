@@ -28,9 +28,9 @@ I tipi di permessi possibili sono:
 	\textbf{\emph{/profile}} & \textbf{GET} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Restituisce i dati relativi all'utente. }  \\ \hline
 	\textbf{\emph{/profile}} & \textbf{POST} & \textbf{Utente} \\ \hline
-	\multicolumn{3}{|c|} {Crea una nuova sessione associata all'utente, corrisponde al login.} \\ \specialrule{1pt}{1pt}{1pt}
+	\multicolumn{3}{|c|} {Crea una nuova sessione associata all'utente, corrisponde al login.} \\ \hline
 	\textbf{\emph{/profile}} & \textbf{PUT} & \textbf{Utente Autenticato} \\ \hline
-	\multicolumn{3}{|c|} { Modifica i dati utente. }  \\ \specialrule{1pt}{1pt}{1pt}
+	\multicolumn{3}{|c|} { Modifica i dati utente. }  \\ \hline
 	\textbf{\emph{/profile}} & \textbf{DELETE} & \textbf{Utente Autenticato} \\ \hline
 	\multicolumn{3}{|c|} {Elimina la sessione utente, corrisponde al logout. }  \\ \specialrule{1pt}{1pt}{1pt}
 	
@@ -184,6 +184,16 @@ Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono perm
 \end{figure}
 
 \pagebreak
+\subsubsection{Fallimento vincolo ``utente  super admin''}
+Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Super Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal controller \emph{requireSuperAdmin} fallisce. 
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[scale=0.20]{uml/scenari/requireSuperAdmin ERROR.png} 
+		\caption{Fallimento vincolo ``utente super admin''}
+	\end{center} 
+\end{figure}
+
+\pagebreak
 \subsubsection{Richiesta POST /login} 
 Il seguente scenario mostra la gestione di una richiesta POST per la risorsa di login, \emph{requireNotLogged} non risponde con errore, chiamando il successivo \glossario{middleware} \emph{login} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
 \begin{figure}[H]
@@ -227,7 +237,7 @@ Nell'opzione che i parametri passati per la modifica del profilo siano errati, \
 
 \pagebreak
 \subsubsection{Richiesta POST /password/forgot} 
-Viene rappresentato lo scenario di una richiesta POST per la risorsa password forgot, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{requirePasswordReset} che gestisce la richiesta.
+Viene rappresentato lo scenario di una richiesta POST per la risorsa password forgot, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{passwordResetRequest} che gestisce la richiesta.
 Se i parametri passati per la richiesta sono errati, il controllore \emph{requireNotLogged} risponderà con un errore.
 \begin{figure}[H]
 	\begin{center} 
@@ -321,16 +331,6 @@ Nell'opzione l'id sia errato, non corrispondendo ad un \glossario{Document} vali
 	\end{center} 
 \end{figure}
 
-\pagebreak
-\subsubsection{Richiesta PUT /collection/\{collection name\}/\{document id\}}
-Il seguente diagramma rappresenta lo scenario di una richiesta POST su una risorsa collection name document, il controller \emph{requireAdmin} non risponde con errore e viene passato il controllo a \emph{editDocument} che gestirà la richiesta.
-Nell'opzione che i parametri passati per la modifica del \glossario{Document} siano errati, il controller chiamerà la callback passandole l'errore che il router dovrà gestire.
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[scale=0.20]{uml/scenari/Collection Name Document PUT.png} 
-		\caption{Richiesta PUT /collection/\{collection name\}/\{document id\}}
-	\end{center} 
-\end{figure}
 
 \pagebreak
 \subsubsection{Richiesta DELETE /collection/\{collection name\}/\{document id\}}
@@ -339,29 +339,6 @@ Il seguente scenario rappresenta la richiesta DELETE per una risorsa Collection 
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Collection Name Document DELETE.png} 
 		\caption{Richiesta DELETE /collection/\{collection name\}/\{document id\}}
-	\end{center} 
-\end{figure}
-
-\pagebreak
-\subsubsection{Richiesta PUT /action/\{action name\}/\{collection name\}} 
-Il seguente diagramma di sequenza descrive lo scenario di una richiesta PUT per una risorsa Action name Collection.
-Il controller \emph{collectionAction} si occupa di eseguire i controlli sugli attributi passatogli corrispondenti all'azione da eseguire e alla \glossario{Collection} sulla quale tale azione deve essere gestita, in caso siano errati chiamerà una next(error).
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[scale=0.20]{uml/scenari/Action Name Collection PUT.png} 
-		\caption{Richiesta PUT /action/\{action name\}/\{collection name\}}
-	\end{center} 
-\end{figure}
-
-\pagebreak
-\subsubsection{Richiesta PUT /action/\{action name\}/\{collection name\}/\{document id\}}
-Il diagramma a seguito mostrato descrive lo scenario di una richiesta PUT per la risorsa Action name Document.
-Il controller \emph{documentAction} gestirà la richiesta di azione sul document corrispondente all'id passatogli come parametro.
-Nell'opzione i parametri siano errati, \emph{documentAction} chiamerà la callback passandogli la descrizione dell'errore come parametro.
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[scale=0.20]{uml/scenari/Action Name Collection Document PUT.png} 
-		\caption{Richiesta PUT /action/\{action name\}/\{collection name\}/\{document id\}}
 	\end{center} 
 \end{figure}
 
@@ -375,5 +352,6 @@ Vengono di seguito descritte le librerie aggiuntive utilizzate dal Back-end che 
  \item \textbf{Passport-local:} è una libreria che permette di autenticare un utente con Passport usando un username e una password.
  \item \textbf{Passport-local-mongoose:} è un plugin per Mongoose che semplifica la costruzione di un sistema di autenticazione con Passport.
  \item \textbf{Nodemailer:} è un modulo che permette di mandare facilmente e-mail con Node.js, tramite \glossario{SMTP}. Supporta anche i caratteri \glossario{unicode}.
+ \item \ \textbf{Sweet:} è un modulo che permette di definire macro utilizzando la sintassi del linguaggio Javascript.
 \end{itemize}
 

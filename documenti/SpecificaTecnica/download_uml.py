@@ -53,7 +53,7 @@ lucidchart.download_image("4bdc-1928-52dac052-9e58-4fc30a004790", "uml/attivita/
 lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/attivita/MaaP - Attivita principali.png")
 lucidchart.download_image("440c-f4bc-52dabbcb-a162-0c630a004790", "uml/attivita/MaaP - Show-page.png")
 lucidchart.download_image("47b2-4774-52d98c99-872c-04f90a00d7c9", "uml/attivita/MaaP - Index-page.png")
-lucidchart.download_image("4709-9388-52d930e7-9fdc-44290a009998", "uml/attivita/MaaP - Effettua login.png")
+lucidchart.download_image("47099388-52d9-30e7-9fdc-44290a009998", "uml/attivita/MaaP - Effettua login.png")
 lucidchart.download_image("4cf6-0efc-52d93535-84d0-514a0a009db8", "uml/attivita/MaaP - Esegui reset password.png")
 lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/attivita/MaaP - Recupera password.png")
 lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/attivita/MaaP - Effettua registrazione.png")
@@ -70,14 +70,15 @@ lucidchart.download_image("44d6-9194-52ee820c-8332-30020a0048dc", "uml/attivita/
 lucidchart.download_image("40ef-da14-52e92878-b851-4bb70a009cc4", "uml/scenari/requireNotLogged ERROR.png")
 lucidchart.download_image("4f11-86bc-52ea65a0-aff2-549c0a004801", "uml/scenari/requireLogged ERROR.png")
 lucidchart.download_image("43f3-86c8-52ea65e3-854b-0c250a00c886", "uml/scenari/requireAdmin ERROR.png")
+lucidchart.download_image("4b188a48-5319-9709-9815-27c00a00d013", "uml/scenari/requireSuperAdmin ERROR.png")
 lucidchart.download_image("45cd-59b4-52ea2c2c-9040-6b370a008a7d", "uml/scenari/Profile GET.png")
 lucidchart.download_image("4580-25b0-52ea2df5-affc-20e90a005d4c", "uml/scenari/Password Forgot POST.png")
 lucidchart.download_image("49f9-a62c-52e92143-8edb-76fb0a005953", "uml/scenari/logout DELETE.png")
 lucidchart.download_image("4b4b-d5b4-52ea2d23-b9d5-3fd60a00c886", "uml/scenari/Profile PUT.png")
 lucidchart.download_image("474b-5340-52ea2f14-821c-54130a0080fd", "uml/scenari/Users GET.png")
-lucidchart.download_image("4cd0-6af8-52ea4779-a369-46c60a008a7d", "uml/scenari/Action Name Collection Document PUT.png")
-lucidchart.download_image("4a49-1fc8-52ea472b-9701-30250a00c886", "uml/scenari/Action Name Collection PUT.png")
-lucidchart.download_image("43d0-05a0-52ea4645-8262-14280a008a7d", "uml/scenari/Collection Name Document PUT.png")
+#lucidchart.download_image("4cd0-6af8-52ea4779-a369-46c60a008a7d", "uml/scenari/Action Name Collection Document PUT.png")
+#lucidchart.download_image("4a49-1fc8-52ea472b-9701-30250a00c886", "uml/scenari/Action Name Collection PUT.png")
+#lucidchart.download_image("43d0-05a0-52ea4645-8262-14280a008a7d", "uml/scenari/Collection Name Document PUT.png")
 lucidchart.download_image("4435-7f0c-52ea451d-99a0-35980a008a7d", "uml/scenari/Collection Name GET.png")
 lucidchart.download_image("492e-8840-52ea42b6-a97b-53570a00ca2b", "uml/scenari/Users Id DELETE.png")
 lucidchart.download_image("4686-92d4-52ea3266-b7ee-6a310a005d4c", "uml/scenari/Users Id PUT.png")
@@ -93,7 +94,7 @@ lucidchart.download_image("426d-99f8-52e9169b-a010-263b0a0049fb", "uml/scenari/D
 
 # Back-end, Front-end e packages
 
-lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/classi/Back-end")
+lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/classi/Back-end.png")
 lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/classi/Front-end.png")
 
 lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "uml/package/Back-end.png")

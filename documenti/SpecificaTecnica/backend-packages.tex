@@ -4,9 +4,17 @@
     \begin{figure}[H] 
       \begin{center} 
         \includegraphics[width=\textwidth]{uml/package/Back-end.png}  
-        \caption{Componente Back-end}
+        \caption{Diagramma packages Back-end}
       \end{center}  
     \end{figure} 
+    
+    \begin{figure}[H] 
+      \begin{center} 
+        \includegraphics[width=\textwidth]{uml/classi/Back-end.png}  
+        \caption{Diagramma delle classi Back-end}
+      \end{center}  
+    \end{figure} 
+    
   \subparagraph{Descrizione} 
     \begin{itemize}
     \item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria.
@@ -92,10 +100,6 @@ database
     \begin{itemize}
         \item DSLModel
     \end{itemize}
-  \subparagraph{Interazioni con altri componenti} 
-    \begin{itemize} 
-        \item Utils  
-    \end{itemize} 
     \paragraph{Classi}
       \subparagraph{UserModel}
         
@@ -107,16 +111,6 @@ database
           \begin{itemize}
             \item[] Viene utilizzata per l'interfacciamento con la libreria \glossario{Mongoose} per la registrazione dello schema dei dati, e con la libreria passport-local-mongoose per il popolamento automatico dello schema con campi dati e metodi predefiniti.
 Il costruttore del modello dello schema dei dati viene registrato nella \glossario{Factory} di \glossario{Mongoose} ed ogni istanza condividerà la stessa connessione al server.
-          \end{itemize}
-      \subparagraph{DocumentModel}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] È la classe utilizzata per interfacciarsi con \glossario{Mongoose} per modificare i \glossario{Document}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene richiamata dalla classe \texttt{Back-end::Lib::Model::DSLModel::DSLDomain} per interfacciarsi con \glossario{MongoDB} attraverso \glossario{Mongoose} e rispettare quindi i vincoli logici sul \glossario{Document} in questione.
           \end{itemize}
   \subsubsection{Controller}
   \paragraph{Informazioni sul package} 
@@ -132,6 +126,10 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
 end. Contiene classi per le funzionalità di controllo e visualizzazione delle risorse, dove ogni
 classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{URI} .
 
+    \end{itemize} 
+  \subparagraph{Interazioni con altri componenti} 
+    \begin{itemize} 
+        \item Utils  
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{ControllerFactory}
@@ -218,8 +216,7 @@ del \glossario{Back-end} .
     \begin{itemize} 
         \item Model
         \item Controller
-        \item DSLModel
-        \item View  
+        \item DSLModel  
     \end{itemize} 
     \paragraph{Classi}
       \subparagraph{Authentication}
@@ -290,20 +287,6 @@ del \glossario{Back-end} .
           \begin{itemize}
             \item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
           \end{itemize}
-      \subparagraph{Mailer}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata per inviare un'email ad un utente che ha effettuato la richiesta di recupero password.
-          \end{itemize}
-          \textbf{Relazioni con altre classi}
-          \begin{itemize}
-              \item{ForgotMailView}
-          \end{itemize}
       \subparagraph{Router}
         
         \textbf{\\ \\ Descrizione} 
@@ -346,7 +329,6 @@ del \glossario{Back-end} .
           \begin{itemize}
               \item{DSLInterpreterStrategy}
               \item{DSLCollectionModel}
-              \item{DocumentModel}
           \end{itemize}
       \subparagraph{DSLInterpreterStrategy}
         
@@ -467,16 +449,6 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
           \begin{itemize}
               \item{MiddlewareLoader}
           \end{itemize}
-      \subparagraph{Error}
-        
-        \textbf{\\ \\ Descrizione} 
-          \begin{itemize}
-            \item[] Classe che rappresenta un errore all'interno del package \texttt{Back-end::Lib}.
-          \end{itemize}      
-        \textbf{Utilizzo}  
-          \begin{itemize}
-            \item[] Viene utilizzata da tutte le classi presente all'interno del package \texttt{Back-end::Lib} per rappresentare un errore generato, identificandolo tramite nome, descrizione e codice.
-          \end{itemize}
   \subsubsection{Utils}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 
@@ -489,6 +461,35 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
     \begin{itemize}
     \item[] \glossario{Package} comprendente le classi di generica utilità, che non rientrano nella classificazione tra model, view e controller.
     \end{itemize} 
+  \subparagraph{Interazioni con altri componenti} 
+    \begin{itemize} 
+        \item View  
+    \end{itemize} 
+    \paragraph{Classi}
+      \subparagraph{Mailer}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata per inviare un'email ad un utente che ha effettuato la richiesta di recupero password.
+          \end{itemize}
+          \textbf{Relazioni con altre classi}
+          \begin{itemize}
+              \item{ForgotMailView}
+          \end{itemize}
+      \subparagraph{Error}
+        
+        \textbf{\\ \\ Descrizione} 
+          \begin{itemize}
+            \item[] Classe che rappresenta un errore all'interno del package \texttt{Back-end::Lib}.
+          \end{itemize}      
+        \textbf{Utilizzo}  
+          \begin{itemize}
+            \item[] Viene utilizzata da tutte le classi presente all'interno del package \texttt{Back-end::Lib} per rappresentare un errore generato, identificandolo tramite nome, descrizione e codice.
+          \end{itemize}
   \subsubsection{View}
   \paragraph{Informazioni sul package} 
     \begin{figure}[H] 

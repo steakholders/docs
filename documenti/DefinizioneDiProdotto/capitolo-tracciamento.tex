@@ -1,5 +1,114 @@
-\subsection{Tracciamento classi-requisiti}
-
 \subsection{Tracciamento requisiti-classi}
+\begin{center}
+      \bgroup
+      \def\arraystretch{1.8}
+      \begin{longtable}{ | p{4cm} | p{10cm} | }
+    
+      \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Classe} \\ \hline
+      
+	RA1O 1 & Front-end::Controllers::LoginController \newline  \\ \hline 
+	RA1O 1.1 & Front-end::Controllers::LoginController \newline  \\ \hline 
+	RA1O 1.2 & Front-end::Controllers::LoginController \newline  \\ \hline      
 
-\subsection{Tracciamento classi-test}
+	RA1O 1.3 & Back-end::Lib::Controller::Middleware::Authentication  \newline Back-end::Lib::Controller::Controller::UserController \newline Back-end::Lib::Model::UserModel \\ \hline  
+    
+    RA1O 1.3.1 & Front-end::Model::ErrorModel \newline  \\ \hline 
+           
+    RA1O 1.3.2 & Back-end::Lib::Controller::Middleware::Authentication \newline
+        			Back-end::Lib::Controller::Controller::ProfileController \newline
+        			Front-end::Controllers::DashboardController \newline  \\ \hline 
+        				
+        				     
+    RA1O 2 & Back-end::Lib::Controller::Controller::ForgotController \newline
+    			Front-end::Services::ForgotPasswordService \newline
+    			Front-end::Model::RequestResetModel  \newline  \\ \hline   
+    			   
+    RA1O 2.1 & Front-end::Controllers::ForgotRequestController \newline  \\ \hline   
+       
+    RA1O 2.2 & Back-end::Lib::Controller::Controller::ForgotController \newline
+    			  			Back-end::Lib::Utils::Mailer \newline
+    			  			Back-end::Lib::View::ForgotMailView \newline  \\ \hline     
+    			   
+     
+    RA1D 3 & Front-end::Controllers::DashboardController \newline  \\ \hline  
+        
+    RA1O 4 & Front-end::Controllers::CollectionController \newline  \\ \hline   
+       
+    RA1O 4.1 & Back-end::Lib::Controller::Controller::IndexController \newline Front-end::Controllers::CollectionController \newline Front-end::Model::CollectionListModel \newline  \\ \hline   
+       
+    RA1O 4.1.1 & Front-end::Controllers::CollectionController \newline  \\ \hline 
+         
+    RA1O 5 & Front-end::Controllers::DocumentController \newline
+    			 Front-end::Model::DocumentModel \newline  \\ \hline    
+           
+    RA1O 5.3 & Back-end::Lib::Controller::Controller::ShowController \newline
+    			 Front-end::Controllers::DocumentController\newline  \\ \hline      
+    
+    RA1O 6 & Back-end::Lib::Controller::Controller::UserController \newline Front-end::Controllers::UsersListController  \\ \hline  
+        
+    RA1O 6.1 & Front-end::Controllers::UserController \newline Back-end::Lib::Controller::Controller::UserController \newline Back-end::Lib::Model::UserModel \\ \hline   
+       
+    RA1O 6.1.1 & Front-end::Controllers::UserController \newline  \\ \hline     
+     
+    RA1O 6.1.1.1 & Front-end::Controllers::UserController \newline  \\ \hline
+        
+    RA1O 6.1.1.2 & Front-end::Controllers::UserController \newline  \\ \hline
+        
+    RA1O 6.1.1.3 & Front-end::Controllers::UserController \newline  \\ \hline
+       
+    RA1O 6.1.2 & Back-end::Lib::Controller::Controller::UserController \newline Back-end::Lib::Model::UserModel \newline Front-end::Controllers::UserController \newline Front-end::Model::UserModel \newline  \\ \hline     
+    
+    
+    RA1O 6.2 & Front-end::Controllers::UsersListController  \\ \hline     
+     
+    RA1O 6.2.1 & Back-end::Lib::Controller::Controller::UserController \newline Front-end::Controllers::UserController \newline  \\ \hline      
+    RA1O 6.2.2 & Front-end::Controllers::UserController \newline  \\ \hline      
+      
+    RF1O 7 & Back-end::Lib::Model::DSLModel::DSLDomain \newline Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy \newline Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy:: \newline ConcreteDSLInterpreter  \\ \hline      
+    
+    RF1O 8 & Back-end::Lib::ServerApp \newline  \\ \hline   
+       
+    RF1O 8.1  & Back-end::DeveloperProject::ProjectApp \newline  \\ \hline  
+        
+    RF1O 8.1.1 & Back-end::DeveloperProject::ProjectApp \newline  \\ \hline      
+    RF1O 8.1.2 & Back-end::DeveloperProject::ProjectApp \newline Back-end::DeveloperProject::Config::ProjectConfig \newline  \\ \hline        
+           
+    RF1O 9 & Back-end::Lib::Model::DSLModel::DSLCollectionModel\newline  \\ \hline      
+    
+    RF1O 9.1 & Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline   
+       
+    RF1O 9.1.1 & Back-end::Lib::Model::DSLModel::Attribute \newline  \\ \hline      
+    
+    RF1O 9.1.2 & Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline      
+    
+    RF1O 9.1.3 &  Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline   
+       
+    RF1O 9.1.4 & Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline 
+         
+    RF1O 9.1.5 & Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline      
+    
+    RF1O 9.1.6 & Back-end::Lib::Model::DSLModel::IndexModel \newline  \\ \hline      
+    
+    RF1O 9.1.7 & Back-end::Lib::Model::DSLModel::Trasform \newline  \\ \hline
+          
+    RF1O 9.2 & Back-end::Lib::Model::DSLModel::ShowModel \newline  \\ \hline   
+       
+    RF1O 9.2.1 & Back-end::Lib::Model::DSLModel::Attribute \newline  \\ \hline      
+    
+    RF1O 9.2.2  & Back-end::Lib::Model::DSLModel::Attribute \newline  \\ \hline     
+     
+    RF1O 9.2.3 & Back-end::Lib::Model::DSLModel::ShowModel \newline  \\ \hline      
+    
+    RF1O 9.2.4 & Back-end::Lib::Model::DSLModel::Trasform \newline  \\ \hline      
+            
+    RF1O 14 & Back-end::DeveloperProject::Config::ProjectConfig \newline  \\ \hline      
+    RF1O 14.1 & Back-end::DeveloperProject::Config::ProjectConfig \newline  \\ \hline      
+         
+    RA1O 18 & Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::\newline ConcreteDSLInterpreter \newline  \\ \hline      
+      \caption{Requisiti-Classi}
+      \end{longtable}
+      \egroup
+      \end{center}  
+\clearpage
+
+\subsection{Tracciamento metodi-test}

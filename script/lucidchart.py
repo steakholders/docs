@@ -107,7 +107,7 @@ class LucidchartClient:
 		session = self.init_session()
 		
 		print "Scarico il documento {docid} in {destination} ...".format(docid=document, destination=destination)
-		r = session.get('https://www.lucidchart.com/documents/image/{docid}/{pagenum}/{width}/{square}'.format(docid=document, pagenum=pagenum, width=width, square=0), verify=False)
+		r = session.get('https://www.lucidchart.com/documents/image/{docid}/{pagenum}/{width}/{square}'.format(docid=document, pagenum=pagenum, width=width, square=0), verify=True)
 
 		if len(r.content) < 1000:
 			print "Fallito"

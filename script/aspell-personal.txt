@@ -72,7 +72,6 @@ attivita
 Attribute
 audit
 authController
-AuthController
 authenticate
 Authentication
 AuthenticationService
@@ -155,7 +154,6 @@ collection
 collectionAction
 CollectionActionService
 collectionController
-CollectionController
 collectionId
 CollectionListModel
 CollectionListService
@@ -333,6 +331,7 @@ Errorhandler
 ErrorHandler
 errorMiddleware
 ErrorModel
+errorRegistry
 Established
 Estimation
 Etzkorn
@@ -378,7 +377,6 @@ followed
 for
 forgot
 forgotController
-ForgotController
 ForgotMailView
 ForgotPageRequest
 ForgotPageReset
@@ -475,7 +473,6 @@ Inclusion
 incrementalmente
 index
 indexController
-IndexController
 IndexModel
 indexPage
 Individual
@@ -643,6 +640,7 @@ Mistake
 Mocha
 mod
 Modeling
+modelRegistry
 modifica'
 module
 modules
@@ -674,6 +672,7 @@ Nell'URL
 never
 new
 newline
+newUser
 next
 ngrok
 niladic
@@ -810,7 +809,6 @@ production
 Professional
 profile
 profileController
-ProfileController
 ProfileEditController
 ProfileModel
 ProfilePage
@@ -883,7 +881,6 @@ requires
 requireSuperAdmin
 requisteak
 res
-Res
 research
 reset
 ResetModel
@@ -967,7 +964,6 @@ should
 shouldn
 shouldn't
 showController
-ShowController
 ShowModel
 showpage
 showPage
@@ -1139,7 +1135,6 @@ Usable
 Useable
 used
 userController
-UserController
 userId
 userIdShowPage
 UserListController
@@ -1153,7 +1148,6 @@ userneme
 UserPage
 users
 userSchema
-UserSchema
 UserService
 UsersIndex
 usersList

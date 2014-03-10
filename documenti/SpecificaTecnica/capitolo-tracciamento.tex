@@ -7,7 +7,7 @@
       \begin{center}
       \bgroup
       \def\arraystretch{1.8}
-      \begin{longtable}{|p{5cm}|p{3cm}|}
+      \begin{longtable}{|p{7cm}|p{3cm}|}
     
       \cellcolor[gray]{0.9} \textbf{Componente} & \cellcolor[gray]{0.9} \textbf{Requisiti}  \\ \hline
       
@@ -33,20 +33,20 @@
 		
 		Back-end::Lib & \\ \hline
 		
-			Back-end::Lib::AuthModel & RF1O 8.2 \newline RA1D 12 \newline 			\\ \hline
-			
-			Back-end::Lib::Controller & RA10 2.3 \newline RA1O 4.1 \newline RA1O 4.1.1 \newline RA1O 4.1.2 \newline  RA1O 4.1.3 \newline RA1O 5 \newline RA1O 5.1 \newline RA1O 5.3 \newline RA1O 6.1.2 \newline  RA1D 13.1
+			%Back-end::Lib::AuthModel & RF1O 8.2 \newline RA1D 12 \newline 			\\ \hline
+			Back-end::Lib::Controller::Middleware & RF1O 8.2 \newline RA1D 12 \newline 			\\ \hline
+			Back-end::Lib::Controller::Controller & RA10 2.3 \newline RA1O 4.1 \newline RA1O 4.1.1 \newline RA1O 4.1.2 \newline  RA1O 4.1.3 \newline RA1O 5 \newline RA1O 5.1 \newline RA1O 5.3 \newline RA1O 6.1.2 \newline  RA1D 13.1
 			 	\\ \hline
 			
-			Back-end::Lib::DSLModel & RA1O 4.1 \newline RA1O 4.1.1 \newline RA1O 4.1.2 \newline  RA1O 4.1.3 \newline
+			Back-end::Lib::Model::DSLModel & RA1O 4.1 \newline RA1O 4.1.1 \newline RA1O 4.1.2 \newline  RA1O 4.1.3 \newline
 			RA1O 5 \newline RA1O 5.1 \newline RA1O 5.3 \newline RA1O 6 \newline RA1O 6.1.2 \newline RF1O 7 \newline RF1O 8 \newline		
 			RF1O 9 \newline	RF1O 9.1 \newline RF1O 9.2 \newline RF1O 9.3 \newline	RF1O 9.4 \newline RA1O 18 \newline	
 			\\ \hline
 			
 			
-			Back-end::Lib::MailView & 		\\ \hline
+			Back-end::Lib::View & 		\\ \hline
 			
-			Back-end::Lib::Middleware & RA10 1.3 \newline RA10 2.2 \newline RA1O 6.1.3 \newline RF1O 8 \newline RF1O 8.1 \newline		\\ \hline
+			Back-end::Lib::Controller::Middleware & RA10 1.3 \newline RA10 2.2 \newline RA1O 6.1.3 \newline RF1O 8 \newline RF1O 8.1 \newline		\\ \hline
 
    \end{longtable}
 %   \caption{Tracciamento componenti - requisiti}
@@ -60,70 +60,70 @@
       \begin{center}
       \bgroup
       \def\arraystretch{1.8}
-      \begin{longtable}{|p{3cm}|p{5cm}|}
+      \begin{longtable}{|p{3cm}|p{7cm}|}
     
       \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Componenti}  \\ \hline
       
       RA10 1 & Front-end::Controllers \\ \hline
       RA10 1.1 & Front-end::Controllers \\ \hline
       RA10 1.2 & Front-end::Controllers \\ \hline
-      RA10 1.3 & Back-end::Lib::Middleware \\ \hline
+      RA10 1.3 & Back-end::Lib::Controller::Middleware \\ \hline
       RA10 2 & Front-end::Services \\ \hline
       RA10 2.1 & Front-end::Services \\ \hline
-      RA10 2.2 & Back-end::Lib::Middleware \\ \hline
+      RA10 2.2 & Back-end::Lib::Controller::Middleware \\ \hline
       RA10 2.3 & Front-end::Controllers \newline
       			Front-end::Services \newline
-      			Back-end::Lib::Controller \\ \hline
+      			Back-end::Lib::Controller::Controller\\ \hline
       RA1D 3 & Front-end::Controllers \\ \hline
       RA1O 4 & Front-end::Controllers \newline
       			Front-end::Services \\ \hline
       RA1O 4.1 & Front-end::Controllers \newline
-      			Back-end::Lib::DSLModel \\ \hline
+      			Back-end::Lib::Model::DSLModel \\ \hline
       RA1O 4.1.1 & Front-end::Controllers \newline
-      			Back-end::Lib::DSLModel \\ \newline
+      			Back-end::Lib::Model::DSLModel \\ \newline
       RA1O 4.1.2 & Front-end::Controllers \newline
-      			Back-end::Lib::DSLModel \\ \hline
+      			Back-end::Lib::Model::DSLModel \\ \hline
       RA1O 4.1.3 & Front-end::Controllers \newline
-      				Back-end::Lib::DSLModel \\ \hline
+      				Back-end::Lib::Model::DSLModel \\ \hline
       RA1O 5 & Front-end::Controllers \newline
       			Front-end::Services \newline
-      			Back-end::Lib::Controller \newline
-      			Back-end::Lib::DSLModel \\ \hline
+      			Back-end::Lib::Controller::Controller\newline
+      			Back-end::Lib::Model::DSLModel \\ \hline
 	  RA1O 5.1 & Front-end::Controllers \newline
 	  			Front-end::Services \newline
-	  			Back-end::Lib::Controller \newline
-	  			Back-end::Lib::DSLModel \\ \hline
+	  			Back-end::Lib::Controller::Controller\newline
+	  			Back-end::Lib::Model::DSLModel \\ \hline
 	  RA1O 5.3 & Front-end::Controllers \newline
 	  			Front-end::Services \newline
-	  			Back-end::Lib::Controller \newline
-	  			Back-end::Lib::DSLModel \\ \hline
+	  			Back-end::Lib::Controller::Controller\newline
+	  			Back-end::Lib::Model::DSLModel \\ \hline
 	  RA1O 6 & Front-end::Controllers \newline
 	  			Front-end::Services \newline
-	  			Back-end::Lib::Controller \newline
-	  			Back-end::Lib::DSLModel \\ \hline
+	  			Back-end::Lib::Controller::Controller\newline
+	  			Back-end::Lib::Model::DSLModel \\ \hline
 	  RA1O 6.1 & Front-end::Controllers \newline
 	  			Front-end::Services \\ \hline
 	  RA1O 6.1.1 & Front-end::Controllers \newline
 	  			Front-end::Services \\ \hline
-	  RA1O 6.1.2	 & Back-end::Lib::Controller \newline
-	  			Back-end::Lib::DSLModel \\ \hline
-	  RA1O 6.1.3 & Back-end::Lib::Middleware \\ \hline
+	  RA1O 6.1.2	 & Back-end::Lib::Controller::Controller\newline
+	  			Back-end::Lib::Model::DSLModel \\ \hline
+	  RA1O 6.1.3 & Back-end::Lib::Controller::Middleware \\ \hline
 	  RA1O 6.2 & Front-end::Controllers \\ \hline
-      RF1O 7 & Back-end::Lib::DSLModel \\ \hline
-      RF1O 8	 & Back-end::Lib::DSLModel \newline     
-      			Back-end::Lib::Middleware \\ \hline
-      RF1O 8	.1 & Back-end::Lib::Middleware \\ \hline
+      RF1O 7 & Back-end::Lib::Model::DSLModel \\ \hline
+      RF1O 8	 & Back-end::Lib::Model::DSLModel \newline     
+      			Back-end::Lib::Controller::Middleware \\ \hline
+      RF1O 8	.1 & Back-end::Lib::Controller::Middleware \\ \hline
       RF1O 8	.1.1 & Back-end::DeveloperProject \\ \hline
       RF1O 8	.1.2 & Back-end::DeveloperProject \\ \hline
       RF1O 8	.1.3 & Back-end::DeveloperProject \\ \hline
       RF1O 8	.1.4 & Back-end::DeveloperProject \\ \hline
       RF1O 8.2 & Back-end::Lib::AuthModel \\ \hline
       RF1F 8.3 & Back-end::DeveloperProject \\ \hline
-      RF1O 9 & Back-end::Lib::DSLModel \\ \hline
-      RF1O 9.1 & Back-end::Lib::DSLModel \\ \hline
-      RF1O 9.2 & Back-end::Lib::DSLModel \\ \hline
-      RF1O 9.3 & Back-end::Lib::DSLModel \\ \hline
-      RF1O 9.4 & Back-end::Lib::DSLModel \\ \hline
+      RF1O 9 & Back-end::Lib::Model::DSLModel \\ \hline
+      RF1O 9.1 & Back-end::Lib::Model::DSLModel \\ \hline
+      RF1O 9.2 & Back-end::Lib::Model::DSLModel \\ \hline
+      RF1O 9.3 & Back-end::Lib::Model::DSLModel \\ \hline
+      RF1O 9.4 & Back-end::Lib::Model::DSLModel \\ \hline
       RA1D 11 & Front-end::Controllers \\ \hline
       RA1D 12 & Front-end::Controllers \newline     
       			Back-end::Lib::AuthModel \\ \hline
@@ -132,7 +132,7 @@
       RA1D 14 &	Back-end::DeveloperProject \\ \hline
       RA1D 14.1 & Back-end::DeveloperProject \\ \hline
       RA1D 14.2 & Back-end::DeveloperProject \\ \hline
-      RA1O 18 & Back-end::Lib::DSLModel \\ \hline
+      RA1O 18 & Back-end::Lib::Model::DSLModel \\ \hline
 		      
        \end{longtable}
         %\caption{Tracciamento requisiti - componenti}

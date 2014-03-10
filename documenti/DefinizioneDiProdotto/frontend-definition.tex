@@ -28,9 +28,9 @@
 \item[] Viene utilizzata per generare la pagina di login all'applicazione. Prima della creazione della view viene effettuato un controllo sull'esistenza di una sessione utente. In caso positivo il controller si occuperà di visualizzare una pagina nella quale l'utente verrà avvertito che un'autenticazione è già stata effettuata, altrimenti si procederà alla pagina di Login predefinita. Una volta che richiede un'autenticazione viene utilizzata classe \texttt{Front-End::Services::ProfileService}, la quale si occuperà di comunicare con il Back-End, il quale effettuerà il controllo sulle credenziali e in caso positivo effettuerà l'autenticazione dell'utente.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{LogoutController} 
 \begin{table}[ht]
@@ -58,9 +58,9 @@ Assenti
 \item[] Questa controller si occupa di distruggere la sessione attuale, se esiste, e non genera una view ma reindirizza l'utente automaticamente alla pagina di Login.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ForgotResetController} 
 \begin{table}[ht]
@@ -88,9 +88,9 @@ Assenti
 \item[] Si occupa di generare la pagina di reset, prelevare quindi la nuova password inserita dall'utente nella view e chiamare l'apposito service che si occuperà del reset interagendo con il back-end.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ProfileEditController} 
 \begin{table}[ht]
@@ -118,9 +118,9 @@ Assenti
 \item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UserController} 
 \begin{table}[ht]
@@ -148,9 +148,9 @@ Assenti
 \item[] Utilizza la classe \texttt{Front-End::Service::UserService}, che si occupa di popolare la classe \texttt{Front-End::Model::UserModel} con i dati dell'utente richiesto. Quest'ultima classe conterrà un metodo accessorio tramite il quale il controller può prelevare i dati e generare la pagina popolando correttamente lo scope.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ProfileController} 
 \begin{table}[ht]
@@ -178,9 +178,9 @@ Assenti
 \item[] Utilizza la classe \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente che ha effettuato la richiesta. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà prelevare i dati e generare la pagina, popolando correttamente lo scope.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ForgotRequestController} 
 \begin{table}[ht]
@@ -208,9 +208,9 @@ Assenti
 \item[] Genera una pagina in cui viene visualizzato un campo di testo nel quale l'utente può inserire la propria mail ed effettuare una richiesta di ripristino password. Il controller permette quindi di inviare al Back-end la richiesta attraverso la classe \texttt{Front-End::Services::ForgotPasswordService}. Sarà poi compito del \glossario{Back-end} inviare all'utente una mail contenente il link che bisogna aprire per poter scegliere una nuova password.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UsersListController} 
 \begin{table}[ht]
@@ -238,9 +238,9 @@ Assenti
 \item[] Viene utilizzata per generare la pagina di visualizzazione della lista di utenti presenti nell'applicazione. In primo luogo utilizzerà la classe \texttt{Front-End::Services::UserListService} per popolare la classe \texttt{Front-End::Model::UserListModel} dalla quale otterrà in seguito la lista degli utenti attraverso una chiamata a una sua funzione.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{CollectionController} 
 \begin{table}[ht]
@@ -272,9 +272,9 @@ Assenti
 \item{Front-end::Model::CollectionModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{DocumentEditController} 
 \begin{table}[ht]
@@ -302,9 +302,9 @@ Assenti
 \item[] Utilizza la classe \texttt{Front-End::Services::DocumentService} per popolare correttamente la classe \texttt{Front-End::Model::DocumentModel} con i dati del \glossario{Document} richiesto. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà ottenere i dati e generare la pagina di modifica di un \glossario{Document} popolando correttamente lo scope.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{DashboardController} 
 \begin{table}[ht]
@@ -332,9 +332,9 @@ Assenti
 \item[] Viene utilizzata per generare la pagina dashboard, che fungerà da \textit{home} dell'applicazione ovvero la prima pagina che un utente visualizza quando effettua l'autenticazione. Utilizza la classe \texttt{Front-End::Services::CollectionListService} per popolare correttamente tutte la classe \texttt{Front-End::Model::CollectionListModel}, dalla quale otterrà la lista delle \glossario{Collection} registrate nell'applicazione mediante una chiamata a una sua funzione. A questo punto, una volta ottenuti i dati, il controller genera la pagina dashboard, popolando correttamente lo scope con i dati ottenuti.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{DocumentController} 
 \begin{table}[ht]
@@ -362,9 +362,9 @@ Assenti
 \item[] Utilizza la classe \texttt{Front-End::Services::DocumentService} per popolare correttamente la classe \texttt{Front-End::Model::DocumentModel}, la quale fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 	\subsubsection{Front-end::Services} 
 		\paragraph{Classi}
@@ -406,9 +406,9 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 \item{Front-end::Model::ProfileModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UserListService} 
 \begin{table}[ht]
@@ -441,9 +441,9 @@ Tale funzionalità richiede che l'utente sia un admin.
 \item{Front-end::Model::UsersListModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{CollectionListService} 
 \begin{table}[ht]
@@ -476,9 +476,9 @@ Tale funzionalità richiede che l'utente sia registrato.
 \item{Front-end::Model::CollectionListModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{CollectionService} 
 \begin{table}[ht]
@@ -506,9 +506,9 @@ Assenti
 \item[] La  funzionalità offerta dalla classe è quella di poter fornire al Controller la lista di Document presenti nella Collection.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{DocumentService} 
 \begin{table}[ht]
@@ -546,9 +546,9 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \item{Front-end::Model::DocumentModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ForgotPasswordService} 
 \begin{table}[ht]
@@ -580,9 +580,9 @@ Assenti
 \item{Front-end::Model::RequestResetModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UserService} 
 \begin{table}[ht]
@@ -621,9 +621,9 @@ Tali funzionalità richiedono che l'utente sia un admin.
 \item{Front-end::Model::UserModel}
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 	\subsubsection{Front-end::Model} 
 		\paragraph{Classi}
@@ -653,9 +653,9 @@ Assenti
 \item[] Utilizzato da tutti i controller per poter accedere alle informazioni riguardanti l'errore.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{CollectionListModel} 
 \begin{table}[ht]
@@ -683,9 +683,9 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla CollectionListService e alla DashboardController di poter accedere alla lista delle Collections.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UserModel} 
 \begin{table}[ht]
@@ -713,9 +713,9 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette allo UserService e allo UserController di poter accedere agli attributi dell'utente.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{RequestResetModel} 
 \begin{table}[ht]
@@ -743,9 +743,9 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette al ForgotPasswordService e al ForgotRequestController di poter accedere ai dati dell'utente.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{DocumentModel} 
 \begin{table}[ht]
@@ -773,9 +773,9 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette al DocumentService e al DocumentController di poter accedere agli attributi del Document.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{ProfileModel} 
 \begin{table}[ht]
@@ -803,9 +803,9 @@ Assenti
 \item[] Permette al ProfileService di avere una rappresentazione delle informazioni dell'utente da scambiare con il back-end, al ProfileController e al ProfileEditController per ottenere il dati dell'utente da visualizzare nella view della pagina profilo e al ForgotResetController per la modifica della password.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{CollectionModel} 
 \begin{table}[ht]
@@ -833,9 +833,9 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla CollectionService e alla CollectionController di poter accedere alla lista delle Collections.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\
 
 			\subparagraph{UsersListModel} 
 \begin{table}[ht]
@@ -863,6 +863,6 @@ Assenti
 \item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette allo UserListService e allo UserListController di poter accedere alla lista degli utenti.
 \end{itemize}
 \textbf{Attributi}
-Assenti
+Assenti \\
 \textbf{Metodi}
-Assenti
+Assenti \\

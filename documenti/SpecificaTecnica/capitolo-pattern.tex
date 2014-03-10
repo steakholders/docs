@@ -13,6 +13,8 @@ Un \glossario{Design Pattern} descrive problemi che si ripetono molteplici volte
 
 Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} utilizzati nel progetto \glossario{MaaP} si rimanda all'Appendice \ref{appendice-pattern}. In seguito verranno descritti i \glossario{Design Pattern} implementati.
 
+\textit{Nota: alcune immagini del presente capitolo non sono UML standard ma si sono semplici ritagli di diagrammi già presenti e visualizzati nei capitoli precedenti. Questo è stato fatto per fornire una visualizzazione mirata del contesto in cui viene utilizzato il design pattern.}
+
 \subsection{Design Pattern Architetturali}
 
 \subsubsection{MVC}
@@ -20,16 +22,27 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \begin{itemize}
 
 	\item \textbf{Scopo}: Questo pattern è utilizzato per separare le responsabilità dell'applicazione a diversi componenti e permettere di fare una chiara divisione presentazione, struttura dei dati e operazioni su di essi.
-	\item \textbf{Utilizzo}: Viene utilizzato dall'applicazione principalmente per delegare il ruolo di presentazione dei dati al \glossario{front-end}, lasciando al \glossario{back-end} la gestione della logica dell'applicazione (autenticazione, corrispondenza tra \glossario{API} e operazioni sui dati) e la logica di business.
+	\item \textbf{Utilizzo}: Viene utilizzato dall'applicazione principalmente per delegare il ruolo di presentazione dei dati al \glossario{front-end}, lasciando al \glossario{back-end} la gestione della logica dell'applicazione (autenticazione, corrispondenza tra \glossario{API} e operazioni sui dati) e la logica di business. Nel \glossario{back-end} è presente una chiara distinzione tra questi tre componenti:
+	\begin{itemize}
+		\item Il package \texttt{Back-end::Lib::Model} è la componente \textbf{model} del pattern, e si occupa di gestire la logica interna dei dati degli utenti e delle \glossario{Collections}. Costruisce dei modelli di dati interfacciandosi con il database \glossario{MongoDB};
+		\item Il package \texttt{Back-end::Lib::View} è la componente \textbf{view} del pattern, e si occupa di fornire un template per la composizione delle email da inviare per il recupero della password. Le richieste inoltrate al \glossario{back-end}, inoltre, ricevono come risposta dei dati in formato \glossario{JSON}. La rappresentazione dei dati che viene fornita in output può essere considerata implicitamente la componente \textbf{view} dell'intero package;
+		\item Il package \texttt{Back-end::Lib::Controller} è la componente \textbf{controller} del pattern, e si occupa ricevere le richieste in ingresso, di interagire quindi con il \textit{model} prelevando i dati e di restituirli al richiedente in formato \glossario{JSON}.
+	\end{itemize}
 	
 \end{itemize}
+
+\begin{figure}[H]
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/mvc.png}
+\caption{Contestualizzazione di MVC}
+\label{fig:mvc}
+\end{figure}
 
 \subsubsection{MVW}
 
 \begin{itemize}
 
 	\item \textbf{Scopo}: È un \glossario{Design Pattern} simile a \glossario{MVC} che permette di avere una corrispondenza più diretta e automatica tra la \textit{view} e il \textit{model}. L'acronimo \glossario{MVW} sta per \textit{Model-View-Whatever}, dove \textit{Whatever}, secondo i progettisti di \glossario{Angular.js}, indica "\textit{whatever works for you}".
-	\item \textbf{Utilizzo}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js}, con il quale viene sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}.
+	\item \textbf{Utilizzo}: È il \glossario{Design Pattern} utilizzato dal \glossario{framework} \glossario{Angular.js}, con il quale viene sviluppata la parte \glossario{front-end} dell'applicazione \glossario{MaaP}. Un maggiore approfondimento è fornito in appendice.
 
 \end{itemize}
 
@@ -43,7 +56,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=1\textwidth]{patterns/contestualizzazione/middleware.png}
+
+\centering \includegraphics[width=0.8\textwidth]{patterns/contestualizzazione/middleware.png}
 \caption{Contestualizzazione di Middleware}
 \label{fig:mvc}
 \end{figure}
@@ -60,7 +74,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=0.8\textwidth]{patterns/contestualizzazione/registry.png}
+
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/registry.png}
 \caption{Contestualizzazione di Registry}
 \label{fig:mvc}
 \end{figure}
@@ -75,7 +90,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=0.8\textwidth]{patterns/contestualizzazione/factory-method.png}
+
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/factory-method.png}
 \caption{Contestualizzazione di Factory Method}
 \label{fig:mvc}
 \end{figure}
@@ -100,7 +116,8 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=1\textwidth]{patterns/contestualizzazione/facade1.png}
+
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/facade1.png}
 \caption{Contestualizzazione di Facade in \texttt{Back-End::Lib::Middleware::MiddlewareLoader}}
 \label{fig:mvc}
 \end{figure}
@@ -118,7 +135,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=0.4\textwidth]{patterns/contestualizzazione/chain-of-responsability.png}
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/chain-of-responsability.png}
 \caption{Contestualizzazione di Chain of Responsibility}
 \label{fig:mvc}
 \end{figure}
@@ -133,7 +150,7 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 \end{itemize}
 
 \begin{figure}[H]
-\centering \includegraphics[width=0.8\textwidth]{patterns/contestualizzazione/strategy.png}
+\centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/strategy.png}
 \caption{Contestualizzazione di Strategy}
 \label{fig:mvc}
 \end{figure}

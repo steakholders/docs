@@ -105,12 +105,14 @@ blabla
 black
 bodyParser
 Boilerplate
+Boolean
 bottom
 bower
 branch
 breakatwhitespace
 breaklines
 Broken
+Brown
 browseFileSystem
 BSON
 bugs
@@ -431,6 +433,8 @@ getForgotController
 getIndexController
 getIndexModel
 getIndexPage
+getLabel
+getName
 getProfile
 getProfileController
 getServerPort
@@ -440,6 +444,7 @@ getShowModel
 getShowPage
 getSmtpAuth
 getSmtpService
+getTransformation
 getUser
 getUserById
 getUserController
@@ -521,6 +526,8 @@ inzializzare
 IQ
 is
 isodate
+isSelectable
+isSortable
 issue
 issues
 istanziare
@@ -968,6 +975,7 @@ scripts
 Secondary
 section
 Security
+selectable
 Selected
 SEMAT
 sendEmail
@@ -1122,9 +1130,10 @@ tools
 toString
 TR
 tracciabilità
+tranformation
 Transactions
 Transfer
-Transformation
+transformation
 Trasform
 tree
 Tresoldi

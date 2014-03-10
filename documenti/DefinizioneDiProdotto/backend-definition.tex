@@ -1,123 +1,1080 @@
 
-	\subsubsection{Back-end} 
-	\subsubsection{Back-end::DeveloperProject} 
-		\paragraph{Classi}
-			\subparagraph{ProjectConfig} 
+\subsection{Specifica componente Back-end}
+
+\subsection{Specifica componente Back-end::DeveloperProject}
+
+\subsubsection{Specifica classe ProjectConfig}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ProjectConfig}}
-		\\ \hline 
-				\hline
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ProjectConfig}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
 \egroup
 \caption{Classe ProjectConfig}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Questa classe rappresenta la configurazione di un'applicazione.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene passato come parametro al costruttore della classe ServerApp per configurare l'applicazione.
 \end{itemize}
-\textbf{Classi Estese}
-\begin{itemize}
-\item{Back-end::Lib::Config}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-Assenti \\
 
-			\subparagraph{ProjectApp} 
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+\item[] Estende la classe:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Config}
+\end{itemize}
+
+
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+Assenti
+
+\subsubsection{Specifica classe ProjectApp}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ProjectApp}}
-		\\ \hline 
-				\hline
-					\code{+\underline{start}()} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ProjectApp}}
+\\ \hline
+ \\ 
+\hline
+\code{+\underline{start}()} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe ProjectApp}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe modificabile dall'utente-developer che si occupa di configurare e avviare il server dell'applicazione.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Internamente avvia il server utilizzando la classe ServerApp, a cui passa i parametri di configurazione del progetto definiti con un oggetto della classe ProjectConfig.
 \end{itemize}
-\textbf{Relazioni con altre classi}
+
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item{Back-end::DeveloperProject::Config::ProjectConfig}
-\item{Back-end::Lib::ServerApp}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
+
+
+\item[] Utilizza le classi:
 \begin{itemize}
-\item[] \textbf{\code{+\underline{start}()}} \\ Questo metodo statico carica l'oggetto di configurazione di tipo ProjectConfig e fa partire il server dell'applicazione, utilizzando la classe ServerApp del package Lib.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
+\item[$\cdot$] \class{Back-end::DeveloperProject::Config::ProjectConfig}
+\item[$\cdot$] \class{Back-end::Lib::ServerApp}
 \end{itemize}
 \end{itemize}
 
-	\subsubsection{Back-end::Lib::Controller} 
-	\subsubsection{Back-end::Lib::Model} 
-		\paragraph{Classi}
-			\subparagraph{UserModel} 
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+\underline{start}()} \\ Questo metodo statico carica l'oggetto di configurazione di tipo ProjectConfig e fa partire il server dell'applicazione, utilizzando la classe ServerApp del package Lib.
+\end{itemize}
+
+\subsection{Specifica componente Back-end::Lib}
+
+\subsubsection{Specifica classe ServerApp}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{UserModel}}
-		\\ \hline 
-					\code{- UserSchema:Schema} \\ 
-				\hline
-					\code{+init(app:ServerApp)} \\ 
-					\code{+\underline{getUserList}(callback:function(JSON[], String), errback:function(MaapError))} \\ 
-					\code{+\underline{createUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\ 
-					\code{+\underline{registerUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\ 
-					\code{+\underline{getUserById}(callback:function(JSON,String), userId :String, errback:function(MaapError))} \\ 
-					\code{+\underline{deleteUser}(userId :String, callback:function(String), errback:function(MaapError))} \\ 
-					\code{+\underline{updatePassword}(userId :String, callback:function(String), errback:function(MaapError))} \\ 
-					\code{+\underline{updateLevel}(userId:String, newLevel:String, callback:function(String), errback:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ServerApp}}
+\\ \hline
+ \\ 
+\hline
+\code{+start()} \\
+\code{+ServerApp(config:Config)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ServerApp}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa di avviare il server e di invocare il \glossario{middleware}. È il componente client del \glossario{Design Pattern} \glossario{Chain of responsibility}. Utilizza i pacchetti Mongoose ed Express.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzato per avviare l'applicazione. Internamente inizializza la catena gestione delle chiamate utilizzando la classe \texttt{Back-end::Lib::Middleware::MiddlewareLoader}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::MiddlewareLoader}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+start()} \\ Questo metodo fa partire il server. Non ritorna il controllo finché il server è in funzione.
+\item[] \method{+ServerApp(config:Config)} \\ Questo metodo statico accetta come parametro l'oggetto di configurazione dell'applicazione e costruisce l'oggetto ServerApp che rappresenta il server dell'applicazione.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{config:Config} \\ È l'oggetto di configurazione dell'applicazione.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe Config}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Config}}
+\\ \hline
+ \\ 
+\hline
+\code{+getServerPort():Integer} \\
+\code{+getServerStaticPath():String} \\
+\code{+getUserDbUri():String} \\
+\code{+getEnvironment():String} \\
+\code{+getDataDbUri():String} \\
+\code{+getSmtpService():String} \\
+\code{+getSmtpAuth():String} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe Config}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che rappresenta l'interfaccia della classe di configurazione dell'applicazione.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per descrivere tutti i parametri dell'applicazione. Quando viene creata una ServerApp le viene passato un oggetto di questo tipo ed essa avvierà l'applicazione a partire da questa configurazione.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+\item[] È estesa dalle classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::DeveloperProject::Config::ProjectConfig}
+\end{itemize}
+
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+getServerPort():Integer} \\ Restituisce la porta su cui il server deve mettersi in ascolto.
+\item[] \method{+getServerStaticPath():String} \\ Restituisce il percorso della cartella che il server deve utilizzare per fornire file statici.
+\item[] \method{+getUserDbUri():String} \\ Restituisce l'uri del database che il server deve utilizzare come database degli utenti
+\item[] \method{+getEnvironment():String} \\ Restituisce la variabile d'ambiente che informa se l'applicazione deve essere eseguita in modalità ``developing'' o ``production''.
+\item[] \method{+getDataDbUri():String} \\ Restituisce l'uri del database che il server deve utilizzare come database di analisi, cioè quello contenente le collection di cui l'applicazione deve permettere la visualizzazione.
+\item[] \method{+getSmtpService():String} \\ Restituisce il nome del servizio che potrà essere usato dall'applicazione per inviare email.
+\item[] \method{+getSmtpAuth():String} \\ Restituisce le credenziali con cui è possibile utilizzare il servizio smtp per inviare email.
+\end{itemize}
+
+\subsection{Specifica componente Back-end::Lib::View}
+
+\subsubsection{Specifica classe ForgotMailView}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ForgotMailView}}
+\\ \hline
+ \\ 
+\hline
+\code{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ForgotMailView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che fornisce una rappresentazione della mail.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata come template di email da inviare nel caso in cui l'utente richieda il recupero password.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)} \\ Metodo che definisce e restituisce la struttura dell'email da inviare per il reset della password. 
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{userMail:String} \\ Parametro che rappresenta l'email dell'utente a cui inviare l'email.
+\item[$\circ$] \parameter{senderMail:String} \\ Parametro che rappresenta l'email del mittente.
+\item[$\circ$] \parameter{tokenlink:String} \\ Questo parametro è il link con il token dal quale l'utente può accedere per procedere con il reset della password.
+\end{itemize}
+\end{itemize}
+
+\subsection{Specifica componente Back-end::Lib::Controller}
+
+\subsection{Specifica componente Back-end::Lib::Controller::Middleware}
+
+\subsubsection{Specifica classe Authentication}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Authentication}}
+\\ \hline
+ \\ 
+\hline
+\code{+handler(req:Request, res:Response, next:function(MaapError))} \\
+\code{+authenticate(req:Request, res:Response, next:function(MaapError))} \\
+\code{+init(app:ServerApp)} \\
+\code{+requireAdmin(req:Request, res:Response, next:function(MaapError))} \\
+\code{+requireLogged(req:Request, res:Response, next:function(MaapError))} \\
+\code{+requireNotLogged(req:Request, res:Response, next:function(MaapError))} \\
+\code{+requireSuperAdmin(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe Authentication}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Model::UserModel}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+handler(req:Request, res:Response, next:function(MaapError))} \\ Metodo che implementa la gestione delle richieste arrivate da Express: effettuata l'elaborazione passa il controllo al successivo middleware, utilizzando il pattern \glossario{Chain of responsibility}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+authenticate(req:Request, res:Response, next:function(MaapError))} \\ Utilizza il metodo \code{authenticate()} di Passport per effettuare l'autenticazione dell' utente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+init(app:ServerApp)} \\ Configura Passport dandogli la strategia che deve utilizzare per l'autenticazione degli utenti e definendo i campi da serializzare e deserializzare per il mantenimento delle informazioni sulla sessione utente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+requireAdmin(req:Request, res:Response, next:function(MaapError))} \\ Metodo che verifica se l'utente autenticato ha un livello admin richiamando il successivo middleware in caso affermativo altrimenti rispondendo con un errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+requireLogged(req:Request, res:Response, next:function(MaapError))} \\ Metodo che deve verificare se l'utente è autenticato, richiamando il middleware successivo in caso lo sia mentre deve ritornare un errore in caso contrario.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+requireNotLogged(req:Request, res:Response, next:function(MaapError))} \\ Metodo che verifica se l'utente è autenticato, nel caso lo sia risponde con errore mentre nel caso l'utente non sia autenticato chiama il successivo middleware.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+requireSuperAdmin(req:Request, res:Response, next:function(MaapError))} \\ Metodo che deve verificare se l'utente autenticato ha livello di super admin richiamando in caso positivo il successivo middleware ed in caso negativo rispondere con errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe MiddlewareLoader}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{MiddlewareLoader}}
+\\ \hline
+ \\ 
+\hline
+\code{+init(app:ServerApp)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe MiddlewareLoader}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzato per istanziare in modo "nascosto" all'applicazione tutti i \glossario{middleware} presenti nel componente \texttt{Back-end::Lib::Middleware}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::NotFoundHandler}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::ErrorHandler}
+\item[$\cdot$] \class{Back-end::Lib::Utils::Mailer}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::Router}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+init(app:ServerApp)} \\ Metodo che inserisce in ogni richiesta un riferimento all'applicazione rendendolo accedibile  tramite /code{req.app}. \\
+Inizializza tutti i middleware richiamando i corrispondenti metodi init.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe DSLLoaderHandler}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{DSLLoaderHandler}}
+\\ \hline
+ \\ 
+\hline
+\code{+init(app:ServerApp)} \\
+\code{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe DSLLoaderHandler}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per caricare i \glossario{DSL} delle \glossario{Collection} all'interno del \glossario{database}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::DSLDomain}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+init(app:ServerApp)} \\ Metodo che carica i file \glossario{DSL} delle \glossario{Collection} utilizzando \code{browseFileSystem()} facendosi restituire un'array di nomi di file, per ognuno di questi si occupa di caricarlo utilizzando il metodo \code{loadDSLFile()} del modulo \code{dslDomain}. Nel caso ci siano errori nei \glossario{DSL} viene richiamato il successivo middleware attivando la catena di gestione errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\ Metodo che restituisce un array di nomi dei file contenuti nella path \code{root} data, nel caso di errore risponde con un oggetto MaapError contenente le informazioni corrispondenti.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{root:String} \\ Path contenente i file \glossario{DSL} da caricare.
+\item[$\circ$] \parameter{callback:function(Array)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dando come parametro l'array contenente i nomi dei file contenuti nella root.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare se nell'elaborazione avviene un errore. \\ Il parametro di tipo MaapError conterrà le informazioni dell'errore mentre sarà null nel caso non si verifichino errori durante l'elaborazione.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe NotFoundHandler}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{NotFoundHandler}}
+\\ \hline
+ \\ 
+\hline
+\code{+handler(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe NotFoundHandler}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+handler(req:Request, res:Response, next:function(MaapError))} \\ Metodo che risponde con un errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe ErrorHandler}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ErrorHandler}}
+\\ \hline
+ \\ 
+\hline
+\code{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ErrorHandler}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
+È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)} \\ Gestisce la richiesta rispondendo con un json contenente le informazioni dell'errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{err:MaapError} \\ Questo oggetto rappresenta l'errore di tipo MaapError arrivato al server che il metodo deve gestire.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe Router}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Router}}
+\\ \hline
+ \\ 
+\hline
+\code{+handler(req:Request, res:Response, next:function(MaapError))} \\
+\code{+init(app:ServerApp)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe Router}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}. Ha una relazione con la classe Authentication, poiché fa uso di alcuni metodi per controllare l'autenticazione.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Si occupa di smistare la richiesta in base all'\glossario{URI} ricevuto e ad invocare l'opportuno metodo di creazione sulla classe \texttt{Back-end::Lib::Controller::ControllerFactory}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Middleware::Authentication}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::ControllerFactory}
+\item[$\cdot$] \class{Back-end::Lib::Utils::MaapError}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+handler(req:Request, res:Response, next:function(MaapError))} \\ Metodo che implementa la gestione delle richieste arrivate da Express: effettuata l'elaborazione passa il controllo al successivo middleware, utilizzando il pattern \glossario{Chain of responsibility}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware.
+La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+init(app:ServerApp)} \\ Metodo che definisce per ogni richiesta REST associata ad una risorsa, il corrispondente controller che dovrà gestirla, verificando i permessi dell'utente che la richiede utilizzando i metodi del modulo \code{Authenticate}.
+
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\end{itemize}
+
+\subsection{Specifica componente Back-end::Lib::Controller::Controller}
+
+\subsubsection{Specifica classe UserController}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{UserController}}
+\\ \hline
+ \\ 
+\hline
+\code{+deleteUser(req:Request, res:Response, next:function(MaapError))} \\
+\code{+registerUser(req:Request, res:Response, next:function(MaapError))} \\
+\code{+insertUser(req:Request, res:Response, next:function(MaapError))} \\
+\code{+userIdShowPage(next:function(MaapError), req:Request, res:Response)} \\
+\code{+updateLevel(req:Request, res:Response, next:function(MaapError))} \\
+\code{+usersList(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe UserController}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa della varie operazioni che l'admin può compiere sugli utenti dell'applicazione. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+deleteUser(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo elimina un utente dal database utenti, utilizzando la funzione predisposta dal modello utente \code{deleteUser()}. Nel caso si verifichi un errore durante l'esecuzione, il metodo risponde con un json contenente le informazioni dell'errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+registerUser(req:Request, res:Response, next:function(MaapError))} \\ Metodo che registra un nuovo utente nel database tramite la funzione \code{registerUser()} della classe \code{Back-end::Lib::Model::UserModel}, rispondendo con una stringa in caso di successo o con un json di errore in caso di fallimento dell'elaborazione.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+insertUser(req:Request, res:Response, next:function(MaapError))} \\ Metodo che Inserisce un nuovo utente nel database. Nel caso l'elaborazione abbia causato errori risponde con un json di informazioni sull'errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+userIdShowPage(next:function(MaapError), req:Request, res:Response)} \\ Metodo che risponde con i dati di un utente ottenuti tramite la funzione \code{getUserById()} della classe \code{Back-end::Lib::Model::UserModel}, in caso di errore risponderà con un json di errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\end{itemize}
+\item[] \method{+updateLevel(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo modifica il livello di un utente tramite la funzione \code{updateLevel()} della classe \code{Back-end::Lib::Model::UserModel}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+usersList(req:Request, res:Response, next:function(MaapError))} \\ Metodo che chiama la funzione \code{getUserList()} dello schema utente in \code{Back-end::Lib::Model::UserModel} facendosi restituire la lista di tutti gli utenti presenti nel sistema e restituendola in risposta. Nel caso si verifichi un errore risponde invece con un errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto viene modificato dal metodo durante l'elaborazione, rappresenta la risposta che il server dovrà rispondere.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe IndexController}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{IndexController}}
+\\ \hline
+ \\ 
+\hline
+\code{+getIndexPage(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe IndexController}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe di gestione per la risorsa index 
+È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituirne gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
+
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+getIndexPage(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo si occupa di andare a prelevare il \code{Back-end::Lib::Model::DSLModel::DSLCollectionModel} eseguendo una ricerca all'interno del registro della classe \code{Back-end::Lib::Model::DSLModel::DSLDomain}. Se la ricerca ha successo, viene restituita una \code{DSLCollectionModel}. A questo punto si ottiene l' \code{indexModel} dal \code{DSLCollectionModel} e da quest'ultimo viene richiesta la rappresentazione della index-page in formato json, il quale viene utilizzato come risposta del server.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe ControllerFactory}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ControllerFactory}}
+\\ \hline
+ \\ 
+\hline
+\code{+getCollectionController(app:ServerApp)} \\
+\code{+getProfileController(app:ServerApp)} \\
+\code{+getAuthController(app:ServerApp)} \\
+\code{+getForgotController(app:ServerApp)} \\
+\code{+getUserController(app:ServerApp)} \\
+\code{+getShowController(app:ServerApp)} \\
+\code{+getIndexController(app:ServerApp)} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ControllerFactory}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa di istanziare e restituire una classe \textit{Controller}. Rappresenta il componente creator del \glossario{Design Pattern} \glossario{Factory method}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene costruita una sola volta dalla classe \textit{Back-end::Lib::Middleware::Router} e si occupa di creare e restituire l'oggetto \textit{Controller} richiesto.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::UserController}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::IndexController}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::ShowController}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::ProfileController}
+\item[$\cdot$] \class{Back-end::Lib::Controller::Controller::ForgotController}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+getCollectionController(app:ServerApp)} \\ Ritorna la classe \code{collectionController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getProfileController(app:ServerApp)} \\ Metodo che ritorna la classe \code{profileController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getAuthController(app:ServerApp)} \\ Metodo ritornante la classe \code{authController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getForgotController(app:ServerApp)} \\ Metodo che restituisce la classe \code{forgotController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getUserController(app:ServerApp)} \\ Metodo che deve restituire la classe \code{userController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getShowController(app:ServerApp)} \\ Metodo che ritorna la classe \code{showController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\item[] \method{+getIndexController(app:ServerApp)} \\ Questo metodo restituisce la classe \code{indexController}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe ShowController}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ShowController}}
+\\ \hline
+ \\ 
+\hline
+\code{+getShowPage(req:Request, res:Response, next:function(MaapError))} \\
+\code{+deleteDocument(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ShowController}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+getShowPage(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo si occupa di andare a prelevare il \code{Back-end::Lib::Model::DSLModel::DSLCollectionModel} eseguendo una ricerca all'interno del registro della classe \code{Back-end::Lib::Model::DSLModel::DSLDomain}. Se la ricerca ha successo, viene restituita una \code{DSLCollectionModel}. A questo punto si ottiene lo \code{showModel} dal \code{DSLCollectionModel} e da quest'ultimo viene richiesta la rappresentazione della show-page in formato json, il quale viene utilizzato come risposta del server.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+deleteDocument(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo si occupa di eliminare un \glossario{document} dalla \glossario{Collection}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe ProfileController}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ProfileController}}
+\\ \hline
+ \\ 
+\hline
+\code{+login(req:Request, res:Response, next:function(MaapError))} \\
+\code{+logout(req:Request, res:Response, next:function(MaapError))} \\
+\code{+getProfile(req:Request, res:Response, next:function(MaapError))} \\
+\code{+updatePassword(req:Request, res:Request, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ProfileController}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che rappresenta la gestione di un profilo utente, il login e il logout. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT. Viene anche utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+login(req:Request, res:Response, next:function(MaapError))} \\ Metodo che si occupa di reindirizzare l'utente alla pagina \glossario{dashboard}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+logout(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo si occupa di distruggere la sessione utente e di reindirizzarlo alla pagina principale dell'applicazione.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+getProfile(req:Request, res:Response, next:function(MaapError))} \\ Metodo che risponde con le informazioni del profilo dell'utente. In caso avvengano errori, il metodo risponde con un json contenente le informazioni relative all'errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+updatePassword(req:Request, res:Request, next:function(MaapError))} \\ Questo metodo modifica la password utente servendosi del metodo \code{updatePassword} della classe \code{Back-end::Lib::Model::UserModel} e rispondendo con una stringa in caso di successo mentre in caso di fallimento con un json di errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Request} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe ForgotController}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ForgotController}}
+\\ \hline
+ \\ 
+\hline
+\code{+passwordResetRequest(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ForgotController}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe che rappresenta il sistema di recupero e ripristino password. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] La classe fornisce dei metodi per effettuare una richiesta di reset password e, in un secondo momento, procedere al suo ripristino. La richiesta di reset avviene mandando un'email all'indirizzo dell'utente tramite la classe \texttt{Back-end::Lib::Middleware::Mailer}. All'interno di questo messaggio sarà presente un link che procederà ad effettuare il login dell'utente e a reindirizzarlo nella pagina di modifica profilo, dalla quale potrà modificare la password.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::View::ForgotMailView}
+\end{itemize}
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+passwordResetRequest(req:Request, res:Response, next:function(MaapError))} \\ Metodo che si occupa di impostare l'email e di inviarla per il reset della password utente, costruendone il template e creando il link col token associato alla richiesta.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsection{Specifica componente Back-end::Lib::Model}
+
+\subsubsection{Specifica classe UserModel}
+
+\begin{table}[ht]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{UserModel}}
+\\ \hline
+\code{- UserSchema:Schema} \\
+\hline
+\code{+init(app:ServerApp)} \\
+\code{+\underline{getUserList}(callback:function(JSON[], String), errback:function(MaapError))} \\
+\code{+\underline{createUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\
+\code{+\underline{registerUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\
+\code{+\underline{getUserById}(callback:function(JSON,String), userId :String, errback:function(MaapError))} \\
+\code{+\underline{deleteUser}(userId :String, callback:function(String), errback:function(MaapError))} \\
+\code{+\underline{updatePassword}(userId :String, callback:function(String), errback:function(MaapError))} \\
+\code{+\underline{updateLevel}(errback:function(MaapError), userId:String, newLevel:String, callback:function(String))} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe UserModel}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che si occupa dei metodi per la gestione dei dati utente. 
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata per l'interfacciamento con la libreria \glossario{Mongoose} per la registrazione dello schema dei dati, e con la libreria passport-local-mongoose per il popolamento automatico dello schema con campi dati e metodi predefiniti.
 Il costruttore del modello dello schema dei dati viene registrato nella \glossario{Factory} di \glossario{Mongoose} ed ogni istanza condividerà la stessa connessione al server.
 \end{itemize}
-\textbf{Attributi}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
 \begin{itemize}
-\item[] \textbf{\code{- UserSchema:Schema}} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dell'utente \glossario{MaaP}. \\
+\item[] \attribute{- UserSchema:Schema} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dell'utente \glossario{MaaP}. \\
 Lo schema prevede tre attributi:
 \begin{itemize}
 \item[]  \texttt{email} di tipo \code{String}
@@ -131,1430 +1088,674 @@ Lo schema prevede tre attributi:
 \end{itemize}
 
 \end{itemize}
-\textbf{Metodi}
+
+\paragraph*{Metodi}
 \begin{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Metodo che definisce lo schema \glossario{mongoose} dell'utente rendendo disponibili i metodi da utilizzare per la modifica/creazione/eliminazione di quest'ultimo.
+\item[] \method{+init(app:ServerApp)} \\ Metodo che definisce lo schema \glossario{mongoose} dell'utente rendendo disponibili i metodi da utilizzare per la modifica/creazione/eliminazione di quest'ultimo.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
 \end{itemize}
-\item[] \textbf{\code{+\underline{getUserList}(callback:function(JSON[], String), errback:function(MaapError))}} \\ Metodo che restituisce la lista degli utenti in formato json.
+\item[] \method{+\underline{getUserList}(callback:function(JSON[], String), errback:function(MaapError))} \\ Metodo che restituisce la lista degli utenti in formato json.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{callback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori passandogli la lista di utenti e un messaggio.
-\item[] \code{errback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare a seguito di un errore durante l'elaborazione.
+\item[$\circ$] \parameter{callback:function(JSON[], String)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori passandogli la lista di utenti e un messaggio.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare a seguito di un errore durante l'elaborazione.
 \end{itemize}
-\item[] \textbf{\code{+\underline{createUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))}} \\ Metodo che crea un nuovo utente nel database degli utenti. Al termine dell'operazione senza errori risponde con un json con le informazioni dell'utente appena creato altrimenti risponde con un errore. 
+\item[] \method{+\underline{createUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\ Metodo che crea un nuovo utente nel database degli utenti. Al termine dell'operazione senza errori risponde con un json con le informazioni dell'utente appena creato altrimenti risponde con un errore. 
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{newUser} \\ Questo parametro rappresenta i dati utente da utilizzare nella creazione di un nuovo utente.
-\item[] \code{callback} \\ Questo parametro rappresenta la callback che il metodo deve chiamare al termine dell'elaborazione senza errori, dandogli il json con le informazioni dell'utente creato.
-\item[] \code{errback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare se si sono verificati errori durante l'elaborazione passandogli l'errore.
+\item[$\circ$] \parameter{newUser:JSON} \\ Questo parametro rappresenta i dati utente da utilizzare nella creazione di un nuovo utente.
+\item[$\circ$] \parameter{callback:function(JSON)} \\ Questo parametro rappresenta la callback che il metodo deve chiamare al termine dell'elaborazione senza errori, dandogli il json con le informazioni dell'utente creato.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare se si sono verificati errori durante l'elaborazione passandogli l'errore.
 \end{itemize}
-\item[] \textbf{\code{+\underline{registerUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))}} \\ Questo metodo registra un utente nel database utenti.
+\item[] \method{+\underline{registerUser}(newUser:JSON, callback:function(JSON), errback:function(MaapError))} \\ Questo metodo registra un utente nel database utenti.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{newUser} \\ Parametro che rappresenta le informazioni dell'utente di cui effettuare la registrazione.
-\item[] \code{callback} \\ Parametro che rappresenta la callback che il metodo invoca al termine dell'elaborazione senza errori dandogli come parametro il json contenente le informazioni dell'utente appena registrato.
-\item[] \code{errback} \\ Parametro rappresentante la callback richiamata se nell'elaborazione avvengono errori.
+\item[$\circ$] \parameter{newUser:JSON} \\ Parametro che rappresenta le informazioni dell'utente di cui effettuare la registrazione.
+\item[$\circ$] \parameter{callback:function(JSON)} \\ Parametro che rappresenta la callback che il metodo invoca al termine dell'elaborazione senza errori dandogli come parametro il json contenente le informazioni dell'utente appena registrato.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Parametro rappresentante la callback richiamata se nell'elaborazione avvengono errori.
 \end{itemize}
-\item[] \textbf{\code{+\underline{getUserById}(callback:function(JSON,String), userId :String, errback:function(MaapError))}} \\ Metodo che ritorna dato un id, le informazioni dell'utente corrispondente.
+\item[] \method{+\underline{getUserById}(callback:function(JSON,String), userId :String, errback:function(MaapError))} \\ Metodo che ritorna dato un id, le informazioni dell'utente corrispondente.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{callback} \\ Parametro che rappresenta la callback che il metodo al termine dell'elaborazione senza errori dovrà richiamare passando come parametri il json contenente le informazioni dell'utente e un messaggio.
-\item[] \code{userId } \\ Parametro corrispondente all'id dell'utente di cui si richiedono le informazioni. 
-\item[] \code{errback} \\ Questo parametro rappresenta la callback che il metodo deve richiamare se nell'elaborazione si sono verificati errori passando come parametro l'errore.
+\item[$\circ$] \parameter{callback:function(JSON,String)} \\ Parametro che rappresenta la callback che il metodo al termine dell'elaborazione senza errori dovrà richiamare passando come parametri il json contenente le informazioni dell'utente e un messaggio.
+\item[$\circ$] \parameter{userId :String} \\ Parametro corrispondente all'id dell'utente di cui si richiedono le informazioni. 
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo deve richiamare se nell'elaborazione si sono verificati errori passando come parametro l'errore.
 \end{itemize}
-\item[] \textbf{\code{+\underline{deleteUser}(userId :String, callback:function(String), errback:function(MaapError))}} \\ Questo metodo elimina un utente dal database.
+\item[] \method{+\underline{deleteUser}(userId :String, callback:function(String), errback:function(MaapError))} \\ Questo metodo elimina un utente dal database.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{userId } \\ Parametro rappresentante l'id dell'utente da eliminare.
-\item[] \code{callback} \\ Parametro corrispondente alla callback che il metodo deve chiamare al termine delle operazioni con un messaggio.
-\item[] \code{errback} \\ Questo parametro è la callback che il metodo deve richiamare al verificarsi di un errore.
+\item[$\circ$] \parameter{userId :String} \\ Parametro rappresentante l'id dell'utente da eliminare.
+\item[$\circ$] \parameter{callback:function(String)} \\ Parametro corrispondente alla callback che il metodo deve chiamare al termine delle operazioni con un messaggio.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro è la callback che il metodo deve richiamare al verificarsi di un errore.
 \end{itemize}
-\item[] \textbf{\code{+\underline{updatePassword}(userId :String, callback:function(String), errback:function(MaapError))}} \\ Questo metodo si occupa di modificare il dato corrispondente alla password di un utente presente nel database delle credenziali utente.
+\item[] \method{+\underline{updatePassword}(userId :String, callback:function(String), errback:function(MaapError))} \\ Questo metodo si occupa di modificare il dato corrispondente alla password di un utente presente nel database delle credenziali utente.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{userId } \\ Parametro rappresentante l'id dell'utente di cui modificare i dati.
-\item[] \code{callback} \\ Parametro che rappresenta la callback chiamata dal metodo al termine dell'elaborazione senza errori.
-\item[] \code{errback} \\ Parametro che rappresenta la callback chiamata dal metodo al verificarsi di errori.
+\item[$\circ$] \parameter{userId :String} \\ Parametro rappresentante l'id dell'utente di cui modificare i dati.
+\item[$\circ$] \parameter{callback:function(String)} \\ Parametro che rappresenta la callback chiamata dal metodo al termine dell'elaborazione senza errori.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Parametro che rappresenta la callback chiamata dal metodo al verificarsi di errori.
 \end{itemize}
-\item[] \textbf{\code{+\underline{updateLevel}(userId:String, newLevel:String, callback:function(String), errback:function(MaapError))}} \\ Questo metodo modifica il livello di un utente presente nel database delle credenziali utente.
+\item[] \method{+\underline{updateLevel}(errback:function(MaapError), userId:String, newLevel:String, callback:function(String))} \\ Questo metodo modifica il livello di un utente presente nel database delle credenziali utente.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{userId} \\ Parametro corrispondente all'id dell'utente il cui livello deve essere modificato.
-\item[] \code{newLevel} \\ Parametro che rappresenta il dato sul livello utente.
-\item[] \code{callback} \\ Questo parametro rappresenta la callback che il metodo deve richiamare al termine dell'elaborazione senza errori.
-\item[] \code{errback} \\ Parametro che rappresenta la callback chiamata dal metodo al verificarsi di errori.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Parametro che rappresenta la callback chiamata dal metodo al verificarsi di errori durante la modifica.
+\item[$\circ$] \parameter{userId:String} \\ Parametro corrispondente all'id dell'utente il cui livello deve essere modificato.
+\item[$\circ$] \parameter{newLevel:String} \\ Parametro che rappresenta il dato sul livello utente.
+\item[$\circ$] \parameter{callback:function(String)} \\ Questo parametro rappresenta la callback che il metodo deve richiamare al termine dell'elaborazione senza errori.
 \end{itemize}
 \end{itemize}
 
-	\subsubsection{Back-end::Lib::Controller::Controller} 
-		\paragraph{Classi}
-			\subparagraph{UserController} 
+\subsection{Specifica componente Back-end::Lib::Model::DSLModel}
+
+\subsubsection{Specifica classe DSLDomain}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{UserController}}
-		\\ \hline 
-				\hline
-					\code{+deleteUser(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+registerUser(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+insertUser(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+userIdShowPage(next:function(MaapError), req:Request, res:Response)} \\ 
-					\code{+updateLevel(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+usersList(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe UserController}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa della varie operazioni che l'admin può compiere sugli utenti dell'applicazione. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+deleteUser(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo elimina un utente dal database utenti, utilizzando la funzione predisposta dal modello utente \code{deleteUser()}. Nel caso si verifichi un errore durante l'esecuzione, il metodo risponde con un json contenente le informazioni dell'errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+registerUser(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che registra un nuovo utente nel database tramite la funzione \code{registerUser()} della classe \code{Back-end::Lib::Model::UserModel}, rispondendo con una stringa in caso di successo o con un json di errore in caso di fallimento dell'elaborazione.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+insertUser(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che Inserisce un nuovo utente nel database. Nel caso l'elaborazione abbia causato errori risponde con un json di informazioni sull'errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+userIdShowPage(next:function(MaapError), req:Request, res:Response)}} \\ Metodo che risponde con i dati di un utente ottenuti tramite la funzione \code{getUserById()} della classe \code{Back-end::Lib::Model::UserModel}, in caso di errore risponderà con un json di errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\end{itemize}
-\item[] \textbf{\code{+updateLevel(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo modifica il livello di un utente tramite la funzione \code{updateLevel()} della classe \code{Back-end::Lib::Model::UserModel}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+usersList(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che chiama la funzione \code{getUserList()} dello schema utente in \code{Back-end::Lib::Model::UserModel} facendosi restituire la lista di tutti gli utenti presenti nel sistema e restituendola in risposta. Nel caso si verifichi un errore risponde invece con un errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto viene modificato dal metodo durante l'elaborazione, rappresenta la risposta che il server dovrà rispondere.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{IndexController} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{IndexController}}
-		\\ \hline 
-				\hline
-					\code{+getIndexPage(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe IndexController}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe di gestione per la risorsa index 
-È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituirne gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
-
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+getIndexPage(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo si occupa di andare a prelevare il \code{Back-end::Lib::Model::DSLModel::DSLCollectionModel} eseguendo una ricerca all'interno del registro della classe \code{Back-end::Lib::Model::DSLModel::DSLDomain}. Se la ricerca ha successo, viene restituita una \code{DSLCollectionModel}. A questo punto si ottiene l' \code{indexModel} dal \code{DSLCollectionModel} e da quest'ultimo viene richiesta la rappresentazione della index-page in formato json, il quale viene utilizzato come risposta del server.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{ControllerFactory} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ControllerFactory}}
-		\\ \hline 
-				\hline
-					\code{+getCollectionController(app:ServerApp)} \\ 
-					\code{+getProfileController(app:ServerApp)} \\ 
-					\code{+getAuthController(app:ServerApp)} \\ 
-					\code{+getForgotController(app:ServerApp)} \\ 
-					\code{+getUserController(app:ServerApp)} \\ 
-					\code{+getShowController(app:ServerApp)} \\ 
-					\code{+getIndexController(app:ServerApp)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ControllerFactory}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa di istanziare e restituire una classe \textit{Controller}. Rappresenta il componente creator del \glossario{Design Pattern} \glossario{Factory method}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene costruita una sola volta dalla classe \textit{Back-end::Lib::Middleware::Router} e si occupa di creare e restituire l'oggetto \textit{Controller} richiesto.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Controller::Controller::UserController}
-\item{Back-end::Lib::Controller::Controller::IndexController}
-\item{Back-end::Lib::Controller::Controller::ShowController}
-\item{Back-end::Lib::Controller::Controller::ProfileController}
-\item{Back-end::Lib::Controller::Controller::ForgotController}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+getCollectionController(app:ServerApp)}} \\ Ritorna la classe \code{collectionController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getProfileController(app:ServerApp)}} \\ Metodo che ritorna la classe \code{profileController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getAuthController(app:ServerApp)}} \\ Metodo ritornante la classe \code{authController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getForgotController(app:ServerApp)}} \\ Metodo che restituisce la classe \code{forgotController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getUserController(app:ServerApp)}} \\ Metodo che deve restituire la classe \code{userController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getShowController(app:ServerApp)}} \\ Metodo che ritorna la classe \code{showController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+getIndexController(app:ServerApp)}} \\ Questo metodo restituisce la classe \code{indexController}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{ShowController} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ShowController}}
-		\\ \hline 
-				\hline
-					\code{+getShowPage(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+deleteDocument(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ShowController}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+getShowPage(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo si occupa di andare a prelevare il \code{Back-end::Lib::Model::DSLModel::DSLCollectionModel} eseguendo una ricerca all'interno del registro della classe \code{Back-end::Lib::Model::DSLModel::DSLDomain}. Se la ricerca ha successo, viene restituita una \code{DSLCollectionModel}. A questo punto si ottiene lo \code{showModel} dal \code{DSLCollectionModel} e da quest'ultimo viene richiesta la rappresentazione della show-page in formato json, il quale viene utilizzato come risposta del server.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+deleteDocument(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo si occupa di eliminare un \glossario{document} dalla \glossario{Collection}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{ProfileController} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ProfileController}}
-		\\ \hline 
-				\hline
-					\code{+login(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+logout(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+getProfile(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+updatePassword(req:Request, res:Request, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ProfileController}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che rappresenta la gestione di un profilo utente, il login e il logout. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT. Viene anche utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+login(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che si occupa di reindirizzare l'utente alla pagina \glossario{dashboard}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+logout(req:Request, res:Response, next:function(MaapError))}} \\ Questo metodo si occupa di distruggere la sessione utente e di reindirizzarlo alla pagina principale dell'applicazione.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+getProfile(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che risponde con le informazioni del profilo dell'utente. In caso avvengano errori, il metodo risponde con un json contenente le informazioni relative all'errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+updatePassword(req:Request, res:Request, next:function(MaapError))}} \\ Questo metodo modifica la password utente servendosi del metodo \code{updatePassword} della classe \code{Back-end::Lib::Model::UserModel} e rispondendo con una stringa in caso di successo mentre in caso di fallimento con un json di errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{ForgotController} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ForgotController}}
-		\\ \hline 
-				\hline
-					\code{+passwordResetRequest(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ForgotController}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che rappresenta il sistema di recupero e ripristino password. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] La classe fornisce dei metodi per effettuare una richiesta di reset password e, in un secondo momento, procedere al suo ripristino. La richiesta di reset avviene mandando un'email all'indirizzo dell'utente tramite la classe \texttt{Back-end::Lib::Middleware::Mailer}. All'interno di questo messaggio sarà presente un link che procederà ad effettuare il login dell'utente e a reindirizzarlo nella pagina di modifica profilo, dalla quale potrà modificare la password.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::View::ForgotMailView}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+passwordResetRequest(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che si occupa di impostare l'email e di inviarla per il reset della password utente, costruendone il template e creando il link col token associato alla richiesta.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-	\subsubsection{Back-end::Lib::Controller::Middleware} 
-		\paragraph{Classi}
-			\subparagraph{Authentication} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Authentication}}
-		\\ \hline 
-				\hline
-					\code{+handler(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+authenticate(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+init(app:ServerApp)} \\ 
-					\code{+requireAdmin(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+requireLogged(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+requireNotLogged(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+requireSuperAdmin(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe Authentication}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Model::UserModel}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+handler(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che implementa la gestione delle richieste arrivate da Express: effettuata l'elaborazione passa il controllo al successivo middleware, utilizzando il pattern \glossario{Chain of responsibility}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+authenticate(req:Request, res:Response, next:function(MaapError))}} \\ Utilizza il metodo \code{authenticate()} di Passport per effettuare l'autenticazione dell' utente.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Configura Passport dandogli la strategia che deve utilizzare per l'autenticazione degli utenti e definendo i campi da serializzare e deserializzare per il mantenimento delle informazioni sulla sessione utente.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+requireAdmin(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che verifica se l'utente autenticato ha un livello admin richiamando il successivo middleware in caso affermativo altrimenti rispondendo con un errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+requireLogged(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che deve verificare se l'utente è autenticato, richiamando il middleware successivo in caso lo sia mentre deve ritornare un errore in caso contrario.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+requireNotLogged(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che verifica se l'utente è autenticato, nel caso lo sia risponde con errore mentre nel caso l'utente non sia autenticato chiama il successivo middleware.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+requireSuperAdmin(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che deve verificare se l'utente autenticato ha livello di super admin richiamando in caso positivo il successivo middleware ed in caso negativo rispondere con errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{MiddlewareLoader} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{MiddlewareLoader}}
-		\\ \hline 
-				\hline
-					\code{+init(app:ServerApp)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe MiddlewareLoader}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzato per istanziare in modo "nascosto" all'applicazione tutti i \glossario{middleware} presenti nel componente \texttt{Back-end::Lib::Middleware}.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
-\item{Back-end::Lib::Controller::Middleware::NotFoundHandler}
-\item{Back-end::Lib::Controller::Middleware::ErrorHandler}
-\item{Back-end::Lib::Utils::Mailer}
-\item{Back-end::Lib::Controller::Middleware::Router}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Metodo che inserisce in ogni richiesta un riferimento all'applicazione rendendolo accedibile  tramite /code{req.app}. \\
-Inizializza tutti i middleware richiamando i corrispondenti metodi init.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{DSLLoaderHandler} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{DSLLoaderHandler}}
-		\\ \hline 
-				\hline
-					\code{+init(app:ServerApp)} \\ 
-					\code{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe DSLLoaderHandler}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per caricare i \glossario{DSL} delle \glossario{Collection} all'interno del \glossario{database}.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::DSLDomain}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Metodo che carica i file \glossario{DSL} delle \glossario{Collection} utilizzando \code{browseFileSystem()} facendosi restituire un'array di nomi di file, per ognuno di questi si occupa di caricarlo utilizzando il metodo \code{loadDSLFile()} del modulo \code{dslDomain}. Nel caso ci siano errori nei \glossario{DSL} viene richiamato il successivo middleware attivando la catena di gestione errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\item[] \textbf{\code{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))}} \\ Metodo che restituisce un array di nomi dei file contenuti nella path \code{root} data, nel caso di errore risponde con un oggetto MaapError contenente le informazioni corrispondenti.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{root} \\ Path contenente i file \glossario{DSL} da caricare.
-\item[] \code{callback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dando come parametro l'array contenente i nomi dei file contenuti nella root.
-\item[] \code{errback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare se nell'elaborazione avviene un errore. \\ Il parametro di tipo MaapError conterrà le informazioni dell'errore mentre sarà null nel caso non si verifichino errori durante l'elaborazione.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{NotFoundHandler} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{NotFoundHandler}}
-		\\ \hline 
-				\hline
-					\code{+handler(req:Request, res:Response, next:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe NotFoundHandler}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+handler(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che risponde con un errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{ErrorHandler} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ErrorHandler}}
-		\\ \hline 
-				\hline
-					\code{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ErrorHandler}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
-È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)}} \\ Gestisce la richiesta rispondendo con un json contenente le informazioni dell'errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{err} \\ Questo oggetto rappresenta l'errore di tipo MaapError arrivato al server che il metodo deve gestire.
-\end{itemize}
-\end{itemize}
-
-			\subparagraph{Router} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Router}}
-		\\ \hline 
-				\hline
-					\code{+handler(req:Request, res:Response, next:function(MaapError))} \\ 
-					\code{+init(app:ServerApp)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe Router}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
-\begin{itemize}
-\item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}. Ha una relazione con la classe Authentication, poiché fa uso di alcuni metodi per controllare l'autenticazione.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Si occupa di smistare la richiesta in base all'\glossario{URI} ricevuto e ad invocare l'opportuno metodo di creazione sulla classe \texttt{Back-end::Lib::Controller::ControllerFactory}.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Controller::Middleware::Authentication}
-\item{Back-end::Lib::Controller::Controller::ControllerFactory}
-\item{Back-end::Lib::Utils::MaapError}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+handler(req:Request, res:Response, next:function(MaapError))}} \\ Metodo che implementa la gestione delle richieste arrivate da Express: effettuata l'elaborazione passa il controllo al successivo middleware, utilizzando il pattern \glossario{Chain of responsibility}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{req} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
-\item[] \code{res} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
-\item[] \code{next} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware.
-La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
-\end{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Metodo che definisce per ogni richiesta REST associata ad una risorsa, il corrispondente controller che dovrà gestirla, verificando i permessi dell'utente che la richiede utilizzando i metodi del modulo \code{Authenticate}.
-
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
-\end{itemize}
-\end{itemize}
-
-	\subsubsection{Back-end::Lib::Model::DSLModel} 
-		\paragraph{Classi}
-			\subparagraph{DSLDomain} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{DSLDomain}}
-		\\ \hline 
-					\code{- modelRegistry:Array} \\ 
-					\code{- errorRegistry:Array} \\ 
-				\hline
-					\code{+loadDSLFile(path:String, callback:function(String), errback:function(MaapError))} \\ 
-					\code{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))} \\ 
-					\code{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))} \\ 
-					\code{+getErrors(callback:function(Array))} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{DSLDomain}}
+\\ \hline
+\code{- modelRegistry:Array} \\
+\code{- errorRegistry:Array} \\
+\hline
+\code{+loadDSLFile(path:String, callback:function(String), errback:function(MaapError))} \\
+\code{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))} \\
+\code{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))} \\
+\code{+getErrors(callback:function(Array))} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe DSLDomain}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che si occupa di caricare i file \glossario{DSL}. Implementa il \glossario{Design Pattern} \glossario{registry}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata per caricare dinamicamente tutti i \glossario{DSL} a partire dal \glossario{database} che le viene passato.
 \end{itemize}
-\textbf{Relazioni con altre classi}
+
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
-\item{Back-end::Lib::Model::DSLModel::DSLCollectionModel}
-\end{itemize}
-\textbf{Attributi}
+
+
+\item[] Utilizza le classi:
 \begin{itemize}
-\item[] \textbf{\code{- modelRegistry:Array}} \\ Questo campo dati rappresenta un registro all'interno del quale sono contenuti tutti i \texttt{DSLCollectionModel} caricati all'avvio del server.
-\item[] \textbf{\code{- errorRegistry:Array}} \\ Questo campo dati contiene un registro di \texttt{MaapError} generati durante il caricamento e l'interpretazione dei file DSL.
-\end{itemize}
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+loadDSLFile(path:String, callback:function(String), errback:function(MaapError))}} \\ Questo metodo prende in input il \textit{path} di un file DSL da andare ad interpretare. Per fare ciò legge il contenuto testuale del file e lo converte in stringa. Questa stringa viene poi passata all'interprete del DSL tramite una chiamata. Questa chiamata restituirà tramite una callback un array di \texttt{DSLCollectionModel} che andranno inserite nel registro. Se avviene un errore nella lettura del file o nell'interpretazione del DSL viene sollevato un \texttt{MaapError} che viene aggiunto al registro degli errori e restituito alla classe chiamante tramite una callback (che in questo contesto sarebbe più corretto chiamare \textit{errback}.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{path} \\ Rappresenta il percorso del file da leggere.
-\item[] \code{callback} \\ Rappresenta la funzione callback da chiamare una volta che il metodo è stato eseguito con successo. Prende come parametro un messaggio.
-\item[] \code{errback} \\ Rappresenta la funzione callback da chiamare nel caso in cui avvenga un errore nella chiamata del metodo. In questo caso la funzione prende un \texttt{MaapError}.
-\end{itemize}
-\item[] \textbf{\code{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))}} \\ Questo metodo si occupa di inserire nel registro delle \glossario{DSLCollectionModel} un nuovo modello.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{name} \\ Questo parametro rappresenta il nome della Collection.
-\item[] \code{model} \\ Questo parametro rappresenta il DslCollectionModel da inserire nel registro.
-\item[] \code{callback} \\ Questa funzione viene chiamata alla fine del metodo per segnalare tramite un messaggio che il metodo è stato eseguito correttamente.
-\item[] \code{errback} \\ Questa callback viene chiamata nel caso in cui il metodo non sia stato eseguito correttamente e abbia generato degli errori o sollevato eccezioni. La callback prende in input l'errore generato.
-\end{itemize}
-\item[] \textbf{\code{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))}} \\ Questo metodo effettua una ricerca all'interno del registro in base al nome indicato. Se trova il DslCollectionModel allora lo restituisce tramite una callback e termina correttamente, altrimenti restituisce un MaapError tramite una callback, segnalando che la Collection non è stata trovata.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{collectionName} \\ Questo parametro rappresenta il nome della Collection da cercare all'interno del registro.
-\item[] \code{callback} \\ Questo parametro rappresenta la funzione callback da chiamare nel caso in cui il metodo venga eseguito correttamente. La callback prende in input il DslCollectionModel da restituire.
-\item[] \code{errback} \\ Questa callback viene eseguita nel caso in cui il metodo contenga degli errori o sollevi delle eccezioni. Prende in input il MaapError da restituire.
-\end{itemize}
-\item[] \textbf{\code{+getErrors(callback:function(Array))}} \\ Questo metodo restituisce tramite una callback il registro degli errori generati.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{callback} \\ Questa callback prende in input l'array di errori da restituire.
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::DSLCollectionModel}
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{DSLInterpreterStrategy} 
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] \attribute{- modelRegistry:Array} \\ Questo campo dati rappresenta un registro all'interno del quale sono contenuti tutti i \texttt{DSLCollectionModel} caricati all'avvio del server.
+\item[] \attribute{- errorRegistry:Array} \\ Questo campo dati contiene un registro di \texttt{MaapError} generati durante il caricamento e l'interpretazione dei file DSL.
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+loadDSLFile(path:String, callback:function(String), errback:function(MaapError))} \\ Questo metodo prende in input il \textit{path} di un file DSL da andare ad interpretare. Per fare ciò legge il contenuto testuale del file e lo converte in stringa. Questa stringa viene poi passata all'interprete del DSL tramite una chiamata. Questa chiamata restituirà tramite una callback un array di \texttt{DSLCollectionModel} che andranno inserite nel registro. Se avviene un errore nella lettura del file o nell'interpretazione del DSL viene sollevato un \texttt{MaapError} che viene aggiunto al registro degli errori e restituito alla classe chiamante tramite una callback (che in questo contesto sarebbe più corretto chiamare \textit{errback}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{path:String} \\ Rappresenta il percorso del file da leggere.
+\item[$\circ$] \parameter{callback:function(String)} \\ Rappresenta la funzione callback da chiamare una volta che il metodo è stato eseguito con successo. Prende come parametro un messaggio.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Rappresenta la funzione callback da chiamare nel caso in cui avvenga un errore nella chiamata del metodo. In questo caso la funzione prende un \texttt{MaapError}.
+\end{itemize}
+\item[] \method{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))} \\ Questo metodo si occupa di inserire nel registro delle \glossario{DSLCollectionModel} un nuovo modello.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{name:String} \\ Questo parametro rappresenta il nome della Collection.
+\item[$\circ$] \parameter{model:DslCollectionModel} \\ Questo parametro rappresenta il DslCollectionModel da inserire nel registro.
+\item[$\circ$] \parameter{callback:function(String)} \\ Questa funzione viene chiamata alla fine del metodo per segnalare tramite un messaggio che il metodo è stato eseguito correttamente.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene chiamata nel caso in cui il metodo non sia stato eseguito correttamente e abbia generato degli errori o sollevato eccezioni. La callback prende in input l'errore generato.
+\end{itemize}
+\item[] \method{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))} \\ Questo metodo effettua una ricerca all'interno del registro in base al nome indicato. Se trova il DslCollectionModel allora lo restituisce tramite una callback e termina correttamente, altrimenti restituisce un MaapError tramite una callback, segnalando che la Collection non è stata trovata.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{collectionName:String} \\ Questo parametro rappresenta il nome della Collection da cercare all'interno del registro.
+\item[$\circ$] \parameter{callback:function(DslCollectionModel)} \\ Questo parametro rappresenta la funzione callback da chiamare nel caso in cui il metodo venga eseguito correttamente. La callback prende in input il DslCollectionModel da restituire.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene eseguita nel caso in cui il metodo contenga degli errori o sollevi delle eccezioni. Prende in input il MaapError da restituire.
+\end{itemize}
+\item[] \method{+getErrors(callback:function(Array))} \\ Questo metodo restituisce tramite una callback il registro degli errori generati.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{callback:function(Array)} \\ Questa callback prende in input l'array di errori da restituire.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe DSLInterpreterStrategy}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{DSLInterpreterStrategy}}
-		\\ \hline 
-				\hline
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{DSLInterpreterStrategy}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
 \egroup
 \caption{Classe DSLInterpreterStrategy}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe astratta che definisce l'interfaccia dell'algoritmo di interpretazione del linguaggio \glossario{DSL} utilizzato. È il componente strategy del \glossario{Design Pattern} \glossario{strategy}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata per incapsulare e rendere intercambiabile l'algoritmo di interpretazione del linguaggio \glossario{DSL}. In questo modo, se in futuro vi fosse necessità di cambiare l'algoritmo di interpretazione l'algoritmo può variare indipendentemente dal client che ne farà uso.
 \end{itemize}
-\textbf{Estensioni}
-\begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-Assenti \\
 
-			\subparagraph{DSLCollectionModel} 
+\paragraph*{Relazioni con altre classi}
+\begin{itemize}
+
+\item[] È estesa dalle classi:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
+\end{itemize}
+
+\end{itemize}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+Assenti
+
+\subsubsection{Specifica classe DSLCollectionModel}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{DSLCollectionModel}}
-		\\ \hline 
-					\code{- showModel:ShowModel} \\ 
-					\code{- indexModel:IndexModel} \\ 
-					\code{- collectionName:String} \\ 
-				\hline
-					\code{+DSLCollectionModel(showModel:ShowModel, indexModel:IndexModel, collectionName:String)} \\ 
-					\code{+getCollectionName():String} \\ 
-					\code{+getIndexModel():IndexModel} \\ 
-					\code{+getShowModel():ShowModel} \\ 
-					\code{+setIndexModel(indexModel:IndexModel)} \\ 
-					\code{+setShowModel(showModel:ShowModel)} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{DSLCollectionModel}}
+\\ \hline
+\code{- showModel:ShowModel} \\
+\code{- indexModel:IndexModel} \\
+\code{- collectionName:String} \\
+\hline
+\code{+DSLCollectionModel(showModel:ShowModel, indexModel:IndexModel, collectionName:String)} \\
+\code{+getCollectionName():String} \\
+\code{+getIndexModel():IndexModel} \\
+\code{+getShowModel():ShowModel} \\
+\code{+setIndexModel(indexModel:IndexModel)} \\
+\code{+setShowModel(showModel:ShowModel)} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe DSLCollectionModel}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che si occupa di definire il model della \glossario{Collection} a partire dal \glossario{DSL}. Si ispira all'\glossario{Abstract Syntax Tree}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] È l'oggetto risultante dell'interpretazione del \glossario{DSL}. Definisce una rappresentazione interna di una \glossario{Collection}.
 \end{itemize}
-\textbf{Relazioni con altre classi}
+
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::IndexModel}
-\item{Back-end::Lib::Model::DSLModel::ShowModel}
-\end{itemize}
-\textbf{Attributi}
+
+
+\item[] Utilizza le classi:
 \begin{itemize}
-\item[] \textbf{\code{- showModel:ShowModel}} \\ Questo campo dati rappresenta lo ShowModel della Collection.
-\item[] \textbf{\code{- indexModel:IndexModel}} \\ Questo campo dati rappresenta l'IndexModel della classe.
-\item[] \textbf{\code{- collectionName:String}} \\ Questo campo dati rappresenta il nome della Collection.
-\end{itemize}
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+DSLCollectionModel(showModel:ShowModel, indexModel:IndexModel, collectionName:String)}} \\ Questo metodo è il costruttore pubblico della classe.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{showModel} \\ Questo parametro è un riferimento allo showModel della classe.
-\item[] \code{indexModel} \\ Questo parametro è un riferimento all'indexModel della classe.
-\item[] \code{collectionName} \\ Questo parametro rappresenta il nome della Collection da creare.
-\end{itemize}
-\item[] \textbf{\code{+getCollectionName():String}} \\ Questo metodo restituisce il campo collectionName della classe.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getIndexModel():IndexModel}} \\ Questo metodo restituisce il campo indexModel della classe.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getShowModel():ShowModel}} \\ Questo metodo restituisce il campo showModel della classe.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+setIndexModel(indexModel:IndexModel)}} \\ Questo metodo imposta il campo dati showModel della classe con il parametro ricevuto in input.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{indexModel} \\ Questo parametro rappresenta l'IndexModel da settare.
-\end{itemize}
-\item[] \textbf{\code{+setShowModel(showModel:ShowModel)}} \\ Questo metodo si occupa di settare il campo showModel con il parametro ricevuto in input.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{showModel} \\ Questo parametro rappresenta lo ShowModel da settare.
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::IndexModel}
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::ShowModel}
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{IndexModel} 
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] \attribute{- showModel:ShowModel} \\ Questo campo dati rappresenta lo ShowModel della Collection.
+\item[] \attribute{- indexModel:IndexModel} \\ Questo campo dati rappresenta l'IndexModel della classe.
+\item[] \attribute{- collectionName:String} \\ Questo campo dati rappresenta il nome della Collection.
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+DSLCollectionModel(showModel:ShowModel, indexModel:IndexModel, collectionName:String)} \\ Questo metodo è il costruttore pubblico della classe.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{showModel:ShowModel} \\ Questo parametro è un riferimento allo showModel della classe.
+\item[$\circ$] \parameter{indexModel:IndexModel} \\ Questo parametro è un riferimento all'indexModel della classe.
+\item[$\circ$] \parameter{collectionName:String} \\ Questo parametro rappresenta il nome della Collection da creare.
+\end{itemize}
+\item[] \method{+getCollectionName():String} \\ Questo metodo restituisce il campo collectionName della classe.
+\item[] \method{+getIndexModel():IndexModel} \\ Questo metodo restituisce il campo indexModel della classe.
+\item[] \method{+getShowModel():ShowModel} \\ Questo metodo restituisce il campo showModel della classe.
+\item[] \method{+setIndexModel(indexModel:IndexModel)} \\ Questo metodo imposta il campo dati showModel della classe con il parametro ricevuto in input.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{indexModel:IndexModel} \\ Questo parametro rappresenta l'IndexModel da settare.
+\end{itemize}
+\item[] \method{+setShowModel(showModel:ShowModel)} \\ Questo metodo si occupa di settare il campo showModel con il parametro ricevuto in input.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{showModel:ShowModel} \\ Questo parametro rappresenta lo ShowModel da settare.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe IndexModel}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{IndexModel}}
-		\\ \hline 
-					\code{- collectionName:String} \\ 
-					\code{- DataSchema:Schema} \\ 
-					\code{- attributes:Array} \\ 
-				\hline
-					\code{+IndexModel()} \\ 
-					\code{+addAttribute(attribute:Attribute)} \\ 
-					\code{+getAttributes():Array} \\ 
-					\code{+getData(errback:function(MaapError), collectionName:String, callback:function(JSON))} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{IndexModel}}
+\\ \hline
+\code{- collectionName:String} \\
+\code{- DataSchema:Schema} \\
+\code{- attributes:Array} \\
+\hline
+\code{+IndexModel()} \\
+\code{+addAttribute(attribute:Attribute)} \\
+\code{+getAttributes():Array} \\
+\code{+getData(errback:function(MaapError), collectionName:String, callback:function(JSON))} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe IndexModel}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che racchiude tutte le informazioni relative ad una index-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di attributi, definiti dalla classe \texttt{Back-end::Lib::DSLModel::Attribute}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
 \end{itemize}
-\textbf{Attributi}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
 \begin{itemize}
-\item[] \textbf{\code{- collectionName:String}} \\ Questo campo dati rappresenta il nome della Collection.
-\item[] \textbf{\code{- DataSchema:Schema}} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dei dati da rappresentare.
-\item[] \textbf{\code{- attributes:Array}} \\ Questo campo dati rappresenta l'array di Attribute del modello.
+\item[] \attribute{- collectionName:String} \\ Questo campo dati rappresenta il nome della Collection.
+\item[] \attribute{- DataSchema:Schema} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dei dati da rappresentare.
+\item[] \attribute{- attributes:Array} \\ Questo campo dati rappresenta l'array di Attribute del modello.
 \end{itemize}
-\textbf{Metodi}
+
+\paragraph*{Metodi}
 \begin{itemize}
-\item[] \textbf{\code{+IndexModel()}} \\ Questo metodo è il costruttore della classe. Si occupa di definire lo schema e di inzializzare l'array di attributi.
+\item[] \method{+IndexModel()} \\ Questo metodo è il costruttore della classe. Si occupa di definire lo schema e di inzializzare l'array di attributi.
+\item[] \method{+addAttribute(attribute:Attribute)} \\ Questo metodo si occupa di aggiungere l'\textit{Attribute} indicato nell'array \textit{attributes} della classe.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
+\item[$\circ$] \parameter{attribute:Attribute} \\ Questo parametro rappresenta l'attributo da aggiungere all'array.
 \end{itemize}
-\item[] \textbf{\code{+addAttribute(attribute:Attribute)}} \\ Questo metodo si occupa di aggiungere l'\textit{Attribute} indicato nell'array \textit{attributes} della classe.
+\item[] \method{+getAttributes():Array} \\ Questo metodo si occupa di restituire l'array di attributi del modello.
+\item[] \method{+getData(errback:function(MaapError), collectionName:String, callback:function(JSON))} \\ Questo metodo si occupa di collegarsi a \glossario{MongoDB} tramite \glossario{Mongoose} e di restituire il JSON con tutti i dati tramite una callback, in modo da poter generare correttamente la index-page. In caso di fallimento il metodo restituisce un errore tramite una callback di errore.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{attribute} \\ Questo parametro rappresenta l'attributo da aggiungere all'array.
-\end{itemize}
-\item[] \textbf{\code{+getAttributes():Array}} \\ Questo metodo si occupa di restituire l'array di attributi del modello.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getData(errback:function(MaapError), collectionName:String, callback:function(JSON))}} \\ Questo metodo si occupa di collegarsi a \glossario{MongoDB} tramite \glossario{Mongoose} e di restituire il JSON con tutti i dati tramite una callback, in modo da poter generare correttamente la index-page. In caso di fallimento il metodo restituisce un errore tramite una callback di errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{errback} \\ Questa callback viene chiamata nel caso in cui avvenga un errore nell'estrazione dei dati da \glossario{MongoDB}. Prende in input l'errore da restituire alla funzione chiamante.
-\item[] \code{collectionName} \\ Questo parametro rappresenta il nome della Collection sulla quale effettuare l'estrazione da \glossario{MongoDB}.
-\item[] \code{callback} \\ Questa callback viene chiamata al termine dell'estrazione dei dati e riceve in input il JSON da restituire alla funzione chiamante.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene chiamata nel caso in cui avvenga un errore nell'estrazione dei dati da \glossario{MongoDB}. Prende in input l'errore da restituire alla funzione chiamante.
+\item[$\circ$] \parameter{collectionName:String} \\ Questo parametro rappresenta il nome della Collection sulla quale effettuare l'estrazione da \glossario{MongoDB}.
+\item[$\circ$] \parameter{callback:function(JSON)} \\ Questa callback viene chiamata al termine dell'estrazione dei dati e riceve in input il JSON da restituire alla funzione chiamante.
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{ConcreteDSLInterpreter} 
+\subsubsection{Specifica classe ConcreteDSLInterpreter}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ConcreteDSLInterpreter}}
-		\\ \hline 
-					\code{- macro:sweet.js} \\ 
-				\hline
-					\code{+init(callback:function(String), errback:function(MaapError))} \\ 
-					\code{+loadDSLFile(content:String, callback:function(DslCollectionModel), errback:MaapError)} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ConcreteDSLInterpreter}}
+\\ \hline
+\code{- macro:sweet.js} \\
+\hline
+\code{+init(callback:function(String), errback:function(MaapError))} \\
+\code{+loadDSLFile(content:String, callback:function(DslCollectionModel), errback:MaapError)} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe ConcreteDSLInterpreter}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che concretizza l'interprete del \glossario{DSL}. È uno dei componenti ConcreteStrategy del \glossario{Design Pattern} \glossario{Strategy}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata per implementare l'algoritmo utilizzato nell'interfaccia \texttt{Back-end::Lib::DSLModel::DSLInterpreterStrategy} per l'interpretazione del linguaggio \glossario{DSL}. Conterrà al suo interno un metodo che genererà il \glossario{parser} a partire da una grammatica regolare.
 \end{itemize}
-\textbf{Classi Estese}
+
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
+\item[] Estende la classe:
+\begin{itemize}
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
 \end{itemize}
-\textbf{Attributi}
-\begin{itemize}
-\item[] \textbf{\code{- macro:sweet.js}} \\ Si tratta del modulo \textit{sweet.js} che si occupa dell'interpretazione del file DSL tramite l'utilizzo di macro.
+
+
 \end{itemize}
-\textbf{Metodi}
+
+\paragraph*{Attributi}
 \begin{itemize}
-\item[] \textbf{\code{+init(callback:function(String), errback:function(MaapError))}} \\ Questo metodo viene invocato per impostare l'interprete nel modo corretto. Viene settata il modulo sweet.js a partire dal codice di definizione delle macro. Nel caso in cui la classe venga settata correttamente viene invocata una callback che segnalerà la corretta impostazione, altrimenti viene sollevata una callback di errore.
+\item[] \attribute{- macro:sweet.js} \\ Si tratta del modulo \textit{sweet.js} che si occupa dell'interpretazione del file DSL tramite l'utilizzo di macro.
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+init(callback:function(String), errback:function(MaapError))} \\ Questo metodo viene invocato per impostare l'interprete nel modo corretto. Viene settata il modulo sweet.js a partire dal codice di definizione delle macro. Nel caso in cui la classe venga settata correttamente viene invocata una callback che segnalerà la corretta impostazione, altrimenti viene sollevata una callback di errore.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{callback} \\ Questa callback viene eseguita al termine del settaggio della classe per segnalare che tutto è avvenuto correttamente tramite l'invio di un messaggio.
-\item[] \code{errback} \\ Questa callback viene eseguita nel caso in cui la classe non venga settata in modo corretto a causa di un fallimento nella lettura del codice di macro. In questo caso viene restituito l'errore tramite questa callback.
+\item[$\circ$] \parameter{callback:function(String)} \\ Questa callback viene eseguita al termine del settaggio della classe per segnalare che tutto è avvenuto correttamente tramite l'invio di un messaggio.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene eseguita nel caso in cui la classe non venga settata in modo corretto a causa di un fallimento nella lettura del codice di macro. In questo caso viene restituito l'errore tramite questa callback.
 \end{itemize}
-\item[] \textbf{\code{+loadDSLFile(content:String, callback:function(DslCollectionModel), errback:MaapError)}} \\ Questo metodo si occupa di interpretare il contenuto del file DSL passatogli, per poi generare ed eseguire il codice derivato dalla trasformazione tramite le macro di \textit{sweet.js}. Se il codice viene generato ed eseguito correttamente allora avviene una chiamata alla callback di successo, altrimenti avviene una chiamata alla callback di errore.
+\item[] \method{+loadDSLFile(content:String, callback:function(DslCollectionModel), errback:MaapError)} \\ Questo metodo si occupa di interpretare il contenuto del file DSL passatogli, per poi generare ed eseguire il codice derivato dalla trasformazione tramite le macro di \textit{sweet.js}. Se il codice viene generato ed eseguito correttamente allora avviene una chiamata alla callback di successo, altrimenti avviene una chiamata alla callback di errore.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{content} \\ Questo parametro rappresenta il contenuto testuale del file DSL da interpretare.
-\item[] \code{callback} \\ Questa callback viene chiamata alla terminazione positiva del metodo e riceve in input l'array di DslCollectionModel da restituire al chiamante.
-\item[] \code{errback} \\ Questa callback viene eseguita nel caso in cui ci sia un fallimento nell'interpretazione del DSL o nell'esecuzione del codice generato a partire da esso. Prende in input un MaapError da restituire alla funzione chiamante.
+\item[$\circ$] \parameter{content:String} \\ Questo parametro rappresenta il contenuto testuale del file DSL da interpretare.
+\item[$\circ$] \parameter{callback:function(DslCollectionModel)} \\ Questa callback viene chiamata alla terminazione positiva del metodo e riceve in input l'array di DslCollectionModel da restituire al chiamante.
+\item[$\circ$] \parameter{errback:MaapError} \\ Questa callback viene eseguita nel caso in cui ci sia un fallimento nell'interpretazione del DSL o nell'esecuzione del codice generato a partire da esso. Prende in input un MaapError da restituire alla funzione chiamante.
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{ShowModel} 
+\subsubsection{Specifica classe ShowModel}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ShowModel}}
-		\\ \hline 
-					\code{- collectionName:String} \\ 
-					\code{- DataSchema:Schema} \\ 
-					\code{- attributes:Array} \\ 
-				\hline
-					\code{+ShowModel(collectionName:String)} \\ 
-					\code{+addAttribute(attribute:Attribute)} \\ 
-					\code{+getAttributes():Array} \\ 
-					\code{+getData(collectionName:String, documentId:String, callback:function(JSON), errback:function(MaapError))} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ShowModel}}
+\\ \hline
+\code{- collectionName:String} \\
+\code{- DataSchema:Schema} \\
+\code{- attributes:Array} \\
+\hline
+\code{+ShowModel(collectionName:String)} \\
+\code{+addAttribute(attribute:Attribute)} \\
+\code{+getAttributes():Array} \\
+\code{+getData(collectionName:String, documentId:String, callback:function(JSON), errback:function(MaapError))} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe ShowModel}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che racchiude tutte le informazioni relative ad una show-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di attributi, definiti dalla classe \texttt{Back-end::Lib::DSLModel::Attribute}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
 \end{itemize}
-\textbf{Relazioni con altre classi}
+
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::Attribute}
-\end{itemize}
-\textbf{Attributi}
+
+
+\item[] Utilizza le classi:
 \begin{itemize}
-\item[] \textbf{\code{- collectionName:String}} \\ Questo campo dati rappresenta il nome della Collection.
-\item[] \textbf{\code{- DataSchema:Schema}} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dei dati da rappresentare.
-\item[] \textbf{\code{- attributes:Array}} \\ Questo campo dati rappresenta l'array di Attribute del modello.
-\end{itemize}
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+ShowModel(collectionName:String)}} \\ Questo metodo è il costruttore della classe. Si occupa di definire lo schema e di inzializzare l'array di attributi.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{collectionName} \\ Questo parametro rappresenta il nome della Collection.
-\end{itemize}
-\item[] \textbf{\code{+addAttribute(attribute:Attribute)}} \\ Questo metodo si occupa di aggiungere l'\textit{Attribute} indicato nell'array \textit{attributes} della classe.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{attribute} \\ Questo parametro rappresenta l'attributo da aggiungere all'array.
-\end{itemize}
-\item[] \textbf{\code{+getAttributes():Array}} \\ Questo metodo si occupa di restituire l'array di attributi del modello.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getData(collectionName:String, documentId:String, callback:function(JSON), errback:function(MaapError))}} \\ Questo metodo si occupa di collegarsi a \glossario{MongoDB} tramite \glossario{Mongoose} e di restituire il JSON con tutti i dati tramite una callback, in modo da poter generare correttamente la show-page. In caso di fallimento il metodo restituisce un errore tramite una callback di errore.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{collectionName} \\ Questo parametro rappresenta il nome della Collection sulla quale effettuare l'estrazione da \glossario{MongoDB}.
-\item[] \code{documentId} \\ Questo parametro rappresenta il codice identificativo del Document sul quale effettuare l'estrazione dei dati.
-\item[] \code{callback} \\ Questa callback viene chiamata al termine dell'estrazione dei dati e riceve in input il JSON da restituire alla funzione chiamante.
-\item[] \code{errback} \\ Questa callback viene chiamata nel caso in cui avvenga un errore nell'estrazione dei dati da \glossario{MongoDB}. Prende in input l'errore da restituire alla funzione chiamante.
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::Attribute}
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{Trasform} 
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] \attribute{- collectionName:String} \\ Questo campo dati rappresenta il nome della Collection.
+\item[] \attribute{- DataSchema:Schema} \\ Questo campo dati rappresenta lo schema \glossario{Mongoose} dei dati da rappresentare.
+\item[] \attribute{- attributes:Array} \\ Questo campo dati rappresenta l'array di Attribute del modello.
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+ShowModel(collectionName:String)} \\ Questo metodo è il costruttore della classe. Si occupa di definire lo schema e di inzializzare l'array di attributi.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{collectionName:String} \\ Questo parametro rappresenta il nome della Collection.
+\end{itemize}
+\item[] \method{+addAttribute(attribute:Attribute)} \\ Questo metodo si occupa di aggiungere l'\textit{Attribute} indicato nell'array \textit{attributes} della classe.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{attribute:Attribute} \\ Questo parametro rappresenta l'attributo da aggiungere all'array.
+\end{itemize}
+\item[] \method{+getAttributes():Array} \\ Questo metodo si occupa di restituire l'array di attributi del modello.
+\item[] \method{+getData(collectionName:String, documentId:String, callback:function(JSON), errback:function(MaapError))} \\ Questo metodo si occupa di collegarsi a \glossario{MongoDB} tramite \glossario{Mongoose} e di restituire il JSON con tutti i dati tramite una callback, in modo da poter generare correttamente la show-page. In caso di fallimento il metodo restituisce un errore tramite una callback di errore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{collectionName:String} \\ Questo parametro rappresenta il nome della Collection sulla quale effettuare l'estrazione da \glossario{MongoDB}.
+\item[$\circ$] \parameter{documentId:String} \\ Questo parametro rappresenta il codice identificativo del Document sul quale effettuare l'estrazione dei dati.
+\item[$\circ$] \parameter{callback:function(JSON)} \\ Questa callback viene chiamata al termine dell'estrazione dei dati e riceve in input il JSON da restituire alla funzione chiamante.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene chiamata nel caso in cui avvenga un errore nell'estrazione dei dati da \glossario{MongoDB}. Prende in input l'errore da restituire alla funzione chiamante.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Specifica classe Trasform}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Trasform}}
-		\\ \hline 
-				\hline
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Trasform}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
 \egroup
 \caption{Classe Trasform}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che racchiude tutte le informazioni relative alla modalità con cui i dati prelevati dal database verranno modificati prima di essere inviati al front-end.
 Tali trasformazioni vengono dichiarate dal developer nel DSL.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
 \end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-Assenti \\
 
-			\subparagraph{Attribute} 
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
+Assenti
+
+\subsubsection{Specifica classe Attribute}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Attribute}}
-		\\ \hline 
-				\hline
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Attribute}}
+\\ \hline
+\code{- label:String} \\
+\code{- name:String} \\
+\code{- transformation:function} \\
+\code{- selectable:Boolean} \\
+\code{- sortable:Boolean} \\
+\hline
+\code{+getLabel():String} \\
+\code{+Attribute(label:String, name:String, tranformation:function, selectable:Boolean, sortable:Boolean)} \\
+\code{+getName():String} \\
+\code{+getTransformation():function} \\
+\code{+isSelectable():Boolean} \\
+\code{+isSortable():Boolean} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe Attribute}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che racchiude tutte le informazioni relative ad un attributo di una show-page o di una index-page. Tali informazioni vengono dichiarate dal developer nel DSL.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
 \end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Model::DSLModel::Trasform}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-Assenti \\
 
-	\subsubsection{Back-end::Lib} 
-		\paragraph{Classi}
-			\subparagraph{ServerApp} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ServerApp}}
-		\\ \hline 
-				\hline
-					\code{+start()} \\ 
-					\code{+ServerApp(config:Config)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ServerApp}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\paragraph*{Relazioni con altre classi}
 \begin{itemize}
-\item[] Classe che si occupa di avviare il server e di invocare il \glossario{middleware}. È il componente client del \glossario{Design Pattern} \glossario{Chain of responsibility}. Utilizza i pacchetti Mongoose ed Express.
-\end{itemize} 
-\textbf{Utilizzo}
+
+
+\item[] Utilizza le classi:
 \begin{itemize}
-\item[] Viene utilizzato per avviare l'applicazione. Internamente inizializza la catena gestione delle chiamate utilizzando la classe \texttt{Back-end::Lib::Middleware::MiddlewareLoader}.
-\end{itemize}
-\textbf{Relazioni con altre classi}
-\begin{itemize}
-\item{Back-end::Lib::Controller::Middleware::MiddlewareLoader}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+start()}} \\ Questo metodo fa partire il server. Non ritorna il controllo finché il server è in funzione.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+ServerApp(config:Config)}} \\ Questo metodo statico accetta come parametro l'oggetto di configurazione dell'applicazione e costruisce l'oggetto ServerApp che rappresenta il server dell'applicazione.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{config} \\ È l'oggetto di configurazione dell'applicazione.
+\item[$\cdot$] \class{Back-end::Lib::Model::DSLModel::Trasform}
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{Config} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Config}}
-		\\ \hline 
-				\hline
-					\code{+getServerPort():Integer} \\ 
-					\code{+getServerStaticPath():String} \\ 
-					\code{+getUserDbUri():String} \\ 
-					\code{+getEnvironment():String} \\ 
-					\code{+getDataDbUri():String} \\ 
-					\code{+getSmtpService():String} \\ 
-					\code{+getSmtpAuth():String} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe Config}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\paragraph*{Attributi}
 \begin{itemize}
-\item[] Classe che rappresenta l'interfaccia della classe di configurazione dell'applicazione.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata per descrivere tutti i parametri dell'applicazione. Quando viene creata una ServerApp le viene passato un oggetto di questo tipo ed essa avvierà l'applicazione a partire da questa configurazione.
-\end{itemize}
-\textbf{Estensioni}
-\begin{itemize}
-\item{Back-end::DeveloperProject::Config::ProjectConfig}
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+getServerPort():Integer}} \\ Restituisce la porta su cui il server deve mettersi in ascolto.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getServerStaticPath():String}} \\ Restituisce il percorso della cartella che il server deve utilizzare per fornire file statici.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getUserDbUri():String}} \\ Restituisce l'uri del database che il server deve utilizzare come database degli utenti
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getEnvironment():String}} \\ Restituisce la variabile d'ambiente che informa se l'applicazione deve essere eseguita in modalità ``developing'' o ``production''.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getDataDbUri():String}} \\ Restituisce l'uri del database che il server deve utilizzare come database di analisi, cioè quello contenente le collection di cui l'applicazione deve permettere la visualizzazione.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getSmtpService():String}} \\ Restituisce il nome del servizio che potrà essere usato dall'applicazione per inviare email.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+getSmtpAuth():String}} \\ Restituisce le credenziali con cui è possibile utilizzare il servizio smtp per inviare email.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
+\item[] \attribute{- label:String} \\ Questo campo dati rappresenta la stringa con la quale verrà visualizzata l'intestazione della colonna o della riga nella tabella finale della show-page o della index-page.
+\item[] \attribute{- name:String} \\ Questo campo dati rappresenta il nome dell'attributo della Collection di riferimento.
+\item[] \attribute{- transformation:function} \\ Questo campo dati rappresenta una funzione di trasformazione da applicare sull'attributo.
+\item[] \attribute{- selectable:Boolean} \\ Questo parametro indica se l'attributo è selezionabile, ovvero se nel front-end cliccando su di esso si viene rimandati tramite un link alla show-page del Document riferito.
+\item[] \attribute{- sortable:Boolean} \\ Questo parametro indica se l'attributo è ordinabile, ovvero se i Document possono essere ordinati secondo esso.
 \end{itemize}
 
-	\subsubsection{Back-end::Lib::View} 
-		\paragraph{Classi}
-			\subparagraph{ForgotMailView} 
-\begin{table}[ht]
-\begin{center}
-\bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{ForgotMailView}}
-		\\ \hline 
-				\hline
-					\code{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)} \\ 
-				\hline
-		
-		\end{tabular}
-\egroup
-\caption{Classe ForgotMailView}
-\end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\paragraph*{Metodi}
 \begin{itemize}
-\item[] Classe che fornisce una rappresentazione della mail.
-\end{itemize} 
-\textbf{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata come template di email da inviare nel caso in cui l'utente richieda il recupero password.
-\end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
-\begin{itemize}
-\item[] \textbf{\code{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)}} \\ Metodo che definisce e restituisce la struttura dell'email da inviare per il reset della password. 
+\item[] \method{+getLabel():String} \\ Questo metodo restituisce il campo \textit{label} della classe.
+\item[] \method{+Attribute(label:String, name:String, tranformation:function, selectable:Boolean, sortable:Boolean)} \\ Questo metodo è il costruttore della classe. Prima di assegnare i valori viene effettuato un controllo sui parametri passati, in modo che essi siano coerenti con quanto ci si aspetta. Se questo controllo passa allora la classe viene costruita, altrimenti viene sollevata un'eccezione.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{userMail} \\ Parametro che rappresenta l'email dell'utente a cui inviare l'email.
-\item[] \code{senderMail} \\ Parametro che rappresenta l'email del mittente.
-\item[] \code{tokenlink} \\ Questo parametro è il link con il token dal quale l'utente può accedere per procedere con il reset della password.
+\item[$\circ$] \parameter{label:String} \\ Questo parametro rappresenta l'etichetta dell'attributo.
+\item[$\circ$] \parameter{name:String} \\ Questo parametro rappresenta il nome dell'attributo.
+\item[$\circ$] \parameter{tranformation:function} \\ Questo parametro rappresenta la trasformazione dell'attributo.
+\item[$\circ$] \parameter{selectable:Boolean} \\ Questo parametro rappresenta il campo selectable della classe.
+\item[$\circ$] \parameter{sortable:Boolean} \\ Questo parametro rappresenta il campo sortable della classe.
 \end{itemize}
+\item[] \method{+getName():String} \\ Questo metodo restituisce il campo name della classe.
+\item[] \method{+getTransformation():function} \\ Questo metodo restituisce il campo transformation della classe.
+\item[] \method{+isSelectable():Boolean} \\ Questo metodo restituisce il campo selectable della classe.
+\item[] \method{+isSortable():Boolean} \\ Questo metodo restituisce il campo sortable della classe.
 \end{itemize}
 
-	\subsubsection{Back-end::Lib::Utils} 
-		\paragraph{Classi}
-			\subparagraph{Mailer} 
+\subsection{Specifica componente Back-end::Lib::Utils}
+
+\subsubsection{Specifica classe Mailer}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{Mailer}}
-		\\ \hline 
-				\hline
-					\code{+init(app:ServerApp)} \\ 
-					\code{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{Mailer}}
+\\ \hline
+ \\ 
+\hline
+\code{+init(app:ServerApp)} \\
+\code{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe Mailer}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che si occupa dell'invio di email. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata per inviare un'email ad un utente che ha effettuato la richiesta di recupero password.
 \end{itemize}
-\textbf{Attributi}
-Assenti \\
-\textbf{Metodi}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
+Assenti
+
+\paragraph*{Metodi}
 \begin{itemize}
-\item[] \textbf{\code{+init(app:ServerApp)}} \\ Metodo che crea il servizio email e rende disponibile l'invio di email tramite \code{sendEmail()}.
+\item[] \method{+init(app:ServerApp)} \\ Metodo che crea il servizio email e rende disponibile l'invio di email tramite \code{sendEmail()}.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{app} \\ È l'istanza del server dell'applicazione.
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
 \end{itemize}
-\item[] \textbf{\code{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))}} \\ Metodo che si occupa di inviare un'email.
+\item[] \method{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))} \\ Metodo che si occupa di inviare un'email.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\item[] \code{errback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al verificarsi di un errore.
-\item[] \code{message} \\ Questo oggetto rappresenta il template dell'email da inviare.
-\item[] \code{callback} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dove l'oggetto di tipo responseStatus (tipo appartenente alla libreria \code{NodeMailer}) contiene informazioni sullo stato di successo.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al verificarsi di un errore.
+\item[$\circ$] \parameter{message:Object} \\ Questo oggetto rappresenta il template dell'email da inviare.
+\item[$\circ$] \parameter{callback:function(responseStatus)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dove l'oggetto di tipo responseStatus (tipo appartenente alla libreria \code{NodeMailer}) contiene informazioni sullo stato di successo.
 \end{itemize}
 \end{itemize}
 
-			\subparagraph{MaapError} 
+\subsubsection{Specifica classe MaapError}
+
 \begin{table}[ht]
 \begin{center}
 \bgroup
-	\setlength{\arrayrulewidth}{0.6mm}
-	\def\arraystretch{1}
-		\begin{tabular}{ | p{12cm} | }
-				\hline  
-					\centerline{\textbf{MaapError}}
-		\\ \hline 
-					\code{- title:String} \\ 
-					\code{- message:String} \\ 
-					\code{- code:Integer} \\ 
-				\hline
-					\code{+toError():Error} \\ 
-					\code{+toString():String} \\ 
-					\code{+toJson():JSON} \\ 
-				\hline
-		
-		\end{tabular}
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{MaapError}}
+\\ \hline
+\code{- title:String} \\
+\code{- message:String} \\
+\code{- code:Integer} \\
+\hline
+\code{+toError():Error} \\
+\code{+toString():String} \\
+\code{+toJson():JSON} \\
+\hline
+\end{tabular}
 \egroup
 \caption{Classe MaapError}
 \end{center}
-\end{table} \textbf{\\ \\ Descrizione}
+\end{table}
+
+\paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che rappresenta un errore all'interno del package \texttt{Back-end::Lib}.
-\end{itemize} 
-\textbf{Utilizzo}
+\end{itemize}
+
+\paragraph*{Utilizzo}
 \begin{itemize}
 \item[] Viene utilizzata da tutte le classi presente all'interno del package \texttt{Back-end::Lib} per rappresentare un errore generato, identificandolo tramite nome, descrizione e codice.
 \end{itemize}
-\textbf{Attributi}
+
+\paragraph*{Relazioni con altre classi}
+
+\paragraph*{Attributi}
 \begin{itemize}
-\item[] \textbf{\code{- title:String}} \\ Questo campo dati rappresenta il titolo dell'errore generato in formato stinga.
-\item[] \textbf{\code{- message:String}} \\ Campo dati che rappresenta il messaggio corrispondente all'errore.
-\item[] \textbf{\code{- code:Integer}} \\ Campo dato che reppresenta il codice dell'errore.
+\item[] \attribute{- title:String} \\ Questo campo dati rappresenta il titolo dell'errore generato in formato stinga.
+\item[] \attribute{- message:String} \\ Campo dati che rappresenta il messaggio corrispondente all'errore.
+\item[] \attribute{- code:Integer} \\ Campo dato che reppresenta il codice dell'errore.
 \end{itemize}
-\textbf{Metodi}
+
+\paragraph*{Metodi}
 \begin{itemize}
-\item[] \textbf{\code{+toError():Error}} \\ Questo metodo converte l'errore dal tipo \code{MaapError} al tipo \code{Error} utilizzato da \glossario{Node.js} ritornandolo.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+toString():String}} \\ Metodo che effettua una concatenazione dei campi dati dell'errore in formato \code{String} e la ritorna.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
-\item[] \textbf{\code{+toJson():JSON}} \\ Metodo che ritorna l'errore in formato json.
-\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[] \textbf{Parametri:}
-\end{itemize}
+\item[] \method{+toError():Error} \\ Questo metodo converte l'errore dal tipo \code{MaapError} al tipo \code{Error} utilizzato da \glossario{Node.js} ritornandolo.
+\item[] \method{+toString():String} \\ Metodo che effettua una concatenazione dei campi dati dell'errore in formato \code{String} e la ritorna.
+\item[] \method{+toJson():JSON} \\ Metodo che ritorna l'errore in formato json.
 \end{itemize}

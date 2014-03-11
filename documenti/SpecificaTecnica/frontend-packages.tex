@@ -3,7 +3,7 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[width=\textwidth]{uml/package/Front-end.png}  
+				\includegraphics[width=0.7\textwidth]{uml/package/Front-end.png}  
 				\caption{Componente Front-end}
 			\end{center}  
 		\end{figure} 
@@ -48,7 +48,7 @@
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Questa controller si occupa di distruggere la sessione attuale, se esiste, e non genera una view ma reindirizza l'utente automaticamente alla pagina di Login.
+						\item[] Questo controller si occupa di distruggere la sessione attuale, se esiste, e non genera una view ma reindirizza l'utente automaticamente alla pagina di Login.
 					\end{itemize}
 			\subparagraph{ForgotResetController}
 				
@@ -68,7 +68,7 @@
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
+						\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \\ \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
 					\end{itemize}
 			\subparagraph{UserController}
 				
@@ -88,7 +88,7 @@
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Utilizza la classe \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente che ha effettuato la richiesta. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà prelevare i dati e generare la pagina, popolando correttamente lo scope.
+						\item[] Utilizza la classe \texttt{Front-End::Services::ProfileService} per popolare la classe \\ \texttt{Front-End::Model::ProfileModel} con i dati dell'utente che ha effettuato la richiesta. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà prelevare i dati e generare la pagina, popolando correttamente lo scope.
 					\end{itemize}
 			\subparagraph{ForgotRequestController}
 				
@@ -98,7 +98,7 @@
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Genera una pagina in cui viene visualizzato un campo di testo nel quale l'utente può inserire la propria mail ed effettuare una richiesta di ripristino password. Il controller permette quindi di inviare al Back-end la richiesta attraverso la classe \texttt{Front-End::Services::ForgotPasswordService}. Sarà poi compito del \glossario{Back-end} inviare all'utente una mail contenente il link che bisogna aprire per poter scegliere una nuova password.
+						\item[] Genera una pagina in cui viene visualizzato un campo di testo nel quale l'utente può inserire la propria mail ed effettuare una richiesta di ripristino password. Il controller permette quindi di inviare al Back-end la richiesta attraverso la classe \\ \texttt{Front-End::Services::ForgotPasswordService}. Sarà poi compito del \glossario{Back-end} inviare all'utente una mail contenente il link che bisogna aprire per poter scegliere una nuova password.
 					\end{itemize}
 			\subparagraph{UsersListController}
 				

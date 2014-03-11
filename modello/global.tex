@@ -60,11 +60,19 @@
 % il nome del comando \glossary è già usato da LaTeX
 \newcommand{\glossario}[1]{\textit{#1\ped{\ped{G}}}}
 
+\newcommand*\flextt{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.6em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\:
+}
+
 % Serve a dare la giusta formattazione al codice inline
-\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\code}[1]{\flextt{\texttt{#1}}}
 
 % Serve a dare la giusta formattazione a tutte le path presenti nei documenti
-\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\flextt{\texttt{#1}}}
 
 % Permette di andare a capo all'interno di una cella in una tabella
 \newcommand{\multiLineCell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}

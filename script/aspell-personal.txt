@@ -409,7 +409,7 @@ framework
 Franceschi
 friendly
 from
-Frontend
+frontend
 FTP
 Fulfilled
 function
@@ -606,6 +606,7 @@ Location
 Locator
 LOCs
 log
+loggati
 logger
 logic
 LoginController
@@ -902,6 +903,7 @@ registerUser
 registry
 Relationship
 Reliability
+remove
 rendering
 repl
 replacements

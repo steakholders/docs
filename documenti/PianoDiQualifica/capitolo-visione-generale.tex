@@ -213,6 +213,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 		\subsubsection{Metriche per il software}
+		\label{metrichesoftware}
 
 		La prima release di \glossario{Node.js} risale a Maggio 2009. È stata riscontrata una forte differenza tra le metriche disponibili per l'analisi statica rispetto a quelle per i linguaggi meno recenti. Inoltre nessun membro del gruppo ha conoscenza di tale linguaggio e delle sue particolarità, come l'aspetto \glossario{funzionale}. Tali differenze con i linguaggi studiati nel percorso universitario si sono tradotte nella difficoltà di individuare metriche non incentrate sulla visione ad oggetti del codice. Infine si è osservata l'assenza di strumenti per la misurazione di metriche tradizionali come la coesione e l'instabilità dei package.
 		Di seguito vengono elencate le metriche per il software prodotto.
@@ -330,14 +331,15 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 			
 			\paragraph{Maintainability index}\mbox{} \\
-
 			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			
 			Questa metrica\footnote{Definita nel 1991 da Paul Oman e Jack Hagemeister alla University of Idaho.} è una scala logaritmica da $-\infty$ a 171, calcolata sulla base delle linee di codice logiche, della complessità ciclomatica e dall'indice \glossario{Halstead} effort. Un valore alto indica una maggiore manutenibilità.
 
 
 			\paragraph{Use Case Points}\mbox{} \\
 			\label{ucp}
 			% http://tynerblain.com/blog/2007/02/12/software-cost-estimation-ucp-1/
+			
 			Gli Use Case Points (UCP)\footnote{Definiti da Gustav Karner della Rational Software Corporation a metà del 1990.} stimano quanto sforzo è necessario per sviluppare il prodotto basandosi su quanto lavoro il software deve svolgere.
 
 			Al fine di stimare un costo in ore-uomo di sviluppo, tale tecnica valuta i seguenti fattori:
@@ -351,6 +353,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 
 			\paragraph{Statement Coverage}\mbox{} \\
+			
 			Calcola quante linee di comando di ciascun modulo delle unità sono eseguite almeno una volta nell'esecuzione dei test. Tale metrica è espressa in percentuale.
 
 			\textbf{Parametri utilizzati}:
@@ -361,6 +364,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 
 			\paragraph{Branch Coverage}\mbox{} \\
+			
 			Calcola quanti rami della logica di flusso sono attraversati almeno una volta nell'esecuzione dei test. Tale metrica è espressa in percentuale.
 
 			\textbf{Parametri utilizzati}:

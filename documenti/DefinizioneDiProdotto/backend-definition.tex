@@ -183,6 +183,7 @@
 \code{+getDataDbUri():String} \\
 \code{+getSmtpService():String} \\
 \code{+getSmtpAuth():String} \\
+\code{+getDSLPath()} \\
 \hline
 \end{tabular}
 \egroup
@@ -224,6 +225,7 @@
 \item[] \method{+getDataDbUri():String} \\ Restituisce l'uri del database che il server deve utilizzare come database di analisi, cioè quello contenente le collection di cui l'applicazione deve permettere la visualizzazione.
 \item[] \method{+getSmtpService():String} \\ Restituisce il nome del servizio che potrà essere usato dall'applicazione per inviare email.
 \item[] \method{+getSmtpAuth():String} \\ Restituisce le credenziali con cui è possibile utilizzare il servizio smtp per inviare email.
+\item[] \method{+getDSLPath()} \\ Restituisce la path da cui caricare i file DSL definiti dallo sviluppatore.
 \end{itemize}
 
 \subsection{Componente Back-end::Lib::View}
@@ -1178,7 +1180,7 @@ Lo schema prevede tre attributi:
 \item[$\circ$] \parameter{callback:function(String)} \\ Parametro che rappresenta la callback chiamata dal metodo al termine dell'elaborazione senza errori.
 \item[$\circ$] \parameter{errback:function(MaapError)} \\ Parametro che rappresenta la callback chiamata dal metodo al verificarsi di errori.
 \end{itemize}
-\item[] \method{+\underline{updateLevel}(errback:function(MaapError), userId:String, newLevel:String, callback:function(String))} \\ Questo metodo modifica il livello di un utente presente nel database delle credenziali utente.
+\item[] \method{+\underline{updateLevel}(errback:function(MaapError), userId:String, newLevel:String, callback:function(String))} \\ Questo metodo modifica il livello di un utente presente nel database degli utenti.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{userId:String} \\ Parametro corrispondente all'id dell'utente il cui livello deve essere modificato.
 \item[$\circ$] \parameter{newLevel:String} \\ Parametro che rappresenta il dato sul livello utente.
@@ -1334,6 +1336,7 @@ Lo schema prevede tre attributi:
 \hline
 \code{+init(callback:function(String), errback:function(MaapError))} \\
 \code{+loadDSLFile(content:String, callback:function(DslCollectionModel), errback:MaapError)} \\
+\code{+DSLConcreteStrategy()} \\
 \hline
 \end{tabular}
 \egroup
@@ -1379,6 +1382,7 @@ Lo schema prevede tre attributi:
 \item[$\circ$] \parameter{callback:function(DslCollectionModel)} \\ Questa callback viene chiamata alla terminazione positiva del metodo e riceve in input l'array di DslCollectionModel da restituire al chiamante.
 \item[$\circ$] \parameter{errback:MaapError} \\ Questa callback viene eseguita nel caso in cui ci sia un fallimento nell'interpretazione del DSL o nell'esecuzione del codice generato a partire da esso. Prende in input un MaapError da restituire alla funzione chiamante.
 \end{itemize}
+\item[] \method{+DSLConcreteStrategy()} \\ Questo metodo è il costruttore della classe.
 \end{itemize}
 
 \subsubsection{Classe DSLCollectionModel}
@@ -1731,8 +1735,8 @@ Assenti
 \\ \hline
  \\ 
 \hline
-\code{+init(app:ServerApp)} \\
-\code{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))} \\
+\code{+Mailer(app:ServerApp)} \\
+\code{+sendEmail(message:Object, callback:function(responseStatus), errback:function(MaapError))} \\
 \hline
 \end{tabular}
 \egroup
@@ -1761,11 +1765,11 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+init(app:ServerApp)} \\ Metodo che crea il servizio email e rende disponibile l'invio di email tramite \code{sendEmail()}.
+\item[] \method{+Mailer(app:ServerApp)} \\ Costruttore che crea il servizio email e rende disponibile l'invio di email tramite \code{sendEmail()}.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
+\item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server che dovrà utilizzare questa classe
 \end{itemize}
-\item[] \method{+sendEmail(errback:function(MaapError), message:Object, callback:function(responseStatus))} \\ Metodo che si occupa di inviare un'email.
+\item[] \method{+sendEmail(message:Object, callback:function(responseStatus), errback:function(MaapError))} \\ Metodo che si occupa di inviare un'email.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{message:Object} \\ Questo oggetto rappresenta il template dell'email da inviare.
 \item[$\circ$] \parameter{callback:function(responseStatus)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dove l'oggetto di tipo responseStatus (tipo appartenente alla libreria \code{NodeMailer}) contiene informazioni sullo stato di successo.

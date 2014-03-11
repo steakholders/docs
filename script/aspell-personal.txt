@@ -295,6 +295,7 @@ dsgfdgfg
 dsl
 DslCollectionModel
 DSLCollectionModel
+DSLConcreteStrategy
 dslDomain
 DSLDomain
 DSLInterpreterStrategy
@@ -432,6 +433,7 @@ getCollectionModel
 getCollectionName
 getData
 getDataDbUri
+getDSLPath
 getEnvironment
 getErrors
 getForgotController
@@ -695,6 +697,7 @@ monospace
 month
 Motivation
 Mozilla
+msg
 MU
 Multiplier
 Must
@@ -812,6 +815,7 @@ points
 pollution
 polyadic
 populate
+popup
 Portability
 Portable
 position

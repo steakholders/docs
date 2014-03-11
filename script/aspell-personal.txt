@@ -814,6 +814,7 @@ points
 pollution
 polyadic
 populate
+popup
 Portability
 Portable
 position
@@ -905,6 +906,7 @@ registerUser
 registry
 Relationship
 Reliability
+remove
 rendering
 repl
 replacements

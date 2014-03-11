@@ -151,6 +151,7 @@ Closed
 closely
 Closure
 cloud
+codica
 codifica'
 CoffeeStrap
 Coherent
@@ -569,6 +570,7 @@ LaTex
 Laurence
 l'AuthModel
 l'AuthModela
+L'autoformazione
 Lavazza
 lavoro'
 lccccccc

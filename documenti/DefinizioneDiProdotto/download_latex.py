@@ -44,5 +44,5 @@ while password is None or len(password) == 0:
 
 requisteak = RequisteakClient()
 if requisteak.login(username, password):
-	#requisteak.download("http://steakholders.herokuapp.com/downloads/back-end", "backend-packages.tex")
-	pass
+	requisteak.download("http://steakholders.herokuapp.com/downloads/front_end_definition", "frontend-definition.tex")
+	requisteak.download("http://steakholders.herokuapp.com/downloads/back_end_definition", "backend-definition.tex")

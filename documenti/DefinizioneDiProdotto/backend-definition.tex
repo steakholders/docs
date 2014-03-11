@@ -145,6 +145,7 @@
 \item[] Utilizza le classi:
 \begin{itemize}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::MiddlewareLoader}
+\item[$\bullet$] \class{Back-end::Lib::Config}
 \end{itemize}
 \end{itemize}
 
@@ -316,7 +317,7 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Utils::Mailer}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Authentication}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Router}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::NotFoundHandler}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
@@ -472,7 +473,6 @@ Inizializza tutti i middleware richiamando i corrispondenti metodi init.
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Authentication}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Controller::ControllerFactory}
 \item[$\bullet$] \class{Back-end::Lib::Utils::MaapError}
 \end{itemize}
@@ -1204,9 +1204,10 @@ Lo schema prevede tre attributi:
 \code{- errorRegistry:Array} \\
 \hline
 \code{+loadDSLFile(path:String, callback:function(String), errback:function(MaapError))} \\
-\code{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))} \\
+\code{+registerCollection(name:String, model:DslCollectionModel)} \\
 \code{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))} \\
 \code{+getErrors(callback:function(Array))} \\
+\code{+DSLDomain()} \\
 \hline
 \end{tabular}
 \egroup
@@ -1249,12 +1250,10 @@ Lo schema prevede tre attributi:
 \item[$\circ$] \parameter{callback:function(String)} \\ Rappresenta la funzione callback da chiamare una volta che il metodo è stato eseguito con successo. Prende come parametro un messaggio.
 \item[$\circ$] \parameter{errback:function(MaapError)} \\ Rappresenta la funzione callback da chiamare nel caso in cui avvenga un errore nella chiamata del metodo. In questo caso la funzione prende un \texttt{MaapError}.
 \end{itemize}
-\item[] \method{+registerCollection(name:String, model:DslCollectionModel, callback:function(String), errback:function(MaapError))} \\ Questo metodo si occupa di inserire nel registro delle \glossario{DSLCollectionModel} un nuovo modello.
+\item[] \method{+registerCollection(name:String, model:DslCollectionModel)} \\ Questo metodo si occupa di inserire nel registro delle \glossario{DSLCollectionModel} un \texttt{DSLCollectionModel} e il nome della Collection.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{name:String} \\ Questo parametro rappresenta il nome della Collection.
 \item[$\circ$] \parameter{model:DslCollectionModel} \\ Questo parametro rappresenta il DslCollectionModel da inserire nel registro.
-\item[$\circ$] \parameter{callback:function(String)} \\ Questa funzione viene chiamata alla fine del metodo per segnalare tramite un messaggio che il metodo è stato eseguito correttamente.
-\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questa callback viene chiamata nel caso in cui il metodo non sia stato eseguito correttamente e abbia generato degli errori o sollevato eccezioni. La callback prende in input l'errore generato.
 \end{itemize}
 \item[] \method{+getCollectionModel(collectionName:String, callback:function(DslCollectionModel), errback:function(MaapError))} \\ Questo metodo effettua una ricerca all'interno del registro in base al nome indicato. Se trova il DslCollectionModel allora lo restituisce tramite una callback e termina correttamente, altrimenti restituisce un MaapError tramite una callback, segnalando che la Collection non è stata trovata.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
@@ -1266,6 +1265,7 @@ Lo schema prevede tre attributi:
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{callback:function(Array)} \\ Questa callback prende in input l'array di errori da restituire.
 \end{itemize}
+\item[] \method{+DSLDomain()} \\ È il metodo costruttore della classe.
 \end{itemize}
 
 \subsubsection{Classe DSLInterpreterStrategy}
@@ -1791,6 +1791,7 @@ Assenti
 \code{+toJson():JSON} \\
 \code{+toString():String} \\
 \code{+toError():Error} \\
+\code{+MaapError(title:String, code:Integer, message:String)} \\
 \hline
 \end{tabular}
 \egroup
@@ -1824,4 +1825,10 @@ Assenti
 \item[] \method{+toJson():JSON} \\ Metodo che ritorna l'errore in formato json.
 \item[] \method{+toString():String} \\ Metodo che effettua una concatenazione dei campi dati dell'errore in formato \code{String} e la ritorna.
 \item[] \method{+toError():Error} \\ Questo metodo converte l'errore dal tipo \code{MaapError} al tipo \code{Error} utilizzato da \glossario{Node.js} ritornandolo.
+\item[] \method{+MaapError(title:String, code:Integer, message:String)} \\ È il metodo costruttore della classe.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{title:String} \\ Questo parametro rappresenta il titolo del messaggio d'errore.
+\item[$\circ$] \parameter{code:Integer} \\ Questo parametro rappresenta il codice dell'errore.
+\item[$\circ$] \parameter{message:String} \\ Questo parametro rappresenta il messaggio dell'errore.
+\end{itemize}
 \end{itemize}

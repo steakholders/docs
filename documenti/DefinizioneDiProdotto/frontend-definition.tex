@@ -258,8 +258,14 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Model::CollectionModel}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -388,9 +394,10 @@ Tale funzionalità richiede che l'utente sia registrato.
 \hline
 \centerline{\textbf{LoginController}}
 \\ \hline
- \\ 
+\code{+ user:JSON} \\
+\code{+ errorMsg:JSON} \\
 \hline
- \\ 
+\code{+login()} \\
 \hline
 \end{tabular}
 \egroup
@@ -414,12 +421,13 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{+ user:JSON} \\ Contiene email e password inseriti nei form di login.
+\item[] \attribute{+ errorMsg:JSON} \\ Contiene l'eventuale errore ritornato dal service.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+login()} \\ Tramite il server richiede il login al back-end, quindi conferma l'avvenuta autenticazione o notifica l'eventuale errore.
 \end{itemize}
 
 \subsubsection{Classe LogoutController}
@@ -594,7 +602,7 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Model::CollectionModel}
+\item[$\bullet$] \class{Front-end::Services::CollectionService}
 \end{itemize}
 \end{itemize}
 
@@ -619,9 +627,14 @@ Assenti
 \hline
 \centerline{\textbf{UsersListController}}
 \\ \hline
- \\ 
+\code{+ email:JSON} \\
+\code{+ level:JSON} \\
+\code{+ id:JSON} \\
+\code{+ userError:Boolean} \\
+\code{+ formError:JSON} \\
 \hline
- \\ 
+\code{+createUser()} \\
+\code{+deleteUser(user:JSON)} \\
 \hline
 \end{tabular}
 \egroup
@@ -640,17 +653,32 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::UserService}
+\item[$\bullet$] \class{Front-end::Services::UserListService}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{+ email:JSON} \\ Contiene l'email di un utente iscritto
+\item[] \attribute{+ level:JSON} \\ Contiene il livello di autorizzazione di un utente, utente, admin o superAdmin
+\item[] \attribute{+ id:JSON} \\ Contiene l'ID di un utente
+\item[] \attribute{+ userError:Boolean} \\ Vale true se è presente un errore false altrimenti. Serve per gestire la visualizzazione del messaggio di errore nella pagina interessata.
+\item[] \attribute{+ formError:JSON} \\ Contiene l'eventuale errore ritornato dal service.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+createUser()} \\ Si occupa di creare un nuovo utente, impostando email, password e livello di autorizzazione.
+\item[] \method{+deleteUser(user:JSON)} \\ Cancella dal sistema l'utente passato come parametro.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{user:JSON} \\ Utente da eliminare.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe DocumentController}
@@ -685,8 +713,14 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::DocumentService}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -730,8 +764,14 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::CollectionListService}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -865,8 +905,14 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::ForgotPasswordService}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}

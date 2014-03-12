@@ -205,7 +205,6 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Middleware::Authentication}
 							\item{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
 							\item{Back-end::Lib::Controller::Middleware::NotFoundHandler}
 							\item{Back-end::Lib::Controller::Middleware::ErrorHandler}
@@ -258,8 +257,8 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
+							\item{Back-end::Lib::Controller::Middleware::Authentication}
 							\item{Back-end::Lib::Controller::Service::ServiceFactory}
-							\item{Back-end::Lib::Utils::MaapError}
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Controller::Service}
 	\paragraph{Informazioni sul package} 
@@ -322,6 +321,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 							\item{Back-end::Lib::Controller::Service::ProfileService}
 							\item{Back-end::Lib::Controller::Service::ShowService}
 							\item{Back-end::Lib::Controller::Service::ForgotService}
+							\item{Back-end::Lib::Controller::Service::CollectionListService}
 					\end{itemize}
 			\subparagraph{ProfileService}
 				
@@ -357,6 +357,16 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
 							\item{Back-end::Lib::View::ForgotMailView}
+					\end{itemize}
+			\subparagraph{CollectionListService}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe di gestione per la risorsa Collection. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata per gestire la risorsa corrispondente alle Collection, offrendo metodi per restituire tutte le collection presenti nell'applicazione.
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Model}
 	\paragraph{Informazioni sul package} 

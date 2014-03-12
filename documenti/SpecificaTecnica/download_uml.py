@@ -112,7 +112,7 @@ lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/package/F
 lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "uml/package/Front-end::Controllers.png")
 lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "uml/package/Front-end::Services.png")
 lucidchart.download_image("48ba-c3f8-52efbb7d-b3ee-3d760a008cac", "uml/package/Front-end::Model.png")
-
+lucidchart.download_image("4145e0c0-5320-6524-8aba-3b3e0a005c63", "uml/package/Front-end::View.png")
 
 # Design pattern - contestualizzazione
 

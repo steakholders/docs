@@ -628,7 +628,7 @@ l'uri
 l'userId
 Luzzati
 Maa
-Maap
+maap
 MaaP
 MaapError
 Maap's
@@ -636,6 +636,7 @@ MaaP's
 Maas
 MaaS
 Maccagnan
+Macintosh
 magic
 Magnitude
 Mahesh
@@ -979,7 +980,7 @@ runtime
 ruoli'
 Satisfied
 scaffold
-Scaffolding
+scaffolding
 Schemaless
 SCR
 Screen

@@ -6,42 +6,40 @@
 \cellcolor[gray]{0.9} \textbf{Classe e Metodo} & \cellcolor[gray]{0.9} \textbf{Test}
  \\ \hline
 Back-end::Lib::Controller::Middleware::Router::handler() &  \\ \hline
-Back-end::Lib::Controller::Middleware::Router::init() &  \\ \hline
+Back-end::Lib::Controller::Middleware::Router::init() & TU - 67 \\ \hline
 Back-end::Lib::Controller::Middleware::Authentication::handler() &  \\ \hline
 Back-end::Lib::Controller::Middleware::Authentication::authenticate() &  \\ \hline
 Back-end::Lib::Controller::Middleware::Authentication::init() &  \\ \hline
-Back-end::Lib::Controller::Middleware::Authentication::requireAdmin() &  \\ \hline
-Back-end::Lib::Controller::Middleware::ErrorHandler::handler() &  \\ \hline
+Back-end::Lib::Controller::Middleware::Authentication::requireLogged() & TU - 80 \\ \hline
+Back-end::Lib::Controller::Controller::ProfileController::login() & TU - 72 \\ \hline
 Back-end::Lib::Controller::Middleware::MiddlewareLoader::init() &  \\ \hline
-Back-end::Lib::Controller::Middleware::DSLLoaderHandler::init() &  \\ \hline
-Back-end::Lib::View::ForgotMailView::buildForgotMail() &  \\ \hline
-Back-end::Lib::Controller::Controller::ProfileController::login() &  \\ \hline
-Back-end::Lib::Controller::Middleware::DSLLoaderHandler::browseFileSystem() &  \\ \hline
+Back-end::Lib::Controller::Middleware::Authentication::requireAdmin() & TU - 79 \\ \hline
 Back-end::Lib::Controller::Controller::UserController::registerUser() & TU - 49 \\ \hline
 Back-end::Lib::Controller::Controller::UserController::insertUser() & TU - 50 \\ \hline
 Back-end::Lib::Controller::Controller::UserController::userIdShowPage() & TU - 51 \\ \hline
-Back-end::Lib::Controller::Controller::ForgotController::passwordResetRequest() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getCollectionController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getProfileController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getAuthController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getForgotController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getUserController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getShowController() &  \\ \hline
-Back-end::Lib::Controller::Controller::ControllerFactory::getIndexController() &  \\ \hline
 Back-end::Lib::Controller::Controller::UserController::updateLevel() & TU - 53 \\ \hline
 Back-end::Lib::Utils::Mailer::Mailer() & TU - 54 \\ \hline
-Back-end::Lib::Controller::Controller::ProfileController::logout() &  \\ \hline
 Back-end::Lib::Utils::Mailer::sendEmail() &  \\ \hline
-Back-end::Lib::Controller::Middleware::Authentication::requireLogged() &  \\ \hline
-Back-end::Lib::Controller::Middleware::Authentication::requireNotLogged() &  \\ \hline
-Back-end::Lib::Controller::Middleware::Authentication::requireSuperAdmin() &  \\ \hline
-Back-end::Lib::Controller::Middleware::NotFoundHandler::handler() &  \\ \hline
+Back-end::Lib::Controller::Middleware::Authentication::requireNotLogged() & TU - 81 \\ \hline
+Back-end::Lib::Controller::Middleware::Authentication::requireSuperAdmin() & TU - 82 \\ \hline
+Back-end::Lib::Controller::Controller::ForgotController::passwordResetRequest() & TU - 77 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::DSLCollectionModel() & TU - 28 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getCollectionName() & TU - 29 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getIndexModel() & TU - 30 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getShowModel() & TU - 31 \\ \hline
-Back-end::Lib::Controller::Controller::ProfileController::getProfile() &  \\ \hline
-Back-end::Lib::Controller::Controller::ProfileController::updatePassword() &  \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getCollectionController() & TU - 56 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getProfileController() & TU - 57 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getAuthController() & TU - 58 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getForgotController() & TU - 59 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getUserController() & TU - 60 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getShowController() & TU - 61 \\ \hline
+Back-end::Lib::Controller::Controller::ControllerFactory::getIndexController() & TU - 62 \\ \hline
+Back-end::Lib::View::ForgotMailView::buildForgotMail() & TU - 63 \\ \hline
+Back-end::Lib::Controller::Middleware::ErrorHandler::handler() & TU - 68 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::init() & TU - 66 \\ \hline
+Back-end::Lib::Controller::Controller::ProfileController::logout() & TU - 73 \\ \hline
+Back-end::Lib::Controller::Middleware::NotFoundHandler::handler() & TU - 76 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::browseFileSystem() & TU - 78 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::getErrors() & TU - 16 \\ \hline
 Back-end::Lib::Utils::MaapError::toString() & TU - 7 \\ \hline
 Back-end::Lib::Model::UserModel::\underline{getUserById}() & TU - 24 \\ \hline
@@ -56,8 +54,6 @@ Back-end::Lib::Config::getEnvironment() &  \\ \hline
 Back-end::Lib::Config::getDataDbUri() &  \\ \hline
 Back-end::Lib::Config::getSmtpService() &  \\ \hline
 Back-end::Lib::Config::getSmtpAuth() &  \\ \hline
-Back-end::Lib::Controller::Controller::ShowController::getShowPage() &  \\ \hline
-Back-end::Lib::Controller::Controller::ShowController::deleteDocument() &  \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::registerCollection() & TU - 14 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::getCollectionModel() & TU - 15 \\ \hline
 Back-end::Lib::Model::UserModel::\underline{registerUser}() & TU - 19 \\ \hline
@@ -69,6 +65,10 @@ Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter::
 Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter::loadDSLFile() & TU - 27 \\ \hline
 Back-end::Lib::Utils::MaapError::toError() & TU - 8 \\ \hline
 Back-end::Lib::Controller::Controller::UserController::usersList() & TU - 52 \\ \hline
+Back-end::Lib::Controller::Controller::ShowController::getShowPage() & TU - 67 \\ \hline
+Back-end::Lib::Controller::Controller::ShowController::deleteDocument() & TU - 71 \\ \hline
+Back-end::Lib::Controller::Controller::ProfileController::getProfile() & TU - 74 \\ \hline
+Back-end::Lib::Controller::Controller::ProfileController::updatePassword() & TU - 75 \\ \hline
 Back-end::Lib::Model::DSLModel::Attribute::getLabel() & TU - 43 \\ \hline
 Back-end::Lib::Model::DSLModel::Attribute::getName() & TU - 44 \\ \hline
 Back-end::Lib::Model::DSLModel::ShowModel::ShowModel() & TU - 38 \\ \hline
@@ -97,6 +97,7 @@ Back-end::Lib::Model::DSLModel::Attribute::Attribute() & TU - 42 \\ \hline
 Back-end::Lib::Model::DSLModel::Attribute::isSortable() & TU - 47 \\ \hline
 Back-end::Lib::Controller::Controller::UserController::deleteUser() & TU - 48 \\ \hline
 Back-end::Lib::Controller::Controller::IndexController::getIndexPage() & TU - 54 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::DSLLoaderHandler() & TU - 63 \\ \hline
 \caption{Metodi-Test}
 \end{longtable}
 \egroup

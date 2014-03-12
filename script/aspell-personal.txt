@@ -100,6 +100,7 @@ Custom
 DOM
 DP
 DSLCollectionModel
+DSLConcreteStrategy
 DSLDomain
 DSLInterpreterStrategy
 DSLLoaderHandler
@@ -429,6 +430,7 @@ ServerApp
 ServerLoader
 Short
 ShowPageEdit
+Sign
 Simple
 Skype
 Social
@@ -534,8 +536,6 @@ all'indexModel
 all'upload
 all'userId
 altresì
-Amazon
-Amm
 an
 anchor
 and
@@ -685,9 +685,6 @@ draw
 driven
 dsgfdgfg
 dsl
-DslCollectionModel
-DSLCollectionModel
-DSLConcreteStrategy
 dslDomain
 dslmodel
 duck
@@ -717,7 +714,6 @@ err
 errback
 error
 errorMiddleware
-ErrorModel
 errorMsg
 errorRegistry
 evaluation
@@ -749,18 +745,13 @@ for
 forgot
 forgotController
 form
-format
-Formed
 formError
-Fornari
-Foundation
+format
 fowler'
 framework
 friendly
 from
 frontend
-FTP
-Fulfilled
 function
 funzionalit
 games
@@ -773,9 +764,9 @@ getAuthController
 getCollectionController
 getCollectionModel
 getCollectionName
+getDSLPath
 getData
 getDataDbUri
-getDSLPath
 getEnvironment
 getErrors
 getForgotController
@@ -816,6 +807,7 @@ header
 height
 hh
 home
+homepage
 html
 ideal
 improvement
@@ -926,12 +918,7 @@ monadic
 mongoose
 monospace
 month
-Motivation
-Mozilla
 msg
-MU
-Multiplier
-Must
 mvc
 mygray
 mygreen
@@ -1007,8 +994,6 @@ pollution
 polyadic
 populate
 popup
-Portability
-Portable
 position
 possible
 potr
@@ -1059,8 +1044,6 @@ register
 registerCollection
 registerUser
 registry
-Relationship
-Reliability
 remove
 rendering
 repl
@@ -1277,4 +1260,5 @@ ybar
 year
 ylabel
 you
+your
 yyyy

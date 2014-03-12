@@ -4,17 +4,9 @@
 		\begin{figure}[H] 
 			\begin{center} 
 				\includegraphics[width=\textwidth]{uml/package/Back-end.png}  
-				\caption{Diagramma dei packages Back-end}
+				\caption{Componente Back-end}
 			\end{center}  
 		\end{figure} 
-		
-		\begin{figure}[H] 
-			\begin{center} 
-				\includegraphics[width=\textwidth]{uml/classi/Back-end.png}  
-				\caption{Diagramma delle classi Back-end}
-			\end{center}  
-		\end{figure} 
-		
 	\subparagraph{Descrizione} 
 		\begin{itemize}
 		\item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria.
@@ -28,7 +20,7 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.18]{uml/package/Back-end::DeveloperProject.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::DeveloperProject.png}  
 				\caption{Componente DeveloperProject}
 			\end{center}  
 		\end{figure} 
@@ -74,7 +66,7 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.24]{uml/package/Back-end::Lib.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib.png}  
 				\caption{Componente Lib}
 			\end{center}  
 		\end{figure} 
@@ -126,7 +118,7 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::View.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::View.png}  
 				\caption{Componente View}
 			\end{center}  
 		\end{figure} 
@@ -151,7 +143,7 @@ password.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::Controller.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Controller.png}  
 				\caption{Componente Controller}
 			\end{center}  
 		\end{figure} 
@@ -161,7 +153,7 @@ password.
 		\end{itemize} 
 		\subparagraph{Package contenuti} 
 		\begin{itemize}
-				\item Controller
+				\item Service
 				\item Middleware
 		\end{itemize}
 	\subsubsection{Back-end::Lib::Controller::Middleware}
@@ -182,8 +174,8 @@ del \glossario{Back-end} .
 		\end{itemize} 
 	\subparagraph{Interazioni con altri componenti} 
 		\begin{itemize} 
+				\item Back-end::Lib::Controller::Service
 				\item Back-end::Lib::Model
-				\item Back-end::Lib::Controller::Controller
 				\item Back-end::Lib::Model::DSLModel  
 		\end{itemize} 
 		\paragraph{Classi}
@@ -266,15 +258,15 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Controller::ControllerFactory}
+							\item{Back-end::Lib::Controller::Service::ServiceFactory}
 							\item{Back-end::Lib::Utils::MaapError}
 					\end{itemize}
-	\subsubsection{Back-end::Lib::Controller::Controller}
+	\subsubsection{Back-end::Lib::Controller::Service}
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.2]{uml/package/Back-end::Lib::Controller::Controller.png}  
-				\caption{Componente Controller}
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Controller::Service.png}  
+				\caption{Componente Service}
 			\end{center}  
 		\end{figure} 
 	\subparagraph{Descrizione} 
@@ -290,7 +282,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 				\item Back-end::Lib::Utils  
 		\end{itemize} 
 		\paragraph{Classi}
-			\subparagraph{UserController}
+			\subparagraph{UserService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -300,7 +292,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\begin{itemize}
 						\item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
 					\end{itemize}
-			\subparagraph{IndexController}
+			\subparagraph{IndexService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -313,7 +305,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 						\item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituirne gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
 
 					\end{itemize}
-			\subparagraph{ControllerFactory}
+			\subparagraph{ServiceFactory}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -325,23 +317,13 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Controller::UserController}
-							\item{Back-end::Lib::Controller::Controller::IndexController}
-							\item{Back-end::Lib::Controller::Controller::ShowController}
-							\item{Back-end::Lib::Controller::Controller::ProfileController}
-							\item{Back-end::Lib::Controller::Controller::ForgotController}
+							\item{Back-end::Lib::Controller::Service::UserService}
+							\item{Back-end::Lib::Controller::Service::IndexService}
+							\item{Back-end::Lib::Controller::Service::ProfileService}
+							\item{Back-end::Lib::Controller::Service::ShowService}
+							\item{Back-end::Lib::Controller::Service::ForgotService}
 					\end{itemize}
-			\subparagraph{ShowController}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
-					\end{itemize}
-			\subparagraph{ProfileController}
+			\subparagraph{ProfileService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -352,7 +334,17 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\begin{itemize}
 						\item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT. Viene anche utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
 					\end{itemize}
-			\subparagraph{ForgotController}
+			\subparagraph{ShowService}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
+					\end{itemize}
+			\subparagraph{ForgotService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -370,7 +362,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.16]{uml/package/Back-end::Lib::Model.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Model.png}  
 				\caption{Componente Model}
 			\end{center}  
 		\end{figure} 
@@ -520,7 +512,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.2]{uml/package/Back-end::Lib::Utils.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Utils.png}  
 				\caption{Componente Utils}
 			\end{center}  
 		\end{figure} 

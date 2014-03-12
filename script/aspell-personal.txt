@@ -74,6 +74,7 @@ Astah
 at
 attivita
 attribute
+attributeReference
 attributes
 audit
 authController
@@ -106,10 +107,12 @@ blabla
 black
 bodyParser
 Boilerplate
+boolean
 Boolean
 bottom
 bower
 branch
+break
 breakatwhitespace
 breaklines
 Broken
@@ -168,15 +171,19 @@ CollectionListService
 CollectionModel
 collectionName
 CollectionPage
+collectionQuery
+collectionReference
 collections
 CollectionService
 colorlinks
 column
+columnLabel
 columns
 com
 combo
 comes
 command
+comment
 commentstyle
 commisurabili
 commit
@@ -185,7 +192,6 @@ Compiler
 Compito'
 Complex
 complexity
-Complexity
 components
 comprehension
 compress
@@ -239,6 +245,7 @@ cyan
 dall
 dall'admin
 dall'Admin
+darkgray
 dashboard
 DashboardController
 DashboardPage
@@ -500,10 +507,13 @@ Ian
 IDE
 ideal
 Identifier
+identifierstyle
 IEC
 IEEE
+if
 Image
 Imaging
+implements
 Important
 improvement
 Inclusion
@@ -562,12 +572,14 @@ Karner
 keepspaces
 Kernel
 keyword
+keywords
 keywordstyle
 Kile
 label
 l'admin
 l'Admin
 lang
+language
 Language
 l'application
 l'array
@@ -589,6 +601,7 @@ l'Environmental
 level
 lib
 LIFO
+lightgray
 like
 limit
 l'index
@@ -697,6 +710,8 @@ MongoDB
 mongoose
 monospace
 month
+morecomment
+morestring
 Motivation
 Mozilla
 msg
@@ -711,6 +726,8 @@ mygreen
 name
 namespace
 ND
+ndkeywords
+ndkeywordstyle
 nell
 nell'array
 nell'index
@@ -876,6 +893,7 @@ projects
 Protocol
 pt
 public
+purple
 purpose
 push
 PUT
@@ -949,6 +967,7 @@ review
 Rework
 RF
 RFC
+rgb
 RGB
 Rice
 Richard
@@ -967,7 +986,8 @@ rounded
 router
 routine's
 routing
-Row
+row
+rowLabel
 RP
 RPC
 RQ
@@ -1125,9 +1145,11 @@ the
 then
 theory
 Third
+this
 thread
 three
 threshold
+throw
 tick
 ticketing
 tier
@@ -1157,6 +1179,7 @@ true
 TS
 two
 txt
+typeof
 typing
 Typology
 Ubuntu
@@ -1220,6 +1243,7 @@ Validation
 validatore
 Value
 Values
+var
 Vardanega
 Variance
 Ver
@@ -1246,6 +1270,7 @@ WebServer
 Well
 whatever
 where
+while
 Wide
 wiki
 windows

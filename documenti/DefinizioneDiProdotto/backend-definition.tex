@@ -334,7 +334,7 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+init(app:ServerApp)} \\ Metodo che inserisce in ogni richiesta un riferimento all'applicazione rendendolo accedibile  tramite /code{req.app}. \\
+\item[] \method{+init(app:ServerApp)} \\ Metodo che inserisce in ogni richiesta un riferimento all'applicazione rendendolo accedibile tramite /code{req.app}. \\
 Inizializza tutti i middleware richiamando i corrispondenti metodi init.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
@@ -475,7 +475,7 @@ Inizializza tutti i middleware richiamando i corrispondenti metodi init.
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::ControllerFactory}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ControllerFactory}
 \item[$\bullet$] \class{Back-end::Lib::Utils::MaapError}
 \end{itemize}
 \end{itemize}
@@ -666,7 +666,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsection{Componente Back-end::Lib::Controller::Controller}
+\subsection{Componente Back-end::Lib::Controller::Service}
 
 \subsubsection{Classe ControllerFactory}
 
@@ -711,11 +711,11 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::ForgotController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::ProfileController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::UserController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::ShowController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Controller::IndexController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ForgotController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ProfileController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::UserController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ShowController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::IndexController}
 \end{itemize}
 \end{itemize}
 

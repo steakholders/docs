@@ -4,17 +4,9 @@
 		\begin{figure}[H] 
 			\begin{center} 
 				\includegraphics[width=\textwidth]{uml/package/Back-end.png}  
-				\caption{Diagramma dei packages Back-end}
+				\caption{Componente Back-end}
 			\end{center}  
 		\end{figure} 
-		
-		\begin{figure}[H] 
-			\begin{center} 
-				\includegraphics[width=\textwidth]{uml/classi/Back-end.png}  
-				\caption{Diagramma delle classi Back-end}
-			\end{center}  
-		\end{figure} 
-		
 	\subparagraph{Descrizione} 
 		\begin{itemize}
 		\item[] \glossario{Package} che racchiude tutta la componente di \glossario{Back-end}. Comprende la libreria dell'applicazione \textit{MaaP} e il package del progetto sviluppato dal developer che andrà ad utilizzare tale libreria.
@@ -28,7 +20,7 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.18]{uml/package/Back-end::DeveloperProject.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::DeveloperProject.png}  
 				\caption{Componente DeveloperProject}
 			\end{center}  
 		\end{figure} 
@@ -74,7 +66,7 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.24]{uml/package/Back-end::Lib.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib.png}  
 				\caption{Componente Lib}
 			\end{center}  
 		\end{figure} 
@@ -126,7 +118,7 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::View.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::View.png}  
 				\caption{Componente View}
 			\end{center}  
 		\end{figure} 
@@ -151,7 +143,7 @@ password.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::Controller.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Controller.png}  
 				\caption{Componente Controller}
 			\end{center}  
 		\end{figure} 
@@ -161,7 +153,7 @@ password.
 		\end{itemize} 
 		\subparagraph{Package contenuti} 
 		\begin{itemize}
-				\item Controller
+				\item Service
 				\item Middleware
 		\end{itemize}
 	\subsubsection{Back-end::Lib::Controller::Middleware}
@@ -182,8 +174,8 @@ del \glossario{Back-end} .
 		\end{itemize} 
 	\subparagraph{Interazioni con altri componenti} 
 		\begin{itemize} 
+				\item Back-end::Lib::Controller::Service
 				\item Back-end::Lib::Model
-				\item Back-end::Lib::Controller::Controller
 				\item Back-end::Lib::Model::DSLModel  
 		\end{itemize} 
 		\paragraph{Classi}
@@ -266,15 +258,15 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Controller::ControllerFactory}
+							\item{Back-end::Lib::Controller::Service::ControllerFactory}
 							\item{Back-end::Lib::Utils::MaapError}
 					\end{itemize}
-	\subsubsection{Back-end::Lib::Controller::Controller}
+	\subsubsection{Back-end::Lib::Controller::Service}
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.2]{uml/package/Back-end::Lib::Controller::Controller.png}  
-				\caption{Componente Controller}
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Controller::Service.png}  
+				\caption{Componente Service}
 			\end{center}  
 		\end{figure} 
 	\subparagraph{Descrizione} 
@@ -325,11 +317,11 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Controller::UserController}
-							\item{Back-end::Lib::Controller::Controller::IndexController}
-							\item{Back-end::Lib::Controller::Controller::ShowController}
-							\item{Back-end::Lib::Controller::Controller::ProfileController}
-							\item{Back-end::Lib::Controller::Controller::ForgotController}
+							\item{Back-end::Lib::Controller::Service::UserController}
+							\item{Back-end::Lib::Controller::Service::IndexController}
+							\item{Back-end::Lib::Controller::Service::ShowController}
+							\item{Back-end::Lib::Controller::Service::ProfileController}
+							\item{Back-end::Lib::Controller::Service::ForgotController}
 					\end{itemize}
 			\subparagraph{ShowController}
 				
@@ -370,7 +362,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.16]{uml/package/Back-end::Lib::Model.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Model.png}  
 				\caption{Componente Model}
 			\end{center}  
 		\end{figure} 
@@ -520,7 +512,7 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.2]{uml/package/Back-end::Lib::Utils.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Utils.png}  
 				\caption{Componente Utils}
 			\end{center}  
 		\end{figure} 

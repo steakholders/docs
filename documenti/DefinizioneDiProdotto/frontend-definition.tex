@@ -118,7 +118,7 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe DocumentService}
+\subsubsection{Classe ShowService}
 
 \begin{table}[H]
 \begin{center}
@@ -127,7 +127,7 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{DocumentService}}
+\centerline{\textbf{ShowService}}
 \\ \hline
  \\ 
 \hline
@@ -135,7 +135,7 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 \hline
 \end{tabular}
 \egroup
-\caption{Classe DocumentService}
+\caption{Classe ShowService}
 \end{center}
 \end{table}
 
@@ -156,14 +156,8 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-\begin{itemize}
-
-
-\item[] Utilizza le classi:
-\begin{itemize}
-\item[$\bullet$] \class{Front-end::Model::DocumentModel}
-\end{itemize}
-\end{itemize}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -226,7 +220,7 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe CollectionService}
+\subsubsection{Classe IndexService}
 
 \begin{table}[H]
 \begin{center}
@@ -235,7 +229,7 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{CollectionService}}
+\centerline{\textbf{IndexService}}
 \\ \hline
  \\ 
 \hline
@@ -243,7 +237,7 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 \hline
 \end{tabular}
 \egroup
-\caption{Classe CollectionService}
+\caption{Classe IndexService}
 \end{center}
 \end{table}
 
@@ -263,7 +257,7 @@ Tali funzionalità richiedono che l'utente sia autenticato al sistema.
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Model::CollectionModel}
+\item[$\bullet$] \class{Front-end::Model::IndexModel}
 \end{itemize}
 \end{itemize}
 
@@ -329,7 +323,7 @@ Tale funzionalità richiede che l'utente sia un admin.
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe CollectionListService}
+\subsubsection{Classe IndexListService}
 
 \begin{table}[H]
 \begin{center}
@@ -338,7 +332,7 @@ Tale funzionalità richiede che l'utente sia un admin.
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{CollectionListService}}
+\centerline{\textbf{IndexListService}}
 \\ \hline
  \\ 
 \hline
@@ -346,13 +340,13 @@ Tale funzionalità richiede che l'utente sia un admin.
 \hline
 \end{tabular}
 \egroup
-\caption{Classe CollectionListService}
+\caption{Classe IndexListService}
 \end{center}
 \end{table}
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] Questa classe permette il recupero delle risorse REST rappresentanti le Collections tramite la chiamata /collections
+\item[] Questa classe permette il recupero delle risorse REST rappresentanti le Collections tramite la chiamata / collections.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -367,7 +361,7 @@ Tale funzionalità richiede che l'utente sia registrato.
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Model::CollectionListModel}
+\item[$\bullet$] \class{Front-end::Model::IndexListModel}
 \end{itemize}
 \end{itemize}
 
@@ -416,8 +410,14 @@ Tale funzionalità richiede che l'utente sia registrato.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::View::LoginView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -462,8 +462,14 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::View::LogoutView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -507,8 +513,15 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::ForgotPasswordService}
+\item[$\bullet$] \class{Front-end::View::ForgotResetView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -565,7 +578,7 @@ Assenti
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe CollectionController}
+\subsubsection{Classe IndexController}
 
 \begin{table}[H]
 \begin{center}
@@ -574,7 +587,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{CollectionController}}
+\centerline{\textbf{IndexController}}
 \\ \hline
  \\ 
 \hline
@@ -582,7 +595,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe CollectionController}
+\caption{Classe IndexController}
 \end{center}
 \end{table}
 
@@ -593,7 +606,7 @@ Assenti
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Utilizza la classe \texttt{Front-End::Services::CollectionService} per popolare correttamente la classe \texttt{Front-End::Model::CollectionModel}. Quest'ultima fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina di visualizzazione di tutti i \glossario{Document}, popolando correttamente lo scope.
+\item[] Utilizza la classe \texttt{Front-End::Services::IndexService} per popolare correttamente la classe \texttt{Front-End::Model::IndexModel}. Quest'ultima fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina di visualizzazione di tutti i \glossario{Document}, popolando correttamente lo scope.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -602,7 +615,8 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Services::CollectionService}
+\item[$\bullet$] \class{Front-end::Services::IndexService}
+\item[$\bullet$] \class{Front-end::View::IndexView}
 \end{itemize}
 \end{itemize}
 
@@ -660,6 +674,7 @@ Assenti
 \begin{itemize}
 \item[$\bullet$] \class{Front-end::Services::UserService}
 \item[$\bullet$] \class{Front-end::Services::UserListService}
+\item[$\bullet$] \class{Front-end::View::UserListView}
 \end{itemize}
 \end{itemize}
 
@@ -681,7 +696,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe DocumentController}
+\subsubsection{Classe ShowController}
 
 \begin{table}[H]
 \begin{center}
@@ -690,7 +705,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{DocumentController}}
+\centerline{\textbf{ShowController}}
 \\ \hline
  \\ 
 \hline
@@ -698,7 +713,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe DocumentController}
+\caption{Classe ShowController}
 \end{center}
 \end{table}
 
@@ -709,7 +724,7 @@ Assenti
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Utilizza la classe \texttt{Front-End::Services::DocumentService} per popolare correttamente la classe \texttt{Front-End::Model::DocumentModel}, la quale fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
+\item[] Utilizza la classe \texttt{Front-End::Services::ShowService} per popolare correttamente la classe \texttt{Front-End::Model::ShowModel}, la quale fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -718,7 +733,9 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Services::DocumentService}
+\item[$\bullet$] \class{Front-end::Services::ShowService}
+\item[$\bullet$] \class{Front-end::Model::ShowModel}
+\item[$\bullet$] \class{Front-end::View::ShowView}
 \end{itemize}
 \end{itemize}
 
@@ -769,7 +786,8 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Services::CollectionListService}
+\item[$\bullet$] \class{Front-end::Services::IndexListService}
+\item[$\bullet$] \class{Front-end::View::DashboardView}
 \end{itemize}
 \end{itemize}
 
@@ -783,7 +801,7 @@ Assenti
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe DocumentEditController}
+\subsubsection{Classe ShowEditController}
 
 \begin{table}[H]
 \begin{center}
@@ -792,7 +810,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{DocumentEditController}}
+\centerline{\textbf{ShowEditController}}
 \\ \hline
  \\ 
 \hline
@@ -800,7 +818,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe DocumentEditController}
+\caption{Classe ShowEditController}
 \end{center}
 \end{table}
 
@@ -811,12 +829,18 @@ Assenti
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Utilizza la classe \texttt{Front-End::Services::DocumentService} per popolare correttamente la classe \texttt{Front-End::Model::DocumentModel} con i dati del \glossario{Document} richiesto. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà ottenere i dati e generare la pagina di modifica di un \glossario{Document} popolando correttamente lo scope.
+\item[] Utilizza la classe \texttt{Front-End::Services::ShowService} per popolare correttamente la classe \texttt{Front-End::Model::ShowModel} con i dati del \glossario{Document} richiesto. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà ottenere i dati e generare la pagina di modifica di un \glossario{Document} popolando correttamente lo scope.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::View::ShowEditView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -860,8 +884,15 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::Services::ProfileService}
+\item[$\bullet$] \class{Front-end::View::ProfileView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -910,7 +941,7 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Front-end::Services::ForgotPasswordService}
+\item[$\bullet$] \class{Front-end::View::ProfileEditView}
 \end{itemize}
 \end{itemize}
 
@@ -956,8 +987,14 @@ Assenti
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
+\begin{itemize}
+
+
+\item[] Utilizza le classi:
+\begin{itemize}
+\item[$\bullet$] \class{Front-end::View::UserView}
+\end{itemize}
+\end{itemize}
 
 \paragraph*{Attributi}
 \begin{itemize}
@@ -982,7 +1019,9 @@ Assenti
 \hline
 \centerline{\textbf{ErrorModel}}
 \\ \hline
- \\ 
+\code{+ type:String} \\
+\code{+ title:String} \\
+\code{+ Content:String} \\
 \hline
  \\ 
 \hline
@@ -1008,7 +1047,9 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{+ type:String} \\ Definisce se si tratta di un messaggio di conferma o di errore.
+\item[] \attribute{+ title:String} \\ Contiene il titolo del messaggio di alert.
+\item[] \attribute{+ Content:String} \\ Contiene il messaggio d'allerta.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1196,7 +1237,7 @@ Assenti
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe CollectionModel}
+\subsubsection{Classe IndexModel}
 
 \begin{table}[H]
 \begin{center}
@@ -1205,7 +1246,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{CollectionModel}}
+\centerline{\textbf{IndexModel}}
 \\ \hline
  \\ 
 \hline
@@ -1213,7 +1254,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe CollectionModel}
+\caption{Classe IndexModel}
 \end{center}
 \end{table}
 
@@ -1241,7 +1282,7 @@ Assenti
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe DocumentModel}
+\subsubsection{Classe ShowModel}
 
 \begin{table}[H]
 \begin{center}
@@ -1250,7 +1291,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{DocumentModel}}
+\centerline{\textbf{ShowModel}}
 \\ \hline
  \\ 
 \hline
@@ -1258,7 +1299,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe DocumentModel}
+\caption{Classe ShowModel}
 \end{center}
 \end{table}
 
@@ -1269,7 +1310,7 @@ Assenti
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette al DocumentService e al DocumentController di poter accedere agli attributi del Document.
+\item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette al ShowService e al ShowController di poter accedere agli attributi del Document.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -1286,7 +1327,7 @@ Assenti
 \item[] Assenti
 \end{itemize}
 
-\subsubsection{Classe CollectionListModel}
+\subsubsection{Classe IndexListModel}
 
 \begin{table}[H]
 \begin{center}
@@ -1295,7 +1336,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{CollectionListModel}}
+\centerline{\textbf{IndexListModel}}
 \\ \hline
  \\ 
 \hline
@@ -1303,7 +1344,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe CollectionListModel}
+\caption{Classe IndexListModel}
 \end{center}
 \end{table}
 
@@ -1314,7 +1355,549 @@ Assenti
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla CollectionListService e alla DashboardController di poter accedere alla lista delle Collections.
+\item[] Fornisce una rappresentazione sotto forma di oggetto delle informazioni scambiate con il back-end e permette alla IndexListService e alla DashboardController di poter accedere alla lista delle Collections.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsection{Componente Front-end::View}
+
+\subsubsection{Classe IndexView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{IndexView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe IndexView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ShowEditView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ShowEditView}}
+\\ \hline
+\code{+ fields:[0 ... *] Object} \\
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ShowEditView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Questa classe si occupa di visualizzare la pagina di modifica di un Document. Nel suo \texttt{scope} presenta tutti gli attributi modificabili del Document, editabili tramite un campo di testo.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata nel front-end per popolare il template html della pagina di modifica di un Document.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] \attribute{+ fields:[0 ... *] Object} \\ Questo campo dati rappresenta l'array di attributi del Document che possono essere modificati. Nella view corrisponderanno ai campi di testo editabili.
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ShowView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ShowView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ShowView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ForgotRequestView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ForgotRequestView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ForgotRequestView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe DashboardView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{DashboardView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe DashboardView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe UserListView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{UserListView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe UserListView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe UserView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{UserView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe UserView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe LoginView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{LoginView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe LoginView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ProfileView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ProfileView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ProfileView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe LogoutView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{LogoutView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe LogoutView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ForgotResetView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ForgotResetView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ForgotResetView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\subsubsection{Classe ProfileEditView}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{ProfileEditView}}
+\\ \hline
+ \\ 
+\hline
+ \\ 
+\hline
+\end{tabular}
+\egroup
+\caption{Classe ProfileEditView}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] 
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] 
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}

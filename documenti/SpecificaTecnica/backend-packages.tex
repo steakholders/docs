@@ -205,7 +205,6 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Middleware::Authentication}
 							\item{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
 							\item{Back-end::Lib::Controller::Middleware::NotFoundHandler}
 							\item{Back-end::Lib::Controller::Middleware::ErrorHandler}
@@ -258,8 +257,8 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Service::ControllerFactory}
-							\item{Back-end::Lib::Utils::MaapError}
+							\item{Back-end::Lib::Controller::Middleware::Authentication}
+							\item{Back-end::Lib::Controller::Service::ServiceFactory}
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Controller::Service}
 	\paragraph{Informazioni sul package} 
@@ -282,7 +281,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 				\item Back-end::Lib::Utils  
 		\end{itemize} 
 		\paragraph{Classi}
-			\subparagraph{UserController}
+			\subparagraph{UserService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -292,7 +291,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\begin{itemize}
 						\item[] Viene utilizzata per visualizzare la \glossario{index-page} degli utenti, visualizzare le relative \glossario{show-page}, eliminare un utente e modificare il profilo. Mette a disposizione dei metodi per effettuare tutte queste operazioni.
 					\end{itemize}
-			\subparagraph{IndexController}
+			\subparagraph{IndexService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -305,7 +304,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 						\item[] Viene utilizzata per gestire la risorsa corrispondente all'index-page di un \glossario{Document}, offrendo metodi per restituirne gli attributi, effettuarne la modifica o la cancellazione e delega la visualizzazione dell'index-page alla classe \texttt{Back-end::Lib::DSLModel::DSLDomain}.
 
 					\end{itemize}
-			\subparagraph{ControllerFactory}
+			\subparagraph{ServiceFactory}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -317,23 +316,14 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Service::UserController}
-							\item{Back-end::Lib::Controller::Service::IndexController}
-							\item{Back-end::Lib::Controller::Service::ShowController}
-							\item{Back-end::Lib::Controller::Service::ProfileController}
-							\item{Back-end::Lib::Controller::Service::ForgotController}
+							\item{Back-end::Lib::Controller::Service::UserService}
+							\item{Back-end::Lib::Controller::Service::IndexService}
+							\item{Back-end::Lib::Controller::Service::ProfileService}
+							\item{Back-end::Lib::Controller::Service::ShowService}
+							\item{Back-end::Lib::Controller::Service::ForgotService}
+							\item{Back-end::Lib::Controller::Service::CollectionListService}
 					\end{itemize}
-			\subparagraph{ShowController}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
-					\end{itemize}
-			\subparagraph{ProfileController}
+			\subparagraph{ProfileService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -344,7 +334,17 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\begin{itemize}
 						\item[] Viene utilizzata per visualizzare il profilo dell'utente, tramite GET, e per editarlo tramite PUT. Viene anche utilizzata per gestire i dati di e le operazioni relativi all'autenticazione utente e al suo logout dall'applicazione, occupandosi della creazione della sessione utente e della sua distruzione tramite \glossario{cookies}.
 					\end{itemize}
-			\subparagraph{ForgotController}
+			\subparagraph{ShowService}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che si occupa della gestione della risorsa show-page. È uno dei componenti \textit{product} del \glossario{Design Pattern} \glossario{Factory method}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata per gestire una richiesta della risorsa show-page, delegando alla classe \textit{Back-end::Lib::DSLModel::DSLDomain} il compito di eseguire la query e restituire i dati in formato JSON.
+					\end{itemize}
+			\subparagraph{ForgotService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -357,6 +357,16 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
 							\item{Back-end::Lib::View::ForgotMailView}
+					\end{itemize}
+			\subparagraph{CollectionListService}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe di gestione per la risorsa Collection. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata per gestire la risorsa corrispondente alle Collection, offrendo metodi per restituire tutte le collection presenti nell'applicazione.
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Model}
 	\paragraph{Informazioni sul package} 

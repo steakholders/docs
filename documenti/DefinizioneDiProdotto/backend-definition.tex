@@ -319,7 +319,6 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Authentication}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Router}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::NotFoundHandler}
 \item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
@@ -475,8 +474,8 @@ Inizializza tutti i middleware richiamando i corrispondenti metodi init.
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ControllerFactory}
-\item[$\bullet$] \class{Back-end::Lib::Utils::MaapError}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Middleware::Authentication}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ServiceFactory}
 \end{itemize}
 \end{itemize}
 
@@ -668,7 +667,7 @@ Assenti
 
 \subsection{Componente Back-end::Lib::Controller::Service}
 
-\subsubsection{Classe ControllerFactory}
+\subsubsection{Classe ServiceFactory}
 
 \begin{table}[H]
 \begin{center}
@@ -677,7 +676,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{ControllerFactory}}
+\centerline{\textbf{ServiceFactory}}
 \\ \hline
  \\ 
 \hline
@@ -691,7 +690,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe ControllerFactory}
+\caption{Classe ServiceFactory}
 \end{center}
 \end{table}
 
@@ -711,11 +710,12 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ForgotController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ProfileController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::UserController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ShowController}
-\item[$\bullet$] \class{Back-end::Lib::Controller::Service::IndexController}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ForgotService}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ProfileService}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::UserService}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::ShowService}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::IndexService}
+\item[$\bullet$] \class{Back-end::Lib::Controller::Service::CollectionListService}
 \end{itemize}
 \end{itemize}
 
@@ -756,7 +756,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe ForgotController}
+\subsubsection{Classe ForgotService}
 
 \begin{table}[H]
 \begin{center}
@@ -765,7 +765,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{ForgotController}}
+\centerline{\textbf{ForgotService}}
 \\ \hline
  \\ 
 \hline
@@ -773,7 +773,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe ForgotController}
+\caption{Classe ForgotService}
 \end{center}
 \end{table}
 
@@ -812,7 +812,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe ProfileController}
+\subsubsection{Classe ProfileService}
 
 \begin{table}[H]
 \begin{center}
@@ -821,7 +821,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{ProfileController}}
+\centerline{\textbf{ProfileService}}
 \\ \hline
  \\ 
 \hline
@@ -832,7 +832,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe ProfileController}
+\caption{Classe ProfileService}
 \end{center}
 \end{table}
 
@@ -884,7 +884,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe UserController}
+\subsubsection{Classe UserService}
 
 \begin{table}[H]
 \begin{center}
@@ -893,7 +893,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{UserController}}
+\centerline{\textbf{UserService}}
 \\ \hline
  \\ 
 \hline
@@ -906,7 +906,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe UserController}
+\caption{Classe UserService}
 \end{center}
 \end{table}
 
@@ -969,7 +969,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe ShowController}
+\subsubsection{Classe ShowService}
 
 \begin{table}[H]
 \begin{center}
@@ -978,7 +978,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{ShowController}}
+\centerline{\textbf{ShowService}}
 \\ \hline
  \\ 
 \hline
@@ -987,7 +987,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe ShowController}
+\caption{Classe ShowService}
 \end{center}
 \end{table}
 
@@ -1026,7 +1026,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe IndexController}
+\subsubsection{Classe IndexService}
 
 \begin{table}[H]
 \begin{center}
@@ -1035,7 +1035,7 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{IndexController}}
+\centerline{\textbf{IndexService}}
 \\ \hline
  \\ 
 \hline
@@ -1043,7 +1043,7 @@ Assenti
 \hline
 \end{tabular}
 \egroup
-\caption{Classe IndexController}
+\caption{Classe IndexService}
 \end{center}
 \end{table}
 
@@ -1072,6 +1072,63 @@ Assenti
 \paragraph*{Metodi}
 \begin{itemize}
 \item[] \method{+getIndexPage(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo si occupa di andare a prelevare il \code{Back-end::Lib::Model::DSLModel::DSLCollectionModel} eseguendo una ricerca all'interno del registro della classe \code{Back-end::Lib::Model::DSLModel::DSLDomain}. Se la ricerca ha successo, viene restituita una \code{DSLCollectionModel}. A questo punto si ottiene l' \code{indexModel} dal \code{DSLCollectionModel} e da quest'ultimo viene richiesta la rappresentazione della index-page in formato json, il quale viene utilizzato come risposta del server.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Classe CollectionListService}
+
+\begin{table}[H]
+\begin{center}
+\bgroup
+\setlength{\arrayrulewidth}{0.6mm}
+\def\arraystretch{1}
+\begin{tabular}{ | p{12cm} | }
+\hline
+\centerline{\textbf{CollectionListService}}
+\\ \hline
+ \\ 
+\hline
+\code{+list(req:Request, res:Response, next:function(MaapError))} \\
+\code{+getDashboard(req:Request, res:Response, next:function(MaapError))} \\
+\hline
+\end{tabular}
+\egroup
+\caption{Classe CollectionListService}
+\end{center}
+\end{table}
+
+\paragraph*{Descrizione}
+\begin{itemize}
+\item[] Classe di gestione per la risorsa Collection. È uno dei componenti product del \glossario{Design Pattern} \glossario{Factory method}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+\begin{itemize}
+\item[] Viene utilizzata per gestire la risorsa corrispondente alle Collection, offrendo metodi per restituire tutte le collection presenti nell'applicazione.
+\end{itemize}
+
+\paragraph*{Relazioni con altre classi}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
+
+\paragraph*{Attributi}
+\begin{itemize}
+\item[] Assenti
+\end{itemize}
+
+\paragraph*{Metodi}
+\begin{itemize}
+\item[] \method{+list(req:Request, res:Response, next:function(MaapError))} \\ Questo metodo risponde con la lista dei nomi delle collection presenti nell'applicazione.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
+\item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.
+\item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware. La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
+\end{itemize}
+\item[] \method{+getDashboard(req:Request, res:Response, next:function(MaapError))} \\ Metodo che si occupa di restituire i dati necessari per la visualizzazione della Dashboard.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
 \item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.

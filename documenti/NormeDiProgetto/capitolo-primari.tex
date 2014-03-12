@@ -195,6 +195,10 @@ La formattazione del codice sorgente deve essere definita in modo rigoroso e con
 
 Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizzate dal progetto \emph{jQuery}, sia per l'effettiva facilità di lettura sia per la possibilità di automatizzare la formattazione del codice tramite il programma \emph{JSHint}. La pagina di riferimento è \url{http://contribute.jquery.org/style-guide/js/}.
 
+\subsubsection{Ricorsione}
+La ricorsione va evitata quando possibile. Per ogni funzione ricorsiva sarà necessario fornire una prova di terminazione e sarà necessario valutare il costo in termini di occupazione della memoria. Nel caso l’utilizzo di memoria risulti troppo elevato la ricorsione dovrà essere rimossa.
+
+
 %\paragraph{Indentazione}
 %\subsubsection{Norme di validazione}
 %\subsubsection{Rendiconto ore}
@@ -209,9 +213,16 @@ Per il codice \emph{Javascript} si è scelto di adottare le linee guida utilizza
 		Per la stesura del codice è consigliabile usare i seguenti editor:
 		\begin{itemize}
 			\item \textbf{gedit} $\geq 3.4.1$ (\url{http://projects.gnome.org/gedit})
-			\item \textbf{Sublime text} $\geq 2.0.2$ (\url{http://www.sublimetext.com})
+		    \item \textbf{Sublime text} $\geq 2.0.2$ (\url{http://www.sublimetext.com})
 			\item \textbf{Eclipse} (\url{http://www.eclipse.org})
 		\end{itemize}
+
+        \`E fortemente consigliato l'utilizzo di alcuni plugin per Sublime text che evidenziano le irregolarità nel codice scritto. Tali plugin sono utilizzabili previa installazione di \texttt{Package Control} (\url{https://sublime.wbond.net/installation}), si potrà accedere a \texttt{Package Control} digitando \code{ctrl+shift+p} e selezionando \texttt{Install Package}. Procedere con l'installazione di \texttt{Sublime Linter}, dopodiché installare:
+        \begin{itemize}
+            \item \textbf{SublimeLinter-annotations} per evidenziare i \texttt{TODO} e \texttt{README};
+            \item \textbf{SublimeLinter-jshint} per evidenziare errori di sintassi \glossario{javascript};
+            \item \textbf{SublimeLinter-json} per evidenziare errori nei documenti \glossario{json}.
+        \end{itemize}
 		
 		\subsubsection{Framework}
 		

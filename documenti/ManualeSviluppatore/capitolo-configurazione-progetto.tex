@@ -1,1 +1,77 @@
 \section{Configurazione nuovo progetto}
+
+Per creare una nuova applicazione MaaP è necessario avvalersi di un terminale, posizionarsi all'interno della cartella dalla quale si vorrà creare la cartella e digitare il comando :
+\\ \centerline{ \code{ \$> maap create <ProjectName> } }
+Dove \texttt{<ProjectName>} corrisponde al nome del progetto che si vuole creare.
+
+Questo comando avvia uno script che si occupa di effettuare lo scaffolding dell'applicazione all'interno della cartella \texttt{<ProjectName>}, la quale verrà creata.
+
+Lo scaffolding genera lo scheletro dell'applicazione includendo i seguenti file e cartelle: 
+\begin{itemize}
+ \item \textbf{\file{\texttt{ProjectName}/extra/}} \\
+	Contiene script e file di supporto utilizzati per le attività di codifica.
+
+ \item \textbf{\file{\texttt{ProjectName}/test/}} \\
+	Contiene i file relativi ai test d'unità della libreria MaaP.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/}} \\
+	Contiene i file della libreria MaaP usata dalla Backend del progetto, posizionati in una cartella \code{lib} secondo la convenzione dei moduli di Node.js.
+
+ \item \textbf{\file{\texttt{ProjectName}/node\_modules/}} \\
+	Contiene le librerie richieste dalla libreria MaaP.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/model/}} \\
+	Contiene i file che gestiscono i dati utilizzati dall'applicazione e l'interfacciamento con il database.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/model/dslmodel/}} \\
+	Contiene i file che gestiscono la gestione dei file di configurazione dsl e l'interfacciamento di questi con il database.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/view/}} \\
+	Contiene i file che servono da template usati per visualizzare i dati all'utente.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/controller/}} \\
+	Contiene i file che gestiscono la logica con cui vengono elaborate le richieste inviate all'applicazione.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/controller/middleware/}} \\
+	Contiene i file che hanno il ruolo di middleware nel framework Express.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/controller/controller/}} \\
+	Contiene i file che hanno il ruolo di controller nel framework Express.
+
+ \item \textbf{\file{\texttt{ProjectName}/lib/utils/}} \\
+	Contiene i file di generica utilità, che non rientrano nella classificazione tra model, view e controller.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/}} \\
+	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/collections/}} \\
+	Contiene i file di configurazione delle collection utilizzate dall'applicazione scaffold.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/}} \\
+	Contiene i file relativi al Frontend dell'applicazione scaffold.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/view/}} \\
+	Contiene i file statici html usati dal Frontend dell'applicazione scaffold.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/style/}} \\
+	Contiene i file statici di stile usati dal Frontend dell'applicazione scaffold.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/scripts/}} \\
+	Contiene i file dell'applicazione AngularJS usata nel Frontend.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/scripts/services/}} \\
+	Contiene i file dei service di AngularJS usata nel Frontend.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/scripts/controllers/}} \\
+	Contiene i file dei controller di AngularJS usata nel Frontend.
+
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/app/bower\_components/}} \\
+	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione scaffold.
+	
+ \item \textbf{\file{\texttt{ProjectName}/scaffold/node\_modules/}} \\
+	Contiene i file delle librerie utilizzate dal Backend dell'applicazione scaffold.
+
+
+\end{itemize}
+
+È raccomandato che tutti i file e le cartelle non contengano spazi nel loro nome. Non devono mai esserci due file o cartelle il cui percorso differisca soltanto per maiuscole/minuscole. Non bisogna inoltre rinominare file o cartelle modificandone soltanto il \glossario{case} di alcuni caratteri del nome.

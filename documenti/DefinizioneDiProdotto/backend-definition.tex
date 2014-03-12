@@ -243,7 +243,7 @@
 \\ \hline
  \\ 
 \hline
-\code{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)} \\
+\code{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String):Email} \\
 \hline
 \end{tabular}
 \egroup
@@ -272,7 +272,7 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String)} \\ Metodo che definisce e restituisce la struttura dell'email da inviare per il reset della password. 
+\item[] \method{+buildForgotMail(userMail:String, senderMail:String, tokenlink:String):Email} \\ Metodo che definisce e restituisce la struttura dell'email da inviare per il reset della password nel formato Email della libreria NodeMailer.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{userMail:String} \\ Parametro che rappresenta l'email dell'utente a cui inviare l'email.
 \item[$\circ$] \parameter{senderMail:String} \\ Parametro che rappresenta l'email del mittente.
@@ -494,7 +494,7 @@ Inizializza tutti i middleware richiamando i corrispondenti metodi init.
 \item[$\circ$] \parameter{next:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione per passare il controllo ai successivi middleware.
 La presenza del parametro facoltativo MaapError attiva la catena di gestione dell'errore in sostituzione della normale catena di gestione delle richieste.
 \end{itemize}
-\item[] \method{+init(app:ServerApp)} \\ Metodo che definisce per ogni richiesta REST associata ad una risorsa, il corrispondente controller che dovrà gestirla, verificando i permessi dell'utente che la richiede utilizzando i metodi del modulo \code{Authenticate}.
+\item[] \method{+init(app:ServerApp)} \\ Metodo che definisce per ogni richiesta il corrispondente controller che dovrà gestirla, verificando i permessi dell'utente che la richiede utilizzando i metodi del modulo \code{Authenticate}.
 
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
@@ -566,6 +566,7 @@ Assenti
 \hline
 \code{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\
 \code{+init(app:ServerApp)} \\
+\code{+DSLLoaderHandler()} \\
 \hline
 \end{tabular}
 \egroup
@@ -610,6 +611,7 @@ Assenti
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
 \end{itemize}
+\item[] \method{+DSLLoaderHandler()} \\ Questo metodo è il costruttore della classe.
 \end{itemize}
 
 \subsubsection{Classe ErrorHandler}
@@ -625,7 +627,7 @@ Assenti
 \\ \hline
  \\ 
 \hline
-\code{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)} \\
+\code{+handler(err:MaapError, req:Request, res:Response, next:function(MaapError))} \\
 \hline
 \end{tabular}
 \egroup
@@ -655,7 +657,7 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+handler(res:Response, next:function(MaapError), req:Request, err:MaapError)} \\ Gestisce la richiesta rispondendo con un json contenente le informazioni dell'errore.
+\item[] \method{+handler(err:MaapError, req:Request, res:Response, next:function(MaapError))} \\ Gestisce la richiesta rispondendo con un json contenente le informazioni dell'errore.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{req:Request} \\ Questo oggetto rappresenta la richiesta di tipo Request arrivata al server che il metodo deve gestire.
 \item[$\circ$] \parameter{res:Response} \\ Questo oggetto rappresenta la risposta che il server dovrà rispondere al termine dell'elaborazione.

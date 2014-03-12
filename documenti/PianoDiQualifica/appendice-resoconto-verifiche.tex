@@ -127,13 +127,130 @@
 	\caption{Esiti verifica documenti, Progettazione di Dettaglio e Codifica}
 	\end{table}
 	
-	%\paragraph{Codice}
+	\paragraph{Codice}
 	%TODO vedere in https://jenkins-steakholders.rhcloud.com se c'è qualcosa di utile
-	 	
+	Vengono qui riportate le misure rilevate con le metriche sull'analisi statica e dinamica del codice. Per ogni metrica si riportano i valore calcolati mantenendo una separazione tra backend e frontend. Per una descrizione delle metriche si rimanda alla sezione \ref{metrichesoftware}.
+
+	% TODO misure sul software da aggiornare
+	\subparagraph{Complessità ciclomatica}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 1.28
+			\item massimo: 5
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 1.10
+			\item massimo: 2
+		\end{itemize} 
+	\end{itemize}
+
+	Tutti i valori rientrano nei range stabiliti.
+
+
+	\subparagraph{Numero di metodi}
+	\begin{itemize}
+		\item \emph{Backend}: 169
+		\item \emph{Frontend}: 19
+	\end{itemize}
 	 	
 
-	 
-	 
+	\subparagraph{Numero parametri per metodo}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 1.70
+			\item massimo: 5
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 1.21
+			\item massimo: 2
+		\end{itemize} 
+	\end{itemize}
+
+	Tutti i valori rientrano nei range stabiliti.
+
+
+	\subparagraph{\glossario{Halstead} difficulty per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 3.21
+			\item massimo: 15.79
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 2.85
+			\item massimo: 6
+		\end{itemize} 
+	\end{itemize}
+
+	Tutti i valori rientrano nei range stabiliti.
+
+	
+	\subparagraph{\glossario{Halstead} volume per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 95.34
+			\item massimo: 1154.42
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 97.51
+			\item massimo: 456.65
+		\end{itemize} 
+	\end{itemize}
+
+	Tutti i valori rientrano nei range stabiliti.
+
+
+	\subparagraph{\glossario{Halstead} effort per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 577.63
+			\item massimo: 9778.01
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 379.07
+			\item massimo: 2009.26
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{Maintainability index}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 77.19
+			\item minimo: 57.1
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 75.46
+			\item minimo: 50.56
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{Statement Coverage}
+	\begin{itemize}
+		\item \emph{Backend}: 50.2\%
+		\item \emph{Frontend}: 
+	\end{itemize}
+	
+
+	\subparagraph{Branch Coverage}
+	\begin{itemize}
+		\item \emph{Backend}: 21.28\%
+		\item \emph{Frontend}:
+	\end{itemize}
+	
+
 	\subsection{Dettaglio dell'esito delle revisioni}
 	Lo sviluppo di questo progetto didattico si basa sull'attraversamento di quattro revisioni presiedute dal committente. Tre delle quattro revisioni produrranno delle segnalazioni degli errori riscontrati da parte del committente, deve seguire un report di come sono state risolte in ogni documento.
 		

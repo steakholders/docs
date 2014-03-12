@@ -213,6 +213,7 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\end{itemize}
 			
 		\subsubsection{Metriche per il software}
+		\label{metrichesoftware}
 
 		La prima release di \glossario{Node.js} risale a Maggio 2009. È stata riscontrata una forte differenza tra le metriche disponibili per l'analisi statica rispetto a quelle per i linguaggi meno recenti. Inoltre nessun membro del gruppo ha conoscenza di tale linguaggio e delle sue particolarità, come l'aspetto \glossario{funzionale}. Tali differenze con i linguaggi studiati nel percorso universitario si sono tradotte nella difficoltà di individuare metriche non incentrate sulla visione ad oggetti del codice. Infine si è osservata l'assenza di strumenti per la misurazione di metriche tradizionali come la coesione e l'instabilità dei package.
 		Di seguito vengono elencate le metriche per il software prodotto.
@@ -226,15 +227,9 @@ La speranza è che dei buoni processi portino ad un buon software.
 			
 			\textbf{Parametri utilizzati}:
 			\begin{itemize}
-				\item Range-accettazione: [0 - 15];
+				\item Range-accettazione: [0 - 25];
 				\item Range-ottimale: [0 - 10]\footnote{McCabe (dicembre 1976). A Complexity Measure. IEEE Transactions on Software Engineering: 308–320.} .
 			\end{itemize}
-
-
-			\paragraph{Densità della complessità ciclomatica}\mbox{} \\
-
-			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
-			Proposta come modifica alla complessità ciclomatica, questa metrica semplicemente la riesprime come percentuale sulle linee di codice logiche. Un valore basso è migliore di un valore alto.
 			
 
 			\paragraph{Numero di metodi - NOM}\mbox{} \\
@@ -246,13 +241,6 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item Range-accettazione: [3 - 10];
 				\item Range-ottimale: [3 - 7].
 			\end{itemize}
-
-			
-			\paragraph{\glossario{Bug} per lines of code}\mbox{} \\
-			
-			% http://mayerdan.com/ruby/2012/11/11/bugs-per-line-of-code-ratio/
-			Questa metrica misura il numero di \glossario{bug} trovati su un certo quantitativo di linee di codice. L'aumentare del sorgente implica un incremento delle probabilità di nascondere errori, per questo è bene mantenere il codice più chiaro e semplice possibile. Con la crescita del prodotto è utile monitorare il rapporto tra i difetti trovati e il codice incrementale. Tale indice dovrebbe restare costante o diminuire nel tempo.
-			Il gruppo fissa questa metrica ad un massimo di 60, considerando il fatto che nessun membro ha conoscenze dello \glossario{stack tecnologico} utilizzato. L’obiettivo è di giungere alla \textit{Revisione di Accettazione} con valori compresi tra 0 e 20. Lo sforamento di tali valori determina l’intervento del \textit{Responsabile} di progetto, che dovrà individuare tempestivamente la causa del problema.
 
 
 			\paragraph{Variabili non utilizzate e non definite}\mbox{} \\
@@ -285,16 +273,6 @@ La speranza è che dei buoni processi portino ad un buon software.
 			\begin{itemize}
 				\item Range-accettazione: [0 - 8];
 				\item Range-ottimale: [0 - 4].
-			\end{itemize}
-			
-			
-			\paragraph{Numero funzioni d'interfaccia per package}\mbox{} \\
-				
-			Un numero elevato di funzioni d'interfaccia in un package evidenzia un possibile errore di progettazione.\\
-			\textbf{Parametri utilizzati}:
-			\begin{itemize}
-				\item Range-accettazione: [0 - 20];
-				\item Range-ottimale: [1 - 10].
 			\end{itemize}
 
 			
@@ -353,25 +331,15 @@ La speranza è che dei buoni processi portino ad un buon software.
 
 			
 			\paragraph{Maintainability index}\mbox{} \\
-
 			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
+			
 			Questa metrica\footnote{Definita nel 1991 da Paul Oman e Jack Hagemeister alla University of Idaho.} è una scala logaritmica da $-\infty$ a 171, calcolata sulla base delle linee di codice logiche, della complessità ciclomatica e dall'indice \glossario{Halstead} effort. Un valore alto indica una maggiore manutenibilità.
 
-
-			\paragraph{First-order density}\mbox{} \\
-
-			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
-			La percentuale di tutte le possibili dipendenze interne che si sono effettivamente realizzata nel progetto. Un valore basso è migliore di un valore alto.
-
-
-			\paragraph{Change cost}\mbox{} \\
-
-			% https://github.com/philbooth/escomplex/blob/master/README.md#metrics
-			La percentuale media dei moduli condizionati dal cambiamento di un modulo nel progetto. Un valore basso è migliore di un valore alto.
 
 			\paragraph{Use Case Points}\mbox{} \\
 			\label{ucp}
 			% http://tynerblain.com/blog/2007/02/12/software-cost-estimation-ucp-1/
+			
 			Gli Use Case Points (UCP)\footnote{Definiti da Gustav Karner della Rational Software Corporation a metà del 1990.} stimano quanto sforzo è necessario per sviluppare il prodotto basandosi su quanto lavoro il software deve svolgere.
 
 			Al fine di stimare un costo in ore-uomo di sviluppo, tale tecnica valuta i seguenti fattori:
@@ -382,4 +350,28 @@ La speranza è che dei buoni processi portino ad un buon software.
 				\item \textit{Quantità e complessità degli use case}, il numero degli use case e il numero di transizioni all'interno degli use case;
 				\item \textit{Quantità e complessità degli attori}, il numero di attori e come si interfacciano al sistema.
 			\end{itemize}
+
+
+			\paragraph{Statement Coverage}\mbox{} \\
+			
+			Calcola quante linee di comando di ciascun modulo delle unità sono eseguite almeno una volta nell'esecuzione dei test. Tale metrica è espressa in percentuale.
+
+			\textbf{Parametri utilizzati}:
+			\begin{itemize}
+				\item Range-accettazione: [70 - 100];
+				\item Range-ottimale: [85 - 100].
+			\end{itemize}
+
+
+			\paragraph{Branch Coverage}\mbox{} \\
+			
+			Calcola quanti rami della logica di flusso sono attraversati almeno una volta nell'esecuzione dei test. Tale metrica è espressa in percentuale.
+
+			\textbf{Parametri utilizzati}:
+			\begin{itemize}
+				\item Range-accettazione: [70 - 100];
+				\item Range-ottimale: [85 - 100].
+			\end{itemize}
+			
+			
 

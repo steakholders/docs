@@ -6,7 +6,7 @@ Si tratta dell'unica pagina visibile senza aver effettuato l'accesso.
 Per effettuare l'accesso è necessario cliccare sul pulsante login in alto a destra.
 
 Come da immagine \ref{loginfig} per potersi autenticare è necessario disporre di un'email e di una password valide.
-Non è possibile registrarsi autonomamente nel sistema, dovrà essere l'amministratore ad aggiungere nuovi utenti. Tale procedura sarà illustrata nella sezione \ref{nuovoutente}.
+Per l'amministratore è possibile aggiungere nuovi utenti. Tale procedura sarà illustrata nella sezione \ref{nuovoutente}.
 
 Nel caso in cui i dati inseriti non sono riconosciuti dal sistema verrà restituito un messaggio di errore e l'utente potrà tentare nuovamente la login. Non ci sono limiti sul numero di tentativi possibili.
 
@@ -20,7 +20,7 @@ Se l'autenticazione ha successo si verrà reindirizzati alla pagina Dashboard, i
 \section{Dashboard}
  \label{dashboard}
  
-Si tratta della pagina centrale una volta loggati. Come si vede in figura \ref{dashboardfig} in questa pagina sarà presente un elenco delle collection a cui si ha accesso. Per visualizzare una collection in particolare è sufficiente cliccarci sopra.
+Si tratta della pagina centrale una volta eseguito il login. Come si vede in figura \ref{dashboardfig} in questa pagina sarà presente un elenco delle collection a cui si ha accesso. Per visualizzare una collection in particolare è sufficiente cliccarci sopra.
 
 \begin{figure}[h]
 	\label{dashboardfig}
@@ -33,16 +33,23 @@ Si tratta della pagina centrale una volta loggati. Come si vede in figura \ref{d
 \subsection{Gestione dei documenti di una collection}
 
 \section{Gestione utenti}
+\label{nuovoutente}
+Cliccando sul pulsante Users in alto a sinistra si accede alla pagina UserList che, come da figura \ref{usersfig}, visualizza la lista degli utenti presenti, tramite le loro email.
+
+Tramite il tasto remove (1) è possibile rimuovere un utente dal sistema, cliccando apparirà un pop-up su cui confermare la rimozione o annullarla. Tramite il tasto 2 %TODO
+
+Utilizzando il form a lato (3) è possibile registrare un nuovo utente definendo email, password e livello dei privilegi.
+
+Se i dati inseriti sono validi l'utente apparirà sulla destra, altrimenti verrà visualizzato l'errore come in figura \ref{userserrorfig}
 
 \begin{figure}[h]
+\label{userslist}
 	\centering \includegraphics[width=1\textwidth]{userList.png}
 	\caption{Screen della pagina userList.}
 \end{figure}
 
-\subsection{Visualizzare gli utenti presenti}
-\subsection{Registrare nuovi utente}
-\label{nuovoutente}
 \begin{figure}[h]
+\label{userserrorfig}
 	\centering \includegraphics[width=1\textwidth]{userListError.png}
 	\caption{Screen della pagina userList con errore. }
 \end{figure}

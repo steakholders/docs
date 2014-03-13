@@ -176,6 +176,7 @@ CollectionListService
 CollectionModel
 collectionName
 CollectionPage
+collectionPath
 collectionQuery
 collectionReference
 collections
@@ -256,6 +257,7 @@ dashboard
 DashboardController
 DashboardPage
 DashboardView
+dataDB
 DataSchema
 David
 dd
@@ -553,7 +555,7 @@ inner
 inputencoding
 insertUser
 inspection
-Install
+install
 Installation
 Integer
 Integrated
@@ -868,6 +870,7 @@ pollution
 polyadic
 populate
 popup
+port
 Portability
 Portable
 position
@@ -1264,6 +1267,7 @@ Usable
 Useable
 used
 userController
+userDB
 userError
 userId
 userIdShowPage
@@ -1319,7 +1323,7 @@ way
 ways
 WebKit
 webmaster
-WebServer
+webServer
 Well
 whatever
 where

@@ -4,6 +4,7 @@ all'anilisi all'analisi
 allìapplicazione all'applicazione
 appresentazione Rappresentazione
 chiamarà chiamerà
+correttemente correttamente
 declassere declassare
 dell'aministratore dell'amministratore
 dellanno dell'anno
@@ -23,8 +24,10 @@ l'emal l'email
 liberia libreria
 liberie librerie
 l'interpetazione l'interpretazione
+metoto metodo
 off offe
 oltra oltre
+ontiene ottiene
 paramentri parametri
 paramentro parametro
 partecipandi Partecipanti
@@ -37,6 +40,7 @@ rischesto richiesto
 risportate riportate
 risportati riportati
 sarnno saranno
+sato stato
 sè sé
 staica statica
 un'apposito un apposito

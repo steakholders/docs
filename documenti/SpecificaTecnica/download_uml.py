@@ -47,23 +47,23 @@ lucidchart.download_image("437d-f4e4-52efd47d-907f-3aaf0a00c7a5", "uml/deploymen
 
 # diagrammi di attività
 
-# lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/attivita/MaaP - Apri pagina gestione utenti.png")
-# lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/attivita/MaaP - Modifica profilo.png")
-# lucidchart.download_image("4bdc-1928-52dac052-9e58-4fc30a004790", "uml/attivita/MaaP - Modifica document.png")
-# lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/attivita/MaaP - Attivita principali.png")
-# lucidchart.download_image("440c-f4bc-52dabbcb-a162-0c630a004790", "uml/attivita/MaaP - Show-page.png")
-# lucidchart.download_image("47b2-4774-52d98c99-872c-04f90a00d7c9", "uml/attivita/MaaP - Index-page.png")
-# lucidchart.download_image("47099388-52d9-30e7-9fdc-44290a009998", "uml/attivita/MaaP - Effettua login.png")
-# lucidchart.download_image("4cf6-0efc-52d93535-84d0-514a0a009db8", "uml/attivita/MaaP - Esegui reset password.png")
-# lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/attivita/MaaP - Recupera password.png")
-# lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/attivita/MaaP - Effettua registrazione.png")
-# lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/attivita/MaaP - Apri show-page utente.png")
-# lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/attivita/MaaP - Crea nuovo utente.png")
-# lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/attivita/MaaS - Attivita principali.png")
-# lucidchart.download_image("43a8-3e2c-52ed0031-8ac6-11420a0048dc", "uml/attivita/MaaS - Gestisci file di configurazione.png")
-# lucidchart.download_image("4ff5-dafc-52ed0192-b270-1b550a00c7a5", "uml/attivita/MaaS - Crea file di configurazione.png")
-# lucidchart.download_image("4dfb-2698-52ed0f8b-9e03-50580a0048dc", "uml/attivita/Framework - Diagramma di installazione.png")
-# lucidchart.download_image("44d6-9194-52ee820c-8332-30020a0048dc", "uml/attivita/Framework - Crea cartella front-end di default.png")
+lucidchart.download_image("4d01-fab4-52dac262-8caf-6d3b0a0044cb", "uml/attivita/MaaP - Apri pagina gestione utenti.png")
+lucidchart.download_image("43ed-3f84-52d93755-a6c3-500d0a004790", "uml/attivita/MaaP - Modifica profilo.png")
+lucidchart.download_image("4bdc-1928-52dac052-9e58-4fc30a004790", "uml/attivita/MaaP - Modifica document.png")
+lucidchart.download_image("4c35-b374-52d8f514-8852-77310a00c655", "uml/attivita/MaaP - Attivita principali.png")
+lucidchart.download_image("440c-f4bc-52dabbcb-a162-0c630a004790", "uml/attivita/MaaP - Show-page.png")
+lucidchart.download_image("47b2-4774-52d98c99-872c-04f90a00d7c9", "uml/attivita/MaaP - Index-page.png")
+lucidchart.download_image("47099388-52d9-30e7-9fdc-44290a009998", "uml/attivita/MaaP - Effettua login.png")
+lucidchart.download_image("4cf6-0efc-52d93535-84d0-514a0a009db8", "uml/attivita/MaaP - Esegui reset password.png")
+lucidchart.download_image("4023-a820-52d92c89-96e5-4fff0a00d7c9", "uml/attivita/MaaP - Recupera password.png")
+lucidchart.download_image("4bba-c714-52d92c1c-8bb1-46e50a0044cb", "uml/attivita/MaaP - Effettua registrazione.png")
+lucidchart.download_image("4580-bc10-52dac665-b8a4-5aa60a0044cb", "uml/attivita/MaaP - Apri show-page utente.png")
+lucidchart.download_image("4611-1c34-52dac3ad-9b7e-22830a00d361", "uml/attivita/MaaP - Crea nuovo utente.png")
+lucidchart.download_image("4262-6030-52ebb3ee-8efa-06e70a0048dc", "uml/attivita/MaaS - Attivita principali.png")
+lucidchart.download_image("43a8-3e2c-52ed0031-8ac6-11420a0048dc", "uml/attivita/MaaS - Gestisci file di configurazione.png")
+lucidchart.download_image("4ff5-dafc-52ed0192-b270-1b550a00c7a5", "uml/attivita/MaaS - Crea file di configurazione.png")
+lucidchart.download_image("4dfb-2698-52ed0f8b-9e03-50580a0048dc", "uml/attivita/Framework - Diagramma di installazione.png")
+lucidchart.download_image("44d6-9194-52ee820c-8332-30020a0048dc", "uml/attivita/Framework - Crea cartella front-end di default.png")
 
 # uml Scenari
 
@@ -94,25 +94,25 @@ lucidchart.download_image("437d-f4e4-52efd47d-907f-3aaf0a00c7a5", "uml/deploymen
 
 # Back-end, Front-end e packages
 
-lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/classi/Back-end.png")
-lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/classi/Front-end.png")
+# lucidchart.download_image("42ee-aa18-52ee214e-97c2-1b760a00c7a5", "uml/classi/Back-end.png")
+# lucidchart.download_image("481c-f134-52eadfb8-b89d-38f60a009f36", "uml/classi/Front-end.png")
 
-lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "uml/package/Back-end.png")
-lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "uml/package/Back-end::DeveloperProject.png")
-lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "uml/package/Back-end::Lib.png")
-lucidchart.download_image("424f-5ba4-5314928a-be35-38d40a00d329", "uml/package/Back-end::Lib::Utils.png")
-lucidchart.download_image("45fd9d18-530e-fd72-8ab9-34430a005bed", "uml/package/Back-end::Lib::Model.png")
-lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "uml/package/Back-end::Lib::View.png")
-lucidchart.download_image("4296-2830-530efb46-9960-23df0a009107", "uml/package/Back-end::Lib::Controller.png")
-lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "uml/package/Back-end::Lib::Model::DSLModel.png")
-lucidchart.download_image("4e50-af68-5308deea-8459-466f0a005bed", "uml/package/Back-end::Lib::Controller::Middleware.png")
-lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "uml/package/Back-end::Lib::Controller::Service.png")
+# lucidchart.download_image("4503-9b84-52ed294c-bcab-649a0a00d8ac", "uml/package/Back-end.png")
+# lucidchart.download_image("4b82-f668-52ee5c3c-a084-129e0a004eaf", "uml/package/Back-end::DeveloperProject.png")
+# lucidchart.download_image("417e-3274-52efb757-8482-2fec0a004eaf", "uml/package/Back-end::Lib.png")
+# lucidchart.download_image("424f-5ba4-5314928a-be35-38d40a00d329", "uml/package/Back-end::Lib::Utils.png")
+# lucidchart.download_image("45fd9d18-530e-fd72-8ab9-34430a005bed", "uml/package/Back-end::Lib::Model.png")
+# lucidchart.download_image("4e24-fb68-52ee5c82-baf3-79d10a009f36", "uml/package/Back-end::Lib::View.png")
+# lucidchart.download_image("4296-2830-530efb46-9960-23df0a009107", "uml/package/Back-end::Lib::Controller.png")
+# lucidchart.download_image("4764-99d8-52ee6346-816b-3e850a009f36", "uml/package/Back-end::Lib::Model::DSLModel.png")
+# lucidchart.download_image("4e50-af68-5308deea-8459-466f0a005bed", "uml/package/Back-end::Lib::Controller::Middleware.png")
+# lucidchart.download_image("46a9-31e4-52ee5e28-b3cb-3a540a004eaf", "uml/package/Back-end::Lib::Controller::Service.png")
 
-lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/package/Front-end.png")
-lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "uml/package/Front-end::Controllers.png")
-lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "uml/package/Front-end::Services.png")
-lucidchart.download_image("48bac3f8-52ef-bb7d-b3ee-3d760a008cac", "uml/package/Front-end::Model.png")
-lucidchart.download_image("4145e0c0-5320-6524-8aba-3b3e0a005c63", "uml/package/Front-end::View.png")
+# lucidchart.download_image("46db-fe50-52ee59b2-9159-104d0a00d8ac", "uml/package/Front-end.png")
+# lucidchart.download_image("4222-7be4-52ee445b-8b0c-34fa0a00d8ac", "uml/package/Front-end::Controllers.png")
+# lucidchart.download_image("4a09-4850-52ee4370-a63f-1ccd0a008772", "uml/package/Front-end::Services.png")
+# lucidchart.download_image("48bac3f8-52ef-bb7d-b3ee-3d760a008cac", "uml/package/Front-end::Model.png")
+# lucidchart.download_image("4145e0c0-5320-6524-8aba-3b3e0a005c63", "uml/package/Front-end::View.png")
 
 # Design pattern - contestualizzazione
 

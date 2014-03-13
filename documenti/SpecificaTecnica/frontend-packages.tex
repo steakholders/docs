@@ -3,10 +3,18 @@
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[width=\textwidth]{uml/package/Front-end.png}  
-				\caption{Componente Front-end}
+				\includegraphics[scale=0.20]{uml/package/Front-end.png}  
+				\caption{Diagramma dei packages Front-end}
 			\end{center}  
 		\end{figure} 
+		
+		\begin{figure}[H] 
+			\begin{center} 
+				\includegraphics[width=\textwidth]{uml/classi/Front-end.png}  
+				\caption{Diagramma delle classi Front-end}
+			\end{center}  
+		\end{figure} 
+		
 	\subparagraph{Descrizione} 
 		\begin{itemize}
 		\item[] \glossario{Package} che racchiude tutta la componente di \glossario{Front-end}. Comprende il sottosistema che viene eseguito nei browser degli utenti e che fornisce l'interfaccia grafica all'utente non-tecnico che utilizzerà l'applicazione.
@@ -31,21 +39,6 @@
 		\item[] \glossario{Package} comprendente le classi che descrivono i meccanismi con cui il \glossario{Front-end} può interfacciarsi con le \glossario{API} del \glossario{Back-end}. Permette di recuperare i dati da inserire nel model e permette di azionare determinate procedure sul \glossario{Back-end} (per esempio la richiesta di recupero password o le ``action'' definite nel DSL).
 		\end{itemize} 
 		\paragraph{Classi}
-			\subparagraph{IndexListService}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Questa classe permette il recupero delle risorse REST rappresentanti le Collections tramite la chiamata / collections.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller la lista delle Collections registrate dallo sviluppatore e presenti nel database delle collections.
-Tale funzionalità richiede che l'utente sia registrato.
-					\end{itemize}
-					\textbf{Relazioni con altre classi}
-					\begin{itemize}
-							\item{Front-end::Model::IndexListModel}
-					\end{itemize}
 			\subparagraph{UserListService}
 				
 				\textbf{\\ \\ Descrizione} 
@@ -74,6 +67,21 @@ Tale funzionalità richiede che l'utente sia un admin.
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
 							\item{Front-end::Model::RequestResetModel}
+					\end{itemize}
+			\subparagraph{IndexListService}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Questa classe permette il recupero delle risorse REST rappresentanti le Collections tramite la chiamata / collections.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] La funzionalità offerta dalla classe è quella di poter fornire al Controller la lista delle Collections registrate dallo sviluppatore e presenti nel database delle collections.
+Tale funzionalità richiede che l'utente sia registrato.
+					\end{itemize}
+					\textbf{Relazioni con altre classi}
+					\begin{itemize}
+							\item{Front-end::Model::IndexListModel}
 					\end{itemize}
 			\subparagraph{IndexService}
 				
@@ -185,10 +193,6 @@ Tali funzionalità richiedono che l'utente sia un admin.
 					\begin{itemize}
 						\item[] Questa controller si occupa di distruggere la sessione attuale, se esiste, e non genera una view ma reindirizza l'utente automaticamente alla pagina di Login.
 					\end{itemize}
-					\textbf{Relazioni con altre classi}
-					\begin{itemize}
-							\item{Front-end::View::LogoutView}
-					\end{itemize}
 			\subparagraph{ForgotResetController}
 				
 				\textbf{\\ \\ Descrizione} 
@@ -203,11 +207,11 @@ Tali funzionalità richiedono che l'utente sia un admin.
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che gestisce le operazioni di modifica di un utente attraverso la pagina profilo.
+						\item[] Classe che gestisce le operazioni di modifica di un utente attraverso la pagina di modifica profilo.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
+						\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope della classe \texttt{Front-End::View::ProfileView}.
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
@@ -221,7 +225,7 @@ Tali funzionalità richiedono che l'utente sia un admin.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Utilizza la classe \texttt{Front-End::Service::UserService}, che si occupa di popolare la classe \texttt{Front-End::Model::UserModel} con i dati dell'utente richiesto. Quest'ultima classe conterrà un metodo accessorio tramite il quale il controller può prelevare i dati e generare la pagina popolando correttamente lo scope.
+						\item[] Utilizza la classe \texttt{Front-End::Service::UserService}, che si occupa di popolare la classe \texttt{Front-End::Model::UserModel} con i dati dell'utente richiesto. Quest'ultima classe conterrà un metodo accessorio tramite il quale il controller può prelevare i dati e generare la pagina popolando correttamente lo scope della classe \texttt{Front-End::View::UserView}.
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
@@ -255,8 +259,8 @@ Tali funzionalità richiedono che l'utente sia un admin.
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
 							\item{Front-end::Services::UserListService}
-							\item{Front-end::View::UserListView}
 							\item{Front-end::Services::UserService}
+							\item{Front-end::View::UserListView}
 					\end{itemize}
 			\subparagraph{ForgotRequestController}
 				
@@ -303,20 +307,6 @@ Tali funzionalità richiedono che l'utente sia un admin.
 							\item{Front-end::Services::IndexListService}
 							\item{Front-end::View::DashboardView}
 					\end{itemize}
-			\subparagraph{ShowEditController}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Classe che gestisce le operazioni e la logica applicativa della pagina di modifica di un \glossario{Document}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Utilizza la classe \texttt{Front-End::Services::ShowService} per popolare correttamente la classe \texttt{Front-End::Model::ShowModel} con i dati del \glossario{Document} richiesto. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà ottenere i dati e generare la pagina di modifica di un \glossario{Document} popolando correttamente lo scope.
-					\end{itemize}
-					\textbf{Relazioni con altre classi}
-					\begin{itemize}
-							\item{Front-end::View::ShowEditView}
-					\end{itemize}
 			\subparagraph{ShowController}
 				
 				\textbf{\\ \\ Descrizione} 
@@ -329,8 +319,8 @@ Tali funzionalità richiedono che l'utente sia un admin.
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Front-end::View::ShowView}
 							\item{Front-end::Model::ShowModel}
+							\item{Front-end::View::ShowView}
 							\item{Front-end::Services::ShowService}
 					\end{itemize}
 	\subsubsection{Front-end::Model}
@@ -372,7 +362,7 @@ Le classi di questo \glossario{package} sono state progettate, ma si prevede che
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] È il modello che contiene i dati dell'utente che richiede un recupero della password.
+						\item[] È il modello che descrive i dati dell'utente che richiede un recupero della password.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -441,91 +431,71 @@ Le classi di questo \glossario{package} sono state progettate, ma si prevede che
 		\item[] \glossario{Package} comprendente le classi che costituiscono la view del componente \glossario{Front-end}. Ogni view rappresenta una pagina html con determinati campi \texttt{scope}, i quali verranno popolati con i dati richiesti.
 		\end{itemize} 
 		\paragraph{Classi}
-			\subparagraph{ForgotRequestView}
+			\subparagraph{DashboardView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Classe che descrive la pagina che visualizza la dashboard. In questo momento la dashboard contiene la lista delle collection presenti nel sistema.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
-					\end{itemize}
-			\subparagraph{ShowEditView}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Questa classe si occupa di visualizzare la pagina di modifica di un Document. Nel suo \texttt{scope} presenta tutti gli attributi modificabili del Document, editabili tramite un campo di testo.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Viene utilizzata nel front-end per popolare il template html della pagina di modifica di un Document.
-					\end{itemize}
-			\subparagraph{ForgotResetView}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] 
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] 
-					\end{itemize}
-			\subparagraph{LoginView}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] 
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \texttt{DashboardController} per generare la pagina dashboard.
 					\end{itemize}
 			\subparagraph{IndexView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] La classe si occupa di descrivere la pagina che visualizza i documenti della collection selezionata.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \texttt{IndexController} per generare la index-page di una Collection.
 					\end{itemize}
-			\subparagraph{ShowView}
+			\subparagraph{LoginView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Questa classe si occupa di descrivere la pagina di login dell'applicazione mettendo a disposizione dell'utente un form all'interno del quale inserire email e password. Viene inoltre messo a disposizione un link per richiedere il ripristino della password.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \code{LoginController} per generare la pagina di Login dell'applicazione.
 					\end{itemize}
 			\subparagraph{ProfileEditView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Questa classe descrive la pagina che si occupa di modificare i dati dell'utente attualmente autenticato.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzato dalla classe \texttt{Front-end::Controller::ProfileEditController} per generare correttamente la pagina di modifica profilo.
 					\end{itemize}
-			\subparagraph{LogoutView}
+			\subparagraph{ShowView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Classe descrive la pagina che visualizza le coppie chiave valore del documento selezionato.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \texttt{ShowController} per generare la show-page di un Document.
 					\end{itemize}
-			\subparagraph{DashboardView}
+			\subparagraph{ProfileView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Classe che rappresenta la pagina che visualizza le informazioni dell'utente attualmente autenticato.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata dalla classe \texttt{Front-end::Controller::ProfileController} per generare la pagina di visualizzazione del profilo dell'utente generato.
+					\end{itemize}
+			\subparagraph{ForgotRequestView}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che rappresenta la pagina che permette all'utente di richiedere il reset della propria password tramite l'inserimento della propria email.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -535,29 +505,29 @@ Le classi di questo \glossario{package} sono state progettate, ma si prevede che
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Questa classe si occupa di descrivere la pagina di visualizzazione delle informazioni sull'utente selezionato.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
-					\end{itemize}
-			\subparagraph{ProfileView}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] 
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \texttt{Front-End::UserController} per generare correttamente la pagina di visualizzazione delle informazione di un utente.
 					\end{itemize}
 			\subparagraph{UserListView}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] 
+						\item[] Questa classe si occupa di rappresentare la pagina contenente l'elenco di tutti gli utenti presenti nel sistema.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] 
+						\item[] Viene utilizzata dalla classe \texttt{Front-End::Controller::UserListController} per generare la pagina di visualizzazione degli utenti.
+					\end{itemize}
+			\subparagraph{ForgotResetView}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che rappresenta la pagina che permette all'utente di resettare la propria password. Viene reindirizzato a questa pagine tramite un link presente nell'email ricevuta a seguito della compilazione di ForgotRequestView.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzato dalla classe \texttt{Front-End::Controller::ForgotResetController} per generare correttamente la pagina di reset della password.
 					\end{itemize}

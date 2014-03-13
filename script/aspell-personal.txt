@@ -44,6 +44,7 @@ all'idUser
 all'index
 all'indexModel
 all'upload
+all'URL
 all'userId
 altresì
 Amazon
@@ -108,6 +109,7 @@ Benefit
 best
 between
 Binding
+binding
 BioComputing
 bioinformatica
 blabla
@@ -185,6 +187,11 @@ collectionQuery
 collectionReference
 collections
 CollectionService
+collectionPath
+collectionQuery
+collectionReference
+collections
+collectionService
 colorlinks
 column
 columnLabel
@@ -261,6 +268,7 @@ dashboard
 DashboardController
 DashboardPage
 DashboardView
+dataDB
 DataSchema
 David
 dd
@@ -276,6 +284,7 @@ dell'application
 dell'array
 dell'index
 dell'istanziazione
+dell'URI
 dell'URL
 Demonstrable
 density
@@ -341,6 +350,8 @@ Efficiency
 effort
 election
 elections
+element
+elements
 em
 Ember
 emph
@@ -450,6 +461,7 @@ gedit
 general
 Generator
 GET
+get
 getAttributes
 getAuthController
 getCollectionController
@@ -518,6 +530,7 @@ home
 homepage
 Howard
 html
+httpBackend
 HTTPS
 HUCP
 HyperText
@@ -540,6 +553,7 @@ index
 indexController
 IndexListModel
 IndexListService
+indexListService
 indexModel
 indexPage
 IndexService
@@ -555,6 +569,7 @@ inputencoding
 insertUser
 inspection
 Install
+install
 Installation
 Integer
 Integrated
@@ -606,6 +621,7 @@ language
 l'application
 l'array
 Last
+lastName
 LaTex
 Laurence
 l'AuthModel
@@ -642,10 +658,12 @@ loadDSLFile
 l'Object
 local
 Location
+location
 Locator
 LOCs
 log
 loggati
+loggato
 logger
 logic
 LoginController
@@ -665,6 +683,11 @@ LUF
 l'upgrade
 l'upload
 l'uri
+l'update
+l'upgrade
+l'upload
+l'uri
+l'URL
 l'userId
 Luzzati
 Maa
@@ -865,6 +888,7 @@ pollution
 polyadic
 populate
 popup
+port
 Portability
 Portable
 position
@@ -1013,8 +1037,12 @@ riusabile
 riusabili
 Robert
 root
+role
+root
+rootScope
 Rotundo
 rounded
+routeParams
 router
 routine's
 routing
@@ -1032,6 +1060,7 @@ run
 runtime
 ruoli'
 Satisfied
+save
 scaffold
 scaffolding
 Schemaless
@@ -1079,6 +1108,7 @@ showpage
 showPage
 ShowPageEdit
 ShowService
+showService
 showspaces
 showstringspaces
 showtabs
@@ -1143,6 +1173,7 @@ SublimeLinter
 subsystem
 subtask'
 Subtitle
+Success
 sull'
 sum
 Sun
@@ -1209,6 +1240,7 @@ tracciabilità
 tranformation
 Transactions
 Transfer
+transform
 transformation
 Trasform
 tree
@@ -1255,6 +1287,7 @@ Usable
 Useable
 used
 userController
+userDB
 userError
 userId
 userIdShowPage
@@ -1272,6 +1305,7 @@ UserPage
 users
 userSchema
 UserService
+userService
 UsersIndex
 usersList
 UsersListController
@@ -1311,6 +1345,11 @@ ways
 WebKit
 webmaster
 WebServer
+way
+ways
+WebKit
+webmaster
+webServer
 Well
 whatever
 where

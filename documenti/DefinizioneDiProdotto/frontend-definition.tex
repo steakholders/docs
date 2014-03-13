@@ -14,7 +14,9 @@
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+remove()} \\
+\code{+update(id:Object)} \\
+\code{+query()} \\
 \hline
 \end{tabular}
 \egroup
@@ -56,7 +58,12 @@ Tali funzionalità richiedono che l'utente sia un admin.
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+remove()} \\ Questo metodo si occupa di comunicare al back-end per effettuare l'eliminazione di una risorsa /user.
+\item[] \method{+update(id:Object)} \\ Questo metodo si occupa di comunicare con il back-end per modificare una risorsa passandogli l'id corrispondente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{id:Object} \\ Questo parametro corrisponde all'id dell'utente di cui modificare la password.
+\end{itemize}
+\item[] \method{+query()} \\ Questo metodo comunica con il back-end per ottenere la risorsa /user. 
 \end{itemize}
 
 \subsubsection{Classe ProfileService}
@@ -72,7 +79,8 @@ Tali funzionalità richiedono che l'utente sia un admin.
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+get(id:Object)} \\
+\code{+update(id:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -115,7 +123,14 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+get(id:Object)} \\ Metodo che si occupa di comunicare con il back-end per ottenere il profilo utente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{id:Object} \\ Parametro che rappresenta l'id dell'utente di cui si richiede i dati profilo.
+\end{itemize}
+\item[] \method{+update(id:Object)} \\ Metodo che comunica con il back-end per richiedere la modifica del profilo utente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{id:Object} \\ Parametro che rappresenta l'id utente di cui modificare il profilo.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe ShowService}
@@ -131,7 +146,7 @@ Per la funzionalità di visualizzazione dei dati, di modifica del profilo e di e
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+query(collectionName:Object, documentId:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -166,7 +181,11 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+query(collectionName:Object, documentId:Object)} \\ Metodo che si occupa di richiedere al back-end il contenuto di un documento di una data collection.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{collectionName:Object} \\ Parametro che corrisponde alla collection a cui far riferimento per prelevare il documento.
+\item[$\circ$] \parameter{documentId:Object} \\ Parametro che indica l'Id del documento da ritornare.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe ForgotPasswordService}
@@ -233,7 +252,7 @@ Assenti
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+query(collectionName:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -268,7 +287,10 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+query(collectionName:Object)} \\ Metodo che comunica col back-end per ottenere la lista di document della collection.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{collectionName:Object} \\ Parametro corrispondente alla collection.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe UserListService}
@@ -284,7 +306,9 @@ Assenti
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+query()} \\
+\code{+remove(id:Object)} \\
+\code{+save()} \\
 \hline
 \end{tabular}
 \egroup
@@ -320,7 +344,12 @@ Tale funzionalità richiede che l'utente sia un admin.
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+query()} \\ Questo metodo si occupa di comunicare col back-end per ottenere la risorsa user che corrisponde alla lista degli utenti nel sistema.
+\item[] \method{+remove(id:Object)} \\ Questo metodo si occupa di comunicare con la componente back-end per eliminare una risorsa /users passando l'id corrispondente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{id:Object} \\ Parametro che corrisponde all'id utente della risorsa da eliminare.
+\end{itemize}
+\item[] \method{+save()} \\ Metodo che si occupa di comunicare con il back-end per chiedere il salvataggio di una risorsa.
 \end{itemize}
 
 \subsubsection{Classe IndexListService}
@@ -336,7 +365,7 @@ Tale funzionalità richiede che l'utente sia un admin.
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+query()} \\
 \hline
 \end{tabular}
 \egroup
@@ -372,7 +401,7 @@ Tale funzionalità richiede che l'utente sia registrato.
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+query()} \\ Questo metodo si occupa di comunicare con il back-end per ottenere i nomi delle collection presenti nell'applicazione.
 \end{itemize}
 
 \subsection{Componente Front-end::Controllers}
@@ -388,10 +417,13 @@ Tale funzionalità richiede che l'utente sia registrato.
 \hline
 \centerline{\textbf{LoginController}}
 \\ \hline
-\code{+ user:JSON} \\
-\code{+ errorMsg:JSON} \\
+\code{- scope:Object} \\
+\code{- rootScope:Object} \\
+\code{- location:Object} \\
+\code{- ProfileService:Object} \\
 \hline
 \code{+login()} \\
+\code{+LoginController(rootScope:Object, scope:Object, location:Object, ProfileService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -421,13 +453,23 @@ Tale funzionalità richiede che l'utente sia registrato.
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] \attribute{+ user:JSON} \\ Contiene email e password inseriti nei form di login.
-\item[] \attribute{+ errorMsg:JSON} \\ Contiene l'eventuale errore ritornato dal service.
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato,  implementando in questo modo il 2-way data binding.
+\item[] \attribute{- rootScope:Object} \\ Questo campo dati rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo.
+\item[] \attribute{- location:Object} \\ Questo campo dati è il servizio che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
+\item[] \attribute{- ProfileService:Object} \\ Questo campo dati rappresenta un riferimento al service utilizzato per l'interazione con il back-end.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+login()} \\ Tramite il server richiede il login al back-end, quindi conferma l'avvenuta autenticazione o notifica l'eventuale errore.
+\item[] \method{+login()} \\ Questo controller si occupa di comunicare con il ProfileService per richiedere l'autenticazione dell'utente con le credenziali inserite nei campi di testo.
+Nel caso in cui la richiesta di autenticazione fallisca il metodo si occupa di gestire l'errore tramite messaggio.
+\item[] \method{+LoginController(rootScope:Object, scope:Object, location:Object, ProfileService:Object)} \\ Metodo che rappresenta il costruttore della classe. Si occupa di reperire dalla view l'email e password inserite e di utilizzare il service per richiedere il login dell'utente con le credenziali prelevate.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Parametro che rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Parametro che rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo
+\item[$\circ$] \parameter{location:Object} \\ Parametro il quale rappresenta il servizio che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
+\item[$\circ$] \parameter{ProfileService:Object} \\ Parametro che rappresenta il riferimento al service utilizzato per l'interazione con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe LogoutController}
@@ -441,9 +483,12 @@ Tale funzionalità richiede che l'utente sia registrato.
 \hline
 \centerline{\textbf{LogoutController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- rootScope:Object} \\
+\code{- location:Object} \\
+\code{- ProfileService:Object} \\
 \hline
- \\ 
+\code{+LogoutController(scope:Object, rootScope:Object, location:Object, ProfileService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -462,23 +507,26 @@ Tale funzionalità richiede che l'utente sia registrato.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
-\begin{itemize}
-
-
-\item[] Utilizza le classi:
-\begin{itemize}
-\item[$\bullet$] \class{Front-end::View::LogoutView}
-\end{itemize}
-\end{itemize}
+Assenti
+% TODO: deve esserci almeno una relazione con questa classe!!!
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- rootScope:Object} \\ Questo campo dati rappresenta lo scope radice, e come padre di tutti gli altri scope permette di accedervi. Il rootScope fornisce le stesse funzionalità degli scope figli.
+\item[] \attribute{- location:Object} \\ Questo campo dati è il service che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
+\item[] \attribute{- ProfileService:Object} \\ Questo campo dati rappresenta un riferimento al service che si occuperà di comunicare con il back-end ed effettuare il logout dell'utente.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+LogoutController(scope:Object, rootScope:Object, location:Object, ProfileService:Object)} \\ Metodo costruttore, si occupa di effettuare il logout dell'utente comunicando con il service.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Questo parametro rappresenta lo scope radice, e come padre di tutti gli altri scope permette di accedervi. Il rootScope fornisce le stesse funzionalità degli scope figli.
+\item[$\circ$] \parameter{location:Object} \\ Questo parametro è il service che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
+\item[$\circ$] \parameter{ProfileService:Object} \\ Parametro rappresentante il riferimento al service che permette l'interfacciamento con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe ForgotRequestController}
@@ -492,9 +540,10 @@ Tale funzionalità richiede che l'utente sia registrato.
 \hline
 \centerline{\textbf{ForgotRequestController}}
 \\ \hline
- \\ 
+\code{- ForgotPasswordService:Object} \\
+\code{- scope:Object} \\
 \hline
- \\ 
+\code{+ForgotRequestController(scope:Object, ForgotPasswordService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -525,12 +574,17 @@ Tale funzionalità richiede che l'utente sia registrato.
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- ForgotPasswordService:Object} \\ Campo dati che rappresenta il service utilizzato per l'interfacciamento al back-end.
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+ForgotRequestController(scope:Object, ForgotPasswordService:Object)} \\ Metodo costruttore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo parametro rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{ForgotPasswordService:Object} \\ Parametro che rappresenta il service utilizzato per l'interfacciamento al back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe ForgotResetController}
@@ -544,9 +598,10 @@ Tale funzionalità richiede che l'utente sia registrato.
 \hline
 \centerline{\textbf{ForgotResetController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- ForgotPasswordService:Object} \\
 \hline
- \\ 
+\code{+ForgotResetController(scope:Object, ForgotPasswordService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -570,12 +625,17 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- ForgotPasswordService:Object} \\ Parametro che rappresenta il riferimento al service utilizzato per interagire con il back-end.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+ForgotResetController(scope:Object, ForgotPasswordService:Object)} \\ Metodo costruttore della classe.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo parametro rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{ForgotPasswordService:Object} \\ Parametro che rappresenta il riferimento al service utilizzato per interagire con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe IndexController}
@@ -589,9 +649,11 @@ Assenti
 \hline
 \centerline{\textbf{IndexController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- CollectionService:Object} \\
+\code{- routeParams:Object} \\
 \hline
- \\ 
+\code{+IndexController(scope:Object, rootScope:Object, collectionService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -622,12 +684,19 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- CollectionService:Object} \\ Campo dati che rappresenta il service utilizzato per l'interfacciamento con il back-end.
+\item[] \attribute{- routeParams:Object} \\ Questo campo dati è il servizio che permette di ottenere informazioni sui correnti parametri di percorso URL.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+IndexController(scope:Object, rootScope:Object, collectionService:Object)} \\ Metodo costruttore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Parametro che rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Questo parametro è il servizio che permette di ottenere informazioni sui correnti parametri di percorso URL.
+\item[$\circ$] \parameter{collectionService:Object} \\ Parametro che rappresenta il service utilizzato per l'interfacciamento con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe UsersListController}
@@ -641,14 +710,12 @@ Assenti
 \hline
 \centerline{\textbf{UsersListController}}
 \\ \hline
-\code{+ email:JSON} \\
-\code{+ level:JSON} \\
-\code{+ id:JSON} \\
-\code{+ userError:Boolean} \\
-\code{+ formError:JSON} \\
+\code{- UserListService:Object} \\
+\code{- UserService:Object} \\
+\code{- scope:Object} \\
+\code{- rootScope:Object} \\
 \hline
-\code{+createUser()} \\
-\code{+deleteUser(user:JSON)} \\
+\code{+UsersListController(scope:Object, rootScope:Object, UserListService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -680,19 +747,19 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] \attribute{+ email:JSON} \\ Contiene l'email di un utente iscritto
-\item[] \attribute{+ level:JSON} \\ Contiene il livello di autorizzazione di un utente, utente, admin o superAdmin
-\item[] \attribute{+ id:JSON} \\ Contiene l'ID di un utente
-\item[] \attribute{+ userError:Boolean} \\ Vale true se è presente un errore false altrimenti. Serve per gestire la visualizzazione del messaggio di errore nella pagina interessata.
-\item[] \attribute{+ formError:JSON} \\ Contiene l'eventuale errore ritornato dal service.
+\item[] \attribute{- UserListService:Object} \\ Service che permette l'interfacciamento con il back-end.
+\item[] \attribute{- UserService:Object} \\ Service che permette l'interfacciamento con il back-end.
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- rootScope:Object} \\ Questo campo dati rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+createUser()} \\ Si occupa di creare un nuovo utente, impostando email, password e livello di autorizzazione.
-\item[] \method{+deleteUser(user:JSON)} \\ Cancella dal sistema l'utente passato come parametro.
+\item[] \method{+UsersListController(scope:Object, rootScope:Object, UserListService:Object)} \\ Metodo costruttore che si occupa di reperire la lista utenti per poi visualizzarli.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
-\item[$\circ$] \parameter{user:JSON} \\ Utente da eliminare.
+\item[$\circ$] \parameter{scope:Object} \\ Questo parametro rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Questo parametro rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo.
+\item[$\circ$] \parameter{UserListService:Object} \\ Service che permette l'interfacciamento con il back-end.
 \end{itemize}
 \end{itemize}
 
@@ -707,9 +774,11 @@ Assenti
 \hline
 \centerline{\textbf{ShowController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- ShowService:Object} \\
+\code{- routeParams:Object} \\
 \hline
- \\ 
+\code{+ShowController(scope:Object, routeParams:Object, showService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -741,12 +810,19 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- ShowService:Object} \\ Service che si occupa di comunicare con il back-end.
+\item[] \attribute{- routeParams:Object} \\ Questo campo dati rappresenta l'oggetto che permette di recuperare il set di parametri dell'URI corrente.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+ShowController(scope:Object, routeParams:Object, showService:Object)} \\ Metodo costruttore, si occupa di reperire tramite service le informazioni per poi popolare il model. 
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo parametro rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{routeParams:Object} \\ Parametro che rappresenta l'oggetto che permette di recuperare il set di parametri dell'URI corrente.
+\item[$\circ$] \parameter{showService:Object} \\ Service che si occupa di comunicare con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe DashboardController}
@@ -760,9 +836,12 @@ Assenti
 \hline
 \centerline{\textbf{DashboardController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- rootScope:Object} \\
+\code{- IndexListService:Object} \\
+\code{- location:Object} \\
 \hline
- \\ 
+\code{+DashboardController(scope:Object, rootScope:Object, location:Object, indexListService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -793,63 +872,21 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- rootScope:Object} \\ Questo campo dati rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo.
+\item[] \attribute{- IndexListService:Object} \\ Service che permette di comunicare con il back-end.
+\item[] \attribute{- location:Object} \\ Questo campo dati è il servizio che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+DashboardController(scope:Object, rootScope:Object, location:Object, indexListService:Object)} \\ Metodo costruttore.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Parametro che rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Questo parametro rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo.
+\item[$\circ$] \parameter{location:Object} \\ Questo parametro rappresenta il servizio che analizza l'URL nella barra degli indirizzi e rende l'URL disponibile all'applicazione. I cambiamenti all'URL nella barra degli indirizzi si riflettono in questo parametro e viceversa.
+\item[$\circ$] \parameter{indexListService:Object} \\ Service che permette di comunicare con il back-end.
 \end{itemize}
-
-\subsubsection{Classe ShowEditController}
-
-\begin{table}[H]
-\begin{center}
-\bgroup
-\setlength{\arrayrulewidth}{0.6mm}
-\def\arraystretch{1}
-\begin{tabular}{ | p{12cm} | }
-\hline
-\centerline{\textbf{ShowEditController}}
-\\ \hline
- \\ 
-\hline
- \\ 
-\hline
-\end{tabular}
-\egroup
-\caption{Classe ShowEditController}
-\end{center}
-\end{table}
-
-\paragraph*{Descrizione}
-\begin{itemize}
-\item[] Classe che gestisce le operazioni e la logica applicativa della pagina di modifica di un \glossario{Document}.
-\end{itemize}
-
-\paragraph*{Utilizzo}
-\begin{itemize}
-\item[] Utilizza la classe \texttt{Front-End::Services::ShowService} per popolare correttamente la classe \texttt{Front-End::Model::ShowModel} con i dati del \glossario{Document} richiesto. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller potrà ottenere i dati e generare la pagina di modifica di un \glossario{Document} popolando correttamente lo scope.
-\end{itemize}
-
-\paragraph*{Relazioni con altre classi}
-\begin{itemize}
-
-
-\item[] Utilizza le classi:
-\begin{itemize}
-\item[$\bullet$] \class{Front-end::View::ShowEditView}
-\end{itemize}
-\end{itemize}
-
-\paragraph*{Attributi}
-\begin{itemize}
-\item[] Assenti
-\end{itemize}
-
-\paragraph*{Metodi}
-\begin{itemize}
-\item[] Assenti
 \end{itemize}
 
 \subsubsection{Classe ProfileController}
@@ -863,9 +900,10 @@ Assenti
 \hline
 \centerline{\textbf{ProfileController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- ProfileService:Object} \\
 \hline
- \\ 
+\code{+ProfileController(scope:Object, ProfileService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -896,12 +934,17 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- ProfileService:Object} \\ Service utilizzato per comunicare con il back-end per ottenere i dati di cui si necessita.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+ProfileController(scope:Object, ProfileService:Object)} \\ Metodo costruttore si occupa di popolare il model tramite il service con i dati utente.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo parametro rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{ProfileService:Object} \\ Service utilizzato per comunicare con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe ProfileEditController}
@@ -915,9 +958,10 @@ Assenti
 \hline
 \centerline{\textbf{ProfileEditController}}
 \\ \hline
- \\ 
+\code{- scope:Object} \\
+\code{- ProfileService:Object} \\
 \hline
- \\ 
+\code{+ProfileEditController(scope:Object, ProfileService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -927,12 +971,12 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] Classe che gestisce le operazioni di modifica di un utente attraverso la pagina profilo.
+\item[] Classe che gestisce le operazioni di modifica di un utente attraverso la pagina di modifica profilo.
 \end{itemize}
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope.
+\item[] Utilizza la casse \texttt{Front-End::Services::ProfileService} per popolare la classe \texttt{Front-End::Model::ProfileModel} con i dati dell'utente. Quest'ultima classe fornirà un metodo accessorio attraverso il quale il controller può ottenere i dati e generare la pagina popolando correttamente lo scope della classe \texttt{Front-End::View::ProfileView}.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -947,12 +991,17 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- ProfileService:Object} \\ Campo dati rappresentante il riferimento al service che il controller utilizza per comunicare con la componente back-end.
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+ProfileEditController(scope:Object, ProfileService:Object)} \\ Metodo costuttore della classe.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Questo attributo rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{ProfileService:Object} \\ Parametro rappresentante il riferimento al service che il controller utilizza per comunicare con la componente back-end.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe UserController}
@@ -966,9 +1015,13 @@ Assenti
 \hline
 \centerline{\textbf{UserController}}
 \\ \hline
- \\ 
+\code{- UserService:Object} \\
+\code{- scope:Object} \\
+\code{- rootScope:Object} \\
 \hline
- \\ 
+\code{+deleteUser(user:JSON)} \\
+\code{+createUser()} \\
+\code{+UserController(scope:Object, rootScope:Object, userService:Object)} \\
 \hline
 \end{tabular}
 \egroup
@@ -998,12 +1051,24 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- UserService:Object} \\ Service che permette l'interfacciamento con il back-end.
+\item[] \attribute{- scope:Object} \\ Questo campo dati rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[] \attribute{- rootScope:Object} \\ Questo campo dati rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo
 \end{itemize}
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+deleteUser(user:JSON)} \\ Cancella dal sistema l'utente passato come parametro.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{user:JSON} \\ Parametro che rappresenta l'utente da eliminare.
+\end{itemize}
+\item[] \method{+createUser()} \\ Questo metodo si occupa di creare un nuovo utente, impostando email, password e livello di autorizzazione.
+\item[] \method{+UserController(scope:Object, rootScope:Object, userService:Object)} \\ Metodo costruttore. 
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{scope:Object} \\ Parametro che rappresenta l'oggetto che permette la comunicazione tra la view ed il controller, rendendo possibile l’accesso al model mantenendolo sincronizzato, implementando in questo modo il 2-way data binding.
+\item[$\circ$] \parameter{rootScope:Object} \\ Parametro che rappresenta lo scope radice dell'applicazione. Tutti gli altri scope discendono da questo
+\item[$\circ$] \parameter{userService:Object} \\ Service che permette l'interfacciamento con il back-end.
+\end{itemize}
 \end{itemize}
 
 \subsection{Componente Front-end::Model}
@@ -1019,9 +1084,9 @@ Assenti
 \hline
 \centerline{\textbf{ErrorModel}}
 \\ \hline
-\code{+ type:String} \\
-\code{+ title:String} \\
-\code{+ Content:String} \\
+\code{- type:String} \\
+\code{- title:String} \\
+\code{- Content:String} \\
 \hline
  \\ 
 \hline
@@ -1047,9 +1112,9 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] \attribute{+ type:String} \\ Definisce se si tratta di un messaggio di conferma o di errore.
-\item[] \attribute{+ title:String} \\ Contiene il titolo del messaggio di alert.
-\item[] \attribute{+ Content:String} \\ Contiene il messaggio d'allerta.
+\item[] \attribute{- type:String} \\ Definisce se si tratta di un messaggio di conferma o di errore.
+\item[] \attribute{- title:String} \\ Contiene il titolo del messaggio di alert.
+\item[] \attribute{- Content:String} \\ Contiene il messaggio d'allerta.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1068,7 +1133,7 @@ Assenti
 \hline
 \centerline{\textbf{ProfileModel}}
 \\ \hline
- \\ 
+\code{- Utente:JSON} \\
 \hline
  \\ 
 \hline
@@ -1094,7 +1159,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- Utente:JSON} \\ Contiene i dati dell'utente loggato.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1113,7 +1178,7 @@ Assenti
 \hline
 \centerline{\textbf{UserModel}}
 \\ \hline
- \\ 
+\code{- Utente:JSON} \\
 \hline
  \\ 
 \hline
@@ -1139,7 +1204,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- Utente:JSON} \\ Contiene le coppie attributo valore dell'utente selezionato.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1158,7 +1223,7 @@ Assenti
 \hline
 \centerline{\textbf{UsersListModel}}
 \\ \hline
- \\ 
+\code{- user:JSON} \\
 \hline
  \\ 
 \hline
@@ -1184,7 +1249,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- user:JSON} \\ Contiene le coppie attributo valore degli utenti.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1203,7 +1268,7 @@ Assenti
 \hline
 \centerline{\textbf{RequestResetModel}}
 \\ \hline
- \\ 
+\code{- utente:JSON} \\
 \hline
  \\ 
 \hline
@@ -1215,7 +1280,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] È il modello che contiene i dati dell'utente che richiede un recupero della password.
+\item[] È il modello che descrive i dati dell'utente che richiede un recupero della password.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1229,7 +1294,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- utente:JSON} \\ Contiene i dati dell'utente che richiede un recupero della password.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1248,7 +1313,8 @@ Assenti
 \hline
 \centerline{\textbf{IndexModel}}
 \\ \hline
- \\ 
+\code{- documents:JSON} \\
+\code{- collectionName:JSON} \\
 \hline
  \\ 
 \hline
@@ -1274,7 +1340,8 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- documents:JSON} \\ Contiene il json contenente i documenti di una data collection.
+\item[] \attribute{- collectionName:JSON} \\ Contiene il JSON contenente l'elenco delle collection.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1293,7 +1360,7 @@ Assenti
 \hline
 \centerline{\textbf{ShowModel}}
 \\ \hline
- \\ 
+\code{- elements:JSON} \\
 \hline
  \\ 
 \hline
@@ -1319,7 +1386,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- elements:JSON} \\ Contiene le coppie attributo-valore del documento richiesto.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1338,7 +1405,7 @@ Assenti
 \hline
 \centerline{\textbf{IndexListModel}}
 \\ \hline
- \\ 
+\code{- collections:JSON} \\
 \hline
  \\ 
 \hline
@@ -1364,7 +1431,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- collections:JSON} \\ ontiene l'elenco e la struttura di tutte le collection presenti nel sistema.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1385,7 +1452,9 @@ Assenti
 \hline
 \centerline{\textbf{IndexView}}
 \\ \hline
- \\ 
+\code{- column[]:Array} \\
+\code{- val:Array} \\
+\code{- Id:Array} \\
 \hline
  \\ 
 \hline
@@ -1397,7 +1466,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che descrive la pagina che visualizza i documenti della collection selezionata.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1411,52 +1480,9 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
-\end{itemize}
-
-\paragraph*{Metodi}
-\begin{itemize}
-\item[] Assenti
-\end{itemize}
-
-\subsubsection{Classe ShowEditView}
-
-\begin{table}[H]
-\begin{center}
-\bgroup
-\setlength{\arrayrulewidth}{0.6mm}
-\def\arraystretch{1}
-\begin{tabular}{ | p{12cm} | }
-\hline
-\centerline{\textbf{ShowEditView}}
-\\ \hline
-\code{+ fields:[0 ... *] Object} \\
-\hline
- \\ 
-\hline
-\end{tabular}
-\egroup
-\caption{Classe ShowEditView}
-\end{center}
-\end{table}
-
-\paragraph*{Descrizione}
-\begin{itemize}
-\item[] Questa classe si occupa di visualizzare la pagina di modifica di un Document. Nel suo \texttt{scope} presenta tutti gli attributi modificabili del Document, editabili tramite un campo di testo.
-\end{itemize}
-
-\paragraph*{Utilizzo}
-\begin{itemize}
-\item[] Viene utilizzata nel front-end per popolare il template html della pagina di modifica di un Document.
-\end{itemize}
-
-\paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
-
-\paragraph*{Attributi}
-\begin{itemize}
-\item[] \attribute{+ fields:[0 ... *] Object} \\ Questo campo dati rappresenta l'array di attributi del Document che possono essere modificati. Nella view corrisponderanno ai campi di testo editabili.
+\item[] \attribute{- column[]:Array} \\ Array contenente gli attributi del documento che lo sviluppatore ha deciso di visualizzare nella index page.
+\item[] \attribute{- val:Array} \\ Array contenente il valore degli attributi del documento che lo sviluppatore ha deciso di visualizzare nella index page.
+\item[] \attribute{- Id:Array} \\ Array contenente gli id degli attributi del documento che lo sviluppatore ha deciso di visualizzare nella index page.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1475,7 +1501,8 @@ Assenti
 \hline
 \centerline{\textbf{ShowView}}
 \\ \hline
- \\ 
+\code{- rowLabel[]:Array} \\
+\code{- data[]:Array} \\
 \hline
  \\ 
 \hline
@@ -1487,7 +1514,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe descrive la pagina che visualizza le coppie chiave valore del documento selezionato.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1501,7 +1528,8 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- rowLabel[]:Array} \\ Array contenente le etichette delle chiavi del documento.
+\item[] \attribute{- data[]:Array} \\ Array contenente i valori delle coppie chiave-valore del documento.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1520,7 +1548,7 @@ Assenti
 \hline
 \centerline{\textbf{ForgotRequestView}}
 \\ \hline
- \\ 
+\code{- email:String} \\
 \hline
  \\ 
 \hline
@@ -1532,7 +1560,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che rappresenta la pagina che permette all'utente di richiedere il reset della propria password tramite l'inserimento della propria email.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1546,7 +1574,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- email:String} \\ Campo dati contenente la email relativa all'utente che vuole modificare la propria password.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1565,7 +1593,7 @@ Assenti
 \hline
 \centerline{\textbf{DashboardView}}
 \\ \hline
- \\ 
+\code{- collections[]:Array} \\
 \hline
  \\ 
 \hline
@@ -1577,7 +1605,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che descrive la pagina che visualizza la dashboard, in questo momento la dasboard contiene la lista delle collection presenti nel sistema.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1591,7 +1619,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- collections[]:Array} \\ Array contenente i nomi delle collection presenti.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1610,7 +1638,7 @@ Assenti
 \hline
 \centerline{\textbf{UserListView}}
 \\ \hline
- \\ 
+\code{- user:JSON} \\
 \hline
  \\ 
 \hline
@@ -1622,7 +1650,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che rappresenta la pagina contenente l'elenco di tutti gli utenti presenti nel sistema.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1636,7 +1664,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- user:JSON} \\ Contiene un elenco degli utenti iscritti.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1655,7 +1683,9 @@ Assenti
 \hline
 \centerline{\textbf{UserView}}
 \\ \hline
- \\ 
+\code{- level:Integer} \\
+\code{- role:String} \\
+\code{- email:String} \\
 \hline
  \\ 
 \hline
@@ -1667,7 +1697,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che descrive la pagina che visualizza le informazioni sull'utente selezionato.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1681,7 +1711,9 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- level:Integer} \\ Contiene il livello di permesso dell'utente in forma numerica.
+\item[] \attribute{- role:String} \\ Contiene il livello di permesso dell'utente in forma testuale.
+\item[] \attribute{- email:String} \\ Contiene la mail dell'utente selezionato.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1700,7 +1732,8 @@ Assenti
 \hline
 \centerline{\textbf{LoginView}}
 \\ \hline
- \\ 
+\code{- email:String} \\
+\code{- password:String} \\
 \hline
  \\ 
 \hline
@@ -1712,12 +1745,12 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Questa classe si occupa di descrivere la pagina di login dell'applicazione mettendo a disposizione dell'utente un form all'interno del quale inserire email e password. Viene inoltre messo a disposizione un link per richiedere il ripristino della password.
 \end{itemize}
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] 
+\item[] Viene utilizzata dalla classe \code{LoginController} per generare la pagina di Login dell'applicazione.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -1726,7 +1759,8 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- email:String} \\ Questo parametro rappresenta l'email inserita dall'utente nel campo email del form della pagina di Login.
+\item[] \attribute{- password:String} \\ Questo parametro rappresenta la password inserita dall'utente nel campo password del form della pagina di Login.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1745,7 +1779,10 @@ Assenti
 \hline
 \centerline{\textbf{ProfileView}}
 \\ \hline
- \\ 
+\code{- email:String} \\
+\code{- name:String} \\
+\code{- lastName:String} \\
+\code{- id:String} \\
 \hline
  \\ 
 \hline
@@ -1757,7 +1794,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che rappresenta la pagina che visualizza le informazioni dell'utente attualmente autenticato.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1771,52 +1808,10 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
-\end{itemize}
-
-\paragraph*{Metodi}
-\begin{itemize}
-\item[] Assenti
-\end{itemize}
-
-\subsubsection{Classe LogoutView}
-
-\begin{table}[H]
-\begin{center}
-\bgroup
-\setlength{\arrayrulewidth}{0.6mm}
-\def\arraystretch{1}
-\begin{tabular}{ | p{12cm} | }
-\hline
-\centerline{\textbf{LogoutView}}
-\\ \hline
- \\ 
-\hline
- \\ 
-\hline
-\end{tabular}
-\egroup
-\caption{Classe LogoutView}
-\end{center}
-\end{table}
-
-\paragraph*{Descrizione}
-\begin{itemize}
-\item[] 
-\end{itemize}
-
-\paragraph*{Utilizzo}
-\begin{itemize}
-\item[] 
-\end{itemize}
-
-\paragraph*{Relazioni con altre classi}
-Assenti
-% TODO: deve esserci almeno una relazione con questa classe!!!
-
-\paragraph*{Attributi}
-\begin{itemize}
-\item[] Assenti
+\item[] \attribute{- email:String} \\ Campo dati che contiene l'email dell'utente attualmente loggato.
+\item[] \attribute{- name:String} \\ Campo dati che contiene il nome dell'utente attualmente loggato.
+\item[] \attribute{- lastName:String} \\ Campo dati che contiene il cognome dell'utente attualmente loggato.
+\item[] \attribute{- id:String} \\ Campo dati che contiene l'id dell'utente attualmente loggato.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1835,7 +1830,7 @@ Assenti
 \hline
 \centerline{\textbf{ForgotResetView}}
 \\ \hline
- \\ 
+\code{- password:String} \\
 \hline
  \\ 
 \hline
@@ -1847,7 +1842,7 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Classe che rappresenta la pagina che permette all'utente di resettare la propria password. Viene reindirizzato a questa pagine tramite un link presente nell'email ricevuta a seguito della compilazione di ForgotRequestView.
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1861,7 +1856,7 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- password:String} \\ Campo dati contenente la nuova password.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1880,7 +1875,9 @@ Assenti
 \hline
 \centerline{\textbf{ProfileEditView}}
 \\ \hline
- \\ 
+\code{- email:String} \\
+\code{- id:String} \\
+\code{+ password:String} \\
 \hline
  \\ 
 \hline
@@ -1892,12 +1889,12 @@ Assenti
 
 \paragraph*{Descrizione}
 \begin{itemize}
-\item[] 
+\item[] Questa classe descrive la pagina che si occupa di modificare i dati dell'utente attualmente autenticato.
 \end{itemize}
 
 \paragraph*{Utilizzo}
 \begin{itemize}
-\item[] 
+\item[] Viene utilizzato dalla classe \texttt{Front-end::Controller::ProfileEditController} per generare correttamente la pagina di modifica profilo.
 \end{itemize}
 
 \paragraph*{Relazioni con altre classi}
@@ -1906,7 +1903,9 @@ Assenti
 
 \paragraph*{Attributi}
 \begin{itemize}
-\item[] Assenti
+\item[] \attribute{- email:String} \\ Campo dati che contiene l'email dell'utente attualmente loggato.
+\item[] \attribute{- id:String} \\ Campo dati che contiene l'id dell'utente attualmente loggato.
+\item[] \attribute{+ password:String} \\ Questo campo dati rappresenta la password che dovrà essere modificata dall'utente.
 \end{itemize}
 
 \paragraph*{Metodi}

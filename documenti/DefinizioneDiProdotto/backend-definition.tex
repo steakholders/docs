@@ -1342,7 +1342,7 @@ Lo schema prevede tre attributi:
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+\textit{loadDSLFile()}()} \\
 \hline
 \end{tabular}
 \egroup
@@ -1377,7 +1377,7 @@ Lo schema prevede tre attributi:
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+\textit{loadDSLFile()}()} \\ Questo metodo si occupa di interpretare il contenuto del file DSL passatogli, per poi generare ed eseguire il codice derivato dalla trasformazione.
 \end{itemize}
 
 \subsubsection{Classe ConcreteDSLInterpreter}
@@ -1657,7 +1657,7 @@ Assenti
 \end{itemize}
 \end{itemize}
 
-\subsubsection{Classe Trasform}
+\subsubsection{Classe Transformation}
 
 \begin{table}[H]
 \begin{center}
@@ -1666,22 +1666,22 @@ Assenti
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{Trasform}}
+\centerline{\textbf{Transformation}}
 \\ \hline
  \\ 
 \hline
- \\ 
+\code{+transform(element:Object):Object} \\
 \hline
 \end{tabular}
 \egroup
-\caption{Classe Trasform}
+\caption{Classe Transformation}
 \end{center}
 \end{table}
 
 \paragraph*{Descrizione}
 \begin{itemize}
 \item[] Classe che racchiude tutte le informazioni relative alla modalità con cui i dati prelevati dal database verranno modificati prima di essere inviati al front-end.
-Tali trasformazioni vengono dichiarate dal developer nel DSL.
+Tali trasformazioni vengono dichiarate dal developer nel DSL. Questa classe rappresenta una funzione da chiamare sul valore degli attributi
 \end{itemize}
 
 \paragraph*{Utilizzo}
@@ -1700,7 +1700,10 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] Assenti
+\item[] \method{+transform(element:Object):Object} \\ Questo metodo prende in input un elemento, applica una trasformazione, e restituisce quest'ultima in output tramite il \texttt{return}.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
+\item[$\circ$] \parameter{element:Object} \\ Questo parametro rappresenta l'elemento da che dovrà essere trasformato.
+\end{itemize}
 \end{itemize}
 
 \subsubsection{Classe Attribute}
@@ -1749,7 +1752,7 @@ Assenti
 
 \item[] Utilizza le classi:
 \begin{itemize}
-\item[$\bullet$] \class{Back-end::Lib::Model::DSLModel::Trasform}
+\item[$\bullet$] \class{Back-end::Lib::Model::DSLModel::Transformation}
 \end{itemize}
 \end{itemize}
 

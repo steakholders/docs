@@ -18,6 +18,7 @@ ActiveAdmin
 Actor
 Actors
 ACWP
+Add
 addAttribute
 Addressed
 Addy
@@ -104,7 +105,6 @@ Benefit
 best
 between
 binding
-Binding
 BioComputing
 bioinformatica
 blabla
@@ -134,6 +134,7 @@ Call
 callback
 camel
 CamelCase
+Cancel
 Capability
 captionpos
 Cardin
@@ -179,7 +180,6 @@ collectionQuery
 collectionReference
 collections
 collectionService
-CollectionService
 colorlinks
 column
 columnLabel
@@ -337,6 +337,7 @@ Efficiency
 effort
 election
 elections
+element
 elements
 em
 Ember
@@ -447,7 +448,6 @@ gedit
 general
 Generator
 get
-GET
 getAttributes
 getAuthController
 getCollectionController
@@ -538,7 +538,6 @@ index
 indexController
 IndexListModel
 indexListService
-IndexListService
 indexModel
 indexPage
 IndexService
@@ -641,7 +640,6 @@ loadDSLFile
 l'Object
 local
 location
-Location
 Locator
 LOCs
 log
@@ -1085,7 +1083,6 @@ showpage
 showPage
 ShowPageEdit
 showService
-ShowService
 showspaces
 showstringspaces
 showtabs
@@ -1216,6 +1213,7 @@ tracciabilità
 tranformation
 Transactions
 Transfer
+transform
 transformation
 Trasform
 tree
@@ -1279,7 +1277,6 @@ UserPage
 users
 userSchema
 userService
-UserService
 UsersIndex
 usersList
 UsersListController
@@ -1315,7 +1312,6 @@ walkthrough
 walktrough
 Wandschneider
 way
-Way
 ways
 WebKit
 webmaster

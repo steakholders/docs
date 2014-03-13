@@ -540,6 +540,11 @@ accedibile
 act
 action
 active
+ActiveAdmin
+Actor
+Actors
+ACWP
+Add
 addAttribute
 admin
 aggiungi'
@@ -612,6 +617,9 @@ burndown
 bytecode
 callback
 camel
+CamelCase
+Cancel
+Capability
 captionpos
 cases
 casting

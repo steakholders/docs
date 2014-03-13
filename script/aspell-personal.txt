@@ -512,6 +512,7 @@ home
 homepage
 Howard
 html
+httpBackend
 HTTPS
 HUCP
 HyperText
@@ -640,6 +641,7 @@ Locator
 LOCs
 log
 loggati
+loggato
 logger
 logic
 LoginController
@@ -656,6 +658,7 @@ l'overhead
 lower
 lucidchart
 LUF
+l'update
 l'upgrade
 l'upload
 l'uri
@@ -1007,6 +1010,7 @@ riusabile
 riusabili
 Robert
 root
+rootScope
 Rotundo
 rounded
 router
@@ -1137,6 +1141,7 @@ SublimeLinter
 subsystem
 subtask'
 Subtitle
+Success
 sull'
 sum
 Sun

@@ -519,6 +519,7 @@ home
 homepage
 Howard
 html
+httpBackend
 HTTPS
 HUCP
 HyperText
@@ -667,6 +668,7 @@ l'overhead
 lower
 lucidchart
 LUF
+l'update
 l'upgrade
 l'upload
 l'uri
@@ -1154,6 +1156,7 @@ SublimeLinter
 subsystem
 subtask'
 Subtitle
+Success
 sull'
 sum
 Sun

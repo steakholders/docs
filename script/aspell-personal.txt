@@ -18,6 +18,7 @@ ActiveAdmin
 Actor
 Actors
 ACWP
+Add
 addAttribute
 Addressed
 Addy
@@ -132,6 +133,7 @@ Call
 callback
 camel
 CamelCase
+Cancel
 Capability
 captionpos
 Cardin

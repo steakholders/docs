@@ -11,17 +11,19 @@
 \clearpage
 
 \tableofcontents
-\listoftables
+% \listoftables non presenti
 \listoffigures
 
 \clearpage
 
-\include{capitolo-introduzione}
-\include{capitolo-manuale}
+\input{capitolo-introduzione}
+\input{../ManualeUtente/capitolo-profilo}
+\input{../ManualeUtente/capitolo-gestionecollection}
+\input{capitolo-gestioneutenti}
 
-\appendix
-\addappheadtotoc
-\setcounter{table}{0}
-\renewcommand{\thetable}{A.\arabic{table}}
+% \appendix
+% \addappheadtotoc
+% \setcounter{table}{0}
+% \renewcommand{\thetable}{A.\arabic{table}}
 
 \end{document}

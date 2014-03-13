@@ -563,7 +563,7 @@ Assenti
 \\ \hline
  \\ 
 \hline
-\code{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\
+\code{+browseFileSystem(errback:function(MaapError), root:String, callback:function(Array))} \\
 \code{+init(app:ServerApp)} \\
 \code{+DSLLoaderHandler()} \\
 \hline
@@ -600,13 +600,13 @@ Assenti
 
 \paragraph*{Metodi}
 \begin{itemize}
-\item[] \method{+browseFileSystem(root:String, callback:function(Array), errback:function(MaapError))} \\ Metodo che restituisce un array di nomi dei file contenuti nella path \code{root} data, nel caso di errore risponde con un oggetto MaapError contenente le informazioni corrispondenti.
+\item[] \method{+browseFileSystem(errback:function(MaapError), root:String, callback:function(Array))} \\ Metodo che restituisce un array di nomi dei file contenuti nella path \code{root} data. Nel caso di errore risponde con un oggetto \texttt{MaapError} contenente le informazioni dell'errore generato.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{root:String} \\ Path contenente i file \glossario{DSL} da caricare.
 \item[$\circ$] \parameter{callback:function(Array)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare al termine dell'elaborazione senza errori, dando come parametro l'array contenente i nomi dei file contenuti nella root.
-\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare se nell'elaborazione avviene un errore. \\ Il parametro di tipo MaapError conterrà le informazioni dell'errore mentre sarà null nel caso non si verifichino errori durante l'elaborazione.
+\item[$\circ$] \parameter{errback:function(MaapError)} \\ Questo parametro rappresenta la callback che il metodo dovrà chiamare nel caso in cui nell'elaborazione avviene un errore. Il parametro di tipo MaapError conterrà le informazioni dell'errore mentre sarà null nel caso in cui non vengano generati errori durante l'elaborazione.
 \end{itemize}
-\item[] \method{+init(app:ServerApp)} \\ Metodo che carica i file \glossario{DSL} delle \glossario{Collection} utilizzando \code{browseFileSystem()} facendosi restituire un'array di nomi di file, per ognuno di questi si occupa di caricarlo utilizzando il metodo \code{loadDSLFile()} del modulo \code{dslDomain}. Nel caso ci siano errori nei \glossario{DSL} viene richiamato il successivo middleware attivando la catena di gestione errore.
+\item[] \method{+init(app:ServerApp)} \\ Metodo che carica i file \glossario{DSL} delle \glossario{Collection} utilizzando \code{browseFileSystem()} facendosi restituire un'array di nomi di file. Per ognuno di questi si occupa di caricarlo correttamente utilizzando il metodo \code{loadDSLFile()} del modulo \code{DslDomain}. Nel caso ci siano errori nei \glossario{DSL} viene richiamato il successivo middleware, attivando la catena di gestione errore.
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}
 \item[$\circ$] \parameter{app:ServerApp} \\ È l'istanza del server dell'applicazione.
 \end{itemize}

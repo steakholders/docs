@@ -36,10 +36,10 @@ Back-end::Lib::Controller::Service::ServiceFactory::getShowController() & TU - 6
 Back-end::Lib::Controller::Service::ServiceFactory::getIndexController() & TU - 62 \\ \hline
 Back-end::Lib::View::ForgotMailView::buildForgotMail() & TU - 63 \\ \hline
 Back-end::Lib::Controller::Middleware::ErrorHandler::handler() & TU - 68 \\ \hline
-Back-end::Lib::Controller::Middleware::DSLLoaderHandler::init() & TU - 66 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::browseFileSystem() & TU - 78 \\ \hline
 Back-end::Lib::Controller::Service::ProfileService::logout() & TU - 73 \\ \hline
 Back-end::Lib::Controller::Middleware::NotFoundHandler::handler() & TU - 76 \\ \hline
-Back-end::Lib::Controller::Middleware::DSLLoaderHandler::browseFileSystem() & TU - 78 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::init() & TU - 66 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::getErrors() & TU - 16 \\ \hline
 Back-end::Lib::Utils::MaapError::toString() & TU - 7 \\ \hline
 Back-end::Lib::Model::UserModel::\underline{getUserById}() & TU - 24 \\ \hline
@@ -75,9 +75,8 @@ Back-end::Lib::Model::DSLModel::ShowModel::ShowModel() & TU - 38 \\ \hline
 Back-end::Lib::Model::DSLModel::Attribute::getTransformation() & TU - 45 \\ \hline
 Back-end::Lib::Model::DSLModel::Attribute::isSelectable() & TU - 46 \\ \hline
 Back-end::Lib::Utils::MaapError::MaapError() & TU - 5 \\ \hline
-Front-end::Controllers::UsersListController::deleteUser() &  \\ \hline
-Front-end::Controllers::UsersListController::createUser() & TU - 10 \\ \hline
-Front-end::Controllers::LoginController::login() & TU - 11 \\ \hline
+Front-end::Services::IndexListService::query() & TU - 87 \\ \hline
+Front-end::Services::UserListService::remove() & TU - 89 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::DSLDomain() & TU - 12 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::loadDSLFile() & TU - 13 \\ \hline
 Back-end::Lib::Model::UserModel::init() & TU - 17 \\ \hline
@@ -99,7 +98,30 @@ Back-end::Lib::Controller::Service::IndexService::getIndexPage() & TU - 54 \\ \h
 Back-end::Lib::Controller::Middleware::DSLLoaderHandler::DSLLoaderHandler() & TU - 63 \\ \hline
 Back-end::Lib::ServerApp::ServerApp() & TU - 4 \\ \hline
 Back-end::Lib::Controller::Service::CollectionListService::list() &  \\ \hline
-Back-end::Lib::Controller::Service::CollectionListService::getDashboard() &  \\ \hline
+Back-end::Lib::Controller::Service::CollectionListService::getDashboard() & TU - 107 \\ \hline
+Front-end::Services::UserListService::query() & TU - 90 \\ \hline
+Front-end::Controllers::LoginController::LoginController() & TU - 94 \\ \hline
+Front-end::Services::UserService::query() & TU - 82 \\ \hline
+Front-end::Services::UserService::update() & TU - 83 \\ \hline
+Front-end::Services::UserService::remove() & TU - 84 \\ \hline
+Front-end::Services::ShowService::query() & TU - 85 \\ \hline
+Front-end::Services::IndexService::query() & TU - 86 \\ \hline
+Front-end::Services::UserListService::save() & TU - 88 \\ \hline
+Front-end::Services::ProfileService::update() & TU - 91 \\ \hline
+Front-end::Services::ProfileService::get() & TU - 92 \\ \hline
+Front-end::Controllers::LoginController::login() & TU - 93 \\ \hline
+Front-end::Controllers::LogoutController::LogoutController() & TU - 95 \\ \hline
+Front-end::Controllers::ShowController::ShowController() & TU - 98 \\ \hline
+Front-end::Controllers::ForgotResetController::ForgotResetController() & TU - 105 \\ \hline
+Front-end::Controllers::ProfileEditController::ProfileEditController() & TU - 106 \\ \hline
+Front-end::Controllers::UserController::createUser() & TU - 10 \\ \hline
+Front-end::Controllers::UserController::deleteUser() & TU - 96 \\ \hline
+Front-end::Controllers::UserController::UserController() & TU - 97 \\ \hline
+Front-end::Controllers::ProfileController::ProfileController() & TU - 104 \\ \hline
+Front-end::Controllers::UsersListController::UsersListController() & TU - 103 \\ \hline
+Front-end::Controllers::ForgotRequestController::ForgotRequestController() & TU - 101 \\ \hline
+Front-end::Controllers::IndexController::IndexController() & TU - 100 \\ \hline
+Front-end::Controllers::DashboardController::DashboardController() & TU - 99 \\ \hline
 \caption{Metodi-Test}
 \end{longtable}
 \egroup

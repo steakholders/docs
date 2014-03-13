@@ -105,7 +105,6 @@ Benefit
 best
 between
 binding
-Binding
 BioComputing
 bioinformatica
 blabla
@@ -182,7 +181,6 @@ collectionQuery
 collectionReference
 collections
 collectionService
-CollectionService
 colorlinks
 column
 columnLabel
@@ -452,7 +450,6 @@ gedit
 general
 Generator
 get
-GET
 getAttributes
 getAuthController
 getCollectionController
@@ -544,7 +541,6 @@ index
 indexController
 IndexListModel
 indexListService
-IndexListService
 indexModel
 indexPage
 IndexService
@@ -648,7 +644,6 @@ loadDSLFile
 l'Object
 local
 location
-Location
 Locator
 LOCs
 log
@@ -1094,7 +1089,6 @@ showpage
 showPage
 ShowPageEdit
 showService
-ShowService
 showspaces
 showstringspaces
 showtabs
@@ -1291,7 +1285,6 @@ UserPage
 users
 userSchema
 userService
-UserService
 UsersIndex
 usersList
 UsersListController
@@ -1327,7 +1320,6 @@ walkthrough
 walktrough
 Wandschneider
 way
-Way
 ways
 WebKit
 webmaster

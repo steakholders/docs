@@ -40,6 +40,7 @@ all'idUser
 all'index
 all'indexModel
 all'upload
+all'URL
 all'userId
 altresì
 Amazon
@@ -103,7 +104,7 @@ before
 Benefit
 best
 between
-Binding
+binding
 BioComputing
 bioinformatica
 blabla
@@ -178,7 +179,7 @@ CollectionPage
 collectionQuery
 collectionReference
 collections
-CollectionService
+collectionService
 colorlinks
 column
 columnLabel
@@ -270,6 +271,7 @@ dell'application
 dell'array
 dell'index
 dell'istanziazione
+dell'URI
 dell'URL
 Demonstrable
 density
@@ -335,6 +337,8 @@ Efficiency
 effort
 election
 elections
+element
+elements
 em
 Ember
 emph
@@ -443,7 +447,7 @@ garbage
 gedit
 general
 Generator
-GET
+get
 getAttributes
 getAuthController
 getCollectionController
@@ -534,7 +538,7 @@ incrementalmente
 index
 indexController
 IndexListModel
-IndexListService
+indexListService
 indexModel
 indexPage
 IndexService
@@ -636,7 +640,7 @@ ln
 loadDSLFile
 l'Object
 local
-Location
+location
 Locator
 LOCs
 log
@@ -662,6 +666,7 @@ l'update
 l'upgrade
 l'upload
 l'uri
+l'URL
 l'userId
 Luzzati
 Maa
@@ -1009,10 +1014,12 @@ ripianifichiamo
 riusabile
 riusabili
 Robert
+role
 root
 rootScope
 Rotundo
 rounded
+routeParams
 router
 routine's
 routing
@@ -1030,6 +1037,7 @@ run
 runtime
 ruoli'
 Satisfied
+save
 scaffold
 scaffolding
 Schemaless
@@ -1076,7 +1084,7 @@ showModel
 showpage
 showPage
 ShowPageEdit
-ShowService
+showService
 showspaces
 showstringspaces
 showtabs
@@ -1208,6 +1216,7 @@ tracciabilità
 tranformation
 Transactions
 Transfer
+transform
 transformation
 Trasform
 tree
@@ -1270,7 +1279,7 @@ userneme
 UserPage
 users
 userSchema
-UserService
+userService
 UsersIndex
 usersList
 UsersListController
@@ -1305,7 +1314,7 @@ vv
 walkthrough
 walktrough
 Wandschneider
-Way
+way
 ways
 WebKit
 webmaster

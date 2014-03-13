@@ -339,6 +339,7 @@ Efficiency
 effort
 election
 elections
+element
 elements
 em
 Ember
@@ -1219,6 +1220,7 @@ tracciabilità
 tranformation
 Transactions
 Transfer
+transform
 transformation
 Trasform
 tree

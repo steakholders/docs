@@ -4,12 +4,13 @@ all'anilisi all'analisi
 allìapplicazione all'applicazione
 appresentazione Rappresentazione
 chiamarà chiamerà
+correttemente correttamente
 declassere declassare
 dell'aministratore dell'amministratore
+dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
-dellanno dell'anno
 diagrammmi diagrammi
 ec ecc
 erraro errato
@@ -20,11 +21,13 @@ ia La
 istanzare instanziare
 l'ambiete l'ambiente
 l'emal l'email
-l'interpetazione l'interpretazione
 liberia libreria
 liberie librerie
+l'interpetazione l'interpretazione
+metoto metodo
 off offe
 oltra oltre
+ontiene ottiene
 paramentri parametri
 paramentro parametro
 partecipandi Partecipanti
@@ -37,8 +40,9 @@ rischesto richiesto
 risportate riportate
 risportati riportati
 sarnno saranno
-staica statica
+sato stato
 sè sé
+staica statica
 un'apposito un apposito
 un'approccio un' approccio
 un'array un array

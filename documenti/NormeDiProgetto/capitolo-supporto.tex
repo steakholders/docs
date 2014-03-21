@@ -1,542 +1,429 @@
 \section{Processi di supporto}
 
-\subsection{Gestione ticket}
-\label{gestioneticket}
+\subsection{Processo di Documentazione}
 
-Abbiamo ritenuto poco efficiente utilizzare la piattaforma \glossario{TeamworkPM} per la gestione sia delle attività che delle modifiche, poiché l'utilizzo che volevamo farne non sfruttava appieno le funzionalità di ``Diagramma Gantt'' e ``Task List''. È stata fatta quindi la seguente separazione:
-\begin{itemize}
- \item \textbf{gestione delle attività}: viene fatta utilizzando i \glossario{task} di \glossario{TeamworkPM}
- \item \textbf{gestione delle modifiche}: viene fatta utilizzando le \glossario{issue} di \glossario{GitHub}
-\end{itemize}
+	\subsubsection{Scopo del processo}
+	Lo scopo di questo processo è lo sviluppo e il mantenimento della documentazione prodotta durante il ciclo di vita del software.
 
-Quando non è specificato come modificare il valore di un parametro delle \glossario{issue} bisogna mantenere il valore già presente, o quello di default se la \glossario{issue} è appena stata creata.
-
-\subsubsection{Richiesta di modifica e segnalazione bug}
-\label{aperturaissue}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=9cm]{uml-processi/richiesta_di_modifica_e_segnalazione_bug.png}
-    \caption{Richiesta di modifica e segnalazione bug}
-\end{figure}
-
-Se un membro del gruppo intende segnalare un bug o richiedere una modifica deve aprire una \glossario{issue} su \glossario{GitHub} con i seguenti parametri:
-\begin{itemize}
- \item \textbf{Titolo}: un titolo breve ma descrittivo.
- \item \textbf{Descrizione}: una descrizione esaustiva dell'anomalia riscontrata o della modifica richiesta.
- \item \textbf{Tag}: uno tra i seguenti:
-  \begin{itemize}
-   \item \textbf{segnalazione anomalia}: da usare se si vuole segnalare un bug, un malfunzionamento, un'anomalia in genere che non dovrebbe esserci nei documenti ufficiali o nel prodotto finale;
-   \item \textbf{richiesta di modifica}: da usare se si vuole richiedere al Responsabile una modifica.
-  \end{itemize}
- \item \textbf{Assegnato a}: il Responsabile
- \item \textbf{Milestone}: nessuna
-\end{itemize}
-
-\subsubsection{Progettazione unità di lavoro}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=7cm]{uml-processi/progettazione_unita_di_lavoro.png}
-    \caption{Creazione compito}
-\end{figure}
-
-Il Progettista, dopo aver completata la progettazione di dettaglio, deve creare le \glossario{issue} di codifica con i seguenti parametri:
-\begin{itemize}
- \item \textbf{Titolo}: un titolo breve ma descrittivo.
- \item \textbf{Descrizione}: una descrizione esaustiva dell'attività da svolgere, con tutti i riferimenti necessari.
- \item \textbf{Tag}: \textbf{codifica}
- \item \textbf{Assegnato a}: il Responsabile
- \item \textbf{Milestone}: nessuna
-\end{itemize}
-
-\subsubsection{Valutazione issue}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{uml-processi/valutazione_issue.png}
-    \caption{Valutazione issue}
-\end{figure}
-
-Il Responsabile deve valutare ogni nuova \glossario{issue}. Se ritiene che la formulazione sia corretta e se è necessario approfondire la modalità in cui verrà eseguita l'attività richiesta, allora il Responsabile deve anche assegnare la \glossario{issue} ad un ruolo competente:
-\begin{itemize}
- \item \textbf{Assegnato a}: un ruolo a scelta del Responsabile
-\end{itemize}
-
-Tale ruolo, dopo averla analizzata, deve riassegnarla al Responsabile aggiungendo le informazione prodotte dall'analisi:
-\begin{itemize}
- \item \textbf{Assegnato a}: il Responsabile
- \item \textbf{Descrizione}: la descrizione già presente con in aggiunta i risultati dell'analisi.
-\end{itemize}
-
-A questo punto, se il Responsabile ritiene che l'attività debba essere eseguita, pianifica la issue secondo la procedura \ref{pianificazione}.
-
-Se il Responsabile non approva o non ritene valida la \glossario{issue} deve chiuderla impostando:
-\begin{itemize}
- \item \textbf{Tag}: uno tra i seguenti
-  \begin{itemize}
-   \item \textbf{scritto male}: se la descrizione o il titolo sono poco comprensibili;
-   \item \textbf{non lo faremo}: se ritiene che non valga la pena si svolgere l'attività richiesta;
-   \item \textbf{duplicato}: se l'attività è già stata richiesta da un'altra \glossario{issue}. In questo caso è raccomandabile aggiungere nella descrizione un riferimento alla \glossario{issue} originale.
-  \end{itemize}
- \item \textbf{Stato}: ``Chiuso''.
-\end{itemize}
-
-\subsubsection{Pianificazione issue}
-\label{pianificazione}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{uml-processi/pianificazione_issue.png}
-    \caption{Pianificazione issue}
-\end{figure}
-
-Il Responsabile deve pianificare le \glossario{issue} a lui assegnate e marcate ``approvato'' o ``codifica'' creando un \glossario{task}. Deve inoltre pianificare il corrispondente \glossario{task} di verifica se necessario. I \glossario{task} del compito e della modifica devono essere assegnati a persone diverse.
-
-Modifica i parametri della \glossario{issue}:
-\begin{itemize}
- \item \textbf{Assegnato a}: nessuno.
-\end{itemize}
-
-Se esiste già un \glossario{task} a cui associare la \glossario{issue} il Responsabile deve scegliere una delle seguenti opzioni:
-\begin{itemize}
- \item modificare tale \glossario{task} con questi parametri:
+	\subsubsection{Risultati osservabili del processo}
+	Questo processo produce:
 	\begin{itemize}
-		\item \textbf{Descrizione}: la descrizione precedente, con in aggiunta un riferimento evidente alla \glossario{issue}.
-	\end{itemize}
- \item creare un \glossario{task} secondario (``subtask'' nel gergo di TeamworkPM) con i seguenti parametri:
-	\begin{itemize}
-		\item \textbf{Titolo}: un titolo breve ma descrittivo, magari simile a quello della \glossario{issue}.
-		\item \textbf{Descrizione}: una breve descrizione, con un riferimento evidente alla \glossario{issue}.
-		\item \textbf{Assegnato a}: la stessa persona a cui è associato il \glossario{task} principale.
-	\end{itemize}
-\end{itemize}
-
-Se il \glossario{task} non esiste, allora deve crearne uno nuovo seguendo la procedura \ref{creazionetask}.
-
-Analogamente, se esiste già un \glossario{task} a cui associare la verifica, il Responsabile deve scegliere una delle seguenti opzioni:
-\begin{itemize}
- \item modificare tale \glossario{task} di verifica con questi parametri:
-	\begin{itemize}
-		\item \textbf{Descrizione}: la descrizione precedente, con in aggiunta un riferimento evidente al \glossario{task} da verificare.
-	\end{itemize}
- \item creare un \glossario{task} secondario (``subtask'' nel gergo di TeamworkPM) con i seguenti parametri:
-	\begin{itemize}
-		\item \textbf{Titolo}: un titolo breve ma descrittivo, magari simile a quello della \glossario{issue}.
-		\item \textbf{Descrizione}: una breve descrizione, con un riferimento evidente alla \glossario{issue}.
-		\item \textbf{Assegnato a}: la stessa persona a cui è associato il \glossario{task} principale.
-	\end{itemize}
-\end{itemize}
-
-Se il \glossario{task} di verifica non esiste, allora deve crearne uno nuovo seguendo la procedura \ref{creazionetask}.
-
-\subsubsection{Creazione task}
-\label{creazionetask}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=6cm]{uml-processi/creazione_task.png}
-    \caption{Creazione task}
-\end{figure}
-
-Il Responsabile può creare \glossario{task} con i seguenti parametri:
-\begin{itemize}
- \item \textbf{Titolo}: il titolo dell'attività nel formato ``\{identificativo\} - \{titolo\} (\{ruolo\})'', dove
-	\begin{itemize}
-		\item \textbf{identificativo}: il codice che identifica l'attività nel \emph{Piano di progetto}, se presente;
-		\item \textbf{titolo}: il titolo, breve e descrittivo, dell'attività.
-		\item \textbf{ruolo}: il ruolo a cui è assegnato il \glossario{task}
-	\end{itemize}
- \item \textbf{Assegnato a}: un membro del gruppo a scelta del Responsabile.
- \item \textbf{Pianificazione}: a scelta del Responsabile.
- \item \textbf{Descrizione}: una descrizione dell'attività (raccomandata).
- \item \textbf{Dipendenze}: i \glossario{task} di cui bisogna attendere il termine prima di poter svolgere questo \glossario{task}. In particolare, i \glossario{task} di verifica devono sempre dipendere dai \glossario{task} che devono verificare.
-\end{itemize}
-
-Solo il Responsabile può creare nuovi task.
-
-\subsubsection{Esecuzione compito}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm]{uml-processi/esecuzione_compito.png}
-    \caption{Esecuzione compito}
-\end{figure}
-
-Il ruolo a cui è assegnato un \glossario{task} non di verifica, dopo aver svolto l'attività richiesta, deve chiudere il \glossario{task}:
-\begin{itemize}
- \item \textbf{Stato task}: ``Chiuso''.
- \item \textbf{Funzione ``timer''}: registrare le ore di lavoro produttivo che sono state necessarie per completare l'attività. (Attenzione: non bisogna modificare, invece, il tempo stimato)
-\end{itemize}
-
-Inoltre deve chiudere ogni eventuale \glossario{issue} aperta associata:
-\begin{itemize}
- \item \textbf{Stato issue}: ``Chiuso''.
-\end{itemize}
-
-\subsubsection{Esecuzione verifica}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm]{uml-processi/esecuzione_verifica.png}
-    \caption{Esecuzione verifica}
-\end{figure}
-
-Il verificatore a cui è assegnato un \glossario{task}, dopo aver svolto l'attività richiesta, deve chiudere il \glossario{task}:
-\begin{itemize}
- \item \textbf{Stato}: ``Chiuso''.
- \item \textbf{Funzione ``timer''}: registrare le ore di lavoro produttivo che sono state necessarie per completare l'attività. (Attenzione: non bisogna modificare, invece, il tempo stimato)
-\end{itemize}
-
-Nel caso in cui il verificatore trovi bug o non conformità significative deve creare una \glossario{issue}, seguendo la procedura descritta nella sezione \ref{aperturaissue}.
-
-\subsection{Rotazione dei ruoli}
-\label{rotazioneruoli}
-Durante lo sviluppo del progetto vi sono diversi ruoli che ogni membro del gruppo \GroupName{} è tenuto a ricoprire almeno una volta. Per evitare possibili conflitti causati dalla rotazione dei ruoli, le attività principali assegnabili a specifici ruoli sono pianificate nel \PianoDiProgetto. Ogni componente del gruppo è tenuto a svolgere le attività assegnategli e a rispettare il ruolo che ne consegue. Il \textit{Responsabile} di progetto ha il compito di fare rispettare i ruoli assegnati durante le attività, mentre il \textit{Verificatore} deve individuare le possibili incongruenze tra i ruoli e le modifiche registrate nei diari delle modifiche.
-Le incongruenze possono essere di due tipi:
-\begin{itemize}
-\item Il compito svolto non fa parte dei compiti propri di un dato ruolo;
-\item La stessa persona verifica ciò che ha precedentemente prodotto.
-\end{itemize}
-
-Inoltre, si raccomanda che:
-\begin{itemize}
-\item Una persona non impieghi più del 50\% delle ore di lavoro in un unico ruolo;
-\item Sia assegnato un solo task al giorno per persona.
-\item I ruoli vengano ruotati ogni settimana, ma si lascia libertà al \textit{Responsabile} di ruotare in base alle esigenze.
-\end{itemize}
-
-Si predilige dunque una maggior frequenza di rotazione a discapito dell'efficienza.
-
-Il responsabile quando assegna un ticket, come indicato nella sezione \ref{teamwork} dovrà indicare il ruolo che il destinatario ricopre nell'adempiere tale task. Questo è necessario per il diario delle modifiche dei singoli documenti e per il rendiconto economico. I ruoli sono assegnati basandosi sul \PianoDiProgetto. 
-
-Deve inoltre tener conto delle non disponibilità a lavorare come indicato nella sezione \ref{Calendario condiviso}. \\
-A supporto di tali raccomandazioni si automatizzano le verifiche utilizzando alcune funzionalità predisposte dallo script descritto nella sezione \ref{Gantt}.
-	\subsubsection{Amministratore}
-	
-	L'\textit{Amministratore} equipaggia, organizza e gestisce l'ambiente di lavoro e di produzione. Collabora con il \textit{Responsabile} alla stesura del \textit{Piano di Progetto} e redige le \textit{Norme di Progetto}.
-	Le responsabilità assunte dall'\textit{Amministratore} sono:
-
-	\begin{itemize}
-
-		\item Attuare le scelte tecnologiche concordate con il \textit{Responsabile} di progetto;
-		\item Gestire le liste di distribuzione e assicurarne il rispetto;
-		\item Controllare versioni e configurazioni del prodotto;
-		\item Risolvere i problemi legati alla gestione dei processi.
-
+		\item L'Individuazione della documentazione da produrre durante il ciclo di vita del software;
+		\item la selezione degli standard utilizzati per la documentazione;
+		\item l'identificazione, verifica e approvazione degli scopi e contenti della documentazione prodotta;
+		\item una documentazione aderente agli standard scelti. 
 	\end{itemize}
 
-	\subsubsection{Analista}
 
-	L'\textit{Analista} è responsabile dell'attività di analisi, pertanto deve comprendere appieno il dominio applicativo. Redige lo \textit{Studio di Fattibilità} e l'\textit{Analisi dei Requisiti} ovvero una specifica di progetto ad alto livello con vincoli e rischi tecnologici, affrontabile dal proponente, dal committente e dal \textit{Progettista}.
+\subsubsection{Procedure}
+In questo capitolo vengono descritte le regole adottate per la stesura di tutti i documenti necessari al corretto svolgimento del progetto. Dopo un'attenta valutazione delle varie alternative si è scelto di utilizzare il linguaggio di markup \textbf{\LaTeX{}}. La scelta poggia su diverse motivazioni:
 
+\begin{itemize}
 
-	\subsubsection{Progettista}
+	\item È un linguaggio conosciuto da tutti i membri del gruppo;
+	\item Presenta un numero di librerie molto vaste che permettono di realizzare qualsiasi tipo di documento e di personalizzarlo liberamente in modo dettagliato;
+	\item La stesura viene fatta su file testuali e non binari, il che agevola il suo versionamento e permette una facile gestione su repository. Inoltre permette di utilizzare facilmente gli script che producono parti di documenti;
+	\item È un linguaggio molto diffuso nel mondo informatico e scientifico;
+	\item Si può produrre file in formato \glossario{PDF} con estrema facilità grazie al compilatore specifico;
+	\item Permette una facile gestione degli indici e dei glossari.
+	\item Permette di inserire diagrammi di Gantt, rendendo il loro codice tracciabile e facilmente modificabile.
 
-	Il \textit{Progettista} è responsabile dell'attività di progettazione, ha una profonda conoscenza dello stack tecnologico utilizzato e competenze tecniche aggiornate. Grazie a tali caratteristiche, ha una forte influenza sugli aspetti tecnici e tecnologici del progetto, e spesso ne assume responsabilità di scelta e gestione.
+\end{itemize}
 
+\subsubsection{Template}
 
-	\subsubsection{Programmatore}
+Per la stesura dei documenti è stato creato un apposito template \LaTeX{} in cui compaiono tutte le convenzioni sullo stile descritte nel documento corrente. Questo è stato fatto per agevolare il più possibile i componenti del gruppo che andranno a produrre i documenti, in modo che chiunque lavora ad un documento debba preoccuparsi solamente della scrittura del testo senza doversi preoccupare della sua formattazione. 
 
-	Il \textit{Programmatore} ha responsabilità circoscritte, si occupa dell'attività di codifica, nel rispetto delle \textit{Norme di Progetto}, miranti alla realizzazione del prodotto e delle componenti di ausilio necessarie per l'esecuzione delle prove di verifica e validazione.
+\subsubsection{Struttura del documento}
 
-
-	\subsubsection{Responsabile}
+	\paragraph{Prima pagina}
 	
-	Il \textit{Responsabile} ha l'ultima voce in capitolo per quanto concerne le decisioni sul progetto, è il responsabile ultimo dei risultati, infatti approva l'emissione dei documenti. Inoltre, redige il \textit{Piano di Progetto} assieme all'\textit{Amministratore}. 
-	Le responsabilità assunte dal \textit{Responsabile} sono:
-
+	La prima pagina del documento deve essere formattata nel modo seguente:
+	
 	\begin{itemize}
-
-		\item Pianificazione e organizzazione dello sviluppo del progetto, stima tempi e costi, e assegnazione delle attività ai componenti del gruppo;
-		\item Riportare lo stato del progetto ai committenti;
-		\item Analizzare i rischi che possono incorrere, monitorarli e prendere provvedimenti a riguardo;
-		\item Stabilire una \textit{ways of working} per ogni componente del gruppo, ai fini di un'influenza positiva delle performance del gruppo.
 	
-	\end{itemize}
-
-	
-	\subsubsection{Verificatore}
-
-	Il \textit{Verificatore} organizza ed attua le attività di verifica e controlla che le attività siano conformi alle norme. Redige la parte del \textit{Piano di Qualifica} che documenta le attività svolte e i risultati ottenuti, confrontandoli con le metriche espresse nel \PianoDiQualifica. \\ 
-	Le ore assegnate al verificatore devono corrispondere almeno al 30$\%$ delle ore totali suddivise tra ruoli.
-	
-	\subsection{Processo di Coordinamento}
-
-
-\subsubsection{Comunicazioni interne}
-\label{Comunicazioniinterne}
-
-Tutte le comunicazioni ad uso interno del gruppo avvengono tramite il servizio di messaggistica offerto da \emph{TeamworkPM}, altre vie di comunicazione sono sconsigliate.
-
-Nel caso sia necessario comunicare in modo rapido possono essere utilizzati strumenti di messaggistica istantanea come Hangouts o Skype. L'utilizzo di \glossario{SMS} e di chiamate telefoniche è riservato alle situazioni di urgenza.
-
-\paragraph{Messaggi}
-\label{Comunicazioniinternemessaggi}
-
-\begin{itemize}
-\item L'\textbf{oggetto} deve essere sintetico e coerente con il contenuto del messaggio;
-\item Il \textbf{contenuto} deve includere i dettagli necessari per una corretta comprensione del messaggio e non deve essere prolisso. Il mittente può servirsi del supporto al linguaggio di \glossario{Markdown} disponibile sulla piattaforma per rendere più chiaro il suo messaggio;
-\item La \textbf{categoria} deve essere coerente con l'argomento trattato. Può essere creata una categoria nuova se ritenuto necessario;
-\item La \textbf{notifica} via mail deve includere gli interessati al messaggio;
-\item Il livello di \textbf{privacy} deve sempre essere "\textit{Everybody on project}" in modo da permettere a tutti i componenti del gruppo di intervenire;
-\item Data l'esigua dimensione dello \glossario{storage} che offre la piattaforma nella versione \textit{free} utilizzata dal gruppo e l'assenza di visualizzatori online integrati, il numero e la dimensione degli \textbf{allegati} devono essere ridotti quanto più possibile.
-\end{itemize}
-
-\paragraph{Procedura per commenti a tasks o sub-tasks}
-
-Per tali comunicazioni valgono le regole del paragrafo \ref{Comunicazioniinternemessaggi}. Il contenuto del commento deve riguardare la task che riferisce. Se la discussione si sviluppa in argomenti non più coerenti, i componenti del gruppo \GroupName{} devono terminare la discussione, aprire un messaggio secondo le norme descritte al paragrafo \ref{Comunicazioniinternemessaggi} e inserire come nuovo commento alla discussione interrotta il link al messaggio creato con l'aggiunta della segnatura ``[OT]''. Questo non vincola il proseguimento della discussione sulla task secondo le norme.
-
-\subsubsection{Comunicazioni esterne}
-\label{email}
-
-Le comunicazioni esterne sono gestite esclusivamente dal Responsabile di Progetto. A tal fine è stato creato l'indirizzo di posta elettronica
-\begin{center} \GroupEmail{} \end{center}
-
-Il Responsabile di Progetto si fa dunque carico di notificare ai restanti membri del gruppo eventuali corrispondenze
-intrattenute con committenti e proponenti, applicando le norme stabilite al paragrafo \ref{Comunicazioniinterne}.
-
-
-\subsubsection{Riunioni}
-
-Qualora fosse necessaria una riunione di tutti o alcuni membri del gruppo sarà compito del Responsabile di Progetto avvisare gli interessati, tramite le procedure stabilite al paragrafo \ref{Comunicazioniinterne}.
-Il Responsabile di Progetto decide inoltre luogo, date e ora della riunione in base al calendario a sua disposizione. Nel caso in cui qualche membro non risponda entro 24 ore il Responsabile di Progetto dovrà accertarsi con mezzi di comunicazione adeguati che tutti siano stati informati.
-
-Ad ogni riunione verrà prodotto un verbale redatto da un segretario, ruolo svolto a turno da ogni membro del gruppo e deciso di volta in volta dal Responsabile di Progetto. Tale verbale, descritto nel paragrafo \ref{verbale} dovrà essere reso disponibile per la consultazione a tutti i membri del gruppo.
-
-È inoltre presente un \glossario{facilitatore}, ruolo svolto a turno da ogni membro del gruppo e deciso di volta in volta dal Responsabile di Progetto, che aiuterà a rispettare l'ordine del giorno senza prolungare eccessivamente la riunione.
-
-
-\subsection{Revisioni di progetto}
-La vita di questo progetto didattico attraversa le revisioni di progetto specificate in \PianoDiProgetto{}, esse consistono in \emph{review}(informali) e \emph{audit} (formali) ma le modalità con cui vengono affrontate sono, da parte del gruppo, le medesime, verranno quindi in seguito denominate presentazioni o revisioni. Vengono qui descritte le procedure per le revisioni secondo quanto descritto in IEEE 1028:
-\begin{enumerate}
-	\setcounter{enumi}{-1}
-	\item Entry evaluation: il Responsabile di Progetto prepara una checklist e si assicura che esistano le condizioni che permettano il successo della presentazione;
-	\item Management preparation: il Responsabile si assicura che tutti i membri del gruppo possano partecipare e l'ambiente di lavoro rispetti i vincoli imposti o suggeriti dal committente. A tal fine è stato elaborata una lista di indicazioni (\ref{presentazione});
-	\item Planning the review: il Responsabile deve identificare e confermare gli obiettivi della revisione, inoltre si assicura che tutto il team sia equipaggiato con le risorse necessarie per affrontare la revisione;
-	\item Overview of review procedures: ci si assicura che tutti i membri del gruppo conoscano gli obiettivi, le procedure e il materiale portato in revisione;
-	\item Individual preparation: ogni membro del gruppo si prepara individualmente per la presentazione;
-	\item Group examination: il gruppo si incontra al completo e prova la presentazione confermando il rispetto dei tempi e degli obiettivi;
-	\item Rework/follow-up: vengono corretti, laddove possibile,  gli errori e/o i difetti;
-	\item Exit evaluation: il Responsabile si assicura che tutti gli output prodotti siano pronti per la revisione.
-\end{enumerate}
-
-\label{presentazione}
-Le indicazioni su come costruire una presentazione sono le seguenti:
-\begin{itemize}
-	\item le diapositive devono avere la stessa densità: il rapporto tra testo, immagini e spazio vuoto deve essere uniforme;
-	\item evitare testi troppo lunghi, immagini piccole o troppo dettagliate;
-	\item non va spiegata la sola teoria: argomentare come è stata implementata nel progetto;
-	\item la lettura delle slide deve avvenire rivolgendosi al pubblico e non rivolti verso la diapositiva; si può usare con parsimonia lo schermo del portatile per avere un riferimento;
-	\item non ripetere quanto scritto nelle diapositive, è inutile;
-	\item il passaggio da una diapositiva all'altra deve avvenire  tra un tempo minimo e uno massimo in modo da consentirne la lettura e non annoiare chi ascolta;
-	\item le mani non devono stare nelle tasche;
-	\item ogni slide deve riportare il proprio numero sul totale delle diapositive.
-\end{itemize}
-
-
-
-
-
-
-\subsection{Procedure per la gestione della Repository}
-
-Come repository è stato scelto Git, in particolare il servizio \glossario{GitHub} come indicato nel capitolo \ref{github}.
-
-\subsubsection{Repository dei documenti}
-
-\paragraph{Struttura del repository}
-
-La struttura del repository, la cui cartella principale chiameremo \file{root}, è così composta:
-\begin{itemize}
- \item \textbf{\file{root/ufficiali/}} \\
-	Contiene i documenti ufficiali approvati dal Responsabile di progetto.
-
- \item \textbf{\file{root/modello/}} \\
-	Contiene i file comuni a due o più documenti.
-
- \item \textbf{\file{root/documenti/\{NomeDelDocumento\}/}} \\
-	Ciascuna cartella descritta da questo percorso contiene i file che vengono utilizzati dal documento \file{\{NomeDelDocumento\}}. In particolare conterrà il file \file{\{NomeDelDocumento\}.pdf} e il file \file{diario\_ modifiche.tex}, contenente il diario delle modifiche del documento.
-	
-	Il nome della cartella \file{\{NomeDelDocumento\}} e il file \file{\{NomeDelDocumento\}.pdf} devono rispettare la convenzione \glossario{CamelCase}.
-
- \item \textbf{\file{root/script/}} \\
-	Contiene gli script di supporto alle operazioni di verifica e compilazione dei documenti.
-\end{itemize}
-
-È raccomandato che tutti i file e le cartelle non contengano spazi nel loro nome. Non devono mai esserci due file o cartelle il cui percorso differisca soltanto per maiuscole/minuscole. Non bisogna inoltre rinominare file o cartelle modificandone soltanto il \glossario{case} di alcuni caratteri del nome.
-
-\paragraph{Branch}
-
-Il nome utilizzato per le \glossario{branch} del repository dovrà essere nella forma \textbf{nome-branch}, ossia con tutte le lettere minuscole e le parole separate da un trattino.
-
-\paragraph{Script di pre-commit}
-
-Con l'intenzione di ridurre al minimo la presenza di errori nei documenti caricati sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico i comandi \code{make test} e \code{make documents} descritti nella sezione \ref{makefile}. Se uno dei comandi fallisce il commit viene annullato e all'utente viene mostrato un messaggio di errore.
-
-Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
-\begin{lstlisting}
-ln -s {percorso assoluto del repository}/script/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
-\end{lstlisting}
-
-
-
-\subsubsection{Repository del codice}
-
-\paragraph{Struttura del repository}
-	
-La struttura del repository, la cui cartella principale chiameremo \file{root}, è così composta:
-\begin{itemize}
- \item \textbf{\file{root/extra/}} \\
-	Contiene script e file di supporto utilizzati per le attività di codifica.
-
- \item \textbf{\file{root/test/}} \\
-	Contiene i file relativi ai test d'unità della libreria MaaP.
-
- \item \textbf{\file{root/lib/}} \\
-	Contiene i file della libreria MaaP usata dalla Backend del progetto, posizionati in una cartella \code{lib} secondo la convenzione dei moduli di Node.js.
-
- \item \textbf{\file{root/node\_modules/}} \\
-	Contiene le librerie richieste dalla libreria MaaP.
-
- \item \textbf{\file{root/lib/model/}} \\
-	Contiene i file che gestiscono i dati utilizzati dall'applicazione e l'interfacciamento con il database.
-
- \item \textbf{\file{root/lib/model/dslmodel/}} \\
-	Contiene i file che gestiscono la gestione dei file di configurazione dsl e l'interfacciamento di questi con il database.
-
- \item \textbf{\file{root/lib/view/}} \\
-	Contiene i file che servono da template usati per visualizzare i dati all'utente.
-
- \item \textbf{\file{root/lib/controller/}} \\
-	Contiene i file che gestiscono la logica con cui vengono elaborate le richieste inviate all'applicazione.
-
- \item \textbf{\file{root/lib/controller/middleware/}} \\
-	Contiene i file che hanno il ruolo di middleware nel framework Express.
-
- \item \textbf{\file{root/lib/controller/service/}} \\
-	Contiene i file che hanno il ruolo di service nel framework Express.
-
- \item \textbf{\file{root/lib/utils/}} \\
-	Contiene i file di generica utilità, che non rientrano nella classificazione tra model, view e controller.
-
- \item \textbf{\file{root/scaffold/}} \\
-	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto.
-
- \item \textbf{\file{root/scaffold/collections/}} \\
-	Contiene i file di configurazione delle collection utilizzate dall'applicazione scaffold.
-
- \item \textbf{\file{root/scaffold/app/}} \\
-	Contiene i file relativi al Frontend dell'applicazione scaffold.
-
- \item \textbf{\file{root/scaffold/app/view/}} \\
-	Contiene i file statici html usati dal Frontend dell'applicazione scaffold.
-
- \item \textbf{\file{root/scaffold/app/style/}} \\
-	Contiene i file statici di stile usati dal Frontend dell'applicazione scaffold.
-
- \item \textbf{\file{root/scaffold/app/scripts/}} \\
-	Contiene i file dell'applicazione AngularJS usata nel Frontend.
-
- \item \textbf{\file{root/scaffold/app/scripts/services/}} \\
-	Contiene i file dei service di AngularJS usata nel Frontend.
-
- \item \textbf{\file{root/scaffold/app/scripts/controllers/}} \\
-	Contiene i file dei controller di AngularJS usata nel Frontend.
-
- \item \textbf{\file{root/scaffold/app/bower\_components/}} \\
-	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione scaffold.
-	
- \item \textbf{\file{root/scaffold/node\_modules/}} \\
-	Contiene i file delle librerie utilizzate dal Backend dell'applicazione scaffold.
-
-
-\end{itemize}
-
-È raccomandato che tutti i file e le cartelle non contengano spazi nel loro nome. Non devono mai esserci due file o cartelle il cui percorso differisca soltanto per maiuscole/minuscole. Non bisogna inoltre rinominare file o cartelle modificandone soltanto il \glossario{case} di alcuni caratteri del nome.
-
-\paragraph{Branch}
-
-Sono previsti due branch ufficiali:
-\begin{itemize}
-\item \textbf{stable}: contiene sempre una versione del codice che rispetta i controlli automatici effettuati dallo script `make test-report`, descritto alla sezione \ref{makefile-codifica}. Gli sviluppatori non devono effettuare modifiche direttamente su questo branch;
-
-\item \textbf{master}: è il branch usato dagli sviluppatori per la codifica. Ad ogni commit, se il codice supera determinati test, Jenkins (descritto alla sezione \ref{jenkins}) propagherà le modifiche anche sul branch \emph{stable}.
-\end{itemize}
-
-\paragraph{Script di pre-commit}
-
-Con l'intenzione di ridurre al minimo la presenza di errori nel codice caricato sul repository verrà utilizzato uno script di \code{pre-commit}. Lo script, attivato direttamente dal programma \code{git} nel momento in cui viene eseguito un commit, esegue in automatico il comando \code{make jshint} descritto nella sezione \ref{makefile-codifica} e controlla che non si stia facendo un commit alla branch \emph{stable}. Se il comando trova un'anomalia il commit viene annullato e all'utente viene mostrato un messaggio di errore.
-
-Per abilitare tale script di \code{pre-commit} è necessario creare un \glossario{link simbolico} con il seguente comando:
-\begin{lstlisting}
-ln -s {percorso assoluto del repository}/extra/pre-commit {percorso assoluto del repository}/.git/hooks/pre-commit
-\end{lstlisting}
-
-
-
-\subsection{Condivisione file}
-
-Per condividere internamente al gruppo dei file che non necessitano di versionamento verranno utilizzate le piattaforme:
-\begin{itemize}
- \item \textbf{Google Drive} (\url{http://drive.google.com}), con l'account descritto nella sezione \ref{email};
- \item \textbf{TeamworkPM}, descritta nella sezione \ref{teamworkpm}.
-\end{itemize}
-
-
-
-\subsection{Modalità di consegna}
-I documenti verranno consegnati secondo le date prestabilite dal committente e corrispondenti alle \glossario{milestone}, la modalità di consegna dovrà avvenire utilizzando \textbf{Google Drive}, creando una cartella apposita, rendendola pubblica e inviando l'email contenente il link di pubblicazione alle seguenti email: \code{tullio.vardanega@math.unipd.it}, \code{rcardin@math.unipd.it}.
-
-
-
-\subsection{Strumenti per il coordinamento}
-\label{teamworkpm}
-
-	Per coordinare le attività, gli eventi, per le comunicazioni e per il conteggio delle ore viene utilizzata la piattaforma \textbf{Teamwork Project Manager} (\url{http://teamworkpm.net}):
-	\begin{itemize}
-		\item Offre un'elevata portabilità ed accessibilità essendo una piattaforma online;
-		\item Offre gratuitamente i servizi necessari;
-		\item Mette a disposizione delle \glossario{API} per comunicare con la piattaforma ed estenderne eventualmente le funzionalità.
-	\end{itemize}
-	
-	L'indirizzo per accedere all'ambiente di lavoro riservato al gruppo è
-	\begin{center}
-		\url{https://steakholders.teamworkpm.net}
-	\end{center}
-	
-	\subsubsection{Calendario condiviso}
-	\label{Calendario condiviso}
+		\item \textbf{Logo} del gruppo, visibile come primo elemento centrato orizzontalmente in alto;
+		\item Nome del documento, visibile subito dopo il logo, centrato orizzontalmente e marcato come \textbf{titolo};
+		\item Una \textbf{tabella} descrittiva, visibile subito dopo il titolo, centrata orizzontalmente e contenente le seguenti informazioni:
+			\begin{itemize}
 			
-	Il gruppo si avvale del calendario di Google, \glossario{Google Calendar}, come calendario condiviso.
-	Tramite la propria mail personale ogni membro può accedere al calendario in modalità lettura/scrittura.
-	Ogni membro è tenuto a \emph{segnalare qui i periodi di non disponibilità} nel completare i lavori assegnati, selezionando le ore o i giorni di interesse e marcandoli con la dicitura [ND], si possono aggiungere delle note se si ritiene ve ne sia necessità. 
+				\item \textbf{Versione} del documento, indicata come da norma;
+				\item I nomi e cognomi dei \textbf{redattori} del documento;
+				\item I nomi e cognomi dei \textbf{verificatori} del documento;
+				\item Il nome e cognome del \textbf{responsabile} di progetto, che ha approvato il documento;
+				\item Il tipo di \textbf{uso} del documento;
+				\item La \textbf{lista di distribuzione} del documento.
+			
+			\end{itemize}
+		\item Una \textbf{descrizione} testuale sommaria del documento, centrata orizzontalmente ed il più possibile sintetica.
 	
-	Il responsabile annoterà qui gli impegni comuni al gruppo quali riunioni ed incontri, specificando orario e luogo.
+	\end{itemize}
 	
-	\subsubsection{Strumenti per la gestione dei ticket}
-	\label{teamwork}
-	Per la gestione dei ticket si utilizzerà il sistema di task offerto da \glossario{TeamworkPM}, utilizzabile unicamente attraverso le procedure descritte nella sezione \ref{gestioneticket}.
+	\paragraph{Registro delle modifiche}
+È preferibile che che la numerazione sia continua. La pagina (o le pagine) che seguono devono contenere uno storico di questo documento, in cui verranno riportate tutte le modifiche apportate ad esso. Il registro delle modifiche deve essere composto da una tabella di tante righe quante sono le modifiche apportate ed un numero di colonne pari agli elementi seguenti:
 	
-	\subsubsection{Strumenti per la gestione del piano di lavoro}
-	
-	Al fine di pianificare le attività da svolgere per lo sviluppo del progetto, il gruppo si è affidato alla piattaforma \glossario{TeamworkPM} per i seguenti motivi:
 	\begin{itemize}
-		\item Genera automaticamente un grafico \glossario{Gantt} che visualizza e permette di modificare i task pianificati, gestendo anche le relative dipendenze;
-		\item Permette di esportare il grafico \glossario{Gantt} in un formato compatibile con \glossario{GanttProject} e \glossario{Microsoft Project};
-		\item Permette di gestire le \glossario{Milestone};
-		\item Permette di registrare il tempo di lavoro trascorso su ogni task.
+	
+		\item Versione del documento;
+		\item Data della modifica;
+		\item Nome e cognome delle persone coinvolte nella modifica e il ruolo che ricoprono;
+		\item Descrizione concisa della modifica apportata.
+	
+	\end{itemize}
+	
+	\paragraph{Indice}
+	
+	Ciascun documento deve contenere un suo indice, in modo da agevolare la consultazione e permettere una lettura \textit{ipertestuale} e non necessariamente sequenziale. Ciascun indice deve essere numerato a partire da 1; per ciascuna sottosezione deve esserci un punto di separazione dalla sezione padre e la numerazione deve di volta in volta ripartire. Per quanto riguarda le appendici esse non devono essere numerate ma indicate da una lettera maiuscola che di appendice in appendice verrà incrementata a partire dalla lettera A seguendo l'ordine alfabetico internazionale.
+	
+	\paragraph{Formattazione generale delle pagine}
+	
+	Ciascuna pagina deve rispettare tutti i margini orizzontali e verticali previsti dal template. Ciascuna pagina, ad eccezione della prima, deve contenere un'\textbf{intestazione} (in alto) ed un \textbf{piè di pagina}. Ciascuna intestazione dovrà essere formattata nel modo seguente:
+
+	\begin{itemize}
+	
+		\item Logo di intestazione del gruppo disposto a sinistra;
+		\item Nome del gruppo affiancato al logo;
+		\item Titolo del progetto corrente assegnato subito sotto il nome del gruppo;
+		\item Numero e titolo della sezione corrente del documento disposto a destra dell'intestazione.
+	
+	\end{itemize}
+	
+	Il piè di pagina sarà strutturato invece nel seguente modo:
+	
+	\begin{itemize}
+	
+		\item Nome e versione del documento corrente, disposto a sinistra;
+		\item Numerazione progressiva della pagina rispetto al totale disposta a destra.
+	
+	\end{itemize}
+	
+	\paragraph{Note a piè di pagina}
+	
+	Per ciascuna pagina interna se dovessero comparire delle note da esplicare esse vanno indicate in basso a sinistra della pagina corrente, riportate con il loro numero e la loro descrizione.
+
+\subsubsection{Versionamento}
+
+Ciascun documento deve essere versionato, in modo che chiunque lo utilizzi possa avere una visione specifica della sua storia e delle sue modifiche. Ad ogni versione deve corrispondere una riga nel registro delle modifiche.
+
+Verrà adottata una numerazione della forma
+\begin{center}
+ \textbf{v\{X\}.\{Y\}.\{Z\}}
+\end{center}
+
+Riguardo a \textbf{\{X\}}:
+\begin{itemize}
+ \item Parte da 1;
+ \item Viene incrementato dal Responsabile di Progetto quando approva il documento;
+ \item Quando viene incrementato y e z sono riportati a zero.
+ \item Limitato superiormente dal numero di revisioni.
+\end{itemize}
+
+Riguardo a \textbf{\{Y\}}:
+\begin{itemize}
+ \item Parte da 0;
+ \item Viene incrementato dal verificatore del documento ad ogni verifica;
+ \item Quando viene incrementato z è riportato a zero;
+ \item Non è limitato superiormente.
+\end{itemize}
+
+Riguardo a \textbf{\{Z\}}:
+\begin{itemize}
+ \item Parte da 0;
+ \item Viene incrementato ad ogni modifica dalla persona che modifica il documento;
+ \item Non è limitato superiormente.
+\end{itemize}
+
+
+\subsubsection{Procedura per la definizione di macro personalizzate}
+
+\paragraph{Costanti}
+
+Tutte le macro \LaTeX{} utilizzate come costanti devono iniziare con la lettera maiuscola. Se il nome della macro è composto da più parole unite allora ciascuna deve avere l'iniziale maiuscola e il resto delle lettere minuscolo. Per esempio, \code{\textbackslash NomeDellaCostante} è un nome di costante valido.
+
+\begin{itemize}
+	\item Le costanti \textbf{utilizzate da due o più documenti} (es. il nome del gruppo) devono essere definite all'inizio del file \file{root/modello/global.tex};
+	
+	\item Le costanti \textbf{utilizzate da un solo documento} (es. titolo) devono essere definite nella cartella del documento, all'inizio del file \file{local.tex};
+\end{itemize}
+	
+\paragraph{Funzioni}
+
+Tutte le macro \LaTeX{} utilizzate come funzioni devono iniziare con la lettera minuscola. Se il nome della macro è composto da più parole unite allora ciascuna deve avere l'iniziale maiuscola e il resto delle lettere minuscolo Per esempio, \code{\textbackslash nomeDellaFunzione} è un nome di funzione valido.
+
+\begin{itemize}
+	\item Le funzioni \textbf{utilizzate da due o più documenti} (es. il comando che genera la pagina di copertina) devono essere definite nella seconda parte del file \file{root/modello/global.tex};
+	
+	\item Le funzioni \textbf{utilizzate da un solo documento} devono essere definiti nella cartella del documento che lo utilizza, nella seconda parte di \file{local.tex}.
+\end{itemize}
+
+\subsubsection{Norme tipografiche e convenzioni}
+
+Ciascun documento deve rispettare le norme tipografiche definite nella seguente sezione, in modo da rendere il tutto uniforme. Per le situazioni che non sono coperti dalle seguenti norme è preferibile riferirsi a quanto stabilito dall'Accademia della Crusca (\url{http://www.accademiadellacrusca.it}).
+
+	\paragraph{Punteggiatura}
+	
+	\begin{itemize}
+
+		\item Ciascuna frase deve essere separata da un \textbf{punto} o da un \textbf{punto virgola};
+		\item Dopo ogni punto vi dev'essere uno spazio prima dell'inizio della frase successiva;
+		\item Ogni frase (ad esclusione di quelle dopo il punto e virgola) deve iniziare con una \textbf{lettera maiuscola};
+		\item Per i \textbf{punti di domanda} e i \textbf{punti esclamativi} valgono le stesse regole per i punti;
+		\item Dopo ogni \textbf{virgola} deve esserci uno spazio che separa la parte restante della frase;
+		\item Dopo ogni \textbf{apostrofo} non deve esserci un carattere di spaziatura;
+		\item Ogni elemento di un elenco puntato deve terminare con un punto e virgola, ad eccezione dell'ultimo che deve terminare con un punto;
+		\item Ogni elemento di un elenco puntato deve iniziare con una lettera maiuscola.
+	
+	\end{itemize}
+	
+	\paragraph{Stile del testo}
+	
+	Ogni parola di \textbf{glossario} deve essere marcata con una \textit{G} maiuscola a pedice:
+	\begin{center}
+		\glossario{repository}
+	\end{center}
+
+	Ciascuna parola chiave deve essere evidenziata in grassetto. Il \textbf{corsivo} dev'essere utilizzato nei seguenti casi:
+	\begin{itemize}
+	
+		\item \textbf{Citazioni};
+		\item \textbf{Abbreviazioni};
+		\item \textbf{Riferimenti} ad altri documenti;
+		\item \textbf{Parole particolari} solitamente poco usate o conosciute;
+		\item \textbf{Nomi di società o aziende};
+		\item \textbf{Nome di programmi o \glossario{framework}};
+		\item \textbf{Ruoli di progetto};
+		\item \textbf{Nome del progetto};
+		\item \textbf{Nome del gruppo}.
+	\end{itemize}		
+	
+	\paragraph{Elenchi puntati}
+	
+	È raccomandato che ciascun elenco puntato sia graficamente rappresentato da un \textit{pallino} nella gerarchia principale e da un trattino nella gerarchia secondaria. Ogni elenco puntato corrisponde ad un concetto che va espresso in modo sintetico. È normalmente preferibile usare elenchi puntati piuttosto che frasi lunghe e discorsive.
+	
+	\paragraph{Formati}
+	
+	\begin{itemize}
+	
+		\item Quando ci si riferisce a una \textbf{data}, se non diversamente specificato, bisogna applicare il formato descritto dallo standard ISO 8601:
+		\begin{center}
+
+			\textit{AAAA-MM-GG}
+		
+		\end{center}
+		dove:
+		\begin{itemize}
+
+			\item \textit{AAAA} si riferisce all'anno utilizzando quattro cifre;			
+			\item \textit{MM} si riferisce al mese utilizzando due cifre;
+			\item \textit{GG} si riferisce al giorno utilizzando due cifre.
+		
+		\end{itemize}
+		
+		\item Per indicare un \textbf{orario} si usa il formato ventiquattrore nel modo seguente:
+		
+		\begin{center}
+
+			\textit{hh:mm}		
+		
+		\end{center}
+		dove:
+		\begin{itemize}
+		
+			\item \textit{hh} si riferisce all'ora e può assumere valori da 0 a 23;
+			\item \textit{mm} si riferisce al minuto e può assumere valori da 0 a 59.		
+		
+		\end{itemize}
+	
+		\item Ogni \textbf{nome} di un membro del gruppo va indicato con il \textit{Nome} seguito dal \textit{Cognome}, a meno che il contesto non richieda diversamente (es. un elenco ordinato per cognome);
+		\item Quando ci si riferisce a \textbf{nomi dei file} si deve usare il carattere \texttt{monospace}.
+		
+	\end{itemize}		
+	
+	\paragraph{Sigle}
+	
+	Vengono previste le seguenti sigle:
+	
+	\begin{itemize}
+
+		\item \textbf{AR} = Analisi dei requisiti;
+		\item \textbf{PP} = Piano di progetto;
+		\item \textbf{NP} = Norme di progetto;
+		\item \textbf{SF} = Studio di fattibilità;
+		\item \textbf{PQ} = Piano di qualifica;
+		\item \textbf{ST} = Specifica tecnica;
+		\item \textbf{MU} = Manuale utente;
+		\item \textbf{DP} = Definizione di prodotto;
+		\item \textbf{RR} = Revisione dei requisiti;
+		\item \textbf{RP} = Revisione di progettazione;
+		\item \textbf{RQ} = Revisione di qualifica;
+		\item \textbf{RA} = Revisione di accettazione.
+	
+	\end{itemize}
+	
+	\paragraph{Riferimenti a documenti}
+	
+	Quando è necessario riferirsi ai contenuti di un altro documento bisogna specificarne il nome completo e la versione.
+
+	\paragraph{Nomenclatura entità e relazioni}
+
+	I nomi dei package seguono la specifica \emph{upper camel case}. Nel caso un package appartenga ad un altro package, il nome sarà formato da il nome del padre posto in prefisso secondo lo schema \texttt{NomePackagePadre::NomePackageFiglio}. 
+
+	I nomi delle classi devono riportare come prefisso il nome del package di appartenenza separati da una coppia di due punti, seguendo lo schema \texttt{NomePackage::NomeClasse}. I nomi delle classi seguono la specifica \emph{upper camel case}.
+
+	I nomi di:
+	\begin{itemize}
+		\item metodi;
+		\item campi dati;
+		\item parametri;
+		\item variabili
+	\end{itemize}
+	seguono la specifica \emph{lower camel case}. 
+
+	I nomi delle costanti vanno riportati con tutte le lettere maiuscole.
+
+
+
+
+	
+\subsubsection{Tabelle e immagini}
+
+	\paragraph{Tabelle}
+	
+	Ciascuna tabella deve essere allineata al centro orizzontalmente e deve contenere sotto di essa la propria didascalia, per agevolarne il tracciamento. In questa didascalia deve comparire il numero della tabella, che dev'essere incrementale in tutto il documento, e una breve descrizione del suo contenuto.
+	
+	\paragraph{Immagini}
+	
+	Ogni immagine deve essere centrata orizzontalmente ed avere una larghezza fissa. Inoltre deve essere nettamente separata dai paragrafi che la seguono e la precedono, in modo da definire un netto stacco tra testo e grafica e migliorare conseguentemente la leggibilità. Essa dev'essere accompagnata da una didascalia analoga a quella descritta per le tabelle. Tutti i diagrammi UML vengono inseriti nel documento sotto forma di immagine.
+	
+\subsubsection{Classificazione di documento}
+%	\subsubsection{Bozze}
+
+	\paragraph{Documenti preliminari}
+	
+	Tutti i documenti sono da ritenersi preliminari fino all'approvazione da parte del Responsabile di Progetto, ed in quanto tali sono da considerarsi esclusivamente ad uso interno.
+	
+	\paragraph{Documenti formali}
+	
+	Un documento viene definito formale quando viene validato dal \textit{Responsabile di Progetto}. Solo i documenti formali possono essere distribuiti all'esterno del gruppo. Per arrivare a tale stato il documento deve aver già passato \glossario{verifica} e \glossario{validazione}.
+	
+	\paragraph{Verbali}
+	
+	\label{verbale}
+	Con verbale ci si riferisce ad un documento redatto da un segretario in occasione  di riunioni interne al gruppo e di incontri con i proponenti. Un verbale viene redatto una prima volta e non subisce successive modifiche, pertanto non é previsto versionamento. \\
+	Il verbale dovrà essere approvato dal \textit{Responsabile di Progetto}. Ogni verbale dovrà indicare nel seguente ordine e con il formato indicato:	
+	
+	\begin{itemize}
+		\item Luogo: Città (Provincia), Via, Sede;
+		\item Data: dd-mm-yyyy;
+		\item Ora: hh-mm 24h;
+		\item Partecipanti del gruppo.
+	\end{itemize}
+	
+	Nel primo paragrafo "Informazioni Generali" vanno elencate le informazioni sopra descritte e gli argomenti trattati durante l'incontro. Segue nel secondo paragrafo, Domande e risposte, la trascrizione delle domande poste al proponente e le relative risposte.
+	
+\subsubsection{Verifica e validazione}
+
+La \textbf{\glossario{verifica}} del documento deve essere eseguita manualmente da parte di un \textit{Verificatore}, scelto dal \textit{Responsabile} tra i membri del gruppo secondo il principio di assenza di conflitti d'interesse, ossia colui che viene chiamato a verificare un determinato componente non può aver in alcun modo partecipato alla creazione. Le verifiche automatizzate sui documenti, dove previste, difficilmente sono esaustive e possono tralasciare delle anomalie. Per eseguire la verifica è necessario controllare che il documento rispetti tutte le norme descritte nelle \textit{Norme di Progetto}.
+
+La \textbf{\glossario{validazione}} del documento consiste nel controllare che il documento abbia \textit{il giusto contenuto}, è un compito che va oltre la semplice verifica delle norme. Richiede una conoscenza a priori del contenuto e degli scopi del documento.
+	
+	\paragraph{Procedura per la verifica}
+	La verifica di un documento è composta come minimo dai seguenti passi:
+	\begin{enumerate}
+		\item \textbf{Controllo ortografico e del periodo:} con un controllo walktrough bisognerà analizzare i periodi ed eventualmente correggerne la forma, oltre a controllare la presenza di errori ortografici con l'aiuto dello script \code{make test} (vedi sezione \ref{makefile});
+		\item \textbf{Verifica delle proprietà di glossario:} con l'aiuto dell'apposito script \code{make test-glossary} (vedi sezione \ref{makefile}) ci si deve assicurare che ogni termite marcato come glossario sia effettivamente definito nel glossario; 
+		% \item \textbf{Calcolo dell'indice Gulpease:} per ogni documento redatto, il \emph{Verificatore} deve calcolare l'indice di leggibilità gulpease. Qualora tale indice risultasse troppo basso andranno eseguite le opportune operazioni per semplificare frasi troppo lunghe o complesse;
+		\item \textbf{Riportare gli errori frequenti:} per migliorare ciclicamente il processo di verifica, verranno riportati gli errori frequenti. In questo modo sarà più facile eseguire, negli incrementi successivi, controlli di tipo inspection.
+		\item \textbf{Segnalazione delle anomalie riscontrate:} il \emph{Verificatore} deve aprire un ticket secondo le modalità descritte nella sezione \ref{aperturaissue}.
+	\end{enumerate}
+
+\subsubsection{Approvazione}
+
+L'\textbf{approvazione} di un documento deve essere eseguita dal \textit{Responsabile di Progetto}. Consiste in un accertamento del percorso di vita del documento e serve a fare in modo che soltanto documenti verificati e validati vengano distribuiti ufficialmente all'esterno del gruppo.
+
+\subsubsection{Glossario}
+
+Il \textit{Glossario} contiene le definizioni di tutte le parole che possono creare ambiguità o essere fraintese. Nei documenti tali parole saranno marcate con una G pedice.
+
+Di pari passo con la stesura dei documenti sarà compito degli autori mantenere aggiornato il \textit{Glossario}, inserendo di volta in volta i termini e le relative definizioni. È preferibile inserire nel glossario perlomeno la voce priva di descrizione, per poterla successivamente completare più facilmente.
+
+
+\subsection{Processo di Verifica}
+	\subsubsection{Scopo del processo}
+	Lo scopo del processo di verifica è quello di confermare che ogni componente software sviluppato rispecchi quanto previsto dai requisiti.
+
+	\subsubsection{Risultati osservabili del processo}
+	Il processo di verifica produce i seguenti risultati:
+	\begin{itemize}
+		\item l'individuazione e l'applicazione di una strategia di verifica;
+		\item i criteri per la verifica di quanto prodotto dal software sono identificati;
+		\item le attività do verifica sono state svolte;
+		\item i difetti sono stati individuati e catalogati;
+		\item i risultati della verifica sono resi disponibili agli \glossario{stakeholders}. 
 	\end{itemize}
 
-	\subsubsection{Gestione degli eventi}
 	
-	Gli eventi di interesse collettivo vengono inseriti nel calendario dall'Amministratore sempre e solo nel \emph{Calendario condiviso} descritto in \ref{Calendario condiviso}.
+	\subsubsection{Descrizione}
+	Le \glossario{Software Quality Managment Techinques} adottate dal gruppo sono suddivise in quattro categorie. Di seguito ne vengono date le definizioni. Tuttavia non sempre si tratta di classi nettamente distinte e la loro applicazione molto spesso prevede sovrapposizioni.
+	Nella pianificazione si cerca di assegnare alla verifica almeno una fetta pari al 30$\%$ delle ore totali.
 	
-	Le tipologie di eventi sono:
-	\begin{itemize}
-		\item \textbf{Riunioni}: vanno programmate almeno con 48 ore di anticipo tenendo conto della disponibilità dei membri. Ogni evento riunione avrà un ora di inizio e fine, un luogo e la lista dei membri che hanno confermato la partecipazione. L'\emph{ordine del giorno} dovrà essere compilato nella descrizione dell'evento;
-		%In futuro potremo decidere di stilare l' \emph{ordine del giorno} nel template del verbale delle riunioni.
-		\item Le \textbf{Revisioni} previste dal committente;
-		\item \textbf{Non disponibilità}: un membro del gruppo dichiara di non essere disponibile a svolgere attività legate al progetto. Per creare un evento di \emph{Non disponibilità} bisogna, oltre a compilare i soliti campi (titolo, descrizione, data e ora), impostare la visibilità a \emph{tutti i membri della propria azienda}, selezionare la categoria \emph{Non disponibilità} e segnare la persona interessata. In questo modo tutti i membri del gruppo \GroupName{} potranno visualizzare tale evento. 
-		Il titolo sarà nel formato \textbf{[ND] \{nome membro\}} ossia le iniziali di \emph{Non disponibilità} racchiuse tra parentesi quadre, seguite da il nome del membro del gruppo. Questo formato permetterà di individuare con immediatezza i giorni nei quali non è possibile fissare delle riunioni.
-	\end{itemize}
+		\subsubsection{Statiche}
+
+		Consiste nello studiare la documentazione ed il software senza istanze di esecuzione del sorgente. Queste tecniche possono includere attività \emph{people-intensive} o di \emph{analisi} condotte da singoli individui con o senza l'assistenza di \glossario{tools} automatizzati.
+
+			\paragraph{Walkthrough} \mbox{} \\
+			
+			Si svolge effettuando una lettura a largo spettro. È un'attività onerosa e collaborativa che richiede la cooperazione di più persone, si tratta di una tecnica non efficiente pertanto se ne sconsiglia l'attuazione. Ne è previsto l'utilizzo principalmente durante la prima parte del progetto quando non tutti i membri del gruppo hanno piena padronanza e conoscenza delle \emph{Norme di Progetto} e del \emph{Piano di Qualità}.
+
+			\paragraph{Inspection} \mbox{} \\
+			\label{anomaliefrequenti}
+
+			Si tratta di una lettura mirata e strutturata, volta a localizzare l'errore con il minor costo possibile. Richiede una buona padronanza di tutti gli strumenti utilizzati e conoscenza di tutti i documenti di progetto. Solitamente viene effettuata da un singolo individuo. La ricerca mirata si basa sugli errori ricorrenti, gli script da utilizzare sono descritti in \ref{makefile}. Le anomalie individuate vanno segnalate secondo le modalità descritte in \ref{aperturaissue}.
+			Le anomalie più frequenti sono:
+			\begin{itemize}
+				\item Utilizzo di comandi locali \LaTeX{} deprecati, ossia quei comandi che erano stati definiti alla prima creazione del \glossario{repository} ma che poi sono stati ridefiniti;
+				\item Utilizzo di caratteri di underscore senza prima anteporre una backslash;
+				\item Errori ortografici come rappresentare la \emph{È} con una \emph{e} maiuscola apostrofata;
+				\item Inserimento di parole comuni come placeholder, e.g. c{}i{}a{}o, b{}l{}a{}b{}l{}a, a{}s{}d \dots; % le parentesi graffe impediscono che make test-regexp trovi queste occorrenze
+				\item Formato delle date errato o non conforme alle \NormeDiProgetto{};
+				\item Formato dei nomi errato, le \NormeDiProgetto{} indicano prima il nome e poi il cognome;
+				\item Elenchi puntati non conformi alle norme, in particolare i punti spesso non terminano con il punto e virgola.
+				
+
+			\end{itemize}
+			
+			
+		\subsubsection{People-intensive}
+
+		Sono attività che coinvolgono almeno due persone impegnate a svolgere compiti anche parzialmente non automatizzabili. Solitamente l'efficienza non è massima in quanto si paga il coordinamento tra le persone. Le risorse necessarie sono checklists e i risultati dei tests e delle altre tecniche di analisi.
+	
+		\subsubsection{Analitiche}
+
+		Le tecniche analitiche comprendono tutte quelle azioni volte a valutare criticamente un componente del prodotto. Tali tecniche si servono di metodi come l'analisi della complessità, degli algoritmi e del controllo di flusso. L'analisi di complessità è utile per valutare quanto un componente è articolato da progettare, implementare, testare o manutenere. Il controllo di flusso è volto al riconoscimento delle anomalie e può essere usato a supporto di altre attività. Infine, l'analisi degli algoritmi è fondamentale in quei software in cui vi è una componente algoritmica importante e vi è la necessità di assicurare output consistenti e corretti. 
+				
+		\subsubsection{Dinamiche}
+
+		Le tecniche dinamiche vengono generalmente utilizzate durante lo sviluppo e la manutenzione. Si eseguono dei test ripetibili basati sull'effettiva esecuzione del codice. È quindi opportuno costruire un set di strumenti per riprodurre insiemi di \emph{input} e portare il software in uno stato iniziale, al fine di verificare velocemente che gli output siano quelli attesi. Un file di \glossario{log} permetterà, in base al contenuto, di ricostruire le sequenze di operazioni effettuate. Di seguito vengono elencati i test che si andranno ad effettuare in ordine di granularità.\\
+		Il \glossario{proponente}, nel corso del \textit{Verbale} del 2013-12-05, ha indicato che dovrà essere testato almeno il  70\% del codice prodotto.
+		
+			\paragraph{Test di unità} \mbox{} \\
+
+			Si tratta di testare il funzionamento delle \glossario{unità} tramite l'utilizzo di \glossario{stub}, \glossario{test driver}, e \glossario{logger}. Un'\glossario{unità} consiste nella più piccola quantità di software che è utile verificare singolarmente.
+			Questi test dovrebbero procedere quanto più in parallelo, assegnando priorità alle \glossario{unità} che mostrano dei risultati utilizzabili per definire dei \glossario{prototipi}. Il corretto funzionamento di tutte le unità riduce al minimo la presenza di errori di programmazione e permette di integrare queste componenti secondo le specifiche di progetto con la garanzia che esse funzionino.
+			 
+			\paragraph{Test di integrazione} \mbox{} \\
+
+			Consiste nel test di una parte di due o più \glossario{unità} e ne valuta globalmente i risultati. Le componenti non ancora sviluppate vanno simulate con dei sostituti fittizi.
+			
+			\paragraph{Test di sistema} \mbox{} \\
+
+			Consiste nella validazione del sistema per accertare la copertura dei requisiti software e il suo collaudo viene supervisionato dal committente per mostrare la conformità del prodotto.
+			
+			\paragraph{Test di regressione} \mbox{} \\
+
+			Consiste nell'eseguire nuovamente i test riguardanti le componenti software che hanno subito modifiche.	Tale operazione è aiutata dal tracciamento, il quale permette di individuare e ripetere facilmente i test di unità, di integrazione e di sistema che sono stati potenzialmente influenzati dalla modifica.
+			
+			\paragraph{Test di accettazione} \mbox{} \\
+
+			Si tratta del collaudo del prodotto in presenza del proponente. Al superamento di tale collaudo segue il rilascio ufficiale del prodotto sviluppato.
+

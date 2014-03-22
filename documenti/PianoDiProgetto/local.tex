@@ -28,3 +28,46 @@
 % In questa seconda parte vanno definite le 'funzioni' utilizzate soltanto da questo documento.
 
 \usepackage{tabularx,array}
+
+\definecolor{Amministratore}{RGB}{51,102,204}
+\definecolor{Analista}{RGB}{255,153,0}
+\definecolor{Progettista}{RGB}{153,0,153}
+\definecolor{Programmatore}{RGB}{7,55,99}
+\definecolor{Responsabile}{RGB}{220,57,18}
+\definecolor{Verificatore}{RGB}{16,150,24}
+
+\definecolor{amministratore}{RGB}{51,102,204}
+\definecolor{analista}{RGB}{255,153,0}
+\definecolor{progettista}{RGB}{153,0,153}
+\definecolor{programmatore}{RGB}{7,55,99}
+\definecolor{responsabile}{RGB}{220,57,18}
+\definecolor{verificatore}{RGB}{16,150,24}
+
+\definecolor{Pianificate}{RGB}{51,102,204}
+\definecolor{Consumate}{RGB}{32,18,77}
+
+\pgfplotsset{
+	stilePersone/.style={
+		ybar stacked, 
+		enlargelimits =0.05,
+		legend style ={at={(0.5,-0.5)},
+		anchor=north,
+		legend columns=-1},
+		ylabel={Ore},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi}
+	},
+	stileRuoli/.style={
+		ybar, 
+		stack plots=false,
+		enlargelimits =0.10,
+		legend style ={at={(0.5,-0.5)},
+		anchor=north,
+		legend columns=-1},
+		ylabel={Ore},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		symbolic x coords={Amministratore, Analista, Progettista, Programmatore, Responsabile, Verificatore}
+	}
+}

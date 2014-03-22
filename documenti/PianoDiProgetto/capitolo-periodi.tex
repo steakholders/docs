@@ -1,0 +1,478 @@
+\pgfplotsset{
+	ybar stacked, 
+	enlargelimits =0.05,
+	legend style ={at={(0.5,-0.5)},
+	anchor=north,
+	legend columns=-1},
+	ylabel={Ore},
+	xtick=data,
+	x tick label style={rotate=45,anchor=east},
+	symbolic x coords={Enrico Rotundo,Federico Poli,Giacomo Fornari,Gianluca Donato,Luca De Franceschi,Nicolò Tresoldi,Serena Girardi}
+}
+
+
+
+\section{Periodi di progetto}
+
+Ogni componente del gruppo dovrà ricoprire ogni ruolo almeno una volta nel corso del progetto. Durante lo stesso periodo un componente può ricoprire più ruoli, a condizione che le mansioni previste non vadano in conflitto tra loro, ad esempio non si può verificare il proprio lavoro.
+
+Nell'intestazione utilizzata per le tabelle di questo capitolo sono state impiegate \textbf{abbreviazioni} per i nomi dei ruoli.
+Di seguito viene riportato il loro significato, \textbf{nell'ordine in cui sono utilizzate} nell'intestazione:
+\begin{itemize}
+	\item Amm.: \textit{Amministratore};
+	\item Ana.: \textit{Analista};
+	\item Pgt.: \textit{Progettista};
+	\item Pgr.: \textit{Programmatore};
+	\item Res.: \textit{Responsabile};
+	\item Ver.: \textit{Verificatore}.
+\end{itemize}
+
+
+\pagebreak
+\subsection{Analisi}
+
+	
+	\subsubsection{Suddivisione del lavoro}
+
+	Nel periodo di Analisi dei requisiti ciascun componente dovrà rivestire i seguenti ruoli:
+	
+	\noindent
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{suddivisione_rr}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente, periodo di Analisi}
+	\end{table}
+
+	I valori in tabella sono riassunti nel seguente grafico: \\ 
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_rr}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente, periodo di analisi}
+	\end{figure}
+
+	Si fa notare che le ore sopra indicate non sono incluse nelle 105 ore rappresentanti il tetto massimo di ore somministrabile da ciascun componente.
+
+	Il seguente grafico mostra il peso orario di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_rr}
+	\end{tikzpicture}
+	\caption{Ore per ruolo, periodo di Analisi}
+	\end{figure}
+
+
+	\subsubsection{Prospetto orario}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{consuntivo_component_rr}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, periodo di Analisi}
+	\end{table}
+	\end{center}
+
+
+	\subsubsection{Prospetto economico}
+	
+	A scopo di trasparenza viene redatto il prospetto economico riguardante il periodo di Analisi dei requisiti, ma si precisa che le ore spese in questo periodo sono a carico del fornitore e non del proponente.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l c c }
+		\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
+		\hline
+		\input{prospetto_rr}
+	\end{tabular}
+	\caption{Ore e costo per ruolo, periodo di Analisi}
+	\end{table}
+
+	Il seguente grafico mostra il peso del costo di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_costo_rr}
+	\end{tikzpicture}
+	\caption{Costo per ruolo, periodo di Analisi}
+	\end{figure}
+
+	Di seguito viene invece presentato il consuntivo relativo al periodo di \textit{Analisi}. La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+	    \midrule
+	    \input{consuntivo_roles_rr}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di Analisi}
+	\end{table}
+
+	Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Analisi}.
+
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[stileRuoli]
+		\input{columnChart_consuntivo_rr}
+		\legend{preventivate,consumate}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di analisi}
+	\end{figure}
+
+
+\pagebreak
+\subsection{Progettazione architetturale}
+
+	
+	\subsubsection{Suddivisione del lavoro}
+
+	Nel periodo di Progettazione architetturale ciascun componente dovrà rivestire i seguenti ruoli:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule 
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+	    \midrule
+	    \input{suddivisione_rp}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente, periodo di Progettazione architetturale}
+	\end{table}
+
+	I valori in tabella sono riassunti nel seguente grafico: \\
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_rp}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente, periodo di progettazione architetturale}
+	\end{figure}
+
+	Il seguente grafico mostra il peso orario di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_rp}
+	\end{tikzpicture}
+	\caption{Ore per ruolo, periodo di Progettazione architetturale}
+	\end{figure}
+
+
+	\subsubsection{Prospetto orario}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{consuntivo_component_rp}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, periodo di Progettazione Architetturale}
+	\end{table}
+	\end{center}
+
+
+	\subsubsection{Prospetto economico}
+
+	Nel periodo di Progettazione architetturale le ore per ogni ruolo sono state cosi suddivise:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l c c }
+		\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
+		\hline
+		\input{prospetto_rp}
+	\end{tabular}
+	\caption{Ore e costo per ruolo, periodo di Progettazione architetturale}
+	\end{table}
+
+	Il seguente grafico mostra il peso del costo di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_costo_rp}
+	\end{tikzpicture}
+	\caption{Costo per ruolo, periodo di Progettazione architetturale}
+	\end{figure}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione architetturale}.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+	    \midrule
+	    \input{consuntivo_roles_rp}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione Architetturale}
+	\end{table}
+
+	Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione architetturale}.
+
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[stileRuoli]
+		\input{columnChart_consuntivo_rp}
+		\legend{preventivate,consumate}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione architetturale}
+	\end{figure}
+
+
+\pagebreak
+\subsection{Progettazione di dettaglio e codifica}
+
+	
+	\subsubsection{Suddivisione del lavoro}
+
+	Nel periodo di Progettazione di dettaglio e codifica ciascun componente dovrà rivestire i seguenti ruoli:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule 
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+	    \midrule
+	    \input{suddivisione_rq}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente, periodo di Progettazione di dettaglio e codifica}
+	\end{table}
+
+	I valori in tabella sono riassunti nel seguente grafico: \\ \\ \\
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_rq}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente, periodo di Progettazione di dettaglio e codifica}
+	\end{figure}
+
+	Il seguente grafico mostra il peso orario di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_rq}
+	\end{tikzpicture}
+	\caption{Ore per ruolo, periodo di Progettazione di dettaglio e codifica}
+	\end{figure}
+
+	\subsubsection{Prospetto orario}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	  	\input{consuntivo_component_rq}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, periodo di Progettazione di dettaglio e codifica}
+	\end{table}
+	\end{center}
+
+
+	\subsubsection{Prospetto economico}
+
+	Nel periodo di Progettazione di dettaglio e codifica le ore per ogni ruolo sono state cosi suddivise:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l c c }
+		\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
+		\hline
+		\input{prospetto_rq}
+	\end{tabular}
+	\caption{Ore e costo per ruolo, periodo di Progettazione di dettaglio e codifica}
+	\end{table}
+
+	Il seguente grafico mostra il peso del costo di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_costo_rq}
+	\end{tikzpicture}
+	\caption{Costo per ruolo, periodo di Progettazione di dettaglio e codifica}
+	\end{figure}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Progettazione di dettaglio e codifica}.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+	    \midrule
+	    \input{consuntivo_roles_rq}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di Progettazione di dettaglio e codifica}
+	\end{table}
+
+	Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Progettazione di dettaglio e codifica}.
+
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[stileRuoli]
+		\input{columnChart_consuntivo_rq}
+		\legend{preventivate,consumate}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di progettazione di dettaglio e codifica}
+	\end{figure}
+
+
+\pagebreak
+\subsection{Validazione}
+
+	
+	\subsubsection{Suddivisione del lavoro}
+
+	Nel periodo di Validazione ciascun componente dovrà rivestire i seguenti ruoli:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule 
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
+	    & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+	    \midrule
+	    \input{suddivisione_ra}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente, periodo di Validazione}
+	\end{table}
+
+	I valori in tabella sono riassunti nel seguente grafico: \\ 
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_ra}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente, periodo di validazione}
+	\end{figure}
+
+	Il seguente grafico mostra il peso orario di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_ra}
+	\end{tikzpicture}\caption{Ore per ruolo, periodo di Validazione}
+	\end{figure}
+
+	\subsubsection{Prospetto orario}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{consuntivo_component_ra}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, periodo di Validazione}
+	\end{table}
+	\end{center}
+
+
+	\subsubsection{Prospetto economico}
+
+	Nel periodo di Validazione le ore per ogni ruolo sono state cosi suddivise:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l c c }
+		\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
+		\input{prospetto_ra}
+	\end{tabular}
+	\caption{Ore e costo per ruolo, periodo di Validazione}
+	\end{table}
+
+	Il seguente grafico mostra il peso del costo di ogni ruolo in questo periodo.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_costo_ra}
+	\end{tikzpicture}
+	\caption{Costo per ruolo, periodo di Validazione}
+	\end{figure}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo di \textit{Validazione}.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+	    \midrule
+	    \input{consuntivo_roles_ra}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di Validazione}
+	\end{table}
+
+	Viene di seguito incluso il grafico che illustra la differenza tra ore preventivate e ore effettivamente impiegate per ciascun ruolo nel periodo di \textit{Validazione}.
+
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[stileRuoli]
+		\input{columnChart_consuntivo_ra}
+		\legend{preventivate,consumate}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Differenza preventivo consuntivo per ruolo, periodo di Validazione}
+	\end{figure}

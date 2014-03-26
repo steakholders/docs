@@ -237,6 +237,7 @@ Jean
 Jenkins
 John
 Johnson
+JsFormat
 Karner
 Kernel
 Kile
@@ -543,11 +544,6 @@ accedibile
 act
 action
 active
-ActiveAdmin
-Actor
-Actors
-ACWP
-Add
 addAttribute
 admin
 aggiungi'
@@ -622,9 +618,6 @@ burndown
 bytecode
 callback
 camel
-CamelCase
-Cancel
-Capability
 captionpos
 cases
 casting
@@ -642,14 +635,12 @@ cliccabile
 client
 closely
 cloud
-codica
 codifica'
 collection
 collectionAction
 collectionController
 collectionId
 collectionName
-CollectionPage
 collectionPath
 collectionQuery
 collectionReference
@@ -812,7 +803,6 @@ gantt
 garbage
 gedit
 general
-Generator
 get
 getAttributes
 getAuthController
@@ -874,7 +864,6 @@ improvement
 incrementalmente
 index
 indexController
-IndexListModel
 indexListService
 indexModel
 indexPage
@@ -963,15 +952,6 @@ lost
 lostpassword
 lower
 lucidchart
-LUF
-l'update
-l'upgrade
-l'upload
-l'uri
-l'URL
-l'userId
-Luzzati
-Maa
 maap
 magic
 main
@@ -1167,7 +1147,6 @@ rimpiazza'
 ripianifichiamo
 riusabile
 riusabili
-Robert
 role
 root
 rootScope
@@ -1210,7 +1189,6 @@ shouldn't
 showController
 showModel
 showPage
-ShowPageEdit
 showService
 showpage
 showspaces
@@ -1243,7 +1221,6 @@ stateless
 statement
 static
 stepnumber
-Steve
 stilePersone
 stileRuoli
 storage
@@ -1341,9 +1318,6 @@ userService
 username
 userneme
 users
-userSchema
-userService
-UsersIndex
 usersList
 utf
 utility
@@ -1361,7 +1335,6 @@ voting
 vv
 walkthrough
 walktrough
-Wandschneider
 way
 ways
 webServer

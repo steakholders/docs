@@ -16,6 +16,9 @@
 		\subsubsection{Revisione di Qualifica}
 		L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. Le anomalie evidenziate non incidono in modo determinante sulla consistenza del prodotto del processo di documentazione. Le metriche hanno contribuito al controllo sui processi permettendo di monitorare e misurare il loro andamento. 
 
+		\subsubsection{Revisione di Accettazione}
+		L'attività di verifica svolta dai \emph{Verificatori} è avvenuta come determinato dal \PianoDiProgetto{} al termine degli incrementi di ogni documento. La verifica svolta sui documenti è avvenuta seguendo le indicazioni delle \NormeDiProgetto{} e misurando le metriche indicate in \ref{metrichedocumenti}. La verifica ha coinvolto principalmente le correzioni segnalate dal proponente a seguito della revisione di qualifica.
+
 	
 	 \pagebreak
 	 \subsection{Miglioramenti post Revisione}
@@ -55,6 +58,20 @@
     			\caption{Problemi individuati in RP e relative soluzioni.}
 		\end{table}
 
+
+		\subsubsection{Miglioramenti post RQ}
+		A seguito della revisione di qualifica è stato sottoposto, ad ogni membro del gruppo, un questionario da compilare con lo scopo di identificare quali problematiche hanno influito con l'avanzamento del progetto didattico.
+		\\
+
+		\begin{table}[H]
+	    \begin{tabular}{ | p{5cm} | p{5cm} | p{2cm} | }
+			\hline
+			Problema & Possibile soluzione & Stato \\ \hline
+			Difficoltà nell'utilizzo delle funzionalità della piattaforma \url{GitHub.com} & Autoformazione & Eseguito. \\ \hline
+			I file sorgente risultano non essere formattati secondo lo stile prescelto. & L'utilizzo del plugin \emph{JsFormat} per \emph{Sublime Text} permette di formattare il codice in modo automatico e in linea con quanto specificato nelle \NormeDiProgetto{} & Eseguito. \\ \hline
+	    \end{tabular}
+	    	\caption{Problemi individuati in RQ e relative soluzioni.}
+		\end{table}
 
 	 
 	 \subsection{Dettaglio delle verifiche tramite analisi}
@@ -245,6 +262,150 @@
 	I valori non raggiungono i parametri di accettazione. Tale mancanza verrà colmata nel prossimo periodo di sviluppo.
 	
 
+
+
+\subsubsection{Validazione}
+	\paragraph{Documenti}
+	 Vengono qui riportati i valori dell’indice Gulpease per ogni documento durante la validazione, e relativo esito basato sui range stabiliti in \ref{gulpease}.
+	
+	%TODO completare tabella risultati Gulpease
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ | c | c | c | }
+    \hline
+    Documento & Valore indice & Esito \\ \hline
+    \AnalisiDeiRequisiti{} & 54 & superato  \\ \hline
+    \DefinizioneDiProdotto{} & 62 & superato  \\ \hline
+    \Glossario{} & 49 & superato  \\ \hline
+    \ManualeAdmin{} & 51 & superato  \\ \hline
+    \ManualeSviluppatore{} & 42 & superato  \\ \hline
+    \ManualeUtente{} & 49 & superato  \\ \hline
+    \NormeDiProgetto{} & 67 & superato  \\ \hline
+    \PianoDiProgetto{} & 55 & superato  \\ \hline
+    \PianoDiQualifica{} & 50 & superato  \\ \hline
+    \SpecificaTecnica{} & 76 & superato \\ \hline
+    \end{tabular}
+	\caption{Esiti verifica documenti, Validazione}
+	\end{table}
+	
+	\paragraph{Codice}
+	%TODO vedere in https://jenkins-steakholders.rhcloud.com se c'è qualcosa di utile
+	Vengono qui riportate le misure rilevate con le metriche sull'analisi statica e dinamica del codice. Per ogni metrica si riportano i valore calcolati mantenendo una separazione tra backend e frontend. Per una descrizione delle metriche si rimanda alla sezione \ref{metrichesoftware}.
+
+	% TODO misure sul software da aggiornare
+	\subparagraph{Complessità ciclomatica}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 1.47
+			\item massimo: 7
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 1.51
+			\item massimo: 8
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{Numero di metodi}
+	\begin{itemize}
+		\item \emph{Backend}: 215
+		\item \emph{Frontend}: 105
+	\end{itemize}
+	 	
+
+	\subparagraph{Numero parametri per metodo}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 1.59
+			\item massimo: 5
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 1.4
+			\item massimo: 7
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{\glossario{Halstead} difficulty per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 3.6
+			\item massimo: 20
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 3.2
+			\item massimo: 15
+		\end{itemize} 
+	\end{itemize}
+
+	
+	\subparagraph{\glossario{Halstead} volume per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 105
+			\item massimo: 1531
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 106
+			\item massimo: 1218
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{\glossario{Halstead} effort per-function}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 844
+			\item massimo: 15724
+		\end{itemize}
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 635
+			\item massimo: 10606
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{Maintainability index}
+	\begin{itemize}
+		\item \emph{Backend}: 
+		\begin{itemize}
+			\item medio: 77
+			\item minimo: 53
+		\end{itemize} 
+		\item \emph{Frontend}: 
+		\begin{itemize}
+			\item medio: 73.9
+			\item minimo: 50.14
+		\end{itemize} 
+	\end{itemize}
+
+
+	\subparagraph{Statement Coverage}
+	\begin{itemize}
+		\item \emph{Backend}: \%
+		\item \emph{Frontend}: \%
+	\end{itemize}
+	
+
+	\subparagraph{Branch Coverage}
+	\begin{itemize}
+		\item \emph{Backend}: \%
+		\item \emph{Frontend}: \%
+	\end{itemize}
+
+	
+
+
 	\subsection{Dettaglio dell'esito delle revisioni}
 	Lo sviluppo di questo progetto didattico si basa sull'attraversamento di quattro revisioni presiedute dal committente. Tre delle quattro revisioni produrranno delle segnalazioni degli errori riscontrati da parte del committente, deve seguire un report di come sono state risolte in ogni documento.
 		
@@ -264,15 +425,20 @@
 		Per la Revisione di Progettazione le segnalazioni da parte del committente sono state corrette:
 		
 		\begin{itemize}
-			\item \emph{Norme di Progetto}: il documento è stato riorganizzato secondo quanto definito nello standard ISO/IEC 12207;
-			\item \emph{Analisi dei Requisiti}: sono stati rivisti tutti i requisiti e casi d'uso segnalati dal committente;
-			\item \emph{Specifica Tecnica}: rivisti e corretti i contenuti segnalati dal committente. I design pattern sono stati contestualizzati come suggerito;
-			\item \emph{Piano di Progetto}: sono state aggiunte le dipendenze ai diagrammi di Gantt, l'analisi dei rischi è stata attualizzata allo stato dell'arte, è stato riorganizzato il documento prima individuando i rischi, poi pianificando e infine fissando i costi a preventivo mettendoli in relazione con il consuntivo corrente, è stato pianificato il raggiungimento degli stati del \glossario{SEMAT};
-			\item \emph{Piano di Qualifica}: sono state aggiunte metriche relative ai prodotti dell'Analisi e della Progettazione, è stato discusso il significato del ciclo \glossario{PDCA} con il committente.
+			\item \emph{Norme di Progetto}: la lista dei riferimenti del documento è stata sistemata. L'organizzazione del documento per processi è stata rivista nuovamente ponendo come riferimento ISO/IEC 12207-2008 su cui si basano i punti che descrivono un processo e le tipologie;
+			\item \emph{Specifica Tecnica}: i \glossario{framework} utilizzati sono stati descritti in modo più approfondito e sono stati corretti i diagrammi di sequenza segnalati;
+			\item \emph{Definizione di Prodotto}: sono stati corretti i dettagli progettuali segnalati;
+			\item \emph{Manuali}: il glossario viene presentato all'interno del documento stesso;
+			\item \emph{Piano di Progetto}: rivista la struttura in modo da presentare in modo più leggibile la parte di preventivo/consuntivo.
 		\end{itemize}
 
-%		\subsubsection{Revisione di Qualifica}
-			
+		\subsubsection{Revisione di Qualifica}
+		
+		Per la Revisione di Qualifica le segnalazioni da parte del committente sono state corrette:
+		
+		\begin{itemize}
+			\item 
+		\end{itemize}
 
 
 	

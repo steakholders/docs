@@ -105,7 +105,6 @@ Benefit
 best
 between
 binding
-Binding
 BioComputing
 bioinformatica
 blabla
@@ -161,7 +160,6 @@ Closed
 closely
 Closure
 cloud
-codica
 codifica'
 CoffeeStrap
 Coherent
@@ -182,7 +180,6 @@ collectionQuery
 collectionReference
 collections
 collectionService
-CollectionService
 colorlinks
 column
 columnLabel
@@ -452,7 +449,6 @@ gedit
 general
 Generator
 get
-GET
 getAttributes
 getAuthController
 getCollectionController
@@ -544,7 +540,6 @@ index
 indexController
 IndexListModel
 indexListService
-IndexListService
 indexModel
 indexPage
 IndexService
@@ -560,7 +555,6 @@ inputencoding
 insertUser
 inspection
 install
-Install
 Installation
 Integer
 Integrated
@@ -591,6 +585,7 @@ Johnson
 join
 jQuery
 js
+JsFormat
 jshint
 JSHint
 JSLint
@@ -649,7 +644,6 @@ loadDSLFile
 l'Object
 local
 location
-Location
 Locator
 LOCs
 log
@@ -672,8 +666,6 @@ lower
 lucidchart
 LUF
 l'update
-l'upgrade
-l'upload
 l'uri
 l'URL
 l'userId
@@ -1095,7 +1087,6 @@ showpage
 showPage
 ShowPageEdit
 showService
-ShowService
 showspaces
 showstringspaces
 showtabs
@@ -1294,7 +1285,6 @@ UserPage
 users
 userSchema
 userService
-UserService
 UsersIndex
 usersList
 UsersListController
@@ -1330,12 +1320,10 @@ walkthrough
 walktrough
 Wandschneider
 way
-Way
 ways
 WebKit
 webmaster
 webServer
-WebServer
 Well
 whatever
 where

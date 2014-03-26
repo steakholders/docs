@@ -165,6 +165,7 @@ CoffeeStrap
 Coherent
 Cohesion
 Collaborating
+collaborativamente
 collection
 collectionAction
 CollectionActionService

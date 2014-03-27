@@ -1,14 +1,42 @@
-\section{Processi Primari}
+\section{Processo di sviluppo}
+    \subsection{Scopo del processo}
+    Lo scopo del processo di sviluppo è la produzione di un elemento di un sistema implementato come prodotto software.
+    Questo processo trasforma specifici comportamenti, interfacce, e vincoli di implementazione in azioni che creano un sistema implementato come prodotto software.
+    Questo processo produce un software che soddisfa i requisiti architetturali e li verifica attraverso la verifica e la validazione.
+
+    \subsection{Risultati osservabili del processo}
+    I risultati di una corretta implementazione di tale processo sono:
+    \begin{itemize}
+        \item una strategia di sviluppo definita;
+        \item i vincoli tecnologici e di design sono identificati;
+        \item il sistema software è stato realizzato.
+    \end{itemize}
+
+    \subsection{Descrizione}
+    Il processo di sviluppo, in accordo con lo standard di aderenza, si compone dei seguenti sotto processi:
+    \begin{itemize}
+        \item Processo di analisi dei requisiti (vedi \ref{processoAR});
+        \item Processo di progettazione (vedi \ref{processoProgettazione});
+        \item Processo di codifica (vedi \ref{processoCodifica}).
+    \end{itemize}
+
+
 \subsection{Analisi dei requisiti}
+\label{processoAR}
 
-Dal capitolato e dagli incontri con il proponente gli Analisti dovranno estrarre i requisiti del progetto, producendo l'Analisi dei Requisiti.
+    \subsubsection{Scopo del processo}
+    Dal capitolato e dagli incontri con il proponente gli Analisti dovranno estrarre i requisiti del progetto, producendo l'Analisi dei Requisiti.
+    Tale processo ha l'obiettivo di formalizzare e rendere tracciabile in un documento i requisiti e casi d'uso individuati.
 
+    \subsubsection{Risultati osservabili del processo}
+    Con il completamento di questo processo si ottiene una documentazione affidabile e consistente che ben descriva le esigenze e le richieste degli \glossario{stakeholders}.
+
+    \subsubsection{Descrizione}
 Tutti i requisiti che si possono evincere dal capitolato o ad un incontro con il proponente vanno specificati nell'Analisi dei Requisiti.
 
 Per agevolare l'analisi dei requisiti viene utilizzata la tecnica dei casi d'uso.
 
 Il tracciamento dei requisiti avviene tramite il software descritto in \ref{requisteak}.
-
      
 \subsubsection{Casi d'Uso}
 
@@ -93,7 +121,21 @@ Per i diagrammi deve essere utilizzato il linguaggio \emph{UML versione 2.0}.
 
 
 \subsection{Progettazione}
-%\subsubsection{Specifica Tecnica}
+\label{processoProgettazione}
+
+    \subsubsection{Scopo del processo}
+    Il processo di progettazione ha come obiettivo la stesura di:
+    \begin{itemize}
+        \item Specifica Tecnica: intende descrivere l'architettura del software e descrive lo stack tecnologico utilizzato;
+        \item Definizione di Prodotto: descrive nel modo più dettagliato possibile la progettazione;
+    \end{itemize}
+    Negli scopi di questo processo rientra anche una vasta produzione di diagrammi \glossario{UML}.
+
+    \subsubsection{Risultati osservabili del processo}
+    Questo processo porta alla produzione di documentazione affidabile, completa e coerente.
+
+
+\subsubsection{Descrizione}
 La progettazione deve dimostrabilmente rispettare tutti i requisiti che il gruppo ha concordato con il committente. In particolare i componenti progettati devono essere tracciabili rispetto al requisito che soddisfano.
 Di seguito vengono elencate le norme a carico dei \emph{Progettisti}.
 
@@ -149,6 +191,16 @@ Di seguito vengono elencate le norme a carico dei \emph{Progettisti}.
 
 
 \subsection{Codifica}
+\label{processoCodifica}
+
+\subsubsection{Scopo del processo}
+Il processo di codifica ha come obiettivo la trasposizione in codice sorgente del software progettato in Specifica Tecnica e Definizione di Prodotto. Inoltre è necessaria la stesura di documentazione sul codice per assicurarne un buon grado di leggibilità e manutenibilità. 
+
+\subsubsection{Risultati osservabili del processo}
+Questo processo porta a un software stabile, affidabile, funzionale e aderente con quanto richiesto dagli \glossario{stakeholders}.
+
+\subsubsection{Descrizione}
+La codifica avviene secondo i task assegnati specificati nel \PianoDiProgetto{} e utilizzando gli strumenti indicati in \ref{strumentiambientedisviluppo}.
 
 \subsubsection{Intestazione}
 
@@ -205,25 +257,3 @@ La ricorsione va evitata quando possibile. Per ogni funzione ricorsiva sarà nec
 %\paragraph{Nomi}
 %\paragraph{Disciplina}
 %\subsubsection{Protocolli vari}
-
-\subsection{Strumenti e ambiente di sviluppo}
-		
-		\subsubsection{Stesura del codice}
-		
-		Per la stesura del codice è consigliabile usare i seguenti editor:
-		\begin{itemize}
-			\item \textbf{gedit} $\geq 3.4.1$ (\url{http://projects.gnome.org/gedit})
-		    \item \textbf{Sublime text} $\geq 2.0.2$ (\url{http://www.sublimetext.com})
-			\item \textbf{Eclipse} (\url{http://www.eclipse.org})
-		\end{itemize}
-
-        \`E fortemente consigliato l'utilizzo di alcuni plugin per Sublime text che evidenziano le irregolarità nel codice scritto. Tali plugin sono utilizzabili previa installazione di \texttt{Package Control} (\url{https://sublime.wbond.net/installation}), si potrà accedere a \texttt{Package Control} digitando \code{ctrl+shift+p} e selezionando \texttt{Install Package}. Procedere con l'installazione di \texttt{Sublime Linter}, dopodiché installare:
-        \begin{itemize}
-            \item \textbf{SublimeLinter-annotations} per evidenziare i \texttt{TODO} e \texttt{README};
-            \item \textbf{SublimeLinter-jshint} per evidenziare errori di sintassi \glossario{javascript};
-            \item \textbf{SublimeLinter-json} per evidenziare errori nei documenti \glossario{json}.
-        \end{itemize}
-		
-		\subsubsection{Framework}
-		
-		Per lo sviluppo del progetto è previsto l'utilizzo del server \textbf{Node.js} $\geq 0.10.22$ e del relativo \glossario{package manager} \textbf{npm} $\geq 1.3.6$.

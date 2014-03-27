@@ -25,6 +25,7 @@ liberia libreria
 liberie librerie
 l'interpetazione l'interpretazione
 metoto metodo
+nuovmanete nuovamente
 off offe
 oltra oltre
 ontiene ottiene
@@ -46,6 +47,7 @@ staica statica
 un'apposito un apposito
 un'approccio un' approccio
 un'array un array
+utilizate utilizzante
 vengno vengono
 verrano verranno
 visualizzarà visualizzerà

@@ -194,23 +194,23 @@ Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono perm
 \end{figure}
 
 \pagebreak
-\subsubsection{Richiesta POST /login} 
-Il seguente scenario mostra la gestione di una richiesta POST per la risorsa di login, \emph{requireNotLogged} non risponde con errore, chiamando il successivo \glossario{middleware} \emph{login} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
+\subsubsection{Richiesta POST /profile} 
+Il seguente scenario mostra la gestione di una richiesta POST per la risorsa profile, \emph{requireNotLogged} non risponde con errore, chiamando il successivo \glossario{middleware} \emph{login} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.20]{uml/scenari/login POST.png} 
-		\caption{Richiesta POST /login}
+		\includegraphics[scale=0.20]{uml/scenari/profile POST.png} 
+		\caption{Richiesta POST /profile}
 	\end{center} 
 \end{figure} 
 
 \pagebreak
-\subsubsection{Richiesta DELETE /logout}
-Il diagramma di sequenza mostra lo scenario di una richiesta DELETE per la risorsa login.
+\subsubsection{Richiesta DELETE /profile}
+Il diagramma di sequenza mostra lo scenario di una richiesta DELETE per la risorsa profile.
 La verifica dei permessi in \emph{requireLogged} non fallisce, innescando la chiamata al successivo \glossario{middleware} \emph{logout} che gestisce l'eliminazione della risorsa.
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[scale=0.20]{uml/scenari/logout DELETE.png} 
-		\caption{Richiesta DELETE /logout}
+		\includegraphics[scale=0.20]{uml/scenari/profile DELETE.png} 
+		\caption{Richiesta DELETE /profile}
 	\end{center} 
 \end{figure}
 

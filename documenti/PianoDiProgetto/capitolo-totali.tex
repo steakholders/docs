@@ -1,0 +1,141 @@
+\section{Totali}
+
+
+	\subsection{Suddivisione del lavoro}
+
+	Il totale delle ore, comprensive delle ore di Analisi dei requisiti che saranno fornite da ciascun membro del gruppo nel corso dell'intero progetto sono le seguenti:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule 
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+	    \midrule
+		\input{suddivisione_totale_con_analisi}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente totali, incluso periodo di Analisi}
+	\end{table}
+
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_totale_con_analisi}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente totali, incluso periodo di Analisi}
+	\end{figure}
+
+
+	\subsection{Prospetto orario}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{} comprensive del periodo di \textit{Analisi}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{consuntivo_component_totale}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, totale corrente con Analisi}
+	\end{table}
+	\end{center}
+
+	Nella seguente tabella sono invece riportate le ore fornite da ciascun componente, escluse quelle rientranti nel periodo di Analisi dei requisiti. 
+	Le ore totali preventivabili devono essere comprese tra la soglia minima di 85 ore e quella massima di 105.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule 
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali}\\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. \\
+	    \midrule
+	    \input{suddivisione_totale}
+	    \bottomrule
+	\end{tabular}
+	\caption{Ore per componente totali, rendicontate}
+	\end{table}
+
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+	\begin{axis}
+		\input{columnChart_totale}
+		\legend{amministratore, analista, progettista, programmatore, responsabile, verificatore}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Ore per componente totali, rendicontate}
+	\end{figure}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun componente del gruppo \GroupName{} non comprensive del periodo di \textit{Analisi}.
+
+	\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Nome}  & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore totali} \\
+	     & Amm. & Ana. & Pgt. & Pgr. & Res. & Ver. & \\
+	    \midrule
+	    \input{consuntivo_component_totale_1}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per componente, corrente totale}
+	\end{table}
+	\end{center}
+
+
+	\subsection{Prospetto economico}
+
+	In totale le ore per ogni ruolo sono state cosi suddivise:
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{ l c c }
+		\textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} \\
+		\hline
+		\input{prospetto_totale}
+	\end{tabular}
+	\caption{Ore e costo per ruolo, riassunto progetto}
+	\end{table}
+
+	Il seguente grafico mostra il costo di ogni ruolo durante tutto lo svolgimento del progetto, escluso il periodo di Analisi dei requisiti.
+
+	\begin{figure}[H]
+	\begin{tikzpicture}
+		\input{pieChart_costo_totale}
+	\end{tikzpicture}
+	\caption{Costo per ruolo}
+	\end{figure}
+
+	La tabella sottostante riporta le ore preventivate e le ore effettivamente impiegate (riportate tra parentesi) per ciascun ruolo presente nel periodo totale corrente alla consegna del presente documento, escluso il periodo di Analisi dei requisiti.
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lccccccc}
+	\toprule
+	    \textbf{Ruolo}  & \textbf{Ore} & \textbf{Costo} \\
+	    \midrule
+	    \input{consuntivo_roles_totale_1}
+	    \bottomrule
+	\end{tabular}
+	\caption{Differenza preventivo consuntivo per ruolo, totale corrente}
+	\end{table}
+
+	\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[stileRuoli]
+		\input{columnChart_consuntivo_totale_1}
+		\legend{preventivate,consumate}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Differenza preventivo consuntivo per ruolo, totale corrente}
+	\end{figure}

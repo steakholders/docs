@@ -15,12 +15,8 @@ action
 ActionController
 active
 ActiveAdmin
-ActiveAdmin
-Actor
 Actor
 Actors
-Actors
-ACWP
 ACWP
 Add
 addAttribute
@@ -108,7 +104,6 @@ before
 Benefit
 best
 between
-Binding
 binding
 BioComputing
 bioinformatica
@@ -139,9 +134,7 @@ Call
 callback
 camel
 CamelCase
-CamelCase
 Cancel
-Capability
 Capability
 captionpos
 Cardin
@@ -167,12 +160,12 @@ Closed
 closely
 Closure
 cloud
-codica
 codifica'
 CoffeeStrap
 Coherent
 Cohesion
 Collaborating
+collaborativamente
 collection
 collectionAction
 CollectionActionService
@@ -183,10 +176,6 @@ CollectionListService
 CollectionModel
 collectionName
 CollectionPage
-collectionQuery
-collectionReference
-collections
-CollectionService
 collectionPath
 collectionQuery
 collectionReference
@@ -460,7 +449,6 @@ garbage
 gedit
 general
 Generator
-GET
 get
 getAttributes
 getAuthController
@@ -552,7 +540,6 @@ incrementalmente
 index
 indexController
 IndexListModel
-IndexListService
 indexListService
 indexModel
 indexPage
@@ -568,7 +555,6 @@ inner
 inputencoding
 insertUser
 inspection
-Install
 install
 Installation
 Integer
@@ -600,6 +586,7 @@ Johnson
 join
 jQuery
 js
+JsFormat
 jshint
 JSHint
 JSLint
@@ -657,7 +644,6 @@ ln
 loadDSLFile
 l'Object
 local
-Location
 location
 Locator
 LOCs
@@ -680,12 +666,7 @@ l'overhead
 lower
 lucidchart
 LUF
-l'upgrade
-l'upload
-l'uri
 l'update
-l'upgrade
-l'upload
 l'uri
 l'URL
 l'userId
@@ -1036,7 +1017,6 @@ ripianifichiamo
 riusabile
 riusabili
 Robert
-root
 role
 root
 rootScope
@@ -1107,7 +1087,6 @@ showModel
 showpage
 showPage
 ShowPageEdit
-ShowService
 showService
 showspaces
 showstringspaces
@@ -1159,6 +1138,8 @@ SteakHolders
 Stein
 stepnumber
 Steve
+stilePersone
+stileRuoli
 storage
 strategy
 stream
@@ -1304,7 +1285,6 @@ userneme
 UserPage
 users
 userSchema
-UserService
 userService
 UsersIndex
 usersList
@@ -1340,11 +1320,6 @@ vv
 walkthrough
 walktrough
 Wandschneider
-Way
-ways
-WebKit
-webmaster
-WebServer
 way
 ways
 WebKit

@@ -27,5 +27,16 @@ Il presente documento è il manuale per l'utente che utilizza il sistema \Projec
 
 % In questa seconda parte vanno definite le 'funzioni' utilizzate soltanto da questo documento.
 
+\newcommand{\letteraGlossario}[1] { 
+  % \newpage
+  % \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  \vspace{11pt}
+  \textbf{\huge{#1} } % Lettera grande 
+  \\
+  \rule[0.3pt]{\linewidth}{0.4pt} \\ % Linea orizzontale
+} 
+
 \newcommand{\definizione}[1] {\textbf{#1}:}
 \newcommand{\nyi} {\subparagraph{NOTE} Questa funzionalità non è ancora stata implementata.}

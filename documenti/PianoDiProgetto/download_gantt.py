@@ -99,12 +99,11 @@ writeConsuntivoComponent(project, [milestone_rq], roles, "consuntivo_component_r
 writeConsuntivoComponent(project, [milestone_ra], roles, "consuntivo_component_ra.tex")
 
 # Consuntivo totale
-writeConsuntivoComponent(project, [milestone_rr, milestone_rp, milestone_rq], roles, "consuntivo_component_totale.tex")
-writeConsuntivoRole(project, [milestone_rr, milestone_rp, milestone_rq], roles, "consuntivo_roles_totale.tex")
-writeColumnChartConsuntivo(project, [milestone_rr, milestone_rp, milestone_rq], roles, "columnChart_consuntivo_totale.tex")
+writeConsuntivoComponent(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_component_totale.tex")
+writeConsuntivoRole(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_roles_totale.tex")
+writeColumnChartConsuntivo(project, [milestone_rr, milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_consuntivo_totale.tex")
 
 # Consuntivo totale senza periodo di analisi
-
-writeConsuntivoComponent(project, [milestone_rp, milestone_rq], roles, "consuntivo_component_totale_1.tex")
-writeConsuntivoRole(project, [milestone_rp, milestone_rq], roles, "consuntivo_roles_totale_1.tex")
-writeColumnChartConsuntivo(project, [milestone_rp, milestone_rq], roles, "columnChart_consuntivo_totale_1.tex")
+writeConsuntivoComponent(project, [milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_component_totale_1.tex")
+writeConsuntivoRole(project, [milestone_rp, milestone_rq, milestone_ra], roles, "consuntivo_roles_totale_1.tex")
+writeColumnChartConsuntivo(project, [milestone_rp, milestone_rq, milestone_ra], roles, "columnChart_consuntivo_totale_1.tex")

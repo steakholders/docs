@@ -72,6 +72,7 @@ CollectionListModel
 CollectionListService
 CollectionModel
 CollectionPage
+CollectionView
 Compiler
 Compito'
 Complex

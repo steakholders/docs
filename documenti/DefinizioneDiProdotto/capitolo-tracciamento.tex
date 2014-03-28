@@ -9,21 +9,23 @@
     
       \cellcolor[gray]{0.9} \textbf{Requisito} & \cellcolor[gray]{0.9} \textbf{Classe} \\ \hline
       
-	RA1O 1 & Front-end::Controllers::LoginController \newline  \\ \hline 
-	RA1O 1.1 & Front-end::Controllers::LoginController \newline  \\ \hline 
-	RA1O 1.2 & Front-end::Controllers::LoginController \newline  \\ \hline      
+	RA1O 1 & Front-end::Controllers::LoginController \newline Front-end::Controllers::LoginView \\ \hline 
+	RA1O 1.1 & Front-end::Controllers::LoginController \newline Front-end::Controllers::LoginView \\ \hline 
+	RA1O 1.2 & Front-end::Controllers::LoginController \newline Front-end::Controllers::LoginView \\ \hline      
 
-	RA1O 1.3 & Back-end::Lib::Controller::Middleware::Authentication  \newline Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel \\ \hline  
+	RA1O 1.3 & Back-end::Lib::Controller::Middleware::Authentication  \newline Back-end::Lib::Controller::Service::UserService \newline 
+	Back-end::Lib::Model::UserModel \\ \hline  
     
     RA1O 1.3.1 & Front-end::Model::ErrorModel \newline  \\ \hline 
            
     RA1O 1.3.2 & Back-end::Lib::Controller::Middleware::Authentication \newline
         			Back-end::Lib::Controller::Service::ProfileService \newline
-        			Front-end::Controllers::DashboardController \newline  \\ \hline 
+        			Front-end::Controllers::DashboardController \newline
+        			Front-end::Controllers::DashboardView  \\ \hline 
         				
         				     
     RA1O 2 & Back-end::Lib::Controller::Service::ForgotService \newline
-    			Front-end::Services::ForgotPasswordService \newline
+    			Front-end::Services::ForgotResetController \newline
     			Front-end::Model::RequestResetModel  \newline  \\ \hline   
     			   
     RA1O 2.1 & Front-end::Controllers::ForgotRequestController \newline  \\ \hline   
@@ -33,14 +35,22 @@
     			  			Back-end::Lib::View::ForgotMailView \newline  \\ \hline     
     			   
      
-    RA1D 3 & Front-end::Controllers::DashboardController \newline  \\ \hline  
+    RA1D 3 & Front-end::Controllers::DashboardController \newline Front-end::Controllers::DashboardView \\ \hline  
         
-    RA1O 4 & Front-end::Controllers::IndexController \newline  \\ \hline   
+    RA1O 4 & %TODO Front-end::Controllers::CollectionController 
+    \newline  \\ \hline   
        
-    RA1O 4.1 & Back-end::Lib::Controller::Service::IndexService \newline Front-end::Controllers::IndexController \newline Front-end::Model::IndexListModel \newline  \\ \hline   
+    RA1O 4.1 & Back-end::Lib::Controller::Service::IndexService \newline Front-end::Controllers::CollectionController \newline Front-end::Model::CollectionView \newline  \\ \hline   
        
-    RA1O 4.1.1 & Front-end::Controllers::IndexController \newline  \\ \hline 
-         
+    RA1O 4.1.1 & Front-end::Controllers::CollectionController \newline 
+    Front-end::Model::CollectionView \newline  \\ \hline 
+	
+	RA1O 4.1.2 & Front-end::Controllers::CollectionController \newline 
+    Front-end::Model::CollectionView \newline  \\ \hline 
+    
+    RA1O 4.1.3 & Front-end::Controllers::CollectionController \newline 
+    Front-end::Model::CollectionView \newline  \\ \hline 	
+	         
     RA1O 5 & Front-end::Controllers::ShowController \newline
     			 Front-end::Model::ShowModel \newline  \\ \hline    
            

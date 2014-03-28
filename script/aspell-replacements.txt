@@ -1,4 +1,5 @@
 personal_repl-1.1 it 100
+accere accedere
 all all'
 all'anilisi all'analisi
 allìapplicazione all'applicazione
@@ -37,6 +38,7 @@ partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
 prosposta Proposta
+pusante pulsante
 que qua
 restuire restituire
 rischesto richiesto

@@ -308,6 +308,7 @@ ND
 NOM
 NOT'
 NP
+Need
 Nell'URL
 NoSQL
 NodeJS
@@ -1070,6 +1071,7 @@ preparation
 prepare
 proattiva
 proattivi
+problem
 procedure'
 procedures
 processamento

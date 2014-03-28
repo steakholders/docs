@@ -443,6 +443,7 @@ ShowEditView
 ShowPageEdit
 ShowView
 Sign
+Signup
 Simple
 Skype
 Social
@@ -613,6 +614,7 @@ cases
 casting
 chain
 change
+changes
 chart
 checkbox
 checklist
@@ -658,6 +660,7 @@ computing
 comunicarLe
 conditions
 config
+confirmation
 connect
 content
 controller
@@ -776,6 +779,7 @@ fittizie'
 flow
 follow
 followed
+footer
 for
 forgot
 forgotController
@@ -905,6 +909,7 @@ l'istanziazione
 l'overhead
 l'update
 l'uri
+l'url
 l'userId
 label
 lang
@@ -1183,6 +1188,7 @@ showpage
 showspaces
 showstringspaces
 showtabs
+signup
 slack
 slash
 slide

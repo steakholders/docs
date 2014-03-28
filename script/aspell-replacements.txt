@@ -4,7 +4,9 @@ all'anilisi all'analisi
 allìapplicazione all'applicazione
 appresentazione Rappresentazione
 chiamarà chiamerà
+conentente contenente
 correttemente correttamente
+crerà creerà
 declassere declassare
 dell'aministratore dell'amministratore
 dell'applicatione dell'applicazione

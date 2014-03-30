@@ -20,7 +20,7 @@
 			Back-end::Lib::Controller::Service::UserService \newline 
 			Back-end::Lib::Model::UserModel  \newline \\ \hline  
     
-    RA1O 1.3.1 & Front-end::Model::ErrorModel \newline Back-end::Lib::Utils::MaapError  \newline \\ \hline 
+    RA1O 1.3.1 & Front-end::Model::NotFoundController \newline Back-end::Lib::Utils::MaapError  \newline \\ \hline 
            
     RA1O 1.3.2 & Back-end::Lib::Controller::Middleware::Authentication \newline
         			Back-end::Lib::Controller::Service::ProfileService \newline
@@ -62,41 +62,46 @@
     RA1O 4.1.3 & Front-end::Controllers::CollectionController \newline 
     Front-end::Model::CollectionView \newline  \\ \hline 	
 	         
-    RA1O 5 & Front-end::Controllers::ShowController \newline
+    RA1O 5 & Front-end::Controllers::DocumentController \newline
+   				 Front-end::Controllers::DocumentView \newline
     			 Front-end::Model::ShowModel \newline
     			 Back-end::Lib::Model::DSLModel::DocumentSchema \newline
     			 Back-end::Lib::Model::DSLModel::ShowModel \newline
     			 Back-end::Lib::Controller::Service::ShowService \newline  \\ \hline   
     			  
-    RA1O 5.1 & Back-end::Lib::Controller::Service::ShowService \newline
+    RA1O 5.1 & Front-end::Controllers::DocumentController \newline
+ 				 Front-end::Controllers::DocumentView \newline
+   				Back-end::Lib::Controller::Service::ShowService \newline
     			Back-end::Lib::Model::DSLModel::DocumentSchema \newline 
     			Back-end::Lib::Model::DSLModel::ShowModel \\ \hline
     			   
     RA1O 5.3 &
-    			Front-end::Controllers::ShowController \newline
+    			Front-end::Controllers::DocumentController \newline
     			Back-end::Lib::Controller::Service::ShowService \newline
     			Back-end::Lib::Model::DSLModel::ShowModel \newline \\ \hline      
     
     RA1O 6 & Back-end::Lib::Controller::Service::UserService \newline  
-    			Back-end::Lib::Model::UserModel \newline Front-end::Controllers::UsersListController  \\ \hline  
+    			Back-end::Lib::Model::UserModel \newline 
+    			Front-end::Controllers::UsersListView \newline 
+    			Front-end::Controllers::UsersListController  \\ \hline  
         
     RA1O 6.1 & Front-end::Controllers::UserController \newline Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel \\ \hline   
        
-    RA1O 6.1.1 & Front-end::Controllers::UserController \newline  \\ \hline     
+    RA1O 6.1.1 & Front-end::Controllers::UserDetailsView \newline  \\ \hline     
      
-    RA1O 6.1.1.1 & Front-end::Controllers::UserController \newline  \\ \hline
+    RA1O 6.1.1.1 & Front-end::Controllers::UserDetailsView \newline  \\ \hline
         
-    RA1O 6.1.1.2 & Front-end::Controllers::UserController \newline  \\ \hline
+    RA1O 6.1.1.2 & Front-end::Controllers::UserDetailsView \newline  \\ \hline
         
-    RA1O 6.1.1.3 & Front-end::Controllers::UserController \newline  \\ \hline
+    RA1O 6.1.1.3 & Front-end::Controllers::UserDetailsView \newline  \\ \hline
        
-    RA1O 6.1.2 & Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel \newline Front-end::Controllers::UserController \newline Front-end::Model::UserModel \newline  \\ \hline     
+    RA1O 6.1.2 & Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel \newline Front-end::Controllers::UserDetailsController \newline Front-end::Model::UserListController \newline  \\ \hline     
     
     
     RA1O 6.2 & Front-end::Controllers::UsersListController \newline Back-end::Lib::Controller::Service::UserService \\ \hline     
      
-    RA1O 6.2.1 & Back-end::Lib::Controller::Service::UserService \newline Front-end::Controllers::UserController \newline  \\ \hline      
-    RA1O 6.2.2 & Front-end::Controllers::UserController \newline  \\ \hline      
+    RA1O 6.2.1 & Back-end::Lib::Controller::Service::UserService \newline Front-end::Controllers::UserDetailsController \newline  \\ \hline      
+    RA1O 6.2.2 & Front-end::Controllers::UserDetailsController \newline  \\ \hline      
       
     RF1O 7 & Back-end::Lib::Model::DSLModel::DSLDomain \newline Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy \newline Back-end::Lib::Model::DSLModel::CollectionModel \newline Back-end::Lib::Controller::Middleware::DSLLoaderHandler \\ \hline      
     
@@ -134,11 +139,17 @@
      
     RF1O 9.2.3 & Back-end::Lib::Model::DSLModel::ShowModel \newline Back-end::Lib::Utils::AttributeReader \\ \hline      
     
-    RF1O 9.2.4 & Back-end::Lib::Utils::AttributeReader \newline Back-end::Lib::Model::DSLModel::ShowModel \\ \hline      
+    RF1O 9.2.4 & Back-end::Lib::Utils::AttributeReader \newline Back-end::Lib::Model::DSLModel::ShowModel \\ \hline    
+    
+    RF1O 9.2.4 & Front-end::Controllers::CollectionController \\ \hline    
             
-    RA1D 11 & Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel  \\ \hline
-    RA1D 12 & Back-end::Lib::Controller::Service::ProfileService  \\ \hline
-    RA1D 13 & Back-end::Lib::Controller::Service::ProfileService  \newline Back-end::Lib::Model::UserModel \\ \hline
+    RA1D 11 & Back-end::Lib::Controller::Service::UserService \newline Back-end::Lib::Model::UserModel
+    \newline Front-end::Controllers::RegisterController  \\ \hline
+    RA1D 12 & Back-end::Lib::Controller::Service::ProfileService \newline
+    		 Front-end::Controllers::LogoutController \\ \hline
+    RA1D 13 & Back-end::Lib::Controller::Service::ProfileService  \newline Back-end::Lib::Model::UserModel  \newline
+    Front-end::Controllers::ProfileEditController \newline Front-end::Controllers::ProfileController \newline
+    Front-end::Model::ProfileEditView \\ \hline
     
     RF1O 14 & Back-end::DeveloperProject::Config::ProjectConfig \newline  \\ \hline      
     RF1O 14.1 & Back-end::DeveloperProject::Config::ProjectConfig \newline  \\ \hline      
@@ -224,6 +235,33 @@
 	Back-end::DeveloperProject::Config::ProjectConfig & RF1O 14 \newline RF1O 14.1 \\ \hline
 	
 	Back-end::DeveloperProject::ProjectApp & \\ \hline
+	
+	Front-end::Controllers::LoginController & RA1O 1 \newline RA1O 1.1 \newline RA1O 1.2 \\ \hline
+	
+	Front-end::Controllers::LogoutController & RA1D 12 \\ \hline
+	
+	Front-end::Controllers::ForgotResetController & RA1O 2 \\ \hline
+	
+	Front-end::Controllers::ProfileEditController & RA1D 13 \\ \hline
+	
+	Front-end::Controllers::UserDetails & RA1O 6.1.1 \newline RA1O 6.1.1.1 \newline RA1O 6.1.1.3 \newline 
+	RA1O 6.1.1.2 \newline RA1O 6.1.1.3 \newline RA1O 6.1.2 \newline RA1O 6.2.1 \newline RA1O 6.2.2 \\ \hline
+	
+	Front-end::Controllers::ProfileController &  RA1D 13 \\ \hline
+	
+	Front-end::Controllers::CollectionController & RA1O 4.1 \newline RA1O 4.1.1 \newline RA1O 4.1.2 \newline RA1O 4.1.3 \newline RF1O 9.2.4 \\ \hline
+	
+	Front-end::Controllers::UsersListController & RA1O 6 \newline RA1O 6.2 \\ \hline
+	
+	Front-end::Controllers::ForgotRequestController & RA1O 2.1 \\ \hline
+	
+	Front-end::Controllers::DashboardController &  RA1O 1.3.2 \newline RA1D 3 \\ \hline
+	
+	Front-end::Controllers::DocumentController & RA1O 5 \newline RA1O 5.1 \newline RA1O 5.3 \\ \hline
+	
+	Front-end::Controllers::RegisterController & RA1D 11 \\ \hline
+	
+	Front-end::Controllers::NotFoundController & RA1O 1.3.1 \\ \hline
 	
 
 	\caption{Classi-requisito}

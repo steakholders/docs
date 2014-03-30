@@ -1,38 +1,72 @@
+\clearpage
 \section{Gestione delle collection}
-
-	\subsection{Visualizzazione dashboard} %UCU 8
-	\label{visualizzazionedashboard}
-	La dashboard è la pagina principale dalla quale è possibile avere accesso alla lista delle \glossario{collection} presenti nel sistema e alle altre funzionalità. Per accedervi è necessario aver eseguito l'autenticazione (vedi \ref{autenticazione}).
-
-	\begin{figure}[H]
-	\label{fig:dashboard}
-		\centering \includegraphics[width=1\textwidth]{img/dashboard.png}
-	\caption{Pagina della dashboard}
-	\end{figure}
+Le funzionalità di gestione delle collection elencate di seguito sono specificate nel \emph{ManualeUtente.pdf}:
+	\begin{itemize}
+		\item Visualizzazione dashboard;
+		\item Apertura collection index;
+		\item Apertura della show-page di un document;
+		\item Visualizzazione show-page attributi innestati.
+	\end{itemize}
 	
 
-	\subsection{Apertura collection index} %UCU 9
-	\label{aperturacollectionindex}
-	La \glossario{collection} index è la pagina in cui viene visualizzato il contenuto di una \glossario{collection} in forma tabellare. Per aprire una \glossario{collection} index (vedi figura \ref{fig:collection}) è necessario cliccare sul relativo link presente nella barra dei menù (1), MaaP visualizzerà l'intero contenuto della \glossario{collection} (2). La tabella visualizza i documenti dei quali è possibile aprire la showpage (vedi \ref{aperturashowpage}) cliccando sui relativi link (3). %TODO \`E possibile filtrare i contenuti della pagina tramite il pannello situato sulla destra.
+	\subsection{Modifica di un document da collection-index} %UCU 9.4
+	\label{modificadocumentdacollectionindex}
+		\begin{enumerate}
 
-	\begin{figure}[H]
-		\centering \includegraphics[width=1\textwidth]{img/collection.png}
-	\caption{ \label{fig:collection} Index di una collection}
-	\end{figure}
+			\item Per modificare un document a partire dalla collection-index (Figura \ref{fig:modificadocumentdacollectionindex}) cliccare sul pulsante \emph{Edit} (1) relativo al documento che si vuole editare. 
+
+				\begin{figure}[H]
+					\centering \includegraphics[width=1\textwidth]{img/modificadocumentdacollectionindex.png}
+				\caption{\label{fig:modificadocumentdacollectionindex} Pulsante modifica collection da collection-index}
+				\end{figure}
+
+			\item \label{modificaDocumentForm} La pagina di modifica del document (Figura \ref{fig:modificaDocumentForm} permette l'edit degli attributi disponibili (1), (2). Per salvare le modifiche cliccare sul pulsante \emph{Save changes} (3). Se l'utente desidera interrompere l'operazione di modifica, perdendo così i dati non salvati, cliccare sul pulsante \emph{Cancel} (4). 
+
+				\begin{figure}[H]
+					\centering \includegraphics[width=0.8\textwidth]{img/modificaDocumentForm.png}
+					\caption{\label{fig:modificaDocumentForm} Form di modifica document}
+				\end{figure}
+
+		\end{enumerate}
+
+	\clearpage
+	\subsection{Modifica di un document da show-page} %UCU 9.1.3
+	\label{modificadocumentdashowpage}
+
+			Per modificare un document a partire dalla relativa show-page (Figura \ref{fig:modificadocumentdashowpage}) cliccare il pulsante \emph{Edit Document} (1). Il sistema presenterà un form con il quale è possibile modificare gli attributi disponibili (vedi \ref{modificaDocumentForm}).
+
+				\begin{figure}[H]
+					\centering \includegraphics[width=0.8\textwidth]{img/modificadocumentdashowpage.png}
+				\caption{\label{fig:modificadocumentdashowpage} Modifica di un document da show-page}
+				\end{figure}
 	
+	\clearpage
+	\subsection{Eliminazione di un document da collection-index} %UCU 9.5
+	\label{eliminadocumentdacollectionindex}
+		\begin{enumerate}
+			\item Per eliminare un document a partire dalla collection-index (Figura \ref{fig:eliminadocumentdacollectionindex}) cliccare sul pulsante \emph{Delete} (1).
 
-	\subsection{Apertura della show-page di un document} %UCU 9.
-	\label{aperturashowpage}
-	La show-page di un \glossario{document} visualizza gli attributi del documento in forma tabellare. Per accedere ad una show page è necessario posizionarsi nella \glossario{collection} index di appartenenza (vedi \ref{aperturacollectionindex}) e seguire il punto 3.
+					\begin{figure}[H]
+						\centering \includegraphics[width=0.8\textwidth]{img/eliminadocumentdacollectionindex.png}
+					\caption{\label{fig:eliminadocumentdacollectionindex} Pulsante per eliminare un document da collection-index}
+					\end{figure}
 
-	\begin{figure}[H]
-	\label{fig:showpage}
-		\centering \includegraphics[width=1\textwidth]{img/showpage.png}
-	\caption{Show page di un documento}
-	\end{figure}
+			\item \label{confermaEliminazDocument} Confermare l'eliminazione del document tramite la finestra proposta dal browser (Figura \ref{fig:confermaEliminazDocument}).
+					\begin{figure}[H]
+							\centering \includegraphics[width=0.6\textwidth]{img/confermaEliminazDocument.png}
+					\caption{\label{fig:confermaEliminazDocument} Finestra conferma eliminazione document}
+					\end{figure}
 
-	\subsection{Visualizzazione show page attributi innestati} % 9.1.1
-	La presenza di \glossario{document} innestati viene evidenziata dalla visualizzazione dell'attributo come un link, attraverso il quale è possibile accedere alla show page. 
+		\end{enumerate}
+	
+	\clearpage
+	\subsection{Eliminazione di un document da show-page} %UCU 9.1.4
+	\label{eliminazionedocumentdashowpage}
 
+			Per eliminare un document a partire dalla relativa show-page (Figura \ref{fig:eliminazionedocumentdashowpage}) cliccare il pulsante \emph{Delete Document} (1). Confermare l'eliminazione come indicato in \ref{confermaEliminazDocument}.
 
-	%\subsection{Filtra risultati} %TODO viene implementato in RA
+				\begin{figure}[H]
+					\centering \includegraphics[width=0.8\textwidth]{img/eliminazionedocumentdashowpage.png}
+				\caption{\label{fig:eliminazionedocumentdashowpage} Pulsante per eliminare un document da show-page}
+				\end{figure}
+

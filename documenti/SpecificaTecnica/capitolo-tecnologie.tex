@@ -5,27 +5,34 @@ L'architettura è stata progettata utilizzando diverse tecnologie, alcune delle 
 
 \begin{itemize}
 	\item \textbf{Node.js}: piattaforma per il \glossario{back-end};
-	\item \textbf{Express.js}: framework per la realizzazione dell’applicazione web in \glossario{Node.js};
+	\item \textbf{Express}: framework per la realizzazione dell’applicazione web in \glossario{Node.js};
 	\item \textbf{MongoDB}: database di tipo \glossario{NoSQL} per la parte di recupero e salvataggio dei dati;
 	\item \textbf{Mongoose}: libreria per interfacciarsi con il driver di \textbf{MongoDB};
 	\item \textbf{AngularJS}: framework \glossario{JavaScript} la realizzazione del \glossario{front-end}.
 \end{itemize}
 
-\subsection{Node.js}
-\textbf{Node.js} è una \glossario{piattaforma} software costruita sul motore \glossario{JavaScript} di \glossario{Chrome} che permette di realizzare facilmente applicazioni di rete scalabili e veloci. \glossario{\textbf{Node.js}} utilizza \glossario{\textbf{JavaScript}} come linguaggio di programmazione, e grazie al suo modello \glossario{event-driver} con chiamate di \glossario{I/O} non bloccanti risulta essere leggero e efficiente.
 
-I principali vantaggi dell'utilizzo di \glossario{Node.js} sono:
+\subsection{Node.js}
+\textbf{Node.js} è una \glossario{piattaforma} software sviluppata in C, C++ e JavaScript, costruita sul motore \glossario{V8 JavaScript Engine} di \glossario{Google Chrome} che permette di realizzare facilmente applicazioni di rete scalabili e veloci. \glossario{\textbf{Node.js}} utilizza \glossario{\textbf{JavaScript}} come linguaggio di programmazione, il quale, grazie al suo modello \glossario{event-driver} con chiamate di \glossario{I/O} non bloccanti, risulta essere leggero e efficiente.
+
+I principali vantaggi derivanti dall'utilizzo di \glossario{Node.js} sono:
 \begin{itemize}
-	\item \textbf{Approccio asincrono}: \glossario{Node.js} permette di accedere alle risorse del sistema operativo in modalità \glossario{event-driven} e non sfruttando il classico modello basato su processi o thread concorrenti utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni, poiché durante le attese il runtime può gestire qualcos'altro in maniera asincrona.
-	\item \textbf{Architettura modulare}: Lavorando con \glossario{Node.js} è molto facile organizzare il lavoro in librerie, importare i \glossario{moduli} e combinarli fra loro. Questo è reso molto comodo attraverso il \glossario{\emph{node package manager}} (\textbf{npm}) attraverso il quale lo sviluppatore può contribuire e accedere ai \glossario{package} messi a disposizione dalla community.
+	\item \textbf{Approccio asincrono}: \glossario{Node.js} permette di accedere alle risorse del sistema operativo in modalità \glossario{event-driven} e non sfruttando il classico modello basato su processi o thread concorrenti utilizzato dai classici web server. Ciò garantisce una maggiore efficienza in termini di prestazioni, poiché durante le attese il runtime può gestire qualcos'altro in maniera asincrona;
+	\item \textbf{Architettura modulare}: lavorando con \glossario{Node.js} è molto facile organizzare il lavoro in librerie, importare i \glossario{moduli} e combinarli fra loro. Questo è reso molto comodo attraverso il \glossario{\emph{node package manager}} (\textbf{npm}) attraverso il quale lo sviluppatore può contribuire e accedere ai \glossario{package} messi a disposizione dalla community.
 \end{itemize}
 
-\subsection{Express.js}
-\textbf{Express.js} è un \glossario{framework} minimale per creare applicazioni web con \glossario{Node.js}. 
-Express offre funzionalità che semplificano e aumentano le potenzialità di \glossario{Node.js}, fornendo una migliore implementazione del sistema di \glossario{routing}, incrementando le funzioni di richiesta e risposta estendendole per una maggior flessibilità, integrando nuovi \glossario{middleware}, ed agevolando la realizzazione delle \glossario{viste}. 
+Le applicazioni Node.js vengono eseguite su un singolo thread, sebbene Node.js utilizzi un modello multi-thread per la gestione degli eventi legati a file e connessioni di rete.
+
+
+\subsection{Express}
+\textbf{Express} è un \glossario{framework} minimale, basato sul design pattern architetturale \glossario{MVC} per creare applicazioni web con \glossario{Node.js}. 
+Express offre funzionalità che semplificano e aumentano le potenzialità di \glossario{Node.js}, fornendo una migliore implementazione del sistema di \glossario{routing}, incrementando le funzioni di richiesta e risposta estendendole per una maggior flessibilità, integrando nuovi \glossario{middleware}, ed agevolando la realizzazione delle \glossario{viste}.
+
+Express non limita l'utente nella scelta del linguaggio di templating, lo aiuta a gestire le route, le request e le view.
+
 
 \subsection{MongoDB}
-\glossario{\textbf{MongoDB}} è un database \glossario{NoSQL} \glossario{open source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici, secondo una struttura semplice e potente.
+\glossario{\textbf{MongoDB}} è un database \glossario{NoSQL} \glossario{open source} scalabile e altamente performante di tipo document-oriented, in cui i dati sono archiviati sotto forma di documenti in stile \glossario{JSON} con schemi dinamici che \glossario{MongoDB} chiama \glossario{BSON}, secondo una struttura semplice e potente.
 
 I principali vantaggi derivati dal suo utilizzo sono:
 \begin{itemize}
@@ -36,14 +43,21 @@ I principali vantaggi derivati dal suo utilizzo sono:
 	\item Tipi di dato più flessibili.
 \end{itemize}
 
-\subsection{Mongoose}
-\textbf{Mongoose} è una libreria per interfacciarsi a \glossario{MongoDB} che permette di definire degli schemi per modellare i dati del database, imponendo una certa struttura per la creazione di nuovi \glossario{Document}. Inoltre fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il cast dei tipi predefiniti.
+Altre funzionalità comprendono la possibilità di creare delle query ad hoc, l'\emph{Auto-Sharding}, ovvero la capacità di scalare orizzontalmente e di aggiungere nuove macchine al database operativo. Inoltre, MongoDB supporta la definizione di collection con una dimensione fissata. Questo particolare tipo di collection mantiene l'ordine di inserimento e, una volta raggiunta la dimensione massima prefissata, si comporta come una lista circolare.
 
-Per interfacciare l'application server con \glossario{MongoDB} sono disponibili diversi progetti \glossario{open source}. Per questo progetto è stato scelto di utilizzare \glossario{Mongoose.js}, attualmente il più diffuso.
+
+\subsection{Mongoose}
+\textbf{Mongoose} è una libreria per interfacciarsi a \glossario{MongoDB} che permette di definire degli schemi per modellare i dati del database, imponendo una certa struttura per la creazione di nuovi \glossario{Document}. Inoltre, fornisce molti strumenti utili per la validazione dei dati, per la definizione di query e per il cast dei tipi predefiniti.
+
+La documentazione di \glossario{Mongoose} è ben fornita e descrive le API in maniera esaustiva, fornendo degli \glossario{snippet} del codice sorgente.
+
+Per interfacciare l'application server con \glossario{MongoDB} sono disponibili diversi progetti \glossario{open source}. Per questo progetto è stato scelto di utilizzare \glossario{Mongoose}, attualmente il più diffuso.
+
 
 \subsection{AngularJS}
 \textbf{AngularJS} è un \glossario{framework} architetturale per applicazioni dinamiche,patrocinato da Google.
 Uno dei vantaggi più grandi che caratterizzano questo \glossario{framework} è la possibilità di integrare e utilizzare molte funzioni utilizzando quasi esclusivamente l' HTML grazie all’approccio dichiarativo, permettendo di estenderne la sintassi per esprimere le componenti dell'applicazione in maniera chiara e succinta.
+
 Le caratteristiche principali che caratterizzano questo \glossario{framework} sono: 
 \begin{itemize} 
 \item \textbf{Data Binding} : è un' approccio automatico di aggiornare la vista ogni ogniqualvolta il model cambia e viceversa. Aiuta lo sviluppo eliminando la manipolazione del DOM allo sviluppatore.

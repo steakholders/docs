@@ -23,14 +23,21 @@ L'attività di test deve produrre un \glossario{log} che specifica quando e chi 
 	\label{fig:V-Model}
 	\end{figure}
 
+	
+	\subsection{Test di validazione}
+	In questa sezione vengono elencati i test di validazione per verificare che il prodotto sia conforme alle attese. I test si svolgono seguendo e verificano tutti passi di cui si compongono. I requisiti che non sono stati accettati nel \AnalisiDeiRequisiti{} sono qui marcati con un \texttt{*} ad indicare che il test associato non verrà effettuato. I test eseguiti sono indicati con una \emph{E} (Eseguito), mentre i test non eseguiti sono indicati con \emph{N.E} (Non Eseguito).
+	
+	\include{capitolo-test-di-validazione-requisiti}
+
+
 	\subsection{Test di sistema}
-	Vengono qui descritti i test di sistema che andranno a verificare il funzionamento complessivo delle componenti.
-	Nella seguente tabella, lo stato di ogni test è definito da N.E per non eseguito. I requisiti che non sono stati accettati nel \AnalisiDeiRequisiti{} sono qui marcati con un \texttt{*} ad indicare che il test associato non verrà effettuato.
+	Vengono qui descritti i test di sistema che andranno a verificare il funzionamento complessivo delle componenti. I requisiti che non sono stati accettati nel \AnalisiDeiRequisiti{} sono qui marcati con un \texttt{*} ad indicare che il test associato non verrà effettuato. I test eseguiti sono indicati con una \emph{E} (Eseguito), mentre i test non eseguiti sono indicati con \emph{N.E} (Non Eseguito).
 	
 	\include{capitolo-test-di-sistema-requisiti}
 	
+	
 	\subsection{Test di integrazione}
-	I test di integrazione vanno a controllare il corretto funzionamento delle componenti descritti dalla progettazione ad alto livello. Si è scelto di utilizzare un approccio \glossario{top-down} ad eccezione del test TI 9 che viene eseguito con la metodologia \glossario{bottom-up}. Di seguito viene riportato un diagramma informale per chiarire l'albero dei test di integrazione.
+	I test di integrazione vanno a controllare il corretto funzionamento delle componenti descritti dalla progettazione ad alto livello. Si è scelto di utilizzare un approccio \glossario{top-down} ad eccezione del test TI 9 che viene eseguito con la metodologia \glossario{bottom-up}. Di seguito viene riportato un diagramma informale per chiarire l'albero dei test di integrazione. I test eseguiti sono indicati con una \emph{E} (Eseguito), mentre i test non eseguiti sono indicati con \emph{N.E} (Non Eseguito).
 
 	\begin{figure}[H]
 	\centering \includegraphics[width=1\textwidth]{sequenza-di-integrazione.png}
@@ -53,29 +60,24 @@ L'attività di test deve produrre un \glossario{log} che specifica quando e chi 
 	\begin{longtable}[H]{|P{1cm}|P{5cm}|P{4.5cm}|P{2cm}|}
 		\hline \textbf{Test} & \textbf{Descrizione} & \textbf{Componenti aggiunte} & \textbf{Stato} \\
 		
-		\hline TI 1 & Si verifica che l'applicazione Web carichi correttamente le librerie JavaScript utilizzate. & Front-end & N.E. \\
-		\hline TI 2 & Si verifica che i controller si integrino correttamente nell'applicazione Web. & Front-end::Controllers & N.E. \\
-		\hline TI 3 & Si verifica che i services permettono di interagire correttamente con il back-end. & Front-end::Services & N.E. \\
-		\hline TI 4 & Si verifica che il DeveloperProject avvii correttamente il server, fornendo in particolare i file statici del front-end. & Back-end::DeveloperProject & N.E. \\
-		\hline TI 5 & Si verifica che la libreria si integri correttamente con il \glossario{Node Package Manager} (npm) E che il suo script di installazione produca un DeveloperProject funzionante. & Back-end::Lib & N.E. \\
-		\hline TI 6 & Si verifica che i controller si integrino correttamente tra loro e nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller & N.E. \\
-		\hline TI 7 & Si verifica che il Middleware si integri correttamente nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller::Middleware & N.E. \\
-		\hline TI 8 & Si verifica che il Service si integri correttamente nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller::Service & N.E. \\
-		\hline TI 9 & Si verifica che il Model si integri correttamente della gestione dell'inserimento, della modifica, della creazione e dell'eliminazione consistente dei dati. & Back-end::Lib::Model & N.E. \\
-		\hline TI 10 & Si verifica che la View si integri correttamente con il Middleware per fornire i template come la gestione dell'invio delle mail. & Back-end::Lib::View & N.E. \\
-		\hline TI 11 & Si verifica che Utils si integri correttamente con il funzionamento dell'applicazione. & Back-end::Lib::Utils & N.E. \\
-		\hline TI 12 & Si verifica che le classi che compongono il DSLModel interagiscano correttamente tra loro. & Back-end::Lib::DSLModel & N.E. \\
-		\hline TI 13 & Si verifica che il DSLModel si integri correttamente con il funzionamento dell'applicazione. & Back-end::Lib::DSLModel & N.E. \\
+		\hline TI 1 & Si verifica che l'applicazione Web carichi correttamente le librerie JavaScript utilizzate. & Front-end & E. \\
+		\hline TI 2 & Si verifica che i controller si integrino correttamente nell'applicazione Web. & Front-end::Controllers & E. \\
+		\hline TI 3 & Si verifica che i services permettono di interagire correttamente con il back-end. & Front-end::Services & E. \\
+		\hline TI 4 & Si verifica che il DeveloperProject avvii correttamente il server, fornendo in particolare i file statici del front-end. & Back-end::DeveloperProject & E. \\
+		\hline TI 5 & Si verifica che la libreria si integri correttamente con il \glossario{Node Package Manager} (npm) e che il suo script di installazione produca un DeveloperProject funzionante. & Back-end::Lib & E. \\
+		\hline TI 6 & Si verifica che i controller si integrino correttamente tra loro e nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller & E. \\
+		\hline TI 7 & Si verifica che il Middleware si integri correttamente nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller::Middleware & E. \\
+		\hline TI 8 & Si verifica che il Service si integri correttamente nella gestione delle richieste che arrivano al server. & Back-end::Lib::Controller::Service & E. \\
+		\hline TI 9 & Si verifica che il Model si integri correttamente della gestione dell'inserimento, della modifica, della creazione e dell'eliminazione consistente dei dati. & Back-end::Lib::Model & E. \\
+		\hline TI 10 & Si verifica che la View si integri correttamente con il Middleware per fornire i template come la gestione dell'invio delle mail. & Back-end::Lib::View & E. \\
+		\hline TI 11 & Si verifica che Utils si integri correttamente con il funzionamento dell'applicazione. & Back-end::Lib::Utils & E. \\
+		\hline TI 12 & Si verifica che le classi che compongono il DSLModel interagiscano correttamente tra loro. & Back-end::Lib::DSLModel & E. \\
+		\hline TI 13 & Si verifica che il DSLModel si integri correttamente con il funzionamento dell'applicazione. & Back-end::Lib::DSLModel & E. \\
 		\hline
 
 	\caption{Descrizione test d'Integrazione}
 	\end{longtable}
 	\egroup
-
-	\subsection{Test di validazione}
-	In questa sezione vengono elencati i test di validazione per verificare che il prodotto sia conforme alle attese. I test si svolgono seguendo e verificano tutti passi di cui si compongono. I requisiti che non sono stati accettati nel \AnalisiDeiRequisiti{} sono qui marcati con un \texttt{*} ad indicare che il test associato non verrà effettuato.
-	
-	\include{capitolo-test-di-validazione-requisiti}
 	
 	
 	\subsection{Test di unità}

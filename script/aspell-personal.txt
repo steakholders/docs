@@ -20,7 +20,9 @@ Actors
 ACWP
 Add
 addAttribute
+addColumn
 Addressed
+addRow
 Addy
 Adjourned
 Adler
@@ -70,6 +72,7 @@ array
 as
 asd
 aspell
+assertEmptyAttributes
 assessment
 assigned
 Assurance
@@ -146,6 +149,7 @@ Centric
 chain
 change
 changes
+changeSorting
 chart
 checkbox
 checklist
@@ -175,7 +179,7 @@ collectionController
 collectionId
 CollectionListModel
 CollectionListService
-CollectionModel
+collectionModel
 collectionName
 CollectionPage
 collectionPath
@@ -197,6 +201,7 @@ commentstyle
 commisurabili
 commit
 community
+compareCollectionWeight
 Compiler
 Compito'
 Complex
@@ -218,10 +223,12 @@ conditions
 config
 confirmation
 connect
+connection
 Consortium
 Constraints
 Construction
 Constructor
+consumeResetPasswordTokenAndUpdatePassword
 content
 Contestualizzazione
 Continuous
@@ -240,6 +247,7 @@ Corporation
 correction
 Correllato
 cost
+countAll
 coverage
 Cox
 Craftsmanship
@@ -265,6 +273,7 @@ DashboardView
 dataDB
 DataSchema
 David
+db
 dd
 DdP
 delete
@@ -296,6 +305,7 @@ development
 Difficult
 difficulty
 dimostrabilmente
+disabledRegisterUser
 Distributed
 document
 documentAction
@@ -310,9 +320,10 @@ DocumentPageEdit
 documents
 DocumentSchema
 DocumentService
+documentUpdated
 DocumentView
 DOM
-Domain
+domain
 DP
 draw
 driven
@@ -406,6 +417,10 @@ fgfg
 fields
 filecolor
 fill
+findAll
+findAllPaginated
+findAllPaginatedQuery
+findByIdAndPopulate
 Firebase
 Firefox
 First
@@ -429,9 +444,10 @@ ForgotRequestController
 ForgotRequestView
 ForgotResetController
 ForgotResetView
-ForgotService
+forgotService
 form
 format
+formatHeader
 Formed
 formError
 Fornari
@@ -456,13 +472,18 @@ GanttProject
 garbage
 gedit
 general
+generateResetPasswordToken
 Generator
 get
 getAttributes
 getAuthController
 getCollectionController
 getCollectionModel
+getCollectionModels
 getCollectionName
+getCollectionSevice
+getColumns
+getColumnsForDocuments
 getDashboard
 getData
 getDataDbUri
@@ -470,18 +491,25 @@ getDSLPath
 getEnvironment
 getErrors
 getForgotController
+getForgotService
+getId
 getIndexController
 getIndexModel
 getIndexPage
+getIndexService
 getLabel
 getName
 getProfile
 getProfileController
+getProfileService
+getRows
+getRowsForDocument
 getServerPort
 getServerStaticPath
 getShowController
 getShowModel
 getShowPage
+getShowService
 getSmtpAuth
 getSmtpService
 getTransformation
@@ -491,6 +519,8 @@ getUserController
 getUserDbUri
 getUserList
 getUsers
+getUserService
+getWeight
 GG
 git
 GitHub
@@ -510,6 +540,7 @@ gzip
 Hagemeister
 halstead
 Handbook
+handle
 handler
 handling
 Hangouts
@@ -571,6 +602,7 @@ Integration
 Intelligent
 Interaction
 interface
+invalidateResetPasswordToken
 Involved
 inzializzare
 IQ
@@ -651,6 +683,7 @@ listCollection
 listCollections
 livello'
 ln
+loadDsl
 loadDSLFile
 l'Object
 local
@@ -739,6 +772,8 @@ milestone
 Mistake
 Mocha
 mod
+modelA
+modelB
 Modeling
 modelRegistry
 modifica'
@@ -780,6 +815,7 @@ never
 new
 newLevel
 newline
+newPassword
 newUser
 next
 ngrok
@@ -799,6 +835,7 @@ nomemetrica
 NomePackage
 NomePackageFiglio
 NomePackagePadre
+noMoreColumns
 north
 NoSQL
 NOT'
@@ -840,7 +877,10 @@ packages
 packet
 pag
 page
+paginata
+paginate
 parameters
+params
 Parent
 parser
 parsing
@@ -848,6 +888,7 @@ part
 participants
 passport
 PassportLocal
+passwordReset
 passwordResetRequest
 path
 Patterns
@@ -863,6 +904,7 @@ Pending
 people
 people's
 Performing
+perpage
 personal
 Pgr
 Pgt
@@ -932,7 +974,7 @@ ProfileEditView
 ProfileModel
 ProfilePage
 ProfilePageEdit
-ProfileService
+profileService
 ProfileView
 Prog
 progetto'
@@ -967,6 +1009,8 @@ rarely
 Rational
 RAU
 README
+readOptionalAttributes
+readRequiredAttributes
 Ready
 receiver
 recovery
@@ -979,6 +1023,8 @@ RegExp
 register
 registerCollection
 RegisterController
+registerError
+RegisterService
 registerUser
 registry
 Relationship
@@ -996,7 +1042,7 @@ request
 RequestResetModel
 require
 requireAdmin
-Required
+required
 requireLogged
 Requirements
 requireNotLogged
@@ -1058,6 +1104,10 @@ rulecolor
 run
 runtime
 ruoli'
+safeFindByEmail
+safeFindById
+safeFindByIdAndRemove
+safeFindByResetPasswordToken
 salt
 Satisfied
 save
@@ -1087,7 +1137,9 @@ service
 ServiceFactory
 services
 session
+setDefaultColumnSelectable
 setIndexModel
+setSelectable
 setShowModel
 setter
 setup
@@ -1133,6 +1185,8 @@ Sommerville
 somministrabile
 sort
 sortable
+sortby
+sortBy
 sottoattributi
 sottoproblemi
 sottoscrivibile
@@ -1192,6 +1246,7 @@ Support
 SV
 SWEBOK
 sweet
+SweetMacro
 switch
 symbolic
 syntax
@@ -1236,6 +1291,7 @@ timer'
 title
 titolo'
 to
+toDict
 TODO
 toError
 toJson
@@ -1273,6 +1329,7 @@ UML
 Unadjusted
 un'array
 Unauthorized
+undefined
 Under
 underscore
 un'email
@@ -1284,10 +1341,12 @@ Unique
 unit
 University
 update
+updateDocument
 updateLevel
 updatePassword
 upload
 upper
+upsert
 url
 urlcolor
 urlencoded
@@ -1300,6 +1359,7 @@ userDB
 UserDetails
 UserDetailsController
 UserDetailsView
+userEmail
 userError
 userId
 userIdShowPage
@@ -1356,6 +1416,7 @@ ways
 WebKit
 webmaster
 webServer
+weight
 Well
 whatever
 where

@@ -1,55 +1,122 @@
-\section{Configurazione Collection}
+\section{Configurazione di un file DSL}
 \label{collection}
 
-All'interno della cartella \code{../collection} andranno inseriti i file di configurazione delle Collection. L'applicazione infatti, all'avvio del server, andrà a leggere il contenuto della directory in questione e prelevare sequenzialmente tutti i file con estensione \code{.dsl} contenuti al suo interno. Questi file andranno poi ad essere interpretati dall'interprete DSL, il quale si occuperà di generare tutti i modelli necessari alla configurazione delle varie collection.
+All'interno della cartella \code{collections/} sono presenti alcuni file \code{DSL} di esempio da cui trarre spunto. Come descritto in precedenza è possibile specificare manualmente su quale cartella andare a prelevare i propri file, intervenendo sulla configurazione dell'applicazione tramite il file \code{config.js}. Di default viene specificata questa cartella.
 
-La configurazione di una collection avviene tramite l'editing di un file DSL. La configurazione base deve avere la seguente sintassi:
+La configurazione di una Collection avviene tramite la configurazione di un file DSL. Questa attività consiste nella semplice creazione o modifica di un file, quindi è possibile procedere alla configurazione tramite un qualsiasi editor di testo disponibile. La configurazione di base deve avere la seguente sintassi:
 \medskip
+
 \begin{lstlisting}
-collection("collectionName","collectionReference", collectionQuery) {
-	index {
+collection(
+	name: "NomeCollection", 
+	label: "CollectionLabel", 
+	id: "CollectionId", 
+	weight: "CollectionWeight" 
+) {
+	index( 
+		perpage: DocumentsPerPage, 
+		populate: AttributePopulate, 
+		sortby: "DefaultSort", 
+		order: "DefaultSortOrder", 
+		query: CollectionQuery
+	) {
+		column(
+			name: "AttributeName", 
+			label: "ColumnLabel", 
+			sortable: IndexSortable, 
+			selectable: IndexSelectable, 
+			transformation: TransformationFunction
+		)
+		...
 	}
-	show {
+	show(
+		populate: AttributePopulate
+	) {
+		row(
+			name: "AttributeName", 
+			label: "RowLabel", 
+			transformation: TransformationFunction
+		)
+		...
 	}
-}		
+} 
 \end{lstlisting}
 
-I parametri accettati dalla configurazione di una collection sono i seguenti: 
+
+L'applicazione, all'avvio del server, andrà a leggere il contenuto della directory impostata e preleverà sequenzialmente tutti i file con estensione \code{.dsl} contenuti al suo interno. Su questi file avverrà dunque un processo di \glossario{parsing} da parte dell'interprete DSL, il quale si occuperà di interfacciarsi con le \glossario{API} di MaaP e generare tutte le classi e i modelli necessari alla configurazione delle varie Collection indicate. 
+
+Se durante questo processo dovessero verificarsi degli errori relativi all'interpretazione dei file e all'esecuzione del codice prodotto essi verranno registrati e segnalati nell'applicazione.
+
+All'interno del file è possibile definire funzioni e campi dati all'esterno del codice DSL, per poi riferirle all'interno di esso.
+
+Ciascuna \textit{espressione} prende in input una lista di parametri in stile javascript, ovvero: \code{nomeParametro: valoreParametro}. Alcuni parametri sono obbligatori, mentre altri sono facoltativi, e in caso vengano omessi vengono sostituiti con appropriati valori di default.
+
+\subsection{Configurazione di collection}
+
+Questa espressione indica come la Collection dev'essere configurata. Da essa deriveranno le configurazioni della \textit{index-page} e \textit{show-page}.
+
 \begin{itemize}
-\item[] \code{\textbf{collectionName}} corrisponde al nome della collection che verrà visualizzato nell'applicazione e deve essere di tipo String;
-\item[] \code{\textbf{collectionReference}} corrisponde al nome effettivo della collection nel database MongoDB delle collections e deve essere di tipo String;
-\item[] \code{\textbf{collectionQuery}} corrisponde ad un oggetto javascript tramite il quale può essere effettuata una query sulla collection.
+
+	\item \textbf{\code{name}} (required): questo parametro accetta una stringa e coincide con il nome della Collection di riferimento sul database \glossario{MongoDB};
+	\item \textbf{\code{label}} (optional): questo parametro accetta una stringa e coincide con il nome che verrà visualizzato nella \textit{index-page}. Se non specificato viene automaticamente inizializzato con il valore del parametro \code{name};
+	\item \textbf{\code{id}} (optional): questo parametro accetta una stringa e coincide con l'identificativo della \glossario{URI} della Collection. Di default questo parametro assume il valore del parametro \code{name}. Viene utilizzato se si vuole far puntare più configurazioni alla stessa collection su MongoDB;
+	\item \textbf{\code{weight}} (optional): questo parametro accetta un valore intero e coincide con l'ordine di visualizzazione della Collection nella barra di navigazione dell'applicazione e nella lista delle collection della \glossario{Dashboard}. Se non specificato assume 0 come valore di default.
+
 \end{itemize}
 
-Ciascuna index-page è composta da una serie di \texttt{column} e può essere configurata come segue: 
-\begin{lstlisting}
-		index {
-			column("columnLabel", "attributeReference", transformation, selectable, sortable)
-		}		
-\end{lstlisting}
-I parametri accettati dalla configurazione di una column di una index-page sono i seguenti: 
+\subsection{Configurazione di index}
+
+Questa espressione indica coma la index-page dovrà essere configurata. Da questa configurazione deriverà una precisa strutturazione e visualizzazione della pagina.
+
 \begin{itemize}
-\item[] \code{\textbf{columnLabel}} corrisponde al nome visualizzato nell'intestazione della colonna;
-\item[] \code{\textbf{attributeReference}} corrisponde al nome effettivo dell'attributo dei document della collection nel database;
-\item[] \code{\textbf{transformation}} corrisponde ad una funzione javascript che si occupa di effettuare una trasformazione sul valore dell'attributo. Tale funzione per effettuare l'effettiva trasformazione deve restituire un valore con il \code{return};
-\item[] \code{\textbf{selectable}} corrisponde ad un valore booleano che indica se l'elemento della colonna è selezionabile, ovvero se nell'index-page conterrà un link che rimanda alla corrispondente show-page del document;
-\item[] \code{\textbf{sortable}} corrisponde ad un valore booleano che indica se la tabella è ordinabile secondo la colonna.
+
+	\item \textbf{\code{perpage}} (optional): questo parametro accetta una valore intero maggiore di zero e coincide con il numero di Document che verranno visualizzate per ogni pagina. Se il numero totale di Document è maggiore del valore di questo parametro la index-page viene \textit{paginata}. Se non specificato questo parametro prende come valore di default 50;
+	\item \textbf{\code{populate}} (optional): questo parametro accetta una stringa e coincide con l'attributo esterno sul quale effettuare la funzione \glossario{populate};
+	\item \textbf{\code{sortby}} (optional): questo parametro accetta una stringa e coincide con l'attributo sul quale poter effettuare l'ordinamento di default nel caso in cui non sia specificata nessuna colonna con il parametro \code{sortable: true};
+	\item \textbf{\code{order}} (optional): questo parametro accetta una stringa con valore ``\code{asc}'' o ``\code{desc}'' che coincide con la tipologia di ordinamento del parametro \code{sortby}:
+	\begin{itemize}
+
+		\item ``\code{asc}'' indica che l'ordinamento verrà fatto in modo \textit{ascendente};
+		\item ``\code{desc}'' indica che l'ordinamento verrà fatto in modo \textit{discendente};	
+	
+	\end{itemize}
+	\item \textbf{\code{query}} (optional): questo parametro accetta un oggetto JSON con al suo interno i parametri e i valori sui quali effettuare la \glossario{query} al database sulla Collection in questione.
 \end{itemize}
 
-Ciascuna show-page è composta da una serie di \texttt{row} che può essere configurata come segue: 
-\begin{lstlisting}
-		show {
-			row("rowLabel", "attributeReference", transformation)
-		}		
-\end{lstlisting}
-I parametri accettati dalla configurazione di una column di una index-page sono i seguenti: 
+\subsection{Configurazione di column}
+
+Questa espressione indica la configurazione di una colonna della tabella della \textit{index-page}.
+
 \begin{itemize}
-\item[] \code{\textbf{rowLabel}} corrisponde al nome visualizzato nell'intestazione della riga;
-\item[] \code{\textbf{attributeReference}} corrisponde al nome effettivo dell'attributo del document;
-\item[] \code{\textbf{transformation}} corrisponde ad una funzione javascript che si occupa di effettuare una trasformazione sul valore dell'attributo. Tale funzione per effettuare l'effettiva trasformazione deve restituire un valore con il \code{return};
+
+	\item \textbf{\code{name}} (required): questo parametro accetta una stringa e coincide con il nome dell'attributo della collection di riferimento su MongoDB;
+	\item \textbf{\code{label}} (optional): questo parametro accetta una stringa e coincide con il nome dell'intestazione della colonna nella tabella della \textit{index-page}. Di default, se non specificato, assume il valore del parametro \code{name};
+	\item \textbf{\code{sortable}} (optional): questo parametro accetta un valore booleano che, se uguale a \code{true}, indica che la \textit{index-page} può essere ordinata secondo questa colonna. Se non specificato assume \code{false} come valore di default;
+	\item \textbf{\code{selectable}} (optional): questo parametro accetta un valore booleano che, se uguale a \code{true}, indica che l'elemento può essere selezionato tramite un link, il quale rimanderà alla relativa \textit{show-page} del Document selezionato. Se non specificato assume \code{false} come valore di default;
+	\item \textbf{\code{transformation}} (optional): questo parametro coincide con una funzione di trasformazione sull'elemento. La funzione deve restituire un valore, il quale sovrascriverà il valore dell'elemento estratto dalla query.
 \end{itemize}
 
-Di seguito viene fornita un'immagine di esempio in cui viene configurata l'index-page e la show-page relativa ad una collection di \textit{clienti}. Tale configurazione prende tutti i \textit{clienti} di nazionalità italiana.
+\subsection{Configurazione di show}
+
+Questa espressione indica come la \textit{show-page} dovrà essere configurata. Da questa configurazione deriverà una precisa strutturazione e visualizzazione della pagina.
+
+\begin{itemize}
+
+	\item \textbf{\code{populate}} (optional): questo parametro accetta una stringa e coincide con l'attributo esterno sul quale effettuare la funzione \glossario{populate}.
+
+\end{itemize}
+
+\subsection{Configurazione di row}
+
+Questa espressione indica la configurazione di una riga della tabella della \textit{show-page}.
+
+\begin{itemize}
+
+	\item \textbf{\code{name}} (required): questo parametro accetta una stringa e coincide con il nome dell'attributo della collection di riferimento su MongoDB;
+	\item \textbf{\code{label}} (optional): questo parametro accetta una stringa e coincide con il nome dell'intestazione della riga nella tabella della \textit{show-page}. Di default, se non specificato, assume lo stesso valore del parametro \code{name};
+	\item \textbf{\code{transformation}} (optional): questo parametro coincide con una funzione di trasformazione sull'elemento. La funzione deve restituire un valore, il quale sovrascriverà il valore dell'elemento estratto dalla query.
+
+\end{itemize}
 
 
-\includegraphics[scale=0.5]{images/dsl-example.png} 
+

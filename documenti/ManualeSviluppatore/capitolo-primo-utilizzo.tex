@@ -1,0 +1,70 @@
+\section{Primo utilizzo}
+
+Vengono riportati in questa sezione i passi necessari per la creazione di una nuova applicazione MaaP, utilizzando il modello "scaffold" fornito dal framework. I comandi descritti devono essere eseguiti da un terminale da cui sia possibile eseguire il Node Packet Manager ed è richiesta una connessione ad Internet.
+
+\subsection{Installazione}
+
+\begin{enumerate}
+ 	\item Installare il framework MaaP tramite il Node Packet Manager:
+ 	
+ 	\centerline{ \code{ \$> npm install -g maap } }
+ 	
+ 	\item Creare un'applicazione utilizzando il modello fornito dal framework MaaP: posizionarsi all'interno della cartella nella quale si vorrà creare l'applicazione ed eseguire il comando:
+ 	
+ 	\centerline{ \code{ \$> maap create project <ProjectName> } }
+ 
+ 	dove \texttt{<ProjectName>} corrisponde al nome del progetto che si vuole creare;
+ 	
+ 	\item Installare le dipendenze dell'applicazione: posizionarsi all'interno della cartella ed eseguire il comando di installazione:
+ 
+ 	\centerline{ \code{ \$> cd <ProjectName> } }
+ 	\centerline{ \code{ \$> npm install } }
+ 	
+\end{enumerate}
+
+\subsection{Configurazione}
+
+\begin{enumerate}
+
+ 	\item Configurare l'applicazione: aprire con un editor di testo il file \code{config.js} generato assieme all'applicazione e configurarlo riferendosi alla sezione \ref{config} di questo manuale.
+
+ 	\item Configurare le collections dell'applicazione, riferendosi alla sezione \ref{collection} di questo manuale. All'interno della cartella \code{collections} sono presenti dei file \code{DSL} di esempio;
+
+\end{enumerate} 
+
+\subsection{Avvio e accesso}
+
+\begin{enumerate}
+ 	\item Eseguire il server dell'applicazione: posizionarsi all'interno della cartella dell'applicazione ed eseguire il comando:
+ 
+ 	\centerline{ \code{ \$> npm start } }
+ 	
+ 	\item Accedere all'applicazione da browser: aprire un browser (consigliati \textit{Chrome} o \textit{Firefox}) e accedere al server dalla pagina:
+ 	
+ 	\centerline{ \code{localhost:3000/} }
+ 	
+ 	Notare che al primo utilizzo le collections sono vuote, in quanto è necessario popolare il database di prova.
+ 
+\end{enumerate}	
+
+\subsection{Popolamento del database di prova}
+
+\begin{enumerate}
+
+	\item Posizionarsi all'interno della cartella \code{extra}:
+	
+	\centerline{ \code{\$> cd extra/} }
+	
+	\item Eseguire lo script di popolamento del database utenti di prova:
+
+	\centerline{\code{\$> ./populate-users-db.sh --host localhost --port 27017 -db users}}
+	
+	Questo popolamento viene effettuato sul database impostato di default;
+	
+	\item Eseguire lo script di popolamento del database delle Collection di prova:
+
+	\centerline{\code{\$> ./populate-data-db.sh --host localhost --port 27017 -db users}}
+	
+	Questo popolamento viene effettuato sul database impostato di default.
+
+\end{enumerate}	

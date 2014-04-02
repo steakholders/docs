@@ -1222,7 +1222,7 @@ Lo schema prevede tre attributi:
 \code{- modelRegistry:Array} \\
 \code{- errorRegistry:Array} \\
 \code{- db:connection} \\
-\code{+ strategy:ConcreteDSLInterpreter} \\
+\code{+ strategy:DSLConcreteStrategy} \\
 \hline
 \code{+loadDSLFile(path:String, callback:function(String))} \\
 \code{+registerCollection(model:DslCollectionModel)} \\
@@ -1266,7 +1266,7 @@ Lo schema prevede tre attributi:
 \item[] \attribute{- modelRegistry:Array} \\ Questo campo dati rappresenta un registro all'interno del quale sono contenuti tutti i \texttt{DSLCollectionModel} caricati all'avvio del server.
 \item[] \attribute{- errorRegistry:Array} \\ Questo campo dati contiene un registro di \texttt{MaapError} generati durante il caricamento e l'interpretazione dei file DSL.
 \item[] \attribute{- db:connection} \\ Questo campo dati rappresenta un riferimento alla connessione con il database delle Collection.
-\item[] \attribute{+ strategy:ConcreteDSLInterpreter} \\ Questo campo dati rappresenta un riferimento all'interprete dei file DSL.
+\item[] \attribute{+ strategy:DSLConcreteStrategy} \\ Questo campo dati rappresenta un riferimento all'interprete dei file DSL.
 \end{itemize}
 
 \paragraph*{Metodi}
@@ -1342,7 +1342,7 @@ Lo schema prevede tre attributi:
 
 \item[] È estesa dalle classi:
 \begin{itemize}
-\item \class{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
+\item \class{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::DSLConcreteStrategy}
 \end{itemize}
 
 \end{itemize}
@@ -1357,7 +1357,7 @@ Lo schema prevede tre attributi:
 \item[] \method{+\textit{loadDSLFile}()} \\ Questo metodo si occupa di interpretare il contenuto del file DSL passatogli, per poi generare ed eseguire il codice derivato dalla trasformazione.
 \end{itemize}
 
-\subsubsection{Classe ConcreteDSLInterpreter}
+\subsubsection{Classe DSLConcreteStrategy}
 
 \begin{table}[H]
 \begin{center}
@@ -1366,7 +1366,7 @@ Lo schema prevede tre attributi:
 \def\arraystretch{1}
 \begin{tabular}{ | p{12cm} | }
 \hline
-\centerline{\textbf{ConcreteDSLInterpreter}}
+\centerline{\textbf{DSLConcreteStrategy}}
 \\ \hline
 \code{- macro:SweetMacro} \\
 \hline
@@ -1376,7 +1376,7 @@ Lo schema prevede tre attributi:
 \hline
 \end{tabular}
 \egroup
-\caption{Classe ConcreteDSLInterpreter}
+\caption{Classe DSLConcreteStrategy}
 \end{center}
 \end{table}
 

@@ -126,7 +126,7 @@ non rappresentati nei diagrammi in quanto non sono modellati come oggetti.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::View.png}  
+				\includegraphics[scale=0.17]{uml/package/Back-end::Lib::View.png}  
 				\caption{Componente View}
 			\end{center}  
 		\end{figure} 
@@ -151,7 +151,7 @@ password.
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.15]{uml/package/Back-end::Lib::Controller.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Controller.png}  
 				\caption{Componente Controller}
 			\end{center}  
 		\end{figure} 
@@ -187,25 +187,11 @@ del \glossario{Back-end} .
 				\item Back-end::Lib::Model::DSLModel  
 		\end{itemize} 
 		\paragraph{Classi}
-			\subparagraph{Authentication}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
-					\end{itemize}
-					\textbf{Relazioni con altre classi}
-					\begin{itemize}
-							\item{Back-end::Lib::Model::UserModel}
-					\end{itemize}
 			\subparagraph{MiddlewareLoader}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È la componente facade del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+						\item[] Classe che definisce un'interfaccia comune per tutte le richieste dell'applicazione. È uno dei componenti ConcreteHandler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -215,14 +201,14 @@ del \glossario{Back-end} .
 					\begin{itemize}
 							\item{Back-end::Lib::Controller::Middleware::DSLLoaderHandler}
 							\item{Back-end::Lib::Controller::Middleware::NotFoundHandler}
-							\item{Back-end::Lib::Controller::Middleware::ErrorHandler}
 							\item{Back-end::Lib::Controller::Middleware::Router}
+							\item{Back-end::Lib::Controller::Middleware::ErrorHandler}
 					\end{itemize}
 			\subparagraph{DSLLoaderHandler}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+						\item[] Classe che si occupa di caricare i \glossario{DSL} presenti nel sistema. È uno dei componenti ConcreteHandler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -232,32 +218,35 @@ del \glossario{Back-end} .
 					\begin{itemize}
 							\item{Back-end::Lib::Model::DSLModel::DSLDomain}
 					\end{itemize}
+			\subparagraph{Authentication}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che si occupa dell'autenticazione di un'utente. È uno dei componenti ConcreteHandler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata per verificare i dati inseriti dall'utente nella pagina di login e controllare l'effettiva corrispondenza delle credenziali nel \glossario{database}.
+					\end{itemize}
+					\textbf{Relazioni con altre classi}
+					\begin{itemize}
+							\item{Back-end::Lib::Model::UserModel}
+					\end{itemize}
 			\subparagraph{NotFoundHandler}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+						\item[] Classe che si occupa la gestione dell'errore di pagina non trovata. È uno dei componenti ConcreteHandler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
 						\item[] Viene utilizzata per generare una pagina 404 di errore nel caso in cui l'\glossario{URI} passato non corrisponda ad una risorsa presente nell'applicazione.
 					\end{itemize}
-			\subparagraph{ErrorHandler}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
-È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
-					\end{itemize}
 			\subparagraph{Router}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che si occupa della richiesta di risorse. È uno dei componenti subsystem class del \glossario{Design Pattern} \glossario{Facade} e handler del \glossario{Design Pattern} \glossario{Chain of responsibility}. Ha una relazione con la classe Authentication, poiché fa uso di alcuni metodi per controllare l'autenticazione.
+						\item[] Classe che si occupa della richiesta di risorse. È uno dei componenti Handler del \glossario{Design Pattern} \glossario{Chain of responsibility}. Ha una relazione con la classe Authentication, poiché fa uso di alcuni metodi per controllare l'autenticazione.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -265,8 +254,19 @@ del \glossario{Back-end} .
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Controller::Middleware::Authentication}
 							\item{Back-end::Lib::Controller::Service::ServiceFactory}
+							\item{Back-end::Lib::Controller::Middleware::Authentication}
+					\end{itemize}
+			\subparagraph{ErrorHandler}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Questa classe gestisce gli errori generati nei precedenti middleware o controller. Invia al client una risposta con stato HTTP 500 (server error) con una descrizione dell'errore nel formato JSON.
+È uno dei componenti ConcreteHandler del \glossario{Design Pattern} \glossario{Chain of responsibility}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Questo middleware viene utilizzato per ultimo nella catena di gestione delle richieste di Express, in modo da gestire tutti gli errori generati precedentemente.
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Controller::Service}
 	\paragraph{Informazioni sul package} 
@@ -316,11 +316,11 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che si occupa di istanziare e restituire una classe \textit{Controller}. Rappresenta il componente creator del \glossario{Design Pattern} \glossario{Factory method}.
+						\item[] Classe che si occupa di istanziare e restituire una classe \textit{Service}. Rappresenta il componente creator del \glossario{Design Pattern} \glossario{Factory method} ed è un \glossario{Design Pattern} \glossario{Singleton}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Viene costruita una sola volta dalla classe \textit{Back-end::Lib::Middleware::Router} e si occupa di creare e restituire l'oggetto \textit{Controller} richiesto.
+						\item[] Viene costruita una sola volta dalla classe \textit{Back-end::Lib::Middleware::Router} e si occupa di creare e restituire l'oggetto \textit{Service} richiesto.
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
@@ -329,7 +329,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 							\item{Back-end::Lib::Controller::Service::ProfileService}
 							\item{Back-end::Lib::Controller::Service::ShowService}
 							\item{Back-end::Lib::Controller::Service::ForgotService}
-							\item{Back-end::Lib::Controller::Service::CollectionListService}
+							\item{Back-end::Lib::Controller::Service::CollectionService}
 					\end{itemize}
 			\subparagraph{ProfileService}
 				
@@ -366,7 +366,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 					\begin{itemize}
 							\item{Back-end::Lib::View::ForgotMailView}
 					\end{itemize}
-			\subparagraph{CollectionListService}
+			\subparagraph{CollectionService}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -380,7 +380,7 @@ classe gestisce in modo esclusivo una sola di queste, in base all’ \glossario{
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.13]{uml/package/Back-end::Lib::Model.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Model.png}  
 				\caption{Componente Model}
 			\end{center}  
 		\end{figure} 
@@ -403,13 +403,15 @@ database
 				\textbf{Utilizzo}  
 					\begin{itemize}
 						\item[] Viene utilizzata per l'interfacciamento con la libreria \glossario{Mongoose} per la registrazione dello schema dei dati, e con la libreria passport-local-mongoose per il popolamento automatico dello schema con campi dati e metodi predefiniti.
-Il costruttore del modello dello schema dei dati viene registrato nella \glossario{Factory} di \glossario{Mongoose} ed ogni istanza condividerà la stessa connessione al server.
+Il costruttore del modello dello schema dei dati viene registrato nella \glossario{Factory} di \glossario{Mongoose} ed ogni istanza condividerà la stessa connessione al server. \\
+L' istanza della classe UserModel descrive un documento della collection, i metodi di istanza definiscono le operazioni sul documento mentre i metodi statici della classe descrivono le operazioni e le query che è possibile fare sulla Collection in accordo con i metodi di Mongoose, che utilizzano allo stesso modo la distinzione tra metodi statici e di istanza per operazioni sulla Collection e sul Document (rispettivamente).
+
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Model::DSLModel}
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.17]{uml/package/Back-end::Lib::Model::DSLModel.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Model::DSLModel.png}  
 				\caption{Componente DSLModel}
 			\end{center}  
 		\end{figure} 
@@ -431,22 +433,8 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
 							\item{Back-end::Lib::Model::DSLModel::DSLCollectionModel}
-					\end{itemize}
-			\subparagraph{DSLInterpreterStrategy}
-				
-				\textbf{\\ \\ Descrizione} 
-					\begin{itemize}
-						\item[] Classe astratta che definisce l'interfaccia dell'algoritmo di interpretazione del linguaggio \glossario{DSL} utilizzato. È il componente strategy del \glossario{Design Pattern} \glossario{strategy}.
-					\end{itemize}      
-				\textbf{Utilizzo}  
-					\begin{itemize}
-						\item[] Viene utilizzata per incapsulare e rendere intercambiabile l'algoritmo di interpretazione del linguaggio \glossario{DSL}. In questo modo, se in futuro vi fosse necessità di cambiare l'algoritmo di interpretazione l'algoritmo può variare indipendentemente dal client che ne farà uso.
-					\end{itemize}
-					\textbf{Estensioni}
-					\begin{itemize}
-							\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter}
+							\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
 					\end{itemize}
 			\subparagraph{DSLCollectionModel}
 				
@@ -463,17 +451,21 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
 							\item{Back-end::Lib::Model::DSLModel::IndexModel}
 							\item{Back-end::Lib::Model::DSLModel::ShowModel}
 					\end{itemize}
-			\subparagraph{IndexModel}
+			\subparagraph{DSLInterpreterStrategy}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che racchiude tutte le informazioni relative ad una index-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di attributi, definiti dalla classe \texttt{Back-end::Lib::DSLModel::Attribute}.
+						\item[] Classe astratta che definisce l'interfaccia dell'algoritmo di interpretazione del linguaggio \glossario{DSL} utilizzato. È il componente strategy del \glossario{Design Pattern} \glossario{strategy}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
-						\item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+						\item[] Viene utilizzata per incapsulare e rendere intercambiabile l'algoritmo di interpretazione del linguaggio \glossario{DSL}. In questo modo, se in futuro vi fosse necessità di cambiare l'algoritmo di interpretazione l'algoritmo può variare indipendentemente dal client che ne farà uso.
 					\end{itemize}
-			\subparagraph{ConcreteDSLInterpreter}
+					\textbf{Estensioni}
+					\begin{itemize}
+							\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::DSLConcreteStrategy}
+					\end{itemize}
+			\subparagraph{DSLConcreteStrategy}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
@@ -487,11 +479,25 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
 					\begin{itemize}
 								\item{Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy}
 					\end{itemize}
+			\subparagraph{IndexModel}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che racchiude tutte le informazioni relative ad una index-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di colonne, definite dalla classe \texttt{Back-end::Lib::DSLModel::Column}.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing) e utilizzata dalla classe \texttt{DSLCollectionModel}.
+					\end{itemize}
+					\textbf{Relazioni con altre classi}
+					\begin{itemize}
+							\item{Back-end::Lib::Model::DSLModel::Column}
+					\end{itemize}
 			\subparagraph{ShowModel}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che racchiude tutte le informazioni relative ad una show-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di attributi, definiti dalla classe \texttt{Back-end::Lib::DSLModel::Attribute}.
+						\item[] Classe che racchiude tutte le informazioni relative ad una show-page. Tali informazioni vengono dichiarate dal developer nel DSL. È composta da un numero variabile di attributi, definiti dalla classe \texttt{Back-end::Lib::DSLModel::Row}.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -499,24 +505,44 @@ Il costruttore del modello dello schema dei dati viene registrato nella \glossar
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Model::DSLModel::Attribute}
+							\item{Back-end::Lib::Model::DSLModel::Row}
 					\end{itemize}
-			\subparagraph{Trasform}
+			\subparagraph{Row}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che racchiude tutte le informazioni relative ad una riga di una show-page. Tali informazioni vengono dichiarate dal developer nel DSL.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
+					\end{itemize}
+			\subparagraph{Transformation}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
 						\item[] Classe che racchiude tutte le informazioni relative alla modalità con cui i dati prelevati dal database verranno modificati prima di essere inviati al front-end.
-Tali trasformazioni vengono dichiarate dal developer nel DSL.
+Tali trasformazioni vengono dichiarate dal developer nel DSL. Questa classe rappresenta una funzione da chiamare sul valore degli attributi
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
 						\item[] Questa classe viene creata dalla componente che si occupa di caricare il DSL (interpretandolo o facendone il parsing).
 					\end{itemize}
-			\subparagraph{Attribute}
+			\subparagraph{DocumentSchema}
 				
 				\textbf{\\ \\ Descrizione} 
 					\begin{itemize}
-						\item[] Classe che racchiude tutte le informazioni relative ad un attributo di una show-page o di una index-page. Tali informazioni vengono dichiarate dal developer nel DSL.
+						\item[] Questa classe astratta si occupa di definire uno schema mongoose per le Collection e fornisce alcuni metodi statici per effettuare operazioni sulla base di dati, in particolare l'estrazione, rimozione e aggiornamento di un Document.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata dalle classi \texttt{IndexModel} e \texttt{ShowModel} per effettuare operazioni sulla base di dati.
+					\end{itemize}
+			\subparagraph{Column}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Classe che racchiude tutte le informazioni relative ad una colonna di una index-page. Tali informazioni vengono dichiarate dal developer nel DSL.
 					\end{itemize}      
 				\textbf{Utilizzo}  
 					\begin{itemize}
@@ -524,13 +550,13 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
 					\end{itemize}
 					\textbf{Relazioni con altre classi}
 					\begin{itemize}
-							\item{Back-end::Lib::Model::DSLModel::Trasform}
+							\item{Back-end::Lib::Model::DSLModel::Transformation}
 					\end{itemize}
 	\subsubsection{Back-end::Lib::Utils}
 	\paragraph{Informazioni sul package} 
 		\begin{figure}[H] 
 			\begin{center} 
-				\includegraphics[scale=0.17]{uml/package/Back-end::Lib::Utils.png}  
+				\includegraphics[width=\textwidth]{uml/package/Back-end::Lib::Utils.png}  
 				\caption{Componente Utils}
 			\end{center}  
 		\end{figure} 
@@ -558,4 +584,14 @@ Tali trasformazioni vengono dichiarate dal developer nel DSL.
 				\textbf{Utilizzo}  
 					\begin{itemize}
 						\item[] Viene utilizzata da tutte le classi presente all'interno del package \texttt{Back-end::Lib} per rappresentare un errore generato, identificandolo tramite nome, descrizione e codice.
+					\end{itemize}
+			\subparagraph{AttributeReader}
+				
+				\textbf{\\ \\ Descrizione} 
+					\begin{itemize}
+						\item[] Questa classe astratta si occupa di effettuare delle verifiche sugli attributi che vengono passati dalla lettura del file DSL.
+					\end{itemize}      
+				\textbf{Utilizzo}  
+					\begin{itemize}
+						\item[] Viene utilizzata dalle classi \texttt{DslCollectionModel}, \texttt{IndexModel}, \texttt{ShowModel}, \texttt{Row}, \texttt{Column} per effettuare controlli sui parametri.
 					\end{itemize}

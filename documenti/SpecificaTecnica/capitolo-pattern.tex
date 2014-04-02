@@ -129,10 +129,27 @@ Per un approfondimento e un richiamo teorico dei \glossario{Design Pattern} util
 
 \begin{itemize}
 
-	\item \textbf{Scopo}: Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario. Tutti gli oggetti destinatari della richiesta sono \textit{concatenati} tra di loro. Ogni nodo della catena se può esaudire la richiesta la effettua, altrimenti delega l'onere al nodo successivo. La catena viene attraversata finché un nodo non può eseguire l'ordine del mittente. 
-	\item \textbf{Utilizzo}: \glossario{Express} usa \textit{chain of Responsibility} per la gestione dei \glossario{middleware} e del \glossario{routing}. Come già accennato è particolarmente legato al pattern \textit{Middleware}. Viene utilizzato nella nostra architettura all'interno del package \texttt{Back-End::Lib::Middleware}. La classe \texttt{Back-End::Lib::Middleware::MiddlewareHandler} gestisce la richiesta scorrendo tutta la lista delle sottoclassi e richiamando il metodo \texttt{next} finché una di queste non può soddisfarla.
+	\item \textbf{Scopo}:
+	Viene utilizzato per far sì che un oggetto a cui viene effettuata una richiesta possa esaudire le richieste di più oggetti. In questo modo si evita l'accoppiamento fra il mittente di una richiesta e il destinatario. Tutti gli oggetti destinatari della richiesta sono \textit{concatenati} tra di loro. Ogni nodo della catena se può esaudire la richiesta la effettua, altrimenti delega l'onere al nodo successivo. La catena viene attraversata finché un nodo non può eseguire l'ordine del mittente. 
+	
+	\item \textbf{Utilizzo}:
+	\glossario{Express} usa \textit{chain of Responsibility} per la gestione dei \glossario{middleware} e del \glossario{routing}. Come già accennato è particolarmente legato al pattern \textit{Middleware}. Viene utilizzato nella nostra architettura all'interno del package \texttt{Back-End::Lib::Middleware}. La classe \texttt{Back-End::Lib::Middleware::MiddlewareHandler} gestisce la richiesta scorrendo tutta la lista delle sottoclassi e richiamando il metodo \texttt{next} finché una di queste non può soddisfarla.
 
 \end{itemize}
+
+Nel gergo del framework Express i middleware corrispondono agli oggetti ConcreteHandler del design pattern. Sebbene il comportamento e lo scopo sia quasi identico, l'implementazione di Express presenta alcune differenze:
+
+\begin{itemize}
+ \item I middleware di Express possono essere classi con un metodo \code{handle} o semplici funzioni, in pieno accordo con lo stile funzionale utilizzato dalla grande maggioranza delle librerie e delle applicazioni scritte in Node.js. Nel progetto è stata utilizzata principalmente la seconda versione.
+
+ \item Il Design Pattern prevede che l'oggetto \code{Handler} abbia un riferimento \code{successor} all'\code{Handler} successivo. Express invece passa al metodo di esecuzione del middleware una callback. Il middleware, eseguendo la callback, passa nuovamente il controllo all'oggetto del server di Express il quale passerà il controllo al successivo middleware.
+ 
+ \item Express divide i middleware in due gruppi: i middleware standard e i middleware di gestione degli errori, si distinguono per il numero di parametri che possono gestire (3 e 4, rispettivamente). Ogni middleware può decidere se passare il controllo al prossimo middleware standard o se passare il controllo al prossimo middleware di gestione degli errori (passandogli anche l'errore da gestire). Questa funzionalità serve per permettere la gestione di errori senza utilizzare i costrutti \code{try catch}, tipici dei linguaggi imperativi ma inefficaci quando si utilizza lo stile di programmazione asincrono.
+ 
+ \item Ogni middleware di Express deve essere invocato con i seguenti parametri: l'eventuale errore da gestire (se è un middleware di gestione degli errori), l'oggetto della richiesta, l'oggetto della risposta, la callback da utilizzare per passare il controllo al successivo middleware. L'ordine è importante.
+\end{itemize}
+
+Per ulteriori dettagli si consiglia \url{http://stephensugden.com/middleware_guide/} nella versione del 3 settembre 2014 (\url{https://web.archive.org/web/20130901132345/http://stephensugden.com/middleware_guide/}).
 
 \begin{figure}[H]
 \centering \includegraphics[width=0.6\textwidth]{patterns/contestualizzazione/chain-of-responsability.png}

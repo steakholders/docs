@@ -1,10 +1,13 @@
 personal_repl-1.1 it 100
+accere accedere
 all all'
 all'anilisi all'analisi
 allìapplicazione all'applicazione
 appresentazione Rappresentazione
 chiamarà chiamerà
+conentente contenente
 correttemente correttamente
+crerà creerà
 declassere declassare
 dell'aministratore dell'amministratore
 dellanno dell'anno
@@ -29,6 +32,7 @@ metoto metodo
 nuovmanete nuovamente
 off offe
 oltra oltre
+ontiene contiene
 ontiene ottiene
 paramentri parametri
 paramentro parametro
@@ -36,6 +40,7 @@ partecipandi Partecipanti
 piu' PIÙ
 potreanno potranno
 prosposta Proposta
+pusante pulsante
 que qua
 restuire restituire
 rischesto richiesto

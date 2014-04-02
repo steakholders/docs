@@ -1,34 +1,9 @@
 \section{Configurazione nuovo progetto}
-
-\subsection{Generazione}
-
-Vengono riportate in questa sezione i passi necessari per la creazione di una nuova applicazione MaaP, utilizzando il modello ``scaffold'' fornito dal framework. I comandi descritti devono essere eseguiti da un terminale da cui sia possibile eseguire il Node Packet Manager ed è richiesta una connessione ad Internet.
-
-\begin{enumerate}
- \item Installare il framework MaaP tramite il Node Packet Manager: \\
- \centerline{ \code{ \$> npm install -g maap } } \\
- oppure, se il framework viene fornito tramite repository git \\
- \centerline{ \code{ \$> npm install -g maap } }
-
- \item Creare un'applicazione utilizzando il modello fornito dal framework MaaP: posizionarsi all'interno della cartella nella quale si vorrà creare l'applicazione ed eseguire il comando \\
- \centerline{ \code{ \$> maap create <ProjectName> } }
- Dove \texttt{<ProjectName>} corrisponde al nome del progetto che si vuole creare.
-
- \item Installare le dipendenze dell'applicazione: posizionarsi all'interno della cartella dell'applicazione ed eseguire il comando \\
- \centerline{ \code{ \$> npm install } }
-
- \item Configurare l'applicazione: aprire con un editor di testo il file \code{config.js} generato assieme all'applicazione e configurarlo riferendosi alla sezione \ref{config} di questo manuale.\\
-
- \item Configurare le collection dell'applicazione, riferendosi alla sezione \ref{collection} di questo manuale.\\
-
- \item Eseguire il server dell'applicazione: posizionarsi all'interno della cartella dell'applicazione ed eseguire il comando \\
- \centerline{ \code{ \$> npm start } }
-\end{enumerate}
-
-\subsection{Configurazione}
 \label{config}
 
-Per configurare l'applicazione generata dal framework bisogna modificare il file \code{config.js} presente nella cartella principale dell'applicazione. All'interno del file sono presenti due sezioni: ``development'' e ``production'', l'applicazione sceglie quale utilizzare in funzione del valore della variabile di ambiente \code{NODE\_ENV}. In ciascuna di esse è possibile impostare i seguenti parametri:
+\subsection{Configurazione del back-end}
+
+Per configurare il back-end dell'applicazione generata dal framework bisogna modificare il file \code{config.js} presente nella cartella principale dell'applicazione. All'interno del file sono presenti due sezioni: ``development'' e ``production'', l'applicazione sceglie quale utilizzare in funzione del valore della variabile di ambiente \code{NODE\_ENV}. Essi sono due configurazioni diverse: la prima riferisce a una configurazione di sviluppo, in cui è possibile impostare dei parametri in fase di sviluppo dell'applicazione; la seconda è invece la configurazione dell'applicazione che verrà resa pubblica. In ciascuna di esse è possibile impostare i seguenti parametri:
 
 \begin{itemize}
 \item \textbf{webServer}: un oggetto contenente
@@ -39,50 +14,84 @@ Per configurare l'applicazione generata dal framework bisogna modificare il file
 		
 \item \textbf{userDB}: un oggetto contenente
 		\begin{itemize}
-		\item \textbf{uri}: l'indirizzo del database che l'applicazione deve usare come database degli utenti;
+		\item \textbf{url}: l'indirizzo del database che l'applicazione deve utilizzare come database degli utenti (String);
 		\end{itemize}
+
+\item \textbf{usersPerPage}: di default settato a 5, indica il numero di utenti che si vogliono visualizzare per ogni pagina nella tabella degli utenti;
 		
 \item \textbf{dataDB}: un oggetto contenente
 		\begin{itemize}
-		\item \textbf{uri}: l'indirizzo del database che l'applicazione deve usare come database dei dati;
+		\item \textbf{url}: l'indirizzo del database che l'applicazione deve usare come database dei dati (String);
 		\end{itemize}
+
+\item \textbf{smtp}: l' oggetto contenente la configurazione del servizio \glossario{smtp} che verrà utilizzato dalla libreria \texttt{Nodemailer}. Per l'elenco completo di parametri configurabili riferirsi a \url{https://github.com/andris9/Nodemailer};
 		
+\item \textbf{resetPassword}: contiene la configurazione per il reset della password:
+	\begin{itemize}
+		\item \textbf{tokenLife}: rappresenta il tempo di espirazione in millisecondi del reset password (Integer);
+		\item \textbf{link}: rappresenta il link da inviare per il reset della password (String);
+	\end{itemize}
+
 \item \textbf{collectionPath}: la path assoluta della cartella contenente i file di configurazione dsl che il server dovrà utilizzare come configurazione (String);
 		
-\item \textbf{smtp}: l' oggetto contenente la configurazione del servizio smtp che verrà utilizzato dalla libreria Nodemailer. Per l'elenco completo di parametri configurabili riferirsi a \url{https://github.com/andris9/Nodemailer}.
+\item \textbf{allowSignup}: contiene un valore booleano e indica se è possibile o meno utilizzare la funzionalità di registrazione (Boolean);
+
+\item \textbf{superAdmins}: contiene un array di utenti che di default dovranno essere settati come \textit{superadmin}. Questo perché l'applicazione deve prevedere almeno un \textit{superAdmin}. Questo array dovrà contenere oggetti con al loro interno l'email dell'utente e opzionalmente la password (String).
+
 \end{itemize}
+
+\subsection{Configurazione del front-end}
+
+Per configurare il front-end dell'applicazione MaaP generata bisogna modificare il file:
+
+\centering{\texttt{./app/scripts/config.js}}
+
+Al suo interno è possibile configurare le costanti di Angular. In particolare è possibile settare:
+
+\begin{itemize}
+
+	\item \textbf{debug}: indica se mostrare i messaggi di errore in modo dettagliato oppure no (Boolean);
+
+	\item \textbf{navBarCollections}: indica il numero di Collections da visualizzare nella barra di navigazione (Integer);
+
+	\item \textbf{showSignup}: indica se mostrare o meno il pulsante di registrazione. È importante ricordarsi di disabilitare o riabilitare la funzionalità di registrazione anche nel back-end (Boolean);
+
+	\item \textbf{reportLink}: indica il link al quale l'utente può segnalare bugs o problematiche relative all'applicazione (String).
+
+\end{itemize}
+
 
 \subsection{Struttura applicazione}
 
 L'applicazione generata dal framework presenta i seguenti file e cartelle: 
 \begin{itemize}
  \item \textbf{\file{\texttt{ProjectName}/}} \\
-	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto.
+	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto;
 
  \item \textbf{\file{\texttt{ProjectName}/collections/}} \\
-	Contiene i file di configurazione delle collection utilizzate dall'applicazione scaffold.
+	Contiene i file di configurazione delle collection di esempio utilizzate dall'applicazione scaffold. Di default è la cartella in cui devono essere salvati i file DSL;
 
  \item \textbf{\file{\texttt{ProjectName}/app/}} \\
-	Contiene i file relativi al Frontend dell'applicazione scaffold.
-
- \item \textbf{\file{\texttt{ProjectName}/app/view/}} \\
-	Contiene i file statici html usati dal Frontend dell'applicazione scaffold.
-
- \item \textbf{\file{\texttt{ProjectName}/app/style/}} \\
-	Contiene i file statici di stile usati dal Frontend dell'applicazione scaffold.
+	Contiene tutti gli script relativi al Frontend dell'applicazione;
 
  \item \textbf{\file{\texttt{ProjectName}/app/scripts/}} \\
-	Contiene i file dell'applicazione AngularJS usata nel Frontend.
+	Contiene i file dell'applicazione AngularJS usata nel Frontend;
 
  \item \textbf{\file{\texttt{ProjectName}/app/scripts/services/}} \\
-	Contiene i file dei service di AngularJS usata nel Frontend.
+	Contiene i file dei service di AngularJS usata nel Frontend;
 
  \item \textbf{\file{\texttt{ProjectName}/app/scripts/controllers/}} \\
-	Contiene i file dei controller di AngularJS usata nel Frontend.
+	Contiene i file dei controller di AngularJS usata nel Frontend;
+
+ \item \textbf{\file{\texttt{ProjectName}/app/view/}} \\
+	Contiene i file statici html usati dal Frontend dell'applicazione;
+
+ \item \textbf{\file{\texttt{ProjectName}/app/style/}} \\
+	Contiene i file statici CSS usati dal Frontend dell'applicazione;
 
  \item \textbf{\file{\texttt{ProjectName}/app/bower\_components/}} \\
-	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione scaffold.
+	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione;
 	
  \item \textbf{\file{\texttt{ProjectName}/node\_modules/}} \\
-	Contiene i file delle librerie utilizzate dal Backend dell'applicazione scaffold.
+	Contiene i file delle librerie utilizzate dal Backend dell'applicazione.
 \end{itemize}

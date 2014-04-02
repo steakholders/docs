@@ -1,0 +1,199 @@
+\section{Esempi di configurazione di un DSL}
+
+Il codice seguente viene scritto solamente a titolo di esempio. Le porzioni di codice assumono che vi siano le opportune Collection e gli opportuni attributi dei Document su un database MongoDB esistente. L'esecuzione di questo codice potrebbe produrre degli errori di riferimento o comunque non avere un comportamento atteso in caso di mancanza di tali requisiti.
+
+\subsection{Esempio 1: lista di clienti}
+
+Si immagini di dover lavorare per un'azienda che vuole servirsi di MaaP per avere una vista costantemente aggiornata dei propri clienti.In particolar modo si vuole distinguere due \textit{index-page} distinte: 
+
+\begin{itemize}
+
+	\item Una pagina in cui compaiono i clienti con un'età superiore ai 40 anni;
+	\item Una pagina in cui compaiono i clienti con un'età inferiore ai 40 anni;
+
+\end{itemize}
+
+Di questi clienti si vuole sapere il nome, il cognome, l'indirizzo email, l'età e il numero di ordini effettuati, immaginando di avere un attributo della Collection di MongoDB chiamato \textit{orders} contenente un array di ordini. Si vuole poter essere rimandati alla \textit{show-page} del cliente tramite l'attributo \textit{email}, e si vuole poter ordinare la tabella secondo il cognome, l'età e il numero di ordini. Nella \textit{show-page} si vuole in aggiunta visualizzare anche l'indirizzo del cliente. Si vuole infine avere 20 elementi per pagina.
+
+Il file DSL da produrre dovrebbe essere simile al seguente:
+
+\begin{lstlisting}
+collection(
+	name: "customers", 
+	label: "JuniorCustomers", 
+	id: "Junior", 
+	weight: "0" 
+) {
+	index( 
+		perpage: 20, 
+		sortby: "surname", 
+		order: "asc", 
+		query: {age : { $lt : 40}}
+	) {
+		column(
+			name: "name", 
+			label: "Nome", 
+			sortable: false, 
+			selectable: false
+		)
+		column(
+			name: "surname",
+			label: "Cognome",
+			sortable: true,
+			selectable: false
+		)
+		column(
+			name: "email",
+			label: "Email",
+			sortable: false,
+			selectable: true
+		)
+		column(
+			name: "age",
+			label: "Eta",
+			sortable: true,
+			selectable: false
+		)
+		column(
+			name: "orders",
+			label: "# Ordini",
+			sortable: true,
+			selectable: false,
+			transformation: function(val) { 
+				return val.length;
+			}
+		)
+	}
+	show() {
+		row(
+			name: "name", 
+			label: "Nome"
+		)
+		row(
+			name: "surname",
+			label: "Cognome"
+		)
+		row(
+			name: "email",
+			label: "Email"
+		)
+		row(	
+			name: "age",
+			label: "Eta"
+		)
+		row(
+			name: "address",
+			label: "Indirizzo"
+		)
+		row(
+			name: "orders",
+			label: "# Ordini",
+			transformation: function(val) {
+				return val.length;
+			}
+		)
+	}
+}
+\end{lstlisting}
+
+Per quanto riguarda la configurazione della Collection degli utenti con età sopra ai 40 anni la sintassi è molto simile, ma è necessario apportare delle modifiche alle espressioni \code{collection} e \code{index} nel modo seguente:
+
+\begin{lstlisting}
+
+collection(
+	name: "customers", 
+	label: "Senior", 
+	id: "Senior", 
+	weight: "0" 
+) {
+	index( 
+		perpage: 20, 
+		sortby: "surname", 
+		order: "asc", 
+		query: {age : { $gte : 40}}
+	) {
+		...
+		...
+	}
+	show() {
+		...
+		...
+	}
+}
+
+\end{lstlisting}
+
+\subsection{Esempio 2: lista di prodotti}
+
+Si immagini di lavorare presso un'azienda fornitrice di prodotti che vuole avere a disposizione in tempi molto brevi uno strumento che fornisca una vista personalizzata dei prodotti fabbricati nell'anno corrente. L'azienda è interessata a visualizzare nella \textit{index-page} il codice identificativo del prodotto, il nome del modello, le quantità disponibili in magazzino, il prezzo di vendita in euro, la data di produzione in formato americano. Inoltre vuole sapere se il prodotto è stato spedito oppure è ancora in magazzino. Nella \textit{show-page} di un prodotto vuole visualizzare tutti i campi presenti. Infine vuole poter ordinare i prodotti per data di produzione e per quantità disponibili.
+
+Il file DSL da produrre dovrebbe essere simile al seguente:
+
+\begin{lstlisting}
+
+collection(
+	name: "products",
+	label: "Products - " + getCurrentYear(),
+) {
+	index(
+		query: { 
+			productionDate.year: { $gt : getCurrentYear() } 
+		}
+	) {
+		column(
+			name: "_id",
+			label: "Product id",
+			selectable: true
+		)
+		column(
+			name: "model",
+			label: "Model"
+		)
+		column(
+			name: "amount",
+			label: "Quantity in stock",
+			sortable: true
+		)
+		column(
+			name: "price",
+			label: "Price",
+			transformation: euroFromDollar
+		)
+		column(
+			name: "production_date",
+			label: "Production date",
+			transformation: getAmericanDate
+		)
+		column(
+			name: "ship_date",
+			label: "State",
+			transformation: isShipped
+		)
+}
+
+var euroFromDollar = function(val) {
+	// converti val da dollari a euro
+	return val;
+}
+
+var getCurrentYear = function() {
+	// ritorna l'anno corrente
+	return currentYear;
+}
+
+var getAmericanDate = function(date) {
+	// converti date in data americana
+	return americanDate;
+}
+
+var isShipped = function(date) {
+	var shipped = "";
+	if (shipped === true) {
+		return "Shipped";
+	}
+	else {
+		return: "Not shipped";
+	}
+}
+
+\end{lstlisting}

@@ -10,11 +10,11 @@ correttemente correttamente
 crerà creerà
 declassere declassare
 dell'aministratore dell'amministratore
-dellanno dell'anno
 dell'applicatione dell'applicazione
 dell'attivita dell'attività
 dell'emal dell'email
 dell'instestazione dell'intestazione
+dellanno dell'anno
 diagrammmi diagrammi
 ec ecc
 erraro errato
@@ -25,9 +25,9 @@ ia La
 istanzare instanziare
 l'ambiete l'ambiente
 l'emal l'email
+l'interpetazione l'interpretazione
 liberia libreria
 liberie librerie
-l'interpetazione l'interpretazione
 metoto metodo
 nuovmanete nuovamente
 off offe
@@ -37,6 +37,7 @@ ontiene ottiene
 paramentri parametri
 paramentro parametro
 partecipandi Partecipanti
+partoloari particolari
 piu' PIÙ
 potreanno potranno
 prosposta Proposta
@@ -48,8 +49,8 @@ risportate riportate
 risportati riportati
 sarnno saranno
 sato stato
-sè sé
 staica statica
+sè sé
 un'apposito un apposito
 un'approccio un' approccio
 un'array un array

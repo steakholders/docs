@@ -403,7 +403,8 @@
 		% \item \emph{Frontend}: 83.3\%
 	\end{itemize}
 
-	I motivi per cui si misurano valori così bassi sono causati dalla difficoltà tecnica di scrivere dei test di unità su cui sia possibile eseguire un branch coverage automatico con le librerie disponibili online: in partoloari casi l'la nostra implementazione degli stub, sebbene esegua correttamente il test, non viene registrata dallo strumento di code coverage.
+	I motivi per cui si misurano valori così bassi sono causati dalla difficoltà tecnica di scrivere dei test di unità su cui sia possibile eseguire un branch coverage automatico con le librerie disponibili online: in particolari casi la nostra implementazione degli stub, sebbene esegua correttamente il test, non viene registrata dallo strumento di code coverage.
+	Per il front end in particolare, è stato riscontrato un bug nella libreria di Angular che impedisce di eseguire la funzione inject all'interno dell'ambiente di test coverage. Tale bug è stato risolto soltanto nella versione instabile di Angular (si veda \url{https://github.com/angular/angular.js/commit/7e916455b36dc9ca4d4afc1e44cade90006d00e3}).
 
 
 	\subsection{Dettaglio dell'esito delle revisioni}

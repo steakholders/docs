@@ -17,7 +17,7 @@ Back-end::Lib::Controller::Service::UserService::registerUser() & TU - 49 \\ \hl
 Back-end::Lib::Controller::Service::UserService::insertUser() & TU - 50 \\ \hline
 Back-end::Lib::Controller::Service::UserService::userIdShowPage() & TU - 51 \\ \hline
 Back-end::Lib::Controller::Service::UserService::updateLevel() & TU - 53 \\ \hline
-Back-end::Lib::Utils::Mailer::Mailer() & TU - 54 \\ \hline
+Back-end::Lib::Utils::Mailer::Mailer() & TU - 55 \\ \hline
 Back-end::Lib::Utils::Mailer::sendEmail() &  \\ \hline
 Back-end::Lib::Controller::Middleware::Authentication::requireNotLogged() & TU - 81 \\ \hline
 Back-end::Lib::Controller::Middleware::Authentication::requireSuperAdmin() & TU - 82 \\ \hline
@@ -27,40 +27,33 @@ Back-end::Lib::Model::DSLModel::DSLCollectionModel::DSLCollectionModel() & TU - 
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getCollectionName() & TU - 29 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getIndexModel() & TU - 30 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::getShowModel() & TU - 31 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getCollectionController() & TU - 56 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getProfileController() & TU - 57 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getAuthController() & TU - 58 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getForgotController() & TU - 59 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getUserController() & TU - 60 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getShowController() & TU - 61 \\ \hline
-Back-end::Lib::Controller::Service::ServiceFactory::getIndexController() & TU - 62 \\ \hline
-Back-end::Lib::View::ForgotMailView::buildForgotMail() & TU - 63 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getProfileService() & TU - 57 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getForgotService() & TU - 59 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getUserService() & TU - 60 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getShowService() & TU - 61 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getIndexService() & TU - 62 \\ \hline
+Back-end::Lib::View::ForgotMailView::buildForgotMail() & TU - 108 \\ \hline
 Back-end::Lib::Controller::Middleware::ErrorHandler::handler() & TU - 68 \\ \hline
-Back-end::Lib::Controller::Middleware::DSLLoaderHandler::browseFileSystem() & TU - 78 \\ \hline
 Back-end::Lib::Controller::Service::ProfileService::logout() & TU - 73 \\ \hline
 Back-end::Lib::Controller::Middleware::NotFoundHandler::handler() & TU - 76 \\ \hline
+Back-end::Lib::Controller::Service::ServiceFactory::getCollectionSevice() & TU - 56 \\ \hline
 Back-end::Lib::Controller::Middleware::DSLLoaderHandler::init() & TU - 66 \\ \hline
-Back-end::Lib::Model::DSLModel::DSLDomain::getErrors() & TU - 16 \\ \hline
+Back-end::Lib::Model::UserModel::updatePassword() & TU - 23 \\ \hline
 Back-end::Lib::Utils::MaapError::toString() & TU - 7 \\ \hline
-Back-end::Lib::Model::UserModel::\underline{getUserById}() & TU - 24 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::registerCollection() & TU - 14 \\ \hline
 Back-end::Lib::Config::getServerPort() &  \\ \hline
 Back-end::Lib::Config::getServerStaticPath() &  \\ \hline
 Back-end::Lib::Config::getUserDbUri() &  \\ \hline
 Back-end::Lib::ServerApp::start() &  \\ \hline
-Back-end::Lib::Model::UserModel::\underline{getUserList}() & TU - 18 \\ \hline
-Back-end::Lib::Utils::MaapError::toJson() & TU - 6 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::getCollectionModel() & TU - 15 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::getErrors() & TU - 16 \\ \hline
 Back-end::DeveloperProject::ProjectApp::\underline{start}() &  \\ \hline
 Back-end::Lib::Config::getEnvironment() &  \\ \hline
 Back-end::Lib::Config::getDataDbUri() &  \\ \hline
 Back-end::Lib::Config::getSmtpService() &  \\ \hline
 Back-end::Lib::Config::getSmtpAuth() &  \\ \hline
-Back-end::Lib::Model::DSLModel::DSLDomain::registerCollection() & TU - 14 \\ \hline
-Back-end::Lib::Model::DSLModel::DSLDomain::getCollectionModel() & TU - 15 \\ \hline
-Back-end::Lib::Model::UserModel::\underline{registerUser}() & TU - 19 \\ \hline
-Back-end::Lib::Model::UserModel::\underline{deleteUser}() & TU - 22 \\ \hline
-Back-end::Lib::Model::UserModel::\underline{updateLevel}() & TU - 20 \\ \hline
+Back-end::Lib::Model::UserModel::updateLevel() & TU - 20 \\ \hline
 Back-end::Lib::Model::UserModel::\underline{createUser}() & TU - 21 \\ \hline
-Back-end::Lib::Model::UserModel::\underline{updatePassword}() & TU - 23 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter::init() & TU - 26 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter::loadDSLFile() & TU - 27 \\ \hline
 Back-end::Lib::Utils::MaapError::toError() & TU - 8 \\ \hline
@@ -69,61 +62,125 @@ Back-end::Lib::Controller::Service::ShowService::getShowPage() & TU - 67 \\ \hli
 Back-end::Lib::Controller::Service::ShowService::deleteDocument() & TU - 71 \\ \hline
 Back-end::Lib::Controller::Service::ProfileService::getProfile() & TU - 74 \\ \hline
 Back-end::Lib::Controller::Service::ProfileService::updatePassword() & TU - 75 \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::getLabel() & TU - 43 \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::getName() & TU - 44 \\ \hline
-Back-end::Lib::Model::DSLModel::ShowModel::ShowModel() & TU - 38 \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::getTransformation() & TU - 45 \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::isSelectable() & TU - 46 \\ \hline
+Back-end::Lib::Utils::MaapError::toDict() & TU - 6 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::getLabel() & TU - 43 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::getName() & TU - 44 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::getRows() & TU - 40 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::getTransformation() & TU - 45 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::isSelectable() & TU - 46 \\ \hline
 Back-end::Lib::Utils::MaapError::MaapError() & TU - 5 \\ \hline
-Front-end::Services::IndexListService::query() & TU - 87 \\ \hline
-Front-end::Services::UserListService::remove() & TU - 89 \\ \hline
-Back-end::Lib::Model::DSLModel::DSLDomain::DSLDomain() & TU - 12 \\ \hline
+Front-end::Services::CollectionListService::query() & TU - 87 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLDomain::loadDSLFile() & TU - 13 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::DSLDomain() & TU - 12 \\ \hline
 Back-end::Lib::Model::UserModel::init() & TU - 17 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::ConcreteDSLInterpreter::DSLConcreteStrategy() & TU - 25 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::setIndexModel() & TU - 32 \\ \hline
 Back-end::Lib::Model::DSLModel::DSLCollectionModel::setShowModel() & TU - 33 \\ \hline
 Back-end::Lib::Model::DSLModel::IndexModel::IndexModel() & TU - 34 \\ \hline
 Back-end::Lib::Model::DSLModel::IndexModel::addAttribute() & TU - 35 \\ \hline
-Back-end::Lib::Model::DSLModel::IndexModel::getAttributes() & TU - 36 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::Column() & TU - 42 \\ \hline
 Back-end::Lib::Model::DSLModel::IndexModel::getData() & TU - 37 \\ \hline
-Back-end::Lib::Model::DSLModel::ShowModel::addAttribute() & TU - 39 \\ \hline
-Back-end::Lib::Model::DSLModel::ShowModel::getAttributes() & TU - 40 \\ \hline
-Back-end::Lib::Model::DSLModel::ShowModel::getData() & TU - 41 \\ \hline
 Back-end::Lib::Config::getDSLPath() &  \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::Attribute() & TU - 42 \\ \hline
-Back-end::Lib::Model::DSLModel::Attribute::isSortable() & TU - 47 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::getData() & TU - 41 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::isSortable() & TU - 47 \\ \hline
 Back-end::Lib::Controller::Service::UserService::deleteUser() & TU - 48 \\ \hline
 Back-end::Lib::Controller::Service::IndexService::getIndexPage() & TU - 54 \\ \hline
 Back-end::Lib::Controller::Middleware::DSLLoaderHandler::DSLLoaderHandler() & TU - 63 \\ \hline
-Back-end::Lib::ServerApp::ServerApp() & TU - 4 \\ \hline
-Back-end::Lib::Controller::Service::CollectionListService::list() &  \\ \hline
-Back-end::Lib::Controller::Service::CollectionListService::getDashboard() & TU - 107 \\ \hline
+Back-end::Lib::Controller::Service::CollectionService::list() & TU - 119 \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::getColumns() & TU - 36 \\ \hline
 Front-end::Services::UserListService::query() & TU - 90 \\ \hline
+Back-end::Lib::ServerApp::\underline{ServerApp}() & TU - 4 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::ShowModel() & TU - 38 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::addRow() & TU - 39 \\ \hline
 Front-end::Controllers::LoginController::LoginController() & TU - 94 \\ \hline
-Front-end::Services::UserService::query() & TU - 82 \\ \hline
+Front-end::Services::RegisterService::signup() & TU - 114 \\ \hline
+Front-end::Controllers::CollectionController::paginate$\_$collection() & TU - 118 \\ \hline
 Front-end::Services::UserService::update() & TU - 83 \\ \hline
 Front-end::Services::UserService::remove() & TU - 84 \\ \hline
-Front-end::Services::ShowService::query() & TU - 85 \\ \hline
-Front-end::Services::IndexService::query() & TU - 86 \\ \hline
+Front-end::Services::DocumentService::query() & TU - 85 \\ \hline
+Front-end::Services::CollectionService::query() & TU - 86 \\ \hline
 Front-end::Services::UserListService::save() & TU - 88 \\ \hline
 Front-end::Services::ProfileService::update() & TU - 91 \\ \hline
 Front-end::Services::ProfileService::get() & TU - 92 \\ \hline
 Front-end::Controllers::LoginController::login() & TU - 93 \\ \hline
+Front-end::Services::DocumentService::update() & TU - 108 \\ \hline
 Front-end::Controllers::LogoutController::LogoutController() & TU - 95 \\ \hline
-Front-end::Controllers::ShowController::ShowController() & TU - 98 \\ \hline
+Front-end::Services::DocumentService::remove() & TU - 109 \\ \hline
+Front-end::Controllers::DocumentController::ShowController() & TU - 98 \\ \hline
+Front-end::Controllers::NotFoundController::NotFoundController() & TU - 110 \\ \hline
+Front-end::Services::ProfileService::login() & TU - 111 \\ \hline
+Front-end::Services::ProfileService::logout() & TU - 112 \\ \hline
+Front-end::Controllers::RegisterController::RegisterController() & TU - 113 \\ \hline
 Front-end::Controllers::ForgotResetController::ForgotResetController() & TU - 105 \\ \hline
 Front-end::Controllers::ProfileEditController::ProfileEditController() & TU - 106 \\ \hline
-Front-end::Controllers::UserController::createUser() & TU - 10 \\ \hline
-Front-end::Controllers::UserController::deleteUser() & TU - 96 \\ \hline
-Front-end::Controllers::UserController::UserController() & TU - 97 \\ \hline
+Back-end::Lib::Controller::Service::UserService::disabledRegisterUser() &  \\ \hline
+Front-end::Controllers::UserDetailsController::UserController() & TU - 97 \\ \hline
 Front-end::Controllers::ProfileController::ProfileController() & TU - 104 \\ \hline
 Front-end::Controllers::UsersListController::UsersListController() & TU - 103 \\ \hline
 Front-end::Controllers::ForgotRequestController::ForgotRequestController() & TU - 101 \\ \hline
-Front-end::Controllers::IndexController::IndexController() & TU - 100 \\ \hline
+Front-end::Controllers::UserDetailsController::editUser() & TU - 10 \\ \hline
 Front-end::Controllers::DashboardController::DashboardController() & TU - 99 \\ \hline
-Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::\textit{loadDSLFile()}() &  \\ \hline
-Back-end::Lib::Model::DSLModel::Transformation::transform() &  \\ \hline
+Front-end::Controllers::CollectionController::CollectionController() & TU - 100 \\ \hline
+Front-end::Services::UserService::get() & TU - 82 \\ \hline
+Front-end::Services::ForgotPasswordService::request() & TU - 115 \\ \hline
+Front-end::Services::ForgotPasswordService::reset() & TU - 116 \\ \hline
+Front-end::Controllers::CollectionController::changeSorting() & TU - 117 \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::handle() &  \\ \hline
+Back-end::Lib::Controller::Service::ShowService::editDocument() & TU - 120 \\ \hline
+Back-end::Lib::Model::UserModel::\underline{findAll}() & TU - 18 \\ \hline
+Back-end::Lib::Model::DSLModel::Transformation::transform() & TU - 157 \\ \hline
+Back-end::Lib::Model::UserModel::\underline{safeFindById}() & TU - 24 \\ \hline
+Back-end::Lib::Controller::Service::ForgotService::passwordReset() & TU - 121 \\ \hline
+Back-end::Lib::Model::UserModel::\underline{safeFindByIdAndRemove}() & TU - 131 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLInterpreterStrategy::\textit{loadDSLFile}() &  \\ \hline
+Back-end::Lib::Controller::Middleware::DSLLoaderHandler::loadDsl() &  \\ \hline
+Back-end::Lib::Model::UserModel::\underline{safeFindByResetPasswordToken}() & TU - 136 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLCollectionModel::getId() & TU - 142 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::init() &  \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::addColumn() & TU - 137 \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::noMoreColumns() & TU - 138 \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::setDefaultColumnSelectable() & TU - 139 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::registerError() & TU - 122 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::compareCollectionWeight() & TU - 123 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLDomain::getCollectionModels() & TU - 124 \\ \hline
+Back-end::Lib::Model::DSLModel::DocumentSchema::\underline{findAllPaginatedQuery}() & TU - 125 \\ \hline
+Back-end::Lib::Model::DSLModel::DocumentSchema::\underline{findByIdAndPopulate}() & TU - 126 \\ \hline
+Back-end::Lib::Model::DSLModel::DocumentSchema::\underline{safeFindById}() & TU - 127 \\ \hline
+Back-end::Lib::Model::DSLModel::DocumentSchema::\underline{safeFindByIdAndRemove}() & TU - 128 \\ \hline
+Back-end::Lib::Model::DSLModel::DocumentSchema::\underline{upsert}() & TU - 129 \\ \hline
+Back-end::Lib::Model::UserModel::\underline{findAllPaginated}() & TU - 130 \\ \hline
+Back-end::Lib::Model::UserModel::\underline{safeFindByEmail}() & TU - 132 \\ \hline
+Back-end::Lib::Model::UserModel::invalidateResetPasswordToken() & TU - 134 \\ \hline
+Back-end::Lib::Model::UserModel::consumeResetPasswordTokenAndUpdatePassword() & TU - 135 \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::getColumnsForDocuments() & TU - 140 \\ \hline
+Back-end::Lib::Model::DSLModel::IndexModel::formatHeader() & TU - 141 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLCollectionModel::getLabel() & TU - 143 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLCollectionModel::getWeight() & TU - 144 \\ \hline
+Back-end::Lib::Model::DSLModel::DSLCollectionModel::toString() & TU - 145 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::getRowsForDocument() & TU - 146 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::formatHeader() & TU - 147 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::deleteDocument() & TU - 148 \\ \hline
+Back-end::Lib::Model::DSLModel::ShowModel::updateDocument() & TU - 149 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::setSelectable() & TU - 156 \\ \hline
+Back-end::Lib::Model::DSLModel::Row::getLabel() & TU - 150 \\ \hline
+Back-end::Lib::Model::DSLModel::Row::getName() & TU - 151 \\ \hline
+Back-end::Lib::Model::DSLModel::Row::getTransformation() & TU - 152 \\ \hline
+Back-end::Lib::Model::DSLModel::Row::toString() & TU - 153 \\ \hline
+Back-end::Lib::Model::DSLModel::Row::Row() & TU - 154 \\ \hline
+Back-end::Lib::Model::DSLModel::Column::toString() & TU - 155 \\ \hline
+Back-end::Lib::Utils::AttributeReader::\underline{readRequiredAttributes}() &  \\ \hline
+Back-end::Lib::Utils::AttributeReader::\underline{readOptionalAttributes}() &  \\ \hline
+Back-end::Lib::Utils::AttributeReader::\underline{assertEmptyAttributes}() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getServerPort() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getServerStaticPath() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getUserDbUri() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getEnvironment() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getDataDbUri() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getSmtpService() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getSmtpAuth() &  \\ \hline
+Back-end::DeveloperProject::Config::ProjectConfig::getDSLPath() &  \\ \hline
+Back-end::Lib::Model::UserModel::\underline{countAll}() &  \\ \hline
+Back-end::Lib::Model::UserModel::generateResetPasswordToken() & TU - 133 \\ \hline
 \caption{Metodi-Test}
 \end{longtable}
 \egroup

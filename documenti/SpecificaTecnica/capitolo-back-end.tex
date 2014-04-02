@@ -164,7 +164,7 @@ Nel seguente diagramma di sequenza viene mostrato il comportamento del middlewar
 \pagebreak
 \subsubsection{Fallimento vincolo ``utente autenticato''}
 Per ogni richiesta bisogna verificare che il permesso dell'utente che l'ha chiesta, corrisponda al permesso che la risorsa necessita per poter essere effettuata. \\
-Tale scenario rappresenta il fallimento di una richiesta richiedente come vincolo per poter essere effettuata che l'utente abbia un permesso di tipo ''utente autenticato'', dove la verifica dei permessi è gestita dal controller \emph{requireLogged} che manda un next(error) per il fallimento di tale vincolo al router il quale avrà compito di gestirlo.
+Tale scenario rappresenta il fallimento di una richiesta richiedente come vincolo per poter essere effettuata che l'utente abbia un permesso di tipo ''utente autenticato'', dove la verifica dei permessi è gestita da \emph{Authentication} che manda un next(error) per il fallimento di tale vincolo al router il quale avrà compito di gestirlo.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/requireLogged ERROR.png} 
@@ -175,7 +175,7 @@ Tale scenario rappresenta il fallimento di una richiesta richiedente come vincol
 \pagebreak
 \subsubsection{Fallimento vincolo ``utente non autenticato''}
 Il seguente diagramma di sequenza rappresenta lo scenario in cui fallisce la verifica del vincolo di permesso ''utente autenticato''.
-La richiesta viene gestita da \emph{requireNotLogged} che verifica con esito negativo i permessi e rimanda un next(error) al router.
+La richiesta viene gestita da \emph{Authentication} che verifica con esito negativo i permessi e rimanda un next(error) al router.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/requireNotLogged ERROR.png} 
@@ -185,7 +185,7 @@ La richiesta viene gestita da \emph{requireNotLogged} che verifica con esito neg
 
 \pagebreak
 \subsubsection{Fallimento vincolo ``utente admin''}
-Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal controller \emph{requireAdmin} fallisce. 
+Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal middleware \emph{Authentication} fallisce. 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/requireAdmin ERROR.png} 
@@ -195,7 +195,7 @@ Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono perm
 
 \pagebreak
 \subsubsection{Fallimento vincolo ``utente  super admin''}
-Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Super Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal controller \emph{requireSuperAdmin} fallisce. 
+Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono permessi ''Super Admin'' per poter gestire la richiesta corrispondente e la verifica effettuata dal middleware \emph{Authentication} fallisce. 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/requireSuperAdmin ERROR.png} 
@@ -205,7 +205,7 @@ Nel diagramma seguente viene rappresentato lo scenario in cui si richiedono perm
 
 \pagebreak
 \subsubsection{Richiesta POST /profile} 
-Il seguente scenario mostra la gestione di una richiesta POST per la risorsa profile, \emph{requireNotLogged} non risponde con errore, chiamando il successivo \glossario{middleware} \emph{login} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
+Il seguente scenario mostra la gestione di una richiesta POST per la risorsa profile, richiamato \emph{requireNotLogged()}, \emph{Authentication} non risponde con errore, chiamando successivamente \emph{ProfileService} che gestisce la verifica dei parametri e nell'opzione che questa fallisca, manda in risposta un next(error) che il router andrà a gestire.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/profile POST.png} 
@@ -216,7 +216,7 @@ Il seguente scenario mostra la gestione di una richiesta POST per la risorsa pro
 \pagebreak
 \subsubsection{Richiesta DELETE /profile}
 Il diagramma di sequenza mostra lo scenario di una richiesta DELETE per la risorsa profile.
-La verifica dei permessi in \emph{requireLogged} non fallisce, innescando la chiamata al successivo \glossario{middleware} \emph{logout} che gestisce l'eliminazione della risorsa.
+La verifica dei permessi in \emph{Authentication} non fallisce, innescando la chiamata al successivo \glossario{middleware} \emph{ProfileService} che gestisce l'eliminazione della risorsa.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/profile DELETE.png} 
@@ -226,7 +226,7 @@ La verifica dei permessi in \emph{requireLogged} non fallisce, innescando la chi
 
 \pagebreak
 \subsubsection{Richiesta GET /profile}
-Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere la risorsa Profile, la verifica dei permessi non fallisce e la richiesta viene gestita da \emph{getProfile}.
+Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere la risorsa Profile, la verifica dei permessi non fallisce e la richiesta viene gestita da \emph{ProfileService}.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Profile GET.png} 
@@ -236,8 +236,8 @@ Il seguente diagramma rappresenta lo scenario di una richiesta GET per ottenere 
 
 \pagebreak
 \subsubsection{Richiesta PUT /profile} 
-Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il \emph{requireLogged} non ritorna un errore, chiamando il successivo \glossario{middleware} \emph{editProfile} che gestisce la richiesta di modifica dei dati del profilo.
-Nell'opzione che i parametri passati per la modifica del profilo siano errati, \emph{editProfile} chiamerà la callback passandogli la descrizione dell'errore come parametro che il router andrà a gestire.
+Viene rappresentato lo scenario di una richiesta PUT per la risorsa Profile, il \emph{requireLogged()} non fa ritornare un errore, viene chiamato il successivo \glossario{middleware} \emph{ProfileService} chiamando il metodo \emph{updatePassword()} che gestisce la richiesta di modifica della password del profilo.
+Nell'opzione che i parametri passati per la modifica del profilo siano errati, \emph{updatePassword()} chiamerà la callback passandogli la descrizione dell'errore come parametro che il router andrà a gestire.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Profile PUT.png} 
@@ -247,8 +247,8 @@ Nell'opzione che i parametri passati per la modifica del profilo siano errati, \
 
 \pagebreak
 \subsubsection{Richiesta POST /password/forgot} 
-Viene rappresentato lo scenario di una richiesta POST per la risorsa password forgot, il \emph{requireNotLogged} non risponde errore e il controllo passa a \emph{passwordResetRequest} che gestisce la richiesta.
-Se i parametri passati per la richiesta sono errati, il controllore \emph{requireNotLogged} risponderà con un errore.
+Viene rappresentato lo scenario di una richiesta POST per la risorsa password forgot, \emph{Authentication} non risponde errore e il controllo passa a \emph{ForgotService} che gestisce la richiesta.
+Se i parametri passati per la richiesta sono errati, il service \emph{Authentication} risponderà con un errore.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Password Forgot POST.png} 
@@ -258,7 +258,7 @@ Se i parametri passati per la richiesta sono errati, il controllore \emph{requir
 
 \pagebreak
 \subsubsection{Richiesta GET /users}
-Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richiesta GET per la risorsa user, \emph{requireAdmin} non fallisce ed il controllo viene passato a \emph{getUsers} che gestisce la richiesta.
+Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richiesta GET per la risorsa user, \emph{requireAdmin()} non fallisce ed il controllo viene passato a \emph{UserService} che gestisce la richiesta.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Users GET.png} 
@@ -268,7 +268,7 @@ Viene rappresentato nel seguente diagramma di sequenza lo scenario di una richie
 
 \pagebreak
 \subsubsection{Richiesta POST /users} 
-Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST per la risorsa user, la verifica di \emph{requireLogged} dei permessi utente non fallisce e viene passato il controllo a \emph{createUser} che gestisce la richiesta di creazione di un nuovo user, e nel caso la verifica dei parametri passati per la creazione di quest'ultimo siano errati, il controllore chiamerà la callback con l'errore.
+Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST per la risorsa user, la verifica di \emph{requireLogged()} dei permessi utente non fallisce e viene passato il controllo a \emph{UserService} tramite chiamata del metodo \emph{createUser()} che gestisce la richiesta di creazione di un nuovo user, e nel caso la verifica dei parametri passati per la creazione di quest'ultimo siano errati, il service chiamerà la callback con l'errore.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Users POST.png} 
@@ -278,7 +278,7 @@ Il seguente diagramma di sequenza rappresenta lo scenario di una richiesta POST 
 
 \pagebreak
 \subsubsection{Richiesta GET /users/\{user id\}} 
-Lo scenario rappresenta una richiesta GET di una risorsa User id, vengono verificati i permessi attraverso \emph{requireAdmin} che passa il controllo a \emph{getUser} dandogli come attributo l'id dell'user da restituire.
+Lo scenario rappresenta una richiesta GET di una risorsa User id, vengono verificati i permessi attraverso \emph{requireAdmin()} che passa poi il controllo a \emph{userService} invocando il metodo \emph{getUser()} dandogli come attributo l'id dell'user da restituire.
 Nell'opzione che l'id dell'user sia errato, non corrispondendo a nessun user esistente, verrà richiamata una next(error).
 \begin{figure}[H]
 	\begin{center} 
@@ -289,8 +289,8 @@ Nell'opzione che l'id dell'user sia errato, non corrispondendo a nessun user esi
 
 \pagebreak
 \subsubsection{Richiesta PUT /users/\{user id\}} 
-Nel seguente diagramma di sequenza viene rappresentato lo scenario di una richiesta PUT per la risorsa User id nel quale \emph{requireAdmin} non restituisce un errore e passa il controllo a \emph{editUser} che gestisce la richiesta di modifica dati dell'user corrispondente all'userId che gli è stato passato come attributo.
-\emph{EditUser} verifica inoltre che l'userId passatogli come attributo non corrisponda all'id dello stesso user che ha effettuato la richiesta o corrisponda ad un id di un superAdmin e controlla che i parametri passati non siano errati, altrimenti risponderà con errore.
+Nel seguente diagramma di sequenza viene rappresentato lo scenario di una richiesta PUT per la risorsa User id nel quale \emph{requireAdmin()} non restituisce un errore e passa il controllo a \emph{userService} che gestisce la richiesta di modifica del livello corrispondente all'userId che gli è stato passato come attributo.
+\emph{updateLevel()} verifica inoltre che l'userId passatogli come attributo non corrisponda all'id dello stesso user che ha effettuato la richiesta o corrisponda ad un id di un superAdmin e controlla che i parametri passati non siano errati, altrimenti risponderà con errore.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Users Id PUT.png} 
@@ -300,8 +300,8 @@ Nel seguente diagramma di sequenza viene rappresentato lo scenario di una richie
 
 \pagebreak
 \subsubsection{Richiesta DELETE /users/\{user id\}} 
-Il diagramma di sequenza rappresenta lo scenario di una richiesta DELETE per la risorsa user id, \emph{requireAdmin} non restituisce un errore e la richiesta viene gestita da \emph{deleteUser} per procede con l'eliminazione dell'user cui id gli è stato passato come attributo.
-Nell'opzione che l'id passatogli corrisponda all'id dell'utente che ha effettuato la richiesta o ad un id di un superAdmin, \emph{deleteUser} restituisce un next(error). Il controller si preoccupa inoltre di verificare che i parametri siano corretti.
+Il diagramma di sequenza rappresenta lo scenario di una richiesta DELETE per la risorsa user id, \emph{requireAdmin()} non restituisce un errore e la richiesta viene gestita da \emph{deleteUser()} per procede con l'eliminazione dell'user cui id gli è stato passato come attributo.
+Nell'opzione che l'id passatogli corrisponda all'id dell'utente che ha effettuato la richiesta o ad un id di un superAdmin, \emph{UserService} restituisce un next(error). Il service si preoccupa inoltre di verificare che i parametri siano corretti.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Users Id DELETE.png} 
@@ -311,7 +311,7 @@ Nell'opzione che l'id passatogli corrisponda all'id dell'utente che ha effettuat
 
 \pagebreak
 \subsubsection{Richiesta GET /collection} 
-Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection, il controller \emph{requireLogged} innescherà la chiamata del successivo controller \emph{listCollection} che gestirà la richiesta di restituzione della lista di \glossario{Collection}.
+Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection, il service \emph{Authentication} innescherà la chiamata del successivo service \emph{CollectionService} che gestirà la richiesta di restituzione della lista di \glossario{Collection}.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Collection GET.png} 
@@ -321,8 +321,8 @@ Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risors
 
 \pagebreak
 \subsubsection{Richiesta GET /collection/\{collection name\}} 
-Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection Name, il controller \emph{requireLogged} innescherà la chiamata del successivo controller \emph{indexPage} al quale verrà passato come parametro l'id della \glossario{Collection} per la restituzione dell'index page corrispondente. \\ 
-Nell'opzione che l'id sia errato il controller chiamerà la callback passandogli la descrizione dell'errore come parametro.
+Il diagramma seguente rappresenta lo scenario di una richiesta GET per la risorsa collection Name, il service \emph{Authentication} innescherà la chiamata del successivo service \emph{indexService} al quale verrà passato come parametro l'id della \glossario{Collection} per la restituzione dell'index page corrispondente. \\ 
+Nell'opzione che l'id sia errato il service chiamerà la callback passandogli la descrizione dell'errore come parametro.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Collection Name GET.png} 
@@ -332,8 +332,8 @@ Nell'opzione che l'id sia errato il controller chiamerà la callback passandogli
 
 \pagebreak
 \subsubsection{Richiesta GET /collection/\{collection name\}/\{document id\}} 
-Il diagramma di sequenza rappresenta lo scenario di una richiesta GET per la risorsa collection name document, nel quale al controller \emph{showpage} viene passato l'id del document di cui mostrare la show page.
-Nell'opzione l'id sia errato, non corrispondendo ad un \glossario{Document} valido, \emph{showpage} restituisce una next(error).
+Il diagramma di sequenza rappresenta lo scenario di una richiesta GET per la risorsa collection name document, nel quale al service \emph{showService} viene passato l'id del document di cui mostrare la show page.
+Nell'opzione l'id sia errato, non corrispondendo ad un \glossario{Document} valido, \emph{showService} restituisce una next(error).
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Collection Name Document GET.png}
@@ -344,7 +344,7 @@ Nell'opzione l'id sia errato, non corrispondendo ad un \glossario{Document} vali
 
 \pagebreak
 \subsubsection{Richiesta DELETE /collection/\{collection name\}/\{document id\}}
-Il seguente scenario rappresenta la richiesta DELETE per una risorsa Collection name document, dopo che i permessi sono stati verificati il controllo è passato a \emph{deleteDocument} il quale gestirà la richiesta di eliminazione del document il cui id gli è stato passato come parametro. Se l'id è errato, verrà restituito un errore.
+Il seguente scenario rappresenta la richiesta DELETE per una risorsa Collection name document, dopo che i permessi sono stati verificati il controllo è passato a \emph{ShowService} il quale gestirà la richiesta di eliminazione del document il cui id gli è stato passato come parametro. Se l'id è errato, verrà restituito un errore.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[scale=0.20]{uml/scenari/Collection Name Document DELETE.png} 

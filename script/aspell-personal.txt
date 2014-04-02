@@ -1277,6 +1277,7 @@ stub
 style
 subclassing
 SublimeLinter
+Submit
 subsystem
 subtask'
 Subtitle
@@ -1305,6 +1306,7 @@ tag
 TaskList
 tasks
 TCF
+TCP
 Teamwork
 TeamworkPM
 Techinques

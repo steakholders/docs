@@ -3,7 +3,7 @@
 
 All'interno della cartella \code{collections/} sono presenti alcuni file \code{DSL} di esempio da cui trarre spunto. Come descritto in precedenza è possibile specificare manualmente su quale cartella andare a prelevare i propri file, intervenendo sulla configurazione dell'applicazione tramite il file \code{config.js}. Di default viene specificata questa cartella.
 
-La configurazione di una Collection avviene tramite la configurazione di un file DSL. Questa attività consiste nella semplice creazione o modifica di un file, quindi è possibile procedere alla configurazione tramite un qualsiasi editor di testo disponibile. La configurazione di base deve avere la seguente sintassi:
+La configurazione di una \glossario{Collection} avviene tramite la configurazione di un file DSL. Questa attività consiste nella semplice creazione o modifica di un file, quindi è possibile procedere alla configurazione tramite un qualsiasi editor di testo disponibile. La configurazione di base deve avere la seguente sintassi:
 \medskip
 
 \begin{lstlisting}
@@ -57,7 +57,7 @@ Questa espressione indica come la Collection dev'essere configurata. Da essa der
 
 \begin{itemize}
 
-	\item \textbf{\code{name}} (required): questo parametro accetta una stringa e coincide con il nome della Collection di riferimento sul database \glossario{MongoDB};
+	\item \textbf{\code{name}} (required): questo parametro accetta una stringa e coincide con il nome della \glossario{Collection} di riferimento sul database \glossario{MongoDB};
 	\item \textbf{\code{label}} (optional): questo parametro accetta una stringa e coincide con il nome che verrà visualizzato nella \textit{index-page}. Se non specificato viene automaticamente inizializzato con il valore del parametro \code{name};
 	\item \textbf{\code{id}} (optional): questo parametro accetta una stringa e coincide con l'identificativo della \glossario{URI} della Collection. Di default questo parametro assume il valore del parametro \code{name}. Viene utilizzato se si vuole far puntare più configurazioni alla stessa collection su MongoDB;
 	\item \textbf{\code{weight}} (optional): questo parametro accetta un valore intero e coincide con l'ordine di visualizzazione della Collection nella barra di navigazione dell'applicazione e nella lista delle collection della \glossario{Dashboard}. Se non specificato assume 0 come valore di default.

@@ -6,28 +6,26 @@
 \cellcolor[gray]{0.9} \textbf{Nome} & \cellcolor[gray]{0.9} \textbf{Descrizione} & \cellcolor[gray]{0.9} \textbf{Stato}
  \\ \hline
 TU - 2 & Verifica che il service sia stato iniettato correttamente. & Success \\ \hline
-TU - 3 & Verifica che dato un parametro, la risposta ritorni il JSON atteso. & Success \\ \hline
 TU - 4 & Il costruttore ServerLoader viene invocato con alcuni oggetti di configurazione di tipo Config predefiniti. Si verifica che in ogni caso l'oggetto ServerLoader costruito sia effettivamente configurato con i parametri forniti in input. & Success \\ \hline
 TU - 5 & Viene verificato che un oggetto della classe, dati determinati input, venga costruito in modo corretto secondo quanto atteso. & Success \\ \hline
 TU - 6 & Viene verificato che il metodo restituisca l'errore in formato JSON atteso. & Success \\ \hline
 TU - 7 & Viene verificato che il metodo restituisca l'errore in formato stringa atteso. & Success \\ \hline
 TU - 8 & Viene verificato che il metodo restituisca l'errore in formato \texttt{Error} di \glossario{Node.js} atteso. & Success \\ \hline
 TU - 9 & Verifica, iniettando un service, che lo scope venga popolato correttamente. & Success \\ \hline
-TU - 10 & Viene simulato uno scope tramite rootScope.new() e un service per testare che il controller gestisca correttamente l'invocazione dei metodi sul service per la creazione dell'utente e il popolamento dello scope. & Success \\ \hline
+TU - 10 & Viene simulato uno scope tramite rootScope.new() e un service per testare che il controller gestisca correttamente l'invocazione dei metodi sul service per la modifica dell'utente e il popolamento dello scope. & Success \\ \hline
 TU - 11 & Verifica, iniettando un service, che il login venga effettuato quando i dati inseriti sono corretti e visualizzi correttamente l'errore altrimenti. & Success \\ \hline
 TU - 12 & Viene verificato che un oggetto della classe venga costruito correttamente secondo quanto atteso. & Success \\ \hline
 TU - 13 & Viene verificato che il metodo, dati determinati input, effettui una chiamata alla classe \texttt{Back-end::Lib::Model::DSLModel::DSLConcreteStrategy} e che quest'ultima restituisca tramite una callback un array di collections da inserire nel registro. Viene inoltre verificato che nel caso in cui venga passato in input il nome di un file non esistente il metodo generi un opportuno errore da restituire con una callback. & Success \\ \hline
 TU - 14 & Viene verificato che il metodo, dati determinati input, aggiunga correttamente il CollectionModel passatogli al registro dei modelli. & Success \\ \hline
-TU - 15 & Viene verificato che il metodo, dati determinati input, restituisca tramite la sua callback il \texttt{DSLCollectionModel} atteso e, in caso di errore, restituisca quest'ultimo tramite la callback di errore. & Success \\ \hline
+TU - 15 & Viene verificato che il metodo, dato l'id della collection, ne restituisca il model. & Success \\ \hline
 TU - 16 & Viene verificato che il metodo restituisca l'array di errori atteso. & Success \\ \hline
 TU - 17 & Viene verificato che il metodo inizializzi correttamente lo Schema mongoose degli utenti e renda disponibili i metodi attesi su di esso. & Success \\ \hline
 TU - 18 & Viene verificato che il metodo restituisca i dati degli utenti nel formato JSON atteso e gestisca gli eventuali errori di connessione a MongoDB. & Success \\ \hline
-TU - 19 & Viene verificato che il metodo, dato il suo input, registri correttamente l'utente nel database gestisca nel modo atteso gli eventuali errori. & Success \\ \hline
+TU - 19 & Viene verificato che il metodo, dato il suo input, registri correttamente l'utente nel database e gestisca nel modo atteso gli eventuali errori. & Success \\ \hline
 TU - 20 & Viene verificato che il metodo, dato il suo input, modifichi correttamente il livello dell'utente indicato e gestisca nel modo atteso gli eventuali errori. & Success \\ \hline
 TU - 21 & Viene verificato che il metodo, dati i suoi input, crei correttamente l'utente atteso sul database MongoDB degli utenti e gestisca gli eventuali errori generati. & Success \\ \hline
-TU - 22 & Viene verificato che il metodo, dati i suoi input, elimini correttamente l'utente indicato e gestisca gli eventuali errori generati. & Success \\ \hline
 TU - 23 & Viene verificato che il metodo, dati i suoi input, modifichi correttamente la password dell'utente indicato la nuova fornita e gestisca gli eventuali errori generati nella maniera attesa. & Success \\ \hline
-TU - 24 & Viene verificato che il metodo, dati i suoi input, inserisca l'utente indicato all'interno del database MongoDB degli utenti e gestisca gli eventuali errori generati. & Success \\ \hline
+TU - 24 & Viene verificato che il metodo, dato un id, ricerchi l'utente indicato all'interno del database MongoDB degli utenti restituendo le informazioni associate e gestisca gli eventuali errori generati. & Success \\ \hline
 TU - 25 & Viene verificato che il metodo costruisca un oggetto della classe nel modo corretto e atteso. & Success \\ \hline
 TU - 26 & Viene verificato che il metodo inizializzi correttamente la classe e gestisca nel modo atteso gli eventuali errori generati. & Success \\ \hline
 TU - 27 & Viene verificato che il metodo, dati determinati input, carichi correttamente il file DSL, lo esegua in modo corretto e gestisca in modo atteso gli eventuali errori generati. & Success \\ \hline
@@ -58,7 +56,7 @@ TU - 51 & Viene verificato che il metodo comunichi correttamente con lo \texttt{
 TU - 52 & Viene verificato che il metodo comunichi correttamente con lo \texttt{UserModel} richiedendo la lista degli utenti presenti nel database MongoDB degli utenti in formato JSON e che sappia gestire correttamente e in modo atteso gli eventuali errori generati. & Success \\ \hline
 TU - 53 & Viene verificato che il metodo comunichi correttamente con lo \texttt{UserModel} richiedendo la modifica del livello dell'utente ricevuto come parametro nella richiesta del server e che sappia gestire correttamente e in modo atteso gli eventuali errori generati. & Success \\ \hline
 TU - 54 & Viene verificato che il metodo comunichi correttamente con la classe \texttt{DSLCollectionModel} e che ottenga correttamente la configurazione della \textit{index-page} in formato JSON secondo quanto atteso. Viene verificato inoltre che il metodo sia in grado di gestire correttamente gli eventuali errori generati. & Success \\ \hline
-TU - 54 & Viene verificato che venga costruito correttamente l'oggetto, configurando il servizio di invio mail con i parametri impostati nella configurazione dell'applicazione passata come parametro. & Success \\ \hline
+TU - 55 & Viene verificato che venga costruito correttamente l'oggetto, configurando il servizio di invio mail con i parametri impostati nella configurazione dell'applicazione passata come parametro. & Success \\ \hline
 TU - 56 & Viene verificato che il metodo restituisca un puntatore alla classe \texttt{Back-end::Lib::Controller::Controller::CollectionController} e che quest'ultimo non sia nullo. & Success \\ \hline
 TU - 57 & Viene verificato che il metodo restituisca un puntatore alla classe \texttt{Back-end::Lib::Controller::Controller::ProfileController} e che quest'ultimo non sia nullo. & Success \\ \hline
 TU - 58 & Viene verificato che il metodo restituisca un puntatore alla classe \texttt{Back-end::Lib::Controller::Controller::AuthController} e che quest'ultimo non sia nullo. & Success \\ \hline
@@ -67,7 +65,6 @@ TU - 60 & Viene verificato che il metodo restituisca un puntatore alla classe \t
 TU - 61 & Viene verificato che il metodo restituisca un puntatore alla classe \texttt{Back-end::Lib::Controller::Controller::ShowController} e che quest'ultimo non sia nullo. & Success \\ \hline
 TU - 62 & Viene verificato che il metodo restituisca un puntatore alla classe \texttt{Back-end::Lib::Controller::Controller::IndexController} e che quest'ultimo non sia nullo. & Success \\ \hline
 TU - 63 & Viene verificato che un oggetto della classe venga costruito in modo corretto e secondo le attese. & Success \\ \hline
-TU - 63 & Viene verificato che il metodo, a partire dai parametri in input, costruisca e restituisca un email nel formato Email di NodeMailer. Di questo oggetto Email si controlla che il valore di tutti i campi dati coincidano con i valori attesi. & Success \\ \hline
 TU - 64 & Viene verificato che il metodo, dato il suo input, invochi correttamente il metodo \texttt{browseFileSystem} andando a cercare tutti i file DSL e successivamente invochi correttamente il metodo di caricamento dei file DSL, andando a costruire quindi il \texttt{DSLModel}. Viene verificato inoltre che il metodo gestisca correttamente gli eventuali errori generati dalle chiamate alle varie funzioni. & Success \\ \hline
 TU - 66 & Viene verificato che il metodo, dato il suo input, restituisca  correttamente e in modo atteso l'array di file presenti ne path indicato tramite una callback e sappia gestire in modo corretto e atteso gli eventuali errori generati. & Success \\ \hline
 TU - 67 & Viene verificato che il metodo configuri correttamente la gestione delle uri specificate nella sezione ``Interfaccia REST'' della \SpecificaTecnica{}. Per far questo, verrà passato come parametro app un oggetto fittizio, i cui metodi conterranno il codice necessario a verificare che vengano configurate tutte e sole le uri della specifica, associandole ai giusti controller. & Success \\ \hline
@@ -111,12 +108,71 @@ TU - 102 & Viene simulato uno scope tramite rootScope.new() e un service per tes
  & Success \\ \hline
 TU - 103 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. Questo test verrà eseguito per tanti valori predefiniti d input e output.
  & Success \\ \hline
-TU - 104 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. Questo test verrà eseguito per tanti valori predefiniti d input e output.
- & Success \\ \hline
+TU - 104 & Si verifica che il controller venga costruito correttamente. & Success \\ \hline
 TU - 105 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. Questo test verrà eseguito per tanti valori predefiniti d input e output.
  & Success \\ \hline
 TU - 106 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. Questo test verrà eseguito per tanti valori predefiniti d input e output. & Success \\ \hline
 TU - 107 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. Questo test verrà eseguito per tanti valori predefiniti d input e output. & Success \\ \hline
+TU - 108 & Viene simulato un backend tramite httpBackend per testare che il service modifichi in modo corretto i campi del document richiesto. & Success \\ \hline
+TU - 108 & Viene verificato che il metodo, a partire dai parametri in input, costruisca e restituisca un email nel formato Email di NodeMailer. Di questo oggetto Email si controlla che il valore di tutti i campi dati coincidano con i valori attesi. & Success \\ \hline
+TU - 109 & Viene simulato un backend tramite httpBackend per testare che il service elimini in modo corretto la risorsa document. & Success \\ \hline
+TU - 110 & Si verifica che il controller popoli correttamente i campi dello scope.Lo scope e i service vengono forniti al metodo come stub, in particolare lo scope viene utilizzato per fornire l'output e i service per dare l'input al metodo. & Success \\ \hline
+TU - 111 & Viene simulato un backend tramite httpBackend per testare che il service richieda il login in modo corretto. & Success \\ \hline
+TU - 112 & Viene simulato un backend tramite httpBackend per testare che il service richieda il logout in modo corretto. & Success \\ \hline
+TU - 113 & Si verifica che la classe venga costruita correttamente. & Success \\ \hline
+TU - 114 & Viene simulato un backend tramite httpBackend per testare che il service invii in modo corretto i dati necessari. & Success \\ \hline
+TU - 115 & Viene simulato un backend tramite httpBackend per testare che il service invii la nuova password correttamente.  & Success \\ \hline
+TU - 116 & Viene simulato un backend tramite httpBackend per testare che il service resetta in modo corretto la password utente. & Success \\ \hline
+TU - 117 & Viene simulato uno scope tramite rootScope.new() e un service per testare che il controller gestisca correttamente l'invocazione dei metodi sul service per l'ordinamento dei documenti. & Success \\ \hline
+TU - 118 & Viene simulato uno scope tramite rootScope.new() e un service per testare che il controller gestisca correttamente l'invocazione dei metodi sul service per la paginazione dei documenti. & Success \\ \hline
+TU - 119 & Viene verificato che il metodo dato un input,  ritorni correttamente il nome di tutte le collection come atteso e viene verificato inoltre che sia in grado di gestire eventuali errori.  & Success \\ \hline
+TU - 120 & Viene verificato che il metodo, dato come input una richiesta dal server, si interfacci correttamente con la class \texttt{ShowModel}, la quale si occuperà di effettuare la modifica del Document indicato in maniera conforme. Viene verificato inoltre che il metodo sappia gestire gli eventuali errori generati. & Success \\ \hline
+TU - 121 & Viene verificato che il metodo, dati come input il token e la nuova password, sia in grado di trovare l'utente a cui appartiene il token passato e di effettuare correttamente il reset della password.
+Viene verificato inoltre che sia in grado di gestire eventuali errori in maniera corretta. & Success \\ \hline
+TU - 122 & Viene verificato che dato come input un errore di tipo MaapError questo venga registrato correttamente nel registro. & Success \\ \hline
+TU - 123 & Viene verificato che il metodo presi come input due oggetti di tipo \texttt{DSLCollectionModel} li compari restituendo il giusto output secondo le specifiche. & Success \\ \hline
+TU - 124 & Viene verificato che il metodo restituisca l'array contenente oggetti di tipo \texttt{DslCollectionModel} ordinato in base al peso che ogni oggetto ha, verificando inoltre che gestisca correttamente gli errori. & Success \\ \hline
+TU - 125 & Viene verificato che il metodo componga in maniera corretta la funzione mongoose di estrazione paginata dei Document e viene verificato che restituisca il riferimento alla query in maniera attesa al chiamante gestendo correttamente eventuali errori avvenuti nell'elaborazione. & Success \\ \hline
+TU - 126 & Viene verificato che dato un input, il metodo restituisca correttamente un document a cui è stata applicata la funzione \textit{populate} di mongoose.  & Success \\ \hline
+TU - 127 & Viene verificato che il metodo dato come input l'id di un Document restituisca quest'ultimo. & Success \\ \hline
+TU - 128 & Viene verificato che il metodo dato come input un id di un Document effettui correttamente l'eliminazione di quest'ultimo dal database. & Success \\ \hline
+TU - 129 & Questo metodo si occupa di effettuare l'update del Document indicato.
+Verifica che il metodo dato, con input le modifiche da apportare al documento e l'id di quest'ultimo, lo modifichi correttamente e gestisca in modo atteso gli eventuali errori. & Success \\ \hline
+TU - 130 & Viene verificato che il metodo riesca ad ottenere correttamente la lista degli utenti e restituire la lista con il numero di utenti corretto rispetto all'input dato, corrispondenti alla pagina indicata. & Success \\ \hline
+TU - 131 & Viene verificato che dato un input, questo metodo sia in grado di eliminare l'utente indicato gestendo gli errori in maniera attesa. & Success \\ \hline
+TU - 132 & Viene verificato che dato come input un'email, il metodo restituisca l'id corrispondente. & Success \\ \hline
+TU - 133 & Viene verificato che il metodo generi un token corretto e un tempo di vita conforme alle attese, salvando queste informazioni e gestendo eventuali errori in maniera corretta. & Success \\ \hline
+TU - 134 & Viene verificato che dato un input, il metodo restituisca il token atteso, verificando inoltre che quest'ultimo dopo esser stato restituito al chiamante, venga invalidato.
+ & Success \\ \hline
+TU - 135 & Viene verificato che il metodo, dato in input un token e una password, rilevi se il token è valido e trovi l'utente a cui appartiene effettuando il reset della password con la password data in input.
+Viene verificato inoltre che rilevi correttamente un token non valido e restituisca errore. & Success \\ \hline
+TU - 136 & Viene verificato che dato come input un token, il metodo restituisca l'utente a cui corrispondente.
+Viene verificato inoltre che gestisca gli errori correttamente. & Success \\ \hline
+TU - 137 & Viene verificato che data una colonna questa venga aggiunta correttamente all'array delle colonne. & Success \\ \hline
+TU - 138 & Viene verificato che questo metodo invochi in maniera aspettata il metodo \texttt{setDefaultColumnSelectable}. & Success \\ \hline
+TU - 139 & Viene verificato che dato un input, il metodo si occupi di impostare la colonna ``\_id'' o la prima colonna disponibile come selectable se non ne è stata definita una. & Success \\ \hline
+TU - 140 & Verifica che il metodo verifichi correttamente se un array di colonne è vuoto e se lo è si occupi di estrarre tutti gli attributi di un Document della Collection e di creare e aggiungere colonne a partire da essi. 
+ & Success \\ \hline
+TU - 141 & Viene verificato che il metodo trasformi un Document in formato JSON in maniera corretta. & Success \\ \hline
+TU - 142 & Viene verificato che il metodo restituisca in maniera aspettata il campo \texttt{id} della classe. & Success \\ \hline
+TU - 143 & Viene verificato che il metodo restituisca in maniera corretta secondo input dati, il campo \texttt{label} della classe. & Success \\ \hline
+TU - 144 & Viene verificato che il metodo restituisca il campo \texttt{weight} della classe in maniera attesa secondo gli input dati. & Success \\ \hline
+TU - 145 & Viene verificato che il metodo richiami il metodo  \texttt{getCollectionName} e restituisca il campo \texttt{collectionName} della classe. & Success \\ \hline
+TU - 146 & Viene verificato se dato in input un Document, il metodo verifica correttamente se l'array degli attributi è vuoto, se questo avviene deve occuparsi di inserire nell'array tutti gli attributi del Document.
+ & Success \\ \hline
+TU - 147 & Viene verificato che il metodo restituisce correttamente un JSON il cui contenuto sono gli attributi del Document.
+Viene inoltre verificata la corretta gestione in caso di errori.  & Success \\ \hline
+TU - 148 & Viene verificato che dato come input un id relativo ad un Document, il metodo lo elimini correttamente dal database. & Success \\ \hline
+TU - 149 & Viene verificato che dati i corretti input il metodo riesca ad effettuare l'update del Document in maniera attesa. Viene inoltre verificato che in caso di eventuali errori questo risponda correttamente. & Success \\ \hline
+TU - 150 & Viene verificato che il metodo restituisca correttamente il campo \textit{label} della classe. & Success \\ \hline
+TU - 151 & Viene verificato che il metodo restituisca il campo \texttt{name} della classe in modo atteso. & Success \\ \hline
+TU - 152 & Viene verificato che il metodo restituisca il corretto campo \texttt{transformation} della classe. & Success \\ \hline
+TU - 153 & Viene verificato che il metodo restituisca il  il campo \texttt{name} della classe. & Success \\ \hline
+TU - 154 & Viene verificato che l'oggetto venga costruito correttamente. & Success \\ \hline
+TU - 155 & Verifica che il metodo ritorna correttamente il campo \texttt{name} della classe. & Success \\ \hline
+TU - 156 & Viene verificato che il metodo imposti in maniera attesa il campo \texttt{selectable} della classe.  & Success \\ \hline
+TU - 157 & Viene verificato che dato in input un oggetto, il metodo applichi correttamente la trasformazione e la restituisca al chiamante.
+Viene verificato che il metodo sia in grado di gestire eventuali errori in maniera corretta. & Success \\ \hline
 \caption{Test di Unità}
 \end{longtable}
 \egroup

@@ -1,0 +1,157 @@
+\section{Errori e malfunzionamenti}
+
+\subsection{Lista degli errori}
+
+Durante l'esecuzione di un'applicazione MaaP possono venir segnalati degli errori. Di seguito viene riportata la lista di possibili errori che possono comparire. Notare che alcuni errori sono uguali tra loro nel contenuto ma diversi nel codice identificativo. Questo perché, nonostante rappresentino lo stesso errore, sono generati da file sorgenti diversi.
+
+\subsubsection{1xxx}
+
+\begin{itemize}
+
+	\item \textbf{1000}: Errore durante il login, username o password errati;
+	\item \textbf{1001}: Accesso vietato, non si è autenticati;
+	\item \textbf{1002}: Accesso vietato, non si dovrebbe essere autenticati;
+	\item \textbf{1003}: Accesso vietato, livello utente sconosciuto;
+	\item \textbf{1004}: Accesso vietato, è necessario avere il livello admin;
+	\item \textbf{1005}: Accesso vietato, è necessario avere il livello superadmin;
+
+\end{itemize}
+
+\subsubsection{2xxx}
+
+\begin{itemize}
+
+	\item \textbf{2000}: Utente non trovato, l'utente che si sta cercando tramite id non è stato trovato nel database;
+	\item \textbf{2001}: Utente non trovato, l'utente che si sta cercando tramite email non è stato trovato nel database;
+	\item \textbf{2002}: Utente non trovato, l'utente che si sta cercando tramite il token di reset password non è stato trovato nel database;
+	\item \textbf{2003}: Errore di reset password, token non valido;
+	\item \textbf{2004}: Pagina non trovata, il numero di pagina deve essere un intero positivo;
+
+\end{itemize}
+
+\subsubsection{3xxx}
+
+\begin{itemize}
+
+	\item \textbf{3000}: Collection non trovata, la Collection che si sta cercando non è stata trovata;
+	\item \textbf{3001}: Definizione di due Collection con la stessa id;	
+
+\end{itemize}
+
+\subsubsection{5xxx}
+
+\begin{itemize}
+
+	\item \textbf{5001}: Errore di interpretazione del DSL;
+	\item \textbf{5002}: Errore di esecuzione del file DSL;
+
+\end{itemize}
+
+\subsubsection{6xxx}
+
+\begin{itemize}
+
+	\item \textbf{6000}: Non trovato, la risorsa richiesta non esiste;
+
+\end{itemize}
+
+\subsubsection{7xxx}
+
+\begin{itemize}
+
+	\item \textbf{7000}: Collection non trovata, la Collection richiesta non è stata trovata;
+
+\end{itemize}
+
+\subsubsection{8xxx}
+
+\begin{itemize}
+
+	\item \textbf{8000}: Errore di esecuzione del DSL;
+	\item \textbf{8001}: Collection id malformata; 
+
+\end{itemize}
+
+\subsubsection{9xxx}
+
+\begin{itemize}
+
+	\item \textbf{9000}: Accesso negato, la registrazione è disabilitata;
+	\item \textbf{9001}: Accesso negato, non puoi eliminare un Super Admin o te stesso;
+	\item \textbf{9002}: Accesso negato, non puoi creare un Super Admin;
+	\item \textbf{9003}: Accesso negato, non puoi modificare un Admin o un Super Admin;
+	\item \textbf{9004}: Credenziali non valide, devi specificare un'email e una password valida;
+
+\end{itemize}
+
+\subsubsection{10xxx}
+
+\begin{itemize}
+
+	\item \textbf{10000}: Password errata, la password vecchia che hai inserito non è corretta;
+
+\end{itemize}
+
+\subsubsection{12xxx}
+
+\begin{itemize}
+
+	\item \textbf{12000}: Document non trovato, il Document che hai richiesto non è stato trovato;
+
+\end{itemize}
+
+\subsubsection{13xxx}
+
+\begin{itemize}
+
+	\item \textbf{13000}: Errore di esecuzione del DSL;
+
+\end{itemize}
+
+\subsubsection{14xxx}
+
+\begin{itemize}
+
+	\item \textbf{14000}: Errore di esecuzione del DSL;
+
+\end{itemize}
+
+\subsubsection{15xxx}
+
+\begin{itemize}
+
+	\item \textbf{15000}: Errore di esecuzione del DSL;
+
+\end{itemize}
+
+\subsubsection{16xxx}
+
+\begin{itemize}
+
+	\item \textbf{16000}: Errore di esecuzione del DSL;
+
+\end{itemize}
+
+\subsubsection{17xxx}
+
+\begin{itemize}
+
+	\item \textbf{17000}: Errore di esecuzione del DSL;
+
+\end{itemize}
+
+\subsubsection{18xxx}
+
+\begin{itemize}
+
+	\item \textbf{18000}: Collection non trovata, la Collection che stavi cercando non è stata trovata.
+
+\end{itemize}
+
+\subsection{Procedura di segnalazione di un errore}
+
+Se viene riscontrato un bug o un'anomalia all'interno del framework MaaP che non sia collegato alla lista appena presentata è necessario segnalarlo tramite l'apertura di una \glossario{issue} su GitHub al seguente indirizzo:
+
+\centerline{\url{https://github.com/steakholders/maap-dev/issues/new}}
+
+Tale issue dev'essere il più possibile esplicativa e contenere il titolo e la descrizione della problematica. Gli sviluppatori del framework MaaP sono a completa disposizione per la risoluzione di issues relative al prodotto in questione e invitano tutti gli utilizzatori a contribuire alla segnalazione e all'individuazione di bug.

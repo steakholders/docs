@@ -9,7 +9,7 @@ Per configurare il back-end dell'applicazione generata dal framework bisogna mod
 \item \textbf{webServer}: un oggetto contenente
 		\begin{itemize}
 		\item \textbf{port}: la porta su cui il server si metterà in ascolto (Integer);
-		\item \textbf{static}: la path assoluta della cartella contenente i file statici che il server dovrà servire al client (String);
+		\item \textbf{static}: il percorso assoluto della cartella contenente i file statici che il server dovrà servire al client (String);
 		\end{itemize}
 		
 \item \textbf{userDB}: un oggetto contenente
@@ -32,7 +32,7 @@ Per configurare il back-end dell'applicazione generata dal framework bisogna mod
 		\item \textbf{link}: rappresenta il link da inviare per il reset della password (String);
 	\end{itemize}
 
-\item \textbf{collectionPath}: la path assoluta della cartella contenente i file di configurazione dsl che il server dovrà utilizzare come configurazione (String);
+\item \textbf{collectionPath}: il percorso assoluto della cartella contenente i file di configurazione dsl che il server dovrà utilizzare come configurazione (String);
 		
 \item \textbf{allowSignup}: contiene un valore booleano e indica se è possibile o meno utilizzare la funzionalità di registrazione (Boolean);
 
@@ -44,9 +44,9 @@ Per configurare il back-end dell'applicazione generata dal framework bisogna mod
 
 Per configurare il front-end dell'applicazione MaaP generata bisogna modificare il file:
 
-\centering{\texttt{./app/scripts/config.js}}
+\centerline{\texttt{./app/scripts/config.js}}
 
-Al suo interno è possibile configurare le costanti di Angular. In particolare è possibile settare:
+Al suo interno è possibile configurare le costanti di \glossario{Angular}. In particolare è possibile settare:
 
 \begin{itemize}
 
@@ -56,7 +56,7 @@ Al suo interno è possibile configurare le costanti di Angular. In particolare �
 
 	\item \textbf{showSignup}: indica se mostrare o meno il pulsante di registrazione. È importante ricordarsi di disabilitare o riabilitare la funzionalità di registrazione anche nel back-end (Boolean);
 
-	\item \textbf{reportLink}: indica il link al quale l'utente può segnalare bugs o problematiche relative all'applicazione (String).
+	\item \textbf{reportLink}: indica il link al quale l'utente può segnalare bugs o problematiche relative all'applicazione.  (String).
 
 \end{itemize}
 
@@ -65,33 +65,43 @@ Al suo interno è possibile configurare le costanti di Angular. In particolare �
 
 L'applicazione generata dal framework presenta i seguenti file e cartelle: 
 \begin{itemize}
- \item \textbf{\file{\texttt{ProjectName}/}} \\
+ \item \textbf{\file{\texttt{ProjectName}/}}
+ 
 	Contiene i file che verranno utilizzati come base di partenza (scaffold) per il progetto dello sviluppatore che utilizzerà il prodotto;
 
- \item \textbf{\file{\texttt{ProjectName}/collections/}} \\
+ \item \textbf{\file{ProjectName/collections/}}
+ 
 	Contiene i file di configurazione delle collection di esempio utilizzate dall'applicazione scaffold. Di default è la cartella in cui devono essere salvati i file DSL;
 
- \item \textbf{\file{\texttt{ProjectName}/app/}} \\
+ \item \textbf{\file{ProjectName/app/}} 
+ 
 	Contiene tutti gli script relativi al Frontend dell'applicazione;
 
- \item \textbf{\file{\texttt{ProjectName}/app/scripts/}} \\
+ \item \textbf{\file{ProjectName/app/scripts/}}
+ 
 	Contiene i file dell'applicazione AngularJS usata nel Frontend;
 
- \item \textbf{\file{\texttt{ProjectName}/app/scripts/services/}} \\
+ \item \textbf{\file{ProjectName/app/scripts/services/}}
+ 
 	Contiene i file dei service di AngularJS usata nel Frontend;
 
- \item \textbf{\file{\texttt{ProjectName}/app/scripts/controllers/}} \\
+ \item \textbf{\file{ProjectName/app/scripts/controllers/}}
+ 
 	Contiene i file dei controller di AngularJS usata nel Frontend;
 
- \item \textbf{\file{\texttt{ProjectName}/app/view/}} \\
+ \item \textbf{\file{ProjectName/app/view/}}
+ 
 	Contiene i file statici html usati dal Frontend dell'applicazione;
 
- \item \textbf{\file{\texttt{ProjectName}/app/style/}} \\
+ \item \textbf{\file{ProjectName/app/style/}}
+ 
 	Contiene i file statici CSS usati dal Frontend dell'applicazione;
 
- \item \textbf{\file{\texttt{ProjectName}/app/bower\_components/}} \\
+ \item \textbf{\file{ProjectName/app/bower\_components/}}
+ 
 	Contiene i file delle librerie utilizzate dal Frontend dell'applicazione;
 	
- \item \textbf{\file{\texttt{ProjectName}/node\_modules/}} \\
+ \item \textbf{\file{ProjectName/node\_modules/}}
+ 
 	Contiene i file delle librerie utilizzate dal Backend dell'applicazione.
 \end{itemize}
